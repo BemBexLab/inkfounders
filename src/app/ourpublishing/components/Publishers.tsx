@@ -1,0 +1,96 @@
+import Image from "next/image";
+
+const AUTHORS = [
+  {
+    name: "Donald Ennis",
+    photo: "/ourpublishers/Rectangle 10 (2).png",
+    book: "HOT NIGHTS COLD DAYS",
+  },
+  {
+    name: "Lisa Stalvey Coady",
+    photo: "/ourpublishers/Rectangle 10 (6).png", // blank for placeholder
+    book: "The Thoughtful Chef : How the Connection of Spirituality, Great Energy and Good Clean Organic Food Become One",
+  },
+  {
+    name: "Beth Gardner",
+    photo: "/ourpublishers/Rectangle 10 (3).png",
+    book: "One Rowing Stroke at a Time – Surviving Stage 3 Breast Cancer for 20-Years",
+  },
+  {
+    name: "Elizabeth Dooley",
+    photo: "/ourpublishers/Rectangle 10 (4).png",
+    book: "Fern Valley Ventures: Volume 1",
+  },
+  {
+    name: "Kenneth G Allen Jr.",
+    photo: "/ourpublishers/Rectangle 10 (6).png", // blank for placeholder
+    book: "Singing the Winn/Dixie Blues and other Short Stories",
+  },
+  {
+    name: "Ana Jorda",
+    photo: "/ourpublishers/Rectangle 10 (5).png",
+    book: "Language of a Silence",
+  },
+];
+
+const placeholder = "/authors/placeholder.png"; // Use a default placeholder image
+
+const Publishers = () => (
+ <section className="w-full my-[100px] flex flex-col items-center">
+  <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-2">
+    {AUTHORS.map((author, idx) => (
+      <div
+        key={idx}
+        className="
+          flex flex-row
+           rounded-2xl 
+          px-3 sm:px-4 py-4 items-center gap-3 sm:gap-4
+          min-h-[170px] sm:min-h-[160px]
+        "
+      >
+        {/* Image or placeholder */}
+        <div className="flex-shrink-0 w-[170px] h-[170px]  overflow-hidden bg-[#F6F5F3] flex items-center justify-center">
+          {author.photo ? (
+            <Image
+              src={author.photo}
+              alt={author.name}
+              width={250}
+              height={250}
+              className="object-cover w-full h-full"
+            />
+          ) : (
+            <Image
+              src={placeholder}
+              alt="Author Placeholder"
+              width={70}
+              height={70}
+              className="object-contain opacity-80"
+            />
+          )}
+        </div>
+        {/* Text Content */}
+        <div className="flex-1 flex flex-col h-full justify-between py-1 w-full">
+          <div>
+            <h3 className="font-bold text-[16px] sm:text-[17px] mb-0.5 text-black">
+              {author.name}
+            </h3>
+            <div className="text-[#666] text-[13px] sm:text-[14px] mb-1 font-medium">
+              Author of
+            </div>
+            <div className="text-[#222] text-[13px] sm:text-[14px] font-mono leading-snug line-clamp-2 sm:line-clamp-1">
+              {author.book}
+            </div>
+            <button className="mt-3 bg-[#DADD39] text-black font-medium rounded-md px-4 sm:px-5 py-2 text-[14px] sm:text-[15px] shadow-none transition hover:bg-transparent hover:border hover:border-black w-max self-start">
+            View More
+          </button>
+          </div>
+          
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+);
+
+export default Publishers;

@@ -29,10 +29,11 @@ const HomeHero = () => {
         px-4 
         md:px-1
         w-full
+        ml-20
       ">
         <div className="max-w-xl relative w-full">
           {/* Rounded Text Image */}
-          <div className="absolute -top-4 -right-8 md:-right-24 z-20">
+          <div className="absolute -top-6 -right-8 md:-right-5 z-20">
             <div className="w-20 h-20 md:w-24 md:h-24 relative">
               <Image
                 src="/Home/make your Life Easy.png"
@@ -44,7 +45,7 @@ const HomeHero = () => {
             </div>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-[55px] font-semibold leading-tight text-black mb-6 text-left  lg:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-[48px] font-semibold leading-tight text-black mb-6 text-left  lg:text-left">
   <span className="whitespace-nowrap">Bring Your Story To Life</span>
   <br />
   With Ink Founders Publishing
@@ -68,7 +69,7 @@ const HomeHero = () => {
         px-4 
         md:px-8
         w-full
-        lg:ml-20
+        lg:ml-5
         lg:mt-10
       ">
         <div className="
@@ -82,7 +83,7 @@ const HomeHero = () => {
             w-[400px] h-[400px] 
             sm:w-[400px] sm:h-[400px]
             md:w-[420px] md:h-[530px]
-            xl:w-[790px] xl:h-[790px]
+            xl:w-[700px] xl:h-[700px]
             lg:w-[500px] lg:h-[590px]
             transition-all
           ">
