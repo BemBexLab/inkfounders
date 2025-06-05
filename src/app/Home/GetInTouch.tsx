@@ -44,7 +44,7 @@ export default function GetInTouch() {
           <h2 className="text-[#DADD39] font-medium text-[23px] md:text-[35px] mb-1">
             Have Questions? Need Guidance?
           </h2>
-          <h3 className="text-[23px] md:text-[35px] font-semibold mb-6 text-black">Let's Talk</h3>
+          <h3 className="text-[23px] md:text-[35px] font-semibold mb-6 text-black">Let&#39;s Talk</h3>
 
           <p className={`text-gray-700 text-[12px] md:text-[15px] mb-8 ${robotoMono.className}`}>
             Ready to begin your self-publishing journey but still have
@@ -56,7 +56,7 @@ export default function GetInTouch() {
             We offer a free consultation where you can share your book concept,
             explore our services in detail, and discover how we can support you
             in turning your manuscript into a published masterpiece. Reach out
-            today—we're ready when you are.
+            today—we&apos;re ready when you are.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
@@ -188,7 +188,7 @@ export default function GetInTouch() {
     border-[#DADD39]
   "
 >
-  Let's Get Started
+  Let&apos;s Get Started
 </button>
 
           </form>

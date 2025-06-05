@@ -108,7 +108,7 @@ const OurPromise = () => {
           Always-Here Customer Support
         </h3>
         <p className={` text-gray-700 text-[12px] md:text-[15px] leading-relaxed ${robotoMono.className}`}>
-         At Ink Founder, you’re never on your own. Our dedicated support team is just a call or message away—ready to answer your questions, resolve concerns, and guide you through every step of your self-publishing journey. We're with you from start to shelf.
+         At Ink Founder, you’re never on your own. Our dedicated support team is just a call or message away—ready to answer your questions, resolve concerns, and guide you through every step of your self-publishing journey. We&apos;re with you from start to shelf.
         </p>
       </div>
     </div>

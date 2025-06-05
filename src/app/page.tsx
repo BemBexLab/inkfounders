@@ -1,4 +1,3 @@
-import Image from "next/image";
 import HomeHero from "./Home/HomeHero";
 import PartnerLogos from "./Home/OurPartner";
 import Publishing from "./Home/Publishing";
