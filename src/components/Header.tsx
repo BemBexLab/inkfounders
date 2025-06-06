@@ -11,7 +11,7 @@ const navItems = [
   { label: "Our Book", href: "/ourbook" },
   { label: "Our Publishing", href: "/ourpublishing" },
   { label: "Who we are", href: "/whoweare" },
-  { label: "Contact Us", href: "/ContactUs" },
+  { label: "Contact Us", href: "/contactus" },
 ];
 
 export default function Header() {

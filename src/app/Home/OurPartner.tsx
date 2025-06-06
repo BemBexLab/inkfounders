@@ -73,30 +73,30 @@ export default function PartnersSection() {
       </div>
 
       {/* Infinite Slider */}
-      <div className="relative w-full max-w-7xl mx-auto h-[70px] overflow-hidden">
-        <div
-          ref={trackRef}
-          className="flex items-center gap-12"
-          style={{
-            willChange: "transform",
-            width: "max-content",
-          }}
-        >
-          {/* Double up for perfect loop */}
-          {[...partners, ...partners].map((logo, idx) => (
-            <div className="flex-shrink-0" key={idx}>
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={logo.width}
-                height={logo.height}
-                style={{ width: logo.width, height: logo.height }}
-                priority
-              />
-            </div>
-          ))}
-        </div>
+     <div className="relative w-full max-w-7xl mx-auto h-[36px] md:h-[70px] overflow-hidden">
+  <div
+    ref={trackRef}
+    className="flex items-center gap-12"
+    style={{
+      willChange: "transform",
+      width: "max-content",
+    }}
+  >
+    {[...partners, ...partners].map((logo, idx) => (
+      <div className="flex-shrink-0 h-[36px] md:h-[54px] flex items-center justify-center" key={idx}>
+        <Image
+          src={logo.src}
+          alt={logo.alt}
+          width={logo.width}
+          height={logo.height}
+          className="h-[36px] md:h-[54px] w-auto object-contain"
+          priority
+        />
       </div>
+    ))}
+  </div>
+</div>
+
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { robotoMono } from '../fonts'
 
 const OurPromise = () => {
   return (
-    <section className="w-full bg-[#F6F5F3] flex justify-center items-center py-20">
+    <section className="w-full bg-[#F6F5F3] flex justify-center items-center md:py-20">
   <div className="w-full max-w-[1300px] flex flex-col items-center">
     {/* Headings */}
     <p className="text-center text-lg md:text-[25px] md:text-xl font-semibold text-black mb-2">

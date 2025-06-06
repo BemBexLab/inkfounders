@@ -3,7 +3,7 @@ import { robotoMono } from "../fonts";
 
 export default function AuthorsPublishedSection() {
   return (
-    <section className="w-full bg-[#F6F5F3] py-20">
+    <section className="w-full bg-[#F6F5F3] max-md:mt-10 md:py-20">
   <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-center gap-10 px-6">
     {/* Book Cover */}
     <div className="flex-shrink-0">

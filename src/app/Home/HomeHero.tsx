@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { robotoMono } from "@/app/fonts";
+import { IoMdCall } from "react-icons/io";
 
 const HomeHero = () => {
   return (
@@ -29,11 +30,11 @@ const HomeHero = () => {
         px-4 
         md:px-1
         w-full
-        ml-20
+        md:ml-20
       ">
         <div className="max-w-xl relative w-full">
           {/* Rounded Text Image */}
-          <div className="absolute -top-6 -right-8 md:-right-5 z-20">
+          <div className="absolute -top-6 -right-2 md:-right-5 z-20">
             <div className="w-20 h-20 md:w-24 md:h-24 relative">
               <Image
                 src="/Home/make your Life Easy.png"
@@ -54,6 +55,7 @@ const HomeHero = () => {
   Ink Founders is an independent self-publishing platform dedicated to empowering authors with a full suite of digital services. From idea to publication, we support you at every stage of your self-publishing journey. Let&apos;s bring your book to life—reach out to us today.
 </p>
 <button className="flex items-center gap-2 bg-[#DADD39] text-black font-normal px-5 py-2 rounded-md shadow self-start md:self-center lg:self-start transition hover:bg-transparent hover:border-[1px] hover:border-black">
+  <IoMdCall size={18} className="md:w-5 md:h-5 w-4 h-4" />
   Request a Call
 </button>
 

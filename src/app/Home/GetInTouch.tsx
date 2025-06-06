@@ -37,11 +37,11 @@ export default function GetInTouch() {
   };
 
   return (
-    <div className="w-full  py-12 px-4 md:px-8 lg:px-12">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 lg:gap-16">
+    <div className="w-full  md:py-12 px-4 md:px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-16">
         {/* Left Column */}
         <div className="flex-1">
-          <h2 className="text-[#DADD39] font-medium text-[23px] md:text-[35px] mb-1">
+          <h2 className="text-[#DADD39] font-medium text-[23px] md:text-[35px] mb-1 md:whitespace-nowrap">
             Have Questions? Need Guidance?
           </h2>
           <h3 className="text-[23px] md:text-[35px] font-semibold mb-6 text-black">Let&#39;s Talk</h3>
@@ -61,7 +61,7 @@ export default function GetInTouch() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
             <div className="flex items-center gap-3">
-              <div className="bg-[#37B22A] rounded-xl p-2 text-white">
+              <div className="bg-[#DADD39] rounded-xl p-2 text-white">
                 <IoMdCall size={20} />
               </div>
               <span className="text-base text-gray-800 font-medium font-mono">
@@ -70,7 +70,7 @@ export default function GetInTouch() {
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="bg-[#37B22A] rounded-xl p-2 text-white">
+              <div className="bg-[#DADD39] rounded-xl p-2 text-white">
                 <MdEmail size={20} />
               </div>
               <span className="text-base text-gray-800 font-medium font-mono">
@@ -79,7 +79,7 @@ export default function GetInTouch() {
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="bg-[#37B22A] rounded-xl p-2 text-white">
+              <div className="bg-[#DADD39] rounded-xl p-2 text-white">
                 <FaLocationDot size={20} />
               </div>
               <span className="text-base text-gray-800 font-medium font-mono">
