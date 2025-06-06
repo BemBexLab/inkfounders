@@ -3,6 +3,7 @@ import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import Image from "next/image";
 import { robotoMono } from "@/app/fonts";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -42,14 +43,17 @@ export default function Footer() {
           <h3 className="text-lg font-semibold text-[#DADD39] mb-4">
             Quick Links
           </h3>
-          <ul className="space-y-2">
-            <li><a href="#" className="text-black hover:text-gray-900 text-sm">Home</a></li>
-            <li><a href="#" className="text-black hover:text-gray-900 text-sm">Our Books</a></li>
-            <li><a href="#" className="text-black hover:text-gray-900 text-sm">Our Publisher</a></li>
-            <li><a href="#" className="text-black hover:text-gray-900 text-sm">Our Publishing</a></li>
-            <li><a href="#" className="text-black hover:text-gray-900 text-sm">Who we are</a></li>
-            <li><a href="#" className="text-black hover:text-gray-900 text-sm">Contact Us</a></li>
-          </ul>
+          
+
+<ul className="space-y-2">
+  <li><Link href="/"><span className="text-black hover:text-[#DADD39] text-sm">Home</span></Link></li>
+  <li><Link href="/service"><span className="text-black hover:text-[#DADD39] text-sm">Services</span></Link></li>
+  <li><Link href="/ourbook"><span className="text-black hover:text-[#DADD39] text-sm">Our Books</span></Link></li>
+  <li><Link href="/ourpublishing"><span className="text-black hover:text-[#DADD39] text-sm">Our Publishing</span></Link></li>
+  <li><Link href="/whoweare"><span className="text-black hover:text-[#DADD39] text-sm">Who we are</span></Link></li>
+  <li><Link href="/contactus"><span className="text-black hover:text-[#DADD39] text-sm">Contact Us</span></Link></li>
+</ul>
+
         </div>
 
         {/* Our Services */}

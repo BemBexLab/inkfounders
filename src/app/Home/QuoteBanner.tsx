@@ -1,9 +1,10 @@
+import Link from "next/link";
 import { robotoMono } from "../fonts";
 
 // components/QuoteBanner.tsx
 export default function QuoteBanner() {
   return (
-    <section className="w-full flex justify-center items-center bg-[#F6F5F3] py-20 ">
+    <section className="w-full flex justify-center items-center bg-[#F6F5F3] py-10 md:py-20 ">
       <div className="w-full max-w-[1400px] rounded-3xl bg-[#F4F3E1] px-4 py-20 flex flex-col items-center shadow-none mx-8">
         <p className="text-center text-[18px]  md:text-xl font-semibold text-[#DADD39] mb-2">
           Your Story Deserves To Be Told
@@ -16,30 +17,43 @@ export default function QuoteBanner() {
           focus on your story.
         </p>
         <div className="flex flex-row gap-4 justify-center items-center">
-  <button className="
-    bg-[#DADD39] 
-    text-black 
-    font-medium 
-    rounded-[10px] 
-    px-5 py-2 text-base
-    md:px-8 md:py-3 md:text-lg
-    transition hover:bg-transparent hover:border-[1px] hover:border-black
-    shadow-none
-  ">
+ {/* Get a Quote */}
+<Link href="/contactus">
+  <button
+    className="
+      bg-[#DADD39] 
+      text-black 
+      font-medium 
+      rounded-[10px] 
+      px-5 py-2 text-base
+      md:px-8 md:py-3 md:text-lg
+      transition hover:bg-transparent hover:border-[1px] hover:border-black
+      shadow-none
+    "
+    type="button"
+  >
     Get a Quote
   </button>
-  <button className="
-    border border-black 
-    text-black 
-    font-medium 
-    rounded-[10px] 
-    px-5 py-2 text-base
-    md:px-8 md:py-3 md:text-lg
-    transition hover:bg-[#DADD39] hover:border-[#DADD39]
-    shadow-none
-  ">
+</Link>
+
+{/* Live Chat */}
+<Link href="/contactus">
+  <button
+    className="
+      border border-black 
+      text-black 
+      font-medium 
+      rounded-[10px] 
+      px-5 py-2 text-base
+      md:px-8 md:py-3 md:text-lg
+      transition hover:bg-[#DADD39] hover:border-[#DADD39]
+      shadow-none
+    "
+    type="button"
+  >
     Live Chat
   </button>
+</Link>
 </div>
 
       </div>

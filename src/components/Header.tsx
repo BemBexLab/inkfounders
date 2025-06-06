@@ -4,7 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import {
+  FaHome,
+  FaCog,
+  FaBook,
+  FaUpload,
+  FaInfoCircle,
+  FaUserCircle,
+  FaTimes,
+} from "react-icons/fa";
 
+// Desktop labels & links must match mobile navItems!
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/service" },
@@ -12,6 +22,40 @@ const navItems = [
   { label: "Our Publishing", href: "/ourpublishing" },
   { label: "Who we are", href: "/whoweare" },
   { label: "Contact Us", href: "/contactus" },
+];
+
+// Mobile icons in order, matching screenshot
+const navItemsMobile = [
+  {
+    label: "Home",
+    href: "/",
+    icon: <FaHome size={22} />,
+  },
+  {
+    label: "Services",
+    href: "/service",
+    icon: <FaCog size={20} />,
+  },
+  {
+    label: "Our Book",
+    href: "/ourbook",
+    icon: <FaBook size={22} />,
+  },
+  {
+    label: "Our Publishing",
+    href: "/ourpublishing",
+    icon: <FaUpload size={20} />,
+  },
+  {
+    label: "Who we are",
+    href: "/whoweare",
+    icon: <FaInfoCircle size={20} />,
+  },
+  {
+    label: "Contact Us",
+    href: "/contactus",
+    icon: <FaUserCircle size={20} />,
+  },
 ];
 
 export default function Header() {
@@ -52,43 +96,75 @@ export default function Header() {
       </div>
 
       {/* 🚀 CTA Button (hidden on xs) */}
-      <Link href="/ContactUs">
+      <Link href="/contactus">
         <div className="hidden lg:flex">
           <button className="text-black px-6 py-2 border-[#DADD39] rounded-[10px] bg-[#DADD39] flex items-center gap-2 transition hover:bg-transparent hover:border-[1px] hover:border-black">
             Request a Quote
           </button>
         </div>
       </Link>
+
       {/* 📱 Mobile Menu Button */}
       <div className="block lg:hidden">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="text-black px-4 py-2 text-3xl"
+          className="text-[#DADD39] px-4 py-2 text-3xl"
+          aria-label="Open menu"
         >
-          {menuOpen ? "✕ " : "☰ "}
+          {menuOpen ? <FaTimes /> : <span>☰</span>}
         </button>
       </div>
 
       {/* 📱 Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="absolute top-full left-0 w-full bg-#F4F3E1/95 backdrop-blur-md px-4 py-6 flex flex-col gap-4 z-40 lg:hidden shadow-lg border-t border-[[#DADD39]]">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setMenuOpen(false)} // close menu on click
-              className={`text-base ${
-                pathname === item.href
-                  ? "text-[#DADD39] font-semibold underline underline-offset-4"
-                  : "text-black"
-              } hover:text-red-400 transition`}
-            >
-              {item.label}
-            </Link>
-          ))}
+        <div className="fixed inset-0 bg-white z-40 flex flex-col items-start px-8 py-8 gap-3 lg:hidden transition-all">
+          {/* Close button (top right) */}
+          <button
+            className="absolute top-8 right-8 text-[#DADD39] text-3xl"
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <FaTimes />
+          </button>
+          {/* Nav */}
+          <ul className="flex flex-col gap-4 mt-8 w-full">
+            {navItemsMobile.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`flex items-center gap-4 py-1 px-1 text-lg rounded-md transition
+                    ${
+                      pathname === item.href
+                        ? "text-[#DADD39] font-semibold"
+                        : "text-gray-500"
+                    }`}
+                >
+                  <span
+                    className={`${
+                      pathname === item.href
+                        ? "text-[#DADD39]"
+                        : "text-gray-400"
+                    }`}
+                  >
+                    {item.icon}
+                  </span>
+                  <span
+                    className={`tracking-wide ${
+                      pathname === item.href
+                        ? "text-[#DADD39] font-semibold"
+                        : "text-gray-600"
+                    }`}
+                  >
+                    {item.label}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
 
           {/* Mobile CTA */}
-          <button className="mt-4 rounded-full px-6 py-3 border border-[#DADD39] text-black bg-[#DADD39] transition hover:bg-transparent hover:border-[1px] hover:border-black">
+          <button className="mt-8 rounded-full px-6 py-3 border border-[#DADD39] text-black bg-[#DADD39] transition hover:bg-transparent hover:border-black font-semibold">
             Book a call →
           </button>
         </div>

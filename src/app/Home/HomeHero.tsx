@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { robotoMono } from "@/app/fonts";
 import { IoMdCall } from "react-icons/io";
+import Link from "next/link";
 
 const HomeHero = () => {
   return (
@@ -54,10 +55,15 @@ const HomeHero = () => {
 <p className={`text-gray-700 ${robotoMono.className} text-[15px] mb-8 leading-relaxed text-left md:text-center lg:text-left`}>
   Ink Founders is an independent self-publishing platform dedicated to empowering authors with a full suite of digital services. From idea to publication, we support you at every stage of your self-publishing journey. Let&apos;s bring your book to life—reach out to us today.
 </p>
-<button className="flex items-center gap-2 bg-[#DADD39] text-black font-normal px-5 py-2 rounded-md shadow self-start md:self-center lg:self-start transition hover:bg-transparent hover:border-[1px] hover:border-black">
-  <IoMdCall size={18} className="md:w-5 md:h-5 w-4 h-4" />
-  Request a Call
-</button>
+<Link href="/contactus">
+  <button
+    className="flex items-center gap-2 bg-[#DADD39] text-black font-normal px-5 py-2 rounded-md shadow self-start md:self-center lg:self-start transition hover:bg-transparent hover:border-[1px] hover:border-black"
+    type="button"
+  >
+    <IoMdCall size={18} className="md:w-5 md:h-5 w-4 h-4" />
+    Request a Call
+  </button>
+</Link>
 
         </div>
       </div>

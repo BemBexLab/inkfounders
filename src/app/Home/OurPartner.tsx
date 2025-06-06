@@ -62,14 +62,14 @@ export default function PartnersSection() {
   }, []);
 
   return (
-    <div className="w-full bg-[#F6F5F3] md:py-8 overflow-hidden">
+    <div className="w-full bg-[#F6F5F3] pt-5 md:py-8 overflow-hidden">
       {/* Header with lines */}
       <div className="flex items-center justify-center mb-8 w-full">
-        <div className="flex-1 border-t ml-10 border-black"></div>
+        <div className="flex-1 border-t ml-5 md:ml-10 border-black"></div>
         <h2 className="mx-4 text-sm font-semibold text-[#DADD39] tracking-wide uppercase whitespace-nowrap">
           Our Partner
         </h2>
-        <div className="flex-1 border-t mr-10 border-black"></div>
+        <div className="flex-1 border-t mr-5 md:mr-10 border-black"></div>
       </div>
 
       {/* Infinite Slider */}

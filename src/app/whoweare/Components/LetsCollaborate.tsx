@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function LetsCollaborate() {
   return (
     <section className="w-full flex justify-center items-center bg-[#F6F5F3] py-20 ">
@@ -10,30 +12,43 @@ export default function LetsCollaborate() {
         </h2>
 
         <div className="flex flex-row gap-4 justify-center items-center">
-  <button className="
-    bg-[#DADD39] 
-    text-black 
-    font-medium 
-    rounded-[10px] 
-    px-5 py-2 text-base
-    md:px-8 md:py-3 md:text-lg
-    transition hover:bg-transparent hover:border-[1px] hover:border-black
-    shadow-none
-  ">
+   {/* Get a Quote */}
+<Link href="/contactus">
+  <button
+    className="
+      bg-[#DADD39] 
+      text-black 
+      font-medium 
+      rounded-[10px] 
+      px-5 py-2 text-base
+      md:px-8 md:py-3 md:text-lg
+      transition hover:bg-transparent hover:border-[1px] hover:border-black
+      shadow-none
+    "
+    type="button"
+  >
     Get a Quote
   </button>
-  <button className="
-    border border-black 
-    text-black 
-    font-medium 
-    rounded-[10px] 
-    px-5 py-2 text-base
-    md:px-8 md:py-3 md:text-lg
-    transition hover:bg-[#DADD39] hover:border-[#DADD39]
-    shadow-none
-  ">
+</Link>
+
+{/* Live Chat */}
+<Link href="/contactus">
+  <button
+    className="
+      border border-black 
+      text-black 
+      font-medium 
+      rounded-[10px] 
+      px-5 py-2 text-base
+      md:px-8 md:py-3 md:text-lg
+      transition hover:bg-[#DADD39] hover:border-[#DADD39]
+      shadow-none
+    "
+    type="button"
+  >
     Live Chat
   </button>
+</Link>
 </div>
 
       </div>
