@@ -3,7 +3,7 @@ import { robotoMono } from "../fonts";
 
 export default function Lagacy() {
   return (
-    <section className="w-full bg-[#F6F5F3] py-20 max-md:px-10">
+    <section className="w-full bg-[#F6F5F3] py-20 max-xl:px-10">
   <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center  ">
     
     {/* Content */}

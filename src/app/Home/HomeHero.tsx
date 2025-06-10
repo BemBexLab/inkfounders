@@ -35,8 +35,8 @@ const HomeHero = () => {
       ">
         <div className="max-w-xl relative w-full">
           {/* Rounded Text Image */}
-          <div className="absolute -top-6 -right-2 md:-right-5 z-20">
-            <div className="w-20 h-20 md:w-24 md:h-24 relative">
+          <div className="absolute -top-2 -right-4 md:-right-5 z-20">
+            <div className="w-15 h-15 md:w-24 md:h-24 relative">
               <Image
                 src="/Home/make your Life Easy.png"
                 alt="Circular Make Your Mark"
