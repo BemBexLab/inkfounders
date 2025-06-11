@@ -11,7 +11,7 @@ const WhatSet = () => {
   <span className="text-black">What Sets Us Apart</span>
 </h2>
 <div className="max-w-6xl mx-auto mb-10">
-  <p className={`text-[#444444] text-[15px] text-center ${robotoMono.className} max-md:px-[15px]`}>
+  <p className={`text-[#444444] text-[15px] text-center ${robotoMono.className} max-md:px-[15px] leading-loose`}>
     Ink Founders isn’t just another publishing service—we’re your creative partners in turning ideas into powerful, publishable stories. With us, you’ll receive exceptional service, personalized support, and a team that truly invests in your vision.<br className="" />
     We tailor each package to fit your goals, your genre, and your unique voice—ensuring your manuscript gets the attention and craftsmanship it deserves. At Ink Founders, we don’t just publish books—we help authors make their mark.
   </p>

@@ -13,7 +13,7 @@ export default function Lagacy() {
         <br className="hidden md:block" />
         Control with Ink Founder
       </h2>
-      <div className={`space-y-6 font-mono text-gray-700 text-[12px] leading-relaxed ${robotoMono.className}`}>
+      <div className={`space-y-6 font-mono text-gray-700 text-[12px] leading-loose ${robotoMono.className}`}>
         <p>
           At Ink Founder, we understand your book is more than just a manuscript—it’s a reflection of your voice, your vision, and a legacy in the making. That’s why we empower you at every stage of the self-publishing journey.
         </p>

@@ -25,7 +25,7 @@ const WhatYouGet = () => {
         <h3 className="font-semibold text-base text-[16px] md:text-[20px] mb-2 text-black">
           Conventional Publishing
         </h3>
-      <p className={` text-[#444444] text-[12px] md:text-[15px] leading-relaxed ${robotoMono.className}`}>
+      <p className={` text-[#444444] text-[12px] md:text-[15px] leading-loose ${robotoMono.className}`}>
           For authors seeking the credibility of traditional publishing, we offer end-to-end support—from manuscript assessment to professional editing, design, and distribution. Our team ensures a polished, high-standard final product tailored for wide release.
         </p>
       </div>
@@ -41,7 +41,7 @@ const WhatYouGet = () => {
         <h3 className="font-semibold text-base text-[16px] md:text-[20px] mb-2 text-black">
           Self-Publishing
         </h3>
-        <p className={`text-[#444444] text-[12px] md:text-[15px] leading-relaxed ${robotoMono.className}`}>
+        <p className={`text-[#444444] text-[12px] md:text-[15px] leading-loose ${robotoMono.className}`}>
           Break away from traditional publishing constraints and take full control of your book’s journey. Our expert editors, designers, and support team help you transform your manuscript into a professionally crafted, self-published work—on your terms.
         </p>
       </div>
@@ -57,7 +57,7 @@ const WhatYouGet = () => {
         <h3 className="font-semibold text-base text-[16px] md:text-[20px] mb-2 text-black">
           Hybrid Publishing
         </h3>
-        <p className={` text-[#444444] text-[12px] md:text-[15px] leading-relaxed ${robotoMono.className}`}>
+        <p className={` text-[#444444] text-[12px] md:text-[15px] leading-loose ${robotoMono.className}`}>
           Enjoy the best of both worlds—traditional publishing quality with the freedom of self-publishing. Our team collaborates with you to produce a professional book while you retain creative control and ownership.
         </p>
       </div>
@@ -73,7 +73,7 @@ const WhatYouGet = () => {
         <h3 className="font-semibold text-base text-[16px] md:text-[20px] mb-2 text-black">
           E-Book Publishing
         </h3>
-        <p className={` text-[#444444] text-[12px] md:text-[15px] leading-relaxed ${robotoMono.className}`}>
+        <p className={` text-[#444444] text-[12px] md:text-[15px] leading-loose ${robotoMono.className}`}>
         Embrace the digital era and expand your reach with professionally formatted e-books. We ensure compatibility across devices, making your book accessible to readers anytime, anywhere.
         </p>
       </div>
@@ -89,7 +89,7 @@ const WhatYouGet = () => {
         <h3 className="font-semibold text-base text-[16px] md:text-[20px] mb-2 text-black">
           Print-On-Demand Publishing
         </h3>
-        <p className={` text-[#444444] text-[12px] md:text-[15px] leading-relaxed ${robotoMono.className}`}>
+        <p className={` text-[#444444] text-[12px] md:text-[15px] leading-loose ${robotoMono.className}`}>
         Avoid bulk printing and inventory stress—print only what you need, when you need it. Our on-demand service saves costs and space while we handle the logistics, so you can focus on writing and promotion.
         </p>
       </div>
@@ -105,7 +105,7 @@ const WhatYouGet = () => {
         <h3 className="font-semibold text-base text-[16px] md:text-[20px] mb-2 text-black">
           Specialized Publishing
         </h3>
-        <p className={` text-[#444444] text-[12px] md:text-[15px] leading-relaxed ${robotoMono.className}`}>
+        <p className={` text-[#444444] text-[12px] md:text-[15px] leading-loose ${robotoMono.className}`}>
         Customize your publishing journey with services that fit your goals and budget. From editing to marketing, our expert team provides focused support to give your book the attention it deserves.
         </p>
       </div>

@@ -17,7 +17,7 @@ const WhoWeHero = () => {
           </span>
           
         </h1>
-        <p className={`text-gray-700 ${robotoMono.className} text-[12px] md:text-[15px] mb-8 leading-relaxed text-center md:mx-30`}>
+        <p className={`text-gray-700 ${robotoMono.className} text-[12px] md:text-[15px] mb-8 leading-loose text-center md:mx-30`}>
          Dreaming of a bestseller but not quite satisfied with your manuscript? At Ink Founders, we specialize in turning potential into polished perfection. Our expert team is here to refine your work and prepare it for the world.<br/>
          From memoirs to business books and everything in between, we handle every genre with skill and care. With Ink Founders by your side, you&apos;re not just publishing a book—you&apos;re launching a legacy.
         </p>

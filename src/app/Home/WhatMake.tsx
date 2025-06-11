@@ -25,7 +25,7 @@ const WhatMake = () => {
               className="mb-3"
             />
             <h3 className="font-semibold text-base md:text-[18px] mb-2 text-black">Holistic & Transparent Services</h3>
-            <p className={`${robotoMono.className} text-gray-700 text-[14px] leading-relaxed`}>
+            <p className={`${robotoMono.className} text-gray-700 text-[14px] leading-loose`}>
               Ink Founder offers a complete range of digital tools and services–from initial editing to final publication and marketing. With transparent, open communication at every stage, we keep you informed and involved throughout your publishing journey.
             </p>
           </div>
@@ -39,7 +39,7 @@ const WhatMake = () => {
               className="mb-3"
             />
             <h3 className="font-semibold text-base md:text-[18px] mb-2 text-black">Myriad Of Distribution Channels</h3>
-            <p className={`${robotoMono.className} text-gray-700 text-[14px] leading-relaxed`}>
+            <p className={`${robotoMono.className} text-gray-700 text-[14px] leading-loose`}>
               Ink Founder ensures your book gets the spotlight it deserves–across more than 40 distribution platforms, including major retailers like Amazon, Barnes & Noble, Apple Books, IngramSpark, and many more–so you can reach the widest possible audience.
             </p>
           </div>
@@ -53,7 +53,7 @@ const WhatMake = () => {
               className="mb-3"
             />
             <h3 className="font-semibold text-base md:text-[18px] mb-2 text-black">Book Marketing & Author Branding</h3>
-            <p className={`${robotoMono.className} text-gray-700 text-[14px] leading-relaxed`}>
+            <p className={`${robotoMono.className} text-gray-700 text-[14px] leading-loose`}>
               At Ink Founder, we do more than publish your book–we help you build your author brand and provide marketing support to connect with readers and promote your work with impact.
             </p>
           </div>

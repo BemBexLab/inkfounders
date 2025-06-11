@@ -30,7 +30,7 @@ const HowItWork = () => {
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
                   We Connect With Each Other
                 </h3>
-                <p className={`text-[12px] md:text-[15px] text-[#444] ${robotoMono.className} leading-relaxed`}>
+                <p className={`text-[12px] md:text-[15px] text-[#444] ${robotoMono.className} leading-loose`}>
                   We start with a consultation to understand your vision and goals. Share your story, ask questions, and let us tailor a publishing plan just for you.
                 </p>
               </div>
@@ -46,7 +46,7 @@ const HowItWork = () => {
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
                   We Connect With Each Other
                 </h3>
-                <p className={`text-[12px] md:text-[15px] ${robotoMono.className} text-[#444] font-mono leading-relaxed`}>
+                <p className={`text-[12px] md:text-[15px] ${robotoMono.className} text-[#444] font-mono leading-loose`}>
                   We dive into your book’s details—genre, audience, and unique needs—to create a personalized publishing plan that connects with the right readers.
                 </p>
               </div>
@@ -62,7 +62,7 @@ const HowItWork = () => {
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
                   We Handover Your Manuscript To Our Editing Team
                 </h3>
-                <p className={`text-[12px] md:text-[15px] ${robotoMono.className} text-[#444] font-mono leading-relaxed`}>
+                <p className={`text-[12px] md:text-[15px] ${robotoMono.className} text-[#444] font-mono leading-loose`}>
                   Our design team formats your manuscript to meet industry standards, ensuring a clean, professional look across print and digital platforms—inside and out.
                 </p>
               </div>
@@ -78,7 +78,7 @@ const HowItWork = () => {
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
                   We Get The Formatting Done
                 </h3>
-                <p className={`text-[12px] md:text-[15px] ${robotoMono.className} text-[#444] font-mono leading-relaxed`}>
+                <p className={`text-[12px] md:text-[15px] ${robotoMono.className} text-[#444] font-mono leading-loose`}>
                   Our design team formats your manuscript to meet industry standards, ensuring a clean, professional look across print and digital platforms—inside and out.
                 </p>
               </div>
@@ -100,7 +100,7 @@ const HowItWork = () => {
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
                   QA Keeps Everything In Check
                 </h3>
-                <p className={`text-[12px] md:text-[15px] text-[#444] font-mono leading-relaxed ${robotoMono.className}`}>
+                <p className={`text-[12px] md:text-[15px] text-[#444] font-mono leading-loose ${robotoMono.className}`}>
                   Our QA team carefully reviews your book to catch any remaining errors, confirm perfect formatting, and ensure the cover aligns seamlessly with the interior.
                 </p>
               </div>
@@ -116,7 +116,7 @@ const HowItWork = () => {
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
                   We Publish Your Book
                 </h3>
-                <p className={`text-[12px] md:text-[15px] text-[#444] font-mono leading-relaxed ${robotoMono.className}`}>
+                <p className={`text-[12px] md:text-[15px] text-[#444] font-mono leading-loose ${robotoMono.className}`}>
                   With everything finalized, we help you publish your book across major platforms and guide you through ISBN setup—getting your book ready for the global stage.
                 </p>
               </div>
@@ -132,7 +132,7 @@ const HowItWork = () => {
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
                   You Reap The Rewards!
                 </h3>
-                <p className={`text-[12px] md:text-[15px] text-[#444] font-mono leading-relaxed ${robotoMono.className}`}>
+                <p className={`text-[12px] md:text-[15px] text-[#444] font-mono leading-loose ${robotoMono.className}`}>
                   Celebrate your success! You’ll start earning royalties, and we’ll support you with marketing strategies to help your book thrive and reach its full potential.
                 </p>
               </div>

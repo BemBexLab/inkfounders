@@ -23,7 +23,7 @@ export default function AuthorsPublishedSection() {
         <br className="hidden md:block" />
         Be Next With Ink Founders
       </h2>
-      <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[16px] leading-relaxed`}>
+      <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[16px] leading-loose`}>
         <p>
           We’re proud to have helped hundreds of authors bring their books to life—and we’d be honored to help with yours.
         </p>

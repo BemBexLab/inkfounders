@@ -10,7 +10,7 @@ export default function OurMission() {
           <h2 className="text-[27px] font-semibold text-black mb-7">
             Our Mission
           </h2>
-          <div className={`space-y-5 text-[#444444] text-[15px] leading-relaxed mb-10 ${robotoMono.className}`}>
+          <div className={`space-y-5 text-[#444444] text-[15px] leading-loose mb-10 ${robotoMono.className}`}>
             <p>
               At Ink Founders, our mission is to empower individuals and businesses around the world to share their stories through expert writing, publishing, and marketing services.
             </p>

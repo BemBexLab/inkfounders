@@ -103,7 +103,7 @@ const FAQs: React.FC = () => {
               </button>
               {openIndex === idx && (
                 <div
-                  className={`pt-0 pb-7 text-[12px] md:text-[15px] ${robotoMono.className}`}
+                  className={`pt-0 pb-7 text-[12px] md:text-[15px] leading-loose ${robotoMono.className}`}
                   id={`faq-content-${idx}`}
                 >
                   {faq.answer}

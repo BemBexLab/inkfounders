@@ -52,7 +52,7 @@ const HomeHero = () => {
   <br />
   With Ink Founders Publishing
 </h1>
-<p className={`text-gray-700 ${robotoMono.className} text-[15px] mb-8 leading-relaxed text-left md:text-center lg:text-left`}>
+<p className={`text-gray-700 ${robotoMono.className} text-[15px] mb-8 leading-loose text-left md:text-center lg:text-left`}>
   Ink Founders is an independent self-publishing platform dedicated to empowering authors with a full suite of digital services. From idea to publication, we support you at every stage of your self-publishing journey. Let&apos;s bring your book to life—reach out to us today.
 </p>
 <Link href="/contactus">

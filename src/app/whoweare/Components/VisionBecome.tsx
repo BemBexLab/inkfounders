@@ -23,7 +23,7 @@ export default function VisionBecome() {
         <br className="hidden md:block" />
         
       </h2>
-      <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[14px] leading-relaxed`}>
+      <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[14px] leading-loose`}>
         <p>
          At Ink Founders, we’re more than writers, editors, and storytellers—we’re dreamers who bring your ideas to life. We’re passionate about nurturing creativity and transforming your vision into a beautifully crafted reality—whether it&apos;s a book, cover design, audiobook, or beyond.
         </p>

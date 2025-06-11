@@ -12,7 +12,7 @@ export default function RangeOfPublishing() {
       <h2 className="text-2xl md:text-[27px] font-semibold text-black mb-8">
         A Range of Publishing Services
       </h2>
-      <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[13px] leading-relaxed`}>
+      <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[13px] leading-loose`}>
         <p>
           At Ink Founder, we offer a wide array of services—including editing, design, and marketing support—to prepare your book for publication. Every step of the way, we prioritize preserving your unique voice and creative vision.
         </p>

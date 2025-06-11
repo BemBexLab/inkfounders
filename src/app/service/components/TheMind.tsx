@@ -20,7 +20,7 @@ export default function TheMind() {
       <h2 className="text-2xl md:text-[27px] font-semibold text-black mb-8">
         What Makes Our Book Publishing Services Stand Out?
       </h2>
-      <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[16px] leading-relaxed mb-8`}>
+      <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[16px] leading-loose mb-8`}>
         <p>
           From ghostwriting to editing and publishing, we offer end-to-end support tailored to your vision. Whether you need help shaping your story or perfecting your manuscript, our experienced team is here to guide you. At Ink Founders, we’re committed to quality, creativity, and client success—turning your ideas into a professionally published book.
         </p>
@@ -28,7 +28,7 @@ export default function TheMind() {
       <h2 className="text-2xl md:text-[22px] font-normal text-black mb-8">
         Why Authors Choose Us:
       </h2>
-      <ul className={`text-[#444444] ${robotoMono.className} list-disc md:text-15px`}>
+      <ul className={`text-[#444444] ${robotoMono.className} list-disc md:text-15px leading-loose`}>
         <li>Excellence in Every Detail</li>
         <li>On-Time Delivery, Every Time</li>
         <li>Client-Centered Experience</li>

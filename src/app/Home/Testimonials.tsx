@@ -28,7 +28,7 @@ const Testimonials = () => {
               />
             </span>
             {/* Testimonial */}
-            <p className={`text-gray-700 font-mono text-[12px] md:text-[15px] mb-7 mt-8 ${robotoMono.className}`}>
+            <p className={`text-gray-700 font-mono text-[12px] md:text-[15px] mb-7 mt-8 leading-loose ${robotoMono.className}`}>
               At Ink Founder, we don’t just publish your book — we help you promote it. Our team offers strategic guidance on building a strong marketing foundation, from social media...
             </p>
             <div className="border-b border-gray-200 mb-4" />
@@ -58,7 +58,7 @@ const Testimonials = () => {
                 className="object-contain"
               />
             </span>
-            <p className={`text-gray-700 font-mono text-[12px] md:text-[15px] mb-7 mt-8 ${robotoMono.className}`}>
+            <p className={`text-gray-700 font-mono text-[12px] md:text-[15px] mb-7 mt-8 leading-loose ${robotoMono.className}`}>
               At Ink Founder, we don’t just publish your book — we help you promote it. Our team offers strategic guidance on building a strong marketing foundation, from social media...
             </p>
             <div className="border-b border-gray-200 mb-4" />
@@ -87,7 +87,7 @@ const Testimonials = () => {
                 className="object-contain"
               />
             </span>
-            <p className={`text-gray-700 font-mono text-[12px] md:text-[15px] mb-7 mt-8 ${robotoMono.className}`}>
+            <p className={`text-gray-700 font-mono text-[12px] md:text-[15px] mb-7 mt-8 leading-loose ${robotoMono.className}`}>
               At Ink Founder, we don’t just publish your book — we help you promote it. Our team offers strategic guidance on building a strong marketing foundation, from social media...
             </p>
             <div className="border-b border-gray-200 mb-4" />

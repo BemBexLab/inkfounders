@@ -12,7 +12,7 @@ export default function ExportSelfBook() {
       <h2 className="text-2xl md:text-[27px] font-semibold text-black mb-8">
         Use Expert Self-Book Publishing Services To Preserve Your Legacy!
       </h2>
-      <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[13px] leading-relaxed`}>
+      <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[13px] leading-loose`}>
         <p>
           Your book is more than just a story—it embodies your unique voice, experiences, and creativity. At Panda Publishing Agency, we believe every author deserves careful, accurate, and detail-oriented publishing services tailored to their needs and goals.
         </p>

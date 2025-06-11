@@ -25,7 +25,7 @@ const OurApproach = () => {
               className="mb-3"
             />
             <h3 className="font-semibold text-base md:text-[18px] mb-2 text-black">Personalized Support</h3>
-            <p className={`${robotoMono.className} text-gray-700 text-[14px] leading-relaxed`}>
+            <p className={`${robotoMono.className} text-gray-700 text-[14px] leading-loose`}>
               Every author’s journey is unique—we customize our services to match your goals and vision.
             </p>
           </div>
@@ -39,7 +39,7 @@ const OurApproach = () => {
               className="mb-3"
             />
             <h3 className="font-semibold text-base md:text-[18px] mb-2 text-black">Professional Quality</h3>
-            <p className={`${robotoMono.className} text-gray-700 text-[14px] leading-relaxed`}>
+            <p className={`${robotoMono.className} text-gray-700 text-[14px] leading-loose`}>
              We deliver industry-standard editing and design to ensure a polished, publication-ready book.
             </p>
           </div>
@@ -53,7 +53,7 @@ const OurApproach = () => {
               className="mb-3"
             />
             <h3 className="font-semibold text-base md:text-[18px] mb-2 text-black">Creative Collaboration</h3>
-            <p className={`${robotoMono.className} text-gray-700 text-[14px] leading-relaxed`}>
+            <p className={`${robotoMono.className} text-gray-700 text-[14px] leading-loose`}>
               We blend your ideas with our expertise to co-create a compelling and authentic book.
             </p>
           </div>

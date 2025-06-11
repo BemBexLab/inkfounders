@@ -46,13 +46,13 @@ export default function GetInTouch() {
           </h2>
           <h3 className="text-[23px] md:text-[35px] font-semibold mb-6 text-black">Let&#39;s Talk</h3>
 
-          <p className={`text-gray-700 text-[12px] md:text-[15px] mb-8 ${robotoMono.className}`}>
+          <p className={`text-gray-700 text-[12px] md:text-[15px] mb-8 leading-loose ${robotoMono.className}`}>
             Ready to begin your self-publishing journey but still have
             questions? Looking for expert advice to bring your vision to life?
             Ink Founder is here to help.
           </p>
 
-          <p className={`text-gray-700 text-[12px] md:text-[15px] mb-8 ${robotoMono.className}`}>
+          <p className={`text-gray-700 text-[12px] md:text-[15px] mb-8 leading-loose ${robotoMono.className}`}>
             We offer a free consultation where you can share your book concept,
             explore our services in detail, and discover how we can support you
             in turning your manuscript into a published masterpiece. Reach out

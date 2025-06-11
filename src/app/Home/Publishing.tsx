@@ -13,7 +13,7 @@ export default function Publishing() {
           </h2>
         </div>
         {/* Right: Description */}
-        <div className={`md:w-3/5 w-full text-[12px] md:text-[14px] text-gray-700 leading-relaxed ${robotoMono.className}`}>
+        <div className={`md:w-3/5 w-full text-[12px] md:text-[14px] text-gray-700 leading-loose ${robotoMono.className}`}>
           <p className="mb-6">
             At Ink Founders, we understand how overwhelming the self-publishing journey can be—especially for first-time authors eager to see their stories in print. What began as a small circle of literature lovers sharing thoughts on classic and contemporary works has grown into a thriving self-publishing platform. From humble beginnings, Ink Founders has evolved into a team of over 100 industry-vetted professionals dedicated to helping writers turn their passion into published reality.
           </p>
