@@ -52,6 +52,8 @@ export default function Footer() {
   <li><Link href="/ourpublishing"><span className="text-black hover:text-[#DADD39] text-sm">Our Publishing</span></Link></li>
   <li><Link href="/whoweare"><span className="text-black hover:text-[#DADD39] text-sm">Who we are</span></Link></li>
   <li><Link href="/contactus"><span className="text-black hover:text-[#DADD39] text-sm">Contact Us</span></Link></li>
+  <li><Link href="/terms"><span className="text-black hover:text-[#DADD39] text-sm">Terms</span></Link></li>
+  <li><Link href="/privacy"><span className="text-black hover:text-[#DADD39] text-sm">Privacy</span></Link></li>
 </ul>
 
         </div>
