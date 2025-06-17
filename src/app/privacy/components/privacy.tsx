@@ -5,8 +5,7 @@ const PrivacyPolicy = () => {
     <>
       <main className={`w-full max-w-7xl mx-auto px-4 md:px-8 py-10 text-gray-800 ${robotoMono.className} mt-20`}>
         <div className="text-4xl font-bold mb-8 text-center flex justify-center mt-[10px]">
-          <h1 className="text-[#DADD39]">Privacy</h1>
-          <h1 className="text-[#DADD39]">Policy</h1>
+          <h1 className="text-[#DADD39]">Privacy Policy</h1>
         </div>
 
         <section className="mb-10">
