@@ -59,7 +59,7 @@ const TermsAndConditions = () => {
           </p>
           <br />
           <p className="text-black">
-            <span className="font-bold">Additional Clause on Intellectual Property Rights</span>
+            <span className="font-bold">Additional Clause on Intellectual Property Rights</span> <br />
             Upon full payment for services, Ink Founders transfers full ownership of the final deliverables to the client, unless otherwise agreed in writing. Until payment is made in full, Ink Founders retains all intellectual property rights to the work produced.
           </p>
           <br />
