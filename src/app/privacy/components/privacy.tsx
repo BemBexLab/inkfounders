@@ -138,12 +138,12 @@ const PrivacyPolicy = () => {
         <section className="mb-10">
           <h1 className="text-[#DADD39] text-3xl mb-4">8.Contact Information</h1>
           <p className="text-black">
-            If you have any questions, concerns, or requests regarding this Privacy Policy or your personal information, please contact us at:
+            <p>If you have any questions or concerns about these Privacy Policies, please contact us at:</p>
+            <p>Phone:<a href="tel:+12292314003"> +1 (229)-231-4003</a></p>
+            <p>Email:<a href="mailto:info@inkfounders.com"> info@inkfounders.com</a></p>  
+            <br />
+            <p>We are committed to addressing any issues in a timely manner.</p>
           </p>
-          <br />
-          <h1 className="text-[#DADD39] text-3xl mb-4">Ink Founders</h1>
-          <p><a href="tel:+12292314003">+1 (229)-231-4003</a></p>
-          <p><a href="mailto:info@inkfounders.com">info@inkfounders.com</a></p>    
         </section>
 
         <section className="mb-10">
@@ -162,9 +162,9 @@ const PrivacyPolicy = () => {
           
         </section>
 
-        <section className="mb-10">
+        {/* <section className="mb-10">
           <p className=" text-lg">Last Updated Date: 6/17/2025</p>
-        </section>
+        </section> */}
 
        
       </main>

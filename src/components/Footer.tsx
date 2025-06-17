@@ -65,7 +65,7 @@ export default function Footer() {
           </h3>
           <ul className="space-y-2">
             <li><a href="#" className="text-black hover:text-gray-900 text-sm">Book Publishing</a></li>
-            <li><a href="#" className="text-black hover:text-gray-900 text-sm">Book Publishing</a></li>
+            <li><a href="#" className="text-black hover:text-gray-900 text-sm">Ebook Formatting</a></li>
             <li><a href="#" className="text-black hover:text-gray-900 text-sm">Childrens Book</a></li>
             <li><a href="#" className="text-black hover:text-gray-900 text-sm">Book Marketing</a></li>
             <li><a href="#" className="text-black hover:text-gray-900 text-sm">Barnes Noble Publishing</a></li>
