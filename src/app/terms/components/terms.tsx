@@ -180,7 +180,7 @@ const TermsAndConditions = () => {
         <section className="mb-10">
           <h1 className="text-[#DADD39] text-3xl mb-4">13.Governing Law and Dispute Resolution</h1>
           <p className="text-black">
-            These Terms are governed by the laws of the State of Texas, without regard to conflict-of-law principles. In the event of any dispute, the parties agree to attempt mediation before pursuing litigation. Any legal action shall be brought in the state or federal courts of Texas, and the prevailing party shall be entitled to recover reasonable attorneys’ fees and costs.
+            These Terms are governed by the laws of the State of Georgia, without regard to conflict-of-law principles. In the event of any dispute, the parties agree to attempt mediation before pursuing litigation. Any legal action shall be brought in the state or federal courts of Georgia, and the prevailing party shall be entitled to recover reasonable attorneys’ fees and costs.
           </p>
         </section>
 
@@ -197,6 +197,10 @@ const TermsAndConditions = () => {
 
         <section className="mb-10">
           <p className="font-bold text-lg">By continuing to use our website and Services, you acknowledge that you have read, understood, and agreed to these Terms and Conditions.</p>
+        </section>
+
+        <section className="mb-10">
+          <p className=" text-lg">Last Updated Date: 6/17/2025</p>
         </section>
 
        

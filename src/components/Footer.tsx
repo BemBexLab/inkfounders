@@ -85,15 +85,24 @@ export default function Footer() {
               </span>
             </li>
             <li className="flex items-center justify-center md:justify-center lg:justify-start gap-3">
-              <IoMdCall className="w-5 h-5 text-black" />
-              <span className="text-sm text-gray-700">+1 (234) 567-8901</span>
-            </li>
-            <li className="flex items-center justify-center md:justify-center lg:justify-start gap-3">
-              <MdEmail className="w-5 h-5 text-black" />
-              <span className="text-sm text-black">
-                info@inkfounders.com
-              </span>
-            </li>
+  <IoMdCall className="w-5 h-5 text-black" />
+  <a
+    href="tel:+12292314003"
+    className="text-sm text-gray-700 hover:underline focus:outline-none"
+  >
+    +1 (229)-231-4003
+  </a>
+</li>
+<li className="flex items-center justify-center md:justify-center lg:justify-start gap-3">
+  <MdEmail className="w-5 h-5 text-black" />
+  <a
+    href="mailto:info@inkfounders.com"
+    className="text-sm text-black hover:underline focus:outline-none"
+  >
+    info@inkfounders.com
+  </a>
+</li>
+
           </ul>
         </div>
       </div>

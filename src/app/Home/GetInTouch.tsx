@@ -61,22 +61,29 @@ export default function GetInTouch() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
             <div className="flex items-center gap-3">
-              <div className="bg-[#DADD39] rounded-xl p-2 text-white">
-                <IoMdCall size={20} />
-              </div>
-              <span className="text-base text-gray-800 font-medium font-mono">
-                +1 (234) 567-8900
-              </span>
-            </div>
+  <div className="bg-[#DADD39] rounded-xl p-2 text-white">
+    <IoMdCall size={20} />
+  </div>
+  <a
+    href="tel:+12292314003"
+    className="text-base text-gray-800 font-medium font-mono hover:underline focus:outline-none"
+  >
+    +1 (229)-231-4003
+  </a>
+</div>
 
-            <div className="flex items-center gap-3">
-              <div className="bg-[#DADD39] rounded-xl p-2 text-white">
-                <MdEmail size={20} />
-              </div>
-              <span className="text-base text-gray-800 font-medium font-mono">
-                info@inkfounder.com
-              </span>
-            </div>
+<div className="flex items-center gap-3">
+  <div className="bg-[#DADD39] rounded-xl p-2 text-white">
+    <MdEmail size={20} />
+  </div>
+  <a
+    href="mailto:info@inkfounders.com"
+    className="text-base text-gray-800 font-medium font-mono hover:underline focus:outline-none"
+  >
+    info@inkfounders.com
+  </a>
+</div>
+
 
             <div className="flex items-center gap-3">
               <div className="bg-[#DADD39] rounded-xl p-2 text-white">

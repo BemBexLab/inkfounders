@@ -149,7 +149,7 @@ const PrivacyPolicy = () => {
         <section className="mb-10">
           <h1 className="text-[#DADD39] text-3xl mb-4">9.SMS Consent</h1>
           <p className="text-black">
-            <p>By submitting your phone number, you agree to receive SMS and MMS messages from Ink Founders for service-related purposes. These messages may include booking confirmations, appointment reminders, and customer support responses.</p> <br />
+            <p><span className="font-bold">By submitting</span> your phone number, you agree to receive SMS and MMS messages from Ink Founders for service-related purposes. These messages may include booking confirmations, appointment reminders, and customer support responses.</p> <br />
             <p>Message and data rates may apply depending on your mobile provider.</p> <br />
             <p>You may cancel SMS services at any time by replying &quot;STOP&quot; to any message we send. After you send &quot;STOP,&quot; we will confirm your opt-out via SMS. To rejoin, reply &quot;UNSTOP&quot;. </p><br />
             <p>If you require help, reply &quot;HELP&quot; or contact us at <a href="mailto:info@inkfounders.com">info@inkfounders.com</a>.</p>
@@ -160,6 +160,10 @@ const PrivacyPolicy = () => {
           <br />
           <p>Thank you for reviewing our Privacy Policy. By continuing to use our services, you acknowledge that you have read and understood this Policy and agree to its terms. We may update this Privacy Policy from time to time. Please review it periodically for any changes.</p>
           
+        </section>
+
+        <section className="mb-10">
+          <p className=" text-lg">Last Updated Date: 6/17/2025</p>
         </section>
 
        
