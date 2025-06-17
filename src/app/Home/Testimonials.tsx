@@ -64,7 +64,7 @@ const Testimonials = () => {
             <div className="border-b border-gray-200 mb-4" />
             <div className="flex items-center gap-3">
               <Image
-                src="/Home/Frame 66 (1).png"
+                src="/Home/Frame 66 (2).png"
                 alt="Sarita Espiricueta"
                 width={48}
                 height={48}
