@@ -142,7 +142,7 @@ const PrivacyPolicy = () => {
           </p>
           <br />
           <h1 className="text-[#DADD39] text-3xl mb-4">Ink Founders</h1>
-          <p><a href="tel:+12345678901">+1 (234) 567-8901</a></p>
+          <p><a href="tel:+12292314003">+1 (229)-231-4003</a></p>
           <p><a href="mailto:info@inkfounders.com">info@inkfounders.com</a></p>    
         </section>
 

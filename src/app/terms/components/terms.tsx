@@ -18,7 +18,7 @@ const TermsAndConditions = () => {
         <section className="mb-10">
           <h1 className="text-[#DADD39] text-3xl mb-4">2.Changes to Terms</h1>
           <p className="text-black">
-            We may update or modify these Terms at any time. When we do, we will update the “Last Updated” date at the top of this page. It is your responsibility to periodically review these Terms for any changes. Your continued use of the Services following the posting of any changes constitutes acceptance of those changes.
+            We may update or modify these Terms at any time. When we do, we will update the “Last Updated” date at the bottom of this page. It is your responsibility to periodically review these Terms for any changes. Your continued use of the Services following the posting of any changes constitutes acceptance of those changes.
           </p>        
         </section>
 
@@ -188,7 +188,7 @@ const TermsAndConditions = () => {
           <h1 className="text-[#DADD39] text-3xl mb-4">14.Contact Information</h1>
           <p className="text-black">
             <p>If you have any questions or concerns about these Terms, please contact us at:</p>
-            <p>Phone:<a href="tel:+12345678901"> +1 (234) 567-8901</a></p>
+            <p>Phone:<a href="tel:+12292314003"> +1 (229)-231-4003</a></p>
             <p>Email:<a href="mailto:info@inkfounders.com"> info@inkfounders.com</a></p>  
             <br />
             <p>We are committed to addressing any issues in a timely manner.</p>
