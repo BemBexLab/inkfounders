@@ -81,7 +81,7 @@ export default function Footer() {
             <li className="flex items-center justify-center md:justify-center lg:justify-start gap-3">
               <FaLocationDot className="w-5 h-5 text-black" />
               <span className="text-sm text-black">
-                123 Main Street, City, Country
+                1014 Garner Rd SW, Lilburn,GA 30047, USA
               </span>
             </li>
             <li className="flex items-center justify-center md:justify-center lg:justify-start gap-3">

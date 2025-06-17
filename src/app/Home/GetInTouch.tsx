@@ -90,7 +90,7 @@ export default function GetInTouch() {
                 <FaLocationDot size={20} />
               </div>
               <span className="text-base text-gray-800 font-medium font-mono">
-                123 Book Lane, NY, USA
+                1014 Garner Rd SW, Lilburn,GA 30047, USA
               </span>
             </div>
           </div>
