@@ -188,7 +188,7 @@ const TermsAndConditions = () => {
           <h1 className="text-[#DADD39] text-3xl mb-4">14.Contact Information</h1>
           <p className="text-black">
             <p>If you have any questions or concerns about these Terms, please contact us at:</p>
-            <p>Phone:<a href="tel:+12292314003"> +1 (229)-231-4003</a></p>
+            <p>Phone:<a href="tel:+17862899498"> +1 (786) 289-9498</a></p>
             <p>Email:<a href="mailto:info@inkfounders.com"> info@inkfounders.com</a></p>  
             <br />
             <p>We are committed to addressing any issues in a timely manner.</p>
