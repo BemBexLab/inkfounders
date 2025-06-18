@@ -1,4 +1,4 @@
-import { robotoMono } from "@/app/fonts";
+// import { robotoMono } from "@/app/fonts";
 import Image from "next/image";
 
 const BOOKS = [
@@ -138,14 +138,14 @@ const BookGallery = () => (
           {/* Author */}
           <span className="text-[15px] text-[#444] mb-2 block">{book.author}</span>
           {/* Release and Genre */}
-          <div className={`text-[13px] text-[#8A8A8A] mb-3 leading-tight  ${robotoMono.className} border-t-[1px] border-b-[1px] border-gray-200`}>
+          {/* <div className={`text-[13px] text-[#8A8A8A] mb-3 leading-tight  ${robotoMono.className} border-t-[1px] border-b-[1px] border-gray-200`}>
             Released: <span className="">{book.date}</span><br />
             Genre: <span className="">{book.genre}</span>
-          </div>
+          </div> */}
           {/* Button */}
-          <button className="bg-[#DADD39] text-black font-medium rounded-md px-6 py-2 text-[15px] shadow-none transition hover:bg-transparent hover:border hover:border-black">
+          {/* <button className="bg-[#DADD39] text-black font-medium rounded-md px-6 py-2 text-[15px] shadow-none transition hover:bg-transparent hover:border hover:border-black">
             Buy Now
-          </button>
+          </button> */}
         </div>
       ))}
     </div>
