@@ -81,16 +81,16 @@ export default function Footer() {
             <li className="flex items-center justify-center md:justify-center lg:justify-start gap-3">
               <FaLocationDot className="w-5 h-5 text-black" />
               <span className="text-sm text-black">
-                1014 Garner Rd SW, Lilburn,GA 30047, USA
+                1680 Michigan Ave 700 326 Miami Beach, FL 33139, USA
               </span>
             </li>
             <li className="flex items-center justify-center md:justify-center lg:justify-start gap-3">
   <IoMdCall className="w-5 h-5 text-black" />
   <a
-    href="tel:+12292314003"
+    href="tel:+17862899498"
     className="text-sm text-gray-700 hover:underline focus:outline-none"
   >
-    +1 (229)-231-4003
+    +1 (786) 289-9498
   </a>
 </li>
 <li className="flex items-center justify-center md:justify-center lg:justify-start gap-3">

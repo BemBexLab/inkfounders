@@ -65,10 +65,10 @@ export default function GetInTouch() {
     <IoMdCall size={20} />
   </div>
   <a
-    href="tel:+12292314003"
+    href="tel:+17862899498"
     className="text-base text-gray-800 font-medium font-mono hover:underline focus:outline-none"
   >
-    +1 (229)-231-4003
+    +1 (786) 289-9498
   </a>
 </div>
 
@@ -90,7 +90,7 @@ export default function GetInTouch() {
                 <FaLocationDot size={20} />
               </div>
               <span className="text-base text-gray-800 font-medium font-mono">
-                1014 Garner Rd SW, Lilburn,GA 30047, USA
+                1680 Michigan Ave 700 326 Miami Beach, FL 33139, USA
               </span>
             </div>
           </div>
