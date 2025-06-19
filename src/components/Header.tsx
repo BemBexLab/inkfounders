@@ -69,7 +69,7 @@ export default function Header() {
         <div className="flex items-center gap-2 ml-2 md:ml-6">
           <Image
             src="/Header/inkfounder.png"
-            alt="Bembex Logo"
+            alt="Ink Founders Logo"
             width={130}
             height={50}
           />
