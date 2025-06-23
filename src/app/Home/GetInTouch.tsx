@@ -1,7 +1,6 @@
 "use client";
 
 import type React from "react";
-
 import { useState } from "react";
 import { Check } from "lucide-react";
 import { IoMdCall } from "react-icons/io";
@@ -9,8 +8,17 @@ import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { robotoMono } from "../fonts";
 
+type FormData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  message: string;
+  consent: boolean;
+};
+
 export default function GetInTouch() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
     email: "",
@@ -18,6 +26,10 @@ export default function GetInTouch() {
     message: "",
     consent: false,
   });
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -30,14 +42,54 @@ export default function GetInTouch() {
     setFormData((prev) => ({ ...prev, consent: e.target.checked }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Add your form submission logic here
+    setLoading(true);
+    setSuccess(null);
+    setError(null);
+
+    if (!formData.consent) {
+      setError("Please provide consent to communicate.");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSuccess("Thank you! Your message has been received.");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+          consent: false,
+        });
+      } else {
+        const result = await response.json();
+        setError(result.error || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Network error. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="w-full  md:py-12 px-4 md:px-8 lg:px-12">
+    <div className="w-full md:py-12 px-4 md:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-16">
         {/* Left Column */}
         <div className="flex-1">
@@ -61,30 +113,27 @@ export default function GetInTouch() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
             <div className="flex items-center gap-3">
-  <div className="bg-[#DADD39] rounded-xl p-2 text-white">
-    <IoMdCall size={20} />
-  </div>
-  <a
-    href="tel:+17862899498"
-    className="text-base text-gray-800 font-medium font-mono hover:underline focus:outline-none"
-  >
-    +1 (786) 289-9498
-  </a>
-</div>
-
-<div className="flex items-center gap-3">
-  <div className="bg-[#DADD39] rounded-xl p-2 text-white">
-    <MdEmail size={20} />
-  </div>
-  <a
-    href="mailto:info@inkfounders.com"
-    className="text-base text-gray-800 font-medium font-mono hover:underline focus:outline-none"
-  >
-    info@inkfounders.com
-  </a>
-</div>
-
-
+              <div className="bg-[#DADD39] rounded-xl p-2 text-white">
+                <IoMdCall size={20} />
+              </div>
+              <a
+                href="tel:+17862899498"
+                className="text-base text-gray-800 font-medium font-mono hover:underline focus:outline-none"
+              >
+                +1 (786) 289-9498
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="bg-[#DADD39] rounded-xl p-2 text-white">
+                <MdEmail size={20} />
+              </div>
+              <a
+                href="mailto:info@inkfounders.com"
+                className="text-base text-gray-800 font-medium font-mono hover:underline focus:outline-none"
+              >
+                info@inkfounders.com
+              </a>
+            </div>
             <div className="flex items-center gap-3">
               <div className="bg-[#DADD39] rounded-xl p-2 text-white">
                 <FaLocationDot size={20} />
@@ -111,6 +160,7 @@ export default function GetInTouch() {
                 onChange={handleChange}
                 placeholder="First name"
                 className="bg-[#EDECDA] text-[#9D9F9D] p-3 rounded-md border border-gray-200 focus:outline-none focus:border-[#d4d450]"
+                required
               />
               <input
                 type="text"
@@ -119,6 +169,7 @@ export default function GetInTouch() {
                 onChange={handleChange}
                 placeholder="Last Name"
                 className="bg-[#EDECDA] text-[#9D9F9D] p-3 rounded-md border border-gray-200 focus:outline-none focus:border-[#d4d450]"
+                required
               />
             </div>
 
@@ -130,6 +181,7 @@ export default function GetInTouch() {
                 onChange={handleChange}
                 placeholder="Email"
                 className="bg-[#EDECDA] text-[#9D9F9D] p-3 rounded-md border border-gray-200 focus:outline-none focus:border-[#d4d450]"
+                required
               />
               <input
                 type="tel"
@@ -138,6 +190,7 @@ export default function GetInTouch() {
                 onChange={handleChange}
                 placeholder="Phone number"
                 className="bg-[#EDECDA] text-[#9D9F9D] p-3 rounded-md border border-gray-200 focus:outline-none focus:border-[#d4d450]"
+                required
               />
             </div>
 
@@ -148,56 +201,62 @@ export default function GetInTouch() {
               placeholder="Message"
               rows={4}
               className="w-full bg-[#EDECDA] text-[#9D9F9D] p-3 rounded-md border border-gray-200 focus:outline-none focus:border-[#d4d450] mb-4"
+              required
             />
 
+            {/* Custom Checkbox with Label */}
             <div className="flex items-start gap-2 mb-6">
-              <div className="mt-1">
-                <div
-                  className={`w-5 h-5 border ${
-                    formData.consent
-                      ? "bg-[#d4d450] border-[#d4d450]"
-                      : "border-gray-300"
-                  } rounded flex items-center justify-center`}
-                >
-                  {formData.consent && (
-                    <Check size={16} className="text-white" />
-                  )}
-                </div>
-                <input
-                  type="checkbox"
-                  name="consent"
-                  checked={formData.consent}
-                  onChange={handleCheckboxChange}
-                  className="sr-only"
-                />
-              </div>
-              <label className={`text-xs text-gray-600 ${robotoMono.className}`}>
-                Please check the box to communicate via SMS or Email (Terms &
-                Conditions & Privacy Policy) - Carrier charges may apply for
-                SMS. Reply STOP or UNSUBSCRIBE to STOP to unsubscribe anytime
+              <label className="flex items-start gap-2 cursor-pointer select-none">
+                <span className="mt-1">
+                  <span
+                    className={`w-5 h-5 border ${
+                      formData.consent
+                        ? "bg-[#d4d450] border-[#d4d450]"
+                        : "border-gray-300"
+                    } rounded flex items-center justify-center transition-colors duration-150`}
+                  >
+                    {formData.consent && <Check size={16} className="text-white" />}
+                  </span>
+                  <input
+                    type="checkbox"
+                    name="consent"
+                    checked={formData.consent}
+                    onChange={handleCheckboxChange}
+                    className="sr-only"
+                    required
+                  />
+                </span>
+                <span className={`text-xs text-gray-600 ${robotoMono.className}`}>
+                  Please check the box to communicate via SMS or Email (Terms &
+                  Conditions & Privacy Policy) - Carrier charges may apply for SMS.
+                  Reply STOP or UNSUBSCRIBE to STOP to unsubscribe anytime
+                </span>
               </label>
             </div>
 
             <button
-  type="submit"
-  className="
-    bg-[#DADD39] 
-    text-gray-800 
-    font-medium 
-    py-1.5 px-4 text-sm
-    md:py-2 md:px-6 md:text-base
-    rounded-md 
-    transition 
-    hover:bg-transparent 
-    hover:border-[1px] 
-    hover:border-black 
-    border-[1px] 
-    border-[#DADD39]
-  "
->
-  Let&apos;s Get Started
-</button>
-
+              type="submit"
+              className="
+                bg-[#DADD39] 
+                text-gray-800 
+                font-medium 
+                py-1.5 px-4 text-sm
+                md:py-2 md:px-6 md:text-base
+                rounded-md 
+                transition 
+                hover:bg-transparent 
+                hover:border-[1px] 
+                hover:border-black 
+                border-[1px] 
+                border-[#DADD39]
+              "
+              disabled={loading}
+            >
+              {loading ? "Sending..." : "Let's Get Started"}
+            </button>
+            {/* Success/Error messages */}
+            {success && <div className="text-green-600 mt-4">{success}</div>}
+            {error && <div className="text-red-600 mt-4">{error}</div>}
           </form>
         </div>
       </div>
