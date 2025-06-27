@@ -63,9 +63,9 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 w-full z-50 bg-transparent px-4 md:px-20 py-8 flex justify-between items-center">
+    <header className="absolute top-0 left-0 w-full z-50 bg-transparent px-4 md:px-20 py-8 flex justify-between items-center ">
       {/* 🔰 Logo */}
-      <Link href='/'>
+      <Link href="/">
         <div className="flex items-center gap-2 ml-2 md:ml-6">
           <Image
             src="/Header/inkfounder.png"
@@ -164,9 +164,13 @@ export default function Header() {
           </ul>
 
           {/* Mobile CTA */}
-          <button className="mt-8 rounded-full px-6 py-3 border border-[#DADD39] text-black bg-[#DADD39] transition hover:bg-transparent hover:border-black font-semibold">
+          <Link
+            href="/contactus"
+            onClick={() => setMenuOpen(false)}
+            className="mt-8 rounded-full px-6 py-3 border border-[#DADD39] text-black bg-[#DADD39] transition hover:bg-transparent hover:border-black font-semibold block text-center"
+          >
             Book a call →
-          </button>
+          </Link>
         </div>
       )}
     </header>
