@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
 
   const mailOptions = {
     from: `"Website Contact" <${process.env.SMTP_USER}>`,
-    to: "kfaran420@gmail.com",
+    to: "marketer@inkfounders.com",
     subject: "New Contact Form Submission",
     html: `
       <h2>New Message from InkFounders Contact Form</h2>
