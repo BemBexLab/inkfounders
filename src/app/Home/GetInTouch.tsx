@@ -234,26 +234,31 @@ export default function GetInTouch() {
               </label>
             </div>
 
-            <button
-              type="submit"
-              className="
-                bg-[#DADD39] 
-                text-gray-800 
-                font-medium 
-                py-1.5 px-4 text-sm
-                md:py-2 md:px-6 md:text-base
-                rounded-md 
-                transition 
-                hover:bg-transparent 
-                hover:border-[1px] 
-                hover:border-black 
-                border-[1px] 
-                border-[#DADD39]
-              "
-              disabled={loading}
-            >
-              {loading ? "Sending..." : "Let's Get Started"}
-            </button>
+           <button
+  type="submit"
+  className={`
+    btn-slide-bg
+    bg-[#DADD39] 
+    text-gray-800 
+    font-medium 
+    py-1.5 px-4 text-sm
+    md:py-2 md:px-6 md:text-base
+    rounded-md 
+    border-[1px] border-[#DADD39]
+    transition-all duration-300
+    overflow-hidden
+    hover:border-black
+  `}
+  disabled={loading}
+>
+  {/* Sliding background */}
+  <span className="slide-bg"></span>
+  {/* Text content stays above the background */}
+  <span className="relative z-10">
+    {loading ? "Sending..." : "Let's Get Started"}
+  </span>
+</button>
+
             {/* Success/Error messages */}
             {success && <div className="text-green-600 mt-4">{success}</div>}
             {error && <div className="text-red-600 mt-4">{error}</div>}

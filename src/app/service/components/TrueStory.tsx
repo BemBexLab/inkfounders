@@ -20,21 +20,26 @@ export default function TrueStory() {
    {/* Get a Quote */}
 <Link href="/contactus">
   <button
+    type="button"
     className="
+      btn-slide-bg
       bg-[#DADD39] 
       text-black 
       font-medium 
       rounded-[10px] 
       px-5 py-2 text-base
       md:px-8 md:py-3 md:text-lg
-      transition hover:bg-transparent hover:border-[1px] hover:border-black
+      border border-[#DADD39]
+      transition-all duration-300
       shadow-none
+      hover:border-black
     "
-    type="button"
   >
-    Get a Quote
+    <span className="slide-bg rounded-[10px]"></span>
+    <span className="relative z-10">Get a Quote</span>
   </button>
 </Link>
+
 
 {/* Live Chat */}
 <Link href="/contactus">

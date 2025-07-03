@@ -22,19 +22,26 @@ const ServiceHero = () => {
         </p>
         <Link href="/contactus">
   <button
+    type="button"
     className="
+      btn-slide-bg
       flex items-center gap-2 
       border-[1px] border-[#DADD39] bg-[#DADD39] text-black font-normal 
       px-3 py-1 text-sm rounded-md shadow self-center 
-      transition hover:bg-transparent hover:border-black
-      md:px-5 md:py-2 md:text-base
+      transition-all duration-300
+      md:px-5 md:py-2 md:text-base hover:border-black
     "
-    type="button"
   >
-    <IoMdCall size={18} className="md:w-5 md:h-5 w-4 h-4" />
-    Request a Call
+    {/* Sliding background */}
+    <span className="slide-bg"></span>
+    {/* Icon and text above the effect */}
+    <span className="relative z-10 flex items-center gap-2">
+      <IoMdCall size={18} className="md:w-5 md:h-5 w-4 h-4" />
+      Request a Call
+    </span>
   </button>
 </Link>
+
 
       </div>
     </div>

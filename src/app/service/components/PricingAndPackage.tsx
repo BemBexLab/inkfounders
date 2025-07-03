@@ -1,12 +1,13 @@
 import { robotoMono } from '@/app/fonts'
 import { FaCheckCircle } from "react-icons/fa";
 import React from 'react'
+import Link from "next/link";
 
 const PACKAGES = [
   {
     label: "Smart Self-Publishing Plan for Amazon",
     price: "$499",
-    oldPrice: "$399",
+    oldPrice: "$799",
     included: [
       "Amazon Author Central setup",
       "Outline creation or revision",
@@ -27,7 +28,7 @@ const PACKAGES = [
   {
     label: "Smart Self-Publishing Plan for Amazon",
     price: "$699",
-    oldPrice: "$499",
+    oldPrice: "$999",
     included: [
       "Author profile setup on major platforms",
       "Book outline creation or revision",
@@ -119,23 +120,29 @@ const PricingAndPackage = () => {
                   ))}
                 </ul>
               </div>
-              {/* Custom Quote button */}
-              <button
-                className="
-                  mt-auto self-start
-                  bg-[#DADD39]
-                  text-black 
-                  font-medium 
-                  rounded-[5px]
-                  md:rounded-[10px] 
-                  px-3 py-1 text-sm
-                  md:px-5 md:py-2 md:text-base
-                  transition hover:bg-transparent hover:border-[1px] hover:border-black
-                  shadow-none
-                "
-              >
-                Custom Quote
-              </button>
+              <Link href="/contactus"
+    className="
+      btn-slide-bg
+      mt-auto self-start
+      bg-[#DADD39]
+      text-black 
+      font-medium 
+      rounded-[5px]
+      md:rounded-[10px] 
+      px-3 py-1 text-sm
+      md:px-5 md:py-2 md:text-base
+      border-[1px] border-[#DADD39]
+      transition-all duration-300
+      shadow-none
+      hover:border-black
+    "
+  >
+    {/* Sliding background */}
+    <span className="slide-bg"></span>
+    {/* Button text above the sliding background */}
+    <span className="relative z-10">Custom Quote</span>
+
+</Link>
             </div>
           ))}
         </div>

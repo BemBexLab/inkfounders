@@ -24,3 +24,64 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.btn-slide-bg {
+  position: relative;
+  overflow: hidden;
+}
+.btn-slide-bg .slide-bg {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 100%;
+  background: #F4F3E1;
+  z-index: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.btn-slide-bg:hover .slide-bg {
+  transform: scaleX(1);
+}
+
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0.2;
+    transform: translateX(-90px) scale(0.98);
+  }
+  80% {
+    opacity: 0.95;
+    transform: translateX(7px) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+}
+.animate-slide-in-left {
+  animation: slide-in-left 650ms cubic-bezier(0.68,0,-0.27,1.01) forwards;
+}
+
+
+/* styles/globals.css */
+
+/* Keyframes for the shake animation */
+@keyframes shake-pause {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  5%, 15%, 25%, 35% {
+    transform: translateX(-8px);
+  }
+  10%, 20%, 30%, 40% {
+    transform: translateX(8px);
+  }
+  41%, 100% {
+    transform: translateX(0);
+  }
+}
+
+/* Applying the shake animation */
+.shake-pause {
+  animation: shake-pause 2s cubic-bezier(.36,.07,.19,.97) infinite;
+}
