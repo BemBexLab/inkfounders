@@ -14,7 +14,7 @@ const Testimonials = () => {
           <span className="text-[#DADD39]">Read Testimonials From Our Happy Customers</span>
         </h2>
         {/* 3 columns */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4 mb-8">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-4 mb-8">
           {/* Card 1 */}
           <div className="bg-[#F6F5F3] rounded-xl shadow-none border border-gray-200 flex flex-col px-8 pt-8 pb-6 min-h-[350px] relative">
             {/* Yellow Circle with Image */}

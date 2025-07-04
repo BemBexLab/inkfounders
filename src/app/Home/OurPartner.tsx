@@ -4,22 +4,23 @@ import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 
 const partners = [
-  { src: "/Home/siliding/logo1.png", alt: "Lulu Logo", width: 54, height: 54 },
-  { src: "/Home/siliding/logo2.png", alt: "Macmillan Logo", width: 134, height: 54 },
-  { src: "/Home/siliding/logo3.png", alt: "Penguin Random House Logo", width: 100, height: 54 },
-  { src: "/Home/siliding/logo4.png", alt: "Scribd Logo", width: 100, height: 54 },
-  { src: "/Home/siliding/logo5.png", alt: "Smashwords Logo", width: 150, height: 54 },
-  { src: "/Home/siliding/logo6.png", alt: "New York Times Logo", width: 50, height: 54 },
-  { src: "/Home/siliding/logo7.png", alt: "D2D Logo", width: 54, height: 54 },
-  { src: "/Home/siliding/logo8.png", alt: "AbeBooks Logo", width: 90, height: 64 },
-  { src: "/Home/siliding/logo9.png", alt: "Alibris Logo", width: 164, height: 60 },
-  { src: "/Home/siliding/logo10.png", alt: "Alibris Logo", width: 174, height: 60 },
-  { src: "/Home/siliding/logo11.png", alt: "Alibris Logo", width: 84, height: 54 },
-  { src: "/Home/siliding/logo12.png", alt: "Alibris Logo", width: 150, height: 64 },
-  { src: "/Home/siliding/logo13.png", alt: "Alibris Logo", width: 190, height: 64 },
-  { src: "/Home/siliding/logo14.png", alt: "Alibris Logo", width: 120, height: 54 },
-  { src: "/Home/siliding/logo15.png", alt: "Alibris Logo", width: 150, height: 54 },
-  { src: "/Home/siliding/logo16.png", alt: "Alibris Logo", width: 180, height: 54 },
+  { src: "/Home/sliding/logo01.png", alt: "Lulu Logo", width: 54, height: 54 },
+  { src: "/Home/sliding/logo02.png", alt: "Macmillan Logo", width: 134, height: 54 },
+  { src: "/Home/sliding/logo03.png", alt: "Penguin Random House Logo", width: 100, height: 54 },
+  { src: "/Home/sliding/logo04.png", alt: "Scribd Logo", width: 100, height: 54 },
+  { src: "/Home/sliding/logo05.png", alt: "Smashwords Logo", width: 150, height: 54 },
+  { src: "/Home/sliding/logo06.png", alt: "New York Times Logo", width: 50, height: 54 },
+  { src: "/Home/sliding/logo07.png", alt: "D2D Logo", width: 54, height: 54 },
+  { src: "/Home/sliding/logo08.png", alt: "AbeBooks Logo", width: 90, height: 64 },
+  { src: "/Home/sliding/logo09.png", alt: "Alibris Logo", width: 190, height: 64 },
+  { src: "/Home/sliding/logo10.png", alt: "A", width: 120, height: 54 },
+  { src: "/Home/sliding/logo11.png", alt: "Al", width: 150, height: 54 },
+  { src: "/Home/sliding/logo12.png", alt: "Alibris ", width: 180, height: 54 },
+  { src: "/Home/sliding/logo13.png", alt: "A", width: 120, height: 54 },
+  { src: "/Home/sliding/logo14.png", alt: "Al", width: 150, height: 54 },
+  { src: "/Home/sliding/logo15.png", alt: "Alibris ", width: 180, height: 54 },
+  { src: "/Home/sliding/logo16.png", alt: "Alibris ", width: 180, height: 54 },
+
 ];
 
 export default function PartnersSection() {

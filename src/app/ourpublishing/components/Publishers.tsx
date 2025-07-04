@@ -22,9 +22,9 @@ const AUTHORS = [
     book: "Fern Valley Ventures: Volume 1",
   },
   {
-    name: "Kenneth G Allen Jr.",
-    photo: "/ourpublishers/Rectangle 10 (6).png", // blank for placeholder
-    book: "Singing the Winn/Dixie Blues and other Short Stories",
+    name: "Jack CartwrightJack",
+    photo: "/ourpublishers/8c3kdpse8aad2e1pak0pe7sib._SY600_.jpg", // blank for placeholder
+    book: "Deadly Little Secret/The Harder They Fall and other",
   },
   {
     name: "Ana Jorda",
@@ -37,6 +37,9 @@ const placeholder = "/authors/placeholder.png"; // Use a default placeholder ima
 
 const Publishers = () => (
   <section className="w-full my-[100px] flex flex-col items-center">
+    <div>
+      <h1 className="text-black text-lg md:text-xl font-semibold mb-20">Meet Our Publising Partners</h1>
+    </div>
     <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-2">
       {AUTHORS.map((author, idx) => (
         <div
@@ -56,7 +59,7 @@ const Publishers = () => (
                 alt={author.name}
                 width={250}
                 height={250}
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full rounded-md"
               />
             ) : (
               <Image

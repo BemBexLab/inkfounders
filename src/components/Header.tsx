@@ -8,7 +8,6 @@ import {
   FaHome,
   FaCog,
   FaBook,
-  FaUpload,
   FaInfoCircle,
   FaUserCircle,
   FaTimes,
@@ -19,7 +18,6 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/service" },
   { label: "Our Book", href: "/ourbook" },
-  { label: "Our Publishing", href: "/ourpublishing" },
   { label: "Who we are", href: "/whoweare" },
   { label: "Contact Us", href: "/contactus" },
 ];
@@ -39,11 +37,6 @@ const navItemsMobile = [
     label: "Our Book",
     href: "/ourbook",
     icon: <FaBook size={22} />,
-  },
-  {
-    label: "Our Publishing",
-    href: "/ourpublishing",
-    icon: <FaUpload size={20} />,
   },
   {
     label: "Who we are",
