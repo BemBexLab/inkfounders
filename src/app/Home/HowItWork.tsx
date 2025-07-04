@@ -18,7 +18,7 @@ const HowItWork = () => {
           {/* Left column: steps 1-4 */}
           <div className="flex flex-col relative gap-17">
             {/* Vertical line (behind circles) */}
-            <div className="absolute left-5 top-7 bottom-15 w-[1px] bg-[#DADD39] opacity-40 z-0" />
+            <div className="absolute left-5 top-7 bottom-32 w-[2px] bg-[#DADD39] opacity-40 z-0" />
             {/* Step 1 */}
             <div className="flex items-start relative z-10 mb-8">
               <div className="flex flex-col items-center mr-4">
@@ -88,7 +88,7 @@ const HowItWork = () => {
           {/* Right column: steps 5-7 */}
           <div className="flex flex-col relative mt-0 gap-17">
             {/* Vertical line (behind circles) */}
-            <div className="absolute left-5 top-7 bottom-15 w-[1px] bg-[#DADD39] z-0" />
+            <div className="absolute left-5 top-7 bottom-32 w-[2px] bg-[#DADD39] opacity-40 z-0" />
             {/* Step 5 */}
             <div className="flex items-start relative z-10 mb-8">
               <div className="flex flex-col items-center mr-4">

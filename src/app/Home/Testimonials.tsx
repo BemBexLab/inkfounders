@@ -29,7 +29,7 @@ const Testimonials = () => {
             </span>
             {/* Testimonial */}
             <p className={`text-gray-700 font-mono text-[12px] md:text-[15px] mb-7 mt-8 leading-loose ${robotoMono.className}`}>
-              At Ink Founder, we don’t just publish your book — we help you promote it. Our team offers strategic guidance on building a strong marketing foundation, from social media...
+              Ink Founder didn’t just publish my book — they helped me promote it too. Their team gave me great advice on building my marketing from the ground up, including social media...
             </p>
             <div className="border-b border-gray-200 mb-4" />
             {/* Profile */}
@@ -59,7 +59,7 @@ const Testimonials = () => {
               />
             </span>
             <p className={`text-gray-700 font-mono text-[12px] md:text-[15px] mb-7 mt-8 leading-loose ${robotoMono.className}`}>
-              At Ink Founder, we don’t just publish your book — we help you promote it. Our team offers strategic guidance on building a strong marketing foundation, from social media...
+              Ink Founder made the whole process easy for me. They not only published my book but also showed me how to market it, build my brand, and reach the right readers for real results
             </p>
             <div className="border-b border-gray-200 mb-4" />
             <div className="flex items-center gap-3">
@@ -88,7 +88,7 @@ const Testimonials = () => {
               />
             </span>
             <p className={`text-gray-700 font-mono text-[12px] md:text-[15px] mb-7 mt-8 leading-loose ${robotoMono.className}`}>
-              At Ink Founder, we don’t just publish your book — we help you promote it. Our team offers strategic guidance on building a strong marketing foundation, from social media...
+              Thanks to Ink Founder, my book launch was a smooth experience. They helped me every step of the way—from publishing and promotion to building my author brand and connecting with new fans
             </p>
             <div className="border-b border-gray-200 mb-4" />
             <div className="flex items-center gap-3">
