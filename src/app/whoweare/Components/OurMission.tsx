@@ -46,7 +46,7 @@ export default function OurMission() {
             alt="Book Covers"
             width={450} // set this to your image’s actual width
             height={450} // set this to your image’s actual height
-            className="rounded-lg object-contain"
+            className="rounded-lg object-contain "
             priority
           />
         </div>

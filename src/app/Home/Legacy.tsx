@@ -38,7 +38,7 @@ export default function Lagacy() {
         alt="Book Cover"
         width={740}
         height={740}
-        className=""
+        className="transition-transform transform hover:scale-105 hover:translate-x-2 hover:translate-y-2 hover:rotate-3"
         priority
       />
     </div>

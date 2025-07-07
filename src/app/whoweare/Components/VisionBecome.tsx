@@ -12,7 +12,7 @@ export default function VisionBecome() {
         alt="Book Cover"
         width={540}
         height={540}
-        className=""
+        className="transition-transform transform hover:scale-105 hover:translate-x-2 hover:translate-y-2 hover:rotate-3"
         priority
       />
     </div>

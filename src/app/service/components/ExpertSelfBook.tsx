@@ -32,7 +32,7 @@ export default function ExportSelfBook() {
         alt="Book Cover"
         width={440}
         height={440}
-        className=""
+        className="transition-transform transform hover:scale-105 hover:translate-x-2 hover:translate-y-2 hover:rotate-3"
         priority
       />
     </div>
