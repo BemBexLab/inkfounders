@@ -20,9 +20,9 @@ const WhatSet = () => {
 </div>
 
         {/* 3 columns */}
-        <div data-aos="fade-down-right" className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
           {/* 1. Holistic & Transparent Services */}
-          <div className="flex flex-col items-center text-center px-4">
+          <div data-aos="fade-down-right" className="flex flex-col items-center text-center px-4">
             <Image
               src="/whoweare/Mask group (10).png" // update with your actual filename
               alt="Holistic & Transparent Services"
@@ -33,7 +33,7 @@ const WhatSet = () => {
             <h3 className="font-semibold text-base md:text-[18px] mb-2 text-black">100% original, <br /> custom-written content</h3>
           </div>
           {/* 2. Myriad Of Distribution Channels */}
-          <div className="flex flex-col items-center text-center px-4">
+          <div data-aos="fade-down-right" className="flex flex-col items-center text-center px-4">
             <Image
               src="/whoweare/Mask group (11).png" // update with your actual filename
               alt="Myriad Of Distribution Channels"
@@ -44,7 +44,7 @@ const WhatSet = () => {
             <h3 className="font-semibold text-base md:text-[18px] mb-2 text-black">A professional team of<br /> seasoned ghostwriters</h3>
           </div>
           {/* 3. Book Marketing & Author Branding */}
-          <div className="flex flex-col items-center text-center px-4">
+          <div data-aos="fade-down-right" className="flex flex-col items-center text-center px-4">
             <Image
               src="/whoweare/Mask group (12).png" // update with your actual filename
               alt="Book Marketing & Author Branding"

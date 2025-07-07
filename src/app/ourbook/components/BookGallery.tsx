@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import { useState } from "react";
+import AOSProvider from "@/components/AOSProvider";
 
 // Add "Fiction" to tags if you want them to show under Fiction filter.
 const BOOKS = [
@@ -145,7 +146,8 @@ const BookGallery = () => {
       : BOOKS.filter((book) => book.tags?.includes(activeFilter));
 
   return (
-    <section className="w-full py-12 bg-[#F6F5F3] flex flex-col items-center">
+    <AOSProvider>
+      <section className="w-full py-12 bg-[#F6F5F3] flex flex-col items-center">
       {/* Filter Buttons */}
       <div className="mb-10 flex flex-wrap gap-2 mt-0 justify-center w-full">
         {FILTERS.map((filter) => (
@@ -171,7 +173,7 @@ const BookGallery = () => {
       {/* Cards Grid */}
       <div className="w-full max-w-[1280px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-24 gap-x-0">
         {filteredBooks.map((book, idx) => (
-          <div key={idx} className="flex flex-col items-center text-center">
+          <div  data-aos="fade-down-right" key={idx} className="flex flex-col items-center text-center">
             {/* Book Cover */}
             <div className="w-[225px] h-[350px] relative mb-4">
               <Image
@@ -191,6 +193,7 @@ const BookGallery = () => {
         ))}
       </div>
     </section>
+    </AOSProvider>
   );
 };
 

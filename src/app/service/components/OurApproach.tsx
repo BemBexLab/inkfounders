@@ -16,9 +16,9 @@ const OurApproach = () => {
           <span className="text-black">Crafting Your Masterpiece A Guided, Professional Publishing Experience from Start to Finish.</span>
         </h2>
         {/* 3 columns */}
-        <div data-aos="fade-down-right" className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
           {/* 1. Holistic & Transparent Services */}
-          <div className="flex flex-col items-center text-center px-4">
+          <div data-aos="fade-down-right" className="flex flex-col items-center text-center px-4">
             <Image
               src="/Service/Mask group (7).png" // update with your actual filename
               alt="Holistic & Transparent Services"
@@ -32,7 +32,7 @@ const OurApproach = () => {
             </p>
           </div>
           {/* 2. Myriad Of Distribution Channels */}
-          <div className="flex flex-col items-center text-center px-4">
+          <div data-aos="fade-down-right" className="flex flex-col items-center text-center px-4">
             <Image
               src="/Service/Mask group (8).png" // update with your actual filename
               alt="Myriad Of Distribution Channels"
@@ -46,7 +46,7 @@ const OurApproach = () => {
             </p>
           </div>
           {/* 3. Book Marketing & Author Branding */}
-          <div className="flex flex-col items-center text-center px-4">
+          <div data-aos="fade-down-right" className="flex flex-col items-center text-center px-4">
             <Image
               src="/Service/Mask group (9).png" // update with your actual filename
               alt="Book Marketing & Author Branding"
