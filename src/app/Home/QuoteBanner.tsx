@@ -33,6 +33,7 @@ export default function QuoteBanner() {
       transition-all duration-300
       shadow-none
       overflow-hidden
+      hover:border-black
     "
   >
     {/* Sliding background */}
