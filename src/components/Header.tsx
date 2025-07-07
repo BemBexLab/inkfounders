@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -80,16 +80,15 @@ export default function Header() {
       }`}
     >
       {/* 🔰 Logo */}
-      <Link href="/">
-        <div className="flex items-center gap-2 ml-2 md:ml-6">
-          <Image
-            src="/Header/inkfounder.png"
-            alt="Ink Founders Logo"
-            width={130}
-            height={50}
-          />
-        </div>
-      </Link>
+<Link href="/">
+  <div className="flex items-center gap-2 ml-2 md:ml-6">
+    <video width="130" height="50" autoPlay loop muted>
+      <source src="/logovideo/inkfounder_logo_animate.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</Link>
+
 
       {/* 🌐 Desktop Nav Links */}
       <div className="hidden lg:block">
