@@ -1,8 +1,10 @@
 import React from 'react'
 import { robotoMono } from '../fonts'
+import AOSProvider from "@/components/AOSProvider";
 
 const HowItWork = () => {
   return (
+    <AOSProvider>
     <section className="w-full bg-[#F4F3E1] py-20">
       <div className="max-w-[1250px] mx-auto px-2 flex flex-col items-center">
         {/* Headings */}
@@ -14,7 +16,7 @@ const HowItWork = () => {
         </h2>
 
         {/* Steps: Two vertical columns with timeline */}
-        <div className="w-full flex flex-col md:flex-row gap-12 md:gap-24 justify-center items-start">
+        <div className="w-full flex flex-col md:flex-row gap-12 md:gap-24 justify-center items-start" data-aos="fade-down-right">
           {/* Left column: steps 1-4 */}
           <div className="flex flex-col relative gap-17">
             {/* Vertical line (behind circles) */}
@@ -141,6 +143,7 @@ const HowItWork = () => {
         </div>
       </div>
     </section>
+    </AOSProvider>
   )
 }
 

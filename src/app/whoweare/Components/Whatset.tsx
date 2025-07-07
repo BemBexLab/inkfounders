@@ -1,11 +1,13 @@
 import { robotoMono } from '@/app/fonts'
 import Image from 'next/image'
 import React from 'react'
+import AOSProvider from "@/components/AOSProvider";
 
 
 const WhatSet = () => {
   return (
-    <section className="w-full bg-[#F6F5F3] flex justify-center items-center py-10">
+    <AOSProvider>
+      <section className="w-full bg-[#F6F5F3] flex justify-center items-center py-10">
       <div className="w-full max-w-[1300px] flex flex-col items-center">
        <h2 className="text-center text-2xl md:text-[2rem] font-semibold mb-14">
   <span className="text-black">What Sets Us Apart</span>
@@ -18,7 +20,7 @@ const WhatSet = () => {
 </div>
 
         {/* 3 columns */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
+        <div data-aos="fade-down-right" className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
           {/* 1. Holistic & Transparent Services */}
           <div className="flex flex-col items-center text-center px-4">
             <Image
@@ -55,6 +57,7 @@ const WhatSet = () => {
         </div>
       </div>
     </section>
+    </AOSProvider>
   )
 }
 

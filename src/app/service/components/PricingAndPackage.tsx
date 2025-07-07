@@ -1,7 +1,9 @@
-import { robotoMono } from '@/app/fonts'
+import { robotoMono } from "@/app/fonts";
 import { FaCheckCircle } from "react-icons/fa";
-import React from 'react'
+import React from "react";
 import Link from "next/link";
+import AOSProvider from "@/components/AOSProvider";
+
 
 const PACKAGES = [
   {
@@ -23,7 +25,7 @@ const PACKAGES = [
       "100% copyright ownership",
       "ISBN & barcode generation",
       "eBook, Paperback & Hardcover formats",
-    ]
+    ],
   },
   {
     label: "Smart Self-Publishing Plan for Amazon",
@@ -44,7 +46,7 @@ const PACKAGES = [
       "100% ownership & full copyright rights",
       "ISBN and barcode generation",
       "Available in eBook, Paperback & Hardcover formats",
-    ]
+    ],
   },
   {
     label: "Complete Ghostwriting & Publishing Plan",
@@ -65,13 +67,14 @@ const PACKAGES = [
       "Access to Ink Founders author portal",
       "100% ownership & copyright rights",
       "ISBN and barcode generation",
-    ]
+    ],
   },
 ];
 
 const PricingAndPackage = () => {
   return (
-    <section className="w-full flex justify-center items-center py-10">
+   <AOSProvider>
+     <section className="w-full flex justify-center items-center py-10">
       <div className="w-full max-w-[1300px] flex flex-col items-center">
         {/* Headings */}
         <p className="text-center text-lg md:text-xl font-semibold text-[#DADD39] mb-2">
@@ -80,11 +83,16 @@ const PricingAndPackage = () => {
         <h2 className="text-center text-2xl md:text-[2rem] font-semibold mb-2 text-black">
           Flexible Plans Tailored To Your Needs
         </h2>
-        <p className={`text-center text-[12px] md:text-[15px] text-[#444444] mb-14 px-5 md:px-20 leading-loose ${robotoMono.className}`}>
-          &quot;Pricing may vary depending on the genre, page and word count, and your specific needs for publishing, marketing, or ghostwriting. For a personalized estimate and detailed consultation, click on &apos;Custom Quote&apos; to speak with a publishing expert.&quot;
+        <p
+          className={`text-center text-[12px] md:text-[15px] text-[#444444] mb-14 px-5 md:px-20 leading-loose ${robotoMono.className}`}
+        >
+          &quot;Pricing may vary depending on the genre, page and word count,
+          and your specific needs for publishing, marketing, or ghostwriting.
+          For a personalized estimate and detailed consultation, click on
+          &apos;Custom Quote&apos; to speak with a publishing expert.&quot;
         </p>
         {/* Pricing Cards */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-md:px-5">
+        <div data-aos="fade-down-right" className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-md:px-5">
           {PACKAGES.map((pkg, idx) => (
             <div
               key={idx}
@@ -100,28 +108,39 @@ const PricingAndPackage = () => {
                   {pkg.price}
                 </span>
                 {pkg.oldPrice && pkg.oldPrice !== pkg.price && (
-  <span className="relative text-[#999] text-lg ml-2 select-none" style={{ display: "inline-block" }}>
-    {pkg.oldPrice}
-    {/* Red strikethrough line */}
-    <span className="absolute left-0 top-1/2 w-full h-[1px] bg-red-500 rounded rotate-[-8deg] -translate-y-1/2 pointer-events-none"></span>
-  </span>
-)}
-
+                  <span
+                    className="relative text-[#999] text-lg ml-2 select-none"
+                    style={{ display: "inline-block" }}
+                  >
+                    {pkg.oldPrice}
+                    {/* Red strikethrough line */}
+                    <span className="absolute left-0 top-1/2 w-full h-[1px] bg-red-500 rounded rotate-[-8deg] -translate-y-1/2 pointer-events-none"></span>
+                  </span>
+                )}
               </div>
               {/* Included */}
               <div className="text-left mt-4 mb-4">
-                <span className="font-semibold text-black text-[14px] md:text-[20px]">Included:</span>
+                <span className="font-semibold text-black text-[14px] md:text-[20px]">
+                  Included:
+                </span>
                 <ul className="mt-3 space-y-2">
                   {pkg.included.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2 text-[12px] md:text-[15px] text-black">
-                      <FaCheckCircle className="text-[#DADD39] min-w-[18px] min-h-[18px] mt-1" size={18} />
+                    <li
+                      key={i}
+                      className="flex items-start gap-2 text-[12px] md:text-[15px] text-black"
+                    >
+                      <FaCheckCircle
+                        className="text-[#DADD39] min-w-[18px] min-h-[18px] mt-1"
+                        size={18}
+                      />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <Link href="/contactus"
-    className="
+              <Link
+                href="/contactus"
+                className="
       btn-slide-bg
       mt-auto self-start
       bg-[#DADD39]
@@ -136,18 +155,18 @@ const PricingAndPackage = () => {
       shadow-none
       hover:border-black
     "
-  >
-    {/* Sliding background */}
-    <span className="slide-bg"></span>
-    {/* Button text above the sliding background */}
-    <span className="relative z-10">Custom Quote</span>
-
-</Link>
+              >
+                {/* Sliding background */}
+                <span className="slide-bg"></span>
+                {/* Button text above the sliding background */}
+                <span className="relative z-10">Custom Quote</span>
+              </Link>
             </div>
           ))}
         </div>
       </div>
     </section>
+   </AOSProvider>
   );
 };
 

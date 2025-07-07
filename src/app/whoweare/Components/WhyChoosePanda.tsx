@@ -1,18 +1,20 @@
 import { robotoMono } from '@/app/fonts'
 import Image from 'next/image'
 import React from 'react'
+import AOSProvider from "@/components/AOSProvider";
 
 
 const WhyChoosePanda = () => {
   return (
-    <section className="w-full bg-[#F6F5F3] flex justify-center items-center py-20">
+    <AOSProvider>
+      <section className="w-full bg-[#F6F5F3] flex justify-center items-center py-20">
   <div className="w-full max-w-[1300px] flex flex-col items-center">
     {/* Headings */}
     <h2 className="text-center text-[22px] md:text-[30px] font-semibold mb-14">
       <span className="text-[#1F1F1F]">Why Choose Panda Publishing</span>
     </h2>
     {/* 3 columns */}
-    <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
+    <div data-aos="fade-down-right" className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
       {/* 1. Book Editing & Proofreading */}
       <div className="flex flex-col items-start text-left px-8">
         <Image
@@ -112,6 +114,7 @@ const WhyChoosePanda = () => {
     </div>
   </div>
 </section>
+    </AOSProvider>
 
   )
 }

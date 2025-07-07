@@ -1,9 +1,11 @@
 import { robotoMono } from "../fonts";
+import AOSProvider from "@/components/AOSProvider";
 
 // components/AboutSection.tsx
 export default function Publishing() {
   return (
-    <section className="w-full bg-[#F6F5F3] pt-20 md:py-24">
+    <AOSProvider>
+    <section data-aos="fade-down-right" className="w-full bg-[#F6F5F3] pt-20 md:py-24">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between px-7">
         {/* Left: Headline */}
         <div className="md:w-2/5 w-full mb-8 md:mb-0">
@@ -26,5 +28,6 @@ export default function Publishing() {
         </div>
       </div>
     </section>
+    </AOSProvider>
   );
 }

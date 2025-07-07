@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
 import { robotoMono } from '../fonts'
+import AOSProvider from "@/components/AOSProvider";
 
 const OurPromise = () => {
   return (
+    <AOSProvider>
     <section className="w-full bg-[#F6F5F3] flex justify-center items-center md:py-20">
   <div className="w-full max-w-[1300px] flex flex-col items-center">
     {/* Headings */}
@@ -14,7 +16,7 @@ const OurPromise = () => {
       <span className="text-[#DADD39]">What You Get with Ink Founder</span>
     </h2>
     {/* 3 columns */}
-    <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
+    <div data-aos="fade-down-right" className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
       {/* 1. Book Editing & Proofreading */}
       <div className="flex flex-col items-start text-left px-8">
         <Image
@@ -114,6 +116,7 @@ const OurPromise = () => {
     </div>
   </div>
 </section>
+</AOSProvider>
 
   )
 }

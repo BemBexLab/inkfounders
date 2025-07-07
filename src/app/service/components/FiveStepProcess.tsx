@@ -1,5 +1,6 @@
 import { robotoMono } from "@/app/fonts";
 import React from "react";
+import AOSProvider from "@/components/AOSProvider";
 
 const STEPS = [
   {
@@ -26,13 +27,14 @@ const STEPS = [
 
 const FiveStepProcess = () => {
   return (
-    <section className="w-full bg-[#F4F3E1] py-10 flex flex-col items-center">
+    <AOSProvider>
+      <section className="w-full bg-[#F4F3E1] py-10 flex flex-col items-center">
   <h2 className="text-[20px] md:text-3xl font-semibold text-black text-center mb-10">
     Our Self Book Publishing Company&apos;s 5-Step Process!
   </h2>
   <div className="flex flex-col gap-6 w-full max-w-4xl px-4">
     {STEPS.map((step, idx) => (
-      <div
+      <div 
         key={idx}
         className="flex flex-col md:flex-row items-stretch bg-[#DADD39] rounded-2xl overflow-hidden"
       >
@@ -51,7 +53,7 @@ const FiveStepProcess = () => {
           <span className="block h-[1.5px] w-24 bg-[#bec01d] my-3 md:hidden ml-5" />
         </div>
         {/* Content */}
-        <div className="flex-1 flex flex-col justify-center pl-5 pr-4 pb-5 md:pl-6 md:pr-4 md:pb-0">
+        <div data-aos="fade-down-right" className="flex-1 flex flex-col justify-center pl-5 pr-4 pb-5 md:pl-6 md:pr-4 md:pb-0">
           <h3 className="font-bold text-[16px] md:text-lg text-black mb-1">{step.title}</h3>
           <p className={`font-mono text-[13px] md:text-[14px] text-[#444444] leading-snug ${robotoMono.className}`}>
             {step.desc}
@@ -61,6 +63,7 @@ const FiveStepProcess = () => {
     ))}
   </div>
 </section>
+    </AOSProvider>
 
   );
 };
