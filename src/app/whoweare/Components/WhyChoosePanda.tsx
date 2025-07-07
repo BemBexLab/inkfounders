@@ -14,9 +14,9 @@ const WhyChoosePanda = () => {
       <span className="text-[#1F1F1F]">Why Choose Panda Publishing</span>
     </h2>
     {/* 3 columns */}
-    <div data-aos="fade-down-right" className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
+    <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
       {/* 1. Book Editing & Proofreading */}
-      <div className="flex flex-col items-start text-left px-8">
+      <div data-aos="fade-down-right" className="flex flex-col items-start text-left px-8">
         <Image
           src="/whoweare/Mask group (13).png"
           alt="Holistic & Transparent Services"
@@ -32,7 +32,7 @@ const WhyChoosePanda = () => {
         </p>
       </div>
       {/* 2. Book Cover Design */}
-      <div className="flex flex-col items-start text-left px-8">
+      <div data-aos="fade-down-right" className="flex flex-col items-start text-left px-8">
         <Image
           src="/whoweare/Mask group (14).png"
           alt="Myriad Of Distribution Channels"
@@ -48,7 +48,7 @@ const WhyChoosePanda = () => {
         </p>
       </div>
       {/* 3. ISBN & Barcodes */}
-      <div className="flex flex-col items-start text-left px-8">
+      <div data-aos="fade-down-right" className="flex flex-col items-start text-left px-8">
         <Image
           src="/whoweare/Mask group (15).png"
           alt="Book Marketing & Author Branding"
@@ -64,7 +64,7 @@ const WhyChoosePanda = () => {
         </p>
       </div>
       {/* 4. Comprehensive Book & Author Marketing */}
-      <div className="flex flex-col items-start text-left px-8">
+      <div data-aos="fade-down-right" className="flex flex-col items-start text-left px-8">
         <Image
           src="/whoweare/Mask group (16).png"
           alt="Holistic & Transparent Services"
@@ -80,7 +80,7 @@ const WhyChoosePanda = () => {
         </p>
       </div>
       {/* 5. Complete Copyrights & 100% Ownership */}
-      <div className="flex flex-col items-start text-left px-8">
+      <div data-aos="fade-down-right" className="flex flex-col items-start text-left px-8">
         <Image
           src="/whoweare/Mask group (17).png"
           alt="Holistic & Transparent Services"
@@ -96,7 +96,7 @@ const WhyChoosePanda = () => {
         </p>
       </div>
       {/* 6. Always-Here Customer Support */}
-      <div className="flex flex-col items-start text-left px-8">
+      <div data-aos="fade-down-right" className="flex flex-col items-start text-left px-8">
         <Image
           src="/whoweare/Mask group (18).png"
           alt="Holistic & Transparent Services"

@@ -16,13 +16,13 @@ const HowItWork = () => {
         </h2>
 
         {/* Steps: Two vertical columns with timeline */}
-        <div className="w-full flex flex-col md:flex-row gap-12 md:gap-24 justify-center items-start" data-aos="fade-down-right">
+        <div className="w-full flex flex-col lg:flex-row gap-12 md:gap-24 justify-center items-start">
           {/* Left column: steps 1-4 */}
           <div className="flex flex-col relative gap-17">
             {/* Vertical line (behind circles) */}
-            <div className="absolute left-5 top-7 bottom-32 w-[2px] bg-[#DADD39] opacity-40 z-0" />
+            <div className="absolute left-5 top-7 bottom-32 w-[2px] bg-[#DADD39] opacity-40 z-0 hidden lg:block" />
             {/* Step 1 */}
-            <div className="flex items-start relative z-10 mb-8">
+            <div data-aos="fade-down-right" className="flex items-start relative z-10 mb-8">
               <div className="flex flex-col items-center mr-4">
                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#DADD39] font-normal text-base text-[#222] font-mono z-10">
                   01
@@ -38,7 +38,7 @@ const HowItWork = () => {
               </div>
             </div>
             {/* Step 2 */}
-            <div className="flex items-start relative z-10 mb-8">
+            <div data-aos="fade-down-right" className="flex items-start relative z-10 mb-8">
               <div className="flex flex-col items-center mr-4">
                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#DADD39] font-normal text-base text-[#222] font-mono z-10">
                   02
@@ -54,7 +54,7 @@ const HowItWork = () => {
               </div>
             </div>
             {/* Step 3 */}
-            <div className="flex items-start relative z-10 mb-8">
+            <div data-aos="fade-down-right" className="flex items-start relative z-10 mb-8">
               <div className="flex flex-col items-center mr-4">
                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#DADD39] font-normaltext-base text-[#222] font-mono z-10">
                   03
@@ -70,7 +70,7 @@ const HowItWork = () => {
               </div>
             </div>
             {/* Step 4 */}
-            <div className="flex items-start relative z-10">
+            <div data-aos="fade-down-right" className="flex items-start relative z-10">
               <div className="flex flex-col items-center mr-4">
                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#DADD39] font-normal text-base text-[#222] font-mono z-10">
                   04
@@ -90,9 +90,9 @@ const HowItWork = () => {
           {/* Right column: steps 5-7 */}
           <div className="flex flex-col relative mt-0 gap-17">
             {/* Vertical line (behind circles) */}
-            <div className="absolute left-5 top-7 bottom-32 w-[2px] bg-[#DADD39] opacity-40 z-0" />
+            <div className="absolute left-5 top-7 bottom-32 w-[2px] bg-[#DADD39] opacity-40 z-0 hidden lg:block" />
             {/* Step 5 */}
-            <div className="flex items-start relative z-10 mb-8">
+            <div data-aos="fade-down-right" className="flex items-start relative z-10 mb-8">
               <div className="flex flex-col items-center mr-4">
                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#DADD39] font-normal text-base text-[#222] font-mono z-10">
                   05
@@ -108,7 +108,7 @@ const HowItWork = () => {
               </div>
             </div>
             {/* Step 6 */}
-            <div className="flex items-start relative z-10 mb-8">
+            <div data-aos="fade-down-right" className="flex items-start relative z-10 mb-8">
               <div className="flex flex-col items-center mr-4">
                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#DADD39] font-normal text-base text-[#222] font-mono z-10">
                   06
@@ -124,7 +124,7 @@ const HowItWork = () => {
               </div>
             </div>
             {/* Step 7 */}
-            <div className="flex items-start relative z-10">
+            <div data-aos="fade-down-right" className="flex items-start relative z-10">
               <div className="flex flex-col items-center mr-4">
                 <span className="flex items-center justify-center w-10 h-10 rounded-full bg-[#DADD39] font-normal text-base text-[#222] font-mono z-10">
                   07
