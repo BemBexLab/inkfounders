@@ -42,7 +42,7 @@ export default function TrueStory() {
 
 
 {/* Live Chat */}
-<Link href="/contactus">
+{/* <Link href="/contactus">
   <button
     className="
       border border-black 
@@ -58,7 +58,7 @@ export default function TrueStory() {
   >
     Live Chat
   </button>
-</Link>
+</Link> */}
 </div>
 
       </div>

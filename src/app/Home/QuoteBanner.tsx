@@ -7,14 +7,13 @@ export default function QuoteBanner() {
     <section className="w-full flex justify-center items-center bg-[#F6F5F3] py-10 md:py-20 ">
       <div className="w-full max-w-[1400px] rounded-3xl bg-[#F4F3E1] px-4 py-20 flex flex-col items-center shadow-none mx-8">
         <p className="text-center text-[18px]  md:text-xl font-semibold text-[#DADD39] mb-2">
-          Your Story Deserves To Be Told
+          Let your words inspire the world
         </p>
         <h2 className="text-center text-[23px] md:text-[35px] font-semibold text-[#222] mb-8">
-          Let Ink Founders Simplify The Publishing Process For You.
+          Let the Ink founders takes hassle out by simplifying the <br />publishing process for you 
         </h2>
         <p className={`text-center ${robotoMono.className} text-gray-700 text-base text-[12px] md:text-[15px] mb-10  mx-auto`}>
-          Ink Founders simplifies editing, formatting, cover design, and Amazon publishing—so you can <br className="hidden md:block" />
-          focus on your story.
+          With the partnership of Ink founders just focus on your story, let the ink founders clarify editing,<br /> formatting and publishing.
         </p>
         <div className="flex flex-row gap-4 justify-center items-center">
  {/* Get a Quote */}
@@ -45,7 +44,7 @@ export default function QuoteBanner() {
 
 
 {/* Live Chat */}
-<Link href="/contactus">
+{/* <Link href="/contactus">
   <button
     className="
       border border-black 
@@ -61,7 +60,7 @@ export default function QuoteBanner() {
   >
     Live Chat
   </button>
-</Link>
+</Link> */}
 </div>
 
       </div>

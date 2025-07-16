@@ -19,19 +19,17 @@ export default function AuthorsPublishedSection() {
         {/* Content */}
         <div className="max-w-2xl">
           <h2 className="text-2xl md:text-[27px] font-semibold text-black mb-8">
-            Over 1,300 Authors Published — Your Book Could
-            <br className="hidden md:block" />
-            Be Next With Ink Founders
+            Your Story, Your Dream – Our Commitment, let’s make your story into a reality too along with 1000 authors 
           </h2>
           <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[16px] leading-loose`}>
             <p>
-              We’re proud to have helped hundreds of authors bring their books to life—and we’d be honored to help with yours.
+              Every author begins with an idea or a dream, so fulfill your dream with Ink Founders. You have words, we have tools to turn your words into a book, not only a book but a masterpiece. We have risen the voice of many maybe now it’s your turn. At Ink Founders over 1000 authors have turn their ideas in to a book that has powerfully engaged millions of readers.
             </p>
             <p>
-              Wondering if you can self-publish a book? Whether you have a finished manuscript or just the dream to write one, Ink Founders is here to guide you. Our all-in-one digital services cover everything from editing and design to marketing and distribution.
+              It doesn’t matter whether you have a manuscript or you have just got an idea if you have passion, dedication and willingness to do, just start today with Ink Founders, we are here to support you at every step and with full package of services covering everything from editing and formatting to publishing and marketing. 
             </p>
             <p>
-              Let’s turn your vision into a professionally published book. Explore our services and start your journey with Ink Founders today.
+              Just take a step and turn your dream into a reality, with the first step Ink Founders’ team is here to guide you with their services. 
             </p>
           </div>
         </div>

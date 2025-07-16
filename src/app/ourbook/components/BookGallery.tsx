@@ -1,6 +1,8 @@
-"use client"
+"use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import AOSProvider from "@/components/AOSProvider";
 
 // Add "Fiction" to tags if you want them to show under Fiction filter.
@@ -19,15 +21,15 @@ const BOOKS = [
     cover: "/ourbook/book2.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction", "Non Fiction", "Biography", "Children Book"],
+    tags: ["Non Fiction"],
   },
   {
-    title: "Hollow Places",
+    title: "The Unseen Threads",
     author: "Dr. Avi Malik",
     cover: "/ourbook/book3.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Fiction"],
   },
   {
     title: "The Shape of Grief",
@@ -35,15 +37,15 @@ const BOOKS = [
     cover: "/ourbook/book4.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction", "Non Fiction"],
+    tags: ["Biography"],
   },
   {
-    title: "The Sound of my father...",
+    title: "The Sound of my father breathing",
     author: "Claire Mahoney",
     cover: "/ourbook/book5.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography", "Children Book"],
+    tags: ["Children Book"],
   },
   {
     title: "Let the Earth Hold You",
@@ -51,7 +53,7 @@ const BOOKS = [
     cover: "/ourbook/book6.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction", "Non Fiction"],
+    tags: ["Children Book"],
   },
   {
     title: "Wound We Inherit",
@@ -59,7 +61,7 @@ const BOOKS = [
     cover: "/ourbook/book7.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Non Fiction", "Biography", "Children Book"],
+    tags: ["Biography"],
   },
   {
     title: "The Slow Becoming",
@@ -67,7 +69,7 @@ const BOOKS = [
     cover: "/ourbook/book8.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Non Fiction"],
   },
   {
     title: "The Fire You Carry",
@@ -75,7 +77,7 @@ const BOOKS = [
     cover: "/ourbook/book9.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction", "Non Fiction", "Biography"],
+    tags: ["Non Fiction"],
   },
   {
     title: "The Walk Home",
@@ -83,7 +85,7 @@ const BOOKS = [
     cover: "/ourbook/book10.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction", "Non Fiction", "Biography", "Children Book"],
+    tags: ["Children Book"],
   },
   {
     title: "My Grandmother’s Field",
@@ -91,7 +93,7 @@ const BOOKS = [
     cover: "/ourbook/book11.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction", "Non Fiction", "Biography"],
+    tags: ["Children Book"],
   },
   {
     title: "A life without Apologies",
@@ -99,7 +101,7 @@ const BOOKS = [
     cover: "/ourbook/book12.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction", "Non Fiction", "Biography", "Children Book"],
+    tags: ["Non Fiction"],
   },
   {
     title: "When Boys Don’t Cry",
@@ -107,7 +109,7 @@ const BOOKS = [
     cover: "/ourbook/book13.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction", "Non Fiction"],
+    tags: ["Children Book"],
   },
   {
     title: "Echoes Of her Hands",
@@ -115,7 +117,7 @@ const BOOKS = [
     cover: "/ourbook/book14.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Non Fiction", "Biography"],
+    tags: ["Biography"],
   },
   {
     title: "Dust in the Spine",
@@ -123,7 +125,7 @@ const BOOKS = [
     cover: "/ourbook/book15.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction", "Non Fiction", "Biography", "Children Book"],
+    tags: ["Fiction"],
   },
   {
     title: "Roots In the Dust",
@@ -131,7 +133,7 @@ const BOOKS = [
     cover: "/ourbook/book16.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Non Fiction", "Biography", "Children Book"],
+    tags: ["Fiction"],
   }
 ];
 
@@ -139,6 +141,16 @@ const FILTERS = ["All", "Fiction", "Non Fiction", "Biography", "Children Book"];
 
 const BookGallery = () => {
   const [activeFilter, setActiveFilter] = useState("All");
+
+  useEffect(() => {
+    // Initialize AOS on first load
+    AOS.init({
+      duration: 1000, // Adjust the duration of the animation if necessary
+    });
+
+    // Force AOS to refresh and trigger animations
+    AOS.refreshHard();
+  }, [activeFilter]); // Runs every time activeFilter changes
 
   const filteredBooks =
     activeFilter === "All"
@@ -148,51 +160,56 @@ const BookGallery = () => {
   return (
     <AOSProvider>
       <section className="w-full py-12 bg-[#F6F5F3] flex flex-col items-center">
-      {/* Filter Buttons */}
-      <div className="mb-10 flex flex-wrap gap-2 mt-0 justify-center w-full">
-        {FILTERS.map((filter) => (
-          <button
-            key={filter}
-            onClick={() => setActiveFilter(filter)}
-            style={{
-              background:
-                activeFilter === filter
-                  ? "#DADD39"
-                  : "rgba(218,221,57,0.30)",
-              color: activeFilter === filter ? "#000" : "#888",
-            }}
-            className="font-medium px-2 py-1 text-[12px] rounded-md transition shadow-none
-              sm:px-3 sm:py-1.5 sm:text-[13px]
-              md:px-6 md:py-2 md:text-[16px]"
-          >
-            {filter}
-          </button>
-        ))}
-      </div>
+        {/* Filter Buttons */}
+        <div className="mb-10 flex flex-wrap gap-2 mt-0 justify-center w-full">
+          {FILTERS.map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
+              style={{
+                background:
+                  activeFilter === filter
+                    ? "#DADD39"
+                    : "rgba(218,221,57,0.30)",
+                color: activeFilter === filter ? "#000" : "#888",
+              }}
+              className="font-medium px-2 py-1 text-[12px] rounded-md transition shadow-none
+                sm:px-3 sm:py-1.5 sm:text-[13px]
+                md:px-6 md:py-2 md:text-[16px]"
+            >
+              {filter}
+            </button>
+          ))}
+        </div>
 
-      {/* Cards Grid */}
-      <div className="w-full max-w-[1280px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-24 gap-x-0">
-        {filteredBooks.map((book, idx) => (
-          <div  data-aos="fade-down-right" key={idx} className="flex flex-col items-center text-center">
-            {/* Book Cover */}
-            <div className="w-[225px] h-[350px] relative mb-4">
-              <Image
-                src={book.cover}
-                alt={book.title}
-                fill
-                className="object-cover rounded-sm shadow-md"
-              />
+        {/* Cards Grid */}
+        <div className="w-full max-w-[1280px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-24 gap-x-0">
+          {/* Force re-render of cards on filter change by passing activeFilter as key */}
+          {filteredBooks.map((book, idx) => (
+            <div
+              data-aos="fade-down-right"
+              key={`${activeFilter}-${idx}`} // Unique key to trigger re-render
+              className="flex flex-col items-center text-center"
+            >
+              {/* Book Cover */}
+              <div className="w-[225px] h-[350px] relative mb-4">
+                <Image
+                  src={book.cover}
+                  alt={book.title}
+                  fill
+                  className="object-cover rounded-sm shadow-md"
+                />
+              </div>
+              {/* Book Title */}
+              <h3 className="font-bold text-black text-[22px] mb-0.5 truncate w-[180px]">
+                {book.title}
+              </h3>
+              {/* Author */}
+              <span className="text-[15px] text-[#444] mb-2 block">{book.author}</span>
             </div>
-            {/* Book Title */}
-            <h3 className="font-bold text-black text-[22px] mb-0.5 truncate w-[180px]">
-              {book.title}
-            </h3>
-            {/* Author */}
-            <span className="text-[15px] text-[#444] mb-2 block">{book.author}</span>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
     </AOSProvider>
   );
 };

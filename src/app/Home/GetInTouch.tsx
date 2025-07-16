@@ -90,25 +90,36 @@ export default function GetInTouch() {
 
   return (
     <div className="w-full md:py-12 px-4 md:px-8 lg:px-12">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-16">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-16 max-md:mt-14">
         {/* Left Column */}
         <div className="flex-1">
-          <h2 className="text-[#DADD39] font-medium text-[23px] md:text-[35px] mb-1 md:whitespace-nowrap">
-            Have Questions? Need Guidance?
+          <h2 className="text-[#DADD39] font-medium text-[23px] md:text-[27px] mb-1">
+            Let us know if anything needed.
+            Searching of any guidance from  an
+            expert?
           </h2>
-          <h3 className="text-[23px] md:text-[35px] font-semibold mb-6 text-black">Let&#39;s Talk</h3>
+          <h3 className="text-[21px] md:text-[25px] font-semibold mb-6 text-black">
+            Have a conversation
+          </h3>
 
-          <p className={`text-gray-700 text-[12px] md:text-[15px] mb-8 leading-loose ${robotoMono.className}`}>
-            Ready to begin your self-publishing journey but still have
-            questions? Looking for expert advice to bring your vision to life?
-            Ink Founder is here to help.
+          <p
+            className={`text-gray-700 text-[12px] md:text-[15px] mb-8 leading-loose ${robotoMono.className}`}
+          >
+            You have taken a step towards the journey of success in
+            self-publishing but still have a lot to ask? And searching for an
+            expert’s guidance who can help you in bring your ideas, and voice to
+            the reality, but haven’t found anyone, then you are at the right
+            place Ink Founders is for you.
           </p>
 
-          <p className={`text-gray-700 text-[12px] md:text-[15px] mb-8 leading-loose ${robotoMono.className}`}>
-            We offer a free consultation where you can share your book concept,
-            explore our services in detail, and discover how we can support you
-            in turning your manuscript into a published masterpiece. Reach out
-            today—we&apos;re ready when you are.
+          <p
+            className={`text-gray-700 text-[12px] md:text-[15px] mb-8 leading-loose ${robotoMono.className}`}
+          >
+            Ink Founders provide a free discussion opportunity where you can
+            clear your doubts, share your story ideas or concepts, and get the
+            exploration trip to examine our services clearly and can find out
+            how we can provide you with the best by turning your words into a
+            book form. So, let’s take a step and join us today.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
@@ -215,7 +226,9 @@ export default function GetInTouch() {
                         : "border-gray-300"
                     } rounded flex items-center justify-center transition-colors duration-150`}
                   >
-                    {formData.consent && <Check size={16} className="text-white" />}
+                    {formData.consent && (
+                      <Check size={16} className="text-white" />
+                    )}
                   </span>
                   <input
                     type="checkbox"
@@ -226,17 +239,19 @@ export default function GetInTouch() {
                     required
                   />
                 </span>
-                <span className={`text-xs text-gray-600 ${robotoMono.className}`}>
+                <span
+                  className={`text-xs text-gray-600 ${robotoMono.className}`}
+                >
                   Please check the box to communicate via SMS or Email (Terms &
-                  Conditions & Privacy Policy) - Carrier charges may apply for SMS.
-                  Reply STOP or UNSUBSCRIBE to STOP to unsubscribe anytime
+                  Conditions & Privacy Policy) - Carrier charges may apply for
+                  SMS. Reply STOP or UNSUBSCRIBE to STOP to unsubscribe anytime
                 </span>
               </label>
             </div>
 
-           <button
-  type="submit"
-  className={`
+            <button
+              type="submit"
+              className={`
     btn-slide-bg
     bg-[#DADD39] 
     text-gray-800 
@@ -249,15 +264,15 @@ export default function GetInTouch() {
     overflow-hidden
     hover:border-black
   `}
-  disabled={loading}
->
-  {/* Sliding background */}
-  <span className="slide-bg"></span>
-  {/* Text content stays above the background */}
-  <span className="relative z-10">
-    {loading ? "Sending..." : "Let's Get Started"}
-  </span>
-</button>
+              disabled={loading}
+            >
+              {/* Sliding background */}
+              <span className="slide-bg"></span>
+              {/* Text content stays above the background */}
+              <span className="relative z-10">
+                {loading ? "Sending..." : "Let's Get Started"}
+              </span>
+            </button>
 
             {/* Success/Error messages */}
             {success && <div className="text-green-600 mt-4">{success}</div>}

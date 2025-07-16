@@ -10,10 +10,10 @@ const WhatMake = () => {
       <div className="w-full max-w-[1300px] flex flex-col items-center">
         {/* Headings */}
         <p className="text-center text-lg md:text-xl font-semibold text-black mb-2">
-          What Makes Us Different
+          Witness our Uniqueness
         </p>
         <h2 className="text-center text-2xl md:text-[2rem] font-semibold mb-14">
-          <span className="text-[#DADD39]">At Ink Founders, Your Vision Is Our Mission.</span>
+          <span className="text-[#DADD39]">At Ink Founders – Your Goals, Our Commitment </span>
         </h2>
         {/* 3 columns */}
         <div data-aos="fade-down-right" className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
@@ -26,9 +26,9 @@ const WhatMake = () => {
               height={48}
               className="mb-3"
             />
-            <h3 className="font-semibold text-base md:text-[18px] mb-2 text-black">Holistic & Transparent Services</h3>
+            <h3 className="font-semibold text-base md:text-[18px] mb-2 text-black">Integrated and straightforward publishing services</h3>
             <p className={`${robotoMono.className} text-gray-700 text-[14px] leading-loose`}>
-              Ink Founder offers a complete range of digital tools and services–from initial editing to final publication and marketing. With transparent, open communication at every stage, we keep you informed and involved throughout your publishing journey.
+              Ink Founders, your publishing partner, provides a smooth and exciting publishing journey with a full-service publishing model from editing, formatting, publishing to marketing services. Our team supports you at every stage, and with a clear communication authors are informed and engaged throughout their publishing journey.
             </p>
           </div>
           {/* 2. Myriad Of Distribution Channels */}
@@ -40,9 +40,9 @@ const WhatMake = () => {
               height={48}
               className="mb-3"
             />
-            <h3 className="font-semibold text-base md:text-[18px] mb-2 text-black">Myriad Of Distribution Channels</h3>
+            <h3 className="font-semibold text-base md:text-[18px] mb-2 text-black">World wide networks distribution</h3>
             <p className={`${robotoMono.className} text-gray-700 text-[14px] leading-loose`}>
-              Ink Founder ensures your book gets the spotlight it deserves–across more than 40 distribution platforms, including major retailers like Amazon, Barnes & Noble, Apple Books, IngramSpark, and many more–so you can reach the widest possible audience.
+              Your story is not only a book but a dream filled with Ink Founders, it is a masterpiece that it’s worth should be recognised by the whole world – and we mean the whole world, so Ink founders not only publish your book but distributes to more than 40 global platforms, so that your book can touch the heart of million readers. 
             </p>
           </div>
           {/* 3. Book Marketing & Author Branding */}
@@ -54,9 +54,9 @@ const WhatMake = () => {
               height={48}
               className="mb-3"
             />
-            <h3 className="font-semibold text-base md:text-[18px] mb-2 text-black">Book Marketing & Author Branding</h3>
+            <h3 className="font-semibold text-base md:text-[18px] mb-2 text-black">Marketing books and building brands – together </h3>
             <p className={`${robotoMono.className} text-gray-700 text-[14px] leading-loose`}>
-              At Ink Founder, we do more than publish your book–we help you build your author brand and provide marketing support to connect with readers and promote your work with impact.
+              Publishing the book is even just the starting but making your brand is what that make it masterpiece. So, ink founders helps you to establish a powerful author branding services, as it not only helps to build public image but also helps in targeting the right audience. 
             </p>
           </div>
         </div>

@@ -9,10 +9,10 @@ const HowItWork = () => {
       <div className="max-w-[1250px] mx-auto px-2 flex flex-col items-center">
         {/* Headings */}
         <p className="text-center text-base text-[18px] md:text-[25px] font-semibold text-[#DADD39] mb-2">
-          How It Works
+          Let’s find the way
         </p>
         <h2 className="text-center text-[23px] md:text-[35px] font-semibold mb-14 text-black">
-          Your Publishing Journey With Ink Founders
+          A pathway to turn your dreams into reality <br /> – a publishing process with Ink Founders
         </h2>
 
         {/* Steps: Two vertical columns with timeline */}
@@ -20,7 +20,7 @@ const HowItWork = () => {
           {/* Left column: steps 1-4 */}
           <div className="flex flex-col relative gap-17">
             {/* Vertical line (behind circles) */}
-            <div className="absolute left-5 top-7 bottom-32 w-[2px] bg-[#DADD39] opacity-40 z-0 hidden lg:block" />
+            <div className="absolute left-5 top-7 bottom-48 w-[2px] bg-[#DADD39] opacity-40 z-0 hidden lg:block" />
             {/* Step 1 */}
             <div data-aos="fade-down-right" className="flex items-start relative z-10 mb-8">
               <div className="flex flex-col items-center mr-4">
@@ -30,10 +30,10 @@ const HowItWork = () => {
               </div>
               <div className='mt-2 ml-4'>
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
-                  We Connect With Each Other
+                  Start with an introduction to know each other 
                 </h3>
                 <p className={`text-[12px] md:text-[15px] text-[#444] ${robotoMono.className} leading-loose`}>
-                  We start with a consultation to understand your vision and goals. Share your story, ask questions, and let us tailor a publishing plan just for you.
+                  We begin with discussion to know each other, who you are as an author, what’s your ideas are about, where you want it to go and what do you expect us to follow, so it’s the time to ask questions and share your ideas and allow us to make a publishing path for you. 
                 </p>
               </div>
             </div>
@@ -46,10 +46,10 @@ const HowItWork = () => {
               </div>
               <div className='mt-2 ml-4'>
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
-                  We Connect With Each Other
+                  We gather the information that best describes your vision
                 </h3>
                 <p className={`text-[12px] md:text-[15px] ${robotoMono.className} text-[#444] font-mono leading-loose`}>
-                  We dive into your book’s details—genre, audience, and unique needs—to create a personalized publishing plan that connects with the right readers.
+                  We start organizing a plan for you, once we get the details about your story’s genre, audience and the message, as whether it is non-fiction, fiction, historical or poetry. 
                 </p>
               </div>
             </div>
@@ -62,10 +62,10 @@ const HowItWork = () => {
               </div>
               <div className='mt-2 ml-4'>
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
-                  We Handover Your Manuscript To Our Editing Team
+                  Experts take over the script, Page by page – perfection 
                 </h3>
                 <p className={`text-[12px] md:text-[15px] ${robotoMono.className} text-[#444] font-mono leading-loose`}>
-                  Our design team formats your manuscript to meet industry standards, ensuring a clean, professional look across print and digital platforms—inside and out.
+                  We send your story to our qualified designing team that revive your story and rearrange it according to the standards, ensuring published look in all formats.
                 </p>
               </div>
             </div>
@@ -78,10 +78,10 @@ const HowItWork = () => {
               </div>
               <div className='mt-2 ml-4'>
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
-                  We Get The Formatting Done
+                  We put the soul in your story with formatting
                 </h3>
                 <p className={`text-[12px] md:text-[15px] ${robotoMono.className} text-[#444] font-mono leading-loose`}>
-                  Our design team formats your manuscript to meet industry standards, ensuring a clean, professional look across print and digital platforms—inside and out.
+                  Now it’s time to give a fantastic structure to your story by professionally formatting the script, and designing a book cover page that not only captures the audience attention but also become the spirit of your story, so from the words to structure we take it with full concentration.
                 </p>
               </div>
             </div>
@@ -90,7 +90,7 @@ const HowItWork = () => {
           {/* Right column: steps 5-7 */}
           <div className="flex flex-col relative mt-0 gap-17">
             {/* Vertical line (behind circles) */}
-            <div className="absolute left-5 top-7 bottom-32 w-[2px] bg-[#DADD39] opacity-40 z-0 hidden lg:block" />
+            <div className="absolute left-5 top-7 bottom-40 w-[2px] bg-[#DADD39] opacity-40 z-0 hidden lg:block" />
             {/* Step 5 */}
             <div data-aos="fade-down-right" className="flex items-start relative z-10 mb-8">
               <div className="flex flex-col items-center mr-4">
@@ -100,10 +100,10 @@ const HowItWork = () => {
               </div>
               <div className='mt-2 ml-4'>
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
-                  QA Keeps Everything In Check
+                  Quality Check is a priority followed by QA teams 
                 </h3>
                 <p className={`text-[12px] md:text-[15px] text-[#444] font-mono leading-loose ${robotoMono.className}`}>
-                  Our QA team carefully reviews your book to catch any remaining errors, confirm perfect formatting, and ensure the cover aligns seamlessly with the interior.
+                  We just don’t launch your book after all the processes but at this stage it undergoes a final check done by our quality assurance team to ensure that every process from editing to publishing everything goes according to the author.
                 </p>
               </div>
             </div>
@@ -116,10 +116,10 @@ const HowItWork = () => {
               </div>
               <div className='mt-2 ml-4'>
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
-                  We Publish Your Book
+                  Let’s make your story unforgettable – time to publish it
                 </h3>
                 <p className={`text-[12px] md:text-[15px] text-[#444] font-mono leading-loose ${robotoMono.className}`}>
-                  With everything finalized, we help you publish your book across major platforms and guide you through ISBN setup—getting your book ready for the global stage.
+                  Now, after all the finalization processes, it’s time to get your words into a book, witnessing your dream turning into reality. After approval your book got published on globally trending platforms, we also guide you through ISBN, selling set-up so that your book is more reachable and buyable. 
                 </p>
               </div>
             </div>
@@ -132,10 +132,10 @@ const HowItWork = () => {
               </div>
               <div className='mt-2 ml-4'>
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
-                  You Reap The Rewards!
+                  Finally, you are an author – own your success 
                 </h3>
                 <p className={`text-[12px] md:text-[15px] text-[#444] font-mono leading-loose ${robotoMono.className}`}>
-                  Celebrate your success! You’ll start earning royalties, and we’ll support you with marketing strategies to help your book thrive and reach its full potential.
+                  With a lot of overwhelming moments, now it’s time to cheer up as you are officially a published author. We support you at every moment even after publishing with post-launch strategies to grow your author brand. Now it’s time to get shine.
                 </p>
               </div>
             </div>

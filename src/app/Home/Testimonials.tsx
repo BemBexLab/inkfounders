@@ -130,7 +130,7 @@ const Testimonials = () => {
 
                   {/* Profile */}
                   <div className="flex items-center gap-3">
-                    <div className="border-2 border-dashed rounded-xl w-16 h-16 overflow-hidden">
+                    <div className="border-2 border-dashed rounded-full w-16 h-16 overflow-hidden">
                       <Image
                         src={testimonial.image}
                         alt={`${testimonial.name}'s profile`}
