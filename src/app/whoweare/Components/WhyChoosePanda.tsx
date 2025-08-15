@@ -11,7 +11,7 @@ const WhyChoosePanda = () => {
   <div className="w-full max-w-[1300px] flex flex-col items-center">
     {/* Headings */}
     <h2 className="text-center text-[22px] md:text-[30px] font-semibold mb-14">
-      <span className="text-[#1F1F1F]">Why Choose Panda Publishing</span>
+      <span className="text-[#1F1F1F]">Why Choose Ink Founders</span>
     </h2>
     {/* 3 columns */}
     <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
