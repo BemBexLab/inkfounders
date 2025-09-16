@@ -8,6 +8,7 @@ import AOSProvider from "@/components/AOSProvider";
 const PACKAGES = [
   {
     label: "Smart Self-Publishing Plan for Amazon",
+    title: "Silver",
     price: "$499",
     oldPrice: "$799",
     included: [
@@ -29,6 +30,7 @@ const PACKAGES = [
   },
   {
     label: "Smart Self-Publishing Plan for Amazon",
+    title: "Gold",
     price: "$699",
     oldPrice: "$999",
     included: [
@@ -50,6 +52,7 @@ const PACKAGES = [
   },
   {
     label: "Complete Ghostwriting & Publishing Plan",
+    title: "Platinum",
     price: "$999–$1999",
     included: [
       "One-on-one interviews & story development",
@@ -104,19 +107,10 @@ const PricingAndPackage = () => {
               </div>
               {/* Price */}
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-[50px] md:text-[58px] font-semibold text-black">
-                  {pkg.price}
+                <span className="text-[30px] md:text-[48px] font-semibold text-black">
+                  {pkg.title}
                 </span>
-                {pkg.oldPrice && pkg.oldPrice !== pkg.price && (
-                  <span
-                    className="relative text-[#999] text-lg ml-2 select-none"
-                    style={{ display: "inline-block" }}
-                  >
-                    {pkg.oldPrice}
-                    {/* Red strikethrough line */}
-                    <span className="absolute left-0 top-1/2 w-full h-[1px] bg-red-500 rounded rotate-[-8deg] -translate-y-1/2 pointer-events-none"></span>
-                  </span>
-                )}
+                
               </div>
               {/* Included */}
               <div className="text-left mt-4 mb-4">
