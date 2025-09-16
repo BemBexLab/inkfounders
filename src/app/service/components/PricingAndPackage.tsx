@@ -99,12 +99,12 @@ const PricingAndPackage = () => {
           {PACKAGES.map((pkg, idx) => (
             <div
               key={idx}
-              className="flex flex-col rounded-2xl border border-gray-100 px-6 py-8 min-h-[670px] shadow-sm"
+              className="flex flex-col rounded-2xl border border-gray-100 px-6 py-8 min-h-[670px] shadow-lg"
             >
               {/* Plan label */}
-              <div className="bg-[#F4F3E1] text-black  text-[10px] md:text-[15px] font-medium px-3 py-1 rounded mb-6 w-max">
+              {/* <div className="bg-[#F4F3E1] text-black  text-[10px] md:text-[15px] font-medium px-3 py-1 rounded mb-6 w-max">
                 {pkg.label}
-              </div>
+              </div> */}
               {/* Price */}
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-[30px] md:text-[48px] font-semibold text-black">
