@@ -171,9 +171,9 @@ const TermsAndConditions = () => {
         </section>
 
         <section className="mb-10">
-          <h1 className="text-[#DADD39] text-3xl mb-4">12.No Guarantee of Publication or Marketing Success</h1>
+          <h1 className="text-[#DADD39] text-3xl mb-4">12.No ROI Guarantees Provided</h1>
           <p className="text-black">
-            While we provide professional services aimed at assisting clients with publishing and marketing efforts, we do not guarantee that any work we produce will result in publication, sales, or other specific outcomes. Publishing success depends on various factors beyond our control, including market trends, timing, and audience preferences.
+            We do not commit to or guarantee any specific Return on Investment (ROIs). Results may vary depending on various external factors beyond our control, such as market trends, audience behavior, and platform algorithms.
           </p>
         </section>
 
