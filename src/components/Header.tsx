@@ -109,14 +109,14 @@ export default function Header() {
         </nav>
       </div>
 
-      <a href="tel:+17862899498" className=" items-center gap-3 group hidden lg:flex">
+      <a href="tel:+17865244161" className=" items-center gap-3 group hidden lg:flex">
         <div className="rounded-full bg-primary border-primary w-8 h-8 2xl:w-14 2xl:h-14 flex items-center justify-center shake-pause group-hover:bg-primary/80 transition ">
           <div className="text-white flex items-center justify-center bg-[#DADD39] rounded-full px-3 py-3">
             <IoCall size={30} />
           </div>
         </div>
         <span className="text-[14px] 2xl:text-base text-black font-semibold text-primary group-hover:underline">
-          +1 (786) 289-9498
+          +1 (786) 524-4161
         </span>
       </a>
 
@@ -184,14 +184,14 @@ export default function Header() {
           </ul>
 
           {/* Shaking Call Button */}
-          <a href="tel:+17862899498" className=" items-center gap-5 group flex px-6 pt-5">
+          <a href="tel:+17865244161" className=" items-center gap-5 group flex px-6 pt-5">
             <div className="rounded-full bg-primary border-primary w-8 h-8 2xl:w-14 2xl:h-14 flex items-center justify-center shake-pause group-hover:bg-primary/80 transition ">
               <div className="text-white flex items-center justify-center bg-[#DADD39] rounded-full px-3 py-3">
                 <IoCall size={30} />
               </div>
             </div>
             <span className="text-base text-black font-semibold text-primary group-hover:underline">
-              +1 (786) 289-9498
+              +1 (786) 524-4161
             </span>
           </a>
 

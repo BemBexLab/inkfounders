@@ -128,10 +128,10 @@ export default function GetInTouch() {
                 <IoMdCall size={20} />
               </div>
               <a
-                href="tel:+17862899498"
+                href="tel:+17865244161"
                 className="text-base text-gray-800 font-medium font-mono hover:underline focus:outline-none"
               >
-                +1 (786) 289-9498
+                +1 (786) 524-4161
               </a>
             </div>
             <div className="flex items-center gap-3">
