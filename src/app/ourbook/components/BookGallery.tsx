@@ -6,11 +6,11 @@ import "aos/dist/aos.css";
 import AOSProvider from "@/components/AOSProvider";
 
 // Add "Fiction" to tags if you want them to show under Fiction filter.
-const BOOKS = [
+export const BOOKS = [
  {
-    title: "Hollow Places",
+    title: "The Cinders we choose",
     author: "Claire Mahoney",
-    cover: "/ourbook/book1.png",
+    cover: "/ourbook/new/01.png",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Fiction"],
@@ -24,17 +24,17 @@ const BOOKS = [
     tags: ["Non Fiction"],
   },
   {
-    title: "The Unseen Threads",
-    author: "Dr. Avi Malik",
-    cover: "/ourbook/book3.png",
+    title: "God carried me",
+    author: "Joseph R J Baffi",
+    cover: "/ourbook/new/02.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Non Fiction"],
   },
   {
-    title: "The Shape of Grief",
-    author: "Dr. Alice Thorne",
-    cover: "/ourbook/book4.png",
+    title: "Growing together",
+    author: "Melissa B. Kruger",
+    cover: "/ourbook/new/03.png",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
@@ -45,15 +45,15 @@ const BOOKS = [
     cover: "/ourbook/book5.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Non Fiction"],
   },
   {
-    title: "Let the Earth Hold You",
+    title: "The Proverbial Spritual Message",
     author: "Claire Mahoney",
-    cover: "/ourbook/book6.png",
+    cover: "/ourbook/new/04.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Non Fiction"],
   },
   {
     title: "Wound We Inherit",
@@ -61,15 +61,15 @@ const BOOKS = [
     cover: "/ourbook/book7.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Children Book"],
   },
   {
-    title: "The Slow Becoming",
-    author: "D. Hassan Tariq",
-    cover: "/ourbook/book8.png",
+    title: "Children of Madness",
+    author: "Jarrett Brandon Early",
+    cover: "/ourbook/new/05.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Non Fiction"],
+    tags: ["Children Book"],
   },
   {
     title: "The Fire You Carry",
@@ -80,17 +80,17 @@ const BOOKS = [
     tags: ["Non Fiction"],
   },
   {
-    title: "The Walk Home",
-    author: "Claire Mahoney",
-    cover: "/ourbook/book10.png",
+    title: "The Broken Souls",
+    author: "Patricia Gibney",
+    cover: "/ourbook/new/07.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Fiction"],
   },
   {
-    title: "My Grandmother’s Field",
-    author: "Dr. Avi Malik",
-    cover: "/ourbook/book11.png",
+    title: "Poetry in Motion",
+    author: "Julinda",
+    cover: "/ourbook/new/08.png",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Children Book"],
@@ -112,20 +112,12 @@ const BOOKS = [
     tags: ["Children Book"],
   },
   {
-    title: "Echoes Of her Hands",
-    author: "Claire Mahoney",
-    cover: "/ourbook/book14.png",
+    title: "Whishes",
+    author: "Jude Deveraux",
+    cover: "/ourbook/new/Frame 9.png",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
-  },
-  {
-    title: "Dust in the Spine",
-    author: "Helena Cruz",
-    cover: "/ourbook/book15.png",
-    date: "6-July-2023",
-    genre: "Novel",
-    tags: ["Fiction"],
   },
   {
     title: "Roots In the Dust",
@@ -134,7 +126,16 @@ const BOOKS = [
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Fiction"],
-  }
+  },
+  {
+    title: "The Depth of Love",
+    author: "Ramesh Kaliyan",
+    cover: "/ourbook/new/Frame 10.png",
+    date: "6-July-2023",
+    genre: "Novel",
+    tags: ["Fiction"],
+  },
+  
 ];
 
 const FILTERS = ["All", "Fiction", "Non Fiction", "Biography", "Children Book"];
