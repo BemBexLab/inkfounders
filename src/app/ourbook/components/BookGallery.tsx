@@ -114,7 +114,7 @@ export const BOOKS = [
   {
     title: "Whishes",
     author: "Jude Deveraux",
-    cover: "/ourbook/new/Frame 9.png",
+    cover: "/ourbook/new/wishes.png",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
@@ -130,7 +130,7 @@ export const BOOKS = [
   {
     title: "The Depth of Love",
     author: "Ramesh Kaliyan",
-    cover: "/ourbook/new/Frame 10.png",
+    cover: "/ourbook/new/thedepthoflove.png",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Fiction"],
