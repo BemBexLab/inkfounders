@@ -3,12 +3,24 @@ import { robotoMono } from "@/app/fonts";
 import { IoMdCall } from "react-icons/io";
 import Link from "next/link";
 
-const Hero = () => {
+interface HeroData {
+  title: React.ReactNode;
+  description: string;
+  buttonText: string;
+  buttonLink: string;
+}
+
+interface HeroProps {
+  data?: HeroData;
+}
+
+const Hero = ({ data }: HeroProps) => {
   // data object containing text for the hero section
-  const heroData = {
+  const heroData: HeroData = data || {
     title: (
       <>
-        Bring Your Story to Life with Professional<br></br>Audiobook Narration
+        Bring Your Story to Life with Professional
+        Audiobook Narration
       </>
     ),
     description:
@@ -18,18 +30,18 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full flex items-center justify-center overflow-hidden bg-[#F4F3E1] rounded-bl-[100px] py-10 pt-40 md:pt-50">
+    <section className="relative w-full flex items-center justify-center overflow-hidden bg-[#F4F3E1] rounded-bl-[40px] sm:rounded-bl-[60px] md:rounded-bl-[80px] lg:rounded-bl-[100px] py-10 pt-28 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-50">
       {/* Main Container */}
-      <div className="relative z-10 w-full max-w-[1450px] mx-auto flex items-center justify-center">
+      <div className="relative z-10 w-full max-w-[1450px] mx-auto flex items-center justify-center px-5 sm:px-8 md:px-12 lg:px-16">
         {/* Flex Container for All Layouts */}
         <div className="flex flex-col items-center justify-center w-full">
           {/* Text Content */}
-          <div className="px-[60px] w-full flex flex-col items-center justify-center max-md:px-[15px]">
-            <h1 className="text-[28px] md:text-[35px] xl:text-[48px] font-semibold leading-tight text-black mb-6 text-center">
-              <span className="whitespace-nowrap">{heroData.title}</span>
+          <div className="w-full flex flex-col items-center justify-center">
+            <h1 className="text-[26px] leading-[1.3] sm:text-3xl sm:leading-tight md:text-2xl lg:text-[35px] xl:text-[45px] font-semibold text-black mb-5 sm:mb-6 text-center px-2">
+              {heroData.title}
             </h1>
             <p
-              className={`text-gray-700 ${robotoMono.className} text-[12px] md:text-[15px] mb-8 leading-loose text-center`}
+              className={`${robotoMono.className} text-gray-700 text-[13px] sm:text-sm md:text-[15px] mb-7 sm:mb-8 leading-relaxed sm:leading-loose text-center max-w-4xl px-2`}
             >
               {heroData.description}
             </p>
@@ -37,19 +49,19 @@ const Hero = () => {
               <button
                 type="button"
                 className="
-      btn-slide-bg
-      flex items-center gap-2 
-      border-[1px] border-[#DADD39] bg-[#DADD39] text-black font-normal 
-      px-3 py-1 text-sm rounded-md shadow self-center 
-      transition-all duration-300
-      md:px-5 md:py-2 md:text-base hover:border-black
-    "
+                  btn-slide-bg
+                  flex items-center gap-2 
+                  border-[1px] border-[#DADD39] bg-[#DADD39] text-black font-normal 
+                  px-5 py-2.5 text-sm rounded-md shadow 
+                  transition-all duration-300
+                  sm:px-6 sm:py-3 md:text-base hover:border-black
+                "
               >
                 {/* Sliding background */}
                 <span className="slide-bg"></span>
                 {/* Icon and text above the effect */}
                 <span className="relative z-10 flex items-center gap-2">
-                  <IoMdCall size={18} className="md:w-5 md:h-5 w-4 h-4" />
+                  <IoMdCall size={18} className="sm:w-5 sm:h-5" />
                   {heroData.buttonText}
                 </span>
               </button>

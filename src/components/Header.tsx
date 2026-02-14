@@ -145,6 +145,43 @@ export default function Header() {
                   </div>
                 </div>
               </div>
+            ) : item.href === "/audiobook-services" ? (
+              <div key={item.href} className="relative group">
+                <Link
+                  href={item.href}
+                  className={`text-[14px] 2xl:text-[16px] whitespace-nowrap ${
+                    pathname === item.href
+                      ? "text-[#DADD39] font-semibold underline underline-offset-[10px]"
+                      : "text-black"
+                  } hover:text-[#DADD39] transition`}
+                >
+                  {item.label}
+                </Link>
+
+                {/* Dropdown on hover (desktop) */}
+                <div className="absolute left-0 top-full mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-100 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transform translate-y-1 transition-all">
+                  <div className="py-2">
+                    <Link
+                      href="/audiobook-services/audiobook-narration"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Audiobook Narration
+                    </Link>
+                    <Link
+                      href="/audiobook-services/audiobook-editing"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Audiobook Editing
+                    </Link>
+                    <Link
+                      href="/audiobook-services/audiobook-publishing"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Audiobook Publishing
+                    </Link>
+                  </div>
+                </div>
+              </div>
             ) : (
               <Link
                 key={item.href}
