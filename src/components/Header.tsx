@@ -1,6 +1,5 @@
 "use client";
 
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -16,7 +15,8 @@ import { IoCall } from "react-icons/io5";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/service" },
+  { label: "Publishing Services", href: "/service" },
+  { label: "Audiobook Services", href: "/audiobook-services" },
   { label: "Our Book", href: "/ourbook" },
   { label: "Who we are", href: "/whoweare" },
   { label: "Contact Us", href: "/contactus" },
@@ -29,9 +29,14 @@ const navItemsMobile = [
     icon: <FaHome size={22} />,
   },
   {
-    label: "Services",
+    label: "Publishing Services",
     href: "/service",
     icon: <FaCog size={20} />,
+  },
+  {
+    label: "Audiobook Services",
+    href: "/audiobook-services",
+    icon: <FaBook size={20} />,
   },
   {
     label: "Our Book",
@@ -80,15 +85,17 @@ export default function Header() {
       }`}
     >
       {/* 🔰 Logo */}
-<Link href="/">
-  <div className="flex items-center gap-2 ml-2 md:ml-6">
-    <video width="130" height="50" autoPlay loop muted>
-      <source src="/logovideo/inkfounder_logo_animate.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</Link>
-
+      <Link href="/">
+        <div className="flex items-center gap-2 ml-2 md:ml-6">
+          <video width="130" height="50" autoPlay loop muted>
+            <source
+              src="/logovideo/inkfounder_logo_animate.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </Link>
 
       {/* 🌐 Desktop Nav Links */}
       <div className="hidden lg:block">
@@ -150,12 +157,15 @@ export default function Header() {
               >
                 {item.label}
               </Link>
-            )
+            ),
           )}
         </nav>
       </div>
 
-      <a href="tel:+17865244161" className=" items-center gap-3 group hidden lg:flex">
+      <a
+        href="tel:+17865244161"
+        className=" items-center gap-3 group hidden lg:flex"
+      >
         <div className="rounded-full bg-primary border-primary w-8 h-8 2xl:w-14 2xl:h-14 flex items-center justify-center shake-pause group-hover:bg-primary/80 transition ">
           <div className="text-white flex items-center justify-center bg-[#DADD39] rounded-full px-3 py-3">
             <IoCall size={30} />
@@ -210,7 +220,9 @@ export default function Header() {
                 >
                   <span
                     className={`${
-                      pathname === item.href ? "text-[#DADD39]" : "text-gray-400"
+                      pathname === item.href
+                        ? "text-[#DADD39]"
+                        : "text-gray-400"
                     }`}
                   >
                     {item.icon}
@@ -230,7 +242,10 @@ export default function Header() {
           </ul>
 
           {/* Shaking Call Button */}
-          <a href="tel:+17865244161" className=" items-center gap-5 group flex px-6 pt-5">
+          <a
+            href="tel:+17865244161"
+            className=" items-center gap-5 group flex px-6 pt-5"
+          >
             <div className="rounded-full bg-primary border-primary w-8 h-8 2xl:w-14 2xl:h-14 flex items-center justify-center shake-pause group-hover:bg-primary/80 transition ">
               <div className="text-white flex items-center justify-center bg-[#DADD39] rounded-full px-3 py-3">
                 <IoCall size={30} />
