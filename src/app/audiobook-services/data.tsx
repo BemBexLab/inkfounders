@@ -133,7 +133,7 @@ export const audiobookData = [
             finished as you will take pride in presenting it to others.
           </>
         ),
-        imgSrc: "/audiobooks/editing.webp",
+        imgSrc: "/audiobooks/editting.webp",
         imgFirst: false,
       },
       {
@@ -150,7 +150,7 @@ export const audiobookData = [
             the right fit.
           </>
         ),
-        imgSrc: "/audiobooks/libraryshelf.webp",
+        imgSrc: "/audiobooks/edittor.webp",
         imgFirst: true,
       },
       {
@@ -170,7 +170,7 @@ export const audiobookData = [
             decide what works for you.
           </>
         ),
-        imgSrc: "/audiobooks/edittor.webp",
+        imgSrc: "/audiobooks/edittor1.webp",
         imgFirst: false,
       },
     ],
@@ -237,7 +237,7 @@ export const audiobookData = [
 
           </>
         ),
-        imgSrc: "/audiobooks/electricdial.webp",
+        imgSrc: "/audiobooks/edittorguy.webp",
         imgFirst: false,
       },
       {
