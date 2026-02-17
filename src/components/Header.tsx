@@ -1,6 +1,5 @@
 "use client";
 
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -14,9 +13,11 @@ import {
 } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
 
-const navItems = [
+const navItems: Array<{ label: string; href: string; nonClickable?: boolean }> = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/service" },
+  { label: "Publishing Services", href: "/publishing-services" },
+  // Audiobook Services should not navigate when clicked, only show hover menu
+  { label: "Audiobook Services", href: "/audiobook-services", nonClickable: true },
   { label: "Our Book", href: "/ourbook" },
   { label: "Who we are", href: "/whoweare" },
   { label: "Contact Us", href: "/contactus" },
@@ -29,9 +30,15 @@ const navItemsMobile = [
     icon: <FaHome size={22} />,
   },
   {
-    label: "Services",
+    label: "Publishing Services",
     href: "/service",
     icon: <FaCog size={20} />,
+  },
+  {
+    label: "Audiobook Services",
+    href: "/audiobook-services",
+    icon: <FaBook size={20} />,
+    nonClickable: true,
   },
   {
     label: "Our Book",
@@ -80,21 +87,23 @@ export default function Header() {
       }`}
     >
       {/* 🔰 Logo */}
-<Link href="/">
-  <div className="flex items-center gap-2 ml-2 md:ml-6">
-    <video width="130" height="50" autoPlay loop muted>
-      <source src="/logovideo/inkfounder_logo_animate.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</Link>
-
+      <Link href="/">
+        <div className="flex items-center gap-2 ml-2 md:ml-6">
+          <video width="130" height="50" autoPlay loop muted>
+            <source
+              src="/logovideo/inkfounder_logo_animate.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </Link>
 
       {/* 🌐 Desktop Nav Links */}
       <div className="hidden lg:block">
         <nav className="relative rounded-full px-6 md:px-10 py-3 flex gap-4 2xl:gap-8 items-center z-50">
           {navItems.map((item) =>
-            item.href === "/service" ? (
+            item.href === "/publishing-services" ? (
               <div key={item.href} className="relative group">
                 <Link
                   href={item.href}
@@ -111,29 +120,78 @@ export default function Header() {
                 <div className="absolute left-0 top-full mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-100 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transform translate-y-1 transition-all">
                   <div className="py-2">
                     <Link
-                      href="/service/ebook-writing"
+                      href="/publishing-services/ebook-writing"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => {}}
                     >
                       E-Book Writing
                     </Link>
                     <Link
-                      href="/service/ebook-publishing"
+                      href="/publishing-services/ebook-publishing"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       E-Book Publishing
                     </Link>
                     <Link
-                      href="/service/ebook-cover-design"
+                      href="/publishing-services/ebook-cover-design"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       E-Book Cover Design
                     </Link>
                     <Link
-                      href="/service/editing-and-proofreading"
+                      href="/publishing-services/editing-and-proofreading"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Editing & Proofreading
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ) : item.href === "/audiobook-services" ? (
+              <div key={item.href} className="relative group">
+                {item.nonClickable ? (
+                  <span
+                    className={`text-[14px] 2xl:text-[16px] whitespace-nowrap cursor-default ${
+                      pathname === item.href
+                        ? "text-[#DADD39] font-semibold underline underline-offset-[10px]"
+                        : "text-black"
+                    } hover:text-[#DADD39] transition`}
+                  >
+                    {item.label}
+                  </span>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`text-[14px] 2xl:text-[16px] whitespace-nowrap ${
+                      pathname === item.href
+                        ? "text-[#DADD39] font-semibold underline underline-offset-[10px]"
+                        : "text-black"
+                    } hover:text-[#DADD39] transition`}
+                  >
+                    {item.label}
+                  </Link>
+                )}
+
+                {/* Dropdown on hover (desktop) */}
+                <div className="absolute left-0 top-full mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-100 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transform translate-y-1 transition-all">
+                  <div className="py-2">
+                    <Link
+                      href="/audiobook-services/audiobook-narration"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Audiobook Narration
+                    </Link>
+                    <Link
+                      href="/audiobook-services/audiobook-editing"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Audiobook Editing
+                    </Link>
+                    <Link
+                      href="/audiobook-services/audiobook-publishing"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Audiobook Publishing
                     </Link>
                   </div>
                 </div>
@@ -150,12 +208,15 @@ export default function Header() {
               >
                 {item.label}
               </Link>
-            )
+            ),
           )}
         </nav>
       </div>
 
-      <a href="tel:+17865244161" className=" items-center gap-3 group hidden lg:flex">
+      <a
+        href="tel:+17865244161"
+        className=" items-center gap-3 group hidden lg:flex"
+      >
         <div className="rounded-full bg-primary border-primary w-8 h-8 2xl:w-14 2xl:h-14 flex items-center justify-center shake-pause group-hover:bg-primary/80 transition ">
           <div className="text-white flex items-center justify-center bg-[#DADD39] rounded-full px-3 py-3">
             <IoCall size={30} />
@@ -202,35 +263,66 @@ export default function Header() {
           <ul className="flex flex-col gap-4 mt-8 w-full">
             {navItemsMobile.map((item) => (
               <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={() => setMenuOpen(false)}
-                  className={`flex items-center gap-4 py-1 px-1 text-lg rounded-md transition
+                {item.nonClickable ? (
+                  <div
+                    className={`flex items-center gap-4 py-1 px-1 text-lg rounded-md transition
                     ${pathname === item.href ? "text-[#DADD39] font-semibold" : "text-gray-500"}`}
-                >
-                  <span
-                    className={`${
-                      pathname === item.href ? "text-[#DADD39]" : "text-gray-400"
-                    }`}
                   >
-                    {item.icon}
-                  </span>
-                  <span
-                    className={`tracking-wide ${
-                      pathname === item.href
-                        ? "text-[#DADD39] font-semibold"
-                        : "text-gray-600"
-                    }`}
+                    <span
+                      className={`${
+                        pathname === item.href
+                          ? "text-[#DADD39]"
+                          : "text-gray-400"
+                      }`}
+                    >
+                      {item.icon}
+                    </span>
+                    <span
+                      className={`tracking-wide ${
+                        pathname === item.href
+                          ? "text-[#DADD39] font-semibold"
+                          : "text-gray-600"
+                      }`}
+                    >
+                      {item.label}
+                    </span>
+                  </div>
+                ) : (
+                  <Link
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`flex items-center gap-4 py-1 px-1 text-lg rounded-md transition
+                      ${pathname === item.href ? "text-[#DADD39] font-semibold" : "text-gray-500"}`}
                   >
-                    {item.label}
-                  </span>
-                </Link>
+                    <span
+                      className={`${
+                        pathname === item.href
+                          ? "text-[#DADD39]"
+                          : "text-gray-400"
+                      }`}
+                    >
+                      {item.icon}
+                    </span>
+                    <span
+                      className={`tracking-wide ${
+                        pathname === item.href
+                          ? "text-[#DADD39] font-semibold"
+                          : "text-gray-600"
+                      }`}
+                    >
+                      {item.label}
+                    </span>
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
 
           {/* Shaking Call Button */}
-          <a href="tel:+17865244161" className=" items-center gap-5 group flex px-6 pt-5">
+          <a
+            href="tel:+17865244161"
+            className=" items-center gap-5 group flex px-6 pt-5"
+          >
             <div className="rounded-full bg-primary border-primary w-8 h-8 2xl:w-14 2xl:h-14 flex items-center justify-center shake-pause group-hover:bg-primary/80 transition ">
               <div className="text-white flex items-center justify-center bg-[#DADD39] rounded-full px-3 py-3">
                 <IoCall size={30} />

@@ -13,6 +13,7 @@
     "@prisma/client": "^6.10.1",
     "aos": "^2.3.4",
     "lucide-react": "^0.511.0",
+    "motion": "^12.34.0",
     "next": "^16.1.5",
     "nodemailer": "^7.0.3",
     "prisma": "^6.10.1",
