@@ -12,7 +12,21 @@ interface FormDataType {
   consent: boolean;
 }
 
-const GetInTouch = () => {
+interface GetInTouchData {
+  title: string;
+  description: string | React.ReactNode; // string will be split on newlines, ReactNode used directly
+}
+
+interface GetInTouchProps {
+  data?: GetInTouchData;
+}
+
+const GetInTouch = ({ data }: GetInTouchProps) => {
+  // fall back to a minimal object; we still hardcode the subheading below
+  const content: GetInTouchData = data || {
+    title: "Have Questions? Need Guidance?",
+    description: "",
+  };
   const [formData, setFormData] = useState<FormDataType>({
     firstName: "",
     lastName: "",
@@ -89,24 +103,21 @@ const GetInTouch = () => {
           {/* Left Section */}
           <div className="flex-1 max-w-[500px]">
             <h2 className="text-[#d4d946] text-[22px] font-semibold mb-2">
-              Have Questions? Need Guidance?
+              {content.title}
             </h2>
+            {/* subheading left fixed as per request */}
             <h3 className="text-[#1a1a1a] text-[32px] font-semibold mb-8">
               Let's Talk
             </h3>
 
             <div className={`${robotoMono.className} space-y-5 text-[14px] text-[#333333] leading-relaxed mb-12`}>
-              <p>
-                Ready to begin your self-publishing journey but still have
-                questions? Looking for expert advice to bring your vision to
-                life? Ink Founder is here to help.
-              </p>
-              <p>
-                We offer a free consultation where you can share your book
-                concept, explore our services in detail, and discover how we can
-                support you in turning your manuscript into a published
-                masterpiece. Reach out today—we're ready when you are.
-              </p>
+              {typeof content.description === "string" ? (
+                content.description
+                  .split("\n")
+                  .map((p, i) => <p key={i}>{p}</p>)
+              ) : (
+                <div>{content.description}</div>
+              )}
             </div>
 
             {/* Contact Options */}

@@ -2,10 +2,11 @@ import { robotoMono } from "@/app/fonts";
 import Link from "next/link";
 import React from "react";
 import { IoMdCall } from "react-icons/io";
+import { nl2br } from "@/utils/textUtils";
 
 interface NarrationOption {
   title: string;
-  description: string;
+  description: React.ReactNode; // can be string or JSX from data
   imgSrc: string;
 }
 
@@ -84,15 +85,15 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
                   {opt.title}
                 </h2>
                 <p className={`${robotoMono.className} text-[14px] text-[#444444] leading-relaxed`}>
-                  {opt.description}
+                  {typeof opt.description === "string" ? nl2br(opt.description) : opt.description}
                 </p>
               </div>
             ))}
           </div>
 
           {/* Quote */}
-          <p className={`${robotoMono.className} text-[14px] text-[#444444] mb-7`}>
-            {narrationData.quote}
+          <p className={`${robotoMono.className} text-[14px] text-[#444444] mb-7 whitespace-pre-line`}>
+            {nl2br(narrationData.quote)}
           </p>
 
           {/* CTA Button */}
@@ -164,8 +165,8 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
 
         {/* Quote */}
         <div className="text-center mb-8 px-6">
-          <p className="text-sm sm:text-base text-[#444444] italic">
-            {narrationData.quote}
+          <p className="text-sm sm:text-base text-[#444444] italic whitespace-pre-line">
+            {nl2br(narrationData.quote)}
           </p>
         </div>
 

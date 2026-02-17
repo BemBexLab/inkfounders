@@ -2,6 +2,7 @@
 
 import { robotoMono } from '@/app/fonts';
 import React from 'react';
+import { nl2br } from '@/utils/textUtils';
 
 const Testimonials = () => {
     const testimonials = [
@@ -143,8 +144,8 @@ const Testimonials = () => {
                     </div>
 
                     {/* Testimonial Text */}
-                    <p className={`${robotoMono.className} text-sm sm:text-[15px] text-[#333333] leading-relaxed mb-6 sm:mb-8`}>
-                      {t.quote}
+                    <p className={`${robotoMono.className} text-sm sm:text-[15px] text-[#333333] leading-relaxed mb-6 sm:mb-8 whitespace-pre-line`}>
+                      {nl2br(t.quote)}
                     </p>
 
                     {/* Author Info */}

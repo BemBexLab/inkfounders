@@ -5,7 +5,8 @@ import Link from "next/link";
 
 interface HeroData {
   title: React.ReactNode;
-  description: string;
+  // descriptions sometimes include JSX (links, line breaks, etc.)
+  description: React.ReactNode;
   buttonText: string;
   buttonLink: string;
 }

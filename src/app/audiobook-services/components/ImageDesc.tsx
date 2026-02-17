@@ -9,32 +9,20 @@ interface Section {
 }
 
 interface ImageDescProps {
+  /**
+   * Sections to render. component will render nothing if this prop is
+   * missing or empty — there is no built-in default content anymore.
+   */
   data?: Section[];
 }
 
 const ImageDesc = ({ data }: ImageDescProps) => {
-  const sections: Section[] = data || [
-    {
-      title: "Worldwide Audiobook Narration Services",
-      paragraphs: [
-        "At Ink Founders, we provide professional audiobook narration services to authors across the globe. Our experienced voice talent brings energy, clarity, and emotion to every project, helping your story connect with listeners wherever they are.",
-        "Whether your project is large or small, we deliver reliable service, competitive pricing, and efficient turnaround times without compromising quality. Our goal is simple: transform your manuscript into a polished audio production that resonates with audiences everywhere.",
-        "We combine strong creative direction with technical precision, ensuring your audiobook meets professional standards and stands out in a growing market. If you're ready to share your story in a new way, we're ready to help.",
-      ],
-      imgSrc: "/audiobooks/image2.webp",
-      imgFirst: false,
-    },
-    {
-      title: "Have A Book? Let's Give It A Voice.",
-      paragraphs: [
-        "A compelling narrator can elevate your book into a memorable listening experience. At Ink Founders, we understand how important it is to match the right voice with the right story.",
-        "We keep the process clear and straightforward, guiding you from narration selection through final production. You stay involved at every stage while we handle the technical details.",
-        "When you work with us, you join a supportive network of authors and creative professionals who care about storytelling. Let's turn your book into an audiobook listeners won't forget.",
-      ],
-      imgSrc: "/audiobooks/image1.webp",
-      imgFirst: true,
-    },
-  ];
+  // simply use whatever was passed in; render nothing if there's no data
+  const sections: Section[] = data || [];
+
+  if (!sections.length) {
+    return null;
+  }
 
   return (
     <section>

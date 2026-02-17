@@ -28,7 +28,7 @@ const page = async ({ params }: PageProps) => {
       <NarrationOptions data={audiobook.narration[0]} />
       <ImageDesc data={audiobook.imageDesc} />
       <Testimonials />
-      <GetInTouch />
+      <GetInTouch data={audiobook.contactData} />
     </section>
   )
 }
