@@ -142,7 +142,7 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
                     href="tel:+17865244161"
                     className={`text-[14px] ${robotoMono.className} text-[#333333] hover:underline focus:outline-none`}
                   >
-                    +1 (786) 524-4161
+                    +1(786)524-4161
                   </a>
               </div>
 
