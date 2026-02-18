@@ -4,16 +4,14 @@ import { robotoMono } from "@/app/fonts";
 
 const Footer: React.FC = () => {
   return (
-    <div className="bg-white p-0 m-0">
+    <div className="bg-white p-0 m-0 flex justify-center">
       {/* Main footer container with off-white bg, rounded top-right */}
-      <div className="bg-[#f5f5e8] rounded-tr-[48px] px-16 pt-12 pb-0">
+      <div className="bg-[#f5f5e8] rounded-tr-[48px] px-4 sm:px-8 md:px-12 lg:px-16 pt-10 lg:pt-12 pb-0 w-screen left-0 right-0 flex flex-col items-center">
         {/* Top section */}
-        <div className="flex justify-between flex-wrap gap-6">
-          {/* Brand + Description */}
-          <div className="max-w-[360px]">
-            {/* Logo placeholder - replace with your custom SVG */}
+        <div className="flex flex-col lg:flex-row lg:items-start gap-10 lg:gap-0 justify-center">
+          {/* Brand + Description — fixed width, never shrinks */}
+          <div className="w-full lg:w-[300px] items-center xl:w-[340px] shrink-0">
             <div className="mb-4">
-              {/* YOUR CUSTOM SVG GOES HERE */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="152"
@@ -80,7 +78,9 @@ const Footer: React.FC = () => {
               </svg>
             </div>
 
-            <p className={`${robotoMono.className} text-[12.5px] text-[#444] leading-[1.7] m-0`}>
+            <p
+              className={`${robotoMono.className} w-[450px] text-[14px] text-[#444] leading-[1.7] m-0`}
+            >
               Ink Founder is an independent publishing partner offering a
               comprehensive suite of digital services—including book publishing,
               children&apos;s books, ghostwriting, illustration, book marketing,
@@ -89,11 +89,13 @@ const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Right columns grouped closer together */}
-          <div className="flex gap-8">
+          <div className="w-[280px]" />
+
+          {/* Right columns — tight gap, left-aligned, no stretching */}
+          <div className=" lg:ml-auto  lg:pl-0 grid grid-cols-2 sm:grid-cols-3 lg:flex lg:flex-row lg:items-left gap-4 lg:gap-6">
             {/* Quick Links */}
-            <div>
-              <h4 className="font-sans text-[13px] font-bold text-[#8a7a2e] mb-4 mt-0">
+            <div className="min-w-[110px]">
+              <h4 className="font-sans text-[15px] font-bold text-[#8a7a2e] mb-4 mt-0 whitespace-nowrap">
                 Quick Links
               </h4>
               <ul className="list-none p-0 m-0">
@@ -110,7 +112,7 @@ const Footer: React.FC = () => {
                   <li key={label} className="mb-[8px]">
                     <Link
                       href={href}
-                      className="font-sans text-[13px] text-[#333] no-underline hover:text-[#8a7a2e] transition-colors"
+                      className="font-sans text-[14px] text-[#333] no-underline hover:text-[#8a7a2e] transition-colors whitespace-nowrap"
                     >
                       {label}
                     </Link>
@@ -120,8 +122,8 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Our Services */}
-            <div>
-              <h4 className="font-sans text-[13px] font-bold text-[#8a7a2e] mb-4 mt-0">
+            <div className="min-w-[120px]">
+              <h4 className="font-sans text-[15px] font-bold text-[#8a7a2e] mb-4 mt-0 whitespace-nowrap">
                 Our Services
               </h4>
               <ul className="list-none p-0 m-0">
@@ -134,7 +136,7 @@ const Footer: React.FC = () => {
                   <li key={label} className="mb-[8px]">
                     <Link
                       href={href}
-                      className="font-sans text-[13px] text-[#333] no-underline hover:text-[#8a7a2e] transition-colors"
+                      className="font-sans text-[14px] text-[#333] no-underline hover:text-[#8a7a2e] transition-colors whitespace-nowrap"
                     >
                       {label}
                     </Link>
@@ -144,27 +146,45 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Contact Us */}
-            <div>
-              <h4 className="font-sans text-[13px] font-bold text-[#8a7a2e] mb-4 mt-0">
+            <div className="col-span-2 sm:col-span-1 min-w-[200px]">
+              <h4 className="font-sans text-[15px] font-bold text-[#8a7a2e] mb-4 mt-0 whitespace-nowrap">
                 Contact Us
               </h4>
-              <ul className="list-none p-0 m-0">
+              <ul className="list-none p-0 m-0 text-[14px]">
                 {[
                   {
                     icon: (
-                      <svg width="14" height="18" viewBox="0 0 14 18" fill="none">
+                      <svg
+                        width="14"
+                        height="18"
+                        viewBox="0 0 14 18"
+                        fill="none"
+                        className="shrink-0"
+                      >
                         <path
                           d="M7 0C4.24 0 2 2.24 2 5C2 8.75 7 14 7 14C7 14 12 8.75 12 5C12 2.24 9.76 0 7 0ZM7 6.5C6.17 6.5 5.5 5.83 5.5 5C5.5 4.17 6.17 3.5 7 3.5C7.83 3.5 8.5 4.17 8.5 5C8.5 5.83 7.83 6.5 7 6.5Z"
                           fill="#555"
                         />
                       </svg>
                     ),
-                    label: "1680 Michigan Ave 700 326 Miami Beach, FL 33139, USA",
+                    label: (
+                      <>
+                        1680 Michigan Ave 700 326
+                        <br />
+                        Miami Beach, FL 33139, USA
+                      </>
+                    ),
                     href: "/contactus",
                   },
                   {
                     icon: (
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        className="shrink-0"
+                      >
                         <path
                           d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"
                           fill="#555"
@@ -176,7 +196,13 @@ const Footer: React.FC = () => {
                   },
                   {
                     icon: (
-                      <svg width="16" height="13" viewBox="0 0 16 13" fill="none">
+                      <svg
+                        width="16"
+                        height="13"
+                        viewBox="0 0 16 13"
+                        fill="none"
+                        className="shrink-0"
+                      >
                         <path
                           d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v10a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5v-10zm1.5-.5a.5.5 0 0 0-.5.5v.217l7 4.2 7-4.2V1.5a.5.5 0 0 0-.5-.5h-13zM15 3.383l-4.778 2.867L15 9.317V3.383zm-.034 6.876-5.64-3.471L8 7.432l-1.326-.644-5.64 3.47A.5.5 0 0 0 1.5 11h13a.5.5 0 0 0 .466-.741zM1 9.317l4.778-3.067L1 3.383v5.934z"
                           fill="#555"
@@ -187,11 +213,14 @@ const Footer: React.FC = () => {
                     href: "mailto:info@inkfounders.com",
                   },
                 ].map(({ icon, label, href }) => (
-                  <li key={label} className="flex items-center gap-[10px] mb-[14px]">
-                    {icon}
+                  <li
+                    key={href}
+                    className="flex items-start gap-[10px] mb-[13px]"
+                  >
+                    <span className="mt-[2px]">{icon}</span>
                     <Link
                       href={href}
-                      className="font-sans text-[13px] text-[#333] no-underline hover:text-[#8a7a2e] transition-colors"
+                      className="font-sans text-[13px] text-[#333] no-underline hover:text-[#8a7a2e] transition-colors leading-snug"
                     >
                       {label}
                     </Link>
@@ -203,7 +232,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom copyright bar */}
-        <div className="border-t border-[#d8d8c8] mt-9 py-4 text-center">
+        <div className="border-t border-[#d8d8c8] w-full mt-9 py-4 text-center">
           <p className="font-sans text-[12px] text-[#666] m-0">
             © 2025 Ink Founders All rights reserved.
           </p>
