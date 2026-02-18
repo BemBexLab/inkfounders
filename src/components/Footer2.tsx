@@ -101,7 +101,7 @@ const Footer: React.FC = () => {
               <ul className="list-none p-0 m-0">
                 {[
                   { label: "Home", href: "/" },
-                  { label: "Services", href: "/service" },
+                  { label: "Publishing Services", href: "/publishing-services" },
                   { label: "Our Books", href: "/ourbook" },
                   { label: "Our Publishing", href: "/ourpublishing" },
                   { label: "Who we are", href: "/whoweare" },
@@ -128,10 +128,10 @@ const Footer: React.FC = () => {
               </h4>
               <ul className="list-none p-0 m-0">
                 {[
-                  { label: "Book Publishing", href: "/service" },
-                  { label: "Ebook Formatting", href: "/service" },
-                  { label: "Childrens Book", href: "/service" },
-                  { label: "Book Marketing", href: "/service" },
+                  { label: "Book Publishing", href: "/publishing-services" },
+                  { label: "Ebook Formatting", href: "/publishing-services" },
+                  { label: "Childrens Book", href: "/publishing-services" },
+                  { label: "Book Marketing", href: "/publishing-services" },
                 ].map(({ label, href }) => (
                   <li key={label} className="mb-[8px]">
                     <Link
