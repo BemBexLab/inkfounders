@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer2";
+import DynamicPageTitle from "@/components/DynamicPageTitle";
 import { workSans } from "./fonts";
 
 
@@ -51,7 +52,9 @@ fbq('track', 'PageView');
       </head>
       <body
         className={`antialiased ${workSans.className}`}
+        suppressHydrationWarning
       >
+        <DynamicPageTitle />
         <Header />
         {children}
         <Footer />
