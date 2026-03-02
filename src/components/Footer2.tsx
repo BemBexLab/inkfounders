@@ -105,6 +105,7 @@ const Footer: React.FC = () => {
                   { label: "Our Books", href: "/ourbook" },
                   { label: "Our Publishing", href: "/ourpublishing" },
                   { label: "Who we are", href: "/whoweare" },
+                  { label: "Blog", href: "/blog" },
                   { label: "Contact Us", href: "/contactus" },
                   { label: "Terms", href: "/terms" },
                   { label: "Privacy", href: "/privacy" },

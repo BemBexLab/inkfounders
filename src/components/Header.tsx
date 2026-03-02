@@ -20,6 +20,7 @@ const navItems: Array<{ label: string; href: string; nonClickable?: boolean }> =
   { label: "Audiobook Services", href: "/audiobook-services", nonClickable: true },
   { label: "Our Book", href: "/ourbook" },
   { label: "Who we are", href: "/whoweare" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact Us", href: "/contactus" },
 ];
 
@@ -48,6 +49,11 @@ const navItemsMobile = [
   {
     label: "Who we are",
     href: "/whoweare",
+    icon: <FaInfoCircle size={20} />,
+  },
+  {
+    label: "Blog",
+    href: "/blog",
     icon: <FaInfoCircle size={20} />,
   },
   {
@@ -213,7 +219,7 @@ export default function Header() {
         </nav>
       </div>
 
-      <a
+      {/* <a
         href="tel:+17865244161"
         className=" items-center gap-3 group hidden lg:flex"
       >
@@ -225,7 +231,7 @@ export default function Header() {
         <span className="text-[14px] 2xl:text-base text-black font-semibold text-primary group-hover:underline">
           +1 (786) 524-4161
         </span>
-      </a>
+      </a> */}
 
       <Link href="/contactus">
         <div className="hidden lg:flex">
