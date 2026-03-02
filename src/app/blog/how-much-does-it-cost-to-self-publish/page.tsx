@@ -2,8 +2,10 @@
 
 import React, { useState } from 'react';
 import { ArrowLeft, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const BlogOne: React.FC = () => {
+  const router = useRouter();
   const editingImages = [
     "/blog/blog_1.webp",
   ];
@@ -623,7 +625,7 @@ const BlogOne: React.FC = () => {
               <div className="bg-[#D4D939] rounded-xl p-8 text-center shadow-lg">
                 <h3 className="text-2xl font-bold text-black mb-4">Ready to Publish?</h3>
                 <p className="text-black mb-6 opacity-90">Get a custom quote for your book project today.</p>
-                <button className="w-full bg-black text-white py-3 rounded-lg font-bold hover:bg-gray-800 transition-colors">
+                <button onClick={() => router.push("/contactus")} className="w-full bg-black text-white py-3 rounded-lg font-bold hover:bg-gray-800 transition-colors">
                   Request a Quote
                 </button>
               </div>
