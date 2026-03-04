@@ -103,7 +103,7 @@ const Blog2 = () => {
                   answer varies based on several factors, including the type of
                   editing, word count, the editor's experience, and the
                   complexity of the project. In this guide, we'll break down the
-                  costs of <a href="/publishing-services" className="text-blue-500 hover:text-blue-800 hover:underline">professional book editing services</a> in simple terms.
+                  costs of <b><a href="/publishing-services" className="text-blue-500 hover:text-blue-800 hover:underline">professional book editing services</a></b> in simple terms.
                 </p>
                 <p className="text-base mb-6">
                   We'll cover the price per word for book editing, the cost of
@@ -628,8 +628,9 @@ const Blog2 = () => {
                     <div className="border border-gray-200 rounded-xl p-6">
                       <h4 className="font-bold text-lg mb-3">Editing Agency</h4>
                       <ul className="space-y-2">
-                        <li className="flex items-center text-gray-600">
-                          <span className="mr-2">•</span>{" "}
+                        <li className="flex items-center text-green-600">
+                          {/* <span className="mr-2">•</span>{" "} */}
+                          <CheckCircle className="w-4 h-4 mr-2" />{" "}
                           <span className="text-base">Higher cost</span>
                         </li>
                         <li className="flex items-center text-green-600">
