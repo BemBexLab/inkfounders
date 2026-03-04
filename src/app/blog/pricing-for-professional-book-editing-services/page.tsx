@@ -12,7 +12,7 @@ const Blog2 = () => {
   const router = useRouter();
 
   // Image arrays for sliders (empty as per original structure)
-  const editingImages = ["/blog/blog_1.webp"];
+  const editingImages = ["/blog/blog_2.webp"];
   const coverDesignImages: string[] = [];
   const printingImages: string[] = [];
   const childrensBookImages: string[] = [];
@@ -73,7 +73,7 @@ const Blog2 = () => {
                       />
                     </div>
                     {/* Dots Indicator */}
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    {/* <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
                       {editingImages.map((_, index) => (
                         <button
                           key={index}
@@ -85,7 +85,7 @@ const Blog2 = () => {
                           }`}
                         />
                       ))}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="flex items-center text-gray-500 text-sm space-x-4">

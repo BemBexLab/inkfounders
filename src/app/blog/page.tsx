@@ -63,7 +63,7 @@ const BlogPage: React.FC = () => {
       category: "Publishing Guide",
       date: "March 4, 2025",
       readTime: "10 min read",
-      imageUrl: "/blog/blog_1.webp",
+      imageUrl: "/blog/blog_2.webp",
       slug: "pricing-for-professional-book-editing-services",
     },
   ];
