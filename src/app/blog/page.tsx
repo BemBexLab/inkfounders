@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { Search, Calendar, Clock, ChevronRight, Tag } from 'lucide-react';
+import React, { useState } from "react";
+import Link from "next/link";
+import { Search, Calendar, Clock, ChevronRight, Tag } from "lucide-react";
 
 interface BlogPost {
   id: number;
@@ -21,17 +21,22 @@ interface Category {
 }
 
 const BlogPage: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 3;
 
   const blogPosts: BlogPost[] = [
     {
       id: 1,
-      title: "How Much Does It Cost to Self Publish a Book? Real Costs Explained",
+      title:
+        "How Much Does It Cost to Self Publish a Book? Real Costs Explained",
       excerpt: (
         <>
           <p className="text-gray-700">
             If you are planning to publish your book, you probably ask:
-                <span className="block font-bold text-black mt-2">"How much does it cost to self publish a book?"</span>
+            <span className="block font-bold text-black mt-2">
+              "How much does it cost to self publish a book?"
+            </span>
           </p>
         </>
       ),
@@ -39,7 +44,27 @@ const BlogPage: React.FC = () => {
       date: "March 1, 2025",
       readTime: "8 min read",
       imageUrl: "/blog/blog_1.webp",
-      slug: "how-much-does-it-cost-to-self-publish"
+      slug: "how-much-does-it-cost-to-self-publish",
+    },
+    {
+      id: 2,
+      title: "Pricing for Professional Book Editing Services (2026 Guide)",
+      excerpt: (
+        <>
+          <p className="text-gray-700">
+            When you're planning to publish a book, one of the first questions
+            you'll face is:
+            <span className="block font-bold text-black mt-2">
+              "How much will editing cost?"
+            </span>
+          </p>
+        </>
+      ),
+      category: "Publishing Guide",
+      date: "March 4, 2025",
+      readTime: "10 min read",
+      imageUrl: "/blog/blog_1.webp",
+      slug: "pricing-for-professional-book-editing-services",
     },
   ];
 
@@ -47,20 +72,25 @@ const BlogPage: React.FC = () => {
     blogPosts.reduce<Record<string, number>>((acc, post) => {
       acc[post.category] = (acc[post.category] ?? 0) + 1;
       return acc;
-    }, {})
+    }, {}),
   )
     .map(([name, count]) => ({ name, count }))
     .sort((a, b) => b.count - a.count);
 
-  const recentPosts = [
-    "The Complete Guide to Self-Publishing Your First Book in 2025",
-    "How to Create Compelling Children's Book Illustrations",
-    "Book Marketing Strategies That Actually Work",
-    "Understanding ISBN and Copyright Basics"
-  ];
+  const parsePostDate = (date: string): number => {
+    const parsed = new Date(date).getTime();
+    return Number.isNaN(parsed) ? 0 : parsed;
+  };
+
+  const sortedPosts = [...blogPosts].sort(
+    (a, b) => parsePostDate(b.date) - parsePostDate(a.date),
+  );
+
+  const recentPosts = sortedPosts.slice(0, 4);
 
   const getNodeText = (node: React.ReactNode): string => {
-    if (typeof node === "string" || typeof node === "number") return String(node);
+    if (typeof node === "string" || typeof node === "number")
+      return String(node);
     if (Array.isArray(node)) return node.map(getNodeText).join(" ");
     if (React.isValidElement<{ children?: React.ReactNode }>(node)) {
       return getNodeText(node.props.children);
@@ -68,10 +98,34 @@ const BlogPage: React.FC = () => {
     return "";
   };
 
-  const filteredPosts = blogPosts.filter(post =>
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    getNodeText(post.excerpt).toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredPosts = sortedPosts.filter(
+    (post) =>
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      getNodeText(post.excerpt)
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase()),
   );
+
+  const totalPages = Math.max(
+    1,
+    Math.ceil(filteredPosts.length / postsPerPage),
+  );
+  const safePage = Math.min(currentPage, totalPages);
+  const startIndex = (safePage - 1) * postsPerPage;
+  const paginatedPosts = filteredPosts.slice(
+    startIndex,
+    startIndex + postsPerPage,
+  );
+
+  const handlePageChange = (page: number) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+  };
+
+  const handleSearchChange = (value: string) => {
+    setSearchTerm(value);
+    setCurrentPage(1);
+  };
 
   return (
     <div className="min-h-screen bg-[#F5F5DC]">
@@ -83,7 +137,7 @@ const BlogPage: React.FC = () => {
             Our Blog
           </h1>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Insights, tips, and resources for aspiring and established authors. 
+            Insights, tips, and resources for aspiring and established authors.
             Discover the latest in publishing, marketing, and storytelling.
           </p>
         </div>
@@ -98,7 +152,7 @@ const BlogPage: React.FC = () => {
                   type="text"
                   placeholder="Search articles..."
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onChange={(e) => handleSearchChange(e.target.value)}
                   className="w-full px-6 py-4 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:border-[#D4D939] text-gray-800 placeholder-gray-400 transition-colors"
                 />
                 <Search className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -107,9 +161,9 @@ const BlogPage: React.FC = () => {
 
             {/* Blog Posts Grid */}
             <div className="grid gap-10">
-              {filteredPosts.map((post) => (
-                <article 
-                  key={post.id} 
+              {paginatedPosts.map((post) => (
+                <article
+                  key={post.id}
                   className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100"
                 >
                   <div className="grid md:grid-cols-2 gap-0">
@@ -133,9 +187,7 @@ const BlogPage: React.FC = () => {
                     <div className="p-8 flex flex-col justify-between">
                       <div>
                         <h2 className="text-2xl font-bold text-black mb-3 leading-tight hover:text-[#D4D939] transition-colors">
-                          <Link href={`/blog/${post.slug}`}>
-                            {post.title}
-                          </Link>
+                          <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                         </h2>
                         <div className="text-gray-600 mb-6 leading-relaxed line-clamp-3">
                           {post.excerpt}
@@ -153,7 +205,10 @@ const BlogPage: React.FC = () => {
                             {post.readTime}
                           </span>
                         </div>
-                        <Link href={`/blog/${post.slug}`} className="text-[#D4D939] hover:text-[#b8bc2e] font-semibold flex items-center transition-colors">
+                        <Link
+                          href={`/blog/${post.slug}`}
+                          className="text-[#D4D939] hover:text-[#b8bc2e] font-semibold flex items-center transition-colors"
+                        >
                           Read More
                           <ChevronRight className="w-4 h-4 ml-1" />
                         </Link>
@@ -166,20 +221,33 @@ const BlogPage: React.FC = () => {
 
             {/* Pagination */}
             <div className="mt-12 flex justify-center items-center space-x-2">
-              <button className="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-[#D4D939] hover:text-[#D4D939] transition-colors">
+              <button
+                onClick={() => handlePageChange(safePage - 1)}
+                disabled={safePage === 1}
+                className="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-[#D4D939] hover:text-[#D4D939] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
                 Previous
               </button>
-              <button className="px-4 py-2 bg-[#D4D939] text-black rounded-lg font-semibold">
-                1
-              </button>
-              <button className="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-[#D4D939] hover:text-[#D4D939] transition-colors">
-                2
-              </button>
-              <button className="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-[#D4D939] hover:text-[#D4D939] transition-colors">
-                3
-              </button>
-              <span className="text-gray-400 px-2">...</span>
-              <button className="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-[#D4D939] hover:text-[#D4D939] transition-colors">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (page) => (
+                  <button
+                    key={page}
+                    onClick={() => handlePageChange(page)}
+                    className={
+                      page === safePage
+                        ? "px-4 py-2 bg-[#D4D939] text-black rounded-lg font-semibold"
+                        : "px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-[#D4D939] hover:text-[#D4D939] transition-colors"
+                    }
+                  >
+                    {page}
+                  </button>
+                ),
+              )}
+              <button
+                onClick={() => handlePageChange(safePage + 1)}
+                disabled={safePage === totalPages}
+                className="px-4 py-2 border-2 border-gray-300 rounded-lg text-gray-600 hover:border-[#D4D939] hover:text-[#D4D939] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
                 Next
               </button>
             </div>
@@ -193,7 +261,8 @@ const BlogPage: React.FC = () => {
                 Subscribe to Our Newsletter
               </h3>
               <p className="text-black mb-6 opacity-90">
-                Get the latest publishing tips and industry insights delivered to your inbox.
+                Get the latest publishing tips and industry insights delivered
+                to your inbox.
               </p>
               <input
                 type="email"
@@ -233,11 +302,14 @@ const BlogPage: React.FC = () => {
                 Recent Posts
               </h3>
               <ul className="space-y-4">
-                {recentPosts.map((post, index) => (
-                  <li key={index}>
-                    <button className="text-left text-gray-700 hover:text-[#D4D939] transition-colors line-clamp-2 text-sm leading-relaxed">
-                      {post}
-                    </button>
+                {recentPosts.map((post) => (
+                  <li key={post.id}>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="text-left text-gray-700 hover:text-[#D4D939] transition-colors line-clamp-2 text-sm leading-relaxed block"
+                    >
+                      {post.title}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -249,7 +321,16 @@ const BlogPage: React.FC = () => {
                 Popular Tags
               </h3>
               <div className="flex flex-wrap gap-2">
-                {['Self-Publishing', 'Marketing', 'Writing Tips', 'Cover Design', 'Ebooks', 'Audiobooks', 'Children\'s Books', 'Ghostwriting'].map((tag) => (
+                {[
+                  "Self-Publishing",
+                  "Marketing",
+                  "Writing Tips",
+                  "Cover Design",
+                  "Ebooks",
+                  "Audiobooks",
+                  "Children's Books",
+                  "Ghostwriting",
+                ].map((tag) => (
                   <button
                     key={tag}
                     className="px-3 py-1.5 bg-gray-100 text-gray-700 rounded-lg text-sm hover:bg-[#D4D939] hover:text-black transition-colors"
@@ -266,11 +347,17 @@ const BlogPage: React.FC = () => {
                 Ready to Publish Your Book?
               </h3>
               <p className="text-gray-300 mb-6">
-                Let our experts guide you through every step of the publishing journey.
+                Let our experts guide you through every step of the publishing
+                journey.
               </p>
-              <button className="w-full bg-[#D4D939] text-black py-3 rounded-lg font-semibold hover:bg-[#c5ca35] transition-colors">
-                Get Started Today
-              </button>
+              <Link
+                href="/contactus"
+                // className="inline-block bg-[#D4D939] text-black py-3 px-6 rounded-lg font-semibold hover:bg-[#c5ca35] transition-colors"
+              >
+                <button className="w-full bg-[#D4D939] text-black py-3 rounded-lg font-semibold hover:bg-[#c5ca35] transition-colors">
+                  Get Started Today
+                </button>
+              </Link>
             </div>
           </aside>
         </div>
