@@ -639,7 +639,7 @@ const BlogOne: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-black">Phone</p>
-                      <p className="text-sm text-gray-600">+1 (786) 524-4161</p>
+                      <p className="text-sm text-gray-600">+1 (786) 496-1231</p>
                     </div>
                   </div>
                   <div className="flex items-start">
