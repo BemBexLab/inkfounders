@@ -143,10 +143,10 @@ export default function Footer() {
                 <li className="flex items-center justify-center md:justify-center lg:justify-start gap-3">
                   <IoMdCall className="w-5 h-5 text-black" />
                   <a
-                    href="tel:+17865244161"
+                    href="tel:+17864961231"
                     className="text-sm text-gray-700 hover:underline focus:outline-none"
                   >
-                    +1 (786) 524-4161
+                    +1 (786) 496-1231
                   </a>
                 </li>
                 <li className="flex items-center justify-center md:justify-center lg:justify-start gap-3">

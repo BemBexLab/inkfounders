@@ -220,7 +220,7 @@ export default function Header() {
       </div>
 
       {/* <a
-        href="tel:+17865244161"
+        href="tel:+17864961231"
         className=" items-center gap-3 group hidden lg:flex"
       >
         <div className="rounded-full bg-primary border-primary w-8 h-8 2xl:w-14 2xl:h-14 flex items-center justify-center shake-pause group-hover:bg-primary/80 transition ">
@@ -229,7 +229,7 @@ export default function Header() {
           </div>
         </div>
         <span className="text-[14px] 2xl:text-base text-black font-semibold text-primary group-hover:underline">
-          +1 (786) 524-4161
+          +1 (786) 496-1231
         </span>
       </a> */}
 
@@ -326,7 +326,7 @@ export default function Header() {
 
           {/* Shaking Call Button */}
           <a
-            href="tel:+17865244161"
+            href="tel:+17864961231"
             className=" items-center gap-5 group flex px-6 pt-5"
           >
             <div className="rounded-full bg-primary border-primary w-8 h-8 2xl:w-14 2xl:h-14 flex items-center justify-center shake-pause group-hover:bg-primary/80 transition ">
@@ -335,7 +335,7 @@ export default function Header() {
               </div>
             </div>
             <span className="text-base text-black font-semibold text-primary group-hover:underline">
-              +1 (786) 524-4161
+              +1 (786) 496-1231
             </span>
           </a>
 

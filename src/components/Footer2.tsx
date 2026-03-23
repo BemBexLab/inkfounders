@@ -192,8 +192,8 @@ const Footer: React.FC = () => {
                         />
                       </svg>
                     ),
-                    label: "+1(786)524-4161",
-                    href: "tel:+17865244161",
+                    label: "+1 (786) 496-1231",
+                    href: "tel:+17864961231",
                   },
                   {
                     icon: (
