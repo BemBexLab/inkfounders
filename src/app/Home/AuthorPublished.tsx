@@ -8,7 +8,7 @@ export default function AuthorsPublishedSection() {
         {/* Book Cover */}
         <div className="flex-shrink-0">
           <Image
-            src="/Home/image 15 (Flattened).png"
+            src="/ourbook/New folder/Peter 1.png"
             alt="Book Cover"
             width={540}
             height={540}
@@ -19,18 +19,32 @@ export default function AuthorsPublishedSection() {
         {/* Content */}
         <div className="max-w-2xl">
           <h2 className="text-2xl md:text-[27px] font-semibold text-black mb-8">
-            Your Story, Your Dream – Our Commitment, let’s make your story into a reality too along with 1000 authors 
+            Your Story, Your Dream—Our Commitment, let’s make your story into a
+            reality too, along with 1000 authors
           </h2>
-          <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[16px] leading-loose`}>
-            <p>
-              Every author begins with an idea or a dream, so fulfill your dream with Ink Founders. You have words, we have tools to turn your words into a book, not only a book but a masterpiece. We have risen the voice of many maybe now it’s your turn. At Ink Founders over 1000 authors have turn their ideas in to a book that has powerfully engaged millions of readers.
-            </p>
-            <p>
-              It doesn’t matter whether you have a manuscript or you have just got an idea if you have passion, dedication and willingness to do, just start today with Ink Founders, we are here to support you at every step and with full package of services covering everything from editing and formatting to publishing and marketing. 
-            </p>
-            <p>
-              Just take a step and turn your dream into a reality, with the first step Ink Founders’ team is here to guide you with their services. 
-            </p>
+          <div
+            className={`${robotoMono.className} text-gray-700 text-[12px] md:text-[16px] leading-loose`}
+          >
+            Let’s convert your story into a reality, alongside over 1,000
+            authors.
+            <br />
+            <br />
+            Every author begins with an idea or a dream. Fulfill yours with Ink
+            Founders. You have the words; we have the tools to transform them
+            into a book, not just any book, but a masterpiece. We have amplified
+            the voices of many authors; now it could be your turn. At Ink
+            Founders, over 1,000 authors have turned their ideas into books that
+            have powerfully engaged millions of readers.
+            <br />
+            <br />
+            Whether you have a manuscript or just an idea, if you have passion,
+            dedication, and a willingness to act, start today with Ink Founders.
+            We support you at every step with a full suite of services, from
+            editing and formatting to publishing and marketing.
+            <br />
+            <br />
+            Take the first step and turn your dream into reality. The Ink
+            Founders team is here to guide you every step of the way.
           </div>
         </div>
       </div>

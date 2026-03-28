@@ -28,7 +28,7 @@ export default function ExportSelfBook() {
     {/* Book Cover */}
     <div className="flex-shrink-0">
       <Image
-        src="/Service/FpAHhfZ_TjWNBkXgQgFtnQ 2.png"
+        src="/Service/A.D Bradley 2 1.webp"
         alt="Book Cover"
         width={440}
         height={440}

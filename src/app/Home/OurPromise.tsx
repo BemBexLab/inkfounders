@@ -14,7 +14,7 @@ const OurPromise = () => {
           </p>
           <h2 className="text-center text-[23px] md:text-[35px] font-semibold mb-14">
             <span className="text-[#DADD39]">
-              How you turn your dreams with Ink Founders
+              How You Turn Your Dreams into Reality with Ink Founders
             </span>
           </h2>
           {/* 3 columns */}
@@ -32,7 +32,7 @@ const OurPromise = () => {
                 className="mb-3"
               />
               <h3 className="font-semibold text-base text-[16px] md:text-[20px] mb-2 text-black">
-                Professional editing and Proofreading
+                Professional Editing and Proofreading
               </h3>
               <p
                 className={` text-gray-700 text-[12px] md:text-[15px] leading-loose ${robotoMono.className}`}
@@ -59,17 +59,12 @@ const OurPromise = () => {
                 className="mb-3"
               />
               <h3 className="font-semibold text-base text-[16px] md:text-[20px] mb-2 text-black">
-                Cover design – soul to the story
+                Cover Design—The Soul of Your Story
               </h3>
               <p
                 className={`text-gray-700 text-[12px] md:text-[15px] leading-loose ${robotoMono.className}`}
               >
-                It is always said the first impression is very impactful so is
-                the book cover would be capturing it will add soul to your
-                story. So, it needs to be shiny. Ink founders carefully create
-                book cover that reflects the genre, mood and message of your
-                story just by a glance. With thoughtful typograpghy and its
-                outer visuals, Ink Founders make your book cover unforgettable.
+                First impressions matter, and a book cover captures attention while adding soul to your story. Ink Founders carefully designs covers that reflect the genre, mood, and message of your story at a glance. With thoughtful typography and visuals, your book cover becomes unforgettable.
               </p>
             </div>
             {/* 3. ISBN & Barcodes */}
@@ -85,14 +80,12 @@ const OurPromise = () => {
                 className="mb-3"
               />
               <h3 className="font-semibold text-base text-[16px] md:text-[20px] mb-2 text-black">
-                Global identity of your book – ISBN and Barcodes
+                Global Identity of Your Book—ISBN and Barcodes
               </h3>
               <p
                 className={` text-gray-700 text-[12px] md:text-[15px] leading-loose ${robotoMono.className}`}
               >
-                To keep your book unique and searchable, Ink Founders help you
-                to secure its ISBN and barcode. So that your book remains
-                reachable, buyable and easily to be available.
+                To keep your book unique and searchable, Ink Founders helps secure its ISBN and barcode, ensuring it is easily reachable, buyable, and available worldwide.
               </p>
             </div>
             {/* 4. Comprehensive Book & Author Marketing */}
@@ -108,17 +101,12 @@ const OurPromise = () => {
                 className="mb-3"
               />
               <h3 className="font-semibold text-base text-[16px] md:text-[20px] mb-2 text-black">
-                Be an author – increase the reach
+                Be an Author—Increase Your Reach
               </h3>
               <p
                 className={` text-gray-700 text-[12px] md:text-[15px] leading-loose ${robotoMono.className}`}
               >
-                Your book is not just for publication but it deserves to be seen
-                and read, so Ink founders not only help you to publish it but
-                also help you to get audience by supporting with marketing
-                tools, social media campaigns and strategies. We are always
-                first to be with you for turning your dreams, your passion into
-                powerful and unforgettable brand.
+                Your book deserves to be read, not just published. Ink Founders supports you with marketing tools, social media campaigns, and strategies to reach your audience. We are with you every step of the way to turn your passion into a powerful and unforgettable brand.
               </p>
             </div>
             {/* 5. Complete Copyrights & 100% Ownership */}
@@ -134,16 +122,12 @@ const OurPromise = () => {
                 className="mb-3"
               />
               <h3 className="font-semibold text-base text-[16px] md:text-[20px] mb-2 text-black">
-                Your ideas – your control. Write it – Own it
+                Your Ideas—Your Control. Write It, Own It.
               </h3>
               <p
                 className={` text-gray-700 text-[12px] md:text-[15px] leading-loose ${robotoMono.className}`}
               >
-                When an author writes a story its not only a story but it is a
-                passion, a dream, a voice so when you share your dream with Ink
-                founders you 100 own your story. Your words, your ownership, we
-                just help you to turn your words into a book, your voice into an
-                inspiration. So, you have the full right to your story.
+                A story is more than words; it is your passion, your dream, your voice. When you share your dream with Ink Founders, you retain 100% ownership of your story. We help turn your words into a book and your voice into inspiration. You have full rights to your work.
               </p>
             </div>
             {/* 6. Always-Here Customer Support */}
@@ -159,16 +143,12 @@ const OurPromise = () => {
                 className="mb-3"
               />
               <h3 className="font-semibold text-base text-[16px] md:text-[20px] mb-2 text-black">
-                Our support, forever for you
+                Our Support—Forever for You
               </h3>
               <p
                 className={` text-gray-700 text-[12px] md:text-[15px] leading-loose ${robotoMono.className}`}
               >
-                When you are working with Ink Founders, you are never left
-                alone. You have questions, concerns, need any suggestion or
-                confused about any step, Ink founders team is always available
-                for you to provide you answers, assurance and any guidance from
-                inception to suspension.
+                With Ink Founders, you are never alone. Whether you have questions, concerns, or need guidance at any step, our team is always available to provide answers, support, and assurance from inception to publication.
               </p>
             </div>
           </div>

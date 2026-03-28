@@ -7,7 +7,7 @@ export default function TheMind() {
     {/* Book Cover */}
     <div className="flex-shrink-0">
       <Image
-        src="/Service/image 28.png"
+        src="/Service/Keith Cuvo 1.webp"
         alt="Book Cover"
         width={540}
         height={540}

@@ -48,11 +48,11 @@ export default function EbookWritingPage() {
     {
       title: "Idea Development & Research",
       description:
-        "We help refine your concept, structure your content, and conduct in-depth research to ensure accuracy and relevance for your target audience.",
+        "Ink Founders team helps refine and purify your concept, structure your content, and conduct in-depth research to make sure the accuracy and relevance for your target audience.",
       checklist: [],
     },
     {
-      title: "Original, High Quality Writing",
+      title: "Original, High-Quality Writing",
       description:
         "Every eBook is written from scratch, ensuring:",
       checklist: [
@@ -64,7 +64,7 @@ export default function EbookWritingPage() {
     {
       title: "Voice Matching (Ghostwriting)",
       description:
-        "For ghostwriting projects, we carefully adapt to your tone, style, and personality so the book truly feels like it was written by you.",
+        "For ghostwriting projects, we carefully adapt to your tone, style, and personality so the book truly feels like you wrote it.",
       checklist: [],
     },
     {
@@ -114,7 +114,7 @@ export default function EbookWritingPage() {
                   E-Book Writing & Ghostwriting Services
                 </h1>
                 <p className={`${robotoMono.className} text-gray-700 text-[15px] leading-loose text-left md:text-center lg:text-left`}>
-                  At Ink Founders, we provide expert eBook writing and ghostwriting services designed to transform your ideas into engaging, high quality books. Whether you have a rough concept or a detailed outline, our experienced writers bring your vision to life with clarity, creativity, and precision.
+                  At Ink Founders, we have expert eBook writing and ghostwriting services designed to convert your ideas into unique, engaging, and high-quality books from your ideas. Whether you have a rough concept or a detailed outline, our experienced writers create a publish-ready book with clarity, creativity, and precision.
                 </p>
               </div>
             </div>
@@ -169,7 +169,7 @@ export default function EbookWritingPage() {
               </h2>
               <ul className="space-y-3 mb-8 flex-grow">
                 {[
-                  "Premium, end to end publishing solutions",
+                  "Premium, start-to-end publishing solutions",
                   "Experienced publishing professionals",
                   "Transparent process & communication",
                   "Full author ownership and rights",

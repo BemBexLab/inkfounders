@@ -43,7 +43,7 @@ export default function ServiceDetailPage() {
       title: "Writing & Content Development",
       subtitle: "E-Book Writing & Ghostwriting",
       description:
-        "We provide professional fiction and non-fiction eBook writing services tailored to your idea, niche, and target audience. Our ghostwriters ensure your voice, style, and message remain authentic while delivering high quality, original content.",
+        "We provide professional fiction and non-fiction eBook writing services tailored to your idea, niche, and target audience. Our ghostwriters ensure your voice, style, and message remain authentic while delivering high-quality, original content.",
       checklist: [
         "Fiction & Non-Fiction",
         "Business, Self-Help, Educational & Creative Genres",
@@ -98,7 +98,7 @@ export default function ServiceDetailPage() {
       subtitle: "Publishing Consultation",
       description:
         "Not sure where to start? Our experts provide personalized publishing consultations to guide you through every step.",
-      checklist: ["One on One Guidance", "Platform Strategy", "Publishing Roadmap"],
+      checklist: ["One-on-One Guidance", "Platform Strategy", "Publishing Roadmap"],
     },
   ];
 
@@ -165,7 +165,7 @@ export default function ServiceDetailPage() {
               </h2>
               <ul className="space-y-3 mb-8 flex-grow">
                 {[
-                  "Premium, end to end publishing solutions",
+                  "Premium, end-to-end publishing solutions",
                   "Experienced publishing professionals",
                   "Transparent process & communication",
                   "Full author ownership and rights",

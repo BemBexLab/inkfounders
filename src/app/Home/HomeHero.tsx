@@ -6,10 +6,10 @@ import { IoMdCall } from "react-icons/io";
 import Link from "next/link";
 
 const bookImages = [
-  "/Home/bookslidetest/ChatGPT Image Jul 3, 2025, 04_31_44 AM 1.png",
-  "/Home/bookslidetest/image 73.png",
-  "/Home/bookslidetest/image 75.png",
-  "/Home/bookslidetest/ChatGPT Image Jul 3_ 2025_ 04_00_28 AM 4.png"
+  "/Home/updatedImages/Stephen 1.webp",
+  "/Home/updatedImages/Jim Fritz 1.webp",
+  "/Home/updatedImages/Allison 1.webp",
+  "/Home/updatedImages/Bee 1.webp"
 
 ];
 
@@ -97,11 +97,7 @@ const HomeHero = () => {
               <p
                 className={`text-gray-700 ${robotoMono.className} text-[15px] mb-8 leading-loose text-left md:text-center lg:text-left`}
               >
-                Ink Founders is an independent self-publishing platform
-                dedicated to empowering authors with a full suite of digital
-                services. From idea to publication, we support you at every
-                stage of your self-publishing journey. Let&apos;s bring your
-                book to life—reach out to us today.
+                Ink Founders is an independent self-publishing platform dedicated to empowering authors with a full suite of digital services. From idea to publication, we support you at every stage of your self-publishing journey. Let's bring your book to life. Reach out to us today.
               </p>
               <Link href="/contactus">
                 <button

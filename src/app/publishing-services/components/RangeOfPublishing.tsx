@@ -22,7 +22,7 @@ export default function RangeOfPublishing() {
     {/* Book Cover */}
     <div className="flex-shrink-0">
       <Image
-        src="/Service/Group 35.png"
+        src="/Service/image 95.webp"
         alt="Book Cover"
         width={740}
         height={740}
