@@ -84,7 +84,10 @@ export default function PartnersSection() {
     }}
   >
     {[...partners, ...partners].map((logo, idx) => (
-      <div className="flex-shrink-0 h-[36px] md:h-[54px] flex items-center justify-center" key={idx}>
+      <div
+        className="flex-shrink-0 h-[36px] md:h-[54px] flex items-center justify-center"
+        key={`${logo.src}-${idx}`}
+      >
         <Image
           src={logo.src}
           alt={logo.alt}

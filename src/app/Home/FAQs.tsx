@@ -75,7 +75,7 @@ const FAQs: React.FC = () => {
         <div className="w-full flex flex-col">
           {faqs.map((faq, idx) => (
             <div
-              key={idx}
+              key={faq.question}
               className={`border border-[#f3f3f3]  duration-200 ${
                 idx < faqs.length - 1 ? "mb-0" : ""
               }`}
