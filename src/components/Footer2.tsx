@@ -2,6 +2,63 @@ import React from "react";
 import Link from "next/link";
 import { robotoMono } from "@/app/fonts";
 
+const footerContactItems = [
+  {
+    href: "/contactus",
+    icon: (
+      <svg
+        width="14"
+        height="18"
+        viewBox="0 0 14 18"
+        fill="none"
+        className="shrink-0"
+      >
+        <path
+          d="M7 0C4.24 0 2 2.24 2 5C2 8.75 7 14 7 14C7 14 12 8.75 12 5C12 2.24 9.76 0 7 0ZM7 6.5C6.17 6.5 5.5 5.83 5.5 5C5.5 4.17 6.17 3.5 7 3.5C7.83 3.5 8.5 4.17 8.5 5C8.5 5.83 7.83 6.5 7 6.5Z"
+          fill="#555"
+        />
+      </svg>
+    ),
+    lines: ["1680 Michigan Ave 700 326", "Miami Beach, FL 33139, USA"],
+  },
+  {
+    href: "tel:+17864961231",
+    icon: (
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        className="shrink-0"
+      >
+        <path
+          d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"
+          fill="#555"
+        />
+      </svg>
+    ),
+    lines: ["+1 (786) 496-1231"],
+  },
+  {
+    href: "mailto:info@inkfounders.com",
+    icon: (
+      <svg
+        width="16"
+        height="13"
+        viewBox="0 0 16 13"
+        fill="none"
+        className="shrink-0"
+      >
+        <path
+          d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v10a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5v-10zm1.5-.5a.5.5 0 0 0-.5.5v.217l7 4.2 7-4.2V1.5a.5.5 0 0 0-.5-.5h-13zM15 3.383l-4.778 2.867L15 9.317V3.383zm-.034 6.876-5.64-3.471L8 7.432l-1.326-.644-5.64 3.47A.5.5 0 0 0 1.5 11h13a.5.5 0 0 0 .466-.741zM1 9.317l4.778-3.067L1 3.383v5.934z"
+          fill="#555"
+        />
+      </svg>
+    ),
+    lines: ["info@inkfounders.com"],
+  },
+];
+
 const Footer: React.FC = () => {
   return (
     <div className="bg-white p-0 m-0 flex justify-center">
@@ -148,68 +205,7 @@ const Footer: React.FC = () => {
                 Contact Us
               </h4>
               <ul className="list-none p-0 m-0 text-[14px]">
-                {[
-                  {
-                    icon: (
-                      <svg
-                        width="14"
-                        height="18"
-                        viewBox="0 0 14 18"
-                        fill="none"
-                        className="shrink-0"
-                      >
-                        <path
-                          d="M7 0C4.24 0 2 2.24 2 5C2 8.75 7 14 7 14C7 14 12 8.75 12 5C12 2.24 9.76 0 7 0ZM7 6.5C6.17 6.5 5.5 5.83 5.5 5C5.5 4.17 6.17 3.5 7 3.5C7.83 3.5 8.5 4.17 8.5 5C8.5 5.83 7.83 6.5 7 6.5Z"
-                          fill="#555"
-                        />
-                      </svg>
-                    ),
-                    label: (
-                      <>
-                        1680 Michigan Ave 700 326
-                        <br />
-                        Miami Beach, FL 33139, USA
-                      </>
-                    ),
-                    href: "/contactus",
-                  },
-                  {
-                    icon: (
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        className="shrink-0"
-                      >
-                        <path
-                          d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"
-                          fill="#555"
-                        />
-                      </svg>
-                    ),
-                    label: "+1 (786) 496-1231",
-                    href: "tel:+17864961231",
-                  },
-                  {
-                    icon: (
-                      <svg
-                        width="16"
-                        height="13"
-                        viewBox="0 0 16 13"
-                        fill="none"
-                        className="shrink-0"
-                      >
-                        <path
-                          d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v10a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5v-10zm1.5-.5a.5.5 0 0 0-.5.5v.217l7 4.2 7-4.2V1.5a.5.5 0 0 0-.5-.5h-13zM15 3.383l-4.778 2.867L15 9.317V3.383zm-.034 6.876-5.64-3.471L8 7.432l-1.326-.644-5.64 3.47A.5.5 0 0 0 1.5 11h13a.5.5 0 0 0 .466-.741zM1 9.317l4.778-3.067L1 3.383v5.934z"
-                          fill="#555"
-                        />
-                      </svg>
-                    ),
-                    label: "info@inkfounders.com",
-                    href: "mailto:info@inkfounders.com",
-                  },
-                ].map(({ icon, label, href }) => (
+                {footerContactItems.map(({ icon, lines, href }) => (
                   <li
                     key={href}
                     className="flex items-start gap-[10px] mb-[13px]"
@@ -219,7 +215,11 @@ const Footer: React.FC = () => {
                       href={href}
                       className="font-sans text-[13px] text-[#333] no-underline hover:text-[#8a7a2e] transition-colors leading-snug"
                     >
-                      {label}
+                      {lines.map((line) => (
+                        <span key={`${href}-${line}`} className="block">
+                          {line}
+                        </span>
+                      ))}
                     </Link>
                   </li>
                 ))}

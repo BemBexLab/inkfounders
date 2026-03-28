@@ -231,8 +231,11 @@ export default function GetInTouch({ data }: GetInTouchProps) {
               {content.form.title}
             </h2>
 
-            {content.form.fields.map((row, index) => (
-              <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            {content.form.fields.map((row) => (
+              <div
+                key={row.map((field) => field.name).join("-")}
+                className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4"
+              >
                 {row.map((field) => (
                   <input
                     key={field.name}

@@ -8,7 +8,7 @@ export default function VisionBecome() {
     {/* Book Cover */}
     <div className="flex-shrink-0">
       <Image
-        src="/whoweare/Group 36.png"
+        src="/whoweare/Group 33.png"
         alt="Book Cover"
         width={540}
         height={540}

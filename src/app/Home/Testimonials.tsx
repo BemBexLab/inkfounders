@@ -13,6 +13,9 @@ type Testimonial = {
   image?: string;
 };
 
+const TRUSTPILOT_URL =
+  "https://www.trustpilot.com/review/inkfounders.com/";
+
 const TESTIMONIALS: Testimonial[] = [
   {
     id: 1,
@@ -97,6 +100,10 @@ const Testimonials = () => {
   const [visibleCards, setVisibleCards] = useState(3);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
+  const handleTestimonialClick = () => {
+    window.location.href = TRUSTPILOT_URL;
+  };
+
   useEffect(() => {
     const updateVisibleCards = () => {
       if (window.innerWidth < 768) {
@@ -147,7 +154,17 @@ const Testimonials = () => {
             {getVisibleTestimonials().map((testimonial) => (
               <article
                 key={testimonial.id}
-                className="flex min-h-[340px] flex-col rounded-[22px] border border-[#ece9df] bg-[#fcfbf7] px-6 pb-6 pt-5 shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] md:px-7 md:pb-7 md:pt-6"
+                className="flex min-h-[340px] cursor-pointer flex-col rounded-[22px] border border-[#ece9df] bg-[#fcfbf7] px-6 pb-6 pt-5 shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] focus:outline-none focus:ring-2 focus:ring-[#d9dc2d] focus:ring-offset-2 md:px-7 md:pb-7 md:pt-6"
+                onClick={handleTestimonialClick}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    handleTestimonialClick();
+                  }
+                }}
+                role="link"
+                tabIndex={0}
+                aria-label={`Read ${testimonial.name}'s full review on Trustpilot`}
               >
                 <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#e1df2d] text-[38px] font-semibold leading-none text-[#1f1d1b]">
                   {/* &ldquo; */}
