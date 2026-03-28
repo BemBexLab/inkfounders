@@ -10,10 +10,10 @@ export default function QuoteBanner() {
           Let your words inspire the world
         </p>
         <h2 className="text-center text-[23px] md:text-[35px] font-semibold text-[#222] mb-8">
-          Let the Ink founders takes hassle out by simplifying the <br />publishing process for you 
+          Let the Ink founders take the hassle out by simplifying the<br /> publishing process for you 
         </h2>
         <p className={`text-center ${robotoMono.className} text-gray-700 text-base text-[12px] md:text-[15px] mb-10  mx-auto`}>
-          With the partnership of Ink founders just focus on your story, let the ink founders clarify editing,<br /> formatting and publishing.
+          With the partnership of Ink Founders, focus on your story and let them handle the editing. Witness our Uniqueness
         </p>
         <div className="flex flex-row gap-4 justify-center items-center">
  {/* Get a Quote */}

@@ -9,16 +9,16 @@ const HowItWork = () => {
       <div className="max-w-[1250px] mx-auto px-2 flex flex-col items-center">
         {/* Headings */}
         <p className="text-center text-base text-[18px] md:text-[25px] font-semibold text-[#DADD39] mb-2">
-          Let’s find the way
+          Let’s find a way
         </p>
         <h2 className="text-center text-[23px] md:text-[35px] font-semibold mb-14 text-black">
-          A pathway to turn your dreams into reality <br /> – a publishing process with Ink Founders
+          A pathway to turn your dreams into reality, with a publishing process with Ink Founders
         </h2>
 
         {/* Steps: Two vertical columns with timeline */}
         <div className="w-full flex flex-col lg:flex-row gap-12 md:gap-24 justify-center items-start">
           {/* Left column: steps 1-4 */}
-          <div className="flex flex-col relative gap-17">
+          <div className="w-350 flex flex-col relative gap-17">
             {/* Vertical line (behind circles) */}
             <div className="absolute left-5 top-7 bottom-48 w-[2px] bg-[#DADD39] opacity-40 z-0 hidden lg:block" />
             {/* Step 1 */}
@@ -30,10 +30,10 @@ const HowItWork = () => {
               </div>
               <div className='mt-2 ml-4'>
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
-                  Start with an introduction to know each other 
+                  Start with an introduction to get to know each other 
                 </h3>
                 <p className={`text-[12px] md:text-[15px] text-[#444] ${robotoMono.className} leading-loose`}>
-                  We begin with discussion to know each other, who you are as an author, what’s your ideas are about, where you want it to go and what do you expect us to follow, so it’s the time to ask questions and share your ideas and allow us to make a publishing path for you. 
+                  We begin with a discussion to know each other: who you are as an author, what your ideas are, where you want them to go, and what you expect from us. This is the time to ask questions, share your ideas, and allow us to make a publishing path for you. 
                 </p>
               </div>
             </div>
@@ -49,7 +49,7 @@ const HowItWork = () => {
                   We gather the information that best describes your vision
                 </h3>
                 <p className={`text-[12px] md:text-[15px] ${robotoMono.className} text-[#444] font-mono leading-loose`}>
-                  We start organizing a plan for you, once we get the details about your story’s genre, audience and the message, as whether it is non-fiction, fiction, historical or poetry. 
+                  We start organizing a plan once we get the details about your story’s genre, audience, and message, whether it is non-fiction, fiction, historical, or poetry. 
                 </p>
               </div>
             </div>
@@ -62,10 +62,10 @@ const HowItWork = () => {
               </div>
               <div className='mt-2 ml-4'>
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
-                  Experts take over the script, Page by page – perfection 
+                  Experts take over the script, page by page, page perfection 
                 </h3>
                 <p className={`text-[12px] md:text-[15px] ${robotoMono.className} text-[#444] font-mono leading-loose`}>
-                  We send your story to our qualified designing team that revive your story and rearrange it according to the standards, ensuring published look in all formats.
+                  We send your story to our qualified design team, which revives your story and rearranges it according to standards, ensuring a professional look in all formats.
                 </p>
               </div>
             </div>
@@ -81,7 +81,7 @@ const HowItWork = () => {
                   We put the soul in your story with formatting
                 </h3>
                 <p className={`text-[12px] md:text-[15px] ${robotoMono.className} text-[#444] font-mono leading-loose`}>
-                  Now it’s time to give a fantastic structure to your story by professionally formatting the script, and designing a book cover page that not only captures the audience attention but also become the spirit of your story, so from the words to structure we take it with full concentration.
+                  Now it’s time to give a fantastic structure to your story by professionally formatting the script and designing a book cover that captures the audience's attention and reflects the spirit of your story.
                 </p>
               </div>
             </div>
@@ -100,10 +100,10 @@ const HowItWork = () => {
               </div>
               <div className='mt-2 ml-4'>
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
-                  Quality Check is a priority followed by QA teams 
+                  Quality check is a priority 
                 </h3>
                 <p className={`text-[12px] md:text-[15px] text-[#444] font-mono leading-loose ${robotoMono.className}`}>
-                  We just don’t launch your book after all the processes but at this stage it undergoes a final check done by our quality assurance team to ensure that every process from editing to publishing everything goes according to the author.
+                  Before launch, your book undergoes a final review by our quality assurance team to ensure every step, from editing to publishing, meets our standards.
                 </p>
               </div>
             </div>
@@ -116,10 +116,10 @@ const HowItWork = () => {
               </div>
               <div className='mt-2 ml-4'>
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
-                  Let’s make your story unforgettable – time to publish it
+                  Let’s make your story unforgettable—time to publish it
                 </h3>
                 <p className={`text-[12px] md:text-[15px] text-[#444] font-mono leading-loose ${robotoMono.className}`}>
-                  Now, after all the finalization processes, it’s time to get your words into a book, witnessing your dream turning into reality. After approval your book got published on globally trending platforms, we also guide you through ISBN, selling set-up so that your book is more reachable and buyable. 
+                  After finalization, your book is published on globally trending platforms. We also guide you through ISBN registration and sales setup to make your book more accessible. 
                 </p>
               </div>
             </div>
@@ -132,10 +132,10 @@ const HowItWork = () => {
               </div>
               <div className='mt-2 ml-4'>
                 <h3 className="text-[16px] md:text-[20px] font-semibold text-black mb-1">
-                  Finally, you are an author – own your success 
+                  Finally, you are an author—own your success 
                 </h3>
                 <p className={`text-[12px] md:text-[15px] text-[#444] font-mono leading-loose ${robotoMono.className}`}>
-                  With a lot of overwhelming moments, now it’s time to cheer up as you are officially a published author. We support you at every moment even after publishing with post-launch strategies to grow your author brand. Now it’s time to get shine.
+                  Now it’s time to celebrate! You are officially a published author. We continue to support you post-launch with strategies to grow your author brand.
                 </p>
               </div>
             </div>

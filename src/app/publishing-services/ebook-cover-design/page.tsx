@@ -52,17 +52,17 @@ export default function CoverDesignPage() {
         "Every cover is uniquely designed for your book, reflecting its theme, tone, and target audience.",
       checklist: [
         "Unique concepts tailored to your story",
-        "Genre appropriate design styles",
+        "Genre-appropriate design styles",
         "Professional typography & layout",
       ],
     },
     {
       title: "Market Optimized Design",
       description:
-        "We design covers that meet marketplace requirements and trends, boosting visibility and click through rates.",
+        "We design covers that meet marketplace requirements and trends, boosting visibility and click-through rates.",
       checklist: [
         "Amazon KDP standards & technical compliance",
-        "High-resolution, print ready designs",
+        "High-resolution, print-ready designs",
         "Optimized for thumbnail & digital view",
       ],
     },
@@ -80,9 +80,9 @@ export default function CoverDesignPage() {
       description: "",
       checklist: [
         "New authors launching their first eBook",
-        "Self publishers seeking professional visuals",
+        "Self-publishers seeking professional visuals",
         "Business owners publishing guides or manuals",
-        "Authors creating series or multi book projects",
+        "Authors creating series or multi-book projects",
       ],
     },
   ];
@@ -99,7 +99,7 @@ export default function CoverDesignPage() {
                   E-Book Cover Design Services
                 </h1>
                 <p className={`${robotoMono.className} text-gray-700 text-[15px] leading-loose text-left md:text-center lg:text-left`}>
-                  At Ink Founders, we understand that a book cover is the first impression your readers get. Our professional eBook cover design service creates visually stunning, genre appropriate covers that attract readers and maximize your book’s potential on platforms like Amazon KDP, Apple Books, and more.
+                  At Ink Founders, we understand that a book cover is the first impression your readers get. Our professional eBook cover design service creates visually stunning, genre-appropriate covers that attract readers and maximize your book’s potential on platforms like Amazon KDP, Apple Books, and more.
                 </p>
               </div>
             </div>
@@ -156,7 +156,7 @@ export default function CoverDesignPage() {
                 {[
                   "Expert graphic designers with publishing experience",
                   "Covers optimized for both digital and print formats",
-                  "Attention grabbing designs that convert",
+                  "Attention-grabbing designs that convert",
                   "Unlimited revisions until you are satisfied",
                   "Quick turnaround without compromising quality",
                 ].map((item, idx) => (
@@ -189,7 +189,7 @@ export default function CoverDesignPage() {
       <section className="px-4 md:px-10 2xl:px-20 py-8">
         <div className="max-w-[1450px] mx-auto text-center">
           <p className={`${robotoMono.className} text-gray-700 text-[15px] leading-relaxed max-w-3xl mx-auto`}>
-            Make Your Book Stand Out<br />
+            <b>Make Your Book Stand Out</b><br />
             A professionally designed cover significantly increases your book’s chance of success. Let Ink Founders create a cover that captures attention and drives readers to your book.
           </p>
         </div>

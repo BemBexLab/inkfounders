@@ -2,6 +2,7 @@ import GetInTouch from "../Home/GetInTouch";
 import PartnersSection from "../Home/OurPartner";
 import ContactUsHero from "./components/ContactUsHero";
 import Portfolio from "./components/portfolio";
+import { getInTouchContent } from "./getInTouchData";
 
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
     <>
     <ContactUsHero />
     <PartnersSection />
-    <GetInTouch />
+    <GetInTouch data={getInTouchContent} />
     <Portfolio />
     </>
   );

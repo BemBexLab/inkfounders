@@ -6,7 +6,7 @@ import { nl2br } from "@/utils/textUtils";
 
 interface NarrationOption {
   title: string;
-  description: React.ReactNode; // can be string or JSX from data
+  description: string | React.ReactNode;
   imgSrc: string;
 }
 
@@ -14,7 +14,7 @@ interface NarrationData {
   header: string;
   intro: string;
   options: NarrationOption[];
-  quote: string;
+  quote: string | React.ReactNode;
   button: {
     text: string;
     link: string;
@@ -26,6 +26,9 @@ interface NarrationOptionsProps {
 }
 
 const NarrationOptions = ({ data }: NarrationOptionsProps) => {
+  const renderRichText = (value: string | React.ReactNode) =>
+    typeof value === "string" ? nl2br(value) : value;
+
   const narrationData: NarrationData = data || {
     header: "Flexible Audiobook Narration Options",
     intro:
@@ -85,7 +88,7 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
                   {opt.title}
                 </h2>
                 <p className={`${robotoMono.className} text-[14px] text-[#444444] leading-relaxed`}>
-                  {typeof opt.description === "string" ? nl2br(opt.description) : opt.description}
+                  {renderRichText(opt.description)}
                 </p>
               </div>
             ))}
@@ -93,7 +96,7 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
 
           {/* Quote */}
           <p className={`${robotoMono.className} text-[14px] text-[#444444] mb-7 whitespace-pre-line`}>
-            {nl2br(narrationData.quote)}
+            {renderRichText(narrationData.quote)}
           </p>
 
           {/* CTA Button */}
@@ -147,7 +150,7 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
               {/* Description */}
               <div className="mb-5">
                 <p className="text-sm sm:text-base text-[#444444] leading-relaxed text-center">
-                  {opt.description}
+                  {renderRichText(opt.description)}
                 </p>
               </div>
 
@@ -166,7 +169,7 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
         {/* Quote */}
         <div className="text-center mb-8 px-6">
           <p className="text-sm sm:text-base text-[#444444] italic whitespace-pre-line">
-            {nl2br(narrationData.quote)}
+            {renderRichText(narrationData.quote)}
           </p>
         </div>
 

@@ -11,7 +11,7 @@ export const audiobookData = [
         </>
       ),
       description:
-        "Professional audiobook narration that converts your words into interetsing listening experiences. We help authors reach readers everywhere, through their ears.",
+        "Professional audiobook narration that converts your words into interesting listening experiences. We help authors reach readers everywhere, through their ears.",
       buttonText: "Request a Call",
       buttonLink: "/contactus",
     },
@@ -30,7 +30,7 @@ export const audiobookData = [
           {
             title: "The Cinematic Performance (Professional Talent)",
             description:
-              "Let a professional voice actor bring your characters to life. We assign voice actors who not only read words but perform the essence of your manuscript, the emotion, tension, and nuance.",
+              "Let a professional voice actor bring your characters to life. We assign voice actors who not only read words but also perform the essence of your manuscript, the emotion, tension, and nuance.",
             imgSrc: "/audiobooks/headphones.webp",
           },
           {
@@ -40,8 +40,13 @@ export const audiobookData = [
             imgSrc: "/audiobooks/audiochat.webp",
           },
         ],
-        quote:
-          '"Great narrators, clean sound, and a story that works everywhere, from morning commutes to late-night headphones.\nThat\'s what we do at Ink Founders."',
+        quote: (
+          <>
+            "Great narrators, clean sound, and a story that works everywhere,
+            from morning commutes to late-night headphones. That's what we do at
+            Ink Founders."
+          </>
+        ),
         button: {
           text: "Request a Call",
           link: "/contactus",
@@ -80,7 +85,7 @@ export const audiobookData = [
     hero: {
       title: <>Polish Your Audiobook Until It Sounds Just Right</>,
       description:
-        "You have recorded your audiobook, now it's time to check whether it actually sounds professional. At Ink Founders we clean up the audio because we fix pacing issues and remove background noise and we smooth out any awkward pauses or stumbles.",
+        "You have recorded your audiobook, now it's time to check whether it actually sounds professional. At Ink Founders, we clean up the audio because we fix pacing issues and remove background noise, and we smooth out any awkward pauses or stumbles.",
       buttonText: "Request a Call",
       buttonLink: "/contactus",
     },
@@ -105,7 +110,7 @@ export const audiobookData = [
           {
             title: "The Details Matter",
             description:
-              "Every book is different, and we treat yours that way. We pay close attention to your audiobook needs because we need to adjust tone for emotional scenes and we need to clarify character voices and we need to double-check pronunciation of tricky terms.",
+              "Every book is different, and we treat yours that way. We pay close attention to your audiobook needs because we need to adjust tone for emotional scenes, and we need to clarify character voices, and we need to double-check pronunciation of tricky terms.",
             imgSrc: "/audiobooks/microphonegear.webp",
           },
         ],
@@ -124,11 +129,11 @@ export const audiobookData = [
           <>
             Recording an audiobook is one thing. The real work starts when we
             edit it into a product that people find enjoyable to listen to. At{" "}
-            <a className="hover:underline hover:text-blue-500" href="/">
+            <a className="text-blue-800 hover:underline" href="/">
               Ink Founders
             </a>
             , we analyze your audio from start to finish while we identify all
-            errors and adjust audio levels and format the audio to improve its
+            errors, nd adjust audio levels, and format the audio to improve its
             flow and make every sentence sound natural. Your audiobook will be
             finished as you will take pride in presenting it to others.
           </>
@@ -141,16 +146,11 @@ export const audiobookData = [
         paragraphs: (
           <>
             At{" "}
-            <a
-              className="hover:text-blue-500 hover:underline"
-              href="/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a className="text-blue-800 hover:underline" href="/">
               Ink Founders
             </a>
             , we don't overcomplicate things. You send us your audio files, we
-            edit them, and you get back a polished, distribution ready
+            edit them, and you get back a polished, distribution-ready
             audiobook. We move fast, we communicate clearly, and we don't charge
             you for a bunch of extras you don't need. Want to hear what we can
             do? We'll edit a sample chapter for free so you can decide if we are
@@ -161,27 +161,33 @@ export const audiobookData = [
         imgFirst: true,
       },
       {
-        title: "We Handle All Kinds of Audiobook Editing",
+        title: "We Handle All Kinds of Editing",
         paragraphs: (
           <>
-            No matter where your audiobook project stands, we offer professional
-            audio editing services tailored to your needs:
+            Depending on where your project is, we offer:
             <ul className="list-disc list-inside text-[15px] text-[#333333] leading-relaxed mb-4">
               <li>
-                <span className="font-bold">Audio Cleanup:</span> Remove noise, clicks, and distractions for a clean, professional sound.
+                <span className="font-bold">Content Editing:</span> Big-picture
+                fixes for flow and structure.
               </li>
               <li>
-                <span className="font-bold">Narration Editing:</span> Fix pacing, mistakes, and awkward pauses for a smooth listening experience.
+                <span className="font-bold">Line Editing:</span> Sentence-level
+                fixes for clarity and tone.
               </li>
               <li>
-                <span className="font-bold">Proof Listening:</span> Catch misreads and inconsistencies before release.
+                <span className="font-bold">Copyediting:</span> Grammar,
+                consistency, and technical accuracy.
               </li>
               <li>
-                <span className="font-bold">Mastering for Distribution:</span> Ensure your files meet distribution standards like ACX.
+                <span className="font-bold">Proofreading:</span> Final pass to
+                catch any last errors.
               </li>
             </ul>
             <p>
-              Send us your audio files, and we’ll reply within 24 hours with a clear, straightforward quote. No hidden fees — just professional results.
+              Just email us your files, and we'll get back to you within 24
+              hours with a clear quote. No runaround, no confusing pricing
+              tiers, just a straightforward answer so you can decide what works
+              for you.
             </p>
           </>
         ),
@@ -192,19 +198,19 @@ export const audiobookData = [
     contactData: {
       title: "Why Editing Matters More Than You Think",
       description:
-        "Audiobook editing is not just about eliminating mistakes. It's about making your story sound the way you intended, clear, engaging, and professional. It's the difference between listeners sticking with your book or clicking away after the first chapter. At Ink Founders, we give value to your audiobook like it matters. Let's make it sound as good as it reads.",
+        "Audiobook editing is not just about eliminating mistakes. It's about making your story sound the way you intended, clear, engaging, and professional. It's the difference between listeners sticking with your book or clicking away after the first chapter. At Ink Founders, we give value to your audiobook as it matters. Let's make it sound as good as it reads.",
     },
   },
   {
     slug: "audiobook-publishing",
     hero: {
       title: (
-        <>We will Help You Publish an Audiobook That Actually Gets Heard</>
+        <>We will Help You Publish an Audiobook That Actually Gets Heard.</>
       ),
       description: (
         <>
           From finding the right narrator to getting your book on every major
-          platform, we work on the details so you can focus on what matters,
+          platform, we work on the details so you can focus on what matters:
           your story and your listeners.
           <br />
           At{" "}
@@ -228,7 +234,7 @@ export const audiobookData = [
       {
         header: "Pick the Voice That Fits Your Story Best",
         intro:
-          "Not every book needs the same approach. Some authors want to narrate their own work, after all, who knows your story better than you? Others prefer a professional voice actor who can bring characters to life with different tones and emotions. And if you're working with a tight budget or timeline, AI narration has come a long way and might be exactly what you need.",
+          "Not every book needs the same approach. Some authors want to narrate their own work; after all, who knows your story better than you? Others prefer a professional voice actor who can bring characters to life with different tones and emotions. And if you're working with a tight budget or timeline, AI narration has come a long way and might be exactly what you need.",
         options: [
           {
             title: "Clear Communication & Transparency:",
@@ -240,13 +246,13 @@ export const audiobookData = [
             title: "Technical Expertise & Quality Standards",
             description: (
               <>
-                The process requires complete audio editing work together with
+                The process requires complete audio editing work, together with
                 correct Audible and Apple Books format implementation and
                 professional audio mastering work done by someone who
-                understands the essential technical specifications.
-                {/* <br />A trustworthy company provides all necessary resources and
+                understands the essential technical specifications. <br />A
+                trustworthy company provides all necessary resources and
                 expertise to deliver your book at an exceptional audio quality
-                level which exceeds conventional standards. */}
+                level, which exceeds conventional standards.
               </>
             ),
             imgSrc: "/audiobooks/signals.webp",
@@ -254,7 +260,7 @@ export const audiobookData = [
           {
             title: "Author Focused Support",
             description:
-              "Publishing an audiobook can feel overwhelming, especially for first-time authors. The right team handles the entire process, guides you through every decision, and answers your questions without judgment. You deserve full support that respects your voice and is genuinely invested in your project’s success.",
+              "The process of publishing an audiobook becomes extremely difficult for first-time authors. The correct company handles your book with complete processing, while they provide essential guidance for your decisions, and their team answers all your questions without creating a judgmental atmosphere, and they show genuine interest in your project's success. You should receive complete support that protects your individuality beyond simple project identification.",
             imgSrc: "/audiobooks/ear.webp",
           },
         ],
@@ -273,25 +279,23 @@ export const audiobookData = [
           <>
             At{" "}
             <a
-              className="hover:text-blue-500 hover:underline"
+              className="text-blue-500 hover:underline"
               href="/"
               target="_blank"
               rel="noopener noreferrer"
             >
               Ink Founders
             </a>
-            , we are here to help authors to convert manuscripts into audiobooks
+            , we are here to help authors convert manuscripts into audiobooks
             that people actually want to listen to. We handle book cover,
             narration, production, distribution, and even the marketing side of
             things. You bring the story, we bring the publishing expertise,
-            simple as that.
-            <br />
-            <br />
-            Choose the right voice with the right publishing company to make
-            sure your audiobook lands on all the major platforms. We provide
-            guidance at every stage. You can check out what we do at{" "}
+            simple as that. Choose the right voice with the right publishing
+            company to make sure your audiobook lands on all the major
+            platforms. We provide guidance at every stage. You can check out
+            what we do at{" "}
             <a
-              className="hover:text-blue-500 hover:underline"
+              className="text-blue-500 hover:underline"
               href="/"
               target="_blank"
               rel="noopener noreferrer"
@@ -311,20 +315,13 @@ export const audiobookData = [
             Publishing an audiobook can feel overwhelming. There's recording,
             editing, formatting, distribution, and a dozen other things you
             probably didn't sign up for when you decided to write a book. That's
-            where we come in.
-            <br />
-            <br />
+            where we come in. <br />
             We have been doing this long enough to know what works and what
             doesn't. We will guide you through the whole process, handle the
             technical stuff, and make sure your audiobook sounds professional on
             every platform. You focus on your story. We take care of the rest.
             Ready to get started? Visit{" "}
-            <a
-              className="hover:text-blue-500 hover:underline"
-              href="/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a className="text-blue-800 hover:underline" href="/">
               Ink Founders
             </a>{" "}
             and let's make your audiobook happen.
@@ -335,29 +332,19 @@ export const audiobookData = [
       },
     ],
     contactData: {
-      title: "From Recording to Release, We have Got You",
+      title: "From Recording to Release, We Have Got You.",
       description: (
         <>
           Here's the thing: creating an audiobook isn't just about hitting
           "record." There's sound quality to think about, file formatting for
           different platforms, cover art, metadata, distribution to Audible,
-          Apple Books, and everywhere else listeners go. It's a lot.
-          <br />
-          <br />
-          That's why we built{" "}
-          <a
-            className="hover:text-blue-500 hover:underline"
-            href="/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ink Founders
-          </a>{" "}
-          to take that weight off your shoulders. You decide how you want your
-          book to sound, and we make it happen. Then we get it out into the
-          world so people can actually find it and listen to it. If you have
-          been sitting on a finished manuscript wondering how to turn it into an
-          audiobook, this is your sign. Let's get started.
+          Apple Books, and everywhere else listeners go. It's a lot. <br />
+          That's why we built <a className="text-blue-800 hover:underline" href="/">Ink Founders</a> to take that weight off your
+          shoulders. You decide how you want your book to sound, and we make it
+          happen. Then we get it out into the world so people can actually find
+          it and listen to it. If you have been sitting on a finished
+          manuscript,t wondering how to turn it into an audiobook, this is your
+          sign. Let's get started.
         </>
       ),
     },

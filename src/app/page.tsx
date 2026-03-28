@@ -10,6 +10,7 @@ import Testimonials from "./Home/Testimonials";
 import GetInTouch from "./Home/GetInTouch";
 import FAQs from "./Home/FAQs";
 import Lagacy from "./Home/Legacy";
+import OurWork from "./Home/OurWork";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
     <AuthorsPublishedSection />
     <HowItWork />
     <Lagacy />
+    <OurWork />
     <OurPromise />
     <Testimonials />
     <GetInTouch />

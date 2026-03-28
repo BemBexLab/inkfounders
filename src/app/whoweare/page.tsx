@@ -1,6 +1,7 @@
 import FAQs from "../Home/FAQs";
 import GetInTouch from "../Home/GetInTouch";
 import PartnersSection from "../Home/OurPartner";
+import { getInTouchContent } from "./getInTouchData";
 import LetsCollaborate from "./Components/LetsCollaborate";
 import OurMission from "./Components/OurMission";
 import VisionBecome from "./Components/VisionBecome";
@@ -19,7 +20,7 @@ export default function Home() {
     <LetsCollaborate />
     <OurMission />
     <WhyChoosePanda />
-    <GetInTouch />
+    <GetInTouch data={getInTouchContent} />
     <FAQs />
     </>
   );
