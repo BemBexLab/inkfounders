@@ -2,24 +2,24 @@ import Image from "next/image";
 
 const AUTHORS = [
   {
-    name: "Donald Ennis",
-    photo: "/ourpublishers/Rectangle 10 (2).png",
-    book: "HOT NIGHTS COLD DAYS",
+    name: "Wilma Gibson Smith",
+    photo: "/ourbook/IMG_2582 Copy 1 1.png",
+    book: "Forged in the Mountains: A Family's Resilience",
   },
   {
-    name: "Lisa Stalvey Coady",
-    photo: "/ourpublishers/Rectangle 101.png", // blank for placeholder
-    book: "The Thoughtful Chef : How the Connection of Spirituality, Great Energy and Good Clean Organic Food Become One",
+    name: "Leonard Serratore",
+    photo: "/ourbook/Leonard_Serratore_profile. enhance image.png", // blank for placeholder
+    book: "The Adventure Of Scott And Lenny: Learn How To Fly",
   },
   {
-    name: "Beth Gardner",
-    photo: "/ourpublishers/Rectangle 10 (3).png",
-    book: "One Rowing Stroke at a Time – Surviving Stage 3 Breast Cancer for 20-Years",
+    name: "K. Stephen Jumper",
+    photo: "/ourbook/K. Stephen Jumper.jpg",
+    book: "Don't Cut the Grass On Sunday: A Monday Conversation for Non-Christians & Skeptics Alike",
   },
   {
-    name: "Elizabeth Dooley",
-    photo: "/ourpublishers/Rectangle 10 (4).png",
-    book: "Fern Valley Ventures: Volume 1",
+    name: "Scott Frank",
+    photo: "/ourbook/Scott image.jpg",
+    book: "Kael and the Whale with the Polka-Dot Tail",
   },
   {
     name: "Jack CartwrightJack",
@@ -27,9 +27,9 @@ const AUTHORS = [
     book: "Deadly Little Secret/The Harder They Fall and other",
   },
   {
-    name: "Ana Jorda",
-    photo: "/ourpublishers/Rectangle 10 (5).png",
-    book: "Language of a Silence",
+    name: "JIM FRITZ",
+    photo: "/ourbook/Jim pic.jpg",
+    book: "Tales of the Hippie Dippie Gardener",
   },
 ];
 
