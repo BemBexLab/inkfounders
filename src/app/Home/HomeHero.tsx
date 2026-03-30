@@ -76,20 +76,23 @@ const HomeHero = () => {
           {/* Left Side */}
           <div className="flex-1 flex flex-col justify-center items-center lg:items-start px-4 md:px-1 w-full md:ml-20">
             <div className="max-w-xl relative w-full">
-              <div className="absolute -top-2 -right-4 md:-top-6 md:-right-5 z-20">
-                <div className="relative h-15 w-15 md:h-24 md:w-24">
-                  <Image
-                    src="/Home/make your Life Easy.png"
-                    alt="Circular Make Your Mark"
-                    fill
-                    sizes="(max-width: 768px) 60px, 96px"
-                    className="object-contain object-center"
-                    priority
-                  />
-                </div>
-              </div>
               <h1 className="mb-5 max-w-[18ch] text-left text-[clamp(1.9rem,6vw,3rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-black sm:mb-6 sm:max-w-[20ch] lg:max-w-none">
-                <span className="block">Bring Your Story To Life</span>
+                <span className="block">
+                  Bring Your Story To{" "}
+                  <span className="relative inline-block pr-6 sm:pr-8 md:pr-10">
+                    Life
+                    <span className="pointer-events-none absolute right-1 -top-4 h-12 w-12 sm:right-0 sm:-top-6 sm:h-16 sm:w-16 md:-right-2 md:-top-10 md:h-24 md:w-24">
+                      <Image
+                        src="/Home/make your Life Easy.png"
+                        alt="Circular Make Your Mark"
+                        fill
+                        sizes="(max-width: 640px) 48px, (max-width: 768px) 64px, 96px"
+                        className="object-contain object-center"
+                        priority
+                      />
+                    </span>
+                  </span>
+                </span>
                 <span className="block">With Ink Founders Publishing</span>
               </h1>
               <p
