@@ -77,25 +77,23 @@ const HomeHero = () => {
           <div className="flex-1 flex flex-col justify-center items-center lg:items-start px-4 md:px-1 w-full md:ml-20">
             <div className="max-w-xl relative w-full">
               <div className="absolute -top-2 -right-4 md:-top-6 md:-right-5 z-20">
-                <div className="w-15 h-15 md:w-24 md:h-24 relative">
+                <div className="relative h-15 w-15 md:h-24 md:w-24">
                   <Image
                     src="/Home/make your Life Easy.png"
                     alt="Circular Make Your Mark"
                     fill
-                    className="object-cover max-md:mr-5"
+                    sizes="(max-width: 768px) 60px, 96px"
+                    className="object-contain object-center"
                     priority
                   />
                 </div>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-[48px] font-semibold leading-tight text-black mb-6 text-left lg:text-left">
-                <span className="whitespace-nowrap">
-                  Bring Your Story To Life
-                </span>
-                <br />
-                With Ink Founders Publishing
+              <h1 className="mb-5 max-w-[18ch] text-left text-[clamp(1.9rem,6vw,3rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-black sm:mb-6 sm:max-w-[20ch] lg:max-w-none">
+                <span className="block">Bring Your Story To Life</span>
+                <span className="block">With Ink Founders Publishing</span>
               </h1>
               <p
-                className={`text-gray-700 ${robotoMono.className} text-[15px] mb-8 leading-loose text-left md:text-center lg:text-left`}
+                className={`mb-8 max-w-[62ch] text-left text-[clamp(0.875rem,2.8vw,0.95rem)] leading-[1.9] text-gray-700 md:text-center lg:text-left ${robotoMono.className}`}
               >
                 Ink Founders is an independent self-publishing platform dedicated to empowering authors with a full suite of digital services. From idea to publication, we support you at every stage of your self-publishing journey. Let's bring your book to life. Reach out to us today.
               </p>
