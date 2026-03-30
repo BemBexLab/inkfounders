@@ -2,29 +2,33 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import type { ReactNode } from "react";
+import { useEffect, useState } from "react";
 import {
-  FaHome,
-  FaCog,
   FaBook,
+  FaChevronDown,
+  FaCog,
+  FaHome,
   FaInfoCircle,
-  FaUserCircle,
   FaTimes,
+  FaUserCircle,
 } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
 
-const navItems: Array<{ label: string; href: string; nonClickable?: boolean }> = [
-  { label: "Home", href: "/" },
-  { label: "Publishing Services", href: "/publishing-services" },
-  // Audiobook Services should not navigate when clicked, only show hover menu
-  { label: "Audiobook Services", href: "/audiobook-services", nonClickable: true },
-  { label: "Our Book", href: "/ourbook" },
-  { label: "Who we are", href: "/whoweare" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact Us", href: "/contactus" },
-];
+type NavChild = {
+  label: string;
+  href: string;
+};
 
-const navItemsMobile = [
+type NavItem = {
+  label: string;
+  href: string;
+  icon: ReactNode;
+  desktopOnlyMenu?: boolean;
+  children?: NavChild[];
+};
+
+const navItems: NavItem[] = [
   {
     label: "Home",
     href: "/",
@@ -32,14 +36,46 @@ const navItemsMobile = [
   },
   {
     label: "Publishing Services",
-    href: "/service",
+    href: "/publishing-services",
     icon: <FaCog size={20} />,
+    children: [
+      {
+        label: "E-Book Writing",
+        href: "/publishing-services/ebook-writing",
+      },
+      {
+        label: "E-Book Publishing",
+        href: "/publishing-services/ebook-publishing",
+      },
+      {
+        label: "E-Book Cover Design",
+        href: "/publishing-services/ebook-cover-design",
+      },
+      {
+        label: "Editing & Proofreading",
+        href: "/publishing-services/editing-and-proofreading",
+      },
+    ],
   },
   {
     label: "Audiobook Services",
     href: "/audiobook-services",
     icon: <FaBook size={20} />,
-    nonClickable: true,
+    desktopOnlyMenu: true,
+    children: [
+      {
+        label: "Audiobook Narration",
+        href: "/audiobook-services/audiobook-narration",
+      },
+      {
+        label: "Audiobook Editing",
+        href: "/audiobook-services/audiobook-editing",
+      },
+      {
+        label: "Audiobook Publishing",
+        href: "/audiobook-services/audiobook-publishing",
+      },
+    ],
   },
   {
     label: "Our Book",
@@ -63,289 +99,278 @@ const navItemsMobile = [
   },
 ];
 
+const isActivePath = (pathname: string, href: string) =>
+  pathname === href || pathname.startsWith(`${href}/`);
+
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showHeader, setShowHeader] = useState(true);
+  const [openMobileSection, setOpenMobileSection] = useState<string | null>(
+    null,
+  );
 
-  // Track scroll direction to show or hide the header
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        // Scrolling down
+      const currentScrollY = window.scrollY;
+
+      if (menuOpen || currentScrollY < 12) {
+        setShowHeader(true);
+      } else if (currentScrollY > lastScrollY) {
         setShowHeader(false);
       } else {
-        // Scrolling up
         setShowHeader(true);
       }
-      setLastScrollY(window.scrollY);
+
+      setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, menuOpen]);
+
+  useEffect(() => {
+    setMenuOpen(false);
+    setOpenMobileSection(null);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 bg-[#F4F3E1]  px-4 md:px-10 2xl:px-20 py-8 flex justify-between items-center transition-all duration-300 ${
-        showHeader ? "opacity-100" : "opacity-0"
+      className={`fixed left-0 top-0 z-50 w-full bg-[#F4F3E1] px-4 py-5 transition-all duration-300 md:px-10 lg:py-6 2xl:px-20 ${
+        showHeader
+          ? "translate-y-0 opacity-100"
+          : "-translate-y-full opacity-0"
       }`}
     >
-      {/* 🔰 Logo */}
-      <Link href="/">
-        <div className="flex items-center gap-2 ml-2 md:ml-6">
-          <video width="130" height="50" autoPlay loop muted>
-            <source
-              src="/logovideo/inkfounder_logo_animate.mp4"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </Link>
+      <div className="flex items-center justify-between">
+        <Link href="/" className="ml-2 md:ml-6">
+          <div className="flex items-center gap-2">
+            <video width="130" height="50" autoPlay loop muted playsInline>
+              <source
+                src="/logovideo/inkfounder_logo_animate.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </Link>
 
-      {/* 🌐 Desktop Nav Links */}
-      <div className="hidden lg:block">
-        <nav className="relative rounded-full px-6 md:px-10 py-3 flex gap-4 2xl:gap-8 items-center z-50">
-          {navItems.map((item) =>
-            item.href === "/publishing-services" ? (
-              <div key={item.href} className="relative group">
+        <div className="hidden lg:block">
+          <nav className="relative z-50 flex items-center gap-4 rounded-full px-6 py-3 md:px-10 2xl:gap-8">
+            {navItems.map((item) => {
+              const isActive = isActivePath(pathname, item.href);
+
+              if (item.children?.length) {
+                return (
+                  <div key={item.href} className="group relative">
+                    {item.desktopOnlyMenu ? (
+                      <span
+                        className={`cursor-default whitespace-nowrap text-[14px] transition hover:text-[#DADD39] 2xl:text-[16px] ${
+                          isActive
+                            ? "font-semibold text-[#DADD39] underline underline-offset-[10px]"
+                            : "text-black"
+                        }`}
+                      >
+                        {item.label}
+                      </span>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={`whitespace-nowrap text-[14px] transition hover:text-[#DADD39] 2xl:text-[16px] ${
+                          isActive
+                            ? "font-semibold text-[#DADD39] underline underline-offset-[10px]"
+                            : "text-black"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
+
+                    <div className="invisible absolute left-0 top-full mt-2 w-56 translate-y-1 rounded-md border border-gray-100 bg-white opacity-0 shadow-lg transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                      <div className="py-2">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
                 <Link
+                  key={item.href}
                   href={item.href}
-                  className={`text-[14px] 2xl:text-[16px] whitespace-nowrap ${
-                    pathname === item.href
-                      ? "text-[#DADD39] font-semibold underline underline-offset-[10px]"
+                  className={`whitespace-nowrap text-[14px] transition hover:text-[#DADD39] 2xl:text-[16px] ${
+                    isActive
+                      ? "font-semibold text-[#DADD39] underline underline-offset-[10px]"
                       : "text-black"
-                  } hover:text-[#DADD39] transition`}
+                  }`}
                 >
                   {item.label}
                 </Link>
-
-                {/* Dropdown on hover (desktop) */}
-                <div className="absolute left-0 top-full mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-100 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transform translate-y-1 transition-all">
-                  <div className="py-2">
-                    <Link
-                      href="/publishing-services/ebook-writing"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      onClick={() => {}}
-                    >
-                      E-Book Writing
-                    </Link>
-                    <Link
-                      href="/publishing-services/ebook-publishing"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      E-Book Publishing
-                    </Link>
-                    <Link
-                      href="/publishing-services/ebook-cover-design"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      E-Book Cover Design
-                    </Link>
-                    <Link
-                      href="/publishing-services/editing-and-proofreading"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Editing & Proofreading
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ) : item.href === "/audiobook-services" ? (
-              <div key={item.href} className="relative group">
-                {item.nonClickable ? (
-                  <span
-                    className={`text-[14px] 2xl:text-[16px] whitespace-nowrap cursor-default ${
-                      pathname === item.href
-                        ? "text-[#DADD39] font-semibold underline underline-offset-[10px]"
-                        : "text-black"
-                    } hover:text-[#DADD39] transition`}
-                  >
-                    {item.label}
-                  </span>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className={`text-[14px] 2xl:text-[16px] whitespace-nowrap ${
-                      pathname === item.href
-                        ? "text-[#DADD39] font-semibold underline underline-offset-[10px]"
-                        : "text-black"
-                    } hover:text-[#DADD39] transition`}
-                  >
-                    {item.label}
-                  </Link>
-                )}
-
-                {/* Dropdown on hover (desktop) */}
-                <div className="absolute left-0 top-full mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-100 opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transform translate-y-1 transition-all">
-                  <div className="py-2">
-                    <Link
-                      href="/audiobook-services/audiobook-narration"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Audiobook Narration
-                    </Link>
-                    <Link
-                      href="/audiobook-services/audiobook-editing"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Audiobook Editing
-                    </Link>
-                    <Link
-                      href="/audiobook-services/audiobook-publishing"
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                    >
-                      Audiobook Publishing
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-[14px] 2xl:text-[16px] whitespace-nowrap ${
-                  pathname === item.href
-                    ? "text-[#DADD39] font-semibold underline underline-offset-[10px]"
-                    : "text-black"
-                } hover:text-[#DADD39] transition`}
-              >
-                {item.label}
-              </Link>
-            ),
-          )}
-        </nav>
-      </div>
-
-      {/* <a
-        href="tel:+17864961231"
-        className=" items-center gap-3 group hidden lg:flex"
-      >
-        <div className="rounded-full bg-primary border-primary w-8 h-8 2xl:w-14 2xl:h-14 flex items-center justify-center shake-pause group-hover:bg-primary/80 transition ">
-          <div className="text-white flex items-center justify-center bg-[#DADD39] rounded-full px-3 py-3">
-            <IoCall size={30} />
-          </div>
+              );
+            })}
+          </nav>
         </div>
-        <span className="text-[14px] 2xl:text-base text-black font-semibold text-primary group-hover:underline">
-          +1 (786) 496-1231
-        </span>
-      </a> */}
 
-      <Link href="/contactus">
-        <div className="hidden lg:flex">
+        <Link href="/contactus" className="hidden lg:flex">
           <button
             type="button"
-            className="btn-slide-bg text-black px-4 py-2 lg:px-2 lg:py-2  2xl:px-6 2xl:py-2 border border-[#DADD39] rounded-[10px] bg-[#DADD39] flex items-center gap-2 transition-all duration-300 hover:border-black"
+            className="btn-slide-bg flex items-center gap-2 rounded-[10px] border border-[#DADD39] bg-[#DADD39] px-4 py-2 text-black transition-all duration-300 hover:border-black lg:px-2 lg:py-2 2xl:px-6 2xl:py-2"
           >
             <span className="slide-bg"></span>
             <span className="relative z-10">Request a Quote</span>
           </button>
-        </div>
-      </Link>
+        </Link>
 
-      {/* 📱 Mobile Menu Button */}
-      <div className="block lg:hidden">
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="text-[#DADD39] px-4 py-2 text-3xl"
-          aria-label="Open menu"
-        >
-          {menuOpen ? <FaTimes /> : <span>☰</span>}
-        </button>
+        <div className="block lg:hidden">
+          <button
+            onClick={() => setMenuOpen((prev) => !prev)}
+            className="px-4 py-2 text-3xl text-[#DADD39]"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+          >
+            {menuOpen ? <FaTimes /> : <span>&#9776;</span>}
+          </button>
+        </div>
       </div>
 
-      {/* 📱 Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="fixed inset-0 bg-white z-40 flex flex-col items-start px-8 py-8 gap-3 lg:hidden transition-all">
+        <div
+          id="mobile-menu"
+          className="fixed inset-0 z-[60] flex min-h-screen flex-col items-start gap-3 overflow-y-auto bg-white px-6 py-8 lg:hidden"
+        >
           <button
-            className="absolute top-8 right-8 text-[#DADD39] text-3xl"
+            className="absolute right-6 top-6 text-3xl text-[#DADD39]"
             onClick={() => setMenuOpen(false)}
             aria-label="Close menu"
           >
             <FaTimes />
           </button>
-          <ul className="flex flex-col gap-4 mt-8 w-full">
-            {navItemsMobile.map((item) => (
-              <li key={item.href}>
-                {item.nonClickable ? (
-                  <div
-                    className={`flex items-center gap-4 py-1 px-1 text-lg rounded-md transition
-                    ${pathname === item.href ? "text-[#DADD39] font-semibold" : "text-gray-500"}`}
-                  >
-                    <span
-                      className={`${
-                        pathname === item.href
-                          ? "text-[#DADD39]"
-                          : "text-gray-400"
-                      }`}
-                    >
-                      {item.icon}
-                    </span>
-                    <span
-                      className={`tracking-wide ${
-                        pathname === item.href
-                          ? "text-[#DADD39] font-semibold"
-                          : "text-gray-600"
-                      }`}
-                    >
-                      {item.label}
-                    </span>
+
+          <ul className="mt-10 flex w-full flex-col gap-2">
+            {navItems.map((item) => {
+              const isActive = isActivePath(pathname, item.href);
+              const hasChildren = Boolean(item.children?.length);
+              const isExpanded = openMobileSection === item.href;
+
+              return (
+                <li key={item.href} className="w-full border-b border-[#ece9df] pb-2">
+                  <div className="flex items-center justify-between gap-3">
+                    {item.desktopOnlyMenu ? (
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setOpenMobileSection((prev) =>
+                            prev === item.href ? null : item.href,
+                          )
+                        }
+                        className={`flex flex-1 items-center gap-4 rounded-md px-1 py-3 text-left text-lg transition ${
+                          isActive ? "font-semibold text-[#DADD39]" : "text-gray-700"
+                        }`}
+                        aria-expanded={isExpanded}
+                      >
+                        <span className={isActive ? "text-[#DADD39]" : "text-gray-400"}>
+                          {item.icon}
+                        </span>
+                        <span className="tracking-wide">{item.label}</span>
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={() => setMenuOpen(false)}
+                        className={`flex flex-1 items-center gap-4 rounded-md px-1 py-3 text-lg transition ${
+                          isActive ? "font-semibold text-[#DADD39]" : "text-gray-700"
+                        }`}
+                      >
+                        <span className={isActive ? "text-[#DADD39]" : "text-gray-400"}>
+                          {item.icon}
+                        </span>
+                        <span className="tracking-wide">{item.label}</span>
+                      </Link>
+                    )}
+
+                    {hasChildren && (
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setOpenMobileSection((prev) =>
+                            prev === item.href ? null : item.href,
+                          )
+                        }
+                        className="rounded-md p-3 text-gray-500"
+                        aria-label={`Toggle ${item.label} submenu`}
+                        aria-expanded={isExpanded}
+                      >
+                        <FaChevronDown
+                          className={`transition-transform duration-200 ${
+                            isExpanded ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                    )}
                   </div>
-                ) : (
-                  <Link
-                    href={item.href}
-                    onClick={() => setMenuOpen(false)}
-                    className={`flex items-center gap-4 py-1 px-1 text-lg rounded-md transition
-                      ${pathname === item.href ? "text-[#DADD39] font-semibold" : "text-gray-500"}`}
-                  >
-                    <span
-                      className={`${
-                        pathname === item.href
-                          ? "text-[#DADD39]"
-                          : "text-gray-400"
-                      }`}
-                    >
-                      {item.icon}
-                    </span>
-                    <span
-                      className={`tracking-wide ${
-                        pathname === item.href
-                          ? "text-[#DADD39] font-semibold"
-                          : "text-gray-600"
-                      }`}
-                    >
-                      {item.label}
-                    </span>
-                  </Link>
-                )}
-              </li>
-            ))}
+
+                  {hasChildren && isExpanded && (
+                    <div className="ml-11 mt-1 flex flex-col pb-2">
+                      {item.children?.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          onClick={() => setMenuOpen(false)}
+                          className={`rounded-md px-2 py-2 text-sm transition ${
+                            isActivePath(pathname, child.href)
+                              ? "font-semibold text-[#DADD39]"
+                              : "text-gray-600"
+                          }`}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </li>
+              );
+            })}
           </ul>
 
-          {/* Shaking Call Button */}
           <a
             href="tel:+17864961231"
-            className=" items-center gap-5 group flex px-6 pt-5"
+            className="group flex items-center gap-5 px-2 pt-5"
           >
-            <div className="rounded-full bg-primary border-primary w-8 h-8 2xl:w-14 2xl:h-14 flex items-center justify-center shake-pause group-hover:bg-primary/80 transition ">
-              <div className="text-white flex items-center justify-center bg-[#DADD39] rounded-full px-3 py-3">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full border-primary bg-primary transition group-hover:bg-primary/80 2xl:h-14 2xl:w-14">
+              <div className="flex items-center justify-center rounded-full bg-[#DADD39] px-3 py-3 text-white">
                 <IoCall size={30} />
               </div>
             </div>
-            <span className="text-base text-black font-semibold text-primary group-hover:underline">
+            <span className="text-base font-semibold text-black group-hover:underline">
               +1 (786) 496-1231
             </span>
           </a>
 
-          {/* Mobile CTA */}
           <Link
             href="/contactus"
             onClick={() => setMenuOpen(false)}
-            className="mt-8 rounded-full px-6 py-3 border border-[#DADD39] text-black bg-[#DADD39] transition hover:bg-transparent hover:border-black font-semibold block text-center"
+            className="mt-6 block rounded-full border border-[#DADD39] bg-[#DADD39] px-6 py-3 text-center font-semibold text-black transition hover:border-black hover:bg-transparent"
           >
-            Book a call →
+            Book a call
           </Link>
         </div>
       )}
