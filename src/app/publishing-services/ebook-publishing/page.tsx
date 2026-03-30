@@ -105,7 +105,7 @@ export default function ServiceDetailPage() {
   return (
     <main className="bg-[#F4F3E1]">
       {/* Hero Section */}
-      <section className="relative py-16 md:py-24 px-4 md:px-10 2xl:px-20">
+      <section className="mt-4 relative py-16 md:py-24 px-4 md:px-10 2xl:px-20">
         <div className="max-w-[1450px] mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="flex-1 flex flex-col justify-center items-center lg:items-start px-4 md:px-1 w-full md:ml-20">
@@ -119,12 +119,14 @@ export default function ServiceDetailPage() {
               </div>
             </div>
             <div className="flex-1 flex items-center justify-center px-4 md:px-8 w-full lg:ml-5 relative max-lg:mt-10">
-              <div className="relative w-[350px] h-[350px] sm:w-[400px] sm:h-[400px] md:w-[440px] md:h-[440px] lg:w-[380px] lg:h-[440px] xl:w-[480px] xl:h-[480px] 2xl:w-[520px] 2xl:h-[520px]">
+              <div className="relative flex h-[350px] w-[350px] items-center justify-center overflow-hidden rounded-lg sm:h-[400px] sm:w-[400px] md:h-[440px] md:w-[440px] lg:h-[440px] lg:w-[380px] xl:h-[480px] xl:w-[480px] 2xl:h-[520px] 2xl:w-[520px]">
                 <Image
-                  src="/Home/bookslidetest/ChatGPT Image Jul 3, 2025, 04_31_44 AM 1.png"
+                  src="/publishingservices/Rectangle 21.png"
                   alt="Ink Founders Publishing"
-                  fill
-                  className="object-contain"
+                  width={574}
+                  height={736}
+                  sizes="(max-width: 640px) 350px, (max-width: 768px) 400px, (max-width: 1024px) 440px, 520px"
+                  className="h-full w-full object-cover object-center"
                   priority={false}
                 />
               </div>
@@ -150,12 +152,14 @@ export default function ServiceDetailPage() {
         <div className="max-w-[1450px] mx-auto">
           <div className="flex flex-col lg:flex-row gap-8 items-center">
             <div className="lg:w-1/2 flex justify-center">
-              <div className="relative w-full max-w-md aspect-square">
+              <div className="relative flex aspect-square w-full max-w-md items-center justify-center overflow-hidden rounded-lg">
                 <Image
-                  src="/Home/bookslidetest/ChatGPT Image Jul 3_ 2025_ 04_00_28 AM 4.png"
+                  src="/publishingservices/Rectangle 25.png"
                   alt="Why Choose Ink Founders"
-                  fill
-                  className="object-contain"
+                  width={574}
+                  height={736}
+                  sizes="(max-width: 1024px) 100vw, 448px"
+                  className="h-full w-full object-cover object-center"
                 />
               </div>
             </div>
