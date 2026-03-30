@@ -76,9 +76,9 @@ const HomeHero = () => {
           {/* Left Side */}
           <div className="flex-1 flex flex-col justify-center items-center lg:items-start px-4 md:px-1 w-full md:ml-20">
             <div className="max-w-xl relative w-full">
-              <h1 className="mb-5 max-w-[18ch] text-left text-[clamp(1.9rem,6vw,3rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-black sm:mb-6 sm:max-w-[20ch] lg:max-w-none">
-                <span className="block">
-                  Bring Your Story To{" "}
+              <h1 className="mb-5 text-left text-[clamp(1.35rem,5.1vw,3rem)] font-semibold leading-[1.08] tracking-[-0.03em] text-black sm:mb-6">
+                <span className="inline-flex whitespace-nowrap">
+                  <span>Bring Your Story To&nbsp;</span>
                   <span className="relative inline-block pr-6 sm:pr-8 md:pr-10">
                     Life
                     <span className="pointer-events-none absolute right-1 -top-4 h-12 w-12 sm:right-0 sm:-top-6 sm:h-16 sm:w-16 md:-right-2 md:-top-10 md:h-24 md:w-24">
@@ -93,7 +93,12 @@ const HomeHero = () => {
                     </span>
                   </span>
                 </span>
-                <span className="block">With Ink Founders Publishing</span>
+                <span className="block max-w-[13ch] pr-10 sm:max-w-[15ch] sm:pr-14 md:max-w-none md:pr-0">
+                  <span className="inline-flex flex-wrap">
+                    <span className="whitespace-nowrap">With Ink Founders</span>
+                    <span className="whitespace-nowrap">Publishing</span>
+                  </span>
+                </span>
               </h1>
               <p
                 className={`mb-8 max-w-[62ch] text-left text-[clamp(0.875rem,2.8vw,0.95rem)] leading-[1.9] text-gray-700 md:text-center lg:text-left ${robotoMono.className}`}
