@@ -3,7 +3,7 @@ import Hero from '../components/Hero'
 import PartnersSection from "../../Home/OurPartner";
 import NarrationOptions from '../components/NarrationOptions';
 import ImageDesc from '../components/ImageDesc';
-import Testimonials from '../components/Testimonials';
+import Testimonials from '../../Home/Testimonials';
 import GetInTouch from '../components/GetInTouch';
 import { audiobookData } from '../data';
 

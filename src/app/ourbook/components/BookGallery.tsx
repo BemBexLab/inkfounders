@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import AOSProvider from "@/components/AOSProvider";
+import { link } from "fs";
 
 // Add "Fiction" to tags if you want them to show under Fiction filter.
 export const BOOKS = [
@@ -14,7 +15,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Stephen 2.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Non Fiction"],
+    link: "https://a.co/d/0ee4hTIt",
   },
   {
     title: "The Bee's Colony, The Rise of the New Queen",
@@ -22,7 +24,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Bee 2.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Non Fiction"],
+    tags: ["Children Book"],
+    link: "https://a.co/d/03dFgTaS",
   },
   {
     title: "Growing together",
@@ -30,7 +33,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Allison 4.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Children Book"],
+    link: "https://a.co/d/0h1r5jAM",
   },
   {
     title: "Tales of the Hippie Dippie Gardener",
@@ -38,7 +42,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Jim Fritz 2.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Non Fiction"],
+    tags: ["Fiction"],
+    link: "https://a.co/d/01RL87Q4",
   },
   {
     title: "God carried me",
@@ -46,7 +51,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Bertha 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Non Fiction"],
+    tags: ["Biography"],
+    link: "https://a.co/d/084ustJB",
   },
   {
     title: "THE LABYRINTH",
@@ -55,6 +61,7 @@ export const BOOKS = [
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Non Fiction"],
+    link: "https://a.co/d/0fpe2YQe",
   },
   {
     title: "El Color del Renacer",
@@ -62,7 +69,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Luis Diaz 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Biography"],
+    link: "https://a.co/d/080ryfQM",
   },
   {
     title: "THE TIME CAPSULE MYSTERY",
@@ -71,6 +79,7 @@ export const BOOKS = [
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Children Book"],
+    link: "https://a.co/d/0eaNfhXz",
   },
   {
     title: "LAFLAPS: Living A Fruitful Life After Prison System",
@@ -78,7 +87,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Laflaps 2.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Non Fiction"],
+    tags: ["Biography"], 
+    link: "https://a.co/d/0gZbtRPp",
   },
   {
     title: "THROUGH THE EYE OF THE STORM",
@@ -86,7 +96,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/The Storm 2.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Biography"],
+    link: "https://a.co/d/0ciIvs0L",
   },
   {
     title: "FRESH PATHS UNFOLDING",
@@ -94,7 +105,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Sara 3.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Fiction"],
+    link: "https://a.co/d/0h3gl6A6",
   },
   {
     title: "FORGED IN THE MOUNTAINS",
@@ -102,7 +114,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Wilma 2.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Non Fiction"],
+    tags: ["Biography"],
+    link: "https://a.co/d/02fR7S9m",
   },
   {
     title: "DISCOVERING THE ROOT CAUSE OF CANCER",
@@ -110,7 +123,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Laflaps 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Biography"],
+    link: "https://a.co/d/02fR7S9m",
   },
   {
     title: "DREAMS FROM MY GRANDFATHER",
@@ -119,6 +133,7 @@ export const BOOKS = [
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
+    link: "https://a.co/d/0ie4oXLR",
   },
   {
     title: "THE BOOK OF UNFOLDING INTEGRATION",
@@ -126,15 +141,17 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Sara 2.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Non Fiction"],
+    link: "https://a.co/d/01TnBqeA",
   },
   {
-    title: "The Depth of Love",
+    title: "Broken Dreams",
     author: "Bobby Bee",
     cover: "/ourbook/New folder/Wilma 1.png",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Fiction"],
+    link: "https://a.co/d/07omlcAE",
   },
   {
     title: "THE BOUNCE BACK",
@@ -142,7 +159,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Craig 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Biography"],
+    link: "https://a.co/d/077L9M4Y",
   },
   {
     title: "IT WAS NEVER YOUR FAULT",
@@ -150,7 +168,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Jerry 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Non Fiction"],
+    link: "https://a.co/d/00INdTu4",
   },
   {
     title: "The Adventure of Scott And Lenny",
@@ -158,7 +177,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Leonard 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Children Book"],
+    link: "https://a.co/d/04i1QzPC",
   },
   {
     title: "PROVERBIAL SPIRITUAL MESSAGES",
@@ -166,7 +186,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Ray 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Biography"],
+    link: "https://a.co/d/0eTrzJDj",
   },
   {
     title: "LEADING WITH PURPOSE",
@@ -174,7 +195,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Ralph 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Non Fiction"],
+    link: "https://a.co/d/02Ghlu41",
   },
   {
     title: "JETHRO & KASHU & FRIENDS PLANT A FOREST",
@@ -182,7 +204,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Sara Tessier 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Children Book"],
+    link: "https://a.co/d/0dowUcE8",
   },
   {
     title: "Kael and the Whale with the Polka-Dot Tail",
@@ -190,7 +213,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Kael 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Children Book"],
+    link: "https://a.co/d/0aj4vVbz",
   },
   {
     title: "THE ARCHIVE OF A. D. BRADLEY",
@@ -198,7 +222,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/AD Bradley 2.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Biography"],
+    link: "https://a.co/d/0iMWfNUy",
   },
   {
     title: "Mr. Mogley Muck The House Mouse",
@@ -206,7 +231,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Mr Mogley 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Children Book"],
+    link: "https://a.co/d/0aF4lnuo",
   },
   {
     title: "IMPULSE",
@@ -214,7 +240,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Sandra 3.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Children Book"],
+    link: "https://a.co/d/0d9v0ECL",
   },
   {
     title: "MY BUG BOOK",
@@ -222,7 +249,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/My Bug Book 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Children Book"],
+    link: "https://a.co/d/09kbk7rw",
   },
   {
     title: "IF I HAD A COW",
@@ -230,7 +258,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Had a Cow 2.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Children Book"],
+    link: "https://a.co/d/05OKpCCe",
   },
   {
     title: "THE MAN OF LIGHT AND THE MAN OF DARK",
@@ -238,7 +267,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Mike The Voice 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Non Fiction"],
+    link: "https://a.co/d/014CkQCA",
   },
   {
     title: "FAITH OVER FEELINGS",
@@ -246,7 +276,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Peter 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Biography"],
+    link: "https://a.co/d/0iz5TW4E",
   },
   {
     title: "STILL I RISE",
@@ -254,7 +285,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Rachael 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Fiction"],
+    tags: ["Biography"],
+    link: "https://a.co/d/09xqIhbN",
   },
 ];
 
@@ -319,7 +351,7 @@ const BookGallery = () => {
           {/* Force re-render of cards on filter change by passing activeFilter as key */}
           {visibleBooks.map((book, idx) => (
             <Link
-              href="#"
+              href={book.link}
               data-aos="fade-down-right"
               key={`${activeFilter}-${idx}`} // Unique key to trigger re-render
               className="group flex flex-col items-center text-center"
