@@ -59,22 +59,39 @@ const footerContactItems = [
   },
 ];
 
+const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "Publishing Services", href: "/publishing-services" },
+  { label: "Our Books", href: "/ourbook" },
+  { label: "Our Publishing", href: "/ourpublishing" },
+  { label: "Who we are", href: "/whoweare" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact Us", href: "/contactus" },
+  { label: "Terms", href: "/terms" },
+  { label: "Privacy", href: "/privacy" },
+];
+
+const servicesLinks = [
+  { label: "Book Publishing", href: "/publishing-services" },
+  { label: "Ebook Formatting", href: "/publishing-services" },
+  { label: "Childrens Book", href: "/publishing-services" },
+  { label: "Book Marketing", href: "/publishing-services" },
+];
+
 const Footer: React.FC = () => {
   return (
-    <div className="bg-white p-0 m-0 flex justify-center">
-      {/* Main footer container with off-white bg, rounded top-right */}
-      <div className="bg-[#f5f5e8] rounded-tr-[48px] px-4 sm:px-8 md:px-12 lg:px-16 pt-10 lg:pt-12 pb-0 w-screen left-0 right-0 flex flex-col items-center">
-        {/* Top section */}
-        <div className="flex flex-col lg:flex-row lg:items-start gap-10 lg:gap-0 justify-center">
-          {/* Brand + Description — fixed width, never shrinks */}
-          <div className="w-full lg:w-[300px] items-center xl:w-[340px] shrink-0">
-            <div className="mb-4">
+    <footer className="m-0 flex justify-center bg-white p-0">
+      <div className="w-full bg-[#f5f5e8] px-4 pb-0 pt-10 sm:px-6 md:px-10 lg:rounded-tr-[48px] lg:px-16 lg:pt-12">
+        <div className="mx-auto grid w-full max-w-[1320px] gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-14">
+          <div className="min-w-0">
+            <div className="mb-4 w-fit max-w-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="152"
                 height="60"
                 viewBox="0 0 252 115"
                 fill="none"
+                className="h-auto max-w-full"
               >
                 <path
                   d="M71.4816 24.3721H57.2832V70.3131H71.4816V24.3721Z"
@@ -136,37 +153,28 @@ const Footer: React.FC = () => {
             </div>
 
             <p
-              className={`${robotoMono.className} w-[450px] text-[14px] text-[#444] leading-[1.7] m-0`}
+              className={`${robotoMono.className} max-w-[38rem] text-[14px] leading-[1.7] text-[#444]`}
             >
-              Ink Founder is an independent publishing partner offering a comprehensive suite of digital services including book publishing, children's books, ghostwriting, illustration, book marketing, cover design, author websites, and more. We help bring your story to life with creative, professional support every step of the way.
+              Ink Founder is an independent publishing partner offering a
+              comprehensive suite of digital services including book
+              publishing, children's books, ghostwriting, illustration, book
+              marketing, cover design, author websites, and more. We help bring
+              your story to life with creative, professional support every step
+              of the way.
             </p>
           </div>
 
-          <div className="w-[280px]" />
-
-          {/* Right columns — tight gap, left-aligned, no stretching */}
-          <div className=" lg:ml-auto  lg:pl-0 grid grid-cols-2 sm:grid-cols-3 lg:flex lg:flex-row lg:items-left gap-4 lg:gap-6">
-            {/* Quick Links */}
-            <div className="min-w-[110px]">
-              <h4 className="font-sans text-[15px] font-bold text-[#8a7a2e] mb-4 mt-0 whitespace-nowrap">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+            <div className="min-w-0">
+              <h4 className="mb-4 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e]">
                 Quick Links
               </h4>
-              <ul className="list-none p-0 m-0">
-                {[
-                  { label: "Home", href: "/" },
-                  { label: "Publishing Services", href: "/publishing-services" },
-                  { label: "Our Books", href: "/ourbook" },
-                  { label: "Our Publishing", href: "/ourpublishing" },
-                  { label: "Who we are", href: "/whoweare" },
-                  { label: "Blog", href: "/blog" },
-                  { label: "Contact Us", href: "/contactus" },
-                  { label: "Terms", href: "/terms" },
-                  { label: "Privacy", href: "/privacy" },
-                ].map(({ label, href }) => (
-                  <li key={label} className="mb-[8px]">
+              <ul className="m-0 list-none p-0">
+                {quickLinks.map(({ label, href }) => (
+                  <li key={label} className="mb-2">
                     <Link
                       href={href}
-                      className="font-sans text-[14px] text-[#333] no-underline hover:text-[#8a7a2e] transition-colors whitespace-nowrap"
+                      className="font-sans text-[14px] text-[#333] no-underline transition-colors hover:text-[#8a7a2e]"
                     >
                       {label}
                     </Link>
@@ -175,22 +183,16 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Our Services */}
-            <div className="min-w-[120px]">
-              <h4 className="font-sans text-[15px] font-bold text-[#8a7a2e] mb-4 mt-0 whitespace-nowrap">
+            <div className="min-w-0">
+              <h4 className="mb-4 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e]">
                 Our Services
               </h4>
-              <ul className="list-none p-0 m-0">
-                {[
-                  { label: "Book Publishing", href: "/publishing-services" },
-                  { label: "Ebook Formatting", href: "/publishing-services" },
-                  { label: "Childrens Book", href: "/publishing-services" },
-                  { label: "Book Marketing", href: "/publishing-services" },
-                ].map(({ label, href }) => (
-                  <li key={label} className="mb-[8px]">
+              <ul className="m-0 list-none p-0">
+                {servicesLinks.map(({ label, href }) => (
+                  <li key={label} className="mb-2">
                     <Link
                       href={href}
-                      className="font-sans text-[14px] text-[#333] no-underline hover:text-[#8a7a2e] transition-colors whitespace-nowrap"
+                      className="font-sans text-[14px] text-[#333] no-underline transition-colors hover:text-[#8a7a2e]"
                     >
                       {label}
                     </Link>
@@ -199,21 +201,17 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            {/* Contact Us */}
-            <div className="col-span-2 sm:col-span-1 min-w-[200px]">
-              <h4 className="font-sans text-[15px] font-bold text-[#8a7a2e] mb-4 mt-0 whitespace-nowrap">
+            <div className="min-w-0 sm:col-span-2 lg:col-span-1">
+              <h4 className="mb-4 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e]">
                 Contact Us
               </h4>
-              <ul className="list-none p-0 m-0 text-[14px]">
+              <ul className="m-0 list-none p-0 text-[14px]">
                 {footerContactItems.map(({ icon, lines, href }) => (
-                  <li
-                    key={href}
-                    className="flex items-start gap-[10px] mb-[13px]"
-                  >
+                  <li key={href} className="mb-[13px] flex items-start gap-[10px]">
                     <span className="mt-[2px]">{icon}</span>
                     <Link
                       href={href}
-                      className="font-sans text-[13px] text-[#333] no-underline hover:text-[#8a7a2e] transition-colors leading-snug"
+                      className="font-sans text-[13px] leading-snug text-[#333] no-underline transition-colors hover:text-[#8a7a2e]"
                     >
                       {lines.map((line) => (
                         <span key={`${href}-${line}`} className="block">
@@ -228,14 +226,13 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom copyright bar */}
-        <div className="border-t border-[#d8d8c8] w-full mt-9 py-4 text-center">
-          <p className="font-sans text-[12px] text-[#666] m-0">
+        <div className="mt-9 w-full border-t border-[#d8d8c8] py-4 text-center">
+          <p className="m-0 font-sans text-[12px] text-[#666]">
             © 2025 Ink Founders All rights reserved.
           </p>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

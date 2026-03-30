@@ -32,7 +32,7 @@ const ImageDesc = ({ data }: ImageDescProps) => {
           {sections.map((sec, idx) => (
             <div
               key={idx}
-              className={`flex items-center justify-center gap-16 mb-24 ${
+              className={`flex items-center justify-center gap-16 my-10 ${
                 sec.imgFirst ? "flex-row-reverse" : ""
               }`}
             >
