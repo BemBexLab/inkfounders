@@ -76,26 +76,27 @@ const HomeHero = () => {
           {/* Left Side */}
           <div className="flex-1 flex flex-col justify-center items-center lg:items-start px-4 md:px-1 w-full md:ml-20">
             <div className="max-w-xl relative w-full">
-              <div className="absolute -top-2 -right-4 md:-top-6 md:-right-5 z-20">
-                <div className="w-15 h-15 md:w-24 md:h-24 relative">
-                  <Image
-                    src="/Home/make your Life Easy.png"
-                    alt="Circular Make Your Mark"
-                    fill
-                    className="object-cover max-md:mr-5"
-                    priority
-                  />
-                </div>
-              </div>
-              <h1 className="text-3xl sm:text-4xl md:text-[48px] font-semibold leading-tight text-black mb-6 text-left lg:text-left">
-                <span className="whitespace-nowrap">
-                  Bring Your Story To Life
+              <h1 className="mb-5 max-w-[18ch] text-left text-[clamp(1.9rem,6vw,3rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-black sm:mb-6 sm:max-w-[20ch] lg:max-w-none">
+                <span className="block">
+                  Bring Your Story To{" "}
+                  <span className="relative inline-block pr-6 sm:pr-8 md:pr-10">
+                    Life
+                    <span className="pointer-events-none absolute right-1 -top-4 h-12 w-12 sm:right-0 sm:-top-6 sm:h-16 sm:w-16 md:-right-2 md:-top-10 md:h-24 md:w-24">
+                      <Image
+                        src="/Home/make your Life Easy.png"
+                        alt="Circular Make Your Mark"
+                        fill
+                        sizes="(max-width: 640px) 48px, (max-width: 768px) 64px, 96px"
+                        className="object-contain object-center"
+                        priority
+                      />
+                    </span>
+                  </span>
                 </span>
-                <br />
-                With Ink Founders Publishing
+                <span className="block">With Ink Founders Publishing</span>
               </h1>
               <p
-                className={`text-gray-700 ${robotoMono.className} text-[15px] mb-8 leading-loose text-left md:text-center lg:text-left`}
+                className={`mb-8 max-w-[62ch] text-left text-[clamp(0.875rem,2.8vw,0.95rem)] leading-[1.9] text-gray-700 md:text-center lg:text-left ${robotoMono.className}`}
               >
                 Ink Founders is an independent self-publishing platform dedicated to empowering authors with a full suite of digital services. From idea to publication, we support you at every stage of your self-publishing journey. Let's bring your book to life. Reach out to us today.
               </p>
