@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { robotoMono } from "@/app/fonts";
 
 const footerContactItems = [
@@ -76,6 +77,34 @@ const servicesLinks = [
   { label: "Ebook Formatting", href: "/publishing-services" },
   { label: "Childrens Book", href: "/publishing-services" },
   { label: "Book Marketing", href: "/publishing-services" },
+];
+
+type TrustBadge = {
+  title: string;
+  subtitle: string;
+  src: string | React.ReactNode;
+  link?: string;
+};
+
+const trustBadges: TrustBadge[] = [
+  {
+    title: "Google Business Partner",
+    subtitle: "Agency",
+    src: "/Home/google-partner 1.png",
+    link: "",
+  },
+  {
+    title: "Meta Business Partner",
+    subtitle: "Agency",
+    src: "/Home/Meta-Business-Partner 1.png",
+    link: "",
+  },
+  {
+    title: "Trustpilot",
+    subtitle: "Review",
+    src: "/Home/trustpilot-logo-1024x443.png.webp",
+    link: "https://www.trustpilot.com/review/inkfounders.com",
+  },
 ];
 
 const Footer: React.FC = () => {
@@ -156,12 +185,44 @@ const Footer: React.FC = () => {
               className={`${robotoMono.className} max-w-[38rem] text-[14px] leading-[1.7] text-[#444]`}
             >
               Ink Founder is an independent publishing partner offering a
-              comprehensive suite of digital services including book
-              publishing, children's books, ghostwriting, illustration, book
-              marketing, cover design, author websites, and more. We help bring
-              your story to life with creative, professional support every step
-              of the way.
+              comprehensive suite of digital services including book publishing,
+              children's books, ghostwriting, illustration, book marketing,
+              cover design, author websites, and more. We help bring your story
+              to life with creative, professional support every step of the way.
             </p>
+
+            <div className="text-black">
+              <div className="flex flex-wrap items-center justify-start gap-x-1 gap-y-2 sm:gap-x-1.5 sm:gap-y-3">
+                {trustBadges.map((badge) => {
+                  const isExternal = badge.link?.startsWith("http");
+
+                  return (
+                    <a
+                      key={`${badge.title}-${badge.subtitle}`}
+                      href={badge.link || "#"}
+                      target={isExternal ? "_blank" : undefined}
+                      rel={isExternal ? "noreferrer" : undefined}
+                      className="group flex h-[72px] w-fit shrink-0 items-center justify-center rounded-[16px] px-2 transition duration-300 hover:-translate-y-1 hover:scale-[1.02] sm:h-[80px] sm:px-3"
+                      aria-label={`${badge.title} ${badge.subtitle}`}
+                    >
+                      {typeof badge.src === "string" ? (
+                        <Image
+                          src={badge.src}
+                          alt={`${badge.title} ${badge.subtitle}`}
+                          width={150}
+                          height={64}
+                          className="h-auto max-h-[42px] w-auto max-w-[145px] object-contain object-center transition duration-300 group-hover:brightness-105 sm:max-h-[52px] sm:max-w-[165px]"
+                        />
+                      ) : (
+                        <div className="flex h-[72px] w-fit items-center justify-center rounded-[16px] border border-[#d8d4be] bg-[#f1eedf] px-3 py-2 text-[24px] text-[#1f1f1f] shadow-[0_8px_18px_rgba(77,70,40,0.05)] transition duration-300 group-hover:border-[#c9c29f] group-hover:shadow-[0_12px_24px_rgba(77,70,40,0.08)] sm:h-[80px] sm:px-4 sm:py-3 sm:text-[28px]">
+                          {badge.src}
+                        </div>
+                      )}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
@@ -207,7 +268,10 @@ const Footer: React.FC = () => {
               </h4>
               <ul className="m-0 list-none p-0 text-[14px]">
                 {footerContactItems.map(({ icon, lines, href }) => (
-                  <li key={href} className="mb-[13px] flex items-start gap-[10px]">
+                  <li
+                    key={href}
+                    className="mb-[13px] flex items-start gap-[10px]"
+                  >
                     <span className="mt-[2px]">{icon}</span>
                     <Link
                       href={href}
