@@ -57,7 +57,7 @@ export default function OurWork() {
   return (
     <section className="w-full bg-[#f5f3e8] py-14 overflow-hidden">
       {/* ── Header ─────────────────────────────────────────────────────────── */}
-      <div className="text-center mb-10 px-4">
+      <div className="text-center mb-5 px-4">
         <p
           className="font-semibold text-2xl tracking-widest mb-2"
           style={{ color: "#DADD39" }}

@@ -12,12 +12,12 @@ const ServiceHero = () => {
     <div className="flex flex-col items-center justify-center w-full">
       {/* Text Content */}
       <div className="px-[60px] w-full flex flex-col items-center justify-center max-md:px-[15px]">
-        <h1 className="text-[28px] md:text-[35px] xl:text-[48px] font-semibold leading-tight text-black mb-6 text-center">
+        <h1 className="text-[28px] md:text-[35px] xl:text-[48px] font-semibold leading-tight text-black mb-3 text-center">
           <span className="whitespace-nowrap">
             Comprehensive Book <br className="block md:hidden" /> Publishing Services
           </span>
         </h1>
-        <p className={`text-gray-700 ${robotoMono.className} text-[12px] md:text-[15px] mb-8 leading-loose text-center`}>
+        <p className={`text-gray-700 ${robotoMono.className} text-[12px] md:text-[15px] mb-8 leading-tight text-center`}>
           Step into excellence with Ink Founder&apos;s full-service publishing solutions. From manuscript evaluation and expert editing to custom design, marketing, and global distribution—we’re here to elevate your story. Whether you&apos;re a first-time author or a seasoned writer, we provide professional support and personalized attention to bring your literary vision to life.
         </p>
         <Link href="/contactus">

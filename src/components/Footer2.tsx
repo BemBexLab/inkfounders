@@ -211,7 +211,7 @@ const Footer: React.FC = () => {
                           alt={`${badge.title} ${badge.subtitle}`}
                           width={150}
                           height={64}
-                          className="h-auto max-h-[42px] w-auto max-w-[145px] object-contain object-center transition duration-300 group-hover:brightness-105 sm:max-h-[52px] sm:max-w-[165px]"
+                          className="h-auto mt-5 max-h-[42px] w-auto max-w-[145px] object-contain object-center transition duration-300 group-hover:brightness-105 sm:max-h-[52px] sm:max-w-[165px]"
                         />
                       ) : (
                         <div className="flex h-[72px] w-fit items-center justify-center rounded-[16px] border border-[#d8d4be] bg-[#f1eedf] px-3 py-2 text-[24px] text-[#1f1f1f] shadow-[0_8px_18px_rgba(77,70,40,0.05)] transition duration-300 group-hover:border-[#c9c29f] group-hover:shadow-[0_12px_24px_rgba(77,70,40,0.08)] sm:h-[80px] sm:px-4 sm:py-3 sm:text-[28px]">

@@ -165,7 +165,7 @@ export const audiobookData = [
         paragraphs: (
           <>
             Depending on where your project is, we offer:
-            <ul className="list-disc list-inside text-[15px] text-[#333333] leading-relaxed mb-4">
+            <ul className="list-disc list-inside text-[15px] text-[#333333] leading-relaxed my-2">
               <li>
                 <span className="font-bold">Content Editing:</span> Big-picture
                 fixes for flow and structure.
@@ -249,7 +249,7 @@ export const audiobookData = [
                 The process requires complete audio editing work, together with
                 correct Audible and Apple Books format implementation and
                 professional audio mastering work done by someone who
-                understands the essential technical specifications. <br />A
+                understands the essential technical specifications. A
                 trustworthy company provides all necessary resources and
                 expertise to deliver your book at an exceptional audio quality
                 level, which exceeds conventional standards.

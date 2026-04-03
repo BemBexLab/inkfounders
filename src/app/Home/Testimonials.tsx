@@ -141,10 +141,10 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="w-full overflow-hidden bg-[#F6F5F3] px-5 py-20">
+    <section className="w-full overflow-hidden bg-[#F6F5F3] px-5 py-8">
       <div className="mx-auto flex w-full max-w-[1300px] flex-col items-center">
         <p className="text-xl text-black">Testimonials</p>
-        <h2 className="mb-14 text-center text-[35px] font-semibold">
+        <h2 className="mb-4 text-center text-[35px] font-semibold">
           <span className="text-[#DADD39]">
             Read Testimonials From Our Happy Customers
           </span>
@@ -155,7 +155,7 @@ const Testimonials = () => {
             {getVisibleTestimonials().map((testimonial) => (
               <article
                 key={testimonial.id}
-                className="flex min-h-[340px] cursor-pointer flex-col rounded-[22px] border border-[#ece9df] bg-[#fcfbf7] px-6 pb-6 pt-5 shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] focus:outline-none focus:ring-2 focus:ring-[#d9dc2d] focus:ring-offset-2 md:px-7 md:pb-7 md:pt-6"
+                className="flex min-h-[340px] leading-tight cursor-pointer flex-col rounded-[22px] border border-[#ece9df] bg-[#fcfbf7] px-6 pb-6 pt-5 shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] focus:outline-none focus:ring-2 focus:ring-[#d9dc2d] focus:ring-offset-2 md:px-7 md:pb-7 md:pt-6"
                 onClick={handleTestimonialClick}
                 onKeyDown={(event) => {
                   if (event.key === "Enter" || event.key === " ") {
@@ -173,7 +173,7 @@ const Testimonials = () => {
                 </div>
 
                 <p
-                  className={`${robotoMono.className} mb-7 text-[15px] leading-[2] text-[#2c2a28]`}
+                  className={`${robotoMono.className} mb-7 text-[15px] leading-loose text-[#2c2a28]`}
                 >
                   {testimonial.quote}{" "}
                   <span className="font-semibold underline underline-offset-2">

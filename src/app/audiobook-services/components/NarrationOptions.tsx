@@ -1,6 +1,8 @@
+'use client';
+
 import { robotoMono } from "@/app/fonts";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { IoMdCall } from "react-icons/io";
 import { nl2br } from "@/utils/textUtils";
 
@@ -26,8 +28,30 @@ interface NarrationOptionsProps {
 }
 
 const NarrationOptions = ({ data }: NarrationOptionsProps) => {
+  const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({});
+
   const renderRichText = (value: string | React.ReactNode) =>
     typeof value === "string" ? nl2br(value) : value;
+
+  const getWordCount = (value: string | React.ReactNode) =>
+    typeof value === "string" ? value.trim().split(/\s+/).length : 0;
+
+  const getDisplayText = (
+    value: string | React.ReactNode,
+    isExpanded: boolean
+  ) => {
+    if (typeof value !== "string") {
+      return value;
+    }
+
+    const words = value.trim().split(/\s+/);
+
+    if (isExpanded || words.length <= 17) {
+      return value;
+    }
+
+    return `${words.slice(0, 17).join(" ")}...`;
+  };
 
   const narrationData: NarrationData = data || {
     header: "Flexible Audiobook Narration Options",
@@ -64,18 +88,18 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
   return (
     <section>
       {/* DESKTOP VERSION (above 720px) - Original Layout */}
-      <div className="hidden min-[720px]:block bg-[#f5f5f5] min-h-screen py-16 px-5">
+      <div className="hidden min-[720px]:block bg-[#f5f5f5] pt-8 pb-14 px-5">
         <div className="max-w-7xl mx-auto text-center">
           {/* Header */}
           <h1 className="text-[32px] font-semibold text-[#333333] mb-3">
             {narrationData.header}
           </h1>
-          <p className={`${robotoMono.className} text-[14px] text-[#666666] mb-16`}>
+          <p className={`${robotoMono.className} text-[14px] text-[#666666] mb-6`}>
             {narrationData.intro}
           </p>
 
           {/* Options Grid - Original 3 Column Layout with Images on Top */}
-          <div className="flex justify-center gap-20 mb-14">
+          <div className="flex justify-center gap-20 mb-10">
             {narrationData.options.map((opt, idx) => (
               <div
                 key={idx}
@@ -88,8 +112,24 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
                   {opt.title}
                 </h2>
                 <p className={`${robotoMono.className} text-[14px] text-[#444444] leading-relaxed`}>
-                  {renderRichText(opt.description)}
+                  {renderRichText(
+                    getDisplayText(opt.description, expandedItems[opt.title] ?? false)
+                  )}
                 </p>
+                {typeof opt.description === "string" && getWordCount(opt.description) > 17 && (
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setExpandedItems((prev) => ({
+                        ...prev,
+                        [opt.title]: !prev[opt.title],
+                      }))
+                    }
+                    className="mt-3 text-sm font-semibold text-black underline underline-offset-4"
+                  >
+                    {expandedItems[opt.title] ? "Read less" : "Read more"}
+                  </button>
+                )}
               </div>
             ))}
           </div>
@@ -150,8 +190,26 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
               {/* Description */}
               <div className="mb-5">
                 <p className="text-sm sm:text-base text-[#444444] leading-relaxed text-center">
-                  {renderRichText(opt.description)}
+                  {renderRichText(
+                    getDisplayText(opt.description, expandedItems[opt.title] ?? false)
+                  )}
                 </p>
+                {typeof opt.description === "string" && getWordCount(opt.description) > 17 && (
+                  <div className="mt-3 text-center">
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setExpandedItems((prev) => ({
+                          ...prev,
+                          [opt.title]: !prev[opt.title],
+                        }))
+                      }
+                      className="text-sm font-semibold text-black underline underline-offset-4"
+                    >
+                      {expandedItems[opt.title] ? "Read less" : "Read more"}
+                    </button>
+                  </div>
+                )}
               </div>
 
               {/* Image */}
@@ -167,7 +225,7 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
         </div>
 
         {/* Quote */}
-        <div className="text-center mb-8 px-6">
+        <div className="text-center px-6">
           <p className="text-sm sm:text-base text-[#444444] italic whitespace-pre-line">
             {renderRichText(narrationData.quote)}
           </p>

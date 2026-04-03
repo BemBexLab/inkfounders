@@ -206,7 +206,7 @@ const HomeHero = () => {
         }
       `}</style>
 
-      <div className="relative z-10 mx-auto mt-24 w-full max-w-[1450px] px-4 pb-12 sm:mt-28 sm:px-6 md:mt-32 md:px-8 lg:mt-5 lg:px-0 lg:pb-0">
+      <div className="relative z-10 mx-auto mt-24 w-full max-w-[1450px] px-4 sm:mt-28 sm:px-6 md:mt-32 md:px-8 lg:mt-5 lg:px-0 lg:pb-0">
         <div className="flex min-h-[auto] flex-col items-center justify-between gap-10 sm:gap-12 lg:min-h-screen lg:flex-row lg:gap-0">
           <div className="flex flex-1 flex-col items-center justify-center px-0 md:ml-0 md:px-1 lg:items-start xl:ml-20">
             <div className="relative w-full max-w-xl">
@@ -236,7 +236,7 @@ const HomeHero = () => {
               </h1>
 
               <p
-                className={`mb-8 max-w-[62ch] text-center text-[clamp(0.92rem,3.2vw,0.95rem)] leading-[1.8] text-gray-700 md:text-left lg:text-left ${robotoMono.className}`}
+                className={`mb-8 max-w-[62ch] text-center text-[clamp(0.92rem,3.2vw,0.95rem)] leading-tight text-gray-700 md:text-left lg:text-left ${robotoMono.className}`}
               >
                 Ink Founders is an independent self-publishing platform
                 dedicated to empowering authors with a full suite of digital

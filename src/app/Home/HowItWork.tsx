@@ -79,7 +79,7 @@ const StepItem = ({ step, isLast }: { step: Step; isLast: boolean }) => {
 
 const StepColumn = ({ steps }: { steps: Step[] }) => {
   return (
-    <div className="w-full max-w-full space-y-1">
+    <div className="w-full max-w-full space-y-0">
       {steps.map((step, index) => (
         <div key={step.id} data-aos="fade-down-right">
           <StepItem step={step} isLast={index === steps.length - 1} />
@@ -92,12 +92,12 @@ const StepColumn = ({ steps }: { steps: Step[] }) => {
 const HowItWork = () => {
   return (
     <AOSProvider>
-      <section className="w-full bg-[#F4F3E1] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <section className="w-full bg-[#F4F3E1] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-7">
         <div className="mx-auto flex w-full max-w-[1250px] flex-col items-center">
           <p className="mb-3 text-center text-[18px] font-semibold text-[#DADD39] sm:text-[21px] md:text-[25px]">
             Let's find a way
           </p>
-          <h2 className="mb-10 max-w-5xl text-center text-[24px] font-semibold leading-tight text-black sm:text-[28px] md:mb-12 md:text-[32px] lg:mb-14 lg:text-[35px]">
+          <h2 className="mb-10 max-w-5xl text-center text-[24px] font-semibold leading-tight text-black sm:text-[28px] md:mb-8 md:text-[32px] lg:mb-8 lg:text-[35px]">
             A pathway to turn your dreams into reality, with a publishing
             process with Ink Founders
           </h2>

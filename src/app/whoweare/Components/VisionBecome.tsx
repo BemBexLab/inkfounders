@@ -18,12 +18,12 @@ export default function VisionBecome() {
     </div>
     {/* Content */}
     <div className="max-w-2xl">
-      <h2 className="text-2xl md:text-[27px] font-semibold text-black mb-8">
+      <h2 className="text-2xl md:text-[27px] font-semibold text-black mb-2">
         Ink Founders: Where Vision Becomes Legacy
         <br className="hidden md:block" />
         
       </h2>
-      <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[14px] leading-loose`}>
+      <div className={`${robotoMono.className} space-y-3 text-gray-700 text-[12px] md:text-[15px] leading-tight`}>
         <p>
          At Ink Founders, we’re more than writers, editors, and storytellers—we’re dreamers who bring your ideas to life. We’re passionate about nurturing creativity and transforming your vision into a beautifully crafted reality—whether it&apos;s a book, cover design, audiobook, or beyond.
         </p>

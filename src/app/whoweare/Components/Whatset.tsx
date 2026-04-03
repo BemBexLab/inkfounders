@@ -9,7 +9,7 @@ const WhatSet = () => {
     <AOSProvider>
       <section className="w-full bg-[#F6F5F3] flex justify-center items-center py-10">
       <div className="w-full max-w-[1300px] flex flex-col items-center">
-       <h2 className="text-center text-2xl md:text-[2rem] font-semibold mb-14">
+       <h2 className="text-center text-2xl md:text-[2rem] font-semibold mb-3">
   <span className="text-black">What Sets Us Apart</span>
 </h2>
 <div className="max-w-6xl mx-auto mb-10">

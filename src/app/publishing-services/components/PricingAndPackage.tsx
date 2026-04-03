@@ -87,7 +87,7 @@ const PricingAndPackage = () => {
           Flexible Plans Tailored To Your Needs
         </h2>
         <p
-          className={`text-center text-[12px] md:text-[15px] text-[#444444] mb-14 px-5 md:px-20 leading-loose ${robotoMono.className}`}
+          className={`text-center text-[12px] md:text-[15px] text-[#444444] mb-8 px-5 md:px-20 leading-tight ${robotoMono.className}`}
         >
           &quot;Pricing may vary depending on the genre, page and word count,
           and your specific needs for publishing, marketing, or ghostwriting.
