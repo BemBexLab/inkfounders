@@ -105,12 +105,12 @@ export default function ServiceDetailPage() {
   return (
     <main className="bg-[#F4F3E1]">
       {/* Hero Section */}
-      <section className="mt-4 relative py-16 md:py-24 px-4 md:px-10 2xl:px-20">
+      <section className="mt-4 relative py-16 md:pt-24 px-4 md:px-10 2xl:px-20">
         <div className="max-w-[1450px] mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="flex-1 flex flex-col justify-center items-center lg:items-start px-4 md:px-1 w-full md:ml-20">
               <div className="max-w-xl w-full">
-                <h1 className="text-3xl sm:text-4xl md:text-[48px] font-semibold leading-tight text-black mb-6 text-left lg:text-left">
+                <h1 className="text-3xl sm:text-4xl md:text-[48px] font-semibold leading-tight text-black mb-3 text-left lg:text-left">
                   Professional eBook Publishing Services by Ink Founders
                 </h1>
                 <p className={`${robotoMono.className} text-gray-700 text-[15px] leading-loose text-left md:text-center lg:text-left`}>
@@ -136,7 +136,7 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Services Cards — NOW PERFECTLY ALIGNED */}
-      <section className="px-4 md:px-10 2xl:px-20 py-10">
+      <section className="px-4 md:px-10 2xl:px-20 py-5">
         <div className="max-w-[1450px] mx-auto">
           {/* No extra padding here — grid sits flush within max-width container */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

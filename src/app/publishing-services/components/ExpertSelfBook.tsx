@@ -4,15 +4,15 @@ import Image from "next/image";
 
 export default function ExportSelfBook() {
   return (
-    <section className="w-full bg-[#F6F5F3] py-20">
+    <section className="w-full bg-[#F6F5F3] py-10">
   <div className="max-w-8xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-10 px-6">
     
     {/* Content */}
     <div className="max-w-3xl md:pr-20">
-      <h2 className="text-2xl md:text-[27px] font-semibold text-black mb-8">
+      <h2 className="text-2xl md:text-[27px] font-semibold text-black mb-3">
         Use Expert Self-Book Publishing Services To Preserve Your Legacy!
       </h2>
-      <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[13px] leading-loose`}>
+      <div className={`${robotoMono.className} space-y-3 text-gray-700 text-[12px] md:text-[15px] leading-loose`}>
         <p>
           Your book is more than just a story—it embodies your unique voice, experiences, and creativity. At Panda Publishing Agency, we believe every author deserves careful, accurate, and detail-oriented publishing services tailored to their needs and goals.
         </p>

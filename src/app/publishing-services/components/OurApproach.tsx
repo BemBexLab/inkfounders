@@ -12,7 +12,7 @@ const OurApproach = () => {
         <p className="text-center text-lg md:text-xl font-semibold text-[#DADD39] mb-2">
           Our Approach
         </p>
-        <h2 className="text-center text-2xl md:text-[2rem] font-semibold mb-14 md:mx-30">
+        <h2 className="text-center text-2xl md:text-[2rem] font-semibold leading-tight mb-10 md:mx-30">
           <span className="text-black">Crafting Your Masterpiece A Guided, Professional Publishing Experience from Start to Finish.</span>
         </h2>
         {/* 3 columns */}

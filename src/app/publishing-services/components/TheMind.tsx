@@ -2,14 +2,14 @@ import { robotoMono } from "@/app/fonts";
 import Image from "next/image";
 export default function TheMind() {
   return (
-    <section className="w-full bg-[#F6F5F3] py-20">
+    <section className="w-full bg-[#F6F5F3] py-10">
   <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-center gap-10 px-6">
     {/* Book Cover */}
     <div className="flex-shrink-0">
       <Image
         src="/Service/Keith Cuvo 1.webp"
         alt="Book Cover"
-        width={540}
+        width={280}
         height={540}
         className="transition-transform transform hover:scale-105 hover:translate-x-2 hover:translate-y-2 hover:rotate-3"
         priority
@@ -17,18 +17,18 @@ export default function TheMind() {
     </div>
     {/* Content */}
     <div className="max-w-2xl">
-      <h2 className="text-2xl md:text-[27px] font-semibold text-black mb-8">
+      <h2 className="text-2xl md:text-[27px] font-semibold text-black mb-3">
         What Makes Our Book Publishing Services Stand Out?
       </h2>
-      <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[16px] leading-loose mb-8`}>
+      <div className={`${robotoMono.className} space-y-6 text-gray-700 text-[12px] md:text-[16px] leading-loose mb-4`}>
         <p>
           From ghostwriting to editing and publishing, we offer end-to-end support tailored to your vision. Whether you need help shaping your story or perfecting your manuscript, our experienced team is here to guide you. At Ink Founders, we’re committed to quality, creativity, and client success—turning your ideas into a professionally published book.
         </p>
       </div>
-      <h2 className="text-2xl md:text-[22px] font-normal text-black mb-8">
+      <h2 className="text-2xl md:text-[22px] font-normal text-black mb-3">
         Why Authors Choose Us:
       </h2>
-      <ul className={`text-[#444444] ${robotoMono.className} list-disc md:text-15px leading-loose`}>
+      <ul className={`text-[#444444] ${robotoMono.className} list-disc list-inside md:text-15px leading-loose`}>
         <li>Excellence in Every Detail</li>
         <li>On-Time Delivery, Every Time</li>
         <li>Client-Centered Experience</li>

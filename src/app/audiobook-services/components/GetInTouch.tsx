@@ -102,15 +102,15 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
           {/* Left Section */}
           <div className="flex-1 max-w-[500px]">
-            <h2 className="text-[#d4d946] text-[22px] font-semibold mb-2">
+            <h2 className="text-[#d4d946] text-[22px] font-semibold">
               {content.title}
             </h2>
             {/* subheading left fixed as per request */}
-            <h3 className="text-[#1a1a1a] text-[32px] font-semibold mb-8">
+            <h3 className="text-[#1a1a1a] text-[32px] font-semibold mb-4">
               Let's Talk
             </h3>
 
-            <div className={`${robotoMono.className} space-y-5 text-[14px] text-[#333333] leading-relaxed mb-12`}>
+            <div className={`${robotoMono.className} space-y-3 text-[14px] text-[#333333] leading-relaxed mb-5`}>
               {typeof content.description === "string" ? (
                 content.description
                   .split("\n")
@@ -121,7 +121,7 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
             </div>
 
             {/* Contact Options */}
-            <div className="flex flex-wrap gap-8">
+            <div className="flex flex-wrap gap-x-8 gap-y-4">
               {/* Phone */}
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 bg-[#d4d946] rounded-md flex items-center justify-center flex-shrink-0">

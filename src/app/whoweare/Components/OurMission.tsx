@@ -3,14 +3,14 @@ import Image from "next/image";
 
 export default function OurMission() {
   return (
-    <section className="w-full bg-[#F6F5F3] py-20">
+    <section className="w-full bg-[#F6F5F3] py-10">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between gap-12 px-6">
         {/* Left: Text and Stats */}
         <div className="w-full max-w-4xl">
-          <h2 className="text-[27px] font-semibold text-black mb-7">
+          <h2 className="text-[27px] font-semibold text-black mb-3">
             Our Mission
           </h2>
-          <div className={`space-y-5 text-[#444444] text-[15px] leading-loose mb-10 ${robotoMono.className}`}>
+          <div className={`space-y-3 text-[#444444] text-[15px] leading-tight mb-10 ${robotoMono.className}`}>
             <p>
               At Ink Founders, our mission is to empower individuals and businesses around the world to share their stories through expert writing, publishing, and marketing services.
             </p>

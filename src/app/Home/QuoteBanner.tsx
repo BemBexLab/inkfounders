@@ -4,15 +4,15 @@ import { robotoMono } from "../fonts";
 // components/QuoteBanner.tsx
 export default function QuoteBanner() {
   return (
-    <section className="w-full flex justify-center items-center bg-[#F6F5F3] py-10 md:py-20 ">
-      <div className="w-full max-w-[1400px] rounded-3xl bg-[#F4F3E1] px-4 py-20 flex flex-col items-center shadow-none mx-8">
+    <section className="w-full flex justify-center items-center bg-[#F6F5F3] py-10 md:py-10 ">
+      <div className="w-full max-w-[1400px] rounded-3xl bg-[#F4F3E1] px-4 py-10 flex flex-col items-center shadow-none mx-8">
         <p className="text-center text-[18px]  md:text-xl font-semibold text-[#DADD39] mb-2">
           Let your words inspire the world
         </p>
-        <h2 className="text-center text-[23px] md:text-[35px] font-semibold text-[#222] mb-8">
+        <h2 className="text-center text-[23px] md:text-[30px] font-semibold text-[#222] leading-tight mb-2">
           Let the Ink founders take the hassle out by simplifying the<br /> publishing process for you 
         </h2>
-        <p className={`text-center ${robotoMono.className} text-gray-700 text-base text-[12px] md:text-[15px] mb-10  mx-auto`}>
+        <p className={`text-center ${robotoMono.className} text-gray-700 text-base text-[12px] md:text-[15px] mb-4  mx-auto`}>
           With the partnership of Ink Founders, focus on your story and let them handle the editing. Witness our Uniqueness
         </p>
         <div className="flex flex-row gap-4 justify-center items-center">
@@ -27,7 +27,7 @@ export default function QuoteBanner() {
       font-medium 
       rounded-[10px] 
       px-5 py-2 text-base
-      md:px-8 md:py-3 md:text-lg
+      md:px-8 md:py-1 md:text-lg
       border border-[#DADD39]
       transition-all duration-300
       shadow-none

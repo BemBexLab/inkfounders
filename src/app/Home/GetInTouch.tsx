@@ -55,8 +55,7 @@ const defaultGetInTouchContent: GetInTouchContent = {
     heading: "Let us know if anything needed.\nSearching of any guidance from an expert?",
     subheading: "Have a conversation",
     paragraphs: [
-      "You have taken a step towards the journey of success in self-publishing but still have a lot to ask? And searching for an expert's guidance who can help you in bring your ideas, and voice to reality, but haven't found anyone, then you are at the right place. Ink Founders is for you.",
-      "Ink Founders provide a free discussion opportunity where you can clear your doubts, share your story ideas or concepts, and get the exploration trip to examine our services clearly and can find out how we can provide you with the best by turning your words into book form. So, let's take a step and join us today.",
+      <><p>You have taken a step towards the journey of success in self-publishing but still have a lot to ask? And searching for an expert's guidance who can help you in bring your ideas, and voice to reality, but haven't found anyone, then you are at the right place. Ink Founders is for you.</p> <p className="mt-3">Ink Founders provide a free discussion opportunity where you can clear your doubts, share your story ideas or concepts, and get the exploration trip to examine our services clearly and can find out how we can provide you with the best by turning your words into book form. So, let's take a step and join us today.</p></>,
     ],
     contacts: [
       {
@@ -183,20 +182,20 @@ export default function GetInTouch({ data }: GetInTouchProps) {
   };
 
   return (
-    <div className="w-full md:py-12 px-4 md:px-8 lg:px-12">
+    <div className="w-full md:py-8 px-4 md:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-16 max-md:mt-14">
         <div className="flex-1">
-          <h2 className="text-[#DADD39] font-medium text-[23px] md:text-[27px] mb-1 whitespace-pre-line">
+          <h2 className="text-[#DADD39] font-medium text-[23px] md:text-[27px] mb-3 leading-tight">
             {content.left.heading}
           </h2>
-          <h3 className="text-[21px] md:text-[25px] font-semibold mb-6 text-black">
+          <h3 className="text-[21px] md:text-[25px] font-semibold mb-3 text-black">
             {content.left.subheading}
           </h3>
 
           {content.left.paragraphs.map((paragraph, index) => (
             <p
               key={`paragraph-${index}`}
-              className={`text-gray-700 text-[12px] md:text-[15px] mb-8 leading-loose ${robotoMono.className}`}
+              className={`text-gray-700 text-[12px] md:text-[15px] mb-8 leading-tight ${robotoMono.className}`}
             >
               {paragraph}
             </p>
@@ -211,12 +210,12 @@ export default function GetInTouch({ data }: GetInTouchProps) {
                 {contact.href ? (
                   <a
                     href={contact.href}
-                    className="text-base text-gray-800 font-medium font-mono hover:underline focus:outline-none"
+                    className="text-base leading-tight text-gray-800 font-medium font-mono hover:underline focus:outline-none"
                   >
                     {contact.label}
                   </a>
                 ) : (
-                  <span className="text-base text-gray-800 font-medium font-mono">
+                  <span className="text-base leading-tight text-gray-800 font-medium font-mono">
                     {contact.label}
                   </span>
                 )}

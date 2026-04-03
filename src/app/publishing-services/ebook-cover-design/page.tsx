@@ -19,22 +19,28 @@ const ServiceCard = ({
   subtitle,
   description,
   checklist,
+  compactDescription = false,
 }: {
   title: string;
   subtitle?: string;
   description: string;
   checklist: string[];
+  compactDescription?: boolean;
 }) => (
   <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
     <h3 className="text-base font-semibold text-black mb-1">{title}</h3>
     {subtitle && <h4 className="text-sm font-medium text-gray-800 mb-2">{subtitle}</h4>}
     {description && (
-      <p className={`${robotoMono.className} text-gray-700 text-[13px] leading-relaxed mb-3 flex-grow`}>
+      <p
+        className={`${robotoMono.className} text-gray-700 text-[13px] leading-relaxed mt-2 mb-3 ${
+          compactDescription ? "" : "flex-grow"
+        }`}
+      >
         {description}
       </p>
     )}
     {checklist.length > 0 && (
-      <ul className="space-y-1.5">
+      <ul className="mt-2 space-y-1.5">
         {checklist.map((item, idx) => (
           <CheckItem key={idx}>{item}</CheckItem>
         ))}
@@ -50,6 +56,7 @@ export default function CoverDesignPage() {
       title: "Custom Cover Design",
       description:
         "Every cover is uniquely designed for your book, reflecting its theme, tone, and target audience.",
+      compactDescription: true,
       checklist: [
         "Unique concepts tailored to your story",
         "Genre-appropriate design styles",
@@ -90,7 +97,7 @@ export default function CoverDesignPage() {
   return (
     <main className="bg-[#F4F3E1]">
       {/* Hero Section */}
-      <section className="mt-4 relative py-16 md:py-24 px-4 md:px-10 2xl:px-20">
+      <section className="mt-4 relative py-16 md:pt-24 px-4 md:px-10 2xl:px-20">
         <div className="max-w-[1450px] mx-auto">
           <div className="flex flex-col lg:flex-row items-center justify-between">
             <div className="flex-1 flex flex-col justify-center items-center lg:items-start px-4 md:px-1 w-full md:ml-20">
@@ -121,7 +128,7 @@ export default function CoverDesignPage() {
       </section>
 
       {/* Service Cards — 4 cards */}
-      <section className="px-4 md:px-10 2xl:px-20 py-10">
+      <section className="px-4 md:px-10 2xl:px-20 py-5">
         <div className="max-w-[1450px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {serviceCards.map((card, index) => (
@@ -130,6 +137,7 @@ export default function CoverDesignPage() {
                 title={card.title}
                 description={card.description}
                 checklist={card.checklist}
+                compactDescription={card.compactDescription}
               />
             ))}
           </div>

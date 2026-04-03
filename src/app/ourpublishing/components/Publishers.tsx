@@ -36,9 +36,9 @@ const AUTHORS = [
 const placeholder = "/authors/placeholder.png"; // Use a default placeholder image
 
 const Publishers = () => (
-  <section className="w-full my-[100px] flex flex-col items-center">
+  <section className="w-full my-[50px] flex flex-col items-center">
     <div>
-      <h1 className="text-black text-lg md:text-xl font-semibold mb-20">Meet Our Publising Partners</h1>
+      <h1 className="text-black text-lg md:text-xl font-semibold mb-5">Meet Our Publising Partners</h1>
     </div>
     <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-2">
       {AUTHORS.map((author, idx) => (

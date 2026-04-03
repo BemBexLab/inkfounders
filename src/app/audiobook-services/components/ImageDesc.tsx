@@ -27,7 +27,7 @@ const ImageDesc = ({ data }: ImageDescProps) => {
   return (
     <section>
       {/* DESKTOP VERSION (above 720px) */}
-      <div className="hidden min-[720px]:block bg-[#f0eedd] min-h-screen py-16 px-8">
+      <div className="hidden min-[720px]:block bg-[#f0eedd] py-16 px-8">
         <div className="max-w-[1400px] mx-auto">
           {sections.map((sec, idx) => (
             <div
@@ -38,10 +38,10 @@ const ImageDesc = ({ data }: ImageDescProps) => {
             >
               {/* Text content */}
               <div className="flex-1 max-w-[520px]">
-                <h1 className="text-[28px] font-semibold text-[#1a1a1a] mb-6 leading-tight">
+                <h1 className="text-[28px] font-semibold text-[#1a1a1a] mb-3 leading-tight">
                   {sec.title}
                 </h1>
-                <div className={`${robotoMono.className} space-y-5 text-[15px] text-[#333333] leading-relaxed`}>
+                <div className={`${robotoMono.className} space-y-3 text-[15px] text-[#333333] leading-relaxed`}>
                   {Array.isArray(sec.paragraphs) ? (
                     sec.paragraphs.map((p, i) => <p key={i}>{p}</p>)
                   ) : (

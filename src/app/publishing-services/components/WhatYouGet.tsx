@@ -7,14 +7,14 @@ import AOSProvider from "@/components/AOSProvider";
 const WhatYouGet = () => {
   return (
     <AOSProvider>
-      <section className="w-full bg-[#F6F5F3] flex justify-center items-center py-20">
+      <section className="w-full bg-[#F6F5F3] flex justify-center items-center py-10">
   <div className="w-full max-w-[1300px] flex flex-col items-center">
     {/* Headings */}
-    <h2 className="text-center text-[23px] md:text-[30px] font-semibold mb-14">
+    <h2 className="text-center text-[23px] md:text-[30px] font-semibold mb-8">
       <span className="text-[#1F1F1F]">What You Get with Ink Founder</span>
     </h2>
     {/* 3 columns */}
-    <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-4">
+    <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-x-4">
       {/* 1. Book Editing & Proofreading */}
       <div data-aos="fade-down-right" className="flex flex-col items-start text-left px-8">
         <Image

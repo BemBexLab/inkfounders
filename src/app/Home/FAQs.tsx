@@ -14,7 +14,7 @@ const faqs: FAQ[] = [
     question: "What Services Are Included in Your Packages—And Can I Customize Them?",
     answer: (
       <>
-        <div className="font-mono text-[15px] text-[#454545] mb-2">
+        <div className="font-mono text-[15px] text-[#454545] mb-3">
           Ink founders provide a variety of services from editing, proofreading, book formatting, book designing, cover designing, ISBN registration, to marketing services. And if you are looking for ghostwriting there is no need to go anywhere, we offer you that too. 
         </div>
         <div className="font-mono text-[15px] text-[#454545]">
@@ -62,20 +62,20 @@ const FAQs: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="w-full flex justify-center items-center py-20 max-lg:px-5 ">
+    <section className="w-full flex justify-center items-center py-10 max-lg:px-5 ">
       <div className="w-full max-w-[1300px] flex flex-col items-center">
         {/* Headings */}
         <p className="text-center text-lg md:text-xl font-bold text-black mb-2">
           FAQs
         </p>
-        <h2 className="text-center text-2xl md:text-[2rem] font-bold mb-14">
+        <h2 className="text-center text-2xl md:text-[2rem] font-bold">
           <span className="text-[#DADD39]">Frequently Asked Questions</span>
         </h2>
         {/* FAQ List */}
         <div className="w-full flex flex-col">
           {faqs.map((faq, idx) => (
             <div
-              key={faq.question}
+              key={`${faq.question}-${idx}`}
               className={`border border-[#f3f3f3]  duration-200 ${
                 idx < faqs.length - 1 ? "mb-0" : ""
               }`}
@@ -103,7 +103,7 @@ const FAQs: React.FC = () => {
               </button>
               {openIndex === idx && (
                 <div
-                  className={`pt-0 pb-7 text-[12px] md:text-[15px] leading-loose ${robotoMono.className}`}
+                  className={`pt-0 pb-7 text-[12px] md:text-[15px] leading-tight ${robotoMono.className}`}
                   id={`faq-content-${idx}`}
                 >
                   {faq.answer}
