@@ -4,22 +4,27 @@ import AOSProvider from "@/components/AOSProvider";
 
 const STEPS = [
   {
+    id: "manuscript-review-and-editing",
     title: "Manuscript Review and Editing",
     desc: "We dive deep into your story—refining plot, characters, and language to capture its true essence with clarity and brilliance."
   },
   {
+    id: "book-design",
     title: "Book Design",
     desc: "Design covers that tell your story before the first page—visually capturing your book's essence and drawing readers in."
   },
   {
+    id: "printing-and-binding",
     title: "Printing and Binding",
     desc: "Combining modern tech with artisan craftsmanship, we deliver crisp pages, vibrant colors, and premium binding for a truly refined reading experience."
   },
   {
+    id: "marketing-and-promotion",
     title: "Marketing and Promotion",
     desc: "Ensure your book reaches eager readers. Spark curiosity and excitement that propels your story to the forefront of literary conversations."
   },
   {
+    id: "amazon-distribution",
     title: "Manuscript Review and Editing",
     desc: "Reach readers worldwide with Amazon's powerful platform—available in both print and digital formats."
   }
@@ -36,7 +41,7 @@ const FiveStepProcess = () => {
     {STEPS.map((step, idx) => (
       <div 
         data-aos="fade-down-right" 
-        key={idx}
+        key={step.id}
         className="flex flex-col md:flex-row items-stretch bg-[#DADD39] rounded-2xl overflow-hidden"
       >
         {/* Number and Step */}

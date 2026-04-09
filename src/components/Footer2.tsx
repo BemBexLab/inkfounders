@@ -61,25 +61,26 @@ const footerContactItems = [
 ];
 
 const quickLinks = [
-  { label: "Home", href: "/" },
-  { label: "Publishing Services", href: "/publishing-services" },
-  { label: "Our Books", href: "/ourbook" },
-  { label: "Our Publishing", href: "/ourpublishing" },
-  { label: "Who we are", href: "/whoweare" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact Us", href: "/contactus" },
-  { label: "Terms", href: "/terms" },
-  { label: "Privacy", href: "/privacy" },
+  { id: "home", label: "Home", href: "/" },
+  { id: "publishing-services", label: "Publishing Services", href: "/publishing-services" },
+  { id: "our-books", label: "Our Books", href: "/ourbook" },
+  { id: "our-publishing", label: "Our Publishing", href: "/ourpublishing" },
+  { id: "who-we-are", label: "Who we are", href: "/whoweare" },
+  { id: "blog", label: "Blog", href: "/blog" },
+  { id: "contact-us", label: "Contact Us", href: "/contactus" },
+  { id: "terms", label: "Terms", href: "/terms" },
+  { id: "privacy", label: "Privacy", href: "/privacy" },
 ];
 
 const servicesLinks = [
-  { label: "Book Publishing", href: "/publishing-services" },
-  { label: "Ebook Formatting", href: "/publishing-services" },
-  { label: "Childrens Book", href: "/publishing-services" },
-  { label: "Book Marketing", href: "/publishing-services" },
+  { id: "book-publishing", label: "Book Publishing", href: "/publishing-services" },
+  { id: "ebook-formatting", label: "Ebook Formatting", href: "/publishing-services" },
+  { id: "childrens-book", label: "Childrens Book", href: "/publishing-services" },
+  { id: "book-marketing", label: "Book Marketing", href: "/publishing-services" },
 ];
 
 type TrustBadge = {
+  id: string;
   title: string;
   subtitle: string;
   src: string | React.ReactNode;
@@ -88,18 +89,21 @@ type TrustBadge = {
 
 const trustBadges: TrustBadge[] = [
   {
+    id: "google-business-partner",
     title: "Google Business Partner",
     subtitle: "Agency",
     src: "/Home/google-partner 1.png",
     link: "",
   },
   {
+    id: "meta-business-partner",
     title: "Meta Business Partner",
     subtitle: "Agency",
     src: "/Home/Meta-Business-Partner 1.png",
     link: "",
   },
   {
+    id: "trustpilot-review",
     title: "Trustpilot",
     subtitle: "Review",
     src: "/Home/trustpilot-logo-1024x443.png.webp",
@@ -198,7 +202,7 @@ const Footer: React.FC = () => {
 
                   return (
                     <a
-                      key={`${badge.title}-${badge.subtitle}`}
+                      key={badge.id}
                       href={badge.link || "#"}
                       target={isExternal ? "_blank" : undefined}
                       rel={isExternal ? "noreferrer" : undefined}
@@ -231,8 +235,8 @@ const Footer: React.FC = () => {
                 Quick Links
               </h4>
               <ul className="m-0 list-none p-0">
-                {quickLinks.map(({ label, href }) => (
-                  <li key={label} className="mb-2">
+                {quickLinks.map(({ id, label, href }) => (
+                  <li key={id} className="mb-2">
                     <Link
                       href={href}
                       className="font-sans text-[14px] text-[#333] no-underline transition-colors hover:text-[#8a7a2e]"
@@ -249,8 +253,8 @@ const Footer: React.FC = () => {
                 Our Services
               </h4>
               <ul className="m-0 list-none p-0">
-                {servicesLinks.map(({ label, href }) => (
-                  <li key={label} className="mb-2">
+                {servicesLinks.map(({ id, label, href }) => (
+                  <li key={id} className="mb-2">
                     <Link
                       href={href}
                       className="font-sans text-[14px] text-[#333] no-underline transition-colors hover:text-[#8a7a2e]"

@@ -18,6 +18,7 @@ type ConsultationFormData = {
 };
 
 type TrustBadge = {
+  id: string;
   title: string;
   subtitle: string;
   src: string | React.ReactNode;
@@ -33,12 +34,14 @@ const bookImages = [
 
 const trustBadges: TrustBadge[] = [
   {
+    id: "trustpilot-review",
     title: "Trustpilot",
     subtitle: "Review",
     src: "/Home/trustpilot-logo-1024x443.png.webp",
     link: "https://www.trustpilot.com/review/inkfounders.com",
   },
   {
+    id: "top-digital-agency",
     title: "Top Digital",
     subtitle: "Agency",
     src: "/Home/Mask%20group.png",
@@ -282,7 +285,7 @@ const HomeHero = () => {
 
                     return (
                       <a
-                        key={`${badge.title}-${badge.subtitle}`}
+                        key={badge.id}
                         href={badge.link || "#"}
                         target={isExternal ? "_blank" : undefined}
                         rel={isExternal ? "noreferrer" : undefined}

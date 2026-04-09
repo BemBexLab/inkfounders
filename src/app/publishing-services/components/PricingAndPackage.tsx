@@ -7,6 +7,7 @@ import AOSProvider from "@/components/AOSProvider";
 
 const PACKAGES = [
   {
+    id: "silver",
     label: "Smart Self-Publishing Plan for Amazon",
     title: "Silver",
     price: "$499",
@@ -29,6 +30,7 @@ const PACKAGES = [
     ],
   },
   {
+    id: "gold",
     label: "Smart Self-Publishing Plan for Amazon",
     title: "Gold",
     price: "$699",
@@ -51,6 +53,7 @@ const PACKAGES = [
     ],
   },
   {
+    id: "platinum",
     label: "Complete Ghostwriting & Publishing Plan",
     title: "Platinum",
     price: "$999–$1999",
@@ -98,7 +101,7 @@ const PricingAndPackage = () => {
         <div data-aos="fade-down-right" className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-md:px-5">
           {PACKAGES.map((pkg, idx) => (
             <div
-              key={idx}
+              key={pkg.id}
               className="flex flex-col rounded-2xl border border-gray-100 px-6 py-8 min-h-[670px] shadow-lg"
             >
               {/* Plan label */}
@@ -120,7 +123,7 @@ const PricingAndPackage = () => {
                 <ul className="mt-3 space-y-2">
                   {pkg.included.map((feature, i) => (
                     <li
-                      key={i}
+                      key={`${pkg.id}-${feature}`}
                       className="flex items-start gap-2 text-[12px] md:text-[15px] text-black"
                     >
                       <FaCheckCircle

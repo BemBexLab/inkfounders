@@ -55,7 +55,22 @@ const defaultGetInTouchContent: GetInTouchContent = {
     heading: "Let us know if anything needed.\nSearching of any guidance from an expert?",
     subheading: "Have a conversation",
     paragraphs: [
-      <><p>You have taken a step towards the journey of success in self-publishing but still have a lot to ask? And searching for an expert's guidance who can help you in bring your ideas, and voice to reality, but haven't found anyone, then you are at the right place. Ink Founders is for you.</p> <p className="mt-3">Ink Founders provide a free discussion opportunity where you can clear your doubts, share your story ideas or concepts, and get the exploration trip to examine our services clearly and can find out how we can provide you with the best by turning your words into book form. So, let's take a step and join us today.</p></>,
+      <div>
+        <p>
+          You have taken a step towards the journey of success in
+          self-publishing but still have a lot to ask? And searching for an
+          expert's guidance who can help you in bring your ideas, and voice to
+          reality, but haven't found anyone, then you are at the right place.
+          Ink Founders is for you.
+        </p>
+        <p className="mt-3">
+          Ink Founders provide a free discussion opportunity where you can clear
+          your doubts, share your story ideas or concepts, and get the
+          exploration trip to examine our services clearly and can find out how
+          we can provide you with the best by turning your words into book form.
+          So, let's take a step and join us today.
+        </p>
+      </div>,
     ],
     contacts: [
       {
@@ -193,12 +208,12 @@ export default function GetInTouch({ data }: GetInTouchProps) {
           </h3>
 
           {content.left.paragraphs.map((paragraph, index) => (
-            <p
+            <div
               key={`paragraph-${index}`}
               className={`text-gray-700 text-[12px] md:text-[15px] mb-8 leading-tight ${robotoMono.className}`}
             >
               {paragraph}
-            </p>
+            </div>
           ))}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
@@ -224,7 +239,7 @@ export default function GetInTouch({ data }: GetInTouchProps) {
           </div>
         </div>
 
-        <div className="flex-1 bg-[#F4F3E1] px-10 py-10 rounded-2xl">
+        <div className="flex-1 border border-2 border-[#D0D0D0] bg-[#F4F3E1] px-10 py-10 rounded-2xl">
           <form onSubmit={handleSubmit}>
             <h2 className="text-[15px] md:text-2xl font-bold mb-6 text-black">
               {content.form.title}
@@ -243,7 +258,7 @@ export default function GetInTouch({ data }: GetInTouchProps) {
                     value={formData[field.name]}
                     onChange={handleChange}
                     placeholder={field.placeholder}
-                    className="bg-[#EDECDA] text-[#9D9F9D] p-3 rounded-md border border-gray-200 focus:outline-none focus:border-[#d4d450]"
+                    className="bg-[#DEDDCB] text-[#6B6D6B] placeholder:text-[#6B6D6B] p-3 rounded-md border border-gray-200 focus:outline-none focus:border-[#d4d450]"
                     required
                   />
                 ))}
@@ -256,7 +271,7 @@ export default function GetInTouch({ data }: GetInTouchProps) {
               onChange={handleChange}
               placeholder={content.form.messagePlaceholder}
               rows={4}
-              className="w-full bg-[#EDECDA] text-[#9D9F9D] p-3 rounded-md border border-gray-200 focus:outline-none focus:border-[#d4d450] mb-4"
+              className="w-full bg-[#DEDDCB] text-[#6B6D6B] placeholder:text-[#6B6D6B] p-3 rounded-md border border-gray-200 focus:outline-none focus:border-[#d4d450] mb-4"
               required
             />
 

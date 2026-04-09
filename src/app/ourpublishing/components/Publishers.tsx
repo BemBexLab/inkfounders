@@ -2,31 +2,37 @@ import Image from "next/image";
 
 const AUTHORS = [
   {
+    id: "wilma-gibson-smith",
     name: "Wilma Gibson Smith",
     photo: "/ourbook/IMG_2582 Copy 1 1.png",
     book: "Forged in the Mountains: A Family's Resilience",
   },
   {
+    id: "leonard-serratore",
     name: "Leonard Serratore",
     photo: "/ourbook/Leonard_Serratore_profile. enhance image.png", // blank for placeholder
     book: "The Adventure Of Scott And Lenny: Learn How To Fly",
   },
   {
+    id: "k-stephen-jumper",
     name: "K. Stephen Jumper",
     photo: "/ourbook/K. Stephen Jumper.jpg",
     book: "Don't Cut the Grass On Sunday: A Monday Conversation for Non-Christians & Skeptics Alike",
   },
   {
+    id: "scott-frank",
     name: "Scott Frank",
     photo: "/ourbook/Scott image.jpg",
     book: "Kael and the Whale with the Polka-Dot Tail",
   },
   {
+    id: "jack-cartwrightjack",
     name: "Jack CartwrightJack",
     photo: "/ourpublishers/8c3kdpse8aad2e1pak0pe7sib._SY600_.jpg", // blank for placeholder
     book: "Deadly Little Secret/The Harder They Fall and other",
   },
   {
+    id: "jim-fritz",
     name: "JIM FRITZ",
     photo: "/ourbook/Jim pic.jpg",
     book: "Tales of the Hippie Dippie Gardener",
@@ -43,7 +49,7 @@ const Publishers = () => (
     <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-2">
       {AUTHORS.map((author, idx) => (
         <div
-          key={idx}
+          key={author.id}
           className="
           flex flex-row
            rounded-2xl 
