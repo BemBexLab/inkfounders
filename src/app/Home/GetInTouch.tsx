@@ -193,12 +193,12 @@ export default function GetInTouch({ data }: GetInTouchProps) {
           </h3>
 
           {content.left.paragraphs.map((paragraph, index) => (
-            <p
+            <div
               key={`paragraph-${index}`}
               className={`text-gray-700 text-[12px] md:text-[15px] mb-8 leading-tight ${robotoMono.className}`}
             >
               {paragraph}
-            </p>
+            </div>
           ))}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">

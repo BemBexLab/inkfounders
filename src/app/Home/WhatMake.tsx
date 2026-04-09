@@ -7,6 +7,7 @@ import { robotoMono } from '../fonts'
 
 const whatMakeItems = [
   {
+    id: 'integrated-publishing-services',
     title: 'Integrated and straightforward publishing services',
     description:
       'Ink Founders, your publishing partner, provides a smooth and exciting publishing journey with a full-service publishing model from editing, formatting, publishing, and marketing services. Our team supports you at every stage, and with clear communication, authors are informed and engaged throughout their publishing journey.',
@@ -14,6 +15,7 @@ const whatMakeItems = [
     alt: 'Holistic & Transparent Services',
   },
   {
+    id: 'worldwide-network-distribution',
     title: 'Worldwide network distribution',
     description:
       'Your story is not only a book but a dream filled with Ink Founders. It is a masterpiece that the whole world should recognise its worth, and we mean the whole world, so Ink Founders not only publish your book but distribute it to more than 40 global platforms, so that your book can touch the hearts of millions of readers.',
@@ -21,6 +23,7 @@ const whatMakeItems = [
     alt: 'Myriad Of Distribution Channels',
   },
   {
+    id: 'marketing-books-and-building-brands',
     title: 'Marketing books and building brands-together',
     description:
       'Publishing the book is just the start, but making your brand is what makes it a masterpiece. So, Ink Founders helps you to establish a powerful author branding service, as it not only helps to build a public image but also helps in targeting the right audience.',
@@ -56,7 +59,7 @@ const WhatMake = () => {
 
           <div data-aos="fade-down-right" className="w-full grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-4">
             {whatMakeItems.map((item) => (
-              <div key={item.title} className="flex flex-col items-center px-4 text-center">
+              <div key={item.id} className="flex flex-col items-center px-4 text-center">
                 <Image
                   src={item.image}
                   alt={item.alt}

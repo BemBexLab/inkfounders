@@ -7,6 +7,7 @@ import { IoMdCall } from "react-icons/io";
 import { nl2br } from "@/utils/textUtils";
 
 interface NarrationOption {
+  id: string;
   title: string;
   description: string | React.ReactNode;
   imgSrc: string;
@@ -59,18 +60,21 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
       "Every author has a different vision. That's why we offer multiple narration styles:",
     options: [
       {
+        id: "author-read",
         title: "Author-Read",
         description:
           "You narrate your own story with professional recording and production support.",
         imgSrc: "/audiobooks/book.webp",
       },
       {
+        id: "actor-read",
         title: "Actor-Read",
         description:
           "A trained voice actor performs your book with character depth and emotional range.",
         imgSrc: "/audiobooks/headphones.webp",
       },
       {
+        id: "narration-with-musical-scoring",
         title: "Narration With Musical Scoring",
         description:
           "Subtle background music enhances the listening experience and adds atmosphere.",
@@ -102,7 +106,7 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
           <div className="flex justify-center gap-20 mb-10">
             {narrationData.options.map((opt, idx) => (
               <div
-                key={idx}
+                key={opt.id}
                 className="flex flex-col items-center max-w-[280px]"
               >
                 <div className="w-13 h-13 flex justify-center mb-5">
@@ -177,7 +181,7 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
         <div className="space-y-6 mb-10">
           {narrationData.options.map((opt, idx) => (
             <div
-              key={idx}
+              key={opt.id}
               className="bg-white rounded-lg shadow-sm p-6 mx-auto max-w-md"
             >
               {/* Title */}
