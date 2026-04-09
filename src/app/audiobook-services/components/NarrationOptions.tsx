@@ -7,7 +7,7 @@ import { IoMdCall } from "react-icons/io";
 import { nl2br } from "@/utils/textUtils";
 
 interface NarrationOption {
-  id: string;
+  id?: string;
   title: string;
   description: string | React.ReactNode;
   imgSrc: string;
@@ -106,7 +106,7 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
           <div className="flex justify-center gap-20 mb-10">
             {narrationData.options.map((opt, idx) => (
               <div
-                key={opt.id}
+                key={opt.id ?? opt.title}
                 className="flex flex-col items-center max-w-[280px]"
               >
                 <div className="w-13 h-13 flex justify-center mb-5">
@@ -181,7 +181,7 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
         <div className="space-y-6 mb-10">
           {narrationData.options.map((opt, idx) => (
             <div
-              key={opt.id}
+              key={opt.id ?? opt.title}
               className="bg-white rounded-lg shadow-sm p-6 mx-auto max-w-md"
             >
               {/* Title */}
