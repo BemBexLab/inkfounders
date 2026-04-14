@@ -54,21 +54,21 @@ type Step = (typeof steps)[number];
 
 const StepItem = ({ step, isLast }: { step: Step; isLast: boolean }) => {
   return (
-    <div className="relative flex items-start gap-4 sm:gap-5">
+    <div className="relative flex items-start gap-3 sm:gap-4 lg:gap-5">
       {!isLast && (
-        <div className="absolute left-5 top-12 h-[calc(100%-2rem)] w-px bg-[#DADD39]/40" />
+        <div className="absolute left-[17px] top-11 h-[calc(100%-1.5rem)] w-px bg-[#DADD39]/40 sm:left-5 sm:top-12 lg:h-[calc(100%-2rem)]" />
       )}
 
-      <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#DADD39] font-mono text-sm text-[#222] sm:h-11 sm:w-11 sm:text-base">
+      <div className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#DADD39] font-mono text-[13px] text-[#222] sm:h-10 sm:w-10 sm:text-sm lg:h-11 lg:w-11 lg:text-base">
         {step.id}
       </div>
 
-      <div className="min-w-0 flex-1 pb-8 sm:pb-10">
-        <h3 className="mb-2 text-[16px] font-semibold leading-snug text-black sm:text-[18px] lg:text-[20px]">
+      <div className="min-w-0 flex-1 pb-7 sm:pb-8 lg:pb-10">
+        <h3 className="mb-2 text-[15px] font-semibold leading-[1.15] text-black sm:text-[17px] md:text-[18px] lg:text-[20px] lg:leading-snug">
           {step.title}
         </h3>
         <p
-          className={`${robotoMono.className} text-[12px] leading-6 text-[#444] sm:text-[13px] md:text-[14px] lg:text-[15px] lg:leading-7`}
+          className={`${robotoMono.className} text-[12px] leading-[1.35] text-[#444] sm:text-[13px] md:text-[14px] lg:text-[15px] lg:leading-7`}
         >
           {step.description}
         </p>
@@ -92,17 +92,17 @@ const StepColumn = ({ steps }: { steps: Step[] }) => {
 const HowItWork = () => {
   return (
     <AOSProvider>
-      <section className="w-full bg-[#F4F3E1] px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-7">
+      <section className="w-full bg-[#F4F3E1] px-4 py-10 sm:px-6 sm:py-12 md:px-8 md:py-14 lg:px-8 lg:py-7">
         <div className="mx-auto flex w-full max-w-[1250px] flex-col items-center">
-          <p className="mb-3 text-center text-[18px] font-semibold text-[#DADD39] sm:text-[21px] md:text-[25px]">
+          <p className="mb-2 text-center text-[17px] font-semibold text-[#DADD39] sm:text-[20px] md:text-[23px] lg:mb-3 lg:text-[25px]">
             Let's find a way
           </p>
-          <h2 className="mb-10 max-w-5xl text-center text-[24px] font-semibold leading-tight text-black sm:text-[28px] md:mb-8 md:text-[32px] lg:mb-8 lg:text-[35px]">
+          <h2 className="mb-8 max-w-5xl text-center text-[23px] font-semibold leading-[1] text-black sm:text-[27px] md:mb-8 md:text-[31px] lg:mb-8 lg:text-[35px]">
             A pathway to turn your dreams into reality, with a publishing
             process with Ink Founders
           </h2>
 
-          <div className="grid w-full grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+          <div className="grid w-full max-w-3xl grid-cols-1 gap-0 lg:max-w-none lg:grid-cols-2 lg:gap-12 xl:gap-16">
             <StepColumn steps={leftColumnSteps} />
             <StepColumn steps={rightColumnSteps} />
           </div>

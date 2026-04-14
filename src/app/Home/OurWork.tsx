@@ -55,16 +55,16 @@ export default function OurWork() {
   }, []);
 
   return (
-    <section className="w-full bg-[#f5f3e8] py-14 overflow-hidden">
+    <section className="w-full overflow-hidden bg-[#f5f3e8] py-10 sm:py-12 md:py-14">
       {/* ── Header ─────────────────────────────────────────────────────────── */}
-      <div className="text-center mb-5 px-4">
+      <div className="mb-5 px-4 text-center sm:px-6">
         <p
-          className="font-semibold text-2xl tracking-widest mb-2"
+          className="text-[18px] font-semibold tracking-widest sm:text-[22px] md:text-2xl"
           style={{ color: "#DADD39" }}
         >
           Our Work
         </p>
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+        <h2 className="mx-auto max-w-3xl text-[25px] font-bold leading-[1.05] text-gray-900 sm:text-[32px] md:text-4xl lg:leading-[1]">
           Illustrations That Bring Stories To Life
         </h2>
       </div>
@@ -78,14 +78,14 @@ export default function OurWork() {
         onTouchEnd={() => (pausedRef.current = false)}
       >
         {/* Fade edges */}
-        <div className="absolute inset-y-0 left-0 w-6 sm:w-28 z-10 pointer-events-none bg-gradient-to-r from-[#f5f3e8] to-transparent" />
-        <div className="absolute inset-y-0 right-0 w-16 sm:w-28 z-10 pointer-events-none bg-gradient-to-l from-[#f5f3e8] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-5 bg-gradient-to-r from-[#f5f3e8] to-transparent sm:w-16 lg:w-28" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-5 bg-gradient-to-l from-[#f5f3e8] to-transparent sm:w-16 lg:w-28" />
 
         {/* Scrolling track */}
         <div className="overflow-hidden">
           <div
             ref={trackRef}
-            className="flex gap-4 will-change-transform"
+            className="flex gap-3 will-change-transform sm:gap-4"
             style={{ width: "max-content" }}
           >
             {loopSlides.map((slide, i) => (
@@ -96,12 +96,12 @@ export default function OurWork() {
       </div>
 
       {/* ── CTA Button ──────────────────────────────────────────────────────── */}
-      <div className="flex justify-center mt-10">
+      <div className="mt-8 flex justify-center sm:mt-10">
         <a
           href="/Home/Portfolio%20PDF.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-slide-bg flex items-center gap-2 bg-[#DADD39] text-black font-normal px-5 py-2 rounded-md shadow self-start md:self-center lg:self-start border border-transparent hover:border-black transition-all duration-300"
+          className="btn-slide-bg flex items-center gap-2 self-start rounded-md border border-transparent bg-[#DADD39] px-5 py-2 text-sm font-normal text-black shadow transition-all duration-300 hover:border-black md:self-center md:text-base lg:self-start"
         >
           <span className="slide-bg rounded-md"></span>
           <span className="relative z-10 flex items-center gap-2">
@@ -118,13 +118,7 @@ function SlideCard({ slide }: { slide: (typeof SLIDES)[0] }) {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div
-      className="relative flex-shrink-0 rounded-lg overflow-hidden shadow-md group cursor-pointer"
-      style={{
-        width: "450px",
-        height: "clamp(140px, 20vw, 240px)",
-      }}
-    >
+    <div className="group relative h-[145px] w-[78vw] max-w-[330px] flex-shrink-0 cursor-pointer overflow-hidden rounded-lg shadow-md sm:h-[190px] sm:w-[55vw] sm:max-w-[410px] md:h-[220px] md:w-[44vw] lg:h-[clamp(140px,20vw,240px)] lg:w-[450px] lg:max-w-none">
       {/* Placeholder shown while image loads */}
       {!loaded && (
         <div className="absolute inset-0 bg-gradient-to-br from-amber-100 to-yellow-200 animate-pulse flex items-center justify-center">
@@ -149,7 +143,7 @@ function SlideCard({ slide }: { slide: (typeof SLIDES)[0] }) {
         src={slide.src}
         alt={slide.label}
         fill
-        sizes="(max-width: 640px) 80vw, 450px"
+        sizes="(max-width: 640px) 78vw, (max-width: 768px) 55vw, (max-width: 1024px) 44vw, 450px"
         onLoad={() => setLoaded(true)}
         onError={() => setLoaded(true)} // hide shimmer even if image 404s
         className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${

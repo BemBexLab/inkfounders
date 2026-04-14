@@ -209,7 +209,141 @@ const HomeHero = () => {
         }
       `}</style>
 
-      <div className="relative z-10 mx-auto mt-24 w-full max-w-[1450px] px-4 sm:mt-28 sm:px-6 md:mt-32 md:px-8 lg:mt-5 lg:px-0 lg:pb-0">
+      <div className="relative z-10 mx-auto w-full px-4 pt-24 sm:px-6 sm:pt-28 md:px-10 md:pt-32 lg:hidden">
+        <div className="mx-auto flex w-full max-w-3xl flex-col items-start gap-5 pb-10">
+          <h1 className="w-full text-left text-[clamp(2rem,5.5vw,3.4rem)] font-semibold leading-[1.05] text-black">
+            Bring Your Story To Life With Ink Founders Publishing
+          </h1>
+
+          <div className="relative flex w-full items-center justify-center py-2 sm:py-4">
+            <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
+              <Image
+                src="/Home/bookslidetest/Ellipse 2.png"
+                alt="Decorative background"
+                width={480}
+                height={480}
+                className="h-[min(78vw,430px)] w-[min(78vw,430px)] object-contain"
+                priority={false}
+                draggable={false}
+              />
+            </div>
+
+            <div className="relative z-10 flex h-[min(76vw,430px)] w-full max-w-[430px] items-center justify-center overflow-hidden p-2 transition-all">
+              <div className="absolute inset-0 h-full w-full">
+                <Image
+                  src={bookImages[current]}
+                  alt="Book Cover"
+                  fill
+                  className={`object-contain ${isTransitioning ? "slide-out" : ""} z-10`}
+                  priority
+                  style={{
+                    objectFit: "contain",
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                  }}
+                />
+              </div>
+
+              {isTransitioning && (
+                <div className="absolute inset-0 h-full w-full">
+                  <Image
+                    src={bookImages[(current + 1) % bookImages.length]}
+                    alt="Book Cover"
+                    fill
+                    className="slide-in z-20 object-contain"
+                    style={{
+                      objectFit: "contain",
+                      maxWidth: "100%",
+                      maxHeight: "100%",
+                    }}
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+
+          <p
+            className={`max-w-[64ch] text-left text-[0.95rem] leading-6 text-gray-700 sm:text-[1rem] ${robotoMono.className}`}
+          >
+            Ink Founders is an independent self-publishing platform dedicated to
+            empowering authors with a full suite of digital services. From idea
+            to publication, we support you at every stage of your
+            self-publishing journey. Let&apos;s bring your book to life. Reach
+            out to us today.
+          </p>
+
+          <div className="flex w-full flex-row justify-center gap-2 sm:gap-3">
+            <a href="tel:+17864961231" className="min-w-0 flex-1 sm:flex-none">
+              <button
+                type="button"
+                className="btn-slide-bg flex h-full w-full items-center justify-center rounded-md border border-transparent bg-[#DADD39] px-2 py-3 text-[12px] font-normal leading-tight text-black shadow transition-all duration-300 hover:border-black min-[390px]:px-3 min-[390px]:text-sm sm:w-auto sm:px-5 sm:text-base"
+              >
+                <span className="slide-bg rounded-md"></span>
+                <span className="relative z-10 flex items-center gap-2">
+                  <IoMdCall size={18} className="h-4 w-4 md:h-5 md:w-5" />
+                  Request a Call
+                </span>
+              </button>
+            </a>
+
+            <button
+              type="button"
+              onClick={() => setIsConsultationOpen(true)}
+              className="btn-slide-bg flex min-w-0 flex-1 items-center justify-center rounded-md border border-black bg-transparent px-2 py-3 text-[12px] font-normal leading-tight text-black shadow transition-all duration-300 hover:border-[#DADD39] min-[390px]:px-3 min-[390px]:text-sm sm:flex-none sm:px-5 sm:text-base"
+            >
+              <span className="slide-bg rounded-md bg-[#DADD39]"></span>
+              <span className="relative z-10 flex items-center gap-2">
+                <MdOutlineRequestQuote
+                  size={18}
+                  className="h-4 w-4 md:h-5 md:w-5"
+                />
+                Get Free Consultation
+              </span>
+            </button>
+          </div>
+
+          <div className="-mt-5 w-full text-black">
+            <div className="flex w-full flex-wrap items-center justify-center gap-3 sm:gap-4">
+              {trustBadges.map((badge) => {
+                const isExternal = badge.link?.startsWith("http");
+
+                return (
+                  <a
+                    key={badge.id}
+                    href={badge.link || "#"}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noreferrer" : undefined}
+                    className="group flex h-[76px] w-[150px] shrink-0 items-center justify-center rounded-md bg-[#F4F3E1] transition duration-300 hover:-translate-y-1 hover:scale-[1.02] sm:h-[90px] sm:w-[180px]"
+                    aria-label={`${badge.title} ${badge.subtitle}`}
+                  >
+                    {badge.id === "top-digital-agency" ? (
+                      <img
+                        src="/Home/Mask%20group.png"
+                        alt={`${badge.title} ${badge.subtitle}`}
+                        className="block h-auto w-[132px] max-w-none object-contain sm:w-[158px]"
+                      />
+                    ) : typeof badge.src === "string" ? (
+                      <Image
+                        src={badge.src}
+                        alt={`${badge.title} ${badge.subtitle}`}
+                        width={150}
+                        height={64}
+                        className="h-[54px] w-[132px] object-contain object-center transition duration-300 group-hover:brightness-105 sm:h-[66px] sm:w-[158px]"
+                      />
+                    ) : (
+                      <div className="flex h-[26px] w-[118px] items-center justify-center rounded-md border border-[#d8d4be] bg-[#f1eedf] px-4 py-3 text-[26px] text-[#1f1f1f] shadow-[0_8px_18px_rgba(77,70,40,0.05)] transition duration-300 group-hover:border-[#c9c29f] group-hover:shadow-[0_12px_24px_rgba(77,70,40,0.08)] sm:h-[90px] sm:w-[180px] sm:text-[32px]">
+                        {badge.src}
+                      </div>
+                    )}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative z-10 mx-auto mt-24 hidden w-full max-w-[1450px] px-4 sm:mt-28 sm:px-6 md:mt-32 md:px-8 lg:mt-5 lg:block lg:px-10 lg:pb-0 xl:px-0">
         <div className="flex min-h-[auto] flex-col items-center justify-between gap-10 sm:gap-12 lg:min-h-screen lg:flex-row lg:gap-0">
           <div className="flex flex-1 flex-col items-center justify-center px-0 md:ml-0 md:px-1 lg:items-start xl:ml-20">
             <div className="relative w-full max-w-xl">

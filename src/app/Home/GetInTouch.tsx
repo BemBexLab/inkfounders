@@ -200,7 +200,7 @@ export default function GetInTouch({ data }: GetInTouchProps) {
     <div className="w-full md:py-8 px-4 md:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-16 max-md:mt-14">
         <div className="flex-1">
-          <h2 className="text-[#DADD39] font-medium text-[23px] md:text-[27px] mb-3 leading-tight">
+          <h2 className="text-[#DADD39] font-medium text-[23px] md:text-[27px] mb-3 leading-[1]">
             {content.left.heading}
           </h2>
           <h3 className="text-[21px] md:text-[25px] font-semibold mb-3 text-black">

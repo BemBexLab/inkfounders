@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React from 'react'
 import AOSProvider from "@/components/AOSProvider";
 import { robotoMono } from '../fonts'
 
@@ -33,60 +33,71 @@ const whatMakeItems = [
 ];
 
 const WhatMake = () => {
-  const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({})
-
-  const getDisplayText = (description: string, isExpanded: boolean) => {
-    const words = description.trim().split(/\s+/)
-
-    if (isExpanded || words.length <= 22) {
-      return description
-    }
-
-    return `${words.slice(0, 22).join(' ')}...`
-  }
-
   return (
     <AOSProvider>
-      <section className="w-full bg-[#F6F5F3] flex justify-center items-center pt-2">
-        <div className="w-full max-w-[1300px] flex flex-col items-center">
+      <style jsx global>{`
+        .what-make-scroll {
+          scrollbar-width: thin;
+          scrollbar-color: #dedfa3 transparent;
+          scrollbar-gutter: stable;
+        }
+
+        .what-make-scroll::-webkit-scrollbar {
+          width: 3px;
+        }
+
+        .what-make-scroll::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        .what-make-scroll::-webkit-scrollbar-thumb {
+          background: #c7c934;
+          border-radius: 999px;
+        }
+
+        .what-make-carousel {
+          scrollbar-width: none;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .what-make-carousel::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+      <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 pt-4 sm:px-6 md:px-8 lg:px-0 lg:pt-2">
+        <div className="flex w-full max-w-[1300px] flex-col items-center">
           {/* Headings */}
-          <p className="text-center text-lg md:text-xl font-semibold text-black">
+          <p className="text-center text-base font-semibold text-black sm:text-lg md:text-xl">
             Witness our Uniqueness
           </p>
-          <h2 className="text-center text-2xl md:text-[2rem] font-semibold mb-8">
+          <h2 className="mb-6 max-w-[48rem] text-center text-[1.55rem] font-semibold leading-[0.9] sm:text-2xl md:mb-8 md:text-[1.85rem] lg:max-w-none lg:text-[2rem]">
             <span className="text-[#DADD39]">At Ink Founders, Your Goals, Our Commitment</span>
           </h2>
 
-          <div data-aos="fade-down-right" className="w-full grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-4">
+          <div data-aos="fade-down-right" className="what-make-carousel flex w-full max-w-full items-stretch gap-4 overflow-x-auto px-1 pb-4 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0">
             {whatMakeItems.map((item) => (
-              <div key={item.id} className="flex flex-col items-center px-4 text-center">
+              <div
+                key={item.id}
+                className="flex w-[82vw] max-w-[360px] shrink-0 snap-center flex-col items-center px-2 text-center sm:w-[58vw] sm:px-4 md:w-[42vw] lg:w-full lg:max-w-none lg:shrink"
+              >
                 <Image
                   src={item.image}
                   alt={item.alt}
                   width={48}
                   height={48}
-                  className="mb-3"
+                  className="mb-3 h-10 w-10 object-contain sm:h-12 sm:w-12"
                 />
-                <h3 className="mb-2 text-base font-semibold text-black leading-tight md:text-[20px]">
+                <h3 className="mb-2 max-w-[30rem] text-[18px] font-semibold leading-[1] text-black sm:text-[20px] md:text-[22px] lg:text-2xl">
                   {item.title}
                 </h3>
-                <p className={`${robotoMono.className} text-gray-700 text-[16px] leading-tight`}>
-                  {getDisplayText(item.description, expandedItems[item.title] ?? false)}
-                </p>
-                {item.description.trim().split(/\s+/).length > 22 && (
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setExpandedItems((prev) => ({
-                        ...prev,
-                        [item.title]: !prev[item.title],
-                      }))
-                    }
-                    className="mt-3 text-sm font-semibold text-black underline underline-offset-4"
-                  >
-                    {expandedItems[item.title] ? 'Read less' : 'Read more'}
-                  </button>
-                )}
+                <div className="relative w-full max-w-[24rem] lg:h-auto lg:max-h-[125px]">
+                  <div className="what-make-scroll h-auto overflow-visible pr-0 lg:max-h-[125px] lg:overflow-y-auto lg:pr-2">
+                    <p className={`${robotoMono.className} text-[13px] leading-[1.2] text-gray-700 sm:text-[14px] md:text-[15px] md:leading-[1.2] lg:text-[16px]`}>
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
