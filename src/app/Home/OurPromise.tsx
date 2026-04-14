@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import AOSProvider from "@/components/AOSProvider";
 import { robotoMono } from "../fonts";
 
@@ -56,8 +56,55 @@ const promiseItems = [
   },
 ];
 
+const carouselPromiseItems = [...promiseItems, ...promiseItems];
+
 const OurPromise = () => {
   const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({});
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const pauseCarouselRef = useRef(false);
+  const animationFrameRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const isResponsiveCarousel = () => window.innerWidth < 1024;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) return;
+
+    const scrollContinuously = () => {
+      if (!isResponsiveCarousel() || pauseCarouselRef.current) return;
+
+      const singleSetWidth = carousel.scrollWidth / 2;
+      const shouldReset = carousel.scrollLeft >= singleSetWidth;
+
+      carousel.scrollLeft = shouldReset ? 0 : carousel.scrollLeft + 1.1;
+    };
+
+    const animate = () => {
+      scrollContinuously();
+      animationFrameRef.current = window.requestAnimationFrame(animate);
+    };
+
+    animationFrameRef.current = window.requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameRef.current !== null) {
+        window.cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, []);
+
+  const pauseCarousel = () => {
+    pauseCarouselRef.current = true;
+  };
+
+  const resumeCarousel = () => {
+    pauseCarouselRef.current = false;
+  };
 
   const getDisplayText = (description: string, isExpanded: boolean) => {
     const words = description.trim().split(/\s+/);
@@ -74,7 +121,6 @@ const OurPromise = () => {
       <style jsx global>{`
         .our-promise-slider {
           scrollbar-width: none;
-          scroll-snap-type: x mandatory;
           -webkit-overflow-scrolling: touch;
         }
 
@@ -85,7 +131,7 @@ const OurPromise = () => {
       <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:px-0">
         <div className="flex w-full max-w-[1300px] flex-col items-center">
           {/* Headings */}
-          <p className="-mb-1 text-center text-base font-semibold text-black sm:text-lg md:-mb-2 md:text-[25px]">
+          <p className="mb-2 text-center text-base font-semibold text-black sm:text-lg md:text-[25px]">
             We are committed with you
           </p>
           <h2 className="mb-6 max-w-4xl text-center text-[23px] font-semibold leading-[1.05] md:text-[32px] lg:mb-5 lg:text-[35px]">
@@ -94,12 +140,21 @@ const OurPromise = () => {
             </span>
           </h2>
 
-          <div className="our-promise-slider flex w-full max-w-full items-stretch gap-4 overflow-x-auto px-1 pb-4 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0">
-            {promiseItems.map((item) => (
+          <div
+            ref={carouselRef}
+            onPointerDown={pauseCarousel}
+            onPointerUp={resumeCarousel}
+            onPointerCancel={resumeCarousel}
+            onPointerLeave={resumeCarousel}
+            className="our-promise-slider flex w-full max-w-full items-stretch gap-4 overflow-x-auto px-1 pb-4 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0"
+          >
+            {carouselPromiseItems.map((item, index) => (
               <div
-                key={item.id}
+                key={`${item.id}-${index}`}
                 data-aos="fade-down-right"
-                className="flex w-[82vw] max-w-[360px] shrink-0 snap-center flex-col items-start px-2 text-left sm:w-[58vw] sm:px-4 md:w-[42vw] lg:w-full lg:max-w-none lg:shrink lg:px-8"
+                className={`flex w-[82vw] max-w-[360px] shrink-0 flex-col items-start px-2 text-left sm:w-[58vw] sm:px-4 md:w-[42vw] lg:w-full lg:max-w-none lg:shrink lg:px-8 ${
+                  index >= promiseItems.length ? "lg:hidden" : ""
+                }`}
               >
                 <Image
                   src={item.image}

@@ -72,16 +72,14 @@ const FAQs: React.FC = () => {
           <span className="text-[#DADD39]">Frequently Asked Questions</span>
         </h2>
         {/* FAQ List */}
-        <div className="w-full flex flex-col">
+        <div className="mt-6 flex w-full flex-col gap-4">
           {faqs.map((faq, idx) => (
             <div
               key={`${faq.question}-${idx}`}
-              className={`border border-[#f3f3f3]  duration-200 ${
-                idx < faqs.length - 1 ? "mb-0" : ""
-              }`}
+              className="rounded-lg border border-[#ece8d8] bg-[#F6F5F3] px-4 shadow-[0_10px_28px_rgba(65,60,35,0.08)] duration-200 sm:px-6"
             >
               <button
-                className="w-full flex items-center justify-between py-6 text-left focus:outline-none"
+                className="flex w-full items-center justify-between py-5 text-left focus:outline-none sm:py-6"
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                 style={{ fontWeight: 400 }}
                 type="button"
@@ -103,7 +101,7 @@ const FAQs: React.FC = () => {
               </button>
               {openIndex === idx && (
                 <div
-                  className={`pt-0 pb-7 text-[12px] md:text-[15px] leading-tight ${robotoMono.className}`}
+                  className={`pb-6 pt-0 text-[12px] leading-tight md:text-[15px] ${robotoMono.className}`}
                   id={`faq-content-${idx}`}
                 >
                   {faq.answer}

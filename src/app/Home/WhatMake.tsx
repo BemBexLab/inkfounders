@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import AOSProvider from "@/components/AOSProvider";
 import { robotoMono } from '../fonts'
 
@@ -32,7 +32,55 @@ const whatMakeItems = [
   },
 ];
 
+const carouselItems = [...whatMakeItems, ...whatMakeItems]
+
 const WhatMake = () => {
+  const carouselRef = useRef<HTMLDivElement>(null)
+  const pauseCarouselRef = useRef(false)
+  const animationFrameRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    const carousel = carouselRef.current
+    if (!carousel) return
+
+    const isResponsiveCarousel = () => window.innerWidth < 1024
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches
+
+    if (prefersReducedMotion) return
+
+    const scrollContinuously = () => {
+      if (!isResponsiveCarousel() || pauseCarouselRef.current) return
+
+      const singleSetWidth = carousel.scrollWidth / 2
+      const shouldReset = carousel.scrollLeft >= singleSetWidth
+
+      carousel.scrollLeft = shouldReset ? 0 : carousel.scrollLeft + 1.1
+    }
+
+    const animate = () => {
+      scrollContinuously()
+      animationFrameRef.current = window.requestAnimationFrame(animate)
+    }
+
+    animationFrameRef.current = window.requestAnimationFrame(animate)
+
+    return () => {
+      if (animationFrameRef.current !== null) {
+        window.cancelAnimationFrame(animationFrameRef.current)
+      }
+    }
+  }, [])
+
+  const pauseCarousel = () => {
+    pauseCarouselRef.current = true
+  }
+
+  const resumeCarousel = () => {
+    pauseCarouselRef.current = false
+  }
+
   return (
     <AOSProvider>
       <style jsx global>{`
@@ -57,7 +105,6 @@ const WhatMake = () => {
 
         .what-make-carousel {
           scrollbar-width: none;
-          scroll-snap-type: x mandatory;
           -webkit-overflow-scrolling: touch;
         }
 
@@ -68,18 +115,28 @@ const WhatMake = () => {
       <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 pt-4 sm:px-6 md:px-8 lg:px-0 lg:pt-2">
         <div className="flex w-full max-w-[1300px] flex-col items-center">
           {/* Headings */}
-          <p className="text-center text-base font-semibold text-black sm:text-lg md:text-xl">
+          <p className="text-center text-base font-semibold text-black mb-2 sm:text-lg md:text-xl">
             Witness our Uniqueness
           </p>
           <h2 className="mb-6 max-w-[48rem] text-center text-[1.55rem] font-semibold leading-[0.9] sm:text-2xl md:mb-8 md:text-[1.85rem] lg:max-w-none lg:text-[2rem]">
             <span className="text-[#DADD39]">At Ink Founders, Your Goals, Our Commitment</span>
           </h2>
 
-          <div data-aos="fade-down-right" className="what-make-carousel flex w-full max-w-full items-stretch gap-4 overflow-x-auto px-1 pb-4 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0">
-            {whatMakeItems.map((item) => (
+          <div
+            ref={carouselRef}
+            data-aos="fade-down-right"
+            onPointerDown={pauseCarousel}
+            onPointerUp={resumeCarousel}
+            onPointerCancel={resumeCarousel}
+            onPointerLeave={resumeCarousel}
+            className="what-make-carousel flex w-full max-w-full items-stretch gap-4 overflow-x-auto px-1 pb-4 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0"
+          >
+            {carouselItems.map((item, index) => (
               <div
-                key={item.id}
-                className="flex w-[82vw] max-w-[360px] shrink-0 snap-center flex-col items-center px-2 text-center sm:w-[58vw] sm:px-4 md:w-[42vw] lg:w-full lg:max-w-none lg:shrink"
+                key={`${item.id}-${index}`}
+                className={`flex w-[82vw] max-w-[360px] shrink-0 flex-col items-center px-2 text-center sm:w-[58vw] sm:px-4 md:w-[42vw] lg:w-full lg:max-w-none lg:shrink ${
+                  index >= whatMakeItems.length ? "lg:hidden" : ""
+                }`}
               >
                 <Image
                   src={item.image}

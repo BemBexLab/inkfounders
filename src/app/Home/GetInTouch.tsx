@@ -197,40 +197,40 @@ export default function GetInTouch({ data }: GetInTouchProps) {
   };
 
   return (
-    <div className="w-full md:py-8 px-4 md:px-8 lg:px-12">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-16 max-md:mt-14">
+    <div className="w-full px-4 py-8 sm:px-6 md:px-8 lg:px-12">
+      <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:gap-16">
         <div className="flex-1">
-          <h2 className="text-[#DADD39] font-medium text-[23px] md:text-[27px] mb-3 leading-[1]">
+          <h2 className="mb-3 text-[23px] font-medium leading-[1.05] text-[#DADD39] sm:text-[25px] md:text-[27px] lg:leading-[1]">
             {content.left.heading}
           </h2>
-          <h3 className="text-[21px] md:text-[25px] font-semibold mb-3 text-black">
+          <h3 className="mb-3 text-[20px] font-semibold leading-tight text-black sm:text-[22px] md:text-[25px]">
             {content.left.subheading}
           </h3>
 
           {content.left.paragraphs.map((paragraph, index) => (
             <div
               key={`paragraph-${index}`}
-              className={`text-gray-700 text-[12px] md:text-[15px] mb-8 leading-tight ${robotoMono.className}`}
+              className={`mb-6 text-[13px] leading-[1.35] text-gray-700 sm:text-[14px] md:mb-8 md:text-[15px] md:leading-tight ${robotoMono.className}`}
             >
               {paragraph}
             </div>
           ))}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
             {content.left.contacts.map((contact) => (
-              <div key={`${contact.type}-${contact.label}`} className="flex items-center gap-3">
-                <div className="bg-[#DADD39] rounded-xl p-2 text-white">
+              <div key={`${contact.type}-${contact.label}`} className="flex min-w-0 items-center gap-3">
+                <div className="shrink-0 rounded-xl bg-[#DADD39] p-2 text-white">
                   {renderContactIcon(contact.type)}
                 </div>
                 {contact.href ? (
                   <a
                     href={contact.href}
-                    className="text-base leading-tight text-gray-800 font-medium font-mono hover:underline focus:outline-none"
+                    className="min-w-0 break-words font-mono text-[13px] font-medium leading-tight text-gray-800 hover:underline focus:outline-none sm:text-[14px] md:text-base"
                   >
                     {contact.label}
                   </a>
                 ) : (
-                  <span className="text-base leading-tight text-gray-800 font-medium font-mono">
+                  <span className="min-w-0 break-words font-mono text-[13px] font-medium leading-tight text-gray-800 sm:text-[14px] md:text-base">
                     {contact.label}
                   </span>
                 )}
@@ -239,16 +239,16 @@ export default function GetInTouch({ data }: GetInTouchProps) {
           </div>
         </div>
 
-        <div className="flex-1 border border-2 border-[#D0D0D0] bg-[#F4F3E1] px-10 py-10 rounded-2xl">
+        <div className="flex-1 rounded-2xl border-2 border-[#D0D0D0] bg-[#F4F3E1] px-4 py-6 sm:px-5 sm:py-7 md:px-6 md:py-8 lg:px-10 lg:py-10">
           <form onSubmit={handleSubmit}>
-            <h2 className="text-[15px] md:text-2xl font-bold mb-6 text-black">
+            <h2 className="mb-5 text-[20px] font-bold leading-tight text-black md:mb-6 md:text-2xl">
               {content.form.title}
             </h2>
 
             {content.form.fields.map((row) => (
               <div
                 key={row.map((field) => field.name).join("-")}
-                className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4"
+                className="mb-4 grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4"
               >
                 {row.map((field) => (
                   <input
@@ -258,7 +258,7 @@ export default function GetInTouch({ data }: GetInTouchProps) {
                     value={formData[field.name]}
                     onChange={handleChange}
                     placeholder={field.placeholder}
-                    className="bg-[#DEDDCB] text-[#6B6D6B] placeholder:text-[#6B6D6B] p-3 rounded-md border border-gray-200 focus:outline-none focus:border-[#d4d450]"
+                    className="rounded-md border border-gray-200 bg-[#DEDDCB] p-2.5 text-sm text-[#6B6D6B] placeholder:text-[#6B6D6B] focus:border-[#d4d450] focus:outline-none md:p-3 md:text-base"
                     required
                   />
                 ))}
@@ -271,12 +271,12 @@ export default function GetInTouch({ data }: GetInTouchProps) {
               onChange={handleChange}
               placeholder={content.form.messagePlaceholder}
               rows={4}
-              className="w-full bg-[#DEDDCB] text-[#6B6D6B] placeholder:text-[#6B6D6B] p-3 rounded-md border border-gray-200 focus:outline-none focus:border-[#d4d450] mb-4"
+              className="mb-4 w-full rounded-md border border-gray-200 bg-[#DEDDCB] p-2.5 text-sm text-[#6B6D6B] placeholder:text-[#6B6D6B] focus:border-[#d4d450] focus:outline-none md:p-3 md:text-base"
               required
             />
 
-            <div className="flex items-start gap-2 mb-6">
-              <label className="flex items-start gap-2 cursor-pointer select-none">
+            <div className="mb-6 flex items-start gap-2">
+              <label className="flex cursor-pointer select-none items-start gap-2">
                 <span className="mt-1">
                   <span
                     className={`w-5 h-5 border ${
@@ -299,7 +299,7 @@ export default function GetInTouch({ data }: GetInTouchProps) {
                   />
                 </span>
                 <span
-                  className={`text-xs text-gray-600 ${robotoMono.className}`}
+                  className={`text-[11px] leading-snug text-gray-600 sm:text-xs ${robotoMono.className}`}
                 >
                   {content.form.consentText}
                 </span>

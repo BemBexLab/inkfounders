@@ -302,7 +302,7 @@ const HomeHero = () => {
             </button>
           </div>
 
-          <div className="-mt-5 w-full text-black">
+          <div className="-mt-5 w-full mt-1 text-black">
             <div className="flex w-full flex-wrap items-center justify-center gap-3 sm:gap-4">
               {trustBadges.map((badge) => {
                 const isExternal = badge.link?.startsWith("http");
