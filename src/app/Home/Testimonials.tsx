@@ -144,10 +144,8 @@ const Testimonials = () => {
     <section className="w-full overflow-hidden bg-[#F6F5F3] px-5 py-8">
       <div className="mx-auto flex w-full max-w-[1300px] flex-col items-center">
         <p className="text-xl text-black">Testimonials</p>
-        <h2 className="mb-4 text-center text-[35px] font-semibold">
-          <span className="text-[#DADD39]">
+        <h2 className="mb-4 text-center text-[#DADD39] leading-[0.9] text-[35px] font-semibold">
             Read Testimonials From Our Happy Customers
-          </span>
         </h2>
 
         <div className="w-full">

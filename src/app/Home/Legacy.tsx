@@ -3,16 +3,16 @@ import { robotoMono } from "../fonts";
 
 export default function Lagacy() {
   return (
-    <section className="w-full bg-[#F6F5F3] py-15 max-xl:px-10">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center  ">
+    <section className="w-full bg-[#F6F5F3] px-4 py-10 sm:px-6 md:px-8 md:py-12 lg:px-10 lg:py-15">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 lg:flex-row lg:gap-0">
         {/* Content */}
-        <div className="max-w-2xl">
-          <h2 className="text-[23px] leading-tight md:text-[27px] font-semibold text-black mb-3">
+        <div className="contents lg:block lg:w-full lg:max-w-2xl lg:text-left">
+          <h2 className="order-1 mb-5 w-full max-w-3xl text-center text-[23px] font-semibold leading-[1] text-black sm:text-[25px] md:text-[27px] lg:order-none lg:max-w-none lg:text-left">
             Your Ideas—Unfiltered, Your Achievement—Untouched. With Full
             Creative Freedom, Let’s Achieve Professional Supremacy
           </h2>
           <div
-            className={`space-y-4 font-mono text-gray-700 text-[16px] leading-tight ${robotoMono.className}`}
+            className={`order-3 w-full max-w-3xl space-y-3 text-left font-mono text-[13px] leading-[1.32] text-gray-700 sm:text-[14px] md:text-[15px] lg:order-none lg:max-w-none lg:space-y-4 lg:text-[16px] lg:leading-tight ${robotoMono.className}`}
           >
             <p>Ink Founders values your creativity. We know it’s not just your
             story or pages, it’s your vision, your imagination, your emotions,
@@ -41,13 +41,13 @@ export default function Lagacy() {
           </div>
         </div>
         {/* Book Cover */}
-        <div className="flex-shrink-0">
+        <div className="order-2 flex w-full flex-shrink-0 justify-center lg:order-none lg:w-auto">
           <Image
             src="/Home/updatedImages/Leonard - 2 1.webp"
             alt="Book Cover"
             width={540}
             height={740}
-            className="transition-transform transform hover:scale-105 hover:translate-x-2 hover:translate-y-2 hover:rotate-3"
+            className="h-auto w-[min(78vw,340px)] transform transition-transform duration-300 hover:scale-105 lg:w-[540px] lg:hover:translate-x-2 lg:hover:translate-y-2 lg:hover:rotate-3"
             priority
           />
         </div>
