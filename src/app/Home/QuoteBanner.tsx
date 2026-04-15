@@ -9,7 +9,7 @@ export default function QuoteBanner() {
         <p className="mb-2 text-center text-md font-semibold leading-snug text-[#DADD39] sm:text-[17px] md:text-xl">
           Let your words inspire the world
         </p>
-        <h2 className="mb-3 max-w-[22rem] text-center text-[21px] font-semibold leading-[1] text-[#222] sm:max-w-[34rem] sm:text-[24px] md:max-w-[44rem] md:text-[28px] lg:mb-2 lg:max-w-none lg:text-[30px] lg:leading-[1]">
+        <h2 className="mb-3 max-w-[22rem] text-center text-[21px] font-semibold leading-[1] text-[#222] sm:max-w-[34rem] sm:text-[24px] md:max-w-[44rem] md:text-[28px] lg:mb-3 lg:max-w-none lg:text-[30px] lg:leading-[1]">
           Let the Ink founders take the hassle out by simplifying the
           <br className="hidden lg:block" /> publishing process for you
         </h2>

@@ -34,7 +34,7 @@ const BlogOne: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#F5F5DC] font-sans mt-30 text-gray-800">
+    <div className="bg-[#F5F5DC] font-sans text-gray-800">
       
       {/* Breadcrumb / Back Button */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
