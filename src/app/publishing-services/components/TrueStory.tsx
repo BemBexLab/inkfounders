@@ -7,10 +7,10 @@ export default function TrueStory() {
   return (
     <section className="w-full flex justify-center items-center bg-[#F6F5F3] py-10 ">
       <div className="w-full max-w-[1400px] rounded-3xl bg-[#F4F3E1] px-4 py-10 flex flex-col items-center shadow-none mx-8">
-        <p className="text-center text-[18px]  md:text-xl font-semibold text-[#DADD39] mb-2">
+        <p className="text-center text-[18px] leading-[1]  md:text-xl font-semibold text-[#DADD39] mb-2">
           Expert Non-Fiction Book Writing Services
         </p>
-        <h2 className="text-center text-[23px] md:text-[35px] font-semibold text-[#222] mb-4">
+        <h2 className="text-center text-[23px] md:text-[35px] leading-[1] font-semibold text-[#222] mb-4">
           Bring Your True Story or Expertise to Life
         </h2>
         <p className={`text-center ${robotoMono.className} text-gray-700 text-base text-[12px] md:text-[15px] mb-5  mx-auto`}>

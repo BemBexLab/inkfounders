@@ -4,15 +4,15 @@ import Image from "next/image";
 
 export default function ExportSelfBook() {
   return (
-    <section className="w-full bg-[#F6F5F3] py-10">
-  <div className="max-w-8xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-10 px-6">
+    <section className="w-full bg-[#F6F5F3] px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:px-6">
+	  <div className="mx-auto flex max-w-8xl flex-col items-center justify-center gap-6 lg:flex-row lg:gap-10">
     
     {/* Content */}
-    <div className="max-w-3xl md:pr-20">
-      <h2 className="text-2xl md:text-[27px] font-semibold text-black mb-3">
+	    <div className="contents lg:block lg:max-w-3xl lg:pr-20">
+	      <h2 className="order-1 mb-2 w-full max-w-3xl text-center text-[24px] font-semibold leading-[1.05] text-black md:text-[27px] lg:order-none lg:mb-3 lg:text-left">
         Use Expert Self-Book Publishing Services To Preserve Your Legacy!
       </h2>
-      <div className={`${robotoMono.className} space-y-3 text-gray-700 text-[12px] md:text-[15px] leading-loose`}>
+	      <div className={`order-3 w-full max-w-3xl space-y-3 text-center text-[13px] leading-[1.35] text-gray-700 sm:text-[14px] md:text-[15px] lg:order-none lg:text-left lg:leading-loose ${robotoMono.className}`}>
         <p>
           Your book is more than just a story—it embodies your unique voice, experiences, and creativity. At Panda Publishing Agency, we believe every author deserves careful, accurate, and detail-oriented publishing services tailored to their needs and goals.
         </p>
@@ -26,13 +26,13 @@ export default function ExportSelfBook() {
       </div>
     </div>
     {/* Book Cover */}
-    <div className="flex-shrink-0">
+	    <div className="order-2 flex w-full flex-shrink-0 justify-center lg:order-none lg:w-auto">
       <Image
         src="/Service/A.D Bradley 2 1.webp"
         alt="Book Cover"
         width={440}
         height={440}
-        className="transition-transform transform hover:scale-105 hover:translate-x-2 hover:translate-y-2 hover:rotate-3"
+	        className="h-auto w-[min(78vw,340px)] transform transition-transform duration-300 hover:scale-105 lg:w-[440px] lg:hover:translate-x-2 lg:hover:translate-y-2 lg:hover:rotate-3"
         priority
       />
     </div>
