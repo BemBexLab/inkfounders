@@ -11,7 +11,7 @@ export default function Publishing() {
       >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start justify-between px-7">
           {/* Left: Headline */}
-          <div className="mb-1 w-full md:mb-0 md:w-2/5">
+          <div className="mb-3 w-full md:mb-0 md:w-2/5">
             <h2 className="text-[23px] font-semibold leading-[1.08] text-black md:text-3xl lg:leading-snug">
               We bring your imaginative thoughts into reality and book
               effortlessly.

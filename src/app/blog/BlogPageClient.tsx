@@ -123,13 +123,13 @@ export default function BlogPageClient({
   }
 
   return (
-    <div className="min-h-screen bg-[#F5F5DC]">
-      <main className="mx-auto max-w-7xl px-4 py-35 sm:px-6 lg:px-8">
-        <div className="mb-16 text-center">
-          <h1 className="mb-4 text-5xl font-bold tracking-tight text-black">
+    <div className="bg-[#F5F5DC]">
+      <main className="mx-auto max-w-7xl px-4 pb-16 pt-6 sm:px-6 sm:pb-20 sm:pt-8 lg:px-8 lg:pt-12">
+        <div className="mb-10 text-center sm:mb-12 lg:mb-16">
+          <h1 className="mb-4 text-4xl font-bold tracking-tight text-black sm:text-5xl">
             Our Blog
           </h1>
-          <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-700">
+          <p className="mx-auto max-w-3xl text-lg leading-relaxed text-gray-700 sm:text-xl">
             Insights, tips, and resources for aspiring and established authors.
             Discover the latest in publishing, marketing, and storytelling.
           </p>

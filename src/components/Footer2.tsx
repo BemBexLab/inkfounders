@@ -234,31 +234,13 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-7 text-center min-[653px]:grid-cols-2 min-[653px]:text-left lg:gap-8 xl:grid-cols-3 xl:gap-6">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-8 text-left md:gap-x-12 xl:grid-cols-3 xl:gap-6">
             <div className="min-w-0">
               <h4 className="mb-3 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e] sm:mb-4">
                 Quick Links
               </h4>
-              <ul className="m-0 grid list-none grid-cols-2 gap-x-4 gap-y-2 p-0 min-[653px]:block">
-                {quickLinks.map(({ id, label, href }) => (
-                  <li key={id} className="min-[653px]:mb-2">
-                    <Link
-                      href={href}
-                      className="font-sans text-[14px] text-[#333] no-underline transition-colors hover:text-[#8a7a2e]"
-                    >
-                      {label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="min-w-0">
-              <h4 className="mb-3 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e] sm:mb-4">
-                Our Services
-              </h4>
               <ul className="m-0 list-none p-0">
-                {servicesLinks.map(({ id, label, href }) => (
+                {quickLinks.map(({ id, label, href }) => (
                   <li key={id} className="mb-2">
                     <Link
                       href={href}
@@ -271,30 +253,50 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            <div className="min-w-0 min-[653px]:col-span-2 xl:col-span-1">
-              <h4 className="mb-3 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e] sm:mb-4">
-                Contact Us
-              </h4>
-              <ul className="mx-auto max-w-[360px] list-none p-0 text-[14px] min-[653px]:mx-0 xl:max-w-none">
-                {footerContactItems.map(({ icon, lines, href }) => (
-                  <li
-                    key={href}
-                    className="mb-3 flex items-start justify-center gap-[10px] min-[653px]:justify-start"
-                  >
-                    <span className="mt-[2px]">{icon}</span>
-                    <Link
-                      href={href}
-                      className="min-w-0 break-words text-left font-sans text-[13px] leading-snug text-[#333] no-underline transition-colors hover:text-[#8a7a2e]"
+            <div className="min-w-0 space-y-7 xl:space-y-0 xl:contents">
+              <div className="min-w-0">
+                <h4 className="mb-3 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e] sm:mb-4">
+                  Our Services
+                </h4>
+                <ul className="m-0 list-none p-0">
+                  {servicesLinks.map(({ id, label, href }) => (
+                    <li key={id} className="mb-2">
+                      <Link
+                        href={href}
+                        className="font-sans text-[14px] text-[#333] no-underline transition-colors hover:text-[#8a7a2e]"
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="min-w-0 col-span-1 xl:col-span-1">
+                <h4 className="mb-3 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e] sm:mb-4">
+                  Contact Us
+                </h4>
+                <ul className="max-w-[360px] list-none p-0 text-[14px] xl:max-w-none">
+                  {footerContactItems.map(({ icon, lines, href }) => (
+                    <li
+                      key={href}
+                      className="mb-3 flex items-start gap-[10px]"
                     >
-                      {lines.map((line) => (
-                        <span key={`${href}-${line}`} className="block">
-                          {line}
-                        </span>
-                      ))}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+                      <span className="mt-[2px]">{icon}</span>
+                      <Link
+                        href={href}
+                        className="min-w-0 break-words text-left font-sans text-[13px] leading-snug text-[#333] no-underline transition-colors hover:text-[#8a7a2e]"
+                      >
+                        {lines.map((line) => (
+                          <span key={`${href}-${line}`} className="block">
+                            {line}
+                          </span>
+                        ))}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
