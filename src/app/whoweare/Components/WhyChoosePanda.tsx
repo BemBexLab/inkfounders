@@ -57,19 +57,19 @@ const whyChooseItems = [
 const WhyChoosePanda = () => {
   return (
     <AOSProvider>
-      <section className="w-full bg-[#F6F5F3] flex justify-center items-center py-10">
-        <div className="w-full max-w-[1300px] flex flex-col items-center">
+      <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 py-10 sm:px-6 md:px-8">
+        <div className="flex w-full max-w-[1300px] flex-col items-center">
           {/* Headings */}
-          <h2 className="text-center text-[22px] md:text-[30px] font-semibold mb-5">
+          <h2 className="mb-8 text-center text-[22px] font-semibold md:text-[30px]">
             <span className="text-[#1F1F1F]">Why Choose Ink Founders</span>
           </h2>
 
-          <div className="w-full grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-7">
+          <div className="grid w-full grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
             {whyChooseItems.map((item) => (
               <div
                 key={item.id}
-                data-aos="fade-down-right"
-                className="flex flex-col items-start px-8 text-left"
+                data-aos="fade-up"
+                className="mx-auto flex w-full max-w-[420px] flex-col items-center px-2 text-center sm:items-start sm:text-left lg:px-8"
               >
                 <Image
                   src={item.image}
@@ -78,10 +78,10 @@ const WhyChoosePanda = () => {
                   height={48}
                   className="mb-3"
                 />
-                <h3 className="font-semibold text-base text-[16px] md:text-[20px] mb-2 text-black">
+                <h3 className="mb-2 text-[16px] font-semibold text-black md:text-[20px]">
                   {item.title}
                 </h3>
-                <p className={`text-[#444444] text-[12px] md:text-[15px] leading-tight ${robotoMono.className}`}>
+                <p className={`text-[12px] text-[#444444] md:text-[15px] ${robotoMono.className}`}>
                   {item.description}
                 </p>
               </div>

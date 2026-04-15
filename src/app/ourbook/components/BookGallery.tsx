@@ -323,9 +323,9 @@ const BookGallery = () => {
 
   return (
     <AOSProvider>
-      <section className="w-full py-12 bg-[#F6F5F3] flex flex-col items-center">
+      <section className="flex w-full flex-col items-center bg-[#F6F5F3] px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         {/* Filter Buttons */}
-        <div className="mb-10 flex flex-wrap gap-2 mt-0 justify-center w-full">
+        <div className="mb-8 mt-0 flex w-full max-w-5xl flex-wrap justify-center gap-2 sm:mb-10">
           {FILTERS.map((filter) => (
             <button
               key={filter}
@@ -347,17 +347,17 @@ const BookGallery = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="w-full max-w-[1280px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-24 gap-x-0">
+        <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 justify-items-center gap-x-6 gap-y-12 sm:grid-cols-2 md:gap-y-16 lg:grid-cols-4 lg:gap-x-0 lg:gap-y-24">
           {/* Force re-render of cards on filter change by passing activeFilter as key */}
           {visibleBooks.map((book, idx) => (
             <Link
               href={book.link}
-              data-aos="fade-down-right"
+              data-aos="fade-up"
               key={`${activeFilter}-${idx}`} // Unique key to trigger re-render
-              className="group flex flex-col items-center text-center"
+              className="group flex w-full max-w-[260px] flex-col items-center text-center"
             >
               {/* Book Cover */}
-              <div className="relative mb-4 h-[350px] w-[225px] overflow-hidden rounded-[18px]">
+              <div className="relative mb-4 h-[300px] w-[190px] overflow-hidden rounded-[18px] sm:h-[330px] sm:w-[210px] lg:h-[350px] lg:w-[225px]">
                 <Image
                   src={book.cover}
                   alt={book.title}
@@ -371,11 +371,11 @@ const BookGallery = () => {
                 </div>
               </div>
               {/* Book Title */}
-              <h3 className="font-bold text-black text-[22px] mb-0.5 truncate w-[180px]">
+              <h3 className="mb-0.5 w-full max-w-[230px] truncate text-[18px] font-bold text-black sm:text-[20px] lg:w-[180px] lg:text-[22px]">
                 {book.title}
               </h3>
               {/* Author */}
-              <span className="text-[15px] text-[#444] mb-2 block">{book.author}</span>
+              <span className="mb-2 block text-[14px] text-[#444] sm:text-[15px]">{book.author}</span>
             </Link>
           ))}
         </div>

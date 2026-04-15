@@ -158,19 +158,19 @@ const Portfolio = () => {
 
   return (
     <AOSProvider>
-      <section className="w-full py-12 bg-[#F6F5F3] flex flex-col items-center">
+      <section className="flex w-full flex-col items-center bg-[#F6F5F3] px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         {/* Title and Filter Buttons */}
-        <div className="mb-10 flex flex-col items-center">
-          <div className="text-center mb-2">
-            <span className="text-[#DADD39] font-semibold text-[25px]">
+        <div className="mb-8 flex w-full max-w-5xl flex-col items-center sm:mb-10">
+          <div className="mb-2 text-center">
+            <span className="text-[20px] font-semibold text-[#DADD39] sm:text-[23px] md:text-[25px]">
               What We&apos;ve Done So Far.
             </span>
           </div>
-          <h2 className="text-black font-bold text-2xl md:text-[2rem] mb-6">
+          <h2 className="mb-6 text-2xl font-bold text-black md:text-[2rem]">
             Our Portfolio
           </h2>
           {/* Filter Buttons */}
-          <div className="flex flex-wrap gap-2 mt-0 justify-center w-full">
+          <div className="mt-0 flex w-full flex-wrap justify-center gap-2">
             {FILTERS.map((filter) => (
               <button
                 key={filter}
@@ -193,16 +193,16 @@ const Portfolio = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="w-full max-w-[1280px] mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-y-14 gap-x-0">
+        <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 justify-items-center gap-x-6 gap-y-10 min-[430px]:grid-cols-2 min-[823px]:grid-cols-3 min-[823px]:gap-x-4 lg:grid-cols-4 lg:gap-x-0 lg:gap-y-14">
           {filteredBooks.map((book, idx) => (
             <div
-              data-aos="fade-down-right"
+              data-aos="fade-up"
               key={`${activeFilter}-${idx}`} // Unique key to force re-render
-              className="flex flex-col items-center text-center"
+              className="flex w-full max-w-[240px] flex-col items-center text-center min-[823px]:max-w-[210px] lg:max-w-[240px]"
             >
               {/* Book Cover */}
               <div
-                className="w-[170px] h-[240px] sm:w-[150px] sm:h-[220px] md:w-[225px] md:h-[350px] relative mb-4"
+                className="relative mb-4 h-[260px] w-[165px] min-[430px]:h-[250px] min-[430px]:w-[160px] sm:h-[300px] sm:w-[190px] min-[823px]:h-[280px] min-[823px]:w-[180px] lg:h-[350px] lg:w-[225px]"
               >
                 <Image
                   src={book.cover}

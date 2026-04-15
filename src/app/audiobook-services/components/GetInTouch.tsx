@@ -121,9 +121,9 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
             </div>
 
             {/* Contact Options */}
-            <div className="flex flex-col items-center gap-4 min-[540px]:flex-row min-[540px]:flex-wrap min-[540px]:justify-center lg:items-start lg:justify-start lg:gap-x-8">
+            <div className="mx-auto flex w-full max-w-[360px] flex-col items-start gap-4 min-[540px]:max-w-none min-[540px]:flex-row min-[540px]:flex-wrap min-[540px]:justify-center lg:mx-0 lg:justify-start lg:gap-x-8">
               {/* Phone */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-start gap-3 text-left">
                 <div className="w-9 h-9 bg-[#d4d946] rounded-md flex items-center justify-center flex-shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -147,7 +147,7 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
               </div>
 
               {/* Email */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center justify-start gap-3 text-left">
                 <div className="w-9 h-9 bg-[#d4d946] rounded-md flex items-center justify-center flex-shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +171,7 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
               </div>
 
               {/* Location */}
-              <div className="flex max-w-full items-center gap-3">
+              <div className="flex max-w-full items-center justify-start gap-3 text-left">
                 <div className="w-9 h-9 bg-[#d4d946] rounded-md flex items-center justify-center flex-shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

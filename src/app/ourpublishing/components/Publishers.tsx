@@ -42,23 +42,24 @@ const AUTHORS = [
 const placeholder = "/authors/placeholder.png"; // Use a default placeholder image
 
 const Publishers = () => (
-  <section className="w-full my-[50px] flex flex-col items-center">
+  <section className="my-10 flex w-full flex-col items-center px-4 sm:px-6 lg:my-[50px] lg:px-2">
     <div>
-      <h1 className="text-black text-lg md:text-xl font-semibold mb-5">Meet Our Publising Partners</h1>
+      <h1 className="mb-5 text-center text-lg font-semibold text-black md:text-xl">Meet Our Publising Partners</h1>
     </div>
-    <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-2">
+    <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
       {AUTHORS.map((author, idx) => (
         <div
           key={author.id}
           className="
-          flex flex-row
-           rounded-2xl 
-          px-3 sm:px-4 py-4 items-center gap-3 sm:gap-4
-          min-h-[170px] sm:min-h-[160px]
+          flex flex-col
+           rounded-2xl
+          px-3 py-4 text-center sm:px-4
+          items-center gap-3 sm:gap-4
+          min-h-[170px] min-[560px]:flex-row min-[560px]:text-left lg:min-h-[160px]
         "
         >
           {/* Image or placeholder */}
-          <div className="flex-shrink-0 w-[170px] h-[170px]  overflow-hidden bg-[#F6F5F3] flex items-center justify-center">
+          <div className="flex h-[150px] w-[150px] flex-shrink-0 items-center justify-center overflow-hidden bg-[#F6F5F3] sm:h-[160px] sm:w-[160px] lg:h-[170px] lg:w-[170px]">
             {author.photo ? (
               <Image
                 src={author.photo}
@@ -78,7 +79,7 @@ const Publishers = () => (
             )}
           </div>
           {/* Text Content */}
-          <div className="flex-1 flex flex-col h-full justify-between py-1 w-full">
+          <div className="flex h-full w-full flex-1 flex-col justify-between py-1">
             <div>
               <h3 className="font-bold text-[16px] sm:text-[17px] mb-0.5 text-black">
                 {author.name}

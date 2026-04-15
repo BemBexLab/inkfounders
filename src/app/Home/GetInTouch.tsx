@@ -197,10 +197,10 @@ export default function GetInTouch({ data }: GetInTouchProps) {
   };
 
   return (
-    <div className="w-full px-4 py-8 sm:px-6 md:px-8 lg:px-12">
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:gap-16">
-        <div className="flex-1">
-          <h2 className="mb-3 text-[23px] font-medium leading-[1.05] text-[#DADD39] sm:text-[25px] md:text-[27px] lg:leading-[1]">
+    <div className="w-full px-4 py-10 sm:px-6 md:px-8 lg:px-12">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 lg:flex-row lg:items-start lg:gap-16">
+        <div className="w-full max-w-2xl flex-1 text-center lg:max-w-none lg:text-left">
+          <h2 className="mb-3 text-[22px] font-medium leading-[1.08] text-[#DADD39] sm:text-[25px] md:text-[27px] lg:leading-[1]">
             {content.left.heading}
           </h2>
           <h3 className="mb-3 text-[20px] font-semibold leading-tight text-black sm:text-[22px] md:text-[25px]">
@@ -216,7 +216,7 @@ export default function GetInTouch({ data }: GetInTouchProps) {
             </div>
           ))}
 
-          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="mx-auto mt-8 grid max-w-[420px] grid-cols-1 gap-4 text-left md:max-w-none md:grid-cols-2 lg:mx-0">
             {content.left.contacts.map((contact) => (
               <div key={`${contact.type}-${contact.label}`} className="flex min-w-0 items-center gap-3">
                 <div className="shrink-0 rounded-xl bg-[#DADD39] p-2 text-white">
@@ -239,7 +239,7 @@ export default function GetInTouch({ data }: GetInTouchProps) {
           </div>
         </div>
 
-        <div className="flex-1 rounded-2xl border-2 border-[#D0D0D0] bg-[#F4F3E1] px-4 py-6 sm:px-5 sm:py-7 md:px-6 md:py-8 lg:px-10 lg:py-10">
+        <div className="w-full max-w-2xl flex-1 rounded-2xl border-2 border-[#D0D0D0] bg-[#F4F3E1] px-4 py-6 sm:px-5 sm:py-7 md:px-6 md:py-8 lg:max-w-none lg:px-10 lg:py-10">
           <form onSubmit={handleSubmit}>
             <h2 className="mb-5 text-[20px] font-bold leading-tight text-black md:mb-6 md:text-2xl">
               {content.form.title}
