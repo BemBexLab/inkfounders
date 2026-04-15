@@ -143,7 +143,7 @@ const Testimonials = () => {
   return (
     <section className="w-full overflow-hidden bg-[#F6F5F3] px-5 py-8">
       <div className="mx-auto flex w-full max-w-[1300px] flex-col items-center">
-        <p className="text-xl text-black">Testimonials</p>
+        <p className="text-xl mb-2 font-semibold text-black">Testimonials</p>
         <h2 className="mb-4 text-center text-[#DADD39] leading-[0.9] text-[35px] font-semibold">
             Read Testimonials From Our Happy Customers
         </h2>

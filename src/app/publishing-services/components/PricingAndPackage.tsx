@@ -1,6 +1,8 @@
+"use client"
+
 import { robotoMono } from "@/app/fonts";
 import { FaCheckCircle } from "react-icons/fa";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import AOSProvider from "@/components/AOSProvider";
 
@@ -77,59 +79,127 @@ const PACKAGES = [
   },
 ];
 
+const carouselPackages = [...PACKAGES, ...PACKAGES];
+
 const PricingAndPackage = () => {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const pauseCarouselRef = useRef(false);
+  const animationFrameRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const isResponsiveCarousel = () => window.innerWidth < 1024;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (prefersReducedMotion) return;
+
+    const scrollContinuously = () => {
+      if (!isResponsiveCarousel() || pauseCarouselRef.current) return;
+
+      const singleSetWidth = carousel.scrollWidth / 2;
+      const shouldReset = carousel.scrollLeft >= singleSetWidth;
+
+      carousel.scrollLeft = shouldReset ? 0 : carousel.scrollLeft + 1.1;
+    };
+
+    const animate = () => {
+      scrollContinuously();
+      animationFrameRef.current = window.requestAnimationFrame(animate);
+    };
+
+    animationFrameRef.current = window.requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameRef.current !== null) {
+        window.cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, []);
+
+  const pauseCarousel = () => {
+    pauseCarouselRef.current = true;
+  };
+
+  const resumeCarousel = () => {
+    pauseCarouselRef.current = false;
+  };
+
   return (
    <AOSProvider>
-     <section className="w-full flex justify-center items-center py-10">
-      <div className="w-full max-w-[1300px] flex flex-col items-center">
+     <style jsx global>{`
+       .pricing-package-slider {
+         scrollbar-width: none;
+         -webkit-overflow-scrolling: touch;
+       }
+
+       .pricing-package-slider::-webkit-scrollbar {
+         display: none;
+       }
+     `}</style>
+	     <section className="flex w-full items-center justify-center px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:px-0">
+	      <div className="flex w-full max-w-[1300px] flex-col items-center">
         {/* Headings */}
-        <p className="text-center text-lg md:text-xl font-semibold text-[#DADD39] mb-2">
-          Pricing & Packages
-        </p>
-        <h2 className="text-center text-2xl md:text-[2rem] font-semibold mb-2 text-black">
-          Flexible Plans Tailored To Your Needs
-        </h2>
-        <p
-          className={`text-center text-[12px] md:text-[15px] text-[#444444] mb-8 px-5 md:px-20 leading-tight ${robotoMono.className}`}
-        >
+	        <p className="mb-2 text-center text-base font-semibold text-[#DADD39] sm:text-lg md:text-xl">
+	          Pricing & Packages
+	        </p>
+	        <h2 className="mb-2 max-w-4xl text-center text-[24px] font-semibold leading-[1.05] text-black md:text-[2rem]">
+	          Flexible Plans Tailored To Your Needs
+	        </h2>
+	        <p
+	          className={`mb-7 max-w-5xl text-center text-[13px] leading-[1.35] text-[#444444] sm:text-[14px] md:mb-8 md:text-[15px] md:leading-tight lg:px-20 ${robotoMono.className}`}
+	        >
           &quot;Pricing may vary depending on the genre, page and word count,
           and your specific needs for publishing, marketing, or ghostwriting.
           For a personalized estimate and detailed consultation, click on
           &apos;Custom Quote&apos; to speak with a publishing expert.&quot;
         </p>
         {/* Pricing Cards */}
-        <div data-aos="fade-down-right" className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-md:px-5">
-          {PACKAGES.map((pkg, idx) => (
-            <div
-              key={pkg.id}
-              className="flex flex-col rounded-2xl border border-gray-100 px-6 py-8 min-h-[670px] shadow-lg"
-            >
+	        <div
+            ref={carouselRef}
+            data-aos="fade-down-right"
+            onPointerDown={pauseCarousel}
+            onPointerUp={resumeCarousel}
+            onPointerCancel={resumeCarousel}
+            onPointerLeave={resumeCarousel}
+            className="pricing-package-slider flex w-full max-w-full items-stretch gap-4 overflow-x-auto px-1 pb-4 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-8 lg:overflow-visible lg:px-0 lg:pb-0"
+          >
+	          {carouselPackages.map((pkg, idx) => (
+	            <div
+	              key={`${pkg.id}-${idx}`}
+	              className={`flex w-[82vw] max-w-[360px] shrink-0 flex-col rounded-2xl border border-gray-100 px-4 py-6 shadow-lg sm:w-[58vw] sm:px-5 md:w-[42vw] lg:min-h-[670px] lg:w-full lg:max-w-none lg:shrink lg:px-6 lg:py-8 ${
+                  idx >= PACKAGES.length ? "lg:hidden" : ""
+                }`}
+	            >
               {/* Plan label */}
               {/* <div className="bg-[#F4F3E1] text-black  text-[10px] md:text-[15px] font-medium px-3 py-1 rounded mb-6 w-max">
                 {pkg.label}
               </div> */}
               {/* Price */}
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-[30px] md:text-[48px] font-semibold text-black">
-                  {pkg.title}
-                </span>
+	              <div className="mb-2 flex items-center gap-2">
+	                <span className="text-[30px] font-semibold leading-none text-black md:text-[40px] lg:text-[48px]">
+	                  {pkg.title}
+	                </span>
                 
               </div>
               {/* Included */}
-              <div className="text-left mt-4 mb-4">
-                <span className="font-semibold text-black text-[14px] md:text-[20px]">
-                  Included:
-                </span>
-                <ul className="mt-3 space-y-2">
-                  {pkg.included.map((feature, i) => (
-                    <li
-                      key={`${pkg.id}-${feature}`}
-                      className="flex items-start gap-2 text-[12px] md:text-[15px] text-black"
-                    >
-                      <FaCheckCircle
-                        className="text-[#DADD39] min-w-[18px] min-h-[18px] mt-1"
-                        size={18}
-                      />
+	              <div className="mb-4 mt-4 text-left">
+	                <span className="text-[15px] font-semibold text-black md:text-[18px] lg:text-[20px]">
+	                  Included:
+	                </span>
+	                <ul className="mt-3 space-y-2">
+	                  {pkg.included.map((feature, i) => (
+	                    <li
+	                      key={`${pkg.id}-${feature}`}
+	                      className="flex items-start gap-2 text-[13px] leading-snug text-black md:text-[14px] lg:text-[15px]"
+	                    >
+	                      <FaCheckCircle
+	                        className="mt-0.5 min-h-[16px] min-w-[16px] text-[#DADD39] md:min-h-[18px] md:min-w-[18px]"
+	                        size={18}
+	                      />
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -139,13 +209,13 @@ const PricingAndPackage = () => {
                 href="/contactus"
                 className="
       btn-slide-bg
-      mt-auto self-start
+	      mt-auto self-start
       bg-[#DADD39]
       text-black 
       font-medium 
       rounded-[5px]
       md:rounded-[10px] 
-      px-3 py-1 text-sm
+	      px-3 py-2 text-sm
       md:px-5 md:py-2 md:text-base
       border-[1px] border-[#DADD39]
       transition-all duration-300

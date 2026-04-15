@@ -59,7 +59,7 @@ export default function OurWork() {
       {/* ── Header ─────────────────────────────────────────────────────────── */}
       <div className="mb-5 px-4 text-center sm:px-6">
         <p
-          className="text-[18px] font-semibold tracking-widest sm:text-[22px] md:text-2xl"
+          className="text-[18px] mb-2 font-semibold tracking-widest sm:text-[22px] md:text-2xl"
           style={{ color: "#DADD39" }}
         >
           Our Work

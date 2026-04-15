@@ -6,7 +6,7 @@ export default function QuoteBanner() {
   return (
     <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 py-7 sm:px-6 md:py-8 lg:px-0 lg:py-10">
       <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center rounded-lg bg-[#F4F3E1] px-4 py-7 shadow-none sm:px-6 sm:py-8 md:px-8 lg:mx-8 lg:rounded-3xl lg:px-4 lg:py-10">
-        <p className="mb-1 text-center text-md font-semibold leading-snug text-[#DADD39] sm:text-[17px] md:text-xl">
+        <p className="mb-2 text-center text-md font-semibold leading-snug text-[#DADD39] sm:text-[17px] md:text-xl">
           Let your words inspire the world
         </p>
         <h2 className="mb-3 max-w-[22rem] text-center text-[21px] font-semibold leading-[1] text-[#222] sm:max-w-[34rem] sm:text-[24px] md:max-w-[44rem] md:text-[28px] lg:mb-2 lg:max-w-none lg:text-[30px] lg:leading-[1]">
