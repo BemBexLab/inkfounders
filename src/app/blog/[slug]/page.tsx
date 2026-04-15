@@ -81,34 +81,34 @@ export default async function BlogSlugPage({ params }: PageProps) {
   const readTime = getReadingTime(post.content?.rendered || "");
 
   return (
-    <div className="mt-30 bg-[#F5F5DC] font-sans text-gray-800">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div className="bg-[#F5F5DC] font-sans text-gray-800">
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
         <Link
           href="/blog"
-          className="mb-8 inline-flex items-center text-gray-600 transition-colors hover:text-[#D4D939]"
+          className="mb-6 inline-flex items-center text-sm text-gray-600 transition-colors hover:text-[#D4D939] sm:mb-8 sm:text-base"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Blog
         </Link>
       </div>
 
-      <main className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-          <article className="lg:col-span-8 rounded-2xl border border-gray-100 bg-white p-8 shadow-sm md:p-12">
-            <header className="mb-10 border-b border-gray-100 pb-8">
+      <main className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
+          <article className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm sm:p-6 md:p-8 lg:col-span-8 lg:p-12">
+            <header className="mb-8 border-b border-gray-100 pb-6 sm:mb-10 sm:pb-8">
               <span className="mb-4 inline-block rounded-full bg-[#D4D939] px-3 py-1 text-sm font-bold text-black">
                 Inkfounders Blog
               </span>
 
               <h1
-                className="mb-6 text-4xl leading-tight font-bold text-black md:text-5xl"
+                className="mb-5 text-[28px] font-bold leading-tight text-black sm:text-[34px] md:text-[42px] lg:mb-6 lg:text-5xl"
                 dangerouslySetInnerHTML={{ __html: post.title?.rendered || "" }}
               />
 
               {featuredImage ? (
-                <div className="mb-12">
+                <div className="mb-8 sm:mb-10 lg:mb-12">
                   <div className="relative overflow-hidden rounded-xl border-4 border-[#D4D939] bg-gray-100 shadow-lg">
-                    <div className="relative h-96">
+                    <div className="relative h-[220px] sm:h-[320px] md:h-[380px] lg:h-96">
                       <img
                         src={featuredImage}
                         alt={postTitle}
@@ -119,16 +119,16 @@ export default async function BlogSlugPage({ params }: PageProps) {
                 </div>
               ) : null}
 
-              <div className="flex items-center space-x-4 text-sm text-gray-500">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500">
                 <span>Updated: {formatDate(post.date)}</span>
                 <span>&bull;</span>
                 <span>{readTime}</span>
               </div>
             </header>
 
-            <div className="prose prose-lg max-w-none text-gray-700 prose-headings:text-black prose-a:text-blue-700 prose-a:no-underline hover:prose-a:underline prose-strong:text-black prose-img:rounded-xl">
+            <div className="prose max-w-none text-gray-700 prose-headings:text-black prose-a:text-blue-700 prose-a:no-underline hover:prose-a:underline prose-strong:text-black prose-img:rounded-xl sm:prose-lg">
               {excerptText ? (
-                <p className="mb-6 text-xl leading-relaxed text-gray-700">
+                <p className="mb-6 text-lg leading-relaxed text-gray-700 sm:text-xl">
                   {excerptText}
                 </p>
               ) : null}
@@ -136,9 +136,9 @@ export default async function BlogSlugPage({ params }: PageProps) {
             </div>
           </article>
 
-          <aside className="space-y-8 lg:col-span-4">
-            <div className="sticky top-8 space-y-8">
-              <div className="rounded-xl bg-[#D4D939] p-8 text-center shadow-lg">
+          <aside className="space-y-6 lg:col-span-4 lg:space-y-8">
+            <div className="space-y-6 lg:sticky lg:top-8 lg:space-y-8">
+              <div className="rounded-xl bg-[#D4D939] p-6 text-center shadow-lg sm:p-8">
                 <h3 className="mb-4 text-2xl font-bold text-black">
                   Ready to Publish?
                 </h3>
@@ -153,7 +153,7 @@ export default async function BlogSlugPage({ params }: PageProps) {
                 </Link>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+              <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6">
                 <h3 className="mb-4 border-b pb-2 text-lg font-bold text-black">
                   Contact Us
                 </h3>
