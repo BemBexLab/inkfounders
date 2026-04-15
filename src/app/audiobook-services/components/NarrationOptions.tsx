@@ -236,7 +236,7 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center">
+        <div className="text-center mt-8">
           <Link href={narrationData.button.link}>
             <button
               type="button"

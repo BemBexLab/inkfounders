@@ -202,18 +202,18 @@ export default function BlogPageClient({
                         </p>
                       </div>
 
-                      <div className="flex items-center justify-between border-t border-gray-100 pt-4">
-                        <div className="flex items-center space-x-4 text-sm text-gray-500">
-                          <span className="flex items-center">
-                            <Calendar className="mr-1.5 h-4 w-4" />
-                            {post.date}
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-t border-gray-100 pt-4 gap-2">
+                        <div className="flex-1 min-w-0 flex items-center space-x-4 text-sm text-gray-500">
+                          <span className="flex items-center min-w-0">
+                            <Calendar className="mr-1.5 h-4 w-4 flex-shrink-0" />
+                            <span className="truncate">{post.date}</span>
                           </span>
-                          <span className="flex items-center">
-                            <Clock className="mr-1.5 h-4 w-4" />
-                            {post.readTime}
+                          <span className="flex items-center min-w-0">
+                            <Clock className="mr-1.5 h-4 w-4 flex-shrink-0" />
+                            <span className="truncate">{post.readTime}</span>
                           </span>
                         </div>
-                        <span className="flex items-center font-semibold text-[#D4D939] transition-colors hover:text-[#b8bc2e]">
+                        <span className="flex items-center font-semibold text-[#D4D939] transition-colors hover:text-[#b8bc2e] flex-shrink-0 mt-1 sm:mt-0">
                           Read More
                           <ChevronRight className="ml-1 h-4 w-4" />
                         </span>
