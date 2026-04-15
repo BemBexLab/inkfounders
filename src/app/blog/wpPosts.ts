@@ -1,17 +1,41 @@
+import { cache } from "react";
+
 export type WPPost = {
   id: number;
   slug: string;
   date: string;
+  modified?: string;
+  date_gmt?: string;
+  modified_gmt?: string;
   link?: string;
+  status?: string;
+  type?: string;
+  featured_media?: number;
+  author?: number;
+  categories?: number[];
+  tags?: number[];
+  class_list?: string[];
   title?: { rendered?: string };
   content?: { rendered?: string };
   excerpt?: { rendered?: string };
+  yoast_head?: string;
   yoast_head_json?: {
     title?: string;
     description?: string;
     canonical?: string;
+    og_title?: string;
+    og_description?: string;
+    article_published_time?: string;
+    article_modified_time?: string;
+    twitter_misc?: {
+      "Est. reading time"?: string;
+      "Written by"?: string;
+    };
     og_image?: Array<{
       url?: string;
+      width?: number;
+      height?: number;
+      type?: string;
     }>;
   };
   _embedded?: {
@@ -36,7 +60,7 @@ function buildEndpoint(params: Record<string, string>) {
   return `${base}${separator}${new URLSearchParams(params).toString()}`;
 }
 
-export async function getPostBySlug(slug: string): Promise<WPPost | null> {
+export const getPostBySlug = cache(async (slug: string): Promise<WPPost | null> => {
   const normalizedSlug = slug.trim().toLowerCase();
   const endpoint = buildEndpoint({
     slug: normalizedSlug,
@@ -47,27 +71,20 @@ export async function getPostBySlug(slug: string): Promise<WPPost | null> {
   try {
     const res = await fetch(endpoint, { cache: "no-store" });
 
-    if (res.ok) {
-      const posts = (await res.json()) as WPPost[];
-      const exactMatch =
-        posts.find(
-          (post) => post.slug?.trim().toLowerCase() === normalizedSlug,
-        ) ?? posts[0];
-
-      if (exactMatch) {
-        return exactMatch;
-      }
+    if (!res.ok) {
+      return null;
     }
-  } catch {
-    // Fall through to the broader lookup below.
-  }
 
-  const allPosts = await getAllWpPosts();
-  return (
-    allPosts.find((post) => post.slug?.trim().toLowerCase() === normalizedSlug) ??
-    null
-  );
-}
+    const posts = (await res.json()) as WPPost[];
+    return (
+      posts.find((post) => post.slug?.trim().toLowerCase() === normalizedSlug) ??
+      posts[0] ??
+      null
+    );
+  } catch {
+    return null;
+  }
+});
 
 export async function getAllWpPosts(): Promise<WPPost[]> {
   const posts: WPPost[] = [];

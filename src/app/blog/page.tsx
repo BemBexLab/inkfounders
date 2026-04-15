@@ -16,7 +16,7 @@ function mapWpPostToBlogPost(post: Awaited<ReturnType<typeof getAllWpPosts>>[num
     id: `wp-${post.id}`,
     title: decodeHtmlEntities(post.title?.rendered || "Untitled Post"),
     excerpt: excerptText,
-    category: "WordPress Blog",
+    category: "Publishing Guide",
     date: formatDate(post.date),
     readTime: getReadingTime(post.content?.rendered || excerptHtml),
     imageUrl: getFeaturedImageFromPost(post),

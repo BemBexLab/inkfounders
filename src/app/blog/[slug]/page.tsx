@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import {
@@ -7,7 +8,6 @@ import {
   getFeaturedImageFromPost,
   getPostBySlug,
   getReadingTime,
-  getTextFromHtml,
   stripInlineStyles,
 } from "../wpPosts";
 
@@ -18,6 +18,62 @@ type PageProps = {
     slug: string;
   }>;
 };
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    return {};
+  }
+
+  const title =
+    decodeHtmlEntities(
+      post.yoast_head_json?.title || post.title?.rendered || "Inkfounders Blog",
+    ) || "Inkfounders Blog";
+  const description =
+    decodeHtmlEntities(
+      post.yoast_head_json?.description ||
+        post.excerpt?.rendered ||
+        post.content?.rendered ||
+        "",
+    ) || undefined;
+  const featuredImage = getFeaturedImageFromPost(post);
+
+  return {
+    title,
+    description,
+    alternates: post.yoast_head_json?.canonical
+      ? {
+          canonical: post.yoast_head_json.canonical,
+        }
+      : undefined,
+    openGraph: {
+      type: "article",
+      title: decodeHtmlEntities(
+        post.yoast_head_json?.og_title || post.title?.rendered || title,
+      ),
+      description:
+        decodeHtmlEntities(post.yoast_head_json?.og_description || description || "") ||
+        undefined,
+      url: post.yoast_head_json?.canonical || post.link || undefined,
+      publishedTime:
+        post.yoast_head_json?.article_published_time || post.date || undefined,
+      modifiedTime:
+        post.yoast_head_json?.article_modified_time ||
+        post.modified ||
+        post.date ||
+        undefined,
+      images: featuredImage ? [{ url: featuredImage }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: featuredImage ? [featuredImage] : undefined,
+    },
+  };
+}
 
 function formatWpContent(html: string) {
   const withClasses = (
@@ -71,14 +127,15 @@ export default async function BlogSlugPage({ params }: PageProps) {
   }
 
   const postTitle = decodeHtmlEntities(post.title?.rendered || "Untitled Post");
-  const excerptText = decodeHtmlEntities(
-    getTextFromHtml(post.excerpt?.rendered || post.content?.rendered || ""),
-  );
   const contentHtml = formatWpContent(
     stripInlineStyles(post.content?.rendered || post.excerpt?.rendered || ""),
   );
   const featuredImage = getFeaturedImageFromPost(post);
-  const readTime = getReadingTime(post.content?.rendered || "");
+  const readTime =
+    post.yoast_head_json?.twitter_misc?.["Est. reading time"] ||
+    getReadingTime(post.content?.rendered || "");
+  const publishedDate = formatDate(post.date);
+  const updatedDate = formatDate(post.modified || post.date);
 
   return (
     <div className="bg-[#F5F5DC] font-sans text-gray-800">
@@ -120,18 +177,15 @@ export default async function BlogSlugPage({ params }: PageProps) {
               ) : null}
 
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500">
-                <span>Updated: {formatDate(post.date)}</span>
+                <span>Published: {publishedDate}</span>
+                <span>&bull;</span>
+                <span>Updated: {updatedDate}</span>
                 <span>&bull;</span>
                 <span>{readTime}</span>
               </div>
             </header>
 
             <div className="prose max-w-none text-gray-700 prose-headings:text-black prose-a:text-blue-700 prose-a:no-underline hover:prose-a:underline prose-strong:text-black prose-img:rounded-xl sm:prose-lg">
-              {excerptText ? (
-                <p className="mb-6 text-lg leading-relaxed text-gray-700 sm:text-xl">
-                  {excerptText}
-                </p>
-              ) : null}
               <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
             </div>
           </article>
