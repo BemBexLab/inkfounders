@@ -38,7 +38,7 @@ const Hero = ({ data }: HeroProps) => {
         <div className="flex flex-col items-center justify-center w-full">
           {/* Text Content */}
           <div className="w-full flex flex-col items-center justify-center">
-            <h1 className="text-[26px] leading-[1.2] sm:text-3xl sm:leading-tight md:text-2xl lg:text-[35px] xl:text-[45px] font-semibold text-black sm:mb-6 text-center px-2">
+            <h1 className="text-[26px] leading-[1.2] mb-3 sm:text-3xl sm:leading-tight md:text-2xl lg:text-[35px] xl:text-[45px] font-semibold text-black sm:mb-6 text-center px-2">
               {heroData.title}
             </h1>
             <p
