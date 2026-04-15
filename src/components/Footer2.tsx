@@ -113,18 +113,18 @@ const trustBadges: TrustBadge[] = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="m-0 flex justify-center bg-white p-0">
-      <div className="w-full bg-[#f5f5e8] px-4 pb-0 pt-10 sm:px-6 md:px-10 lg:rounded-tr-[48px] lg:px-16 lg:pt-12">
-        <div className="mx-auto grid w-full max-w-[1320px] gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] lg:gap-14">
-          <div className="min-w-0">
-            <div className="mb-4 w-fit max-w-full">
+    <footer className="m-0 flex w-full justify-center overflow-hidden bg-[#f5f5e8] p-0">
+      <div className="w-full bg-[#f5f5e8] px-4 pb-0 pt-8 sm:px-6 sm:pt-10 md:px-8 lg:rounded-tr-[48px] lg:px-10 xl:px-16 xl:pt-12">
+        <div className="mx-auto grid w-full max-w-[1320px] gap-8 xl:grid-cols-[minmax(0,1.12fr)_minmax(0,1fr)] xl:items-start xl:gap-14">
+          <div className="min-w-0 text-center xl:text-left">
+            <div className="mx-auto mb-4 w-fit max-w-full xl:mx-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="152"
                 height="60"
                 viewBox="0 0 252 115"
                 fill="none"
-                className="h-auto max-w-full"
+                className="h-auto w-[130px] max-w-full sm:w-[145px] lg:w-[152px]"
               >
                 <path
                   d="M71.4816 24.3721H57.2832V70.3131H71.4816V24.3721Z"
@@ -186,7 +186,7 @@ const Footer: React.FC = () => {
             </div>
 
             <p
-              className={`${robotoMono.className} max-w-[38rem] text-[14px] leading-[1.7] text-[#444]`}
+              className={`${robotoMono.className} mx-auto max-w-[38rem] text-[13px] text-[#444] xl:mx-0 sm:text-[14px]`}
             >
               Ink Founder is an independent publishing partner offering a
               comprehensive suite of digital services including book publishing,
@@ -196,9 +196,10 @@ const Footer: React.FC = () => {
             </p>
 
             <div className="text-black">
-              <div className="flex flex-wrap items-center justify-start gap-x-1 gap-y-2 sm:gap-x-1.5 sm:gap-y-3">
+              <div className="mt-5 flex flex-nowrap items-center justify-center gap-3 xl:justify-start xl:gap-4">
                 {trustBadges.map((badge) => {
                   const isExternal = badge.link?.startsWith("http");
+                  const isTrustpilot = badge.id === "trustpilot-review";
 
                   return (
                     <a
@@ -206,7 +207,7 @@ const Footer: React.FC = () => {
                       href={badge.link || "#"}
                       target={isExternal ? "_blank" : undefined}
                       rel={isExternal ? "noreferrer" : undefined}
-                      className="group flex h-[72px] w-fit shrink-0 items-center justify-center rounded-[16px] px-2 transition duration-300 hover:-translate-y-1 hover:scale-[1.02] sm:h-[80px] sm:px-3"
+                      className="group flex h-[58px] shrink-0 items-center justify-center rounded-lg px-0 transition duration-300 hover:-translate-y-1 hover:scale-[1.02] sm:h-[72px] lg:h-[84px]"
                       aria-label={`${badge.title} ${badge.subtitle}`}
                     >
                       {typeof badge.src === "string" ? (
@@ -215,10 +216,14 @@ const Footer: React.FC = () => {
                           alt={`${badge.title} ${badge.subtitle}`}
                           width={150}
                           height={64}
-                          className="h-auto mt-5 max-h-[42px] w-auto max-w-[145px] object-contain object-center transition duration-300 group-hover:brightness-105 sm:max-h-[52px] sm:max-w-[165px]"
+                          className={`h-auto object-contain object-center transition duration-300 group-hover:brightness-105 sm:mt-5 ${
+                            isTrustpilot
+                              ? "w-[clamp(118px,34vw,185px)] max-h-[58px] lg:w-[205px] lg:max-h-[70px]"
+                              : "w-[clamp(74px,24vw,118px)] max-h-[42px] lg:w-[135px] lg:max-h-[54px]"
+                          }`}
                         />
                       ) : (
-                        <div className="flex h-[72px] w-fit items-center justify-center rounded-[16px] border border-[#d8d4be] bg-[#f1eedf] px-3 py-2 text-[24px] text-[#1f1f1f] shadow-[0_8px_18px_rgba(77,70,40,0.05)] transition duration-300 group-hover:border-[#c9c29f] group-hover:shadow-[0_12px_24px_rgba(77,70,40,0.08)] sm:h-[80px] sm:px-4 sm:py-3 sm:text-[28px]">
+                        <div className="flex h-[64px] w-full items-center justify-center rounded-lg border border-[#d8d4be] bg-[#f1eedf] px-3 py-2 text-[24px] text-[#1f1f1f] shadow-[0_8px_18px_rgba(77,70,40,0.05)] transition duration-300 group-hover:border-[#c9c29f] group-hover:shadow-[0_12px_24px_rgba(77,70,40,0.08)] sm:h-[82px] sm:w-fit sm:text-[28px] lg:h-[94px] lg:px-4 lg:py-3 lg:text-[32px]">
                           {badge.src}
                         </div>
                       )}
@@ -229,14 +234,14 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          <div className="grid grid-cols-1 gap-7 text-center min-[653px]:grid-cols-2 min-[653px]:text-left lg:gap-8 xl:grid-cols-3 xl:gap-6">
             <div className="min-w-0">
-              <h4 className="mb-4 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e]">
+              <h4 className="mb-3 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e] sm:mb-4">
                 Quick Links
               </h4>
-              <ul className="m-0 list-none p-0">
+              <ul className="m-0 grid list-none grid-cols-2 gap-x-4 gap-y-2 p-0 min-[653px]:block">
                 {quickLinks.map(({ id, label, href }) => (
-                  <li key={id} className="mb-2">
+                  <li key={id} className="min-[653px]:mb-2">
                     <Link
                       href={href}
                       className="font-sans text-[14px] text-[#333] no-underline transition-colors hover:text-[#8a7a2e]"
@@ -249,7 +254,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="min-w-0">
-              <h4 className="mb-4 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e]">
+              <h4 className="mb-3 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e] sm:mb-4">
                 Our Services
               </h4>
               <ul className="m-0 list-none p-0">
@@ -266,20 +271,20 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            <div className="min-w-0 sm:col-span-2 lg:col-span-1">
-              <h4 className="mb-4 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e]">
+            <div className="min-w-0 min-[653px]:col-span-2 xl:col-span-1">
+              <h4 className="mb-3 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e] sm:mb-4">
                 Contact Us
               </h4>
-              <ul className="m-0 list-none p-0 text-[14px]">
+              <ul className="mx-auto max-w-[360px] list-none p-0 text-[14px] min-[653px]:mx-0 xl:max-w-none">
                 {footerContactItems.map(({ icon, lines, href }) => (
                   <li
                     key={href}
-                    className="mb-[13px] flex items-start gap-[10px]"
+                    className="mb-3 flex items-start justify-center gap-[10px] min-[653px]:justify-start"
                   >
                     <span className="mt-[2px]">{icon}</span>
                     <Link
                       href={href}
-                      className="font-sans text-[13px] leading-snug text-[#333] no-underline transition-colors hover:text-[#8a7a2e]"
+                      className="min-w-0 break-words text-left font-sans text-[13px] leading-snug text-[#333] no-underline transition-colors hover:text-[#8a7a2e]"
                     >
                       {lines.map((line) => (
                         <span key={`${href}-${line}`} className="block">
@@ -294,7 +299,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-9 w-full border-t border-[#d8d8c8] py-4 text-center">
+        <div className="mt-8 w-full border-t border-[#d8d8c8] py-4 text-center lg:mt-9">
           <p className="m-0 font-sans text-[12px] text-[#666]">
             © 2025 Ink Founders All rights reserved.
           </p>

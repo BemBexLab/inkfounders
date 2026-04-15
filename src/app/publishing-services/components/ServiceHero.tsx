@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const ServiceHero = () => {
   return (
-    <section className="relative flex w-full items-center justify-center overflow-hidden rounded-bl-[44px] bg-[#F4F3E1] px-4 py-10 pt-28 sm:rounded-bl-[64px] sm:px-6 sm:pt-32 md:px-8 md:pt-40 lg:rounded-bl-[100px] lg:px-0 lg:pt-50">
+    <section className="relative flex w-full items-center justify-center overflow-hidden rounded-bl-[44px] bg-[#F4F3E1] px-4 py-12 sm:rounded-bl-[64px] sm:px-6 sm:py-14 md:px-8 lg:rounded-bl-[100px] lg:px-0 lg:py-16">
   {/* Main Container */}
 	  <div className="relative z-10 mx-auto flex w-full max-w-[1450px] items-center justify-center">
     {/* Flex Container for All Layouts */}

@@ -145,16 +145,24 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-50 w-full bg-[#F4F3E1] px-4 py-5 transition-all duration-300 md:px-10 lg:py-6 2xl:px-20 ${
+      className={`sticky left-0 top-0 z-50 w-full bg-[#F4F3E1] px-4 py-4 transition-all duration-300 md:px-8 lg:px-10 xl:py-5 2xl:px-10 ${
         showHeader
           ? "translate-y-0 opacity-100"
           : "-translate-y-full opacity-0"
       }`}
     >
       <div className="flex items-center justify-between">
-        <Link href="/" className="ml-2 md:ml-6">
+        <Link href="/">
           <div className="flex items-center gap-2">
-            <video width="130" height="50" autoPlay loop muted playsInline>
+            <video
+              width="130"
+              height="50"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="h-auto w-[110px] sm:w-[120px] xl:w-[130px]"
+            >
               <source
                 src="/logovideo/inkfounder_logo_animate.mp4"
                 type="video/mp4"
@@ -164,8 +172,8 @@ export default function Header() {
           </div>
         </Link>
 
-        <div className="hidden lg:block">
-          <nav className="relative z-50 flex items-center gap-4 rounded-full px-6 py-3 md:px-10 2xl:gap-8">
+        <div className="hidden xl:block">
+          <nav className="relative z-50 flex items-center gap-10 rounded-full px-4 py-3 2xl:gap-15 2xl:px-10">
             {navItems.map((item) => {
               const isActive = isActivePath(pathname, item.href);
 
@@ -174,7 +182,7 @@ export default function Header() {
                   <div key={item.href} className="group relative">
                     {item.desktopOnlyMenu ? (
                       <span
-                        className={`cursor-default whitespace-nowrap text-[14px] transition hover:text-[#DADD39] 2xl:text-[16px] ${
+                        className={`cursor-default whitespace-nowrap text-[13px] transition hover:text-[#DADD39] 2xl:text-[16px] ${
                           isActive
                             ? "font-semibold text-[#DADD39] underline underline-offset-[10px]"
                             : "text-black"
@@ -185,7 +193,7 @@ export default function Header() {
                     ) : (
                       <Link
                         href={item.href}
-                        className={`whitespace-nowrap text-[14px] transition hover:text-[#DADD39] 2xl:text-[16px] ${
+                        className={`whitespace-nowrap text-[13px] transition hover:text-[#DADD39] 2xl:text-[16px] ${
                           isActive
                             ? "font-semibold text-[#DADD39] underline underline-offset-[10px]"
                             : "text-black"
@@ -216,7 +224,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`whitespace-nowrap text-[14px] transition hover:text-[#DADD39] 2xl:text-[16px] ${
+                  className={`whitespace-nowrap text-[13px] transition hover:text-[#DADD39] 2xl:text-[16px] ${
                     isActive
                       ? "font-semibold text-[#DADD39] underline underline-offset-[10px]"
                       : "text-black"
@@ -229,17 +237,17 @@ export default function Header() {
           </nav>
         </div>
 
-        <Link href="/contactus" className="hidden lg:flex">
+        <Link href="/contactus" className="hidden xl:flex">
           <button
             type="button"
-            className="btn-slide-bg flex items-center gap-2 rounded-[10px] border border-[#DADD39] bg-[#DADD39] px-4 py-2 text-black transition-all duration-300 hover:border-black lg:px-2 lg:py-2 2xl:px-6 2xl:py-2"
+            className="btn-slide-bg flex items-center gap-2 rounded-[10px] border border-[#DADD39] bg-[#DADD39] px-3 py-2 text-[13px] text-black transition-all duration-300 hover:border-black 2xl:px-6 2xl:text-base"
           >
             <span className="slide-bg"></span>
             <span className="relative z-10">Request a Quote</span>
           </button>
         </Link>
 
-        <div className="block lg:hidden">
+        <div className="block xl:hidden">
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
             className="px-4 py-2 text-3xl text-[#DADD39]"
@@ -255,7 +263,7 @@ export default function Header() {
       {menuOpen && (
         <div
           id="mobile-menu"
-          className="fixed inset-0 z-[60] flex min-h-screen flex-col items-start gap-3 overflow-y-auto bg-white px-6 py-8 lg:hidden"
+          className="fixed inset-0 z-[60] flex min-h-screen flex-col items-start gap-3 overflow-y-auto bg-white px-6 py-8 xl:hidden"
         >
           <button
             className="absolute right-6 top-6 text-3xl text-[#DADD39]"

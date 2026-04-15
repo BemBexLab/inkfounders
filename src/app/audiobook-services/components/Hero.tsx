@@ -31,9 +31,9 @@ const Hero = ({ data }: HeroProps) => {
   };
 
   return (
-    <section className="relative w-full flex items-center justify-center overflow-hidden bg-[#F4F3E1] rounded-bl-[40px] sm:rounded-bl-[60px] md:rounded-bl-[80px] lg:rounded-bl-[100px] py-10 pt-28 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-50">
+    <section className="relative flex w-full items-center justify-center overflow-hidden rounded-bl-[40px] bg-[#F4F3E1] px-4 py-12 sm:rounded-bl-[60px] sm:px-6 sm:py-14 md:rounded-bl-[80px] md:px-8 lg:rounded-bl-[100px] lg:py-16">
       {/* Main Container */}
-      <div className="relative z-10 w-full max-w-[1450px] mx-auto flex items-center justify-center px-5 sm:px-8 md:px-12 lg:px-16">
+      <div className="relative z-10 mx-auto flex w-full max-w-[1450px] items-center justify-center px-0 lg:px-16">
         {/* Flex Container for All Layouts */}
         <div className="flex flex-col items-center justify-center w-full">
           {/* Text Content */}
@@ -42,7 +42,7 @@ const Hero = ({ data }: HeroProps) => {
               {heroData.title}
             </h1>
             <p
-              className={`${robotoMono.className} text-gray-700 text-[13px] sm:text-sm md:text-[15px] sm:mb-8 leading-relaxed sm:leading-loose text-center max-w-4xl px-2`}
+              className={`${robotoMono.className} text-gray-700 text-[13px] mb-8 sm:text-sm md:text-[15px] sm:mb-8 leading-relaxed sm:leading-loose text-center max-w-4xl px-2`}
             >
               {heroData.description}
             </p>

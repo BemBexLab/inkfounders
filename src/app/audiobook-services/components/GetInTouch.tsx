@@ -97,16 +97,16 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
     }
   };
   return (
-    <div className="bg-white flex justify-center py-8 px-6 lg:px-6">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+    <div className="flex justify-center bg-white px-4 py-10 sm:px-6 md:px-8 lg:px-6">
+      <div className="mx-auto w-full max-w-[1400px]">
+        <div className="flex flex-col items-center justify-center gap-10 lg:flex-row lg:items-start lg:gap-20">
           {/* Left Section */}
-          <div className="flex-1 max-w-[500px]">
-            <h2 className="text-[#d4d946] text-[22px] font-semibold">
+          <div className="mx-auto w-full max-w-[680px] flex-1 text-center lg:mx-0 lg:max-w-[500px] lg:text-left">
+            <h2 className="text-[20px] font-semibold text-[#d4d946] sm:text-[22px]">
               {content.title}
             </h2>
             {/* subheading left fixed as per request */}
-            <h3 className="text-[#1a1a1a] text-[32px] font-semibold mb-4">
+            <h3 className="mb-4 text-[28px] font-semibold text-[#1a1a1a] sm:text-[32px]">
               Let's Talk
             </h3>
 
@@ -121,7 +121,7 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
             </div>
 
             {/* Contact Options */}
-            <div className="flex flex-wrap gap-x-8 gap-y-4">
+            <div className="flex flex-col items-center gap-4 min-[540px]:flex-row min-[540px]:flex-wrap min-[540px]:justify-center lg:items-start lg:justify-start lg:gap-x-8">
               {/* Phone */}
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 bg-[#d4d946] rounded-md flex items-center justify-center flex-shrink-0">
@@ -171,7 +171,7 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
               </div>
 
               {/* Location */}
-              <div className="flex items-center gap-3">
+              <div className="flex max-w-full items-center gap-3">
                 <div className="w-9 h-9 bg-[#d4d946] rounded-md flex items-center justify-center flex-shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -186,7 +186,7 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
                     />
                   </svg>
                 </div>
-                <span className={`${robotoMono.className} text-[14px] text-[#333333]`}>
+                <span className={`${robotoMono.className} max-w-[320px] text-left text-[14px] text-[#333333]`}>
                   1680 Michigan Ave 700 326 Miami Beach, FL 33139, USA
                 </span>
               </div>
@@ -194,8 +194,8 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
           </div>
 
           {/* Right Section - Form */}
-          <div className="flex-1 max-w-[550px] bg-[#F4F3E1] rounded-lg p-8">
-            <h3 className="text-[#1a1a1a] text-[26px] font-semibold mb-8">
+          <div className="mx-auto w-full max-w-[680px] flex-1 rounded-lg bg-[#F4F3E1] p-5 sm:p-6 md:p-8 lg:mx-0 lg:max-w-[550px]">
+            <h3 className="mb-6 text-center text-[24px] font-semibold text-[#1a1a1a] sm:text-[26px] lg:mb-8 lg:text-left">
               Get In Touch Now!
             </h3>
 

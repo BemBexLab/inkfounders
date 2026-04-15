@@ -165,7 +165,7 @@ const OurPromise = () => {
                   decoding="async"
                   className="mb-3 h-10 w-10 object-contain sm:h-12 sm:w-12"
                 />
-                <h3 className="mb-2 text-[17px] font-semibold leading-[1.08] text-black sm:text-[18px] md:text-[19px] lg:text-[20px] lg:leading-[1]">
+                <h3 className="mb-3 text-[17px] font-semibold leading-[1.08] text-black sm:text-[18px] md:text-[19px] lg:text-[20px] lg:leading-[1]">
                   {item.title}
                 </h3>
                 <p

@@ -145,7 +145,7 @@ const WhatMake = () => {
                   height={48}
                   className="mb-3 h-10 w-10 object-contain sm:h-12 sm:w-12"
                 />
-                <h3 className="mb-2 max-w-[30rem] text-[18px] font-semibold leading-[1] text-black sm:text-[20px] md:text-[22px] lg:text-2xl">
+                <h3 className="mb-3 max-w-[30rem] text-[18px] font-semibold leading-[1] text-black sm:text-[20px] md:text-[22px] lg:text-2xl">
                   {item.title}
                 </h3>
                 <div className="relative w-full max-w-[24rem] lg:h-auto lg:max-h-[125px]">

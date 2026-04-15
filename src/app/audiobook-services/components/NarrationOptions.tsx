@@ -91,8 +91,8 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
 
   return (
     <section>
-      {/* DESKTOP VERSION (above 720px) - Original Layout */}
-      <div className="hidden min-[720px]:block bg-[#f5f5f5] pt-8 pb-14 px-5">
+      {/* DESKTOP VERSION */}
+      <div className="hidden bg-[#f5f5f5] px-5 pb-14 pt-8 lg:block">
         <div className="max-w-7xl mx-auto text-center">
           {/* Header */}
           <h1 className="text-[32px] font-semibold text-[#333333] mb-3">
@@ -165,35 +165,42 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
         </div>
       </div>
 
-      {/* MOBILE VERSION (720px and below) - Stacked Layout */}
-      <div className="block min-[720px]:hidden bg-[#f5f5f5] min-h-screen py-10 px-4">
+      {/* RESPONSIVE VERSION: h -> Image -> p */}
+      <div className="block bg-[#f5f5f5] px-4 py-10 sm:px-6 md:px-8 lg:hidden">
         {/* Header */}
-        <div className="text-center mb-10">
-          <h1 className="text-2xl sm:text-3xl font-semibold text-[#333333] mb-3 leading-tight px-2">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
+          <h1 className="mb-3 px-2 text-2xl font-semibold leading-tight text-[#333333] sm:text-3xl">
             {narrationData.header}
           </h1>
-          <p className="text-sm sm:text-base text-[#666666] px-4">
+          <p className={`${robotoMono.className} px-2 text-sm text-[#666666] sm:text-base`}>
             {narrationData.intro}
           </p>
         </div>
 
-        {/* Options - Each card stacked vertically */}
-        <div className="space-y-6 mb-10">
+        <div className="mx-auto mb-10 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
           {narrationData.options.map((opt, idx) => (
             <div
               key={opt.id ?? opt.title}
-              className="bg-white rounded-lg shadow-sm p-6 mx-auto max-w-md"
+              className={`mx-auto flex h-full w-full max-w-md flex-col items-center rounded-lg bg-white p-6 text-center shadow-sm ${
+                idx === narrationData.options.length - 1
+                  ? "sm:col-span-2 sm:max-w-md"
+                  : ""
+              }`}
             >
-              {/* Title */}
-              <div className="mb-3">
-                <h2 className="text-lg sm:text-xl font-semibold text-[#444444] text-center">
-                  {opt.title}
-                </h2>
+              <h2 className="mb-5 text-lg font-semibold text-[#444444] sm:text-xl">
+                {opt.title}
+              </h2>
+
+              <div className="mb-5 flex h-20 w-20 items-center justify-center">
+                <img
+                  src={opt.imgSrc}
+                  alt={opt.title}
+                  className="h-full w-full object-contain"
+                />
               </div>
 
-              {/* Description */}
-              <div className="mb-5">
-                <p className="text-sm sm:text-base text-[#444444] leading-relaxed text-center">
+              <div>
+                <p className={`${robotoMono.className} text-sm text-[#444444] sm:text-base`}>
                   {renderRichText(
                     getDisplayText(opt.description, expandedItems[opt.title] ?? false)
                   )}
@@ -215,28 +222,19 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
                   </div>
                 )}
               </div>
-
-              {/* Image */}
-              <div className="flex justify-center">
-                <img
-                  src={opt.imgSrc}
-                  alt={opt.title}
-                  className="w-20 h-20 object-contain"
-                />
-              </div>
             </div>
           ))}
         </div>
 
         {/* Quote */}
-        <div className="text-center px-6">
-          <p className="text-sm sm:text-base text-[#444444] italic whitespace-pre-line">
+        <div className="mx-auto max-w-3xl px-2 text-center">
+          <p className={`${robotoMono.className} whitespace-pre-line text-sm italic text-[#444444] sm:text-base`}>
             {renderRichText(narrationData.quote)}
           </p>
         </div>
 
         {/* CTA Button */}
-        <div className="text-center">
+        <div className="mt-8 text-center">
           <Link href={narrationData.button.link}>
             <button
               type="button"

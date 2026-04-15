@@ -33,35 +33,35 @@ const STEPS = [
 const FiveStepProcess = () => {
   return (
     <AOSProvider>
-      <section className="w-full bg-[#F4F3E1] py-10 flex flex-col items-center">
-  <h2 className="text-[20px] md:text-3xl font-semibold text-black text-center mb-10">
+      <section className="flex w-full flex-col items-center bg-[#F4F3E1] px-4 py-10 sm:px-6 lg:px-8">
+  <h2 className="mb-8 w-full max-w-4xl text-center text-[20px] font-semibold leading-tight text-black sm:text-2xl md:text-3xl lg:mb-10">
     Our Self Book Publishing Company&apos;s 5-Step Process!
   </h2>
-  <div className="flex flex-col gap-6 w-full max-w-4xl px-4">
+  <div className="flex w-full max-w-5xl flex-col gap-5 sm:gap-6">
     {STEPS.map((step, idx) => (
       <div 
         data-aos="fade-down-right" 
         key={step.id}
-        className="flex flex-col md:flex-row items-stretch bg-[#DADD39] rounded-2xl overflow-hidden"
+        className="flex flex-col items-stretch overflow-hidden rounded-lg bg-[#DADD39] lg:flex-row"
       >
         {/* Number and Step */}
         <div className="
-          flex flex-col justify-center items-start md:items-center
-          px-0 py-0 md:px-7 md:py-4 bg-[#DADD39]
-          w-full md:min-w-[110px] md:w-[110px]
-          border-none md:border-r-[1px] md:border-gray-600 
+          flex flex-col justify-center items-start lg:items-center
+          px-0 py-0 lg:px-7 lg:py-4 bg-[#DADD39]
+          w-full lg:min-w-[110px] lg:w-[110px]
+          border-none lg:border-r-[1px] lg:border-gray-600 
         ">
-          <span className="text-[30px] md:text-[45px] leading-none text-black pl-5 pt-5 md:pl-0 md:pt-0 ">
+          <span className="pl-5 pt-5 text-[30px] leading-none text-black sm:text-[36px] lg:pl-0 lg:pt-0 lg:text-[45px]">
             {`0${idx + 1}`}
           </span>
-          <span className="font-mono text-[14px] text-black pl-5 md:pl-0">Step</span>
+          <span className="pl-5 font-mono text-[14px] text-black lg:pl-0">Step</span>
           {/* Horizontal line for mobile only */}
-          <span className="block h-[1.5px] w-24 bg-[#bec01d] my-3 md:hidden ml-5" />
+          <span className="my-3 ml-5 block h-[1.5px] w-24 bg-[#bec01d] lg:hidden" />
         </div>
         {/* Content */}
-        <div className="flex-1 flex flex-col justify-center pl-5 pr-4 pb-5 md:pl-6 md:pr-4 md:pb-0">
-          <h3 className="font-bold text-[16px] md:text-lg text-black mb-1">{step.title}</h3>
-          <p className={`font-mono text-[13px] md:text-[14px] text-[#444444] leading-snug ${robotoMono.className}`}>
+        <div className="flex flex-1 flex-col justify-center px-5 pb-5 sm:px-6 lg:px-6 lg:py-4">
+          <h3 className="mb-1 text-[16px] font-bold leading-snug text-black sm:text-lg">{step.title}</h3>
+          <p className={`font-mono text-[13px] leading-snug text-[#444444] sm:text-[14px] ${robotoMono.className}`}>
             {step.desc}
           </p>
         </div>
