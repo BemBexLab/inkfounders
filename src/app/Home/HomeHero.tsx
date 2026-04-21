@@ -45,7 +45,7 @@ const trustBadges: TrustBadge[] = [
     title: "Top Digital",
     subtitle: "Agency",
     src: "/Home/Mask%20group.png",
-    link: "#",
+    link: "https://www.trustpilot.com/review/inkfounders.com",
   },
 ];
 

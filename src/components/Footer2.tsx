@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { robotoMono } from "@/app/fonts";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const footerContactItems = [
   {
@@ -196,7 +197,7 @@ const Footer: React.FC = () => {
             </p>
 
             <div className="text-black">
-              <div className="mt-5 flex flex-nowrap items-center justify-center gap-3 xl:justify-start xl:gap-4">
+              <div className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 md:flex-nowrap xl:justify-start xl:gap-4">
                 {trustBadges.map((badge) => {
                   const isExternal = badge.link?.startsWith("http");
                   const isTrustpilot = badge.id === "trustpilot-review";
@@ -207,7 +208,7 @@ const Footer: React.FC = () => {
                       href={badge.link || "#"}
                       target={isExternal ? "_blank" : undefined}
                       rel={isExternal ? "noreferrer" : undefined}
-                      className="group flex h-[58px] shrink-0 items-center justify-center rounded-lg px-0 transition duration-300 hover:-translate-y-1 hover:scale-[1.02] sm:h-[72px] lg:h-[84px]"
+                      className="group flex h-[54px] shrink-0 items-center justify-center rounded-lg px-0 transition duration-300 hover:-translate-y-1 hover:scale-[1.02] sm:h-[72px] lg:h-[84px]"
                       aria-label={`${badge.title} ${badge.subtitle}`}
                     >
                       {typeof badge.src === "string" ? (
@@ -218,8 +219,8 @@ const Footer: React.FC = () => {
                           height={64}
                           className={`h-auto object-contain object-center transition duration-300 group-hover:brightness-105 sm:mt-5 ${
                             isTrustpilot
-                              ? "w-[clamp(118px,34vw,185px)] max-h-[58px] lg:w-[205px] lg:max-h-[70px]"
-                              : "w-[clamp(74px,24vw,118px)] max-h-[42px] lg:w-[135px] lg:max-h-[54px]"
+                              ? "w-[clamp(112px,38vw,185px)] max-h-[56px] lg:w-[205px] lg:max-h-[70px]"
+                              : "w-[clamp(68px,24vw,118px)] max-h-[40px] lg:w-[135px] lg:max-h-[54px]"
                           }`}
                         />
                       ) : (
@@ -234,7 +235,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-8 gap-y-8 text-left md:gap-x-12 xl:grid-cols-3 xl:gap-6">
+          <div className="grid min-w-0 grid-cols-1 gap-7 text-left sm:grid-cols-2 sm:gap-x-10 sm:gap-y-8 lg:grid-cols-3 lg:gap-8 xl:gap-6">
             <div className="min-w-0">
               <h4 className="mb-3 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e] sm:mb-4">
                 Quick Links
@@ -253,49 +254,64 @@ const Footer: React.FC = () => {
               </ul>
             </div>
 
-            <div className="min-w-0 space-y-7 xl:space-y-0 xl:contents">
-              <div className="min-w-0">
-                <h4 className="mb-3 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e] sm:mb-4">
-                  Our Services
-                </h4>
-                <ul className="m-0 list-none p-0">
-                  {servicesLinks.map(({ id, label, href }) => (
-                    <li key={id} className="mb-2">
-                      <Link
-                        href={href}
-                        className="font-sans text-[14px] text-[#333] no-underline transition-colors hover:text-[#8a7a2e]"
-                      >
-                        {label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="min-w-0 col-span-1 xl:col-span-1">
-                <h4 className="mb-3 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e] sm:mb-4">
-                  Contact Us
-                </h4>
-                <ul className="max-w-[360px] list-none p-0 text-[14px] xl:max-w-none">
-                  {footerContactItems.map(({ icon, lines, href }) => (
-                    <li
-                      key={href}
-                      className="mb-3 flex items-start gap-[10px]"
+            <div className="min-w-0">
+              <h4 className="mb-3 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e] sm:mb-4">
+                Our Services
+              </h4>
+              <ul className="m-0 list-none p-0">
+                {servicesLinks.map(({ id, label, href }) => (
+                  <li key={id} className="mb-2">
+                    <Link
+                      href={href}
+                      className="font-sans text-[14px] text-[#333] no-underline transition-colors hover:text-[#8a7a2e]"
                     >
-                      <span className="mt-[2px]">{icon}</span>
-                      <Link
-                        href={href}
-                        className="min-w-0 break-words text-left font-sans text-[13px] leading-snug text-[#333] no-underline transition-colors hover:text-[#8a7a2e]"
-                      >
-                        {lines.map((line) => (
-                          <span key={`${href}-${line}`} className="block">
-                            {line}
-                          </span>
-                        ))}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="min-w-0 sm:col-span-2 lg:col-span-1">
+              <h4 className="mb-3 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e] sm:mb-4">
+                Contact Us
+              </h4>
+              <ul className="m-0 max-w-[420px] list-none p-0 text-[14px] lg:max-w-none">
+                {footerContactItems.map(({ icon, lines, href }) => (
+                  <li key={href} className="mb-3 flex items-start gap-[10px]">
+                    <span className="mt-[2px] shrink-0">{icon}</span>
+                    <Link
+                      href={href}
+                      className="min-w-0 break-words text-left font-sans text-[13px] leading-snug text-[#333] no-underline transition-colors hover:text-[#8a7a2e] sm:text-[14px]"
+                    >
+                      {lines.map((line) => (
+                        <span key={`${href}-${line}`} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex justify-start gap-x-4">
+                <Link
+                  href="https://www.instagram.com/ink_founder/"
+                  aria-label="Ink Founders on Instagram"
+                >
+                  <FaInstagram color="#555555" size={30} />
+                </Link>
+                <Link
+                  href="https://www.facebook.com/InkFounders"
+                  aria-label="Ink Founders on Facebook"
+                >
+                  <FaFacebook color="#555555" size={30} />
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/company/ink-founders/"
+                  aria-label="Ink Founders on LinkedIn"
+                >
+                  <FaLinkedin color="#555555" size={30} />
+                </Link>
               </div>
             </div>
           </div>
@@ -303,7 +319,7 @@ const Footer: React.FC = () => {
 
         <div className="mt-8 w-full border-t border-[#d8d8c8] py-4 text-center lg:mt-9">
           <p className="m-0 font-sans text-[12px] text-[#666]">
-            © 2025 Ink Founders All rights reserved.
+            &copy; 2025 Ink Founders All rights reserved.
           </p>
         </div>
       </div>
