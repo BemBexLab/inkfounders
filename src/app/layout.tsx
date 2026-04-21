@@ -22,6 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <meta name="google-site-verification" content="anmOXVc7juhQFhYiYg0Tu3hI2tgTsHwdQY-ZXdHk6OA" />
       <body
         className={`antialiased ${workSans.className}`}
         suppressHydrationWarning
