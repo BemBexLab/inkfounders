@@ -11,7 +11,9 @@ export const metadata: Metadata = {
   description:
     "Ink Founders is an independent self-publishing platform dedicated to empowering authors with a full suite of digital services.",
   verification: {
-    google: "chIy7we8dy-XbVv1lNa36kZNuZgH_HCtWnDiGBB-uFA",
+    google: [
+      "chIy7we8dy-XbVv1lNa36kZNuZgH_HCtWnDiGBB-uFA",
+    ],
   },
 };
 
@@ -22,6 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      
       <body
         className={`antialiased ${workSans.className}`}
         suppressHydrationWarning

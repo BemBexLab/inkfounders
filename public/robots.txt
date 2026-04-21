@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /search
+Disallow: /?s=
+Disallow: /*?filter=
+Disallow: /*?sort=
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /thank-you/
+
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.svg$
+
+Sitemap: https://www.inkfounders.com/sitemap.xml
