@@ -13,7 +13,6 @@ export const metadata: Metadata = {
   verification: {
     google: [
       "chIy7we8dy-XbVv1lNa36kZNuZgH_HCtWnDiGBB-uFA",
-      "anmOXVc7juhQFhYiYg0Tu3hI2tgTsHwdQY-ZXdHk6OA",
     ],
   },
 };
