@@ -107,6 +107,19 @@ p[class] {
   }
 }
 
+@keyframes logo-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-logo-marquee {
+  animation: logo-marquee 18s linear infinite;
+}
+
 /* Applying the shake animation */
 .shake-pause {
   animation: shake-pause 2s cubic-bezier(.36,.07,.19,.97) infinite;

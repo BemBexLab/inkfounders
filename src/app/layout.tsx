@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer2";
+import SiteChrome from "@/components/SiteChrome";
 import DynamicPageTitle from "@/components/DynamicPageTitle";
 import { workSans } from "./fonts";
 
@@ -62,9 +61,7 @@ export default function RootLayout({
         </noscript>
 
         <DynamicPageTitle />
-        <Header />
-        {children}
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );
