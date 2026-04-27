@@ -14,6 +14,7 @@ import StepCard from './components/PublishingSteps'
 import PublishYourStory from './components/PublishYourStory'
 import TestimonialLanding from './components/TestimonialLanding'
 import GetInTouch from './components/ContactForm'
+import LandingFooter from './components/LandingFooter'
 
 const page = () => {
   return (
@@ -33,6 +34,7 @@ const page = () => {
         <PublishYourStory />
         <TestimonialLanding />
         <GetInTouch />
+        <LandingFooter />
     </section>
   )
 }

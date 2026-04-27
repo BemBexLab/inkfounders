@@ -153,10 +153,8 @@ const BookGallery = () => {
     <AOSProvider>
       <section className="flex w-full flex-col items-center px-4 pt-10 sm:px-6 sm:pt-12 lg:px-8">
         {/* Eyebrow Part */}
-        <p className="font-semibold text-[#DADD39] text-xl">Bring Your Book To Life</p>
-        {/* Heading Part */}
-        <h2 className="font-semibold text-5xl text-black mb-5 mt-3">Our Portfolio</h2>
-        {/* Filter Buttons */}
+        <p className="text-lg font-semibold text-[#DADD39] sm:text-xl">Bring Your Book To Life</p>
+        <h2 className="mb-5 mt-3 text-center text-[32px] font-semibold text-black sm:text-[40px] md:text-[46px] lg:text-5xl">Our Portfolio</h2>
         <div className="mb-8 mt-0 flex w-full max-w-5xl flex-wrap justify-center gap-2 sm:mb-10">
           {FILTERS.map((filter) => (
             <button
@@ -180,15 +178,13 @@ const BookGallery = () => {
 
         {/* Cards Grid */}
         <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 justify-items-center gap-x-6 gap-y-12 sm:grid-cols-2 md:gap-y-16 lg:grid-cols-4 lg:gap-x-0 lg:gap-y-24">
-          {/* Force re-render of cards on filter change by passing activeFilter as key */}
           {visibleBooks.map((book, idx) => (
             <Link
               href={book.link}
               data-aos="fade-up"
-              key={`${activeFilter}-${idx}`} // Unique key to trigger re-render
+              key={`${activeFilter}-${idx}`}
               className="group flex w-full max-w-[260px] flex-col items-center text-center"
             >
-              {/* Book Cover */}
               <div className="relative mb-4 h-[300px] w-[190px] overflow-hidden rounded-[18px] sm:h-[330px] sm:w-[210px] lg:h-[350px] lg:w-[225px]">
                 <Image
                   src={book.cover}
@@ -202,12 +198,6 @@ const BookGallery = () => {
                   </span>
                 </div>
               </div>
-              {/* Book Title */}
-              {/* <h3 className="mb-0.5 w-full max-w-[230px] truncate text-[18px] font-bold text-black sm:text-[20px] lg:w-[180px] lg:text-[22px]">
-                {book.title}
-              </h3> */}
-              {/* Author */}
-              {/* <span className="mb-2 block text-[14px] text-[#444] sm:text-[15px]">{book.author}</span> */}
             </Link>
           ))}
         </div>

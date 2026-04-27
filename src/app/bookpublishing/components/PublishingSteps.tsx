@@ -2,13 +2,6 @@
 
 import { robotoMono } from "@/app/fonts";
 import React from "react";
-import {
-  PiClipboardText,
-  PiFileMagnifyingGlass,
-  PiGlobeStand,
-  PiPenNibStraight,
-  PiTextbox,
-} from "react-icons/pi";
 
 const SVG_VIEWBOX_WIDTH = 1440;
 const SVG_VIEWBOX_HEIGHT = 382;
@@ -213,29 +206,73 @@ const steps: Step[] = [
   },
 ];
 
+const stepIcons = [
+  "/landing-page/image 57.svg",
+  "/landing-page/image 58.svg",
+  "/landing-page/image 59.svg",
+  "/landing-page/image 60.svg",
+  "/landing-page/image 61.svg",
+];
+
 const PublishingSteps = () => {
   return (
     <section
       id="publishing-steps"
-      className="w-full overflow-hidden bg-white pt-[73px] pb-[30px] text-[#252525]"
-      style={{ minHeight: 960 }}
+      className="w-full overflow-hidden bg-white px-4 pb-14 pt-14 text-[#252525] sm:px-6 sm:pb-16 sm:pt-16 lg:px-0 lg:pb-[30px] lg:pt-[73px]"
+      style={{ minHeight: 0 }}
     >
       <div className="mx-auto max-w-[1019px] px-4 text-center">
-        <p className="text-3xl font-semibold leading-none">Your Book Is Just</p>
+        <p className="text-2xl font-semibold leading-none sm:text-3xl">Your Book Is Just</p>
 
-        <h2 className="my-3 text-5xl font-extrabold leading-none tracking-[0.04em] text-[#dbe527]">
+        <h2 className="my-3 text-[34px] font-extrabold leading-none tracking-[0.02em] text-[#dbe527] sm:text-[42px] lg:text-5xl lg:tracking-[0.04em]">
           5 Steps Away From Getting Published
         </h2>
 
-        <div className={`mx-auto text-lg font-medium leading-[1.2] tracking-[0.035em] text-black ${robotoMono.className}`}>
+        <div className={`mx-auto max-w-[900px] text-sm font-medium leading-[1.6] tracking-[0.03em] text-black sm:text-base lg:text-lg lg:leading-[1.2] lg:tracking-[0.035em] ${robotoMono.className}`}>
           Our Experts Provide Writers With A Hassle-Free Solution By Employing
           Their Specialized Book Publishing Skills And Tactics.
           <br /> Take A Look At Our Streamlined Book Publishing Process:
         </div>
       </div>
 
+      <div className="mx-auto mt-10 grid max-w-[700px] grid-cols-1 gap-6 lg:hidden">
+        {steps.map((step, index) => (
+          <div
+            key={`mobile-${step.number}`}
+            className="rounded-[22px] border border-[#ece9df] bg-[#f5f2df] px-5 py-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.04)] sm:px-6"
+          >
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-[0_0_40px_rgba(221,232,41,0.3)]">
+              <img
+                src={stepIcons[index]}
+                alt=""
+                aria-hidden="true"
+                className="block h-9 w-9 object-contain"
+              />
+            </div>
+            <div
+              className="mt-4 font-extrabold"
+              style={{
+                color: "#fff",
+                fontSize: 52,
+                lineHeight: 0.84,
+                WebkitTextFillColor: "#fff",
+                WebkitTextStroke: "1.2px #bfc1c4",
+              }}
+            >
+              {step.number}
+            </div>
+            <h3 className="mt-3 text-xl font-semibold leading-tight text-black">
+              {step.title}
+            </h3>
+            <div className="mt-3 text-sm font-normal leading-[1.65] tracking-[0.03em] text-black">
+              {step.text}
+            </div>
+          </div>
+        ))}
+      </div>
+
       <div
-        className="relative w-full"
+        className="relative hidden w-full lg:block"
         style={{ height: STAGE_HEIGHT, marginTop: 71, minWidth: STAGE_WIDTH }}
       >
         <svg
@@ -257,7 +294,7 @@ const PublishingSteps = () => {
           />
         </svg>
 
-        {steps.map((step) => {
+        {steps.map((step, index) => {
           return (
             <div
               key={step.number}
@@ -267,8 +304,13 @@ const PublishingSteps = () => {
                 top: step.lineY - 32,
               }}
             >
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#f5f2df] shadow-[0_0_52px_rgba(221,232,41,0.42)] [&>svg]:h-10 [&>svg]:w-10">
-                {step.icon}
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#f5f2df] shadow-[0_0_52px_rgba(221,232,41,0.42)]">
+                <img
+                  src={stepIcons[index]}
+                  alt=""
+                  aria-hidden="true"
+                  className="block h-10 w-10 object-contain"
+                />
               </div>
 
               <div

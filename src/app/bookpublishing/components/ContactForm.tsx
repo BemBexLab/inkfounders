@@ -189,145 +189,126 @@ export default function GetInTouch({ data }: GetInTouchProps) {
   };
 
   return (
-    <div className="w-full px-4 py-10 sm:px-6 md:px-8 lg:px-12">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 lg:flex-row lg:items-start lg:gap-16">
-        <div className="w-full max-w-2xl flex-1 text-center lg:max-w-none lg:text-left">
-          <h2 className="mb-3 text-[22px] font-medium leading-[1.08] text-[#DADD39] sm:text-[25px] md:text-[27px] lg:leading-[1]">
-            {content.left.heading}
-          </h2>
-          <h3 className="mb-3 text-[20px] font-semibold leading-tight text-black sm:text-[22px] md:text-[25px]">
-            {content.left.subheading}
-          </h3>
+  <section className="w-full overflow-hidden bg-[#f5f4df] py-14 sm:py-16 lg:py-20">
+    <div className="mx-auto grid w-full grid-cols-1 items-center gap-10 px-5 sm:px-8 md:px-12 lg:mx-0 lg:grid-cols-[minmax(0,48%)_minmax(0,52%)] lg:gap-12 lg:px-0 lg:pl-[84px]">
+      {/* LEFT */}
+      <div className="max-w-[720px] text-center lg:text-left">
+        <h2 className="text-[30px] font-bold leading-none text-[#dadd39] sm:text-[34px] md:text-[42px] lg:text-[42px]">
+          {content.left.heading}
+        </h2>
 
+        <h3 className="mt-6 text-[30px] font-extrabold leading-none text-[#242424] sm:text-[34px] md:text-[42px] lg:mt-8">
+          {content.left.subheading}
+        </h3>
+
+        <div
+          className={`mt-8 max-w-[690px] text-sm leading-[1.75] text-[#202020] sm:text-base md:text-[18px] lg:mt-12 lg:leading-[1.7] ${robotoMono.className}`}
+        >
           {content.left.paragraphs.map((paragraph, index) => (
+            <div key={`paragraph-${index}`}>{paragraph}</div>
+          ))}
+        </div>
+
+        <div className="mt-10 h-px w-full max-w-[680px] bg-[#ecebd8]" />
+
+        <div className="mt-7 space-y-5 sm:space-y-6 lg:space-y-7">
+          {content.left.contacts.map((contact) => (
             <div
-              key={`paragraph-${index}`}
-              className={`mb-6 text-[13px] leading-[1.35] text-gray-700 sm:text-[14px] md:mb-8 md:text-[15px] md:leading-tight ${robotoMono.className}`}
+              key={`${contact.type}-${contact.label}`}
+              className="flex items-start gap-4 sm:gap-5"
             >
-              {paragraph}
+              <div className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-[12px] bg-[#dadd39] text-white">
+                {renderContactIcon(contact.type)}
+              </div>
+
+              {contact.href ? (
+                <a
+                  href={contact.href}
+                  className={`text-left text-sm leading-[1.7] text-[#202020] sm:text-base md:text-[18px] ${robotoMono.className}`}
+                >
+                  {contact.label}
+                </a>
+              ) : (
+                <span
+                  className={`max-w-[520px] text-left text-sm leading-[1.7] text-[#202020] sm:text-base md:text-[18px] ${robotoMono.className}`}
+                >
+                  {contact.label}
+                </span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* RIGHT */}
+      <div className="w-full rounded-[20px] bg-[#202020] px-5 py-10 sm:px-8 sm:py-12 md:px-12 lg:min-h-[730px] lg:rounded-l-[20px] lg:rounded-r-none lg:px-16 lg:py-16">
+        <form onSubmit={handleSubmit} className="mx-auto max-w-[690px] lg:mx-0">
+          <h2 className="mb-8 text-[30px] font-extrabold leading-none text-[#dadd39] sm:text-[34px] md:text-[38px] lg:mb-12 lg:text-[44px]">
+            {content.form.title}
+          </h2>
+
+          {content.form.fields.map((row) => (
+            <div
+              key={row.map((field) => field.name).join("-")}
+              className="mb-5 grid grid-cols-1 gap-5 md:grid-cols-2 lg:mb-7 lg:gap-7"
+            >
+              {row.map((field) => (
+                <input
+                  key={field.name}
+                  type={field.type}
+                  name={field.name}
+                  value={formData[field.name]}
+                  onChange={handleChange}
+                  placeholder={field.placeholder}
+                  required
+                  className={`h-[58px] rounded-[14px] border border-[#dedccb] bg-[#dedccb] px-5 text-sm text-[#6b6d6b] outline-none placeholder:text-[#6b6d6b] focus:border-[#dadd39] sm:h-[64px] sm:px-6 sm:text-base md:h-[68px] md:rounded-[16px] md:px-8 md:text-[18px] ${robotoMono.className}`}
+                />
+              ))}
             </div>
           ))}
 
-          <div className="mx-auto mt-8 grid max-w-[420px] grid-cols-1 gap-4 text-left md:max-w-none lg:mx-0">
-            {content.left.contacts.map((contact) => (
-              <div key={`${contact.type}-${contact.label}`} className="flex min-w-0 items-center gap-3">
-                <div className="shrink-0 rounded-xl bg-[#DADD39] p-2 text-white">
-                  {renderContactIcon(contact.type)}
-                </div>
-                {contact.href ? (
-                  <a
-                    href={contact.href}
-                    className="min-w-0 break-words font-mono text-[13px] font-medium leading-tight text-gray-800 hover:underline focus:outline-none sm:text-[14px] md:text-base"
-                  >
-                    {contact.label}
-                  </a>
-                ) : (
-                  <span className="min-w-0 break-words font-mono text-[13px] font-medium leading-tight text-gray-800 sm:text-[14px] md:text-base">
-                    {contact.label}
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder={content.form.messagePlaceholder}
+            required
+            className={`mb-6 h-[160px] w-full resize-none rounded-[14px] border border-[#dedccb] bg-[#dedccb] px-5 py-5 text-sm text-[#6b6d6b] outline-none placeholder:text-[#6b6d6b] focus:border-[#dadd39] sm:mb-8 sm:h-[185px] sm:px-6 sm:py-6 sm:text-base md:rounded-[16px] md:px-8 md:py-7 md:text-[18px] ${robotoMono.className}`}
+          />
 
-        <div className="w-full max-w-2xl flex-1 rounded-2xl border-2 border-[#D0D0D0] bg-black px-4 py-6 sm:px-5 sm:py-7 md:px-6 md:py-8 lg:max-w-none lg:px-10 lg:py-10">
-          <form onSubmit={handleSubmit}>
-            <h2 className="mb-5 text-[20px] font-bold leading-tight text-[#DADD39] md:mb-6 md:text-2xl">
-              {content.form.title}
-            </h2>
+          <label className="mb-8 flex cursor-pointer items-start gap-4">
+            <span className="relative mt-1 flex h-[32px] w-[32px] shrink-0 items-center justify-center rounded-[8px] bg-[#dadd39] text-[#202020]">
+              {formData.consent && <Check size={24} strokeWidth={3} />}
+              <input
+                type="checkbox"
+                name="consent"
+                checked={formData.consent}
+                onChange={handleCheckboxChange}
+                className="sr-only"
+                required
+              />
+            </span>
 
-            {content.form.fields.map((row) => (
-              <div
-                key={row.map((field) => field.name).join("-")}
-                className="mb-4 grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4"
-              >
-                {row.map((field) => (
-                  <input
-                    key={field.name}
-                    type={field.type}
-                    name={field.name}
-                    value={formData[field.name]}
-                    onChange={handleChange}
-                    placeholder={field.placeholder}
-                    className="rounded-md border border-gray-200 bg-[#DEDDCB] p-2.5 text-sm text-[#6B6D6B] placeholder:text-[#6B6D6B] focus:border-[#d4d450] focus:outline-none md:p-3 md:text-base"
-                    required
-                  />
-                ))}
-              </div>
-            ))}
-
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder={content.form.messagePlaceholder}
-              rows={4}
-              className="mb-4 w-full rounded-md border border-gray-200 bg-[#DEDDCB] p-2.5 text-sm text-[#6B6D6B] placeholder:text-[#6B6D6B] focus:border-[#d4d450] focus:outline-none md:p-3 md:text-base"
-              required
-            />
-
-            <div className="mb-6 flex items-start gap-2">
-              <label className="flex cursor-pointer select-none items-start gap-2">
-                <span className="mt-1">
-                  <span
-                    className={`w-5 h-5 border ${
-                      formData.consent
-                        ? "bg-[#d4d450] border-[#d4d450]"
-                        : "border-gray-300"
-                    } rounded flex items-center justify-center transition-colors duration-150`}
-                  >
-                    {formData.consent && (
-                      <Check size={16} className="text-white" />
-                    )}
-                  </span>
-                  <input
-                    type="checkbox"
-                    name="consent"
-                    checked={formData.consent}
-                    onChange={handleCheckboxChange}
-                    className="sr-only"
-                    required
-                  />
-                </span>
-                <span
-                  className={`text-[11px] leading-snug text-[#9D9F9D] sm:text-xs ${robotoMono.className}`}
-                >
-                  {content.form.consentText}
-                </span>
-              </label>
-            </div>
-
-            <button
-              type="submit"
-              className="
-                btn-slide-bg
-                bg-[#DADD39]
-                text-gray-800
-                font-medium
-                py-1.5 px-4 text-sm
-                md:py-2 md:px-6 md:text-base
-                rounded-md
-                border-[1px] border-[#DADD39]
-                transition-all duration-300
-                overflow-hidden
-                hover:border-black
-              "
-              disabled={loading}
+            <span
+              className={`max-w-[640px] text-[13px] leading-[1.5] text-[#a6a6a6] sm:text-[14px] md:text-[16px] md:leading-[1.45] ${robotoMono.className}`}
             >
-              <span className="slide-bg"></span>
-              <span className="relative z-10">
-                {loading
-                  ? content.form.sendingText
-                  : content.form.submitText}
-              </span>
-            </button>
+              {content.form.consentText}
+            </span>
+          </label>
 
-            {success && <div className="text-green-600 mt-4">{success}</div>}
-            {error && <div className="text-red-600 mt-4">{error}</div>}
-          </form>
-        </div>
+          <button
+            type="submit"
+            disabled={loading}
+            className="rounded-[10px] bg-[#dadd39] px-8 py-3 text-[18px] font-medium text-[#202020] transition hover:opacity-90 disabled:opacity-70"
+          >
+            {loading ? content.form.sendingText : content.form.submitText}
+          </button>
+
+          {success && <div className="mt-4 text-green-500">{success}</div>}
+          {error && <div className="mt-4 text-red-500">{error}</div>}
+        </form>
       </div>
     </div>
-  );
+  </section>
+);
 }
