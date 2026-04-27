@@ -283,20 +283,20 @@ const desktopStep: Variants = {
 
 const iconGlow: Variants = {
   rest: {
-    opacity: 0.28,
-    scale: 0.78,
+    opacity: 0.24,
+    scale: 0.72,
     boxShadow:
-      "0 0 28px rgba(133,104,0,0.28), 0 0 54px rgba(218,221,57,0.24)",
+      "0 0 16px rgba(245,232,99,0.28), 0 0 28px rgba(218,221,57,0.20)",
   },
   hover: {
-    scale: [0.82, 1.22, 0.96, 1.38, 1.05],
-    opacity: [0.44, 0.92, 0.62, 1, 0.7],
+    scale: [0.76, 1.02, 0.88, 1.12, 0.92],
+    opacity: [0.34, 0.76, 0.5, 0.84, 0.56],
     boxShadow: [
-      "0 0 38px rgba(133,104,0,0.56), 0 0 72px rgba(218,221,57,0.48)",
-      "0 0 76px rgba(133,104,0,0.88), 0 0 118px rgba(218,221,57,0.78)",
-      "0 0 48px rgba(133,104,0,0.66), 0 0 86px rgba(218,221,57,0.56)",
-      "0 0 92px rgba(133,104,0,0.96), 0 0 138px rgba(218,221,57,0.88)",
-      "0 0 58px rgba(133,104,0,0.72), 0 0 96px rgba(218,221,57,0.62)",
+      "0 0 18px rgba(245,232,99,0.42), 0 0 30px rgba(218,221,57,0.28)",
+      "0 0 28px rgba(245,232,99,0.68), 0 0 44px rgba(218,221,57,0.48)",
+      "0 0 20px rgba(245,232,99,0.48), 0 0 34px rgba(218,221,57,0.34)",
+      "0 0 34px rgba(245,232,99,0.74), 0 0 52px rgba(218,221,57,0.54)",
+      "0 0 22px rgba(245,232,99,0.52), 0 0 36px rgba(218,221,57,0.38)",
     ],
     transition: {
       duration: 0.9,
@@ -377,7 +377,7 @@ const PublishingSteps = () => {
             >
               <motion.span
                 aria-hidden="true"
-                className="pointer-events-none absolute -left-5 -top-5 h-24 w-24 rounded-full bg-[#856800] blur-md"
+                className="pointer-events-none absolute -left-3 -top-3 h-20 w-20 rounded-full bg-[#f5e863] blur-sm"
                 variants={iconGlow}
               />
               <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-white">
@@ -475,7 +475,7 @@ const PublishingSteps = () => {
                 >
                   <motion.span
                     aria-hidden="true"
-                    className="pointer-events-none absolute -left-6 -top-6 h-28 w-28 rounded-full bg-[#856800] blur-md"
+                    className="pointer-events-none absolute -left-3 -top-3 h-[88px] w-[88px] rounded-full bg-[#f5e863] blur-sm"
                     variants={iconGlow}
                   />
                   <span className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-[#f5f2df]">
