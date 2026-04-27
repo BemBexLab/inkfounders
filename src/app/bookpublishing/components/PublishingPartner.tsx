@@ -49,7 +49,7 @@ const PublishingPartner = () => {
         <div className="flex w-full items-center justify-center lg:w-1/2">
           <img
             src="/landing-page/Rectangle 25.png"
-            className="h-auto w-full max-w-[620px] object-contain"
+            className="h-auto w-full max-w-[620px] rounded-xl object-contain"
             alt=""
           />
         </div>

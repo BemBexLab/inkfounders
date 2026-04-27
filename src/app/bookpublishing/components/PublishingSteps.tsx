@@ -1,6 +1,8 @@
 "use client";
 
 import { robotoMono } from "@/app/fonts";
+import { motion, useReducedMotion } from "motion/react";
+import type { Variants } from "motion/react";
 import React from "react";
 
 const SVG_VIEWBOX_WIDTH = 1440;
@@ -214,42 +216,180 @@ const stepIcons = [
   "/landing-page/image 61.svg",
 ];
 
+const sectionIntro: Variants = {
+  hidden: { opacity: 0, y: 28, filter: "blur(8px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.7,
+      ease: [0.2, 0.85, 0.2, 1],
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const introItem: Variants = {
+  hidden: { opacity: 0, y: 18 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: [0.2, 0.85, 0.2, 1] },
+  },
+};
+
+const mobileGrid: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.11,
+      delayChildren: 0.12,
+    },
+  },
+};
+
+const mobileCard: Variants = {
+  hidden: { opacity: 0, y: 34, scale: 0.96, filter: "blur(8px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: { duration: 0.6, ease: [0.2, 0.85, 0.2, 1] },
+  },
+};
+
+const desktopStage: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.16,
+      delayChildren: 0.45,
+    },
+  },
+};
+
+const desktopStep: Variants = {
+  hidden: { opacity: 0, y: 42, scale: 0.9, filter: "blur(8px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: { duration: 0.64, ease: [0.2, 0.85, 0.2, 1] },
+  },
+};
+
+const iconGlow: Variants = {
+  rest: {
+    opacity: 0.28,
+    scale: 0.78,
+    boxShadow:
+      "0 0 28px rgba(133,104,0,0.28), 0 0 54px rgba(218,221,57,0.24)",
+  },
+  hover: {
+    scale: [0.82, 1.22, 0.96, 1.38, 1.05],
+    opacity: [0.44, 0.92, 0.62, 1, 0.7],
+    boxShadow: [
+      "0 0 38px rgba(133,104,0,0.56), 0 0 72px rgba(218,221,57,0.48)",
+      "0 0 76px rgba(133,104,0,0.88), 0 0 118px rgba(218,221,57,0.78)",
+      "0 0 48px rgba(133,104,0,0.66), 0 0 86px rgba(218,221,57,0.56)",
+      "0 0 92px rgba(133,104,0,0.96), 0 0 138px rgba(218,221,57,0.88)",
+      "0 0 58px rgba(133,104,0,0.72), 0 0 96px rgba(218,221,57,0.62)",
+    ],
+    transition: {
+      duration: 0.9,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const PublishingSteps = () => {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section
       id="publishing-steps"
       className="w-full overflow-hidden bg-white px-4 pb-14 pt-14 text-[#252525] sm:px-6 sm:pb-16 sm:pt-16 lg:px-0 lg:pb-[30px] lg:pt-[73px]"
       style={{ minHeight: 0 }}
     >
-      <div className="mx-auto max-w-[1019px] px-4 text-center">
-        <p className="text-2xl font-semibold leading-none sm:text-3xl">Your Book Is Just</p>
+      <motion.div
+        className="mx-auto max-w-[1019px] px-4 text-center"
+        initial={reduceMotion ? "show" : "hidden"}
+        whileInView="show"
+        viewport={{ once: true, amount: 0.45 }}
+        variants={sectionIntro}
+      >
+        <motion.p
+          className="text-2xl font-semibold leading-none sm:text-3xl"
+          variants={introItem}
+        >
+          Your Book Is Just
+        </motion.p>
 
-        <h2 className="my-3 text-[34px] font-extrabold leading-none tracking-[0.02em] text-[#dbe527] sm:text-[42px] lg:text-5xl lg:tracking-[0.04em]">
+        <motion.h2
+          className="my-3 text-[34px] font-extrabold leading-none tracking-[0.02em] text-[#dbe527] sm:text-[42px] lg:text-5xl lg:tracking-[0.04em]"
+          variants={introItem}
+        >
           5 Steps Away From Getting Published
-        </h2>
+        </motion.h2>
 
-        <div className={`mx-auto max-w-[900px] text-sm font-medium leading-[1.6] tracking-[0.03em] text-black sm:text-base lg:text-lg lg:leading-[1.2] lg:tracking-[0.035em] ${robotoMono.className}`}>
+        <motion.div
+          className={`mx-auto max-w-[900px] text-sm font-medium leading-[1.6] tracking-[0.03em] text-black sm:text-base lg:text-lg lg:leading-[1.2] lg:tracking-[0.035em] ${robotoMono.className}`}
+          variants={introItem}
+        >
           Our Experts Provide Writers With A Hassle-Free Solution By Employing
           Their Specialized Book Publishing Skills And Tactics.
           <br /> Take A Look At Our Streamlined Book Publishing Process:
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="mx-auto mt-10 grid max-w-[700px] grid-cols-1 gap-6 lg:hidden">
+      <motion.div
+        className="mx-auto mt-10 grid max-w-[700px] grid-cols-1 gap-6 lg:hidden"
+        initial={reduceMotion ? "show" : "hidden"}
+        whileInView="show"
+        viewport={{ once: true, amount: 0.18 }}
+        variants={mobileGrid}
+      >
         {steps.map((step, index) => (
-          <div
+          <motion.div
             key={`mobile-${step.number}`}
             className="rounded-[22px] border border-[#ece9df] bg-[#f5f2df] px-5 py-6 text-center shadow-[0_10px_30px_rgba(0,0,0,0.04)] sm:px-6"
+            variants={mobileCard}
+            whileHover={
+              reduceMotion
+                ? undefined
+                : {
+                    y: -8,
+                    scale: 1.015,
+                    boxShadow: "0 22px 46px rgba(0,0,0,0.09)",
+                    transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] },
+                  }
+            }
           >
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-[0_0_40px_rgba(221,232,41,0.3)]">
-              <img
-                src={stepIcons[index]}
-                alt=""
+            <motion.div
+              className="relative mx-auto h-14 w-14"
+              initial="rest"
+              animate="rest"
+              whileHover={reduceMotion ? undefined : "hover"}
+            >
+              <motion.span
                 aria-hidden="true"
-                className="block h-9 w-9 object-contain"
+                className="pointer-events-none absolute -left-5 -top-5 h-24 w-24 rounded-full bg-[#856800] blur-md"
+                variants={iconGlow}
               />
-            </div>
-            <div
+              <span className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full bg-white">
+                <img
+                  src={stepIcons[index]}
+                  alt=""
+                  aria-hidden="true"
+                  className="block h-9 w-9 object-contain"
+                />
+              </span>
+            </motion.div>
+            <motion.div
               className="mt-4 font-extrabold"
               style={{
                 color: "#fff",
@@ -258,22 +398,30 @@ const PublishingSteps = () => {
                 WebkitTextFillColor: "#fff",
                 WebkitTextStroke: "1.2px #bfc1c4",
               }}
+              initial={reduceMotion ? undefined : { opacity: 0, scale: 0.82 }}
+              whileInView={reduceMotion ? undefined : { opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.48, delay: index * 0.08 }}
             >
               {step.number}
-            </div>
+            </motion.div>
             <h3 className="mt-3 text-xl font-semibold leading-tight text-black">
               {step.title}
             </h3>
             <div className="mt-3 text-sm font-normal leading-[1.65] tracking-[0.03em] text-black">
               {step.text}
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      <div
+      <motion.div
         className="relative hidden w-full lg:block"
         style={{ height: STAGE_HEIGHT, marginTop: 71, minWidth: STAGE_WIDTH }}
+        initial={reduceMotion ? "show" : "hidden"}
+        whileInView="show"
+        viewport={{ once: true, amount: 0.24 }}
+        variants={desktopStage}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -298,45 +446,77 @@ const PublishingSteps = () => {
           return (
             <div
               key={step.number}
-              className="absolute z-10 flex w-[260px] -translate-x-1/2 flex-col items-center text-center"
+              className="absolute z-10 w-[260px] -translate-x-1/2"
               style={{
                 left: `${(step.x / SVG_VIEWBOX_WIDTH) * 100}%`,
                 top: step.lineY - 32,
               }}
             >
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#f5f2df] shadow-[0_0_52px_rgba(221,232,41,0.42)]">
-                <img
-                  src={stepIcons[index]}
-                  alt=""
-                  aria-hidden="true"
-                  className="block h-10 w-10 object-contain"
-                />
-              </div>
-
-              <div
-                className="mt-[13px] font-extrabold"
-                style={{
-                  color: "#fff",
-                  fontSize: 72,
-                  lineHeight: 0.84,
-                  WebkitTextFillColor: "#fff",
-                  WebkitTextStroke: "1.2px #bfc1c4",
-                }}
+              <motion.div
+                className="flex flex-col items-center text-center"
+                variants={desktopStep}
+                whileHover={
+                  reduceMotion
+                    ? undefined
+                    : {
+                        y: -10,
+                        transition: {
+                          duration: 0.28,
+                          ease: [0.22, 1, 0.36, 1],
+                        },
+                      }
+                }
               >
-                {step.number}
-              </div>
+                <motion.div
+                  className="relative h-16 w-16"
+                  initial="rest"
+                  animate="rest"
+                  whileHover={reduceMotion ? undefined : "hover"}
+                >
+                  <motion.span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -left-6 -top-6 h-28 w-28 rounded-full bg-[#856800] blur-md"
+                    variants={iconGlow}
+                  />
+                  <span className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-[#f5f2df]">
+                    <img
+                      src={stepIcons[index]}
+                      alt=""
+                      aria-hidden="true"
+                      className="block h-10 w-10 object-contain"
+                    />
+                  </span>
+                </motion.div>
 
-              <h3 className="mt-2 text-xl font-semibold leading-none text-black">
-                {step.title}
-              </h3>
+                <motion.div
+                  className="mt-[13px] font-extrabold"
+                  style={{
+                    color: "#fff",
+                    fontSize: 72,
+                    lineHeight: 0.84,
+                    WebkitTextFillColor: "#fff",
+                    WebkitTextStroke: "1.2px #bfc1c4",
+                  }}
+                  initial={reduceMotion ? undefined : { opacity: 0, scale: 0.72 }}
+                  whileInView={reduceMotion ? undefined : { opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{ duration: 0.52, delay: 0.44 + index * 0.1 }}
+                >
+                  {step.number}
+                </motion.div>
 
-              <div className="mt-[13px] max-w-[370px] font-mono text-sm font-normal leading-[1.45] tracking-[0.06em] text-black">
-                {step.text}
-              </div>
+                <h3 className="mt-2 text-xl font-semibold leading-none text-black">
+                  {step.title}
+                </h3>
+
+                <div className="mt-[13px] max-w-[370px] font-mono text-sm font-normal leading-[1.45] tracking-[0.06em] text-black">
+                  {step.text}
+                </div>
+              </motion.div>
             </div>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 };
