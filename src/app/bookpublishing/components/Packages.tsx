@@ -1,6 +1,7 @@
 "use client";
 
 import { robotoMono } from "@/app/fonts";
+import Link from "next/link";
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -45,7 +46,7 @@ const packages = [
       "Social Media Marketing",
       "Publishing in ebook, paperback and hardcover formats",
       "dedicated ISBN and Barcode",
-      "100% ownership and copyrights"
+      "100% ownership and copyrights",
     ],
   },
   {
@@ -66,7 +67,7 @@ const packages = [
       "Publishing on Amazon KDP and 200+ platforms",
       "Publishing in ebook, paperback and hardcover formats",
       "dedicated ISBN and Barcode",
-      "100% ownerships and copyrights"
+      "100% ownerships and copyrights",
     ],
   },
 ];
@@ -84,7 +85,9 @@ const PricingPackages = () => {
             Flexible Plans Tailored To Your Needs
           </h2>
 
-          <p className={`mx-auto max-w-[880px] text-sm leading-[1.8] tracking-[0.08em] text-[#151515] sm:text-[15px] md:text-base lg:text-[17px] lg:leading-[2] lg:tracking-[0.15em] ${robotoMono.className}`}>
+          <p
+            className={`mx-auto max-w-[880px] text-sm leading-[1.8] tracking-[0.08em] text-[#151515] sm:text-[15px] md:text-base lg:text-[17px] lg:leading-[2] lg:tracking-[0.15em] ${robotoMono.className}`}
+          >
             “Pricing may vary depending on the genre, page and word count, and
             your specific needs for publishing, marketing, or ghostwriting. For
             a personalized estimate and detailed consultation, click on 'Custom
@@ -126,7 +129,9 @@ const PricingPackages = () => {
               </div>
 
               <div className="mt-10 min-[760px]:mt-8 lg:mt-10">
-                <p className="text-[17px] font-semibold min-[760px]:text-[15px] min-[900px]:text-[17px]">Included:</p>
+                <p className="text-[17px] font-semibold min-[760px]:text-[15px] min-[900px]:text-[17px]">
+                  Included:
+                </p>
 
                 <div
                   className={`mt-5 max-h-[360px] space-y-3 overflow-y-auto pr-2 min-[760px]:mt-4 min-[760px]:max-h-[330px] min-[760px]:space-y-2 min-[900px]:max-h-[350px] min-[900px]:space-y-3 sm:pr-3 ${
@@ -134,7 +139,10 @@ const PricingPackages = () => {
                   }`}
                 >
                   {item.included.map((feature) => (
-                    <div key={feature} className="flex items-start gap-3 min-[760px]:gap-2 min-[900px]:gap-3">
+                    <div
+                      key={feature}
+                      className="flex items-start gap-3 min-[760px]:gap-2 min-[900px]:gap-3"
+                    >
                       <FaCheckCircle
                         className={`mt-[3px] h-[14px] w-[14px] shrink-0 min-[760px]:h-[12px] min-[760px]:w-[12px] min-[900px]:h-[14px] min-[900px]:w-[14px] ${
                           item.featured ? "text-[#dce829]" : "text-[#111]"
@@ -149,18 +157,20 @@ const PricingPackages = () => {
               </div>
 
               <div className="mt-10 flex justify-center min-[760px]:mt-8 lg:mt-12">
-                <button
-                  className={`h-[38px] rounded-[7px] px-6 text-[15px] font-medium min-[760px]:w-full min-[900px]:w-auto ${
-                    item.featured
-                      ? "btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[45px] lg:min-w-[182px] lg:px-6 lg:text-[15px]"
-                      : "btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-black px-3 text-xs font-medium text-white hover:text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[45px] lg:min-w-[182px] lg:px-6 lg:text-[15px]"
-                  }`}
-                >
-                  <span className="slide-bg"></span>
-                  <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
-                    Custom Quote
-                  </span>
-                </button>
+                <Link href="/contact">
+                  <button
+                    className={`h-[38px] rounded-[7px] px-6 text-[15px] font-medium min-[760px]:w-full min-[900px]:w-auto ${
+                      item.featured
+                        ? "btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[45px] lg:min-w-[182px] lg:px-6 lg:text-[15px]"
+                        : "btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-black px-3 text-xs font-medium text-white hover:text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[45px] lg:min-w-[182px] lg:px-6 lg:text-[15px]"
+                    }`}
+                  >
+                    <span className="slide-bg"></span>
+                    <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
+                      Custom Quote
+                    </span>
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
