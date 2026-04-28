@@ -26,7 +26,7 @@ const PublishYourStory = () => {
 
           <div className="mt-6 flex flex-col items-stretch gap-3 py-2 min-[430px]:flex-row min-[430px]:justify-center lg:mt-[14px] lg:justify-start lg:gap-[17px] lg:py-0">
             <Link
-              href="/contactus"
+              href="#quote-popup"
               className="btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-black bg-black px-3 text-xs font-medium text-white transition-all duration-300 hover:border-black hover:text-black sm:h-11 sm:px-4 sm:text-sm lg:h-[42px] lg:min-w-[151px] lg:px-5 lg:text-[14px]"
             >
               <span className="slide-bg"></span>
@@ -36,7 +36,7 @@ const PublishYourStory = () => {
             </Link>
 
             <Link
-              href="/contactus"
+              href="tel:+17864961231"
               className="btn-slide-bg flex h-10 items-center justify-center gap-x-2 rounded-[8px] border border-black bg-black px-3 text-xs font-medium text-white transition-all duration-300 hover:border-black hover:text-black sm:h-11 sm:px-4 sm:text-sm lg:h-[42px] lg:min-w-[182px] lg:px-5 lg:text-[14px]"
             >
               <span className="slide-bg"></span>

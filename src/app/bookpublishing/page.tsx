@@ -19,6 +19,7 @@ import PublishYourStory from "./components/PublishYourStory";
 import TestimonialLanding from "./components/TestimonialLanding";
 import GetInTouch from "./components/ContactForm";
 import LandingFooter from "./components/LandingFooter";
+import QuotePopup from "./components/QuotePopup";
 
 const sectionVariants: Variants = {
   hidden: (direction: number = 1) => ({
@@ -158,6 +159,8 @@ const Page = () => {
       <MotionBlock reducedMotion={reduceMotion} direction={-1}>
         <LandingFooter />
       </MotionBlock>
+
+      <QuotePopup />
     </section>
   );
 };

@@ -7,6 +7,15 @@ interface FormState {
   message: string;
 }
 
+const splitFullName = (name: string) => {
+  const [firstName = "", ...lastNameParts] = name.trim().split(/\s+/);
+
+  return {
+    firstName,
+    lastName: lastNameParts.join(" ") || "Not provided",
+  };
+};
+
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;600;700&display=swap');
 
@@ -207,6 +216,9 @@ export default function DiscountForm() {
     phone: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -214,8 +226,44 @@ export default function DiscountForm() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    console.log("Form submitted:", form);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(null);
+    setError(null);
+
+    const { firstName, lastName } = splitFullName(form.name);
+
+    try {
+      const response = await fetch("/api/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email: form.email,
+          phone: form.phone,
+          message: form.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSuccess("Thank you! Your message has been received.");
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        const result = await response.json();
+        setError(result.error || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Network error. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -239,7 +287,7 @@ export default function DiscountForm() {
         <div className="eclipse-fallback" />
 
         {/* Card */}
-        <div className="card">
+        <form className="card" onSubmit={handleSubmit}>
           {/* Header Badge */}
           <div className="card-header">
             <div className="header-badge">
@@ -261,6 +309,7 @@ export default function DiscountForm() {
               placeholder="Enter your name"
               value={form.name}
               onChange={handleChange}
+              required
               className="form-input"
             />
           </div>
@@ -273,6 +322,7 @@ export default function DiscountForm() {
               placeholder="Enter Email"
               value={form.email}
               onChange={handleChange}
+              required
               className="form-input"
             />
           </div>
@@ -285,6 +335,7 @@ export default function DiscountForm() {
               placeholder="Enter Phone number"
               value={form.phone}
               onChange={handleChange}
+              required
               className="form-input"
             />
           </div>
@@ -297,21 +348,33 @@ export default function DiscountForm() {
               rows={3}
               value={form.message}
               onChange={handleChange}
+              required
               className="form-textarea"
             />
           </div>
 
           {/* Submit */}
           <button
-            onClick={handleSubmit}
+            type="submit"
+            disabled={loading}
             className="btn-slide-bg btn-submit flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[45px] lg:min-w-[182px] lg:px-6 lg:text-[15px]"
           >
             <span className="slide-bg"></span>
             <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
-              Let’s Get Started
+              {loading ? "Sending..." : "Let’s Get Started"}
             </span>
           </button>
-        </div>
+          {success && (
+            <div className="mt-4 text-center text-sm text-green-600">
+              {success}
+            </div>
+          )}
+          {error && (
+            <div className="mt-4 text-center text-sm text-red-600">
+              {error}
+            </div>
+          )}
+        </form>
       </div>
     </>
   );

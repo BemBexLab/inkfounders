@@ -26,7 +26,7 @@ export default function BringYourBookSection() {
 
         <div className="mt-2 flex w-full max-w-[430px] flex-col items-stretch justify-center gap-3 min-[430px]:flex-row sm:max-w-none sm:flex-wrap sm:items-center">
           <Link
-            href="/contactus"
+            href="#quote-popup"
             className="btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[45px] lg:min-w-[182px] lg:px-6 lg:text-[15px]"
           >
             <span className="slide-bg"></span>
@@ -36,7 +36,7 @@ export default function BringYourBookSection() {
           </Link>
 
           <Link
-            href="/contactus"
+            href="tel:+17864961231"
             className="btn-slide-bg flex h-10 items-center justify-center gap-x-2 rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[45px] lg:min-w-[182px] lg:px-6 lg:text-[15px]"
           >
             <span className="slide-bg"></span>

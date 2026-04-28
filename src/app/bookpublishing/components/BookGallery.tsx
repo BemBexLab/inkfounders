@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import AOSProvider from "@/components/AOSProvider";
-import { link } from "fs";
 
 // Add "Fiction" to tags if you want them to show under Fiction filter.
 export const BOOKS = [
@@ -119,12 +118,31 @@ export const BOOKS = [
 ];
 
 const FILTERS = ["All", "Fiction", "Non Fiction", "Biography", "Children Book"];
-const INITIAL_VISIBLE_COUNT = 12;
-const LOAD_MORE_COUNT = 4;
+
+const galleryStyles = `
+  .book-gallery-scroller {
+    scrollbar-width: thin;
+    scrollbar-color: #DADD39 transparent;
+  }
+
+  .book-gallery-scroller::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .book-gallery-scroller::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .book-gallery-scroller::-webkit-scrollbar-thumb {
+    background: #DADD39;
+    background-clip: content-box;
+    border: 3px solid transparent;
+    border-radius: 999px;
+  }
+`;
 
 const BookGallery = () => {
   const [activeFilter, setActiveFilter] = useState("All");
-  const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_COUNT);
 
   useEffect(() => {
     // Initialize AOS on first load
@@ -141,16 +159,9 @@ const BookGallery = () => {
       ? BOOKS
       : BOOKS.filter((book) => book.tags?.includes(activeFilter));
 
-  useEffect(() => {
-    setVisibleCount(INITIAL_VISIBLE_COUNT);
-  }, [activeFilter]);
-
-  const visibleBooks = filteredBooks.slice(0, visibleCount);
-  const hasMoreBooks = visibleCount < filteredBooks.length;
-  const showSeeLess = filteredBooks.length > INITIAL_VISIBLE_COUNT && !hasMoreBooks;
-
   return (
     <AOSProvider>
+      <style>{galleryStyles}</style>
       <section className="flex w-full flex-col items-center px-4 pt-10 sm:px-6 sm:pt-12 lg:px-8">
         {/* Eyebrow Part */}
         <p className="text-lg font-semibold text-[#DADD39] sm:text-xl">Bring Your Book To Life</p>
@@ -176,20 +187,22 @@ const BookGallery = () => {
           ))}
         </div>
 
-        {/* Cards Grid */}
-        <div className="mx-auto grid w-full max-w-[1280px] grid-cols-1 justify-items-center gap-x-6 gap-y-12 sm:grid-cols-2 md:gap-y-16 lg:grid-cols-4 lg:gap-x-0 lg:gap-y-24">
-          {visibleBooks.map((book, idx) => (
+        {/* Horizontal book scroller */}
+        <div className="mx-10 w-[calc(100vw-5rem)] overflow-hidden">
+          <div className="book-gallery-scroller flex w-full snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-6 pt-2 sm:gap-7 md:gap-9">
+          {filteredBooks.map((book, idx) => (
             <Link
               href={book.link}
               data-aos="fade-up"
               key={`${activeFilter}-${idx}`}
-              className="group flex w-full max-w-[260px] flex-col items-center text-center"
+              className="group flex w-[210px] flex-none snap-center flex-col items-center text-center sm:w-[240px] lg:w-[260px]"
             >
               <div className="relative mb-4 h-[300px] w-[190px] overflow-hidden rounded-[18px] sm:h-[330px] sm:w-[210px] lg:h-[350px] lg:w-[225px]">
                 <Image
                   src={book.cover}
                   alt={book.title}
                   fill
+                  sizes="(min-width: 1024px) 225px, (min-width: 640px) 210px, 190px"
                   className="object-cover shadow-md transition duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 flex items-end justify-center rounded-[18px] bg-white/10 px-5 pb-6 opacity-0 backdrop-blur-md transition duration-300 group-hover:opacity-100">
@@ -200,31 +213,8 @@ const BookGallery = () => {
               </div>
             </Link>
           ))}
-        </div>
-
-        {(hasMoreBooks || showSeeLess) && (
-          <div className="mt-12 flex justify-center">
-            {hasMoreBooks ? (
-              <button
-                onClick={() =>
-                  setVisibleCount((currentCount) =>
-                    Math.min(currentCount + LOAD_MORE_COUNT, filteredBooks.length)
-                  )
-                }
-                className="rounded-md bg-[#DADD39] px-6 py-3 text-sm font-semibold text-black transition hover:opacity-90"
-              >
-                Load more
-              </button>
-            ) : (
-              <button
-                onClick={() => setVisibleCount(INITIAL_VISIBLE_COUNT)}
-                className="rounded-md bg-black px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
-              >
-                See less
-              </button>
-            )}
           </div>
-        )}
+        </div>
       </section>
     </AOSProvider>
   );

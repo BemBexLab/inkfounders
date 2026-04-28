@@ -10,6 +10,11 @@ type SubmissionPayload = {
   message?: string;
 };
 
+type SavedSubmission = {
+  id: number | string;
+  createdAt: Date;
+};
+
 function getRequiredText(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
 }
@@ -54,15 +59,27 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const submission = await prisma.submission.create({
-      data: {
-        firstName,
-        lastName,
-        email,
-        phone,
-        message,
-      },
-    });
+    let submission: SavedSubmission | null = null;
+
+    try {
+      if (process.env.DATABASE_URL) {
+        submission = await prisma.submission.create({
+          data: {
+            firstName,
+            lastName,
+            email,
+            phone,
+            message,
+          },
+        });
+      } else {
+        console.warn(
+          "Submit route: DATABASE_URL is not configured, skipping database save.",
+        );
+      }
+    } catch (databaseError) {
+      console.error("Submit route database error:", databaseError);
+    }
 
     let emailSent = false;
 
@@ -82,8 +99,8 @@ export async function POST(req: NextRequest) {
             <p><strong>Phone:</strong> ${phone}</p>
             <p><strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}</p>
             <hr />
-            <p><strong>Submission ID:</strong> ${submission.id}</p>
-            <p><strong>Submitted At:</strong> ${submission.createdAt.toISOString()}</p>
+            <p><strong>Submission ID:</strong> ${submission?.id ?? "Not saved"}</p>
+            <p><strong>Submitted At:</strong> ${(submission?.createdAt ?? new Date()).toISOString()}</p>
           `,
         });
         emailSent = true;
@@ -97,7 +114,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       success: true,
       emailSent,
-      submissionId: submission.id,
+      submissionId: submission?.id ?? null,
     });
   } catch (error) {
     console.error("Submit route error:", error);

@@ -102,7 +102,7 @@ export default function BookPublishingSection() {
 
           <div className="mx-auto mt-3 flex w-full max-w-[520px] flex-col items-stretch gap-4 min-[430px]:flex-row min-[430px]:justify-center lg:mx-0 lg:max-w-none lg:flex-wrap lg:items-center lg:justify-start lg:gap-5">
             <Link
-              href="/contactus"
+              href="#quote-popup"
               className="btn-slide-bg flex h-11 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-5 text-sm font-medium text-black transition-all duration-300 hover:border-black sm:h-12 sm:px-6 sm:text-[15px] lg:h-[44px] lg:min-w-[156px] lg:px-6 lg:text-[13px] xl:h-[48px] xl:min-w-[176px] xl:text-sm"
             >
               <span className="slide-bg"></span>
