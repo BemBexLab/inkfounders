@@ -42,6 +42,13 @@ export default function QuotePopup() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    const openPopup = () => {
+      setActiveImage(
+        popupImages[Math.floor(Math.random() * popupImages.length)],
+      );
+      setIsOpen(true);
+    };
+
     const handleClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement | null;
       const trigger = target?.closest("a, button");
@@ -56,10 +63,7 @@ export default function QuotePopup() {
       }
 
       event.preventDefault();
-      setActiveImage(
-        popupImages[Math.floor(Math.random() * popupImages.length)],
-      );
-      setIsOpen(true);
+      openPopup();
     };
 
     const handleHashOpen = () => {
@@ -67,19 +71,22 @@ export default function QuotePopup() {
         return;
       }
 
-      setActiveImage(
-        popupImages[Math.floor(Math.random() * popupImages.length)],
-      );
-      setIsOpen(true);
+      openPopup();
+    };
+
+    const handleCustomOpen = () => {
+      openPopup();
     };
 
     document.addEventListener("click", handleClick);
     window.addEventListener("hashchange", handleHashOpen);
+    window.addEventListener("open-quote-popup", handleCustomOpen);
     handleHashOpen();
 
     return () => {
       document.removeEventListener("click", handleClick);
       window.removeEventListener("hashchange", handleHashOpen);
+      window.removeEventListener("open-quote-popup", handleCustomOpen);
     };
   }, []);
 

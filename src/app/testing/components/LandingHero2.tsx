@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useId, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import type { Variants } from "motion/react";
 import {
@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { GiCheckMark } from "react-icons/gi";
 import { GoArrowDown, GoArrowRight } from "react-icons/go";
-import { IoFlameOutline, IoFlameSharp } from "react-icons/io5";
+import { IoFlameSharp } from "react-icons/io5";
 
 const benefits = [
   "Global Distribution - Amazon, Apple Books, Kobo & 37 more",
@@ -20,10 +20,41 @@ const benefits = [
   "100+ Expert Team - dedicated publishing specialists",
 ];
 
+const budgetOptions = [
+  "$500 - $1,500",
+  "$1,500 - $3,000",
+  "$3,000 - $5,000",
+  "$5,000+",
+];
+
+const timelineOptions = [
+  "Immediately",
+  "Within 30 days",
+  "1 - 3 months",
+  "Just exploring",
+];
+
+const genreOptions = [
+  "Fiction",
+  "Non-fiction",
+  "Memoir",
+  "Business",
+  "Self-help",
+  "Children's book",
+  "Other",
+];
+
 const avatarColors = ["#ed795c", "#5e94e8", "#7fc789", "#dfc25a", "#ce84ad"];
 const progressFieldNames = ["fullName", "email", "phone", "budget", "timeline", "genre"];
 const publishedAuthorsTarget = 1000;
 const platformsTarget = 40;
+
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
+type SubmitApiResponse = {
+  success?: boolean;
+  error?: string;
+};
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -103,6 +134,7 @@ function SelectField({
   placeholder,
   options,
   resetKey,
+  idPrefix,
   onValueChange,
   wide = false,
   required = true,
@@ -112,13 +144,14 @@ function SelectField({
   placeholder: string;
   options: string[];
   resetKey: number;
+  idPrefix: string;
   onValueChange: (name: string, value: string) => void;
   wide?: boolean;
   required?: boolean;
 }) {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState("");
-  const inputId = `${name}-dropdown`;
+  const inputId = `${idPrefix}-${name}-dropdown`;
 
   useEffect(() => {
     setSelected("");
@@ -199,14 +232,197 @@ function SelectField({
   );
 }
 
-const LandingHero2 = () => {
-  const reduceMotion = useReducedMotion();
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "submitting" | "success" | "error"
-  >("idle");
+async function submitApplication(formData: FormData) {
+  const fullName = String(formData.get("fullName") || "").trim();
+  const [firstName = "", ...lastNameParts] = fullName.split(/\s+/);
+  const lastName = lastNameParts.join(" ") || "Not provided";
+  const budget = String(formData.get("budget") || "").trim();
+  const timeline = String(formData.get("timeline") || "").trim();
+  const genre = String(formData.get("genre") || "").trim();
+
+  const response = await fetch("/api/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      firstName,
+      lastName,
+      email: String(formData.get("email") || "").trim(),
+      phone: String(formData.get("phone") || "").trim(),
+      message: [
+        "Book publishing consultation request",
+        `Budget: ${budget || "Not provided"}`,
+        `Timeline: ${timeline || "Not provided"}`,
+        `Book genre: ${genre || "Not provided"}`,
+      ].join("\n"),
+    }),
+  });
+
+  const result = (await response.json().catch(() => ({}))) as SubmitApiResponse;
+
+  if (!response.ok) {
+    throw new Error(result.error || "Something went wrong. Please try again.");
+  }
+}
+
+function ApplicationForm({
+  buttonLabel,
+  onSuccess,
+}: {
+  buttonLabel: string;
+  onSuccess?: () => void;
+}) {
+  const idPrefix = useId().replace(/:/g, "");
+  const [submitStatus, setSubmitStatus] = useState<FormStatus>("idle");
   const [statusMessage, setStatusMessage] = useState("");
   const [dropdownResetKey, setDropdownResetKey] = useState(0);
   const [progressValues, setProgressValues] = useState<Record<string, string>>({});
+
+  function handleProgressChange(name: string, value: string) {
+    setProgressValues((current) => ({
+      ...current,
+      [name]: value.trim(),
+    }));
+  }
+
+  const completedFields = progressFieldNames.filter(
+    (fieldName) => progressValues[fieldName],
+  ).length;
+  const progressUnits = (completedFields / progressFieldNames.length) * 3;
+  const getSegmentFill = (index: number) =>
+    Math.max(0, Math.min(1, progressUnits - index));
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setSubmitStatus("submitting");
+    setStatusMessage("");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      await submitApplication(formData);
+      setSubmitStatus("success");
+      setStatusMessage("Thanks. Your request has been sent.");
+      form.reset();
+      setProgressValues({});
+      setDropdownResetKey((key) => key + 1);
+      onSuccess?.();
+    } catch (error) {
+      setSubmitStatus("error");
+      setStatusMessage(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again.",
+      );
+    }
+  }
+
+  return (
+    <>
+      <motion.div
+        className="mt-[22px]"
+        variants={riseVariants}
+        role="progressbar"
+        aria-label="Application progress"
+        aria-valuemin={0}
+        aria-valuemax={progressFieldNames.length}
+        aria-valuenow={completedFields}
+      >
+        <div className="grid grid-cols-3 gap-[4px]">
+          {[0, 1, 2].map((segment) => (
+            <span
+              key={segment}
+              className="h-[3px] overflow-hidden bg-[#e5e5e5]"
+            >
+              <motion.span
+                className="block h-full origin-left bg-[#d0df00]"
+                initial={false}
+                animate={{ scaleX: getSegmentFill(segment) }}
+                transition={{
+                  duration: 0.35,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              />
+            </span>
+          ))}
+        </div>
+      </motion.div>
+
+      <motion.form
+        className="mt-[24px] grid grid-cols-1 gap-x-[14px] gap-y-[15px] md:grid-cols-2"
+        onSubmit={handleSubmit}
+        variants={containerVariants}
+      >
+        <Field wide label="Full Name" name="fullName" placeholder="Your full name" onValueChange={handleProgressChange} />
+        <Field label="Email" name="email" type="email" placeholder="you@email.com" onValueChange={handleProgressChange} />
+        <Field label="Phone" name="phone" type="tel" placeholder="+1 (000) 000-0000" onValueChange={handleProgressChange} />
+        <SelectField
+          label="Budget"
+          name="budget"
+          placeholder="Select range"
+          resetKey={dropdownResetKey}
+          idPrefix={idPrefix}
+          onValueChange={handleProgressChange}
+          required={false}
+          options={budgetOptions}
+        />
+        <SelectField
+          label="Timeline"
+          name="timeline"
+          placeholder="When?"
+          resetKey={dropdownResetKey}
+          idPrefix={idPrefix}
+          onValueChange={handleProgressChange}
+          required={false}
+          options={timelineOptions}
+        />
+        <SelectField
+          wide
+          label="Book Genre"
+          name="genre"
+          placeholder="Select genre"
+          resetKey={dropdownResetKey}
+          idPrefix={idPrefix}
+          onValueChange={handleProgressChange}
+          required={false}
+          options={genreOptions}
+        />
+
+        <motion.button
+          type="submit"
+          disabled={submitStatus === "submitting"}
+          className="mt-[4px] flex h-12 items-center justify-center gap-2 rounded-[7px] bg-[#d0df00] text-[11px] font-bold uppercase tracking-[0.08em] text-black transition hover:bg-[#c3d300] disabled:cursor-not-allowed disabled:opacity-70 md:col-span-2 lg:h-[54px] lg:text-[13px] lg:tracking-[0.12em]"
+          variants={riseVariants}
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          {submitStatus === "submitting" ? (
+            "Sending..."
+          ) : (
+            <>
+              {buttonLabel}
+              <GoArrowRight className="text-base" />
+            </>
+          )}
+        </motion.button>
+
+        {statusMessage && (
+          <p
+            className={`text-center text-[12px] font-bold md:col-span-2 ${
+              submitStatus === "success" ? "text-[#149044]" : "text-red-600"
+            }`}
+          >
+            {statusMessage}
+          </p>
+        )}
+      </motion.form>
+    </>
+  );
+}
+
+const LandingHero2 = () => {
+  const reduceMotion = useReducedMotion();
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [publishedAuthorsCount, setPublishedAuthorsCount] = useState(0);
   const [platformsCount, setPlatformsCount] = useState(0);
 
@@ -244,64 +460,24 @@ const LandingHero2 = () => {
     };
   }, [reduceMotion]);
 
-  function handleProgressChange(name: string, value: string) {
-    setProgressValues((current) => ({
-      ...current,
-      [name]: value.trim(),
-    }));
-  }
-
-  const completedFields = progressFieldNames.filter(
-    (fieldName) => progressValues[fieldName],
-  ).length;
-  const progressUnits = (completedFields / progressFieldNames.length) * 3;
-  const getSegmentFill = (index: number) =>
-    Math.max(0, Math.min(1, progressUnits - index));
-
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSubmitStatus("submitting");
-    setStatusMessage("");
-
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    const fullName = String(formData.get("fullName") || "").trim();
-    const [firstName = "", ...lastNameParts] = fullName.split(/\s+/);
-    const lastName = lastNameParts.join(" ") || "Not provided";
-    const budget = String(formData.get("budget") || "").trim();
-    const timeline = String(formData.get("timeline") || "").trim();
-    const genre = String(formData.get("genre") || "").trim();
-
-    try {
-      const response = await fetch("/api/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          firstName,
-          lastName,
-          email: String(formData.get("email") || "").trim(),
-          phone: String(formData.get("phone") || "").trim(),
-          message: [
-            "Book publishing consultation request",
-            `Budget: ${budget || "Not provided"}`,
-            `Timeline: ${timeline || "Not provided"}`,
-            `Book genre: ${genre || "Not provided"}`,
-          ].join("\n"),
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Request failed");
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closePopup();
       }
+    };
 
-      setSubmitStatus("success");
-      setStatusMessage("Thanks. Your request has been sent.");
-      form.reset();
-      setProgressValues({});
-      setDropdownResetKey((key) => key + 1);
-    } catch {
-      setSubmitStatus("error");
-      setStatusMessage("Something went wrong. Please try again.");
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  function closePopup() {
+    setIsPopupOpen(false);
+    if (typeof window !== "undefined" && window.location.hash === "#quote-popup") {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
     }
   }
 
@@ -377,12 +553,13 @@ const LandingHero2 = () => {
             className="mt-[29px] flex flex-col items-stretch gap-[10px] min-[460px]:flex-row min-[460px]:justify-center lg:justify-start"
             variants={riseVariants}
           >
-            <Link
-              href="#quote-popup"
+            <button
+              type="button"
+              onClick={() => setIsPopupOpen(true)}
               className="inline-flex h-[45px] min-w-0 items-center justify-center rounded-[6px] bg-[#d0df00] px-[14px] text-xs font-extrabold uppercase text-black transition hover:bg-[#c3d300] min-[380px]:text-sm min-[460px]:min-w-[210px] min-[460px]:px-[18px]"
             >
-              🚀{" "}APPLY NOW — FREE
-            </Link>
+              APPLY NOW - FREE
+            </button>
             <Link
               href="tel:+17864961231"
               className="inline-flex h-[45px] min-w-0 items-center justify-center rounded-[6px] border border-[#e5e5e5] bg-white px-[13px] text-sm font-extrabold text-[#222] transition hover:border-[#cbd600] min-[460px]:min-w-[180px] sm:text-base"
@@ -448,118 +625,7 @@ const LandingHero2 = () => {
               </p>
             </motion.div>
 
-            <motion.div
-              className="mt-[22px]"
-              variants={riseVariants}
-              role="progressbar"
-              aria-label="Application progress"
-              aria-valuemin={0}
-              aria-valuemax={progressFieldNames.length}
-              aria-valuenow={completedFields}
-            >
-              <div className="grid grid-cols-3 gap-[4px]">
-                {[0, 1, 2].map((segment) => (
-                  <span
-                    key={segment}
-                    className="h-[3px] overflow-hidden bg-[#e5e5e5]"
-                  >
-                    <motion.span
-                      className="block h-full origin-left bg-[#d0df00]"
-                      initial={false}
-                      animate={{ scaleX: getSegmentFill(segment) }}
-                      transition={{
-                        duration: 0.35,
-                        ease: [0.22, 1, 0.36, 1],
-                      }}
-                    />
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.form
-              className="mt-[24px] grid grid-cols-1 gap-x-[14px] gap-y-[15px] md:grid-cols-2"
-              onSubmit={handleSubmit}
-              variants={containerVariants}
-            >
-              <Field wide label="Full Name" name="fullName" placeholder="Your full name" onValueChange={handleProgressChange} />
-              <Field label="Email" name="email" type="email" placeholder="you@email.com" onValueChange={handleProgressChange} />
-              <Field label="Phone" name="phone" type="tel" placeholder="+1 (000) 000-0000" onValueChange={handleProgressChange} />
-              <SelectField
-                label="Budget"
-                name="budget"
-                placeholder="Select range"
-                resetKey={dropdownResetKey}
-                onValueChange={handleProgressChange}
-                required={false}
-                options={[
-                  "$500 - $1,500",
-                  "$1,500 - $3,000",
-                  "$3,000 - $5,000",
-                  "$5,000+",
-                ]}
-              />
-              <SelectField
-                label="Timeline"
-                name="timeline"
-                placeholder="When?"
-                resetKey={dropdownResetKey}
-                onValueChange={handleProgressChange}
-                required={false}
-                options={[
-                  "Immediately",
-                  "Within 30 days",
-                  "1 - 3 months",
-                  "Just exploring",
-                ]}
-              />
-              <SelectField
-                wide
-                label="Book Genre"
-                name="genre"
-                placeholder="Select genre"
-                resetKey={dropdownResetKey}
-                onValueChange={handleProgressChange}
-                required={false}
-                options={[
-                  "Fiction",
-                  "Non-fiction",
-                  "Memoir",
-                  "Business",
-                  "Self-help",
-                  "Children's book",
-                  "Other",
-                ]}
-              />
-
-              <motion.button
-                type="submit"
-                disabled={submitStatus === "submitting"}
-                className="mt-[4px] flex h-12 items-center justify-center gap-2 rounded-[7px] bg-[#d0df00] text-[11px] font-bold uppercase tracking-[0.08em] text-black transition hover:bg-[#c3d300] disabled:cursor-not-allowed disabled:opacity-70 md:col-span-2 lg:h-[54px] lg:text-[13px] lg:tracking-[0.12em]"
-                variants={riseVariants}
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                {submitStatus === "submitting" ? (
-                  "Sending..."
-                ) : (
-                  <>
-                    Apply Now - It&apos;s Free
-                    <GoArrowRight className="text-base" />
-                  </>
-                )}
-              </motion.button>
-
-              {statusMessage && (
-                <p
-                  className={`text-center text-[12px] font-bold md:col-span-2 ${
-                    submitStatus === "success" ? "text-[#149044]" : "text-red-600"
-                  }`}
-                >
-                  {statusMessage}
-                </p>
-              )}
-            </motion.form>
+            <ApplicationForm buttonLabel="Apply Now - It's Free" />
 
             <motion.div className="my-[20px] flex items-center gap-[10px]" variants={riseVariants}>
               <span className="h-px flex-1 bg-[#eeeeee]" />
@@ -569,8 +635,8 @@ const LandingHero2 = () => {
 
             <motion.div variants={riseVariants} whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
               <Link
-              href="https://wa.me/17864961231"
-              className="flex h-12 items-center justify-center rounded-[6px] border border-[#9ce9bd] px-3 text-sm font-semibold text-[#00a13a] transition hover:bg-[#f4fff8] sm:text-base"
+                href="https://wa.me/17864961231"
+                className="flex h-12 items-center justify-center rounded-[6px] border border-[#9ce9bd] px-3 text-sm font-semibold text-[#00a13a] transition hover:bg-[#f4fff8] sm:text-base"
               >
                 <FaWhatsapp className="mr-[7px] text-xl sm:text-2xl" />
                 Chat on WhatsApp Now
@@ -584,6 +650,74 @@ const LandingHero2 = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      <AnimatePresence>
+        {isPopupOpen && (
+          <motion.div
+            className="fixed inset-0 z-[120] flex items-center justify-center bg-black/65 px-4 py-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onMouseDown={(event) => {
+              if (event.target === event.currentTarget) {
+                closePopup();
+              }
+            }}
+          >
+            <motion.div
+              className="relative w-full max-w-[860px] rounded-[24px] border border-[#ececec] border-t-[4px] border-t-[#cddf00] bg-white px-4 pb-6 pt-5 shadow-[0_24px_70px_rgba(0,0,0,0.25)] min-[380px]:px-5 sm:px-6 sm:pb-8 sm:pt-7 lg:px-8 lg:pb-9 lg:pt-7"
+              initial={reduceMotion ? "show" : "hidden"}
+              animate="show"
+              exit={reduceMotion ? undefined : { opacity: 0, y: 16, scale: 0.98 }}
+              variants={containerVariants}
+              transition={{ duration: 0.24, ease: [0.22, 1, 0.36, 1] }}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="application-popup-title"
+            >
+              <button
+                type="button"
+                aria-label="Close application popup"
+                onClick={closePopup}
+                className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full text-3xl leading-none text-[#4b4b4b] transition hover:bg-[#f5f5f3] hover:text-black"
+              >
+                &times;
+              </button>
+
+              <motion.div
+                className="flex min-h-[44px] flex-wrap items-center rounded-[7px] border border-[#e8c45a] bg-[#fffdf5] px-3 py-2 pr-12 text-[11px] font-semibold leading-tight text-[#a57100] sm:px-4 sm:text-sm lg:px-3 xl:flex-nowrap xl:px-[16px] xl:pr-[56px] 2xl:h-[44px] 2xl:py-0"
+                variants={riseVariants}
+              >
+                <IoFlameSharp className="mr-[10px] text-[18px] text-[#7A5A00]" />
+                <span className="text-[#E53935]">7</span>
+                <span className="ml-[3px] text-[#7A5A00]">free consultation spots left this week</span>
+              </motion.div>
+
+              <motion.div className="mt-5 lg:mt-[22px]" variants={riseVariants}>
+                <h2
+                  id="application-popup-title"
+                  className="text-3xl font-black leading-none tracking-[-0.04em] text-[#151515] sm:text-4xl"
+                >
+                  Apply <span className="text-[#bfd700]">Now</span>
+                </h2>
+                <p className="mt-[10px] max-w-[540px] text-sm text-[#8b8b8b] sm:text-base">
+                  Takes 60 seconds - Free - No obligation
+                </p>
+              </motion.div>
+
+              <ApplicationForm
+                buttonLabel="Apply Now - It's Free"
+                onSuccess={() => {
+                  window.setTimeout(() => {
+                    closePopup();
+                  }, 1200);
+                }}
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </motion.section>
   );
 };
