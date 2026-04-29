@@ -679,7 +679,7 @@ const LandingHero2 = () => {
                 type="button"
                 aria-label="Close application popup"
                 onClick={closePopup}
-                className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full text-3xl leading-none text-[#4b4b4b] transition hover:bg-[#f5f5f3] hover:text-black"
+                className="absolute right-4 top-4 z-20 flex h-10 w-10 items-center justify-center rounded-full text-3xl leading-none text-[#4b4b4b] transition hover:bg-[#f5f5f3] hover:text-black"
               >
                 &times;
               </button>
