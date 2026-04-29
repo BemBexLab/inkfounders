@@ -14,7 +14,7 @@ const LandingNavBar = () => {
         playsInline
         className="h-auto w-[76px] shrink-0 sm:w-[120px] lg:w-[178px] lg:-ml-7"
       >
-        <source src="/logovideo/inkfounder_logo_animate.mp4" type="video/mp4" />
+        <source src="/logovideo/01.mp4" />
         Your browser does not support the video tag.
       </video>
 
