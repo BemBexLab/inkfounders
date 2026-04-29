@@ -1,0 +1,282 @@
+import React from "react";
+
+const rows = [
+  {
+    feature: "Professional Cover Design",
+    diy: "cross",
+    other: { type: "amber", value: "Extra Cost" },
+    ink: { value: "Included" },
+    shaded: false,
+  },
+  {
+    feature: "40+ Platform Distribution",
+    diy: "cross",
+    other: { type: "amber", value: "Limited" },
+    ink: { value: "All 40+" },
+    shaded: true,
+  },
+  {
+    feature: "Expert Editing & Proofreading",
+    diy: "cross",
+    other: { type: "amber", value: "Basic Only" },
+    ink: { value: "Full Service" },
+    shaded: false,
+  },
+  {
+    feature: "100% Ownership Retained",
+    diy: "check",
+    other: { type: "plain", value: "✕ Often Not" },
+    ink: { value: "Always Yours" },
+    shaded: true,
+  },
+  {
+    feature: "Dedicated Publishing Expert",
+    diy: "cross",
+    other: { type: "amber", value: "Shared Only" },
+    ink: { value: "Personal" },
+    shaded: false,
+  },
+  {
+    feature: "Author Branding & Marketing",
+    diy: "cross",
+    other: { type: "cross" },
+    ink: { value: "Included" },
+    shaded: true,
+  },
+  {
+    feature: "Time To Publish",
+    diy: "cross",
+    other: { type: "plain", value: "4–8 Weeks" },
+    ink: { value: "As Fast As 2–3 Weeks", yellow: true },
+    shaded: false,
+    last: true,
+  },
+];
+
+export default function InkFoundersComparison() {
+  const ROW_HEIGHT = 96;
+  const HEADER_HEIGHT = 82;
+  const DARK_OVERFLOW = 48;
+
+  return (
+    <div className="min-h-screen bg-white flex items-center justify-center px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+      <div className="w-full max-w-7xl">
+
+        {/* Page Header */}
+        <div className="text-center">
+          <p className="text-xs sm:text-sm md:text-md tracking-[0.25em] uppercase text-gray-400 font-semibold mb-2">
+            Why Ink Founder
+          </p>
+          <h1 className="text-2xl sm:text-4xl lg:text-6xl font-black text-gray-900 mb-4 lg:mb-5">
+            DIY Publishing Vs.{" "}
+            <span style={{ color: "#c8e63c" }}>Ink Founders</span>
+          </h1>
+          <p className="text-sm sm:text-base lg:text-lg text-gray-500 max-w-7xl mx-auto leading-relaxed" style={{ marginBottom: "clamp(2rem, 6vw, 5rem)" }}>
+            Lorem ipsum dolor sit amet consectetur. Sed urna sed eget ultrices vitae amet aenean et
+            faucibus. Odio eu tristique egestas a venenatis odio semper ut nisi. Sit purus vitae
+            mattis erat aliquam quis egestas id sit. Sem integer leo pulvinar eget lobortis purus
+            tellus magna.
+          </p>
+        </div>
+
+        {/* Table wrapper — marginTop reserves space for dark column overflow */}
+        <div className="relative" style={{ paddingRight: "26%", marginTop: `${DARK_OVERFLOW}px` }}>
+
+          {/* Dark Ink Founders column — overflows above */}
+          <div
+            className="absolute right-0 rounded-xl lg:rounded-2xl overflow-hidden flex flex-col"
+            style={{
+              backgroundColor: "#1e1e1e",
+              width: "26%",
+              top: `-${DARK_OVERFLOW}px`,
+              bottom: 0,
+              zIndex: 10,
+            }}
+          >
+            {/* Logo area */}
+            <div
+              className="flex items-center justify-center px-3 sm:px-4"
+              style={{ height: `${DARK_OVERFLOW + HEADER_HEIGHT}px`, flexShrink: 0 }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 192 87"
+                fill="none"
+                style={{ width: "100%", maxWidth: 192, height: "auto" }}
+              >
+                <path d="M54.4618 18.438H43.644V53.1934H54.4618V18.438Z" fill="#F4F3E1"/>
+                <path d="M93.7164 22.0196C96.1845 24.656 97.4168 28.2811 97.4168 32.8877V53.1933H86.6615V34.3218C86.6615 31.9968 86.0509 30.1897 84.826 28.904C83.6012 27.6184 81.957 26.9738 79.8898 26.9738C77.8226 26.9738 76.1784 27.6184 74.9536 28.904C73.7287 30.1933 73.1181 31.9968 73.1181 34.3218V53.1933H62.3003V18.438H73.1181V23.0481C74.2142 21.5126 75.6892 20.2994 77.5467 19.4049C79.4006 18.514 81.4898 18.0649 83.8108 18.0649C87.9452 18.0649 91.2446 19.3832 93.7127 22.0196H93.7164Z" fill="#F4F3E1"/>
+                <path d="M126.519 53.1934L115.764 38.6169V53.1934H104.946V7.10278H115.764V32.5763L126.457 18.438H139.805L125.129 35.8791L139.934 53.1934H126.523H126.519Z" fill="#F4F3E1"/>
+                <path d="M33.7496 68.0959H30.2699V83.5814H23.8035V68.0959H21.4604V62.8122H23.8035V62.2182C23.8035 59.6615 24.5465 57.7204 26.0325 56.3949C27.5186 55.0658 29.6998 54.4031 32.5725 54.4031C33.0507 54.4031 33.4038 54.4176 33.6319 54.4393V59.8353C32.396 59.7592 31.5279 59.9331 31.024 60.3568C30.52 60.7805 30.2662 61.5338 30.2662 62.6275V62.8122H33.7459V68.0959H33.7496Z" fill="#F4F3E1"/>
+                <path d="M38.9066 82.5745C37.2551 81.7053 35.9567 80.4668 35.0114 78.8516C34.066 77.24 33.5952 75.3532 33.5952 73.1948C33.5952 71.0364 34.0734 69.1822 35.0334 67.5562C35.9898 65.9302 37.3029 64.6844 38.9655 63.8152C40.6281 62.946 42.493 62.5115 44.5601 62.5115C46.6273 62.5115 48.4922 62.946 50.1548 63.8152C51.8174 64.6844 53.1268 65.9302 54.0869 67.5562C55.0432 69.1822 55.5251 71.0618 55.5251 73.1948C55.5251 75.3279 55.0395 77.2074 54.0685 78.8335C53.0974 80.4595 51.7732 81.7053 50.0996 82.5745C48.4223 83.4436 46.5501 83.8782 44.4866 83.8782C42.4231 83.8782 40.5619 83.4436 38.9103 82.5745H38.9066ZM47.6425 77.0264C48.5106 76.1319 48.9483 74.8535 48.9483 73.1912C48.9483 71.529 48.5253 70.2506 47.683 69.3561C46.837 68.4616 45.7997 68.0161 44.5638 68.0161C43.3279 68.0161 42.2575 68.4579 41.4263 69.338C40.595 70.218 40.1793 71.5036 40.1793 73.1912C40.1793 74.8788 40.5876 76.1319 41.4079 77.0264C42.2281 77.9209 43.2544 78.3663 44.4903 78.3663C45.7262 78.3663 46.7781 77.9209 47.6462 77.0264H47.6425Z" fill="#F4F3E1"/>
+                <path d="M77.9034 62.8083V83.5776H71.437V80.7492C70.7823 81.669 69.8921 82.4042 68.7702 82.9655C67.6484 83.5232 66.4088 83.8021 65.0478 83.8021C63.4331 83.8021 62.0096 83.4472 60.7773 82.741C59.5414 82.0348 58.5851 81.0099 57.9046 79.67C57.2241 78.33 56.8857 76.7547 56.8857 74.9439V62.8083H63.3117V74.0857C63.3117 75.4763 63.6758 76.5555 64.4078 77.3232C65.1398 78.091 66.1219 78.4785 67.3578 78.4785C68.5937 78.4785 69.6126 78.0946 70.3445 77.3232C71.0765 76.5555 71.4407 75.4763 71.4407 74.0857V62.8083H77.9071H77.9034Z" fill="#F4F3E1"/>
+                <path d="M99.4326 64.9486C100.908 66.524 101.643 68.6896 101.643 71.4419V83.5775H95.2173V72.3002C95.2173 70.9096 94.8531 69.8304 94.1212 69.0626C93.3892 68.2949 92.4071 67.9074 91.1712 67.9074C89.9353 67.9074 88.9532 68.2912 88.2212 69.0626C87.4892 69.8304 87.1251 70.9132 87.1251 72.3002V83.5775H80.6587V62.8083H87.1251V65.5643C87.7798 64.648 88.6626 63.9201 89.7698 63.3878C90.8769 62.8554 92.1275 62.5874 93.5106 62.5874C95.9787 62.5874 97.9539 63.3769 99.4252 64.9522L99.4326 64.9486Z" fill="#F4F3E1"/>
+                <path d="M104.196 67.5345C105.016 65.9229 106.131 64.6808 107.543 63.8116C108.956 62.9425 110.53 62.5079 112.27 62.5079C113.656 62.5079 114.922 62.794 116.069 63.3626C117.217 63.9347 118.118 64.7025 118.773 65.6694V56.0291H125.239V83.574H118.773V80.5972C118.17 81.5895 117.305 82.3826 116.183 82.9801C115.061 83.574 113.756 83.8746 112.27 83.8746C110.53 83.8746 108.956 83.4328 107.543 82.5528C106.131 81.6728 105.016 80.4197 104.196 78.7937C103.376 77.1676 102.967 75.2881 102.967 73.155C102.967 71.022 103.376 69.1497 104.196 67.5345ZM117.43 69.4358C116.536 68.5195 115.444 68.0596 114.16 68.0596C112.877 68.0596 111.784 68.5123 110.89 69.4177C109.996 70.323 109.548 71.5724 109.548 73.1587C109.548 74.7449 109.996 76.0052 110.89 76.9359C111.784 77.8666 112.877 78.3301 114.16 78.3301C115.444 78.3301 116.536 77.8702 117.43 76.954C118.324 76.0377 118.773 74.7811 118.773 73.1949C118.773 71.6087 118.324 70.3556 117.43 69.4358Z" fill="#F4F3E1"/>
+                <path d="M147.806 74.7195H133.173C133.273 76.0087 133.696 76.9974 134.439 77.6782C135.182 78.359 136.094 78.7031 137.179 78.7031C138.79 78.7031 139.912 78.0331 140.545 76.6932H147.427C147.074 78.0585 146.437 79.2861 145.518 80.3762C144.598 81.4699 143.443 82.3246 142.06 82.9438C140.673 83.5631 139.125 83.8746 137.411 83.8746C135.344 83.8746 133.505 83.44 131.89 82.5708C130.275 81.7017 129.017 80.4631 128.109 78.8479C127.2 77.2364 126.748 75.3496 126.748 73.1912C126.748 71.0328 127.196 69.146 128.09 67.5344C128.984 65.9229 130.238 64.6807 131.853 63.8115C133.464 62.9424 135.318 62.5078 137.411 62.5078C139.504 62.5078 141.266 62.9315 142.855 63.7717C144.444 64.6155 145.683 65.8178 146.577 67.3823C147.471 68.9468 147.92 70.7684 147.92 72.8544C147.92 73.4483 147.883 74.0712 147.806 74.7158V74.7195ZM141.302 71.1849C141.302 70.0948 140.924 69.2257 140.17 68.581C139.412 67.9364 138.47 67.6141 137.334 67.6141C136.197 67.6141 135.336 67.9255 134.593 68.5448C133.85 69.1641 133.391 70.0477 133.214 71.1885H141.302V71.1849Z" fill="#F4F3E1"/>
+                <path d="M158.73 63.5724C159.863 62.917 161.125 62.5874 162.511 62.5874V69.3234H160.735C159.12 69.3234 157.914 69.6638 157.104 70.3482C156.299 71.0327 155.894 72.2278 155.894 73.9407V83.5811H149.428V62.8119H155.894V66.2741C156.652 65.1333 157.597 64.2316 158.73 63.5761V63.5724Z" fill="#F4F3E1"/>
+                <path d="M167.385 82.9475C165.947 82.3283 164.814 81.4772 163.983 80.398C163.151 79.3188 162.684 78.1092 162.585 76.7693H168.974C169.051 77.49 169.39 78.073 169.993 78.5185C170.596 78.9639 171.339 79.1884 172.222 79.1884C173.028 79.1884 173.653 79.0327 174.094 78.7213C174.536 78.4098 174.756 78.0078 174.756 77.5117C174.756 76.9178 174.44 76.476 173.811 76.1899C173.182 75.9038 172.16 75.5887 170.747 75.241C169.235 74.8934 167.974 74.5276 166.966 74.1437C165.958 73.7598 165.086 73.1514 164.358 72.3185C163.626 71.4892 163.262 70.3629 163.262 68.9505C163.262 67.759 163.596 66.6726 164.262 65.6948C164.928 64.7134 165.914 63.9384 167.212 63.3698C168.511 62.7976 170.052 62.5151 171.843 62.5151C174.488 62.5151 176.573 63.1598 178.1 64.449C179.626 65.7383 180.502 67.4512 180.726 69.5843H174.753C174.653 68.8636 174.33 68.295 173.789 67.8713C173.248 67.4512 172.535 67.2375 171.652 67.2375C170.894 67.2375 170.317 67.3824 169.912 67.6649C169.507 67.951 169.309 68.3421 169.309 68.8382C169.309 69.4322 169.629 69.8812 170.273 70.1782C170.916 70.4752 171.917 70.7721 173.278 71.0727C174.841 71.4711 176.114 71.8622 177.096 72.2461C178.078 72.6299 178.942 73.2492 179.685 74.1075C180.428 74.9622 180.814 76.1102 180.837 77.5515C180.837 78.7683 180.491 79.8548 179.796 80.8072C179.1 81.7633 178.107 82.513 176.809 83.0598C175.51 83.6067 174.006 83.8783 172.292 83.8783C170.453 83.8783 168.812 83.5668 167.378 82.9475H167.385Z" fill="#F4F3E1"/>
+                <path d="M7.01562 61.1171C7.01562 61.1171 -3.7985 50.7053 6.30203 31.1674C16.4026 11.6295 33.5139 3.78904 34.5843 3.32187C35.6547 2.85469 37.2584 21.4546 24.4249 33.0398C24.4249 33.0398 28.9418 32.2503 30.071 31.9569C31.2003 31.6636 26.7348 46.3342 17.9143 51.3355C17.9143 51.3355 16.7851 52.125 18.9847 51.5998C21.1843 51.0747 21.4786 50.9552 22.3724 50.9552C23.2662 50.9552 16.4614 61.3815 13.0296 63.5761L12.8199 83.5812H8.18531C8.18531 83.5812 8.43911 42.2383 20.559 25.6266C20.559 25.6266 11.5436 31.7686 7.0193 61.1207L7.01562 61.1171Z" fill="#DADD39"/>
+                <path d="M44.4347 13.1758C43.2319 12.0749 42.6323 10.7168 42.6323 9.09442C42.6323 7.472 43.2319 6.05237 44.4347 4.95144C45.6375 3.85051 47.186 3.30005 49.084 3.30005C50.982 3.30005 52.468 3.85051 53.6708 4.95144C54.8736 6.05237 55.4732 7.43216 55.4732 9.09442C55.4732 10.7567 54.8736 12.0749 53.6708 13.1758C52.468 14.2768 50.9415 14.8272 49.084 14.8272C47.2265 14.8272 45.6375 14.2768 44.4347 13.1758Z" fill="#F4F3E1"/>
+                <path d="M183.172 82.8894C182.455 82.2339 182.094 81.4191 182.094 80.4522C182.094 79.4852 182.455 78.6269 183.172 77.957C183.889 77.287 184.816 76.9502 185.949 76.9502C187.082 76.9502 187.972 77.2834 188.689 77.957C189.407 78.6269 189.767 79.4599 189.767 80.4522C189.767 81.4445 189.407 82.2339 188.689 82.8894C187.972 83.5485 187.056 83.8745 185.949 83.8745C184.842 83.8745 183.889 83.5449 183.172 82.8894Z" fill="#F4F3E1"/>
+              </svg>
+            </div>
+
+            {/* Ink Founders rows */}
+            {rows.map((row, i) => (
+              <div key={i} style={{ flexShrink: 0 }}>
+                <div
+                  style={{
+                    height: "1px",
+                    backgroundColor: "#333",
+                    marginLeft: "20px",
+                    marginRight: "20px",
+                  }}
+                />
+                <div
+                  className="flex items-center justify-center text-center px-2 sm:px-4"
+                  style={{ height: `${ROW_HEIGHT}px` }}
+                >
+                  {row.ink.yellow ? (
+                    <span
+                      className="font-black leading-tight"
+                      style={{ color: "#DADD39", fontSize: "clamp(0.55rem, 1.4vw, 0.98rem)" }}
+                    >
+                      {row.ink.value}
+                    </span>
+                  ) : (
+                    <span style={{ fontSize: "clamp(0.55rem, 1.4vw, 0.99rem)", lineHeight: 1.3 }}>
+                      <span style={{ color: "#DADD39", fontWeight: 400 }}>✓ </span>
+                      <span className="font-bold text-[#DADD39]">{row.ink.value}</span>
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Left 3-column table */}
+          <div className="flex flex-col">
+
+            {/* Header row */}
+            <div
+              className="grid rounded-l-xl overflow-hidden"
+              style={{
+                gridTemplateColumns: "2fr 1fr 1fr",
+                backgroundColor: "#d4ed4a",
+                height: `${HEADER_HEIGHT}px`,
+              }}
+            >
+              <div />
+              <div
+                className="flex items-center justify-center px-1 sm:px-3"
+                style={{ borderLeft: "1px solid #bdd938" }}
+              >
+                <span
+                  style={{
+                    fontSize: "clamp(0.4rem, 1.1vw, 0.88rem)",
+                    letterSpacing: "0.12em",
+                    fontWeight: 700,
+                    color: "#000000",
+                    textTransform: "uppercase",
+                    textAlign: "center",
+                  }}
+                >
+                  DIY Publishing
+                </span>
+              </div>
+              <div
+                className="flex items-center justify-center px-1 sm:px-3"
+                style={{ borderLeft: "1px solid #bdd938" }}
+              >
+                <span
+                  style={{
+                    fontSize: "clamp(0.4rem, 1.1vw, 0.88rem)",
+                    letterSpacing: "0.12em",
+                    fontWeight: 700,
+                    color: "#000000",
+                    textTransform: "uppercase",
+                    textAlign: "center",
+                  }}
+                >
+                  Other Services
+                </span>
+              </div>
+            </div>
+
+            {/* Data rows */}
+            {rows.map((row, i) => (
+              <div
+                key={i}
+                className="grid"
+                style={{
+                  gridTemplateColumns: "2fr 1fr 1fr",
+                  height: `${ROW_HEIGHT}px`,
+                  backgroundColor: row.shaded ? "#f4f4f4" : "#ffffff",
+                }}
+              >
+                {/* Feature */}
+                <div className="flex items-center px-3 sm:px-5 lg:px-7">
+                  <span
+                    style={{
+                      fontSize: "clamp(0.6rem, 1.4vw, 0.98rem)",
+                      fontWeight: 600,
+                      color: "#1a1a1a",
+                    }}
+                  >
+                    {row.feature}
+                  </span>
+                </div>
+
+                {/* DIY */}
+                <div
+                  className="flex items-center justify-center"
+                  style={{ borderLeft: "1px solid #e5e5e5" }}
+                >
+                  {row.diy === "cross" && (
+                    <span style={{ color: "black", fontSize: "clamp(0.7rem, 1.4vw, 1rem)" }}>✕</span>
+                  )}
+                  {row.diy === "check" && (
+                    <span style={{ color: "#DADD39", fontSize: "clamp(0.7rem, 1.4vw, 1rem)" }}>✓</span>
+                  )}
+                </div>
+
+                {/* Other Services */}
+                <div
+                  className="flex items-center justify-center px-1 sm:px-3 text-center"
+                  style={{ borderLeft: "1px solid #e5e5e5" }}
+                >
+                  {row.other.type === "cross" && (
+                    <span style={{ color: "black", fontSize: "clamp(0.7rem, 1.4vw, 1rem)" }}>✕</span>
+                  )}
+                  {row.other.type === "amber" && (
+                    <span
+                      style={{
+                        color: "#F5A623",
+                        fontSize: "clamp(0.5rem, 1.2vw, 0.96rem)",
+                        fontWeight: 600,
+                      }}
+                    >
+                      {row.other.value}
+                    </span>
+                  )}
+                  {row.other.type === "plain" && (
+                    <span
+                      style={{
+                        color: "black",
+                        fontSize: "clamp(0.5rem, 1.2vw, 0.96rem)",
+                        fontWeight: 500,
+                      }}
+                    >
+                      {row.other.value}
+                    </span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}
