@@ -46,7 +46,12 @@ export default function QuotePopup() {
       const target = event.target as HTMLElement | null;
       const trigger = target?.closest("a, button");
 
-      if (!trigger?.textContent?.toLowerCase().includes("request a quote")) {
+      const href = trigger?.getAttribute("href");
+      const buttonText = trigger?.textContent?.toLowerCase() || "";
+      const shouldOpen =
+        href === "#quote-popup" || buttonText.includes("request a quote");
+
+      if (!shouldOpen) {
         return;
       }
 
@@ -57,10 +62,24 @@ export default function QuotePopup() {
       setIsOpen(true);
     };
 
+    const handleHashOpen = () => {
+      if (window.location.hash !== "#quote-popup") {
+        return;
+      }
+
+      setActiveImage(
+        popupImages[Math.floor(Math.random() * popupImages.length)],
+      );
+      setIsOpen(true);
+    };
+
     document.addEventListener("click", handleClick);
+    window.addEventListener("hashchange", handleHashOpen);
+    handleHashOpen();
 
     return () => {
       document.removeEventListener("click", handleClick);
+      window.removeEventListener("hashchange", handleHashOpen);
     };
   }, []);
 
