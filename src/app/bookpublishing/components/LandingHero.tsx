@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import DiscountForm  from "./DiscountForum";
+import QuoteTrigger from "./QuoteTrigger";
 
 // Custom CSS only for things Tailwind can't handle: fonts, pseudo-elements, focus rings, hover transforms
 const customStyles = `
@@ -80,15 +81,14 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="mb-8 flex flex-col items-stretch gap-3 min-[430px]:flex-row min-[430px]:justify-center xl:mb-9 xl:justify-start">
-              <Link
-                href="#quote-popup"
+              <QuoteTrigger
                 className="btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm xl:h-[45px] xl:min-w-[182px] xl:px-6 xl:text-[15px]"
               >
                 <span className="slide-bg"></span>
                 <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
                   Request a Quote
                 </span>
-              </Link>
+              </QuoteTrigger>
 
               <Link
                 href="/contactus"

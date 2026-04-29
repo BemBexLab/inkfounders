@@ -4,6 +4,7 @@ import { robotoMono } from "@/app/fonts";
 import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import QuoteTrigger from "./QuoteTrigger";
 
 const LandingFooter = () => {
   return (
@@ -34,15 +35,14 @@ const LandingFooter = () => {
             </p>
 
             <div className="mt-[32px] flex justify-center sm:mt-[38px] lg:mt-[40px] lg:justify-start">
-              <Link
-                href="#quote-popup"
+              <QuoteTrigger
                 className="btn-slide-bg flex h-[48px] min-w-[190px] items-center justify-center rounded-[8px] border border-black bg-black px-5 text-[15px] font-medium text-white transition-all duration-300 hover:border-black hover:text-black sm:h-[52px] sm:min-w-[202px] sm:text-base lg:h-13 lg:text-md"
               >
                 <span className="slide-bg" />
                 <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
                   Request a Quote
                 </span>
-              </Link>
+              </QuoteTrigger>
             </div>
           </div>
         </div>

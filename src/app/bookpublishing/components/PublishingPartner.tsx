@@ -2,6 +2,7 @@ import React from "react";
 import { robotoMono } from "@/app/fonts";
 import Link from "next/link";
 import { MdLocalPhone } from "react-icons/md";
+import QuoteTrigger from "./QuoteTrigger";
 
 const PublishingPartner = () => {
   return (
@@ -23,15 +24,14 @@ const PublishingPartner = () => {
           </p>
 
           <div className="mt-4 flex flex-col items-stretch gap-3 min-[430px]:flex-row min-[430px]:justify-center lg:mt-5 lg:flex-wrap lg:justify-start">
-            <Link
-              href="#quote-popup"
+            <QuoteTrigger
               className="btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[45px] lg:min-w-[182px] lg:px-6 lg:text-[15px]"
             >
               <span className="slide-bg"></span>
               <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
                 Request a Quote
               </span>
-            </Link>
+            </QuoteTrigger>
 
             <Link
               href="tel:+17864961231"

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import type { Variants } from "motion/react";
 import { MdLocalPhone } from "react-icons/md";
+import QuoteTrigger from "./QuoteTrigger";
 
 const fanTransition = {
   duration: 0.9,
@@ -101,15 +102,14 @@ export default function BookPublishingSection() {
           </p>
 
           <div className="mx-auto mt-3 flex w-full max-w-[520px] flex-col items-stretch gap-4 min-[430px]:flex-row min-[430px]:justify-center lg:mx-0 lg:max-w-none lg:flex-wrap lg:items-center lg:justify-start lg:gap-5">
-            <Link
-              href="#quote-popup"
+            <QuoteTrigger
               className="btn-slide-bg flex h-11 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-5 text-sm font-medium text-black transition-all duration-300 hover:border-black sm:h-12 sm:px-6 sm:text-[15px] lg:h-[44px] lg:min-w-[156px] lg:px-6 lg:text-[13px] xl:h-[48px] xl:min-w-[176px] xl:text-sm"
             >
               <span className="slide-bg"></span>
               <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
                 Request a Quote
               </span>
-            </Link>
+            </QuoteTrigger>
 
             <Link
               href="/contactus"
