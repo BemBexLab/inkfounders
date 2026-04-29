@@ -7,7 +7,6 @@ import LandingNavBar from "./components/LandingNavBar";
 import LandingHero from "./components/LandingHero";
 import FeaturesSection from "./components/FeaturesSection";
 import CTABanner from "./components/CTABanner";
-import BookPublishingSection from "./components/BookPublishingSection";
 import BookGallery from "./components/BookGallery";
 import CTABannerRight from "./components/CTABannerRight";
 import PublishingPartner from "./components/PublishingPartner";
