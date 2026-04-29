@@ -22,6 +22,8 @@ const benefits = [
 
 const avatarColors = ["#ed795c", "#5e94e8", "#7fc789", "#dfc25a", "#ce84ad"];
 const progressFieldNames = ["fullName", "email", "phone", "budget", "timeline", "genre"];
+const publishedAuthorsTarget = 1000;
+const platformsTarget = 40;
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -205,6 +207,42 @@ const LandingHero2 = () => {
   const [statusMessage, setStatusMessage] = useState("");
   const [dropdownResetKey, setDropdownResetKey] = useState(0);
   const [progressValues, setProgressValues] = useState<Record<string, string>>({});
+  const [publishedAuthorsCount, setPublishedAuthorsCount] = useState(0);
+  const [platformsCount, setPlatformsCount] = useState(0);
+
+  useEffect(() => {
+    if (reduceMotion) {
+      setPublishedAuthorsCount(publishedAuthorsTarget);
+      setPlatformsCount(platformsTarget);
+      return;
+    }
+
+    let animationFrame = 0;
+    const duration = 1600;
+    const startTime = performance.now();
+
+    const animateCount = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+      setPublishedAuthorsCount(
+        Math.round(publishedAuthorsTarget * easedProgress),
+      );
+      setPlatformsCount(
+        Math.round(platformsTarget * easedProgress),
+      );
+
+      if (progress < 1) {
+        animationFrame = window.requestAnimationFrame(animateCount);
+      }
+    };
+
+    animationFrame = window.requestAnimationFrame(animateCount);
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame);
+    };
+  }, [reduceMotion]);
 
   function handleProgressChange(name: string, value: string) {
     setProgressValues((current) => ({
@@ -302,16 +340,15 @@ const LandingHero2 = () => {
             variants={riseVariants}
           >
             Bring Your Story To Life Across{" "}
-            <span className="text-[#bdd700]">40+ Platforms</span>
+            <span className="text-[#bdd700]">{platformsCount}+ Platforms</span>
           </motion.h1>
 
           <motion.p
-            className="mx-auto mt-[15px] max-w-[630px] text-sm leading-[1.55] text-[#7b7b7b] sm:text-base lg:mx-0 xl:text-lg xl:leading-[1.38]"
+            className="mx-auto mt-[15px] max-w-[553px] text-sm leading-[1.55] text-[#7b7b7b] sm:text-base lg:mx-0 xl:text-lg xl:leading-[1.38]"
             variants={riseVariants}
           >
             For serious authors ready to do it right. We handle{" "}
-            <strong className="font-semibold text-[#585858]">everything</strong>
-            <br />
+            <strong className="font-semibold text-[#585858]">everything</strong>{" "}
             <span className="font-medium">
               - editing, cover design, formatting & global distribution.
             </span>
@@ -377,7 +414,9 @@ const LandingHero2 = () => {
               ))}
             </div>
             <div className="text-center text-sm leading-[1.25] sm:text-base lg:text-left lg:text-[17px]">
-              <div className="font-bold text-black">1,000+ Authors Published</div>
+              <div className="font-bold text-black">
+                {new Intl.NumberFormat("en-US").format(publishedAuthorsCount)}+ Authors Published
+              </div>
               <div className="text-[#777]">Real authors. Real results.</div>
             </div>
           </motion.div>

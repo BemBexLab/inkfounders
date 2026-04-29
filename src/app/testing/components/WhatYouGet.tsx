@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import React from "react";
+import { motion } from "motion/react";
+import type { Variants } from "motion/react";
 import { MdLocalPhone } from "react-icons/md";
 
 const services = [
   {
-    number: "1",
     title: "E-Book Writing",
     svg: (
       <svg
@@ -49,7 +50,6 @@ const services = [
     ),
   },
   {
-    number: "2",
     title: "E-Book Publishing",
     svg: (
       <svg
@@ -77,7 +77,6 @@ const services = [
     ),
   },
   {
-    number: "3",
     title: "E-Book Cover Design",
     svg: (
       <svg
@@ -138,7 +137,6 @@ const services = [
     ),
   },
   {
-    number: "4",
     title: "E-Book & Proofreading",
     svg: (
       <svg
@@ -176,7 +174,6 @@ const services = [
     ),
   },
   {
-    number: "5",
     title: "Audiobook Publishing",
     svg: (
       <svg
@@ -209,7 +206,6 @@ const services = [
     ),
   },
   {
-    number: "6",
     title: "Audiobook Narration",
     svg: (
       <svg
@@ -254,7 +250,6 @@ const services = [
     ),
   },
   {
-    number: "7",
     title: "Audiobook Editing",
     svg: (
       <svg
@@ -277,63 +272,163 @@ const services = [
   },
 ];
 
+const sectionVariants: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const fadeUpVariants: Variants = {
+  hidden: { opacity: 0, y: 28, filter: "blur(10px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 30, scale: 0.96, filter: "blur(12px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: "blur(0px)",
+    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
 const WhatYouGet = () => {
   return (
-    <section className="bg-[#F4F3E1] py-20 px-10">
-      <p className="text-center text-[#AAAAAA] mb-3 font-semibold tracking-[0.1]">
+    <motion.section
+      className="overflow-hidden bg-[#F4F3E1] px-10 py-20"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={sectionVariants}
+    >
+      <motion.p
+        className="mb-3 text-center font-semibold tracking-[0.18em] text-[#AAAAAA]"
+        variants={fadeUpVariants}
+      >
         WHAT YOU GET
-      </p>
-      <h2 className="text-black text-6xl font-black text-center">
+      </motion.p>
+      <motion.h2
+        className="text-center text-6xl font-black text-black"
+        variants={fadeUpVariants}
+      >
         Everything You Need To <span className="text-yellow-500">Succeed</span>
-      </h2>
-      <p className="text-black text-lg text-center mt-8">
-        We have customized our packages to be more than just “Affordable”; we
-        make sure every author receives elite, “High Quality” service. From the
+      </motion.h2>
+      <motion.p
+        className="mt-8 text-center text-lg text-black"
+        variants={fadeUpVariants}
+      >
+        We have customized our packages to be more than just "Affordable"; we
+        make sure every author receives elite, "High Quality" service. From the
         "Best Price" options to our all inclusive Premium Publishing Package, we
         cover your journey from initial consultation and professional editing to
         global distribution and broad marketing.
-      </p>
+      </motion.p>
 
-      <div className="mt-14 flex flex-wrap justify-center gap-8">
+      <motion.div
+        className="mt-14 flex flex-wrap justify-center gap-8"
+        variants={sectionVariants}
+      >
         {services.map((service, index) => (
-          <div
-            key={index}
-            className="group flex w-full max-w-[340px] flex-col items-center justify-center rounded-[15px] border border-1 border-black bg-transparent py-9 shadow-lg transition-all duration-300 ease-in-out hover:bg-[#DADD39] sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)]"
+          <motion.div
+            key={service.title}
+            className="group relative flex w-full max-w-[340px] flex-col items-center justify-center overflow-hidden rounded-[15px] border border-black bg-transparent py-9 shadow-lg transition-all duration-300 ease-in-out hover:bg-[#DADD39] sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)]"
+            variants={cardVariants}
+            whileHover={{ y: -10, scale: 1.02 }}
           >
-            {/* Custom SVG Icon */}
-            <div className="flex items-center justify-center w-[100px] h-[100px] rounded-full bg-yellow-500 group-hover:bg-white text-black text-3xl font-bold">
+            <motion.div
+              className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[#181818]"
+              initial={{ scaleX: 0, originX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true, amount: 0.85 }}
+              transition={{
+                duration: 0.55,
+                delay: index * 0.07,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            />
+            <motion.div
+              className="pointer-events-none absolute -right-12 -top-12 h-28 w-28 rounded-full bg-white/30 blur-2xl"
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1, scale: 1.08 }}
+            />
+
+            <motion.div
+              className="mb-2 text-xs font-bold tracking-[0.3em] text-[#5d5d5d]"
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{ duration: 0.45, delay: 0.12 + index * 0.05 }}
+            >
+            </motion.div>
+
+            <motion.div
+              className="flex h-[100px] w-[100px] items-center justify-center rounded-full bg-yellow-500 text-3xl font-bold text-black transition-colors duration-300 group-hover:bg-white"
+              initial={{ scale: 0.8, rotate: -10, opacity: 0 }}
+              whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{
+                duration: 0.58,
+                delay: 0.18 + index * 0.05,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              whileHover={{ rotate: 6, scale: 1.07 }}
+            >
               {service.svg}
-            </div>
+            </motion.div>
 
-            <h3 className="mt-5 text-[20px] font-semibold text-[#333]">
+            <motion.h3
+              className="mt-5 text-[20px] font-semibold text-[#333]"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{ duration: 0.5, delay: 0.24 + index * 0.05 }}
+            >
               {service.title}
-            </h3>
-          </div>
+            </motion.h3>
+          </motion.div>
         ))}
-      </div>
-      <div className="mt-4 flex flex-col items-stretch gap-3 min-[430px]:flex-row min-[430px]:justify-center lg:mt-10 lg:flex-wrap lg:justify-center">
-        <Link
-          href="#quote-popup"
-          className="btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[50px] lg:min-w-[200px] lg:px-6 lg:text-[15px]"
-        >
-          <span className="slide-bg"></span>
-          <span className="relative z-10 whitespace-nowrap font-medium tracking-[0.08em]">
-            Request a Quote
-          </span>
-        </Link>
+      </motion.div>
 
-        <Link
-          href="tel:+17864961231"
-          className="btn-slide-bg flex h-10 items-center justify-center gap-x-2 rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[50px] lg:min-w-[200px] lg:px-6 lg:text-[15px]"
-        >
-          <span className="slide-bg"></span>
-          <MdLocalPhone className="relative z-10 text-xl sm:text-[23px] lg:text-[19px]" />
-          <span className="relative z-10 whitespace-nowrap font-medium tracking-[0.08em]">
-            +1 (786) 496-1231
-          </span>
-        </Link>
-      </div>
-    </section>
+      <motion.div
+        className="mt-4 flex flex-col items-stretch gap-3 min-[430px]:flex-row min-[430px]:justify-center lg:mt-10 lg:flex-wrap lg:justify-center"
+        variants={fadeUpVariants}
+      >
+        <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
+          <Link
+            href="#quote-popup"
+            className="btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[50px] lg:min-w-[200px] lg:px-6 lg:text-[15px]"
+          >
+            <span className="slide-bg"></span>
+            <span className="relative z-10 whitespace-nowrap font-medium tracking-[0.08em]">
+              Request a Quote
+            </span>
+          </Link>
+        </motion.div>
+
+        <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
+          <Link
+            href="tel:+17864961231"
+            className="btn-slide-bg flex h-10 items-center justify-center gap-x-2 rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[50px] lg:min-w-[200px] lg:px-6 lg:text-[15px]"
+          >
+            <span className="slide-bg"></span>
+            <MdLocalPhone className="relative z-10 text-xl sm:text-[23px] lg:text-[19px]" />
+            <span className="relative z-10 whitespace-nowrap font-medium tracking-[0.08em]">
+              +1 (786) 496-1231
+            </span>
+          </Link>
+        </motion.div>
+      </motion.div>
+    </motion.section>
   );
 };
 

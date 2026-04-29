@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import { motion } from "motion/react";
+import type { Variants } from "motion/react";
 
 const steps = [
   {
@@ -20,39 +22,130 @@ const steps = [
   },
 ];
 
+const containerVariants: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.16,
+    },
+  },
+};
+
+const fadeUpVariants: Variants = {
+  hidden: { opacity: 0, y: 28, filter: "blur(10px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 34, rotateX: 10, filter: "blur(12px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
 const ManuScript = () => {
   return (
-    <section className="bg-[#F8F8F6] px-4 py-16 sm:px-6 md:px-8 lg:px-10 lg:py-20">
-      <p className="text-center text-[#AAAAAA] mb-3 font-semibold tracking-[0.1]">
-        SIMPLE PROCESS
-      </p>
-      <h2 className="text-center text-4xl font-black text-black sm:text-5xl lg:text-6xl">
-        From Manuscript to{" "}
-        <span className="text-yellow-500">Published Author</span>
-      </h2>
+    <motion.section
+      className="overflow-hidden bg-[#F8F8F6] px-4 py-16 sm:px-6 md:px-8 lg:px-10 lg:py-20"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.25 }}
+      variants={containerVariants}
+    >
+      <motion.div
+        className="mx-auto max-w-full"
+        variants={containerVariants}
+      >
+        <motion.p
+          className="mb-3 text-center font-semibold tracking-[0.18em] text-[#AAAAAA]"
+          variants={fadeUpVariants}
+        >
+          SIMPLE PROCESS
+        </motion.p>
+        <motion.h2
+          className="w-full text-center flex items-center justify-center text-5xl font-black text-black sm:text-5xl lg:text-6xl"
+          variants={fadeUpVariants}
+        >
+          <span className="max-w-full">
+            From Manuscript to <span className="text-yellow-500">Published Author</span>
+          </span>
+        </motion.h2>
+      </motion.div>
 
-      <div className="mt-8 flex flex-wrap justify-center gap-4 sm:mt-8 md:mt-8 md:gap-5">
-        {steps.map((step) => (
-          <div
+      <motion.div
+        className="mt-10 flex flex-wrap justify-center gap-4 sm:mt-8 md:mt-8 md:gap-5"
+        variants={containerVariants}
+      >
+        {steps.map((step, index) => (
+          <motion.div
             key={step.number}
-            className="group flex w-full max-w-[440px] flex-col items-start justify-start rounded-[20px] border border-1 border-black bg-transparent p-6 shadow-xl transition-all duration-300 ease-in-out hover:border-[#E8E8E6] hover:bg-white sm:w-[calc(50%-0.5rem)] sm:p-7 lg:w-[3460px] lg:p-8"
+            className="group relative flex w-full max-w-[520px] flex-col items-start justify-start overflow-hidden rounded-[20px] border border-black bg-transparent p-6 shadow-[0_16px_42px_rgba(0,0,0,0.08)] transition-all duration-300 ease-in-out hover:border-[#E8E8E6] hover:bg-white sm:w-[calc(50%-0.5rem)] sm:p-7 lg:w-[420px] lg:p-8"
+            variants={cardVariants}
+            whileHover={{ y: -10, scale: 1.015 }}
           >
-            {/* Icon Circle */}
-            <div className="group-hover:bg-yellow-500 flex items-center justify-center w-[50px] h-[50px] rounded-full bg-white text-black text-2xl font-bold shadow-lg shadow-yellow-500/50 transition-all duration-300 ease-in-out">
-              {step.number}
-            </div>
+            <motion.div
+              className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-[#d0df00]"
+              initial={{ scaleX: 0, originX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{
+                duration: 0.65,
+                delay: index * 0.12,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            />
+            <motion.div
+              className="pointer-events-none absolute -right-14 -top-14 h-32 w-32 rounded-full bg-[#d0df00]/12 blur-2xl"
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1, scale: 1.12 }}
+            />
 
-            {/* Card Content */}
-            <h3 className="mt-5 text-[20px] font-semibold text-[#333] text-left">
+            <motion.div
+              className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white text-2xl font-bold text-black shadow-lg shadow-yellow-500/30 transition-all duration-300 ease-in-out group-hover:bg-yellow-500"
+              initial={{ scale: 0.7, rotate: -12, opacity: 0 }}
+              whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{
+                duration: 0.55,
+                delay: 0.18 + index * 0.08,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              whileHover={{ rotate: 8, scale: 1.08 }}
+            >
+              {step.number}
+            </motion.div>
+
+            <motion.h3
+              className="mt-5 text-left text-[20px] font-semibold text-[#333]"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{ duration: 0.5, delay: 0.24 + index * 0.08 }}
+            >
               {step.title}
-            </h3>
-            <p className="mt-4 text-left font-medium text-[14px] text-[#777777]">
+            </motion.h3>
+            <motion.p
+              className="mt-4 text-left text-[14px] font-medium text-[#777777]"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{ duration: 0.56, delay: 0.3 + index * 0.08 }}
+            >
               {step.text}
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

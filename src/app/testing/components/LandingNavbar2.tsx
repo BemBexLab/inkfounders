@@ -4,7 +4,7 @@ import { MdLocalPhone } from "react-icons/md";
 
 const LandingNavbar2 = () => {
   return (
-    <section className="absolute left-0 top-0 z-30 flex w-full min-h-[76px] items-start bg-transparent px-5 py-5 sm:px-8 lg:h-[120px] lg:px-[70px] lg:py-[25px]">
+    <section className="absolute left-0 top-0 z-30 flex w-full min-h-[76px] items-start bg-transparent px-5 py-5 sm:px-8 lg:h-[120px] lg:px-[70px] lg:py-[9px]">
       <video
         width="3300"
         height="1500"
@@ -14,7 +14,7 @@ const LandingNavbar2 = () => {
         playsInline
         className="h-auto w-[96px] shrink-0 sm:w-[130px] lg:w-[166px] lg:-ml-4"
       >
-        <source src="/logovideo/inkfounder_logo_animate.mp4" type="video/mp4" />
+        <source src="/logovideo/01.mp4" />
         Your browser does not support the video tag.
       </video>
 
