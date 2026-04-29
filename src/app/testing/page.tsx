@@ -50,69 +50,68 @@ const navbarVariants: Variants = {
 
 const Page = () => {
   return (
-    <motion.main
-      className="overflow-hidden bg-white"
-      initial="hidden"
-      animate="show"
-      variants={pageVariants}
-    >
+    <>
+      <motion.main
+        className="overflow-hidden bg-white"
+        initial="hidden"
+        animate="show"
+        variants={pageVariants}
+      >
         <LandingNavbar2 />
 
-      <motion.div variants={sectionVariants}>
-        <LandingHero2 />
-      </motion.div>
-      <motion.div variants={sectionVariants}>
-        <NumericValues />
-      </motion.div>
-      <motion.div variants={sectionVariants}>
-        <ManuScript />
-      </motion.div>
-      <motion.div variants={sectionVariants}>
-        <WhatYouGet />
-      </motion.div>
-      <motion.div variants={sectionVariants}>
-        <Inkfounderscomparison />
-      </motion.div>
-      <motion.div variants={sectionVariants}>
-        <BooksSection />
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
-      >
-        <CTABanner />
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
-      >
-        <Testimonials />
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
-      >
-        <GetInTouch />
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
-      >
-        <LandingFooter />
-      </motion.div>
-
-      <motion.div variants={sectionVariants}>
         <QuotePopup />
-      </motion.div>
-    </motion.main>
+        <motion.div variants={sectionVariants}>
+          <LandingHero2 />
+        </motion.div>
+        <motion.div variants={sectionVariants}>
+          <NumericValues />
+        </motion.div>
+        <motion.div variants={sectionVariants}>
+          <ManuScript />
+        </motion.div>
+        <motion.div variants={sectionVariants}>
+          <WhatYouGet />
+        </motion.div>
+        <motion.div variants={sectionVariants}>
+          <Inkfounderscomparison />
+        </motion.div>
+        <motion.div variants={sectionVariants}>
+          <BooksSection />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <CTABanner />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <Testimonials />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <GetInTouch />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <LandingFooter />
+        </motion.div>
+      </motion.main>
+    </>
   );
 };
 

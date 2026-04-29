@@ -303,6 +303,10 @@ const cardVariants: Variants = {
 };
 
 const WhatYouGet = () => {
+  const handleQuoteClick = () => {
+    window.dispatchEvent(new Event("open-quote-popup"));
+  };
+
   return (
     <motion.section
       className="overflow-hidden bg-[#F4F3E1] px-10 py-20"
@@ -404,15 +408,16 @@ const WhatYouGet = () => {
         variants={fadeUpVariants}
       >
         <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
-          <Link
-            href="#quote-popup"
+          <button
+            type="button"
+            onClick={handleQuoteClick}
             className="btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[50px] lg:min-w-[200px] lg:px-6 lg:text-[15px]"
           >
             <span className="slide-bg"></span>
             <span className="relative z-10 whitespace-nowrap font-medium tracking-[0.08em]">
               Request a Quote
             </span>
-          </Link>
+          </button>
         </motion.div>
 
         <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
