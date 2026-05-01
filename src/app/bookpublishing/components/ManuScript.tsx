@@ -66,7 +66,7 @@ const ManuScript = () => {
         variants={containerVariants}
       >
         <motion.p
-          className="mb-3 text-center font-semibold tracking-[0.18em] text-[#AAAAAA]"
+          className="mb-3 text-center font-semibold tracking-[0.18em] text-black"
           variants={fadeUpVariants}
         >
           SIMPLE PROCESS
@@ -76,7 +76,7 @@ const ManuScript = () => {
           variants={fadeUpVariants}
         >
           <span className="max-w-full">
-            From Manuscript to <span className="text-yellow-500">Published Author</span>
+            From Manuscript to <span className="text-[#C8D400]">Published Author</span>
           </span>
         </motion.h2>
 
@@ -117,7 +117,7 @@ const ManuScript = () => {
             />
 
             <motion.div
-              className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white text-2xl font-bold text-black shadow-lg shadow-yellow-500/30 transition-all duration-300 ease-in-out group-hover:bg-yellow-500"
+              className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white text-2xl font-bold text-black shadow-lg shadow-yellow-500/30 transition-all duration-300 ease-in-out group-hover:bg-[#C8D400]"
               initial={{ scale: 0.7, rotate: -12, opacity: 0 }}
               whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
               viewport={{ once: true, amount: 0.8 }}
@@ -141,7 +141,7 @@ const ManuScript = () => {
               {step.title}
             </motion.h3>
             <motion.p
-              className="mt-4 text-left text-[14px] font-medium text-[#777777]"
+              className="mt-4 text-left text-[14px] font-medium text-black/70"
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.8 }}

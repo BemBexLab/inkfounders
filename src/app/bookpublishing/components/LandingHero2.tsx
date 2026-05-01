@@ -113,7 +113,7 @@ function Field({
       whileHover={{ y: -2 }}
       transition={{ duration: 0.18 }}
     >
-      <span className="mb-2 block text-xs font-black font-semibold uppercase tracking-[0.16em] text-[#AAAAAA] lg:mb-[10px] lg:text-sm">
+      <span className="mb-2 block text-xs font-black font-semibold uppercase tracking-[0.16em] text-black lg:mb-[10px] lg:text-sm">
         {label}
       </span>
       <input
@@ -168,7 +168,7 @@ function SelectField({
         }
       }}
     >
-      <span className="mb-2 block text-xs font-black font-semibold uppercase tracking-[0.16em] text-[#AAAAAA] lg:mb-[10px] lg:text-sm">
+      <span className="mb-2 block text-xs font-black font-semibold uppercase tracking-[0.16em] text-black lg:mb-[10px] lg:text-sm">
         {label}
       </span>
       <input
@@ -512,7 +512,7 @@ const LandingHero2 = () => {
           </motion.div>
 
           <motion.h1
-            className="mx-auto max-w-[645px] text-[clamp(2rem,9vw,3.25rem)] font-black leading-[1.08] tracking-[-0.04em] text-[#151519] md:text-6xl lg:mx-0 lg:text-5xl lg:leading-[1.12] 2xl:text-5xl 2xl:leading-[1.24]"
+            className="mx-auto max-w-[655px] text-[clamp(2rem,9vw,3.25rem)] font-black leading-[1.08] tracking-[-0.04em] text-[#151519] md:text-6xl lg:mx-0 lg:text-5xl lg:leading-[1.12] 2xl:text-5xl 2xl:leading-[1.24]"
             variants={riseVariants}
           >
             Complete Publishing Services With a Professional Approach and a Reasonable Package
@@ -520,13 +520,13 @@ const LandingHero2 = () => {
           </motion.h1>
 
           <motion.p
-            className="mx-auto mt-[15px] max-w-[553px] text-sm leading-[1.55] text-[#7b7b7b] sm:text-base lg:mx-0 xl:text-lg xl:leading-[1.38]"
+            className="mx-auto mt-[15px] max-w-[553px] text-sm leading-[1.55] text-black sm:text-base lg:mx-0 xl:text-lg xl:leading-[1.38]"
             variants={riseVariants}
           >
             Reach your readers on Amazon KDP, Barnes & Noble, Kobo, IngramSpark, and many more today. Get expert editing and formatting in one reasonable package at Ink Founders.
           </motion.p>
 
-          <motion.ul
+          {/* <motion.ul
             className="mx-auto mt-[28px] max-w-[560px] space-y-[9px] text-left lg:mx-0 lg:max-w-none lg:space-y-[7px]"
             variants={containerVariants}
           >
@@ -543,7 +543,7 @@ const LandingHero2 = () => {
                 {benefit}
               </motion.li>
             ))}
-          </motion.ul>
+          </motion.ul> */}
 
           <motion.div
             className="mt-[29px] flex flex-col items-stretch gap-[10px] min-[460px]:flex-row min-[460px]:justify-center lg:justify-start"
@@ -616,7 +616,7 @@ const LandingHero2 = () => {
               <h2 className="text-3xl font-black leading-none tracking-[-0.04em] text-[#151515] sm:text-4xl lg:text-3xl xl:text-4xl">
                 Apply <span className="text-[#bfd700]">Now</span>
               </h2>
-              <p className="mt-[10px] text-sm text-[#8b8b8b] sm:text-base lg:text-sm xl:text-base">
+              <p className="mt-[10px] text-sm text-black sm:text-base lg:text-sm xl:text-base">
                 Takes 60 seconds - Free - No obligation
               </p>
             </motion.div>
@@ -625,7 +625,7 @@ const LandingHero2 = () => {
 
             <motion.div className="my-[20px] flex items-center gap-[10px]" variants={riseVariants}>
               <span className="h-px flex-1 bg-[#eeeeee]" />
-              <span className="text-md text-[#DDDDDD]">or</span>
+              <span className="text-md text-black">or</span>
               <span className="h-px flex-1 bg-[#eeeeee]" />
             </motion.div>
 
@@ -639,8 +639,8 @@ const LandingHero2 = () => {
               </Link>
             </motion.div>
 
-            <motion.div className="mt-[14px] flex items-center justify-center text-center text-xs text-[#b0b0b0] sm:text-sm" variants={riseVariants}>
-              <FaLock className="mr-[5px] text-sm text-[#c5a545]" />
+            <motion.div className="mt-[14px] flex items-center justify-center text-center text-xs text-black sm:text-sm" variants={riseVariants}>
+              <FaLock className="mr-[5px] text-sm text-black" />
               100% confidential - No spam - No obligation
             </motion.div>
           </motion.div>
@@ -696,7 +696,7 @@ const LandingHero2 = () => {
                 >
                   Apply <span className="text-[#bfd700]">Now</span>
                 </h2>
-                <p className="mt-[10px] max-w-[540px] text-sm text-[#8b8b8b] sm:text-base">
+                <p className="mt-[10px] max-w-[540px] text-sm text-black sm:text-base">
                   Takes 60 seconds - Free - No obligation
                 </p>
               </motion.div>

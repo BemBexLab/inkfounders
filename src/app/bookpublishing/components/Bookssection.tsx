@@ -63,13 +63,13 @@ export default function BooksSection() {
 
       <motion.div
         className="flex w-full flex-wrap items-end justify-center gap-x-1 gap-y-6 sm:gap-x-2 md:gap-y-8 lg:flex-nowrap lg:gap-x-3"
-        style={{ maxWidth: "1400px" }}
+        style={{ maxWidth: "1560px" }}
         variants={containerVariants}
       >
         {books.map((book) => (
           <motion.div
             key={book.id}
-            className="relative w-[32%] min-w-[108px] max-w-[180px] sm:w-[24%] sm:min-w-[130px] sm:max-w-[210px] md:w-[16.5%] md:min-w-[145px] md:max-w-[230px] lg:w-1/6 lg:min-w-0 lg:max-w-none"
+            className="relative w-[35%] min-w-[128px] max-w-[210px] sm:w-[26%] sm:min-w-[150px] sm:max-w-[250px] md:w-[17.5%] md:min-w-[175px] md:max-w-[280px] lg:w-1/6 lg:min-w-0 lg:max-w-none"
             style={{
               transform: `perspective(800px) rotateY(${book.tilt})`,
               transformOrigin: "center bottom",

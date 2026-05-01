@@ -272,7 +272,7 @@ const WhatYouGet = () => {
       variants={sectionVariants}
     >
       <motion.p
-        className="mb-3 text-center font-semibold tracking-[0.18em] text-[#AAAAAA]"
+        className="mb-3 text-center font-semibold tracking-[0.18em] text-black"
         variants={fadeUpVariants}
       >
         WHAT YOU GET
@@ -281,7 +281,7 @@ const WhatYouGet = () => {
         className="text-center text-6xl font-black text-black"
         variants={fadeUpVariants}
       >
-        The Complete Author <span className="text-yellow-500">Solution</span>
+        The Complete Author <span className="text-[#C8D400]">Solution</span>
       </motion.h2>
       <motion.p
         className="mt-8 text-center text-lg text-black"
@@ -297,7 +297,7 @@ const WhatYouGet = () => {
         {services.map((service, index) => (
           <motion.div
             key={service.title}
-            className="group relative flex w-full max-w-[340px] flex-col items-center justify-center overflow-hidden rounded-[15px] border border-black bg-transparent py-9 shadow-lg transition-all duration-300 ease-in-out hover:bg-[#DADD39] sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)]"
+            className="group relative flex w-full max-w-[340px] flex-col items-center justify-center overflow-hidden rounded-[15px] border border-black bg-transparent py-9 shadow-lg transition-all duration-300 ease-in-out hover:bg-[#C8D400] sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)]"
             variants={cardVariants}
             whileHover={{ y: -10, scale: 1.02 }}
           >
@@ -328,7 +328,7 @@ const WhatYouGet = () => {
             </motion.div>
 
             <motion.div
-              className="flex h-[100px] w-[100px] items-center justify-center rounded-full bg-yellow-500 text-3xl font-bold text-black transition-colors duration-300 group-hover:bg-white"
+              className="flex h-[100px] w-[100px] items-center justify-center rounded-full bg-[#C8D400] text-3xl font-bold text-black transition-colors duration-300 group-hover:bg-white"
               initial={{ scale: 0.8, rotate: -10, opacity: 0 }}
               whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
               viewport={{ once: true, amount: 0.8 }}
