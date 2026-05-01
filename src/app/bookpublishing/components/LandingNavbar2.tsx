@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { MdLocalPhone } from "react-icons/md";
@@ -11,7 +12,7 @@ const LandingNavbar2 = () => {
 
   return (
     <section className="absolute left-0 top-0 z-30 flex w-full min-h-[76px] items-start bg-transparent px-5 py-5 sm:px-8 lg:h-[120px] lg:px-[70px] lg:py-[9px]">
-      <video
+      {/* <video
         width="3300"
         height="1500"
         autoPlay
@@ -22,7 +23,15 @@ const LandingNavbar2 = () => {
       >
         <source src="/logovideo/01-Picsart-BackgroundRemover.webm" />
         Your browser does not support the video tag.
-      </video>
+      </video> */}
+
+      <Image
+        src="/logovideo/0429 1.gif"
+        alt="Ink Founders Logo"
+        width="3300"
+        height="1500"
+        className="h-auto w-[96px] shrink-0 sm:w-[130px] lg:w-[166px] lg:-ml-4 brightness-110"
+      />
 
       <div className="ml-auto flex min-w-0 items-center gap-2 sm:gap-3 lg:absolute lg:right-[50px] lg:top-[37px] lg:ml-0 lg:translate-y-0">
         <Link

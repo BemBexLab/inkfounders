@@ -59,7 +59,7 @@ const LandingFooter = () => {
           </p>
 
           <div className="flex items-center justify-center gap-4">
-            <Link
+            {/* <Link
               href="#"
               aria-label="Facebook"
               className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-[#DADD39] text-[#202020] transition hover:opacity-85 md:h-9 md:w-9"
@@ -72,7 +72,7 @@ const LandingFooter = () => {
               className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-[#DADD39] text-[#202020] transition hover:opacity-85 md:h-9 md:w-9"
             >
               <FaInstagram className="h-[18px] w-[18px]" />
-            </Link>
+            </Link> */}
           </div>
 
           <div
