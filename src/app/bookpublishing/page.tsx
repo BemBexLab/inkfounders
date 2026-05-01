@@ -10,10 +10,10 @@ import ManuScript from "./components/ManuScript";
 import WhatYouGet from "./components/WhatYouGet";
 import Inkfounderscomparison from "./components/Inkfounderscomparison";
 import BooksSection from "./components/Bookssection";
-import CTABanner from "../book-publishing/components/CTABanner";
+import CTABanner from "./components/CTABanner";
 import Testimonials from "../book-publishing/components/TestimonialLanding";
 import GetInTouch from "../book-publishing/components/ContactForm";
-import LandingFooter from "../book-publishing/components/LandingFooter";
+import LandingFooter from "./components/LandingFooter";
 import QuotePopup from "../book-publishing/components/QuotePopup";
 
 const pageVariants: Variants = {
