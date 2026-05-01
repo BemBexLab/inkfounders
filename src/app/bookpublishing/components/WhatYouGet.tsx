@@ -5,10 +5,12 @@ import React from "react";
 import { motion } from "motion/react";
 import type { Variants } from "motion/react";
 import { MdLocalPhone } from "react-icons/md";
+import { FaGlobeAmericas } from "react-icons/fa";
+import { FaBookOpen } from "react-icons/fa6";
 
 const services = [
   {
-    title: "E-Book Writing",
+    title: "Book Writing",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +50,10 @@ const services = [
         />
       </svg>
     ),
+    description: "Your ideas and imagination into a real manuscript, whether it's ghostwriting from scratch or polishing what you have already started.",
   },
   {
-    title: "E-Book Publishing",
+    title: "Book Publishing",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -75,9 +78,10 @@ const services = [
         />
       </svg>
     ),
+    description: "Publish your book in both e-book and print format across 40+ global platforms, handling every step of the process alongside you.",
   },
   {
-    title: "E-Book Cover Design",
+    title: "Book Cover Design",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -135,9 +139,10 @@ const services = [
         </defs>
       </svg>
     ),
+    description: "We design a book cover, creative, according to your book cover.",
   },
   {
-    title: "E-Book & Proofreading",
+    title: "Book Proofreading",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -172,9 +177,10 @@ const services = [
         </defs>
       </svg>
     ),
+    description: "Complete editing and proofreading that fixes every error, sharpens the flow, and gives your book a professional finish, without touching your voice.",
   },
   {
-    title: "Audiobook Publishing",
+    title: "Audiobook Production",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -204,71 +210,21 @@ const services = [
         </defs>
       </svg>
     ),
+    description: "From narration and background scoring to full audiobook publishing, we handle everything so your story sounds as good as it reads.",
   },
   {
-    title: "Audiobook Narration",
+    title: "Book Marketing",
     svg: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
-        viewBox="0 0 40 40"
-        fill="none"
-      >
-        <g clipPath="url(#clip0_354_1515)">
-          <path
-            d="M0.00195312 3.51562C0.00195312 5.45422 1.57898 7.03125 3.51758 7.03125H30.7832V0H3.51758C1.57898 0 0.00195312 1.57703 0.00195312 3.51562Z"
-            fill="#1F1F1F"
-          />
-          <path
-            d="M21.252 17.3491L14.2207 21.7437V27.4749L21.252 31.8694V17.3491Z"
-            fill="#1F1F1F"
-          />
-          <path
-            d="M9.5332 22.2656H11.877V26.9531H9.5332V22.2656Z"
-            fill="#1F1F1F"
-          />
-          <path
-            d="M39.998 22.2805C39.998 18.8416 38.6567 15.6063 36.2191 13.1699L34.562 14.827C36.5556 16.8217 37.6542 19.4688 37.6542 22.2805C37.6542 25.0923 36.5555 27.7405 34.562 29.7352L36.2191 31.3923C38.6567 28.9548 39.998 25.7184 39.998 22.2805Z"
-            fill="#1F1F1F"
-          />
-          <path
-            d="M32.9049 28.0792C34.4567 26.5297 35.3105 24.4697 35.3105 22.2804C35.3105 20.09 34.4567 18.0312 32.9049 16.4817L31.2478 18.1411C32.3556 19.2465 32.9667 20.7172 32.9667 22.2804C32.9667 23.8436 32.3556 25.3142 31.2478 26.422L32.9049 28.0792Z"
-            fill="#1F1F1F"
-          />
-          <path
-            d="M3.51758 39.9999H30.7832V9.37491H3.51758C2.1932 9.37491 0.984141 8.91702 0.00195312 8.17358V36.4843C0.00195312 38.4229 1.57898 39.9999 3.51758 39.9999ZM7.18945 19.9218H12.712L23.5957 13.1194V36.0991L12.712 29.2968H7.18945V19.9218Z"
-            fill="#1F1F1F"
-          />
-        </g>
-        <defs>
-          <clipPath id="clip0_354_1515">
-            <rect width="40" height="40" fill="white" />
-          </clipPath>
-        </defs>
-      </svg>
+      <FaBookOpen size={40} />
     ),
+    description: "Market your book, grow your reach, build your presence, and make sure your work gets the attention it deserves.",
   },
   {
-    title: "Audiobook Editing",
+    title: "Global Distribution",
     svg: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
-        viewBox="0 0 40 40"
-        fill="none"
-      >
-        <path
-          d="M40 7.99478V7.11768C40 4.53299 37.8972 2.43018 35.3125 2.43018H4.6875C2.10281 2.43018 0 4.53299 0 7.11768V7.99486L40 7.99478Z"
-          fill="#1F1F1F"
-        />
-        <path
-          d="M0 10.3386V32.8825C0 35.4671 2.10281 37.57 4.6875 37.57H35.3125C37.8972 37.57 40 35.4671 40 32.8825V10.3386H0ZM28.9584 20.5991V18.2553H30.7031V15.6772H33.0469V18.2553H34.7917V20.5991H33.0469V31.5106H30.7031V20.5991H28.9584ZM21.0417 23.9324V21.5886H22.7865V15.6771H25.1302V21.5886H26.875V23.9324H25.1302V31.5105H22.7865V23.9324H21.0417ZM13.125 28.0991V25.7553H14.8698V15.6772H17.2136V25.7553H18.9584V28.0991H17.2136V31.5106H14.8698V28.0991H13.125ZM5.20836 21.4324V19.0886H6.95312V15.6771H9.29688V19.0886H11.0417V21.4324H9.29688V31.5105H6.95312V21.4324H5.20836Z"
-          fill="#1F1F1F"
-        />
-      </svg>
+      <FaGlobeAmericas size={40} />
     ),
+    description: "Every author dreams of reaching readers worldwide, and we make that happen.",
   },
 ];
 
@@ -325,17 +281,13 @@ const WhatYouGet = () => {
         className="text-center text-6xl font-black text-black"
         variants={fadeUpVariants}
       >
-        Everything You Need To <span className="text-yellow-500">Succeed</span>
+        The Complete Author <span className="text-yellow-500">Solution</span>
       </motion.h2>
       <motion.p
         className="mt-8 text-center text-lg text-black"
         variants={fadeUpVariants}
       >
-        We have customized our packages to be more than just "Affordable"; we
-        make sure every author receives elite, "High Quality" service. From the
-        "Best Price" options to our all inclusive Premium Publishing Package, we
-        cover your journey from initial consultation and professional editing to
-        global distribution and broad marketing.
+        We built our packages around one idea: every author deserves elite service at a price that makes sense. From your first consultation to global distribution, we cover it all under one roof.
       </motion.p>
 
       <motion.div
@@ -399,6 +351,15 @@ const WhatYouGet = () => {
             >
               {service.title}
             </motion.h3>
+            <motion.p
+              className="mt-5 text-sm font-medium text-center px-2 text-[#333]"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{ duration: 0.5, delay: 0.24 + index * 0.05 }}
+            >
+              {service.description}
+            </motion.p>
           </motion.div>
         ))}
       </motion.div>

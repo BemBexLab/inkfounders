@@ -141,10 +141,7 @@ export default function InkFoundersComparison() {
               style={{ marginBottom: "clamp(2rem, 6vw, 5rem)" }}
               variants={fadeUpVariants}
             >
-              Lorem ipsum dolor sit amet consectetur. Sed urna sed eget ultrices vitae amet aenean et
-              faucibus. Odio eu tristique egestas a venenatis odio semper ut nisi. Sit purus vitae
-              mattis erat aliquam quis egestas id sit. Sem integer leo pulvinar eget lobortis purus
-              tellus magna.
+              We are not here to do what everyone else does. Here's an honest look at what separates us from going it alone or settling for less.
             </motion.p>
           </motion.div>
 
