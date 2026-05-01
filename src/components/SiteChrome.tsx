@@ -13,8 +13,8 @@ export default function SiteChrome({
   const hideChrome =
     pathname === "/bookpublishing" ||
     pathname.startsWith("/bookpublishing/") ||
-    pathname === "/testing" ||
-    pathname.startsWith("/testing/");
+    pathname === "/book-publishing" ||
+    pathname.startsWith("/book-publishing/");
 
   if (hideChrome) {
     return <>{children}</>;

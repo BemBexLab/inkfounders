@@ -1,166 +1,117 @@
 "use client";
 
 import React from "react";
-import { motion, useReducedMotion, useScroll, useSpring } from "motion/react";
+import { motion } from "motion/react";
 import type { Variants } from "motion/react";
-import LandingNavBar from "./components/LandingNavBar";
-import LandingHero from "./components/LandingHero";
-import FeaturesSection from "./components/FeaturesSection";
-import CTABanner from "./components/CTABanner";
-import BookGallery from "./components/BookGallery";
-import CTABannerRight from "./components/CTABannerRight";
-import PublishingPartner from "./components/PublishingPartner";
-import LogoMarquee from "./components/LogoMarquee";
-import Packages from "./components/Packages";
-import BringYourBookSection from "./components/BringYourBookSection";
-import StepCard from "./components/PublishingSteps";
-import PublishYourStory from "./components/PublishYourStory";
-import TestimonialLanding from "./components/TestimonialLanding";
-import GetInTouch from "./components/ContactForm";
-import LandingFooter from "./components/LandingFooter";
-import QuotePopup from "./components/QuotePopup";
+import LandingHero2 from "./components/LandingHero2";
+import LandingNavbar2 from "./components/LandingNavbar2";
+import NumericValues from "./components/NumericValues";
+import ManuScript from "./components/ManuScript";
+import WhatYouGet from "./components/WhatYouGet";
+import Inkfounderscomparison from "./components/Inkfounderscomparison";
+import BooksSection from "./components/Bookssection";
+import CTABanner from "../book-publishing/components/CTABanner";
+import Testimonials from "../book-publishing/components/TestimonialLanding";
+import GetInTouch from "../book-publishing/components/ContactForm";
+import LandingFooter from "../book-publishing/components/LandingFooter";
+import QuotePopup from "../book-publishing/components/QuotePopup";
+
+const pageVariants: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+      staggerChildren: 0.08,
+      delayChildren: 0.05,
+    },
+  },
+};
 
 const sectionVariants: Variants = {
-  hidden: (direction: number = 1) => ({
-    opacity: 0,
-    y: 52,
-    x: direction * 18,
-    scale: 0.985,
-    filter: "blur(10px)",
-  }),
+  hidden: { opacity: 0, y: 26, filter: "blur(10px)" },
   show: {
     opacity: 1,
     y: 0,
-    x: 0,
-    scale: 1,
     filter: "blur(0px)",
-    transition: {
-      duration: 0.72,
-      ease: [0.2, 0.85, 0.2, 1],
-    },
+    transition: { duration: 0.75, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
-const heroVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 28,
-    scale: 0.99,
-    filter: "blur(8px)",
-  },
+const navbarVariants: Variants = {
+  hidden: { opacity: 0, y: -18 },
   show: {
     opacity: 1,
     y: 0,
-    scale: 1,
-    filter: "blur(0px)",
-    transition: {
-      duration: 0.85,
-      ease: [0.2, 0.85, 0.2, 1],
-    },
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
   },
 };
-
-function MotionBlock({
-  children,
-  direction = 1,
-  className,
-  reducedMotion,
-}: {
-  children: React.ReactNode;
-  direction?: number;
-  className?: string;
-  reducedMotion: boolean | null;
-}) {
-  if (reducedMotion) {
-    return <div className={className}>{children}</div>;
-  }
-
-  return (
-    <motion.div
-      className={className}
-      custom={direction}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.18, margin: "0px 0px -90px" }}
-      variants={sectionVariants}
-    >
-      {children}
-    </motion.div>
-  );
-}
 
 const Page = () => {
-  const reduceMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll();
-  const scrollScaleX = useSpring(scrollYProgress, {
-    stiffness: 130,
-    damping: 24,
-    restDelta: 0.001,
-  });
-
   return (
-    <section className="overflow-hidden bg-white">
-      {!reduceMotion && (
-        <motion.div
-          aria-hidden="true"
-          className="fixed left-0 top-0 z-[9999] h-1 w-full origin-left bg-[#DADD39]"
-          style={{ scaleX: scrollScaleX }}
-        />
-      )}
-
-      <LandingNavBar />
-
-      <motion.div
-        initial={reduceMotion ? "show" : "hidden"}
+    <>
+      <motion.main
+        className="overflow-hidden bg-white"
+        initial="hidden"
         animate="show"
-        variants={heroVariants}
+        variants={pageVariants}
       >
-        <LandingHero />
-      </motion.div>
+        <LandingNavbar2 />
 
-      <MotionBlock reducedMotion={reduceMotion} direction={-1}>
-        <FeaturesSection />
-      </MotionBlock>
-      <MotionBlock reducedMotion={reduceMotion} direction={1}>
-        <CTABanner />
-      </MotionBlock>
-      <MotionBlock reducedMotion={reduceMotion} direction={-1}>
-        <PublishingPartner />
-      </MotionBlock>
-      {/* <BookPublishingSection /> */}
-      <MotionBlock reducedMotion={reduceMotion} direction={1}>
-        <BookGallery />
-      </MotionBlock>
-      <MotionBlock reducedMotion={reduceMotion} direction={-1}>
-        <LogoMarquee />
-      </MotionBlock>
-      <MotionBlock reducedMotion={reduceMotion} direction={1}>
-        <CTABannerRight />
-      </MotionBlock>
-      <MotionBlock reducedMotion={reduceMotion} direction={-1}>
-        <Packages />
-      </MotionBlock>
-      <MotionBlock reducedMotion={reduceMotion} direction={1}>
-        <BringYourBookSection />
-      </MotionBlock>
-      <MotionBlock reducedMotion={reduceMotion} direction={-1}>
-        <StepCard />
-      </MotionBlock>
-      <MotionBlock reducedMotion={reduceMotion} direction={1}>
-        <PublishYourStory />
-      </MotionBlock>
-      <MotionBlock reducedMotion={reduceMotion} direction={-1}>
-        <TestimonialLanding />
-      </MotionBlock>
-      <MotionBlock reducedMotion={reduceMotion} direction={1}>
-        <GetInTouch />
-      </MotionBlock>
-      <MotionBlock reducedMotion={reduceMotion} direction={-1}>
-        <LandingFooter />
-      </MotionBlock>
-
-      <QuotePopup />
-    </section>
+        <QuotePopup />
+        <motion.div variants={sectionVariants}>
+          <LandingHero2 />
+        </motion.div>
+        <motion.div variants={sectionVariants}>
+          <NumericValues />
+        </motion.div>
+        <motion.div variants={sectionVariants}>
+          <ManuScript />
+        </motion.div>
+        <motion.div variants={sectionVariants}>
+          <WhatYouGet />
+        </motion.div>
+        <motion.div variants={sectionVariants}>
+          <Inkfounderscomparison />
+        </motion.div>
+        <motion.div variants={sectionVariants}>
+          <BooksSection />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <CTABanner />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <Testimonials />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <GetInTouch />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <LandingFooter />
+        </motion.div>
+      </motion.main>
+    </>
   );
 };
 
