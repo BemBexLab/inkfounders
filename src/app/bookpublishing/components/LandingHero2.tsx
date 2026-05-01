@@ -512,22 +512,18 @@ const LandingHero2 = () => {
           </motion.div>
 
           <motion.h1
-            className="mx-auto max-w-[645px] text-[clamp(2rem,9vw,3.25rem)] font-black leading-[1.08] tracking-[-0.04em] text-[#151519] md:text-6xl lg:mx-0 lg:text-[clamp(2.65rem,4.4vw,4rem)] lg:leading-[1.12] 2xl:text-7xl 2xl:leading-[1.24]"
+            className="mx-auto max-w-[645px] text-[clamp(2rem,9vw,3.25rem)] font-black leading-[1.08] tracking-[-0.04em] text-[#151519] md:text-6xl lg:mx-0 lg:text-5xl lg:leading-[1.12] 2xl:text-5xl 2xl:leading-[1.24]"
             variants={riseVariants}
           >
-            Bring Your Story To Life Across{" "}
-            <span className="text-[#bdd700]">{platformsCount}+ Platforms</span>
+            Complete Publishing Services With a Professional Approach and a Reasonable Package
+            {/* <span className="text-[#bdd700]">{platformsCount}+ Platforms</span> */}
           </motion.h1>
 
           <motion.p
             className="mx-auto mt-[15px] max-w-[553px] text-sm leading-[1.55] text-[#7b7b7b] sm:text-base lg:mx-0 xl:text-lg xl:leading-[1.38]"
             variants={riseVariants}
           >
-            For serious authors ready to do it right. We handle{" "}
-            <strong className="font-semibold text-[#585858]">everything</strong>{" "}
-            <span className="font-medium">
-              - editing, cover design, formatting & global distribution.
-            </span>
+            Reach your readers on Amazon KDP, Barnes & Noble, Kobo, IngramSpark, and many more today. Get expert editing and formatting in one reasonable package at Ink Founders.
           </motion.p>
 
           <motion.ul

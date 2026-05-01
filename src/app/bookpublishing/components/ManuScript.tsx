@@ -8,17 +8,17 @@ const steps = [
   {
     number: "1",
     title: "Apply & Consult Free",
-    text: "Fill the form. Our publishing experts reach out within 24 hours to understand your book, goals and timeline. Zero pressure, completely free.",
+    text: "Fill in the form. Our publishing team reaches out within 24 hours to understand your book, your goals, and your timeline. Zero pressure. Completely free.",
   },
   {
     number: "2",
     title: "We Handle Everything",
-    text: "Editing, cover design, interior formatting, ISBN registration and platform setup. Your dedicated team does it all while keeping you informed.",
+    text: "Editing, cover design, interior formatting, ISBN registration, and platform setup, your dedicated team manages every step while keeping you in the loop.",
   },
   {
     number: "3",
     title: "Go Live on 40+ Platforms",
-    text: "Your book launches on Amazon, Apple Books, Kobo and 37 more simultaneously. We guide marketing and author branding post-launch too.",
+    text: "Your book launches on Amazon, Apple Books, Kobo, and 37+ more simultaneously. We guide your marketing and help build your author brand post-launch.",
   },
 ];
 
@@ -79,6 +79,13 @@ const ManuScript = () => {
             From Manuscript to <span className="text-yellow-500">Published Author</span>
           </span>
         </motion.h2>
+
+        <motion.p
+          className="mt-5 text-center font-medium text-black"
+          variants={fadeUpVariants}
+        >
+          Three steps. That's genuinely all it takes. We keep things straightforward so you can stay focused on what you do best: writing.
+        </motion.p>
       </motion.div>
 
       <motion.div

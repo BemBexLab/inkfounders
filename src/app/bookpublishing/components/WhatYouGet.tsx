@@ -351,7 +351,7 @@ const WhatYouGet = () => {
             >
               {service.title}
             </motion.h3>
-            <motion.p
+            {/* <motion.p
               className="mt-5 text-sm font-medium text-center px-2 text-[#333]"
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -359,7 +359,7 @@ const WhatYouGet = () => {
               transition={{ duration: 0.5, delay: 0.24 + index * 0.05 }}
             >
               {service.description}
-            </motion.p>
+            </motion.p> */}
           </motion.div>
         ))}
       </motion.div>
