@@ -28,12 +28,12 @@ const LandingFooter = () => {
               Any Query?
             </p>
 
-            <h2 className="mx-auto max-w-[660px] mt-1 text-[32px] font-semibold leading-[1.28] tracking-[0.02em] text-[#191919] sm:text-[42px] md:text-[50px] lg:mx-0 lg:max-w-[775px] lg:text-[31px] lg:leading-[1.25] xl:text-[46px]">
+            <h2 className="mx-auto max-w-[660px] mt-1 text-[32px] font-semibold leading-[1.18] tracking-[0.02em] text-[#191919] sm:text-[42px] md:text-[50px] lg:mx-0 lg:max-w-[775px] lg:text-[31px] xl:text-[46px]">
               Take the First Real Step Toward Seeing Your Book Published and In Readers’ Hands
             </h2>
 
             <p
-              className={`mx-auto mt-[18px] max-w-[620px] text-[15px] leading-[1.85] tracking-[0.08em] text-[#191919] sm:text-[17px] md:max-w-[720px] md:text-[18px] lg:mx-0 lg:mt-[15px] lg:max-w-[750px] lg:text-[20px] lg:leading-[1.8] ${robotoMono.className}`}
+              className={`mx-auto mt-[18px] max-w-[620px] text-[15px] text-[#191919] sm:text-[17px] md:max-w-[720px] md:text-[18px] lg:mx-0 lg:mt-[15px] lg:max-w-[750px] lg:text-[20px] ${robotoMono.className}`}
             >
               Stop second-guessing and start moving your book forward. We will reach out within 24 hours for a real conversation about your goals and how to bring your book to life. 
             </p>

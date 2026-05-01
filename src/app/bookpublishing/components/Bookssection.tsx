@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import type { Variants } from "motion/react";
 
 const books = [
@@ -45,6 +45,9 @@ const bookVariants: Variants = {
 };
 
 export default function BooksSection() {
+  const shouldReduceMotion = useReducedMotion();
+  const carouselBooks = [...books, ...books];
+
   return (
     <motion.section
       className="flex w-full flex-col items-center bg-white px-4 py-12 sm:px-6 lg:px-8"
@@ -62,74 +65,93 @@ export default function BooksSection() {
       </motion.h2>
 
       <motion.div
-        className="flex w-full flex-wrap items-end justify-center gap-x-1 gap-y-6 sm:gap-x-2 md:gap-y-8 lg:flex-nowrap lg:gap-x-3"
-        style={{ maxWidth: "1400px" }}
+        className="w-full overflow-hidden"
+        style={{ maxWidth: "1800px" }}
         variants={containerVariants}
       >
-        {books.map((book) => (
-          <motion.div
-            key={book.id}
-            className="relative w-[32%] min-w-[108px] max-w-[180px] sm:w-[24%] sm:min-w-[130px] sm:max-w-[210px] md:w-[16.5%] md:min-w-[145px] md:max-w-[230px] lg:w-1/6 lg:min-w-0 lg:max-w-none"
-            style={{
-              transform: `perspective(800px) rotateY(${book.tilt})`,
-              transformOrigin: "center bottom",
-              zIndex: book.zIndex,
-              flexShrink: 0,
-            }}
-            variants={bookVariants}
-            whileHover={{
-              y: -12,
-              transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] },
-            }}
-          >
+        <motion.div
+          className="flex w-max items-end gap-3 sm:gap-4 md:gap-5"
+          animate={
+            shouldReduceMotion
+              ? undefined
+              : { x: ["0%", "-50%"] }
+          }
+          transition={
+            shouldReduceMotion
+              ? undefined
+              : {
+                  duration: 28,
+                  ease: "linear",
+                  repeat: Infinity,
+                }
+          }
+        >
+          {carouselBooks.map((book, index) => (
             <motion.div
-              className="relative"
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+              key={`${book.id}-${index}`}
+              className="relative w-[42vw] min-w-[160px] max-w-[240px] sm:w-[30vw] sm:min-w-[190px] sm:max-w-[280px] md:w-[24vw] md:min-w-[220px] md:max-w-[320px] lg:w-[16vw] lg:min-w-[240px] lg:max-w-[340px]"
+              style={{
+                transform: `perspective(800px) rotateY(${book.tilt})`,
+                transformOrigin: "center bottom",
+                zIndex: book.zIndex,
+                flexShrink: 0,
+              }}
+              variants={bookVariants}
+              whileHover={{
+                y: -12,
+                transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] },
+              }}
+              aria-hidden={index >= books.length}
             >
-              <motion.img
-                src={book.src}
-                alt={book.alt}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  display: "block",
-                }}
-                initial={{ filter: "brightness(0.92)" }}
-                whileHover={{ filter: "brightness(1.02)" }}
-                transition={{ duration: 0.25 }}
-              />
               <motion.div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  right: 0,
-                  width: "6%",
-                  height: "100%",
-                  background:
-                    "linear-gradient(to left, rgba(255,255,255,0.12) 0%, transparent 100%)",
-                  pointerEvents: "none",
-                }}
-                initial={{ opacity: 0.45 }}
-                whileHover={{ opacity: 0.8 }}
-                transition={{ duration: 0.25 }}
-              />
+                className="relative"
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <motion.img
+                  src={book.src}
+                  alt={book.alt}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block",
+                  }}
+                  initial={{ filter: "brightness(0.92)" }}
+                  whileHover={{ filter: "brightness(1.02)" }}
+                  transition={{ duration: 0.25 }}
+                />
+                <motion.div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    width: "6%",
+                    height: "100%",
+                    background:
+                      "linear-gradient(to left, rgba(255,255,255,0.12) 0%, transparent 100%)",
+                    pointerEvents: "none",
+                  }}
+                  initial={{ opacity: 0.45 }}
+                  whileHover={{ opacity: 0.8 }}
+                  transition={{ duration: 0.25 }}
+                />
+                <motion.div
+                  className="pointer-events-none absolute inset-x-[8%] bottom-[-10px] h-6 rounded-full bg-black/10 blur-xl"
+                  initial={{ opacity: 0.22, scale: 0.84 }}
+                  whileHover={{ opacity: 0.34, scale: 1.02 }}
+                  transition={{ duration: 0.25 }}
+                />
+              </motion.div>
               <motion.div
-                className="pointer-events-none absolute inset-x-[8%] bottom-[-10px] h-6 rounded-full bg-black/10 blur-xl"
-                initial={{ opacity: 0.22, scale: 0.84 }}
-                whileHover={{ opacity: 0.34, scale: 1.02 }}
+                className="pointer-events-none absolute inset-x-0 top-0 h-full rounded-[8px] bg-gradient-to-t from-transparent via-transparent to-white/10"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
                 transition={{ duration: 0.25 }}
               />
             </motion.div>
-            <motion.div
-              className="pointer-events-none absolute inset-x-0 top-0 h-full rounded-[8px] bg-gradient-to-t from-transparent via-transparent to-white/10"
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              transition={{ duration: 0.25 }}
-            />
-          </motion.div>
-        ))}
+          ))}
+        </motion.div>
       </motion.div>
     </motion.section>
   );
