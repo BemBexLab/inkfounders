@@ -112,19 +112,19 @@ export const audiobookData = [
           {
             title: "Crystal Clear Audio Quality",
             description:
-              "We clean up background noise, balance volume levels, and make sure every word comes through clearly, no matter what device your listeners are using.",
+              "We remove background noise, balance volume levels, and enhance clarity so every word sounds crisp, professional, and enjoyable to listen to.",
             imgSrc: "/audiobooks/musicalnotes.webp",
           },
           {
             title: "Smooth, Natural Pacing",
             description:
-              "We fix all of that. Your narration will sound confident, polished, and easy to follow from start to finish.",
+              "Clunky pauses and rushed delivery can distract listeners. We refine the pacing and flow to create a confident, polished narration that keeps your audience engaged from beginning to end.",
             imgSrc: "/audiobooks/pen.webp",
           },
           {
             title: "The Details Matter",
             description:
-              "Every book is different, and we treat yours that way. We pay close attention to your audiobook needs because we need to adjust tone for emotional scenes, and we need to clarify character voices, and we need to double-check pronunciation of tricky terms.",
+              "Every audiobook is unique, so we tailor the production to suit your book's tone, genre, and intended audience. From pronunciation to pacing, every detail is carefully reviewed to deliver a professional listening experience.",
             imgSrc: "/audiobooks/microphonegear.webp",
           },
         ],
