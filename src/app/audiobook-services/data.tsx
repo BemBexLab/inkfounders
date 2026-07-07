@@ -1,4 +1,5 @@
 import { desc } from "motion/react-client";
+import Link from "next/link";
 import { title } from "process";
 
 export const audiobookData = [
@@ -262,16 +263,11 @@ export const audiobookData = [
       {
         title: "Your Book, Your Way, From First Draft to Final Listen",
         paragraphs: (
-          <>
+          <p>
             At{" "}
-            <a
-              className="text-blue-500 hover:underline"
-              href="/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link className="inline text-blue-500 hover:underline" href="/">
               Ink Founders
-            </a>
+            </Link>
             , we are here to help authors convert manuscripts into audiobooks
             that people actually want to listen to. We handle book cover,
             narration, production, distribution, and even the marketing side of
@@ -280,13 +276,14 @@ export const audiobookData = [
             company to make sure your audiobook lands on all the major
             platforms. We provide guidance at every stage. You can check out
             what we do at{" "}
-            <b>
-              <a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">
-                Ink Founders
-              </a>
-            </b>
+            <a
+              href="https://share.google/i7yXrn8AiGA5wvzYJ"
+              className="inline font-bold text-inherit"
+            >
+              Ink Founders
+            </a>
             , and let's get your book out there where listeners are waiting.
-          </>
+          </p>
         ),
         imgSrc: "/audiobooks/edittorguy.webp",
         imgFirst: false,

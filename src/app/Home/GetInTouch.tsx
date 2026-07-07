@@ -119,6 +119,7 @@ type GetInTouchProps = {
 
 export default function GetInTouch({ data }: GetInTouchProps) {
   const content = data ?? defaultGetInTouchContent;
+  const contacts = content.left.contacts ?? [];
 
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
@@ -211,7 +212,7 @@ export default function GetInTouch({ data }: GetInTouchProps) {
           ))}
 
           <div className="mx-auto mt-8 grid max-w-[420px] grid-cols-1 gap-4 text-left md:max-w-none md:grid-cols-2 lg:mx-0">
-            {content.left.contacts.map((contact) => (
+            {contacts.map((contact) => (
               <div key={`${contact.type}-${contact.label}`} className="flex min-w-0 items-center gap-3">
                 <div className="shrink-0 rounded-xl bg-[#DADD39] p-2 text-white">
                   {renderContactIcon(contact.type)}

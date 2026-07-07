@@ -110,6 +110,27 @@ const WhatYouGet = () => {
         .what-you-get-slider::-webkit-scrollbar {
           display: none;
         }
+
+        .what-you-get-description-scroll {
+          max-height: 15vh;
+          overflow-y: auto;
+          padding-right: 0.35rem;
+          scrollbar-width: thin;
+          scrollbar-color: rgba(0, 0, 0, 0.45) transparent;
+        }
+
+        .what-you-get-description-scroll::-webkit-scrollbar {
+          width: 2px;
+        }
+
+        .what-you-get-description-scroll::-webkit-scrollbar-track {
+          background: transparent;
+        }
+
+        .what-you-get-description-scroll::-webkit-scrollbar-thumb {
+          background: rgba(0, 0, 0, 0.45);
+          border-radius: 999px;
+        }
       `}</style>
 
       <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:px-0">
@@ -145,7 +166,7 @@ const WhatYouGet = () => {
                   {card.title}
                 </h3>
                 <p
-                  className={`${robotoMono.className} text-[13px] leading-[1.35] text-[#444444] sm:text-[14px] md:text-[15px] lg:leading-loose`}
+                  className={`what-you-get-description-scroll ${robotoMono.className} text-[13px] leading-[1.35] text-[#444444] sm:text-[14px] md:text-[15px] lg:leading-loose`}
                 >
                   {card.description}
                 </p>

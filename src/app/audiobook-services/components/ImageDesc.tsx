@@ -1,3 +1,5 @@
+"use client";
+
 import { robotoMono } from "@/app/fonts";
 import React from "react";
 
@@ -32,27 +34,39 @@ const ImageDesc = ({ data }: ImageDescProps) => {
           {sections.map((sec, idx) => (
             <div
               key={idx}
-              className={`flex items-center justify-center gap-16 my-10 ${
+              className={`flex items-start justify-center gap-12 my-10 ${
                 sec.imgFirst ? "flex-row-reverse" : ""
               }`}
             >
               {/* Text content */}
-              <div className="flex-1 max-w-[520px]">
+              <div className="w-full max-w-[560px]">
                 <h1 className="text-[28px] font-semibold text-[#1a1a1a] mb-3 leading-tight">
                   {sec.title}
                 </h1>
-                <div className={`${robotoMono.className} space-y-3 text-[15px] text-[#333333] leading-relaxed`}>
+                <div
+                  className={`${robotoMono.className} max-h-[360px] space-y-3 overflow-y-auto pr-2 text-[15px] text-[#333333] leading-[1.6] [scrollbar-width:thin] [scrollbar-color:rgba(0,0,0,0.28)_transparent] [&::-webkit-scrollbar]:w-[2px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[rgba(0,0,0,0.28)] [&_a]:inline [&_a]:break-words [&_a]:align-baseline [&_a]:whitespace-nowrap`}
+                >
                   {Array.isArray(sec.paragraphs) ? (
-                    sec.paragraphs.map((p, i) => <p key={i}>{p}</p>)
+                    sec.paragraphs.map((p, i) =>
+                      typeof p === "string" ? (
+                        <p key={i}>{p}</p>
+                      ) : (
+                        <div key={i}>
+                          {p}
+                        </div>
+                      ),
+                    )
                   ) : (
-                    <div>{sec.paragraphs}</div>
+                    <div>
+                      {sec.paragraphs}
+                    </div>
                   )}
                 </div>
               </div>
 
               {/* Image */}
-              <div className="">
-                  <img src={sec.imgSrc} alt="" className="w-[550px] h-auto" />
+              <div className="w-[570px] shrink-0">
+                  <img src={sec.imgSrc} alt="" className="w-[570px] h-auto" />
               </div>
             </div>
           ))}
@@ -78,15 +92,29 @@ const ImageDesc = ({ data }: ImageDescProps) => {
 
               <div className={`${robotoMono.className} mx-auto max-w-2xl space-y-4 text-center text-sm text-[#333333] sm:text-base`}>
                 {Array.isArray(sec.paragraphs) ? (
-                  sec.paragraphs.map((p, i) => <p key={i}>{p}</p>)
+                  sec.paragraphs.map((p, i) =>
+                    typeof p === "string" ? (
+                      <p key={i}>{p}</p>
+                    ) : (
+                      <div
+                        key={i}
+                        className="[&_a]:break-words"
+                      >
+                        {p}
+                      </div>
+                    ),
+                  )
                 ) : (
-                  <div>{sec.paragraphs}</div>
+                  <div className="[&_a]:break-words">
+                    {sec.paragraphs}
+                  </div>
                 )}
               </div>
             </div>
           ))}
         </div>
       </div>
+
     </section>
   );
 };

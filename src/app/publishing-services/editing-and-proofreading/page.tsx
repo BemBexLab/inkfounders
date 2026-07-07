@@ -25,26 +25,28 @@ const ServiceCard = ({
   checklist: string[];
   subDesc?: string;
 }) => (
-  <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
-    <h3 className="text-base font-semibold text-black mb-1">{title}</h3>
-    {subtitle && <h4 className="text-sm font-medium text-gray-800 mb-2">{subtitle}</h4>}
-    {description && (
-      <p className={`${robotoMono.className} text-gray-700 text-[13px] leading-relaxed mt-2 mb-3`}>
-        {description}
-      </p>
-    )}
-    {checklist.length > 0 && (
-      <ul className="mt-2 space-y-1.5">
-        {checklist.map((item, idx) => (
-          <CheckItem key={idx}>{item}</CheckItem>
-        ))}
-      </ul>
-    )}
-    {description && (
-      <p className={`${robotoMono.className} text-gray-700 text-[13px] leading-relaxed mt-3 mb-3`}>
-        {subDesc}
-      </p>
-    )}
+  <div className="flex h-full min-h-[300px] flex-col rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
+    <h3 className="mb-1 text-base font-semibold text-black">{title}</h3>
+    <div className="mt-3 h-[170px] overflow-y-auto pr-2 [scrollbar-width:thin] [&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-black/20 md:h-[190px]">
+      {subtitle && <h4 className="mb-2 text-sm font-medium text-gray-800">{subtitle}</h4>}
+      {description && (
+        <p className={`${robotoMono.className} mt-2 text-[13px] leading-relaxed text-gray-700`}>
+          {description}
+        </p>
+      )}
+      {checklist.length > 0 && (
+        <ul className="mt-4 space-y-1.5">
+          {checklist.map((item, idx) => (
+            <CheckItem key={idx}>{item}</CheckItem>
+          ))}
+        </ul>
+      )}
+      {subDesc && (
+        <p className={`${robotoMono.className} mt-4 text-[13px] leading-relaxed text-gray-700`}>
+          {subDesc}
+        </p>
+      )}
+    </div>
   </div>
 );
 
@@ -160,6 +162,7 @@ export default function EditingProofreadingPage() {
                 title={card.title}
                 description={card.description}
                 checklist={card.checklist}
+                subDesc={card.subDesc}
               />
             ))}
           </div>
