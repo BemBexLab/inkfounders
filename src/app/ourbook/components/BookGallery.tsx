@@ -15,7 +15,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Stephen 2.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Non Fiction"],
+    tags: ["Non-Fiction"],
     link: "https://a.co/d/0ee4hTIt",
   },
   {
@@ -24,7 +24,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Bee 2.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Children’s Book"],
     link: "https://a.co/d/03dFgTaS",
   },
   {
@@ -33,7 +33,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Allison 4.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Children’s Book"],
     link: "https://a.co/d/0h1r5jAM",
   },
   {
@@ -60,7 +60,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Keith Cuvo 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Non Fiction"],
+    tags: ["Non-Fiction"],
     link: "https://a.co/d/0fpe2YQe",
   },
   {
@@ -78,7 +78,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Jenny Lynn 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Children’s Book"],
     link: "https://a.co/d/0eaNfhXz",
   },
   {
@@ -141,7 +141,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Sara 2.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Non Fiction"],
+    tags: ["Non-Fiction"],
     link: "https://a.co/d/01TnBqeA",
   },
   {
@@ -168,7 +168,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Jerry 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Non Fiction"],
+    tags: ["Non-Fiction"],
     link: "https://a.co/d/00INdTu4",
   },
   {
@@ -177,7 +177,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Leonard 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Children’s Book"],
     link: "https://a.co/d/04i1QzPC",
   },
   {
@@ -195,7 +195,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Ralph 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Non Fiction"],
+    tags: ["Non-Fiction"],
     link: "https://a.co/d/02Ghlu41",
   },
   {
@@ -204,7 +204,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Sara Tessier 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Children’s Book"],
     link: "https://a.co/d/0dowUcE8",
   },
   {
@@ -213,7 +213,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Kael 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Children’s Book"],
     link: "https://a.co/d/0aj4vVbz",
   },
   {
@@ -231,7 +231,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Mr Mogley 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Children’s Book"],
     link: "https://a.co/d/0aF4lnuo",
   },
   {
@@ -240,7 +240,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Sandra 3.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Children’s Book"],
     link: "https://a.co/d/0d9v0ECL",
   },
   {
@@ -249,7 +249,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/My Bug Book 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Children’s Book"],
     link: "https://a.co/d/09kbk7rw",
   },
   {
@@ -258,7 +258,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Had a Cow 2.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Children Book"],
+    tags: ["Children’s Book"],
     link: "https://a.co/d/05OKpCCe",
   },
   {
@@ -267,7 +267,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Mike The Voice 1.png",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Non Fiction"],
+    tags: ["Non-Fiction"],
     link: "https://a.co/d/014CkQCA",
   },
   {
@@ -290,7 +290,7 @@ export const BOOKS = [
   },
 ];
 
-const FILTERS = ["All", "Fiction", "Non Fiction", "Biography", "Children Book"];
+const FILTERS = ["All", "Fiction", "Non-Fiction", "Biography", "Children’s Book"];
 const INITIAL_VISIBLE_COUNT = 12;
 const LOAD_MORE_COUNT = 4;
 

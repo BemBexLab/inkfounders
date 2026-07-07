@@ -44,7 +44,7 @@ const placeholder = "/authors/placeholder.png"; // Use a default placeholder ima
 const Publishers = () => (
   <section className="my-10 flex w-full flex-col items-center px-4 sm:px-6 lg:my-[50px] lg:px-2">
     <div>
-      <h1 className="mb-5 text-center text-lg font-semibold text-black md:text-xl">Meet Our Publising Partners</h1>
+      <h1 className="mb-5 text-center text-lg font-semibold text-black md:text-xl">Meet Our Publishing Partners</h1>
     </div>
     <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
       {AUTHORS.map((author, idx) => (

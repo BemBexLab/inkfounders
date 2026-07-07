@@ -8,36 +8,23 @@ export default function Lagacy() {
         {/* Content */}
         <div className="contents lg:block lg:w-full lg:max-w-2xl lg:text-left">
           <h2 className="order-1 mb-5 w-full max-w-3xl text-center text-[23px] font-semibold leading-[1] text-black sm:text-[25px] md:text-[27px] lg:order-none lg:max-w-none lg:text-left">
-            Your Ideas—Unfiltered, Your Achievement—Untouched. With Full
-            Creative Freedom, Let’s Achieve Professional Supremacy
+            Your Ideas, Unfiltered. Your Achievement, Untouched.
           </h2>
           <div
             className={`order-3 w-full max-w-3xl space-y-3 text-left font-mono text-[13px] leading-[1.32] text-gray-700 sm:text-[14px] md:text-[15px] lg:order-none lg:max-w-none lg:space-y-4 lg:text-[16px] lg:leading-tight ${robotoMono.className}`}
           >
-            <p>Ink Founders values your creativity. We know it’s not just your
-            story or pages, it’s your vision, your imagination, your emotions,
-            your voice, and an achievement in the making. We encourage you at
-            every step of your journey, from inspiration to turning it into
-            reality, without controlling your creative freedom.</p>
+            <h3 className="text-[18px] font-bold text-black sm:text-[20px]">
+              Full creative freedom, professional results
+            </h3>
+            <p>At Ink Founders, we know your book is more than pages; it's your vision, your voice, and your achievement. We support you at every step, from that first spark of inspiration through to publication, without ever taking control of your creative freedom.</p>
 
-            <p>Ink Founders’ editors are here to refine or clarify your story, not
-            rewrite it. We improve clarity while preserving the real essence of
-            your story. Your story is your voice, and our responsibility is to
-            amplify it, not dilute it. Every page will reflect your voice. You
-            have full control over all elements, from the cover that reflects
-            your story to the final details that bring it to life. Your vision
-            guides everything.</p>
+            <p>Our editors are here to refine and clarify your story, not rewrite it. We sharpen the clarity while protecting the heart of what you wrote. Your story is your voice; our job is to amplify it, not dilute it. You stay in control of every element, from the cover design to the smallest final details. Your vision leads the way.</p>
 
-            <p>After publication with Ink Founders, your work remains entirely
-            yours, from ownership to rights and rewards. We are here to guide
-            you through the publishing process and marketing strategies.</p>
+            <p>After publishing with Ink Founders, your work remains entirely yours, ownership, rights, and rewards included. We're here to guide you through publishing and marketing, not to take anything away from you.</p>
 
-            <p>With Ink Founders, you don’t just have your words converted into a
-            professional and engaging book; you see your vision become reality.
-            Your book will reflect exactly what you imagined, a true reflection
-            of your thoughts.</p>
+            <p>With Ink Founders, you don't just get your words turned into a professional, engaging book; you get to see your vision become real. Your finished book will reflect exactly what you imagined.</p>
 
-            <p>We are committed to you.</p>
+            {/* <p>We are committed to you.</p> */}
           </div>
         </div>
         {/* Book Cover */}

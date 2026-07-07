@@ -13,35 +13,18 @@ export default function Publishing() {
           {/* Left: Headline */}
           <div className="mb-3 w-full md:mb-0 md:w-2/5">
             <h2 className="text-[23px] font-semibold leading-[1.08] text-black md:text-3xl lg:leading-snug">
-              We bring your imaginative thoughts into reality and book
-              effortlessly.
+              We Help Your Imaginative Thoughts Become A Book Effortlessly.
             </h2>
           </div>
           {/* Right: Description */}
           <div
             className={`w-full space-y-2 text-[12px] leading-[1.25] text-gray-700 md:w-3/5 md:text-[16px] lg:space-y-4 lg:leading-tight ${robotoMono.className}`}
           >
-            <p>Where dreams turn into reality, Ink Founders, we understand how
-            exhausting and restless the self-publishing journey can be for the
-            first time, as the author become curious and impatient to see their
-            ideas, and imagination in print, but publishing a book should not be
-            overwhelming instead a stress-free, so Ink Founders’ clear goal is
-            to make a publication both fulfilling and exciting. Ink Founders has
-            developed a network of more than 100 qualified experts dedicated to
-            turning an author’s enthusiasm into a publication.</p>
+            <p>At Ink Founders, we understand how demanding the self-publishing journey can feel for a first-time author. It's natural to feel eager and impatient to see your ideas in print, but publishing a book shouldn't be overwhelming; it should be exciting. That's our goal: to make publishing fulfilling rather than stressful. Ink Founders has built a network of more than 100 qualified experts dedicated to turning an author's enthusiasm into a finished book. It's part of why so many consider us the best self-publishing company for first-time authors.</p>
 
-            <p className="mt-1 lg:mt-2">Our objective is clear and straightforward: to make the
-            self-publishing journey stress-free, accessible, supportive, and
-            eventually successful, even if you have just started to think or
-            have just had a spark of inspiration, our team is here to assist you
-            at every step of your journey, whether it is proofreading, editing,
-            formatting, ghostwriting or guiding through the Amazon publishing
-            process. We don’t just help you publish your book; we help you reach
-            the right audience and make a strong impact. With the help of <b><a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">Ink Founders</a></b>, your creative thoughts can be transformed into a powerful,
-            authentic, and impressive book. Let’s turn your ideas into a
-            masterpiece for the world to witness.</p>
+            <p className="mt-1 lg:mt-2">Our mission is simple: to make self-publishing stress-free, accessible, supportive, and successful. Whether you're just starting to think about your book or already have a spark of inspiration, our team is with you at every step, proofreading, editing, formatting, ghostwriting, or guiding you through the Amazon publishing process as your Amazon self-publishing company partner. As a full-service book publishing company USA authors rely on, we don't just help you publish your book; we help you reach the right readers and make a lasting impact. With Ink Founders, your ideas can become a powerful, authentic, professionally published book. Let's turn your story into a masterpiece the world can read.</p>
 
-            <p className="mt-1 lg:mt-2">Let your words inspire the world.</p>
+            {/* <p className="mt-1 lg:mt-2">Let your words inspire the world.</p> */}
           </div>
         </div>
       </section>

@@ -6,7 +6,7 @@ import PartnersSection from "../../Home/OurPartner";
 import NarrationOptions from '../components/NarrationOptions';
 import ImageDesc from '../components/ImageDesc';
 import Testimonials from '../../Home/Testimonials';
-import GetInTouch from '../components/GetInTouch';
+import GetInTouch from '../../Home/GetInTouch';
 import { audiobookData } from '../data';
 import { createCanonicalMetadata } from "@/lib/seo";
 
@@ -39,7 +39,8 @@ const page = async ({ params }: PageProps) => {
       <NarrationOptions data={audiobook.narration[0]} />
       <ImageDesc data={audiobook.imageDesc} />
       <Testimonials />
-      <GetInTouch data={audiobook.contactData} />
+      {/* <GetInTouch data={audiobook.contactData} /> This one was from ../components/ */} 
+      <GetInTouch />
     </section>
   )
 }

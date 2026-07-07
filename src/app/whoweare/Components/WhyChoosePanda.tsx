@@ -10,7 +10,7 @@ const whyChooseItems = [
     alt: 'Experienced Ghostwriters',
     title: 'Experienced Ghostwriters',
     description:
-      'At Ink Founders, our ghostwriters are skilled in bringing stories to life with authenticity and depth. We understand that every author has a unique voice, so we carefully pair you with writers who align with your vision and capture your tone seamlessly.',
+      "Our ghostwriters know how to bring a story to life with authenticity and depth. Every author has a different voice, so we pair you with writers who genuinely match your tone and vision, not whoever's next in the queue.",
   },
   {
     id: 'privacy',
@@ -18,7 +18,7 @@ const whyChooseItems = [
     alt: 'Privacy',
     title: 'Privacy',
     description:
-      'Integrity is at the heart of our work. We prioritize originality and uphold strict confidentiality in every collaboration. Trust is the foundation of our process because great books begin with secure, respectful partnerships.',
+      'Integrity is at the core of how we work. We protect originality and hold strict confidentiality on every project, because a good ghostwriting relationship starts with trust.',
   },
   {
     id: 'affordability',
@@ -26,7 +26,7 @@ const whyChooseItems = [
     alt: 'Affordability',
     title: 'Affordability',
     description:
-      'We believe in honest pricing and accessible services. With transparent rates, no hidden fees, and flexible payment options, we make high-quality ghostwriting affordable without compromising on excellence.',
+      'As an affordable self-publishing company for authors, we believe in honest pricing: transparent rates, no hidden fees, and flexible payment options, without cutting corners on quality.',
   },
   {
     id: 'customer-satisfaction',
@@ -34,7 +34,7 @@ const whyChooseItems = [
     alt: 'Customer Satisfaction',
     title: 'Customer Satisfaction',
     description:
-      "Your vision matters, and so does your satisfaction. Our ghostwriters actively incorporate your feedback to ensure every detail aligns with your expectations. We're committed to refining your book until you're completely satisfied with the result.",
+      "Your vision matters, and so does how you feel about the finished book. Our writers actively work with your feedback, and we stay on a project until you're genuinely satisfied with the result, not just signed off on paper.",
   },
   {
     id: 'dynamic-stories',
@@ -42,7 +42,7 @@ const whyChooseItems = [
     alt: 'Dynamic Stories',
     title: 'Dynamic Stories',
     description:
-      "At Ink Founders, we're passionate storytellers who blend creativity with craft. Our professional writers bring your world and characters to life, infusing each page with imagination, depth, and your unique vision.",
+      "We're storytellers first. Our writers bring your world and characters to life, adding imagination and depth while keeping your original vision front and center.",
   },
   {
     id: 'support-24-7',
@@ -50,7 +50,7 @@ const whyChooseItems = [
     alt: '24/7 Customer Support',
     title: '24/7 Customer Support',
     description:
-      "At Ink Founders, you're never on your own. Every client is paired with a dedicated account manager who oversees your project and serves as your direct link to your ghostwriter, available anytime to answer questions, provide updates, and ensure a smooth publishing experience.",
+      "You're never left figuring things out on your own. Every client gets a dedicated account manager who oversees your project and connects you directly with your ghostwriter, available whenever you need updates or have questions.",
   },
 ]
 

@@ -55,7 +55,7 @@ export default function CoverDesignPage() {
     {
       title: "Custom Cover Design",
       description:
-        "Every cover is uniquely designed for your book, reflecting its theme, tone, and target audience.",
+        "Every cover we make is custom book cover design for authors, built around your book, not pulled from a template, reflecting its theme, tone, and the readers you're trying to reach. Unlike AI ebook cover design tools that generate generic, recycled-looking art, our covers are designed by hand by real designers who read your book's premise first.",
       compactDescription: true,
       checklist: [
         "Unique concepts tailored to your story",
@@ -64,18 +64,18 @@ export default function CoverDesignPage() {
       ],
     },
     {
-      title: "Market Optimized Design",
+      title: "Market-Optimized Design",
       description:
-        "We design covers that meet marketplace requirements and trends, boosting visibility and click-through rates.",
+        "We design covers that meet marketplace requirements and current trends, which helps with visibility and click-through rates once your book is live.",
       checklist: [
-        "Amazon KDP standards & technical compliance",
+        "Amazon KDP-approved book cover design, fully compliant with technical standards",
         "High-resolution, print-ready designs",
-        "Optimized for thumbnail & digital view",
+        "Optimized for both thumbnail and full digital view",
       ],
     },
     {
       title: "Branding & Series Design",
-      description: "",
+      description: "Working on more than one book? Our book series cover design service keeps every cover in a series visually connected while still standing on its own.",
       checklist: [
         "Series cover cohesion",
         "Author branding integration",
@@ -86,10 +86,10 @@ export default function CoverDesignPage() {
       title: "Who This Service Is For",
       description: "",
       checklist: [
-        "New authors launching their first eBook",
-        "Self-publishers seeking professional visuals",
+        "New authors launching their first ebook",
+        "Indie authors and self-publishers looking for custom book cover design that doesn't feel generic",
         "Business owners publishing guides or manuals",
-        "Authors creating series or multi-book projects",
+        "Authors working on a series or multi-book project",
       ],
     },
   ];
@@ -106,7 +106,7 @@ export default function CoverDesignPage() {
                   E-Book Cover Design Services
                 </h1>
                 <p className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}>
-                  At Ink Founders, we understand that a book cover is the first impression your readers get. Our professional eBook cover design service creates visually stunning, genre-appropriate covers that attract readers and maximize your book’s potential on platforms like Amazon KDP, Apple Books, and more.
+                  At Ink Founders, we know a book cover is the first impression your readers get. Our ebook cover design services create visually striking, genre-appropriate covers that catch readers' attention and help your book perform on Amazon KDP, Apple Books, and other major platforms.
                 </p>
               </div>
             </div>
@@ -166,11 +166,12 @@ export default function CoverDesignPage() {
               </h2>
               <ul className="order-3 mb-4 w-full max-w-[360px] flex-grow space-y-1.5 sm:max-w-[380px] sm:space-y-2 lg:mb-8 lg:max-w-none lg:space-y-3">
                 {[
-                  "Expert graphic designers with publishing experience",
-                  "Covers optimized for both digital and print formats",
-                  "Attention-grabbing designs that convert",
-                  "Unlimited revisions until you are satisfied",
-                  "Quick turnaround without compromising quality",
+                  "Expert graphic designers with real publishing experience, not just design experience",
+                  "Affordable ebook cover design for self-publishers who want quality without an agency price tag",
+                  "Covers built for both digital and print formats",
+                  "Ebook cover design with unlimited revisions, until the cover actually feels right to you",
+                  "Genre-specific book cover design, whether you write fiction, nonfiction, romance, or business books",
+                  "Quick turnaround without cutting corners on quality"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <span className="mt-0.5 text-sm text-[#DADD39] lg:text-lg">✓</span>

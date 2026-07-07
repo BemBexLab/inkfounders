@@ -7,17 +7,16 @@ export default function QuoteBanner() {
     <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 py-7 sm:px-6 md:py-8 lg:px-0 lg:py-10">
       <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center rounded-lg bg-[#F4F3E1] px-4 py-7 shadow-none sm:px-6 sm:py-8 md:px-8 lg:mx-8 lg:rounded-3xl lg:px-4 lg:py-10">
         <p className="mb-2 text-center text-md font-semibold leading-snug text-[#DADD39] sm:text-[17px] md:text-xl">
-          Let your words inspire the world
+          Let Your Words Inspire the World
         </p>
         <h2 className="mb-3 max-w-[22rem] text-center text-[21px] font-semibold leading-[1] text-[#222] sm:max-w-[34rem] sm:text-[24px] md:max-w-[44rem] md:text-[28px] lg:mb-3 lg:max-w-none lg:text-[30px] lg:leading-[1]">
-          Let the Ink founders take the hassle out by simplifying the
-          <br className="hidden lg:block" /> publishing process for you
+          Let Ink Founders take the hassle out of publishing
+          <br className="hidden lg:block" /> by simplifying the process for you.
         </h2>
         <p
           className={`mx-auto mb-5 max-w-[28rem] text-center text-[12px] leading-[1.35] text-gray-700 sm:text-[13px] md:max-w-[42rem] md:text-[15px] lg:mb-4 ${robotoMono.className}`}
         >
-          With the partnership of Ink Founders, focus on your story and let them
-          handle the editing. Witness our Uniqueness
+          Let Ink Founders take the hassle out of publishing by simplifying the process for you. Partner with us, focus on your story, and let our team handle the rest.
         </p>
         <div className="flex w-full flex-row items-center justify-center gap-3 sm:w-auto sm:gap-4">
           {/* Get a Quote */}

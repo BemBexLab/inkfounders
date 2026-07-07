@@ -14,7 +14,7 @@ export default function RangeOfPublishing() {
       </h2>
 	      <div className={`order-3 w-full max-w-3xl space-y-4 text-center text-[13px] leading-[1.35] text-gray-700 sm:text-[14px] md:text-[15px] lg:order-none lg:space-y-6 lg:text-left lg:text-[15px] lg:leading-tight ${robotoMono.className}`}>
         <p>
-          At Ink Founder, we offer a wide array of services—including editing, design, and marketing support—to prepare your book for publication. Every step of the way, we prioritize preserving your unique voice and creative vision.
+          At Ink Founders, we offer professional book publishing services covering editing, design, and marketing support to get your book ready for publication. At every step, we prioritize preserving your unique voice and creative vision.
         </p>
        
       </div>

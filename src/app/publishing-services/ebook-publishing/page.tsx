@@ -17,11 +17,13 @@ const ServiceCard = ({
   subtitle,
   description,
   checklist,
+  subDesc,
 }: {
   title: string;
   subtitle?: string;
   description: string;
   checklist: string[];
+  subDesc?: string;
 }) => (
   <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
     <h3 className="text-base font-semibold text-black mb-1">{title}</h3>
@@ -34,6 +36,9 @@ const ServiceCard = ({
         <CheckItem key={idx}>{item}</CheckItem>
       ))}
     </ul>
+    <p className={`${robotoMono.className} text-gray-700 text-[13px] leading-relaxed mb-3 flex-grow`}>
+      {subDesc}
+    </p>
   </div>
 );
 
@@ -43,7 +48,7 @@ export default function ServiceDetailPage() {
       title: "Writing & Content Development",
       subtitle: "E-Book Writing & Ghostwriting",
       description:
-        "We provide professional fiction and non-fiction eBook writing services tailored to your idea, niche, and target audience. Our ghostwriters ensure your voice, style, and message remain authentic while delivering high-quality, original content.",
+        "We write fiction and non-fiction ebooks built around your idea, your niche, and the readers you want to reach. Our ghostwriters keep your voice, style, and message intact, so what lands on the page still sounds like you, not a copy of someone else's book.",
       checklist: [
         "Fiction & Non-Fiction",
         "Business, Self-Help, Educational & Creative Genres",
@@ -54,7 +59,7 @@ export default function ServiceDetailPage() {
       title: "Editing & Manuscript Refinement",
       subtitle: "Editing & Proofreading",
       description:
-        "Our professional editors refine your manuscript to ensure clarity, accuracy, and consistency. We enhance grammar, structure, tone, and flow while preserving your original voice.",
+        "Our editors go through your manuscript for clarity, accuracy, and consistency, tightening up grammar, structure, tone, and flow without flattening your original voice.",
       checklist: [
         "Developmental Editing",
         "Copyediting & Proofreading",
@@ -65,21 +70,22 @@ export default function ServiceDetailPage() {
       title: "Design & Formatting",
       subtitle: "E-Book Cover Design",
       description:
-        "We design visually compelling, market-ready eBook covers that meet Amazon KDP and global platform standards. Each cover is customized to attract readers and align with your genre.",
+        "We design covers that are genuinely market-ready, built to Amazon KDP and other major platform standards, and tailored to your genre so the cover pulls readers in rather than blending into the background.",
       checklist: ["Custom Design", "High-Resolution Output", "Amazon KDP-Approved"],
     },
     {
       title: "Design & Formatting",
       subtitle: "E-Book Formatting & Layout",
       description:
-        "We professionally format your eBook to ensure a seamless reading experience across all devices and platforms.",
+        "As an ebook formatting and publishing service, we get your book reading properly across every device and platform- no broken layouts, no formatting surprises after launch. Our ebook publishing service comes with formatting included, so you're not left figuring out EPUB specs on your own.",
       checklist: ["Kindle (KDP) Formatting", "EPUB & PDF Formatting", "Paperback & Hardcover Layouts"],
+      subDesc: "We also handle the full conversion, from manuscript to ebook format, ready for upload, as part of the package, whether you're publishing on a single platform or want to self-publish your ebook across multiple platforms at once.",
     },
     {
       title: "Marketing & Book Promotion",
       subtitle: "Book Marketing & Promotion",
       description:
-        "Our marketing strategies are designed to increase your book’s visibility, reach the right audience, and boost sales.",
+        "Our marketing work is built to get your book seen by the right readers and turn that visibility into sales.",
       checklist: [
         "Amazon SEO & Keyword Research",
         "Book Launch Strategy",
@@ -90,14 +96,14 @@ export default function ServiceDetailPage() {
       title: "Publishing Support & Ownership",
       subtitle: "ISBN & Copyright Assistance",
       description:
-        "We guide authors through ISBN registration and copyright processes to ensure full ownership and protection of their work.",
+        "We guide you through ISBN registration and copyright, so your book is fully protected and fully yours. Our ebook publishing service with ISBN means you're not left chasing paperwork on your own.",
       checklist: ["ISBN Guidance", "Copyright Support", "Author Rights Protection"],
     },
     {
       title: "Consultation & Ongoing Support",
       subtitle: "Publishing Consultation",
       description:
-        "Not sure where to start? Our experts provide personalized publishing consultations to guide you through every step.",
+        "Not sure where to start? Our team offers one-on-one publishing consultations to help you figure out the right platform strategy and roadmap for your book, whether that's Kindle, Apple Books, or a print-and-ebook combination.",
       checklist: ["One-on-One Guidance", "Platform Strategy", "Publishing Roadmap"],
     },
   ];
@@ -114,7 +120,7 @@ export default function ServiceDetailPage() {
                   Professional eBook Publishing Services by Ink Founders
                 </h1>
                 <p className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}>
-                  At Ink Founders, we offer complete, end-to-end eBook publishing solutions designed to help authors publish, position, and promote their books globally. Whether you are a first-time author or an established publisher, our expert team ensures a smooth and successful publishing journey.
+                  At Ink Founders, we're an ebook publishing service for authors that handles the whole process end to end: writing, editing, design, formatting, and getting your book out into the world. Whether you're a first-time author or already have a few books behind you, our team walks with you through every stage, including how to publish an ebook on Amazon, Kindle, and Apple Books.
                 </p>
               </div>
             </div>
@@ -173,7 +179,7 @@ export default function ServiceDetailPage() {
                   "Experienced publishing professionals",
                   "Transparent process & communication",
                   "Full author ownership and rights",
-                  "Global publishing expertise",
+                  "Ebook publishing services with global distribution, so your book isn't limited to one market or platform",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <span className="text-[#DADD39] mt-0.5 text-lg">✓</span>

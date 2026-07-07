@@ -8,9 +8,9 @@ import { robotoMono } from '../fonts'
 const whatMakeItems = [
   {
     id: 'integrated-publishing-services',
-    title: 'Integrated and straightforward publishing services',
+    title: 'Integrated, straightforward publishing services',
     description:
-      'Ink Founders, your publishing partner, provides a smooth and exciting publishing journey with a full-service publishing model from editing, formatting, publishing, and marketing services. Our team supports you at every stage, and with clear communication, authors are informed and engaged throughout their publishing journey.',
+      'As your publishing partner, Ink Founders offers a full-service publishing model covering editing, formatting, publishing, and marketing, all under one roof. Our team supports you at every stage, with clear communication so you always know where your book stands.',
     image: '/Home/image 5 (traced).png',
     alt: 'Holistic & Transparent Services',
   },
@@ -18,15 +18,15 @@ const whatMakeItems = [
     id: 'worldwide-network-distribution',
     title: 'Worldwide network distribution',
     description:
-      'Your story is not only a book but a dream filled with Ink Founders. It is a masterpiece that the whole world should recognise its worth, and we mean the whole world, so Ink Founders not only publish your book but distribute it to more than 40 global platforms, so that your book can touch the hearts of millions of readers.',
+      "Your story isn't just a book; it's a dream we help bring to life. It deserves to be read by the whole world, and we mean that literally. Ink Founders doesn't only publish your book; we distribute it across more than 40 global platforms so it can reach readers everywhere.",
     image: '/Home/image 6 (traced).png',
     alt: 'Myriad Of Distribution Channels',
   },
   {
     id: 'marketing-books-and-building-brands',
-    title: 'Marketing books and building brands-together',
+    title: 'Marketing books and building brands, together',
     description:
-      'Publishing the book is just the start, but making your brand is what makes it a masterpiece. So, Ink Founders helps you to establish a powerful author branding service, as it not only helps to build a public image but also helps in targeting the right audience.',
+      "Publishing your book is only the beginning. Building your brand is what turns it into something lasting. That's why Ink Founders offers author branding services designed to build your public image and connect you with the right audience.",
     image: '/Home/material-symbols_book-4.png',
     alt: 'Book Marketing & Author Branding',
   },
@@ -119,7 +119,7 @@ const WhatMake = () => {
             Witness our Uniqueness
           </p>
           <h2 className="mb-6 max-w-[48rem] text-center text-[1.55rem] font-semibold leading-[0.9] sm:text-2xl md:mb-8 md:text-[1.85rem] lg:max-w-none lg:text-[2rem]">
-            <span className="text-[#DADD39]">At Ink Founders, Your Goals, Our Commitment</span>
+            <span className="text-[#DADD39]">At Ink Founders, Your Goals Are Our Commitment</span>
           </h2>
 
           <div

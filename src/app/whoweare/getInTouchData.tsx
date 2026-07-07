@@ -5,8 +5,9 @@ export const getInTouchContent: GetInTouchContent = {
     heading: "Let Us Know If You Need Guidance",
     subheading: "Looking for an Expert? Let’s Talk.",
     paragraphs: [
-      "You’ve taken the first step toward self-publishing success, but you may still have questions. If you're searching for expert guidance to bring your ideas and voice to life, you’re in the right place—Ink Founders is here to help.",
-      "We offer a free consultation where you can clear your doubts, share your story ideas, and explore our services. Discover how we can turn your words into a professionally published book.",
+      "You've already taken the first step toward self-publishing success, but you may still have questions. If you're looking for expert guidance to bring your ideas and your voice to life, you're in the right place. Ink Founders is here to help.",
+      "We offer a free consultation where you can ask questions, share your story ideas, and explore our self-publishing services. Searching for self-publishing services near me? Ink Founders serves authors across the USA, including our self-publishing agency in Miami, Florida, and is proud to be an affordable self-publishing company for authors at every budget.",
+      "Take the next step. Connect with us today."
     ],
     contacts: [
       {

@@ -11,42 +11,42 @@ const cards = [
     alt: "Conventional Publishing",
     title: "Conventional Publishing",
     description:
-      "For authors seeking the credibility of traditional publishing, we offer end-to-end support from manuscript assessment to professional editing, design, and distribution. Our team ensures a polished, high-standard final product tailored for wide release.",
+      "For authors seeking the credibility of traditional publishing, we offer end-to-end support, from manuscript assessment to professional editing, design, and distribution. Our team delivers a polished, high-standard final product built for wide release. Not sure which route is right for you? Our team can walk you through a traditional vs. self-publishing service comparison based on your goals.",
   },
   {
     image: "/Home/Mask group (2).png",
     alt: "Self-Publishing",
     title: "Self-Publishing",
     description:
-      "Break away from traditional publishing constraints and take full control of your book's journey. Our expert editors, designers, and support team help you transform your manuscript into a professionally crafted, self-published work on your terms.",
+      "Break away from the constraints of traditional publishing and take full control of your book's journey. As a self-publishing platform for first-time authors and experienced writers alike, our editors, designers, and support team help you turn your manuscript into a professionally crafted, self-published work on your terms, including self-publishing packages with an ISBN included, so your book is ready to sell from day one.",
   },
   {
     image: "/Home/Mask group (3).png",
     alt: "Hybrid Publishing",
     title: "Hybrid Publishing",
     description:
-      "Enjoy the best of both worlds, traditional publishing quality with the freedom of self-publishing. Our team collaborates with you to produce a professional book while you retain creative control and ownership.",
+      "Get the best of both worlds. Our hybrid publishing services for authors combine traditional publishing quality with the freedom and ownership of self-publishing. Our team collaborates with you to produce a professional book while you keep creative control.",
   },
   {
     image: "/Home/Mask group (4).png",
     alt: "E-Book Publishing",
     title: "E-Book Publishing",
     description:
-      "Embrace the digital era and expand your reach with professionally formatted e-books. We ensure compatibility across devices, making your book accessible to readers anytime, anywhere.",
+      "Embrace the digital era and expand your reach with professionally formatted e-books, built for compatibility across devices, so your book is accessible to readers anytime, anywhere.",
   },
   {
     image: "/Home/Mask group (5).png",
     alt: "Print-On-Demand Publishing",
     title: "Print-On-Demand Publishing",
     description:
-      "Avoid bulk printing and inventory stress. Print only what you need, when you need it. Our on-demand service saves costs and space while we handle the logistics, so you can focus on writing and promotion.",
+      "Skip the bulk printing and inventory stress. With our print-on-demand publishing service, you print only what you need, when you need it. We handle the logistics so you can focus on writing and promotion.",
   },
   {
     image: "/Home/Mask group (6).png",
     alt: "Specialized Publishing",
     title: "Specialized Publishing",
     description:
-      "Customize your publishing journey with services that fit your goals and budget. From editing to marketing, our expert team provides focused support to give your book the attention it deserves.",
+      "Customize your publishing journey with services built around your goals and budget, including publishing packages for nonfiction authors, Christian book publishing packages, and publishing services for children's book authors. From editing to marketing, our expert team provides focused support to give your book the attention it deserves.",
   },
 ];
 
@@ -115,7 +115,7 @@ const WhatYouGet = () => {
       <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:px-0">
         <div className="flex w-full max-w-[1300px] flex-col items-center">
           <h2 className="mb-8 max-w-4xl text-center text-[24px] font-semibold leading-[1.05] text-black md:text-[30px] lg:mb-8">
-            What You Get with Ink Founder
+            What You Get With Ink Founders
           </h2>
 
           <div

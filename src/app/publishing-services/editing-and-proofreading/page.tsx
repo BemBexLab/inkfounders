@@ -17,11 +17,13 @@ const ServiceCard = ({
   subtitle,
   description,
   checklist,
+  subDesc,
 }: {
   title: string;
   subtitle?: string;
   description: string;
   checklist: string[];
+  subDesc?: string;
 }) => (
   <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
     <h3 className="text-base font-semibold text-black mb-1">{title}</h3>
@@ -38,6 +40,11 @@ const ServiceCard = ({
         ))}
       </ul>
     )}
+    {description && (
+      <p className={`${robotoMono.className} text-gray-700 text-[13px] leading-relaxed mt-3 mb-3`}>
+        {subDesc}
+      </p>
+    )}
   </div>
 );
 
@@ -46,7 +53,7 @@ export default function EditingProofreadingPage() {
     {
       title: "Developmental Editing",
       description:
-        "We evaluate your manuscript’s structure, flow, and content organization to improve readability and engagement.",
+        "Before we touch a comma, we look at the bigger picture: does the story flow, does the structure hold together, does each chapter earn its place? Our developmental editing service for first-time authors focuses on the shape of the book as a whole.",
       checklist: [
         "Storyline & content flow improvement",
         "Chapter structure refinement",
@@ -56,7 +63,7 @@ export default function EditingProofreadingPage() {
     {
       title: "Copyediting",
       description:
-        "Our copyeditors correct language level issues while maintaining your writing style.",
+        "Once the structure is solid, our copyeditors go line by line, fixing the language-level issues without flattening your style.",
       checklist: [
         "Grammar, spelling & punctuation",
         "Sentence clarity & tone consistency",
@@ -66,23 +73,25 @@ export default function EditingProofreadingPage() {
     {
       title: "Proofreading",
       description:
-        "The final quality check before publishing to ensure your manuscript is error-free.",
+        "Editing and proofreading aren't the same thing, and we treat them that way. Proofreading is the last pass before publishing, a fresh set of eyes checking for anything editing might have missed.",
       checklist: [
         "Typographical error removal",
         "Final grammar & formatting review",
         "Publishing-ready manuscript",
       ],
+      subDesc: "Together, these three stages make up a full manuscript editing service before publishing, not just a single read-through, but a proper process.",
     },
     {
       title: "Types of Manuscripts We Edit",
       description:
-        "Ink Founders edits a wide range of content, including:",
+        "Ink Founders works with a wide range of content, including:",
       checklist: [
         "Fiction & Non-Fiction eBooks",
         "Business & Self-Help Books",
-        "Academic & Educational Content",
+        "Educational Content",
         "Biographies & Memoirs",
       ],
+      subDesc: "Whether you need a line editing service for a novel or a professional book editor for a nonfiction manuscript, we match the editor to the genre."
     },
     {
       title: "Our Editing Process",
@@ -94,13 +103,14 @@ export default function EditingProofreadingPage() {
         "Client review & feedback",
         "Final polished delivery",
       ],
+      subDesc: "Our manuscript evaluation service for new authors starts every project; we read your work first and tell you honestly which level of editing it actually needs, rather than selling you more than you require."
     },
     {
       title: "Who This Service Is For",
       description: "",
       checklist: [
         "First-time authors",
-        "Self-published writers",
+        "Self-published writers looking for a proofreading service that understands indie publishing",
         "Business professionals",
         "Content creators",
       ],
@@ -119,7 +129,7 @@ export default function EditingProofreadingPage() {
                   Editing & Proofreading Services
                 </h1>
                 <p className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}>
-                  At Ink Founders, our professional editing and proofreading services ensure your manuscript is polished, error-free, and ready for publishing. We refine your content while preserving your unique voice, helping your eBook meet international publishing standards and reader expectations.
+                  At Ink Founders, our book editing and proofreading services are built to get your manuscript polished, error-free, and genuinely ready for publishing. We refine your writing without rewriting you, so your book meets international publishing standards while still sounding like the person who wrote it.
                 </p>
               </div>
             </div>
@@ -180,8 +190,9 @@ export default function EditingProofreadingPage() {
                 {[
                   "Professional, experienced editors",
                   "Native-level language quality",
-                  "Retention of the author’s voice",
-                  "Confidential and secure handling",
+                  "An editing service that keeps your writing voice, not one that overwrites it",
+                  "Confidential and secure handling of your manuscript at every stage",
+                  "An affordable book editing service in the USA, with a book editing package that includes unlimited revisions until you're satisfied"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <span className="text-[#DADD39] mt-0.5 text-lg">✓</span>

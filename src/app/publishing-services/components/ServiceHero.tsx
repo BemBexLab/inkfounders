@@ -18,7 +18,7 @@ const ServiceHero = () => {
 	          </span>
 	        </h1>
 	        <p className={`mb-7 max-w-5xl text-center text-[13px] leading-[1.35] text-gray-700 sm:text-[14px] md:text-[15px] lg:mb-8 lg:leading-tight ${robotoMono.className}`}>
-          Step into excellence with Ink Founder&apos;s full-service publishing solutions. From manuscript evaluation and expert editing to custom design, marketing, and global distribution—we’re here to elevate your story. Whether you&apos;re a first-time author or a seasoned writer, we provide professional support and personalized attention to bring your literary vision to life.
+          Step into excellence with Ink Founders' full-service publishing solutions. From manuscript evaluation and expert editing to custom design, marketing, and global distribution, we're here to elevate your story. Whether you're a first-time author or a seasoned writer, our book publishing packages for authors are built around professional support and personalized attention, so your literary vision comes through exactly as you imagined it.
         </p>
         <Link href="/contactus">
   <button

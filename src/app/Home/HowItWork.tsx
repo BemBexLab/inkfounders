@@ -5,45 +5,45 @@ import AOSProvider from "@/components/AOSProvider";
 const steps = [
   {
     id: "01",
-    title: "Start with an introduction to get to know each other",
+    title: "Start with an introduction",
     description:
-      "We begin with a discussion to know each other: who you are as an author, what your ideas are, where you want them to go, and what you expect from us. This is the time to ask questions, share your ideas, and allow us to make a publishing path for you.",
+      "We begin with a conversation to get to know each other: who you are as an author, what your story is about, where you want it to go, and what you expect from us. This is your chance to ask questions, share your ideas, and let us help map out your publishing path.",
   },
   {
     id: "02",
-    title: "We gather the information that best describes your vision",
+    title: "We learn what best describes your vision",
     description:
-      "We start organizing a plan once we get the details about your story's genre, audience, and message, whether it is non-fiction, fiction, historical, or poetry.",
+      "Once we understand your story's genre, audience, and message, whether fiction, non-fiction, Christian, self-help, historical, or poetry, we start building a plan around your goals.",
   },
   {
     id: "03",
-    title: "Experts take over the script, page by page, page perfection",
+    title: "Our experts take over, page by page",
     description:
-      "We send your story to our qualified design team, which revives your story and rearranges it according to standards, ensuring a professional look in all formats.",
+      "Your manuscript goes to our editorial team, who refine and structure it to professional standards, ensuring it reads and looks its best in every format.",
   },
   {
     id: "04",
-    title: "We put the soul in your story with formatting",
+    title: "We give your story its shape through formatting",
     description:
-      "Now it's time to give a fantastic structure to your story by professionally formatting the script and designing a book cover that captures the audience's attention and reflects the spirit of your story.",
+      "Now we bring your story to life with professional book formatting services for self-publishing authors, covering both ebook and print-on-demand editions, along with a cover design that captures readers' attention and reflects the spirit of your work.",
   },
   {
     id: "05",
-    title: "Quality check is a priority",
+    title: "Quality is always the priority",
     description:
-      "Before launch, your book undergoes a final review by our quality assurance team to ensure every step, from editing to publishing, meets our standards.",
+      "Before launch, your book goes through a final review by our quality assurance team to make sure every step, from editing to publishing, meets our standards.",
   },
   {
     id: "06",
-    title: "Let's make your story unforgettable, time to publish it",
+    title: "Time to publish your story",
     description:
-      "After finalization, your book is published on globally trending platforms. We also guide you through ISBN registration and sales setup to make your book more accessible.",
+      "Once everything is finalized, we publish your book on the leading global platforms. We also guide you through ISBN registration and sales setup, so your book is easy for readers to find and buy.",
   },
   {
     id: "07",
-    title: "Finally, you are an author, own your success",
+    title: "You're officially an author",
     description:
-      "Now it's time to celebrate! You are officially a published author. We continue to support you post-launch with strategies to grow your author brand.",
+      "It's time to celebrate; you're a published author. We stay by your side after launch with strategies to help grow your author brand.",
   },
 ];
 
@@ -98,8 +98,7 @@ const HowItWork = () => {
             Let's find a way
           </p>
           <h2 className="mb-8 max-w-5xl text-center text-[23px] font-semibold leading-[1] text-black sm:text-[27px] md:mb-8 md:text-[31px] lg:mb-8 lg:text-[35px]">
-            A pathway to turn your dreams into reality, with a publishing
-            process with Ink Founders
+            A clear pathway to turn your dream into reality with Ink Founders
           </h2>
 
           <div className="grid w-full max-w-3xl grid-cols-1 gap-0 lg:max-w-none lg:grid-cols-2 lg:gap-12 xl:gap-16">

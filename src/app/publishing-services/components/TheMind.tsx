@@ -31,7 +31,7 @@ export default function TheMind() {
                 From ghostwriting to editing and publishing, we offer end-to-end
                 support tailored to your vision. Whether you need help shaping
                 your story or perfecting your manuscript, our experienced team
-                is here to guide you. At <b><a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">Ink Founders</a></b>, we're committed to
+                is here to guide you. At Ink Founders, we're committed to
                 quality, creativity, and client success, turning your ideas into
                 a professionally published book.
               </p>
@@ -42,12 +42,15 @@ export default function TheMind() {
             </h3>
 
             <ul
-              className={`${robotoMono.className} mx-auto w-fit max-w-full list-outside list-disc pl-5 text-left text-[13px] leading-[1.45] text-[#444444] sm:text-[14px] md:text-[15px] lg:mx-0 lg:w-full lg:max-w-none lg:list-inside lg:pl-0 lg:leading-loose`}
+              className={`${robotoMono.className} mx-auto max-w-full list-outside list-disc space-y-2 pl-5 text-left text-[13px] leading-[1.45] text-[#444444] sm:text-[14px] md:text-[15px] lg:mx-0 lg:w-full lg:max-w-none lg:pl-5 lg:leading-loose`}
             >
               <li>Excellence in Every Detail</li>
               <li>On-Time Delivery, Every Time</li>
               <li>Client-Centered Experience</li>
-              <li>100% Ownership & Rights</li>
+              <li>
+                100% Ownership &amp; Rights: Our self-publishing packages come
+                with 100 percent royalty rights, always yours
+              </li>
             </ul>
           </div>
         </div>

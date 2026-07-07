@@ -25,10 +25,10 @@ export default function VisionBecome() {
     <div className="mx-auto max-w-2xl text-center lg:col-start-2 lg:row-start-2 lg:mx-0 lg:text-left">
       <div className={`${robotoMono.className} space-y-3 text-[12px] text-gray-700 md:text-[15px]`}>
         <p>
-         At Ink Founders, we’re more than writers, editors, and storytellers—we’re dreamers who bring your ideas to life. We’re passionate about nurturing creativity and transforming your vision into a beautifully crafted reality—whether it&apos;s a book, cover design, audiobook, or beyond.
+         At Ink Founders, we're more than writers, editors, and storytellers; we're the people who help turn your ideas into something real. We care about nurturing creativity and shaping your vision into a finished, well-crafted result, whether that's a book, a cover design, an audiobook, or all of the above.
         </p>
         <p>
-         Trust and quality are at the heart of everything we do. We selectively collaborate with authors who share our values of respect, excellence, and purpose. With every project, we pour in creativity, care, and craft—honoring your voice while delivering standout results in literature, design, and narration.
+         Trust and quality sit at the center of everything we do. We work selectively with authors who share our values of respect, excellence, and purpose, and we bring the same level of creativity and care to every project, protecting your voice while delivering results across writing, design, and narration.
         </p>
       </div>
     </div>

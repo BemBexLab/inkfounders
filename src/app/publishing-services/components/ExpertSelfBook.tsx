@@ -10,17 +10,17 @@ export default function ExportSelfBook() {
     {/* Content */}
 	    <div className="contents lg:block lg:w-full lg:max-w-none xl:pr-14">
 	      <h2 className="order-1 mb-2 w-full max-w-3xl text-center text-[24px] font-semibold leading-[1.05] text-black sm:text-[26px] md:text-[27px] lg:order-none lg:mb-3 lg:max-w-none lg:text-left lg:text-[26px] xl:text-[27px]">
-        Use Expert Self-Book Publishing Services To Preserve Your Legacy!
+        Use Expert Self-Book Publishing Services to Preserve Your Legacy
       </h2>
 	      <div className={`order-3 w-full max-w-3xl space-y-3 text-center text-[13px] leading-[1.35] text-gray-700 sm:text-[14px] md:text-[15px] lg:order-none lg:max-w-none lg:space-y-2 lg:text-left lg:text-[14px] lg:leading-relaxed xl:space-y-3 xl:text-[15px] xl:leading-loose ${robotoMono.className}`}>
         <p>
-          Your book is more than just a story—it embodies your unique voice, experiences, and creativity. At Panda Publishing Agency, we believe every author deserves careful, accurate, and detail-oriented publishing services tailored to their needs and goals.
+          Your book is more than a story; it carries your voice, your experiences, and your creativity. At Ink Founders, we believe every author deserves careful, accurate, and detail-oriented publishing services tailored to their goals.
         </p>
         <p>
-          Our team of qualified experts provides custom book publishing services designed to bring your artistic vision to life. From flawless editing and formatting to eye-catching cover design and effective marketing strategies, we offer comprehensive support every step of the way.
+          Our team of qualified experts offers custom book publishing packages designed to bring your vision to life, whether you're writing fiction, nonfiction, a memoir, or a children's book. From flawless editing and formatting to eye-catching cover design and effective marketing strategies, we provide comprehensive support at every step.
         </p>
         <p>
-          With our guidance and support, rest assured that your book will receive the utmost care and exposure to a wide audience. Let us help you spread your message and create a lasting legacy through your published work. Our services extend across various publishing domains, ensuring client satisfaction and success. You&apos;ll find our rates competitive, and our dedicated customer representatives are available round-the-clock for your convenience.
+          With our guidance, your book gets the care and exposure it deserves, so you can share your message and build a lasting legacy through your published work. Our services span multiple publishing paths, and our rates stay competitive without cutting corners. Our customer support team is available around the clock, whenever you need us.
         </p>
        
       </div>

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
@@ -9,57 +9,59 @@ const promiseItems = [
   {
     id: "professional-editing-and-proofreading",
     image: "/Home/Mask group (1).png",
-    alt: "Professional Editing and Proofreading",
-    title: "Professional Editing and Proofreading",
+    alt: "Professional editing and proofreading",
+    title: "Professional editing and proofreading",
     description:
-      "Every author's dream is to get the spotlight that its story deserves but it's possible when your story is not only written well but structured well, so Ink Founders fine-tunes your script with expert editors that focus on grammar and structure without changing its real tone of message. After that our proofreaders goes from a final process to examine the mistakes to ensure that book is published flawlessly and professionally.",
+      "Every author deserves the spotlight their story has earned, and that only happens when a book is both well written and well structured. As part of our self-publishing package with editing and cover design, our expert editors fine-tune your manuscript, sharpening grammar and structure without changing your voice. Our proofreaders then complete a final review to catch every mistake, so your book is published flawlessly.",
   },
   {
     id: "cover-design-the-soul-of-your-story",
     image: "/Home/Mask group (2).png",
-    alt: "Cover Design The Soul of Your Story",
-    title: "Cover Design-The Soul of Your Story",
+    alt: "Cover design, the soul of your story",
+    title: "Cover design, the soul of your story",
     description:
-      "First impressions matter, and a book cover captures attention while adding soul to your story. Ink Founders carefully designs covers that reflect the genre, mood, and message of your story at a glance. With thoughtful typography and visuals, your book cover becomes unforgettable.",
+      "First impressions matter, and your book cover is often a reader's first one. Ink Founders offers custom book cover design services for self-published authors, designing covers that reflect your genre, mood, and message at a glance. With thoughtful typography and visuals, your cover becomes something readers remember.",
   },
   {
-    id: "global-identity-isbn-and-barcodes",
+    id: "isbn-and-barcodes-your-book-global-identity",
     image: "/Home/Mask group (3).png",
-    alt: "Global Identity of Your Book ISBN and Barcodes",
-    title: "Global Identity of Your Book-ISBN and Barcodes",
+    alt: "ISBN and barcodes: your book's global identity",
+    title: "ISBN and barcodes: your book's global identity",
     description:
-      "To keep your book unique and searchable, Ink Founders helps secure its ISBN and barcode, ensuring it is easily reachable, buyable, and available worldwide.",
+      "To keep your book unique, searchable, and easy to buy anywhere in the world, Ink Founders helps you secure an ISBN and barcode as part of our book publishing services for authors.",
   },
   {
     id: "be-an-author-increase-your-reach",
     image: "/Home/Mask group (4).png",
-    alt: "Be an Author Increase Your Reach",
-    title: "Be an Author-Increase Your Reach",
+    alt: "Be an author, increase your reach",
+    title: "Be an author, increase your reach",
     description:
-      "Your book deserves to be read, not just published. Ink Founders supports you with marketing tools, social media campaigns, and strategies to reach your audience. We are with you every step of the way to turn your passion into a powerful and unforgettable brand.",
+      "Your book deserves to be read, not just published. As one of the top rated self publishing companies for author support, Ink Founders offers book marketing and promotion services for self-published authors, including social media campaigns and publicity strategies, so you can turn your passion into a lasting, recognized brand.",
   },
   {
     id: "your-ideas-your-control",
     image: "/Home/Mask group (5).png",
-    alt: "Your Ideas Your Control Write It Own It",
-    title: "Your Ideas-Your Control. Write It, Own It.",
+    alt: "Your ideas, your control, write it, own it",
+    title: "Your ideas, your control, write it, own it",
     description:
-      "A story is more than words; it is your passion, your dream, your voice. When you share your dream with Ink Founders, you retain 100% ownership of your story. We help turn your words into a book and your voice into inspiration. You have full rights to your work.",
+      "A story is more than words; it's your passion, your dream, your voice. When you publish with Ink Founders, you keep 100% ownership of your work. We help turn your words into a book, and your voice into inspiration, while you hold full rights, always.",
   },
   {
     id: "our-support-forever-for-you",
     image: "/Home/Mask group (6).png",
-    alt: "Our Support Forever for You",
-    title: "Our Support-Forever for You",
+    alt: "Our support, forever for you",
+    title: "Our support, forever for you",
     description:
-      "With Ink Founders, you are never alone. Whether you have questions, concerns, or need guidance at any step, our team is always available to provide answers, support, and assurance from inception to publication.",
+      "With Ink Founders, you're never on your own. Whether you have a question, a concern, or just need guidance, our team is available at every step, from your very first idea through publication and beyond.",
   },
 ];
 
 const carouselPromiseItems = [...promiseItems, ...promiseItems];
 
 const OurPromise = () => {
-  const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({});
+  const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>(
+    {},
+  );
   const carouselRef = useRef<HTMLDivElement>(null);
   const pauseCarouselRef = useRef(false);
   const animationFrameRef = useRef<number | null>(null);
@@ -70,7 +72,7 @@ const OurPromise = () => {
 
     const isResponsiveCarousel = () => window.innerWidth < 1024;
     const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     if (prefersReducedMotion) return;
@@ -132,11 +134,11 @@ const OurPromise = () => {
         <div className="flex w-full max-w-[1300px] flex-col items-center">
           {/* Headings */}
           <p className="mb-2 text-center text-base font-semibold text-black sm:text-lg md:text-[25px]">
-            We are committed with you
+            We're committed to you
           </p>
           <h2 className="mb-6 max-w-4xl text-center text-[23px] font-semibold leading-[1.05] md:text-[32px] lg:mb-5 lg:text-[35px]">
             <span className="text-[#DADD39]">
-              How You Turn Your Dreams into Reality with Ink Founders
+              How You Turn Your Dreams Into Reality With Ink Founders
             </span>
           </h2>
 
@@ -171,7 +173,10 @@ const OurPromise = () => {
                 <p
                   className={`text-[13px] leading-[1.32] text-gray-700 sm:text-[14px] md:text-[15px] lg:leading-[1.2] ${robotoMono.className}`}
                 >
-                  {getDisplayText(item.description, expandedItems[item.title] ?? false)}
+                  {getDisplayText(
+                    item.description,
+                    expandedItems[item.title] ?? false,
+                  )}
                 </p>
                 {item.description.trim().split(/\s+/).length > 43 && (
                   <button

@@ -19,11 +19,13 @@ const ServiceCard = ({
   subtitle,
   description,
   checklist,
+  subDescription,
 }: {
   title: string;
   subtitle?: string;
   description: string;
   checklist: string[];
+  subDescription?: string;
 }) => (
   <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col">
     <h3 className="text-base font-semibold text-black mb-1">{title}</h3>
@@ -40,6 +42,11 @@ const ServiceCard = ({
         ))}
       </ul>
     )}
+    {subDescription && (
+      <p className={`${robotoMono.className} text-gray-700 text-[13px] leading-relaxed mt-3 mb-3 flex-grow`}>
+        {subDescription}
+      </p>
+    )}
   </div>
 );
 
@@ -48,29 +55,29 @@ export default function EbookWritingPage() {
     {
       title: "Idea Development & Research",
       description:
-        "Ink Founders team helps refine and purify your concept, structure your content, and conduct in-depth research to make sure the accuracy and relevance for your target audience.",
+        " Our team helps refine and sharpen your concept, structure your content, and carry out in-depth research to make sure your book is accurate and relevant to your target audience.",
       checklist: [],
     },
     {
       title: "Original, High-Quality Writing",
       description:
-        "Every eBook is written from scratch, ensuring:",
+        "Every ebook is written from scratch, ensuring:",
       checklist: [
         "100% original content",
         "No plagiarism",
-        "Clear, engaging, and reader-focused writing",
+        "Clear, engaging, reader-focused writing",
       ],
     },
     {
       title: "Voice Matching (Ghostwriting)",
       description:
-        "For ghostwriting projects, we carefully adapt to your tone, style, and personality so the book truly feels like you wrote it.",
+        "For ghostwriting projects, we carefully adapt to your tone, style, and personality, so the finished book genuinely feels like you wrote it — with a ghostwriting service that offers unlimited revisions until it truly sounds like you.",
       checklist: [],
     },
     {
       title: "Genres We Cover",
       description:
-        "Ink Founders offers writing services across a wide range of genres, including:",
+        "As one of the best ebook ghostwriting services for a range of industries, we write across genres including:",
       checklist: [
         "Business & Entrepreneurship",
         "Self-Help & Personal Development",
@@ -79,6 +86,7 @@ export default function EbookWritingPage() {
         "Fiction & Creative Writing",
         "Biographies & Memoirs",
       ],
+      subDescription: "Whether you need a ghostwriter for a self-help book, a professional ghostwriter for a memoir, or someone to hire a ghostwriter for a nonfiction book, our team has the experience to match.",
     },
     {
       title: "Our Writing Process",
@@ -95,9 +103,9 @@ export default function EbookWritingPage() {
       title: "Who This Service Is For",
       description: "",
       checklist: [
-        "First-time authors",
-        "Entrepreneurs & coaches",
-        "Business owners",
+        "First-time authors looking for ghostwriting services for first-time authors",
+        "Entrepreneurs & coaches seeking an ebook writing service for coaches and entrepreneurs",
+        "Business owners in need of a business ghostwriting service to put their expertise into a book",
       ],
     },
   ];
@@ -114,7 +122,7 @@ export default function EbookWritingPage() {
                   E-Book Writing & Ghostwriting Services
                 </h1>
                 <p className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}>
-                  At Ink Founders, we have expert eBook writing and ghostwriting services designed to convert your ideas into unique, engaging, and high-quality books from your ideas. Whether you have a rough concept or a detailed outline, our experienced writers create a publish-ready book with clarity, creativity, and precision.
+                  At Ink Founders, our ebook ghostwriting services are built to turn your ideas into a unique, engaging, high-quality book. Whether you have a rough concept or a detailed outline, our experienced writers craft a publish-ready book with clarity, creativity, and precision. If you're ready to hire a ghostwriter for your ebook, our team can take it from a first conversation to a finished manuscript.
                 </p>
               </div>
             </div>
@@ -145,6 +153,7 @@ export default function EbookWritingPage() {
                 title={card.title}
                 description={card.description}
                 checklist={card.checklist}
+                subDescription={card.subDescription}
               />
             ))}
           </div>
@@ -173,11 +182,11 @@ export default function EbookWritingPage() {
               </h2>
               <ul className="order-3 mb-4 w-full max-w-[360px] flex-grow space-y-1.5 sm:max-w-[320px] sm:space-y-2 lg:mb-8 lg:max-w-none lg:space-y-3">
                 {[
-                  "Premium, start-to-end publishing solutions",
-                  "Experienced publishing professionals",
+                  "Affordable ghostwriting services without cutting corners on quality",
+                  "Experienced, professional ghostwriters",
                   "Transparent process & communication",
                   "Full author ownership and rights",
-                  "Global publishing expertise",
+                  "Global publishing expertise, with ghostwriting services available across the USA",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <span className="text-[#DADD39] mt-0.5 text-lg">✓</span>

@@ -189,7 +189,7 @@ const Footer: React.FC = () => {
             <p
               className={`${robotoMono.className} mx-auto max-w-[38rem] text-[13px] text-[#444] xl:mx-0 sm:text-[14px]`}
             >
-              Ink Founder is an independent publishing partner offering a
+              Ink Founders is an independent publishing partner offering a
               comprehensive suite of digital services including book publishing,
               children's books, ghostwriting, illustration, book marketing,
               cover design, author websites, and more. We help bring your story

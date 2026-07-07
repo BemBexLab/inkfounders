@@ -12,10 +12,10 @@ export default function OurMission() {
           </h2>
           <div className={`mb-8 space-y-3 text-[13px] text-[#444444] sm:text-[14px] md:text-[15px] lg:mb-10 ${robotoMono.className}`}>
             <p>
-              At Ink Founders, our mission is to empower individuals and businesses around the world to share their stories through expert writing, publishing, and marketing services.
+              Our mission at Ink Founders is to help individuals and businesses around the world share their stories through expert writing, publishing, and marketing- the kind of full-service book publishing company USA authors can lean on from first draft to final sale.
             </p>
             <p>
-              We’re dedicated to building lasting partnerships rooted in trust, transparency, and excellence—backed by a committed team and an unwavering focus on delivering high-quality results every step of the way.
+              We're focused on building lasting partnerships built on trust, transparency, and genuine craftsmanship, backed by a team that shows up the same way for every project, not just the big ones.
             </p>
           </div>
 

@@ -34,7 +34,7 @@ export type GetInTouchContent = {
     heading: string;
     subheading: string;
     paragraphs: React.ReactNode[];
-    contacts: ContactItem[];
+    contacts?: ContactItem[];
   };
   form: {
     title: string;
@@ -52,24 +52,17 @@ export type GetInTouchContent = {
 
 const defaultGetInTouchContent: GetInTouchContent = {
   left: {
-    heading: "Let us know if anything needed.\nSearching of any guidance from an expert?",
-    subheading: "Have a conversation",
+    heading: "Let Us Know If You Need Guidance",
+    subheading: "Looking for an expert? Let's talk.",
     paragraphs: [
       <div>
         <p>
-          You have taken a step towards the journey of success in
-          self-publishing but still have a lot to ask? And searching for an
-          expert's guidance who can help you in bring your ideas, and voice to
-          reality, but haven't found anyone, then you are at the right place.{" "}
-          <b><a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">Ink Founders</a></b> is for you.
+          You've already taken the first step toward self-publishing success, but you may still have questions. If you're looking for expert guidance to bring your ideas and your voice to life, you're in the right place. Ink Founders is here to help.
         </p>
         <p className="mt-3">
-          Ink Founders provide a free discussion opportunity where you can clear
-          your doubts, share your story ideas or concepts, and get the
-          exploration trip to examine our services clearly and can find out how
-          we can provide you with the best by turning your words into book form.
-          So, let's take a step and join us today.
+          We offer a free consultation where you can ask questions, share your story ideas, and explore our self-publishing services. Searching for self-publishing services near me? Ink Founders serves authors across the USA, including our self-publishing agency in Miami, Florida, and is proud to be an affordable self-publishing company for authors at every budget.
         </p>
+        <p className="mt-3">Take the next step. Connect with us today.</p>
       </div>,
     ],
     contacts: [

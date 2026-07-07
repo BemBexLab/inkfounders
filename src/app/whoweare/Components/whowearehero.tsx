@@ -13,13 +13,12 @@ const WhoWeHero = () => {
       <div className="flex w-full flex-col items-center justify-center px-0 lg:px-[60px]">
         <h1 className="mb-3 max-w-4xl text-center text-[27px] font-semibold leading-tight text-black sm:text-[32px] md:text-[35px] xl:text-[48px]">
           <span>
-            Begin Your Literary Journey with Ink Founders
+            Begin Your Literary Journey With Ink Founders
           </span>
           
         </h1>
         <p className={`mx-auto max-w-5xl text-center text-[12px] text-gray-700 sm:text-[13px] md:text-[15px] ${robotoMono.className}`}>
-         Dreaming of a bestseller but not quite satisfied with your manuscript? At Ink Founders, we specialize in turning potential into polished perfection. Our expert team is here to refine your work and prepare it for the world.<br/>
-         From memoirs to business books and everything in between, we handle every genre with skill and care. With <b><a href="https://share.google/i7yXrn8AiGA5wvzYJ" className="">Ink Founders</a></b> by your side, you&apos;re not just publishing a book—you&apos;re launching a legacy.
+         Dreaming of a bestseller but not quite happy with your manuscript yet? At Ink Founders, we specialize in turning potential into something polished and publication-ready. Our team is here to refine your work and get it in front of readers.
         </p>
       </div>
     </div>

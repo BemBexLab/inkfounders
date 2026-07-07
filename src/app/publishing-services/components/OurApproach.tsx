@@ -13,7 +13,7 @@ const OurApproach = () => {
           Our Approach
         </p>
 	        <h2 className="mb-8 max-w-5xl text-center text-[24px] font-semibold leading-[1.08] md:text-[2rem] lg:mb-10 lg:leading-tight">
-          <span className="text-black">Crafting Your Masterpiece A Guided, Professional Publishing Experience from Start to Finish.</span>
+          <span className="text-black">Crafting your masterpiece: a guided, professional publishing experience from start to finish.</span>
         </h2>
         {/* 3 columns */}
 		        <div className="grid w-full grid-cols-1 place-items-center items-start justify-items-center gap-8 sm:max-w-[34rem] md:max-w-none md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-4">
@@ -28,7 +28,7 @@ const OurApproach = () => {
             />
 	            <h3 className="mb-2 text-xl font-semibold leading-tight text-black sm:text-xl">Personalized Support</h3>
 	            <p className={`${robotoMono.className} text-center text-[13px] leading-[1.2] text-gray-700 sm:text-[14px] lg:leading-tight`}>
-              Every author’s journey is unique—we customize our services to match your goals and vision.
+              Every author's journey is unique. We shape our services around your goals and vision, not the other way around.
             </p>
           </div>
           {/* 2. Myriad Of Distribution Channels */}
@@ -42,7 +42,7 @@ const OurApproach = () => {
             />
 	            <h3 className="mb-2 text-xl font-semibold leading-tight text-black sm:text-xl">Professional Quality</h3>
 	            <p className={`${robotoMono.className} text-center text-[13px] leading-[1.2] text-gray-700 sm:text-[14px] lg:leading-tight`}>
-             We deliver industry-standard editing and design to ensure a polished, publication-ready book.
+             We deliver industry-standard editing and design, so your book is polished and ready for publication.
             </p>
           </div>
           {/* 3. Book Marketing & Author Branding */}
@@ -56,7 +56,7 @@ const OurApproach = () => {
             />
 	            <h3 className="mb-2 text-xl font-semibold leading-tight text-black sm:text-xl">Creative Collaboration</h3>
 	            <p className={`${robotoMono.className} text-center text-[13px] leading-[1.2] text-gray-700 sm:text-[14px] lg:leading-tight`}>
-              We blend your ideas with our expertise to co-create a compelling and authentic book.
+              We combine your ideas with our expertise to co-create a book that's compelling, authentic, and unmistakably yours.
             </p>
           </div>
         </div>

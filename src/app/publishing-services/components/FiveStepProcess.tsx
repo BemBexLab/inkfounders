@@ -6,27 +6,27 @@ const STEPS = [
   {
     id: "manuscript-review-and-editing",
     title: "Manuscript Review and Editing",
-    desc: "We dive deep into your story—refining plot, characters, and language to capture its true essence with clarity and brilliance."
+    desc: "We dive deep into your story, refining plot, characters, and language to bring out its true clarity and brilliance."
   },
   {
     id: "book-design",
     title: "Book Design",
-    desc: "Design covers that tell your story before the first page—visually capturing your book's essence and drawing readers in."
+    desc: "Your cover tells your story before a reader turns the first page. We design covers that visually capture your book's essence and draw readers in."
   },
   {
     id: "printing-and-binding",
     title: "Printing and Binding",
-    desc: "Combining modern tech with artisan craftsmanship, we deliver crisp pages, vibrant colors, and premium binding for a truly refined reading experience."
+    desc: "We combine modern technology with careful craftsmanship to deliver crisp pages, vibrant colors, and premium binding for a refined reading experience, including print-on-demand publishing for authors who want to avoid bulk printing and inventory costs."
   },
   {
     id: "marketing-and-promotion",
     title: "Marketing and Promotion",
-    desc: "Ensure your book reaches eager readers. Spark curiosity and excitement that propels your story to the forefront of literary conversations."
+    desc: "We help your book reach readers who are ready for it, sparking the curiosity and excitement that puts your story at the center of literary conversation. Every publishing package includes marketing support, so your book doesn't just get published; it gets read."
   },
   {
-    id: "amazon-distribution",
-    title: "Manuscript Review and Editing",
-    desc: "Reach readers worldwide with Amazon's powerful platform—available in both print and digital formats."
+    id: "global-distribution",
+    title: "Global Distribution",
+    desc: "We help your book reach readers worldwide, including distribution through Amazon's platform in both print and digital formats, as part of our book publishing service with global distribution."
   }
 ];
 
@@ -35,7 +35,7 @@ const FiveStepProcess = () => {
     <AOSProvider>
       <section className="flex w-full flex-col items-center bg-[#F4F3E1] px-4 py-10 sm:px-6 lg:px-8">
   <h2 className="mb-8 w-full max-w-4xl text-center text-[20px] font-semibold leading-tight text-black sm:text-2xl md:text-3xl lg:mb-10">
-    Our Self Book Publishing Company&apos;s 5-Step Process!
+    Our Self-Book Publishing Company's 5-Step Process
   </h2>
   <div className="flex w-full max-w-5xl flex-col gap-5 sm:gap-6">
     {STEPS.map((step, idx) => (

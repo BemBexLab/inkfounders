@@ -212,7 +212,7 @@ const HomeHero = () => {
       <div className="relative z-10 mx-auto w-full px-4 sm:px-6 md:px-10 lg:hidden">
         <div className="mx-auto flex w-full max-w-3xl flex-col items-start gap-5 pb-10">
           <h1 className="w-full text-left text-[clamp(2rem,5.5vw,3.4rem)] font-semibold leading-[1.05] text-black">
-            Bring Your Story To Life With Ink Founders Publishing
+            Bring Your Story to the World With Ink Founders
           </h1>
 
           <div className="relative flex w-full items-center justify-center py-2 sm:py-4">
@@ -265,11 +265,7 @@ const HomeHero = () => {
           <p
             className={`max-w-[64ch] text-left text-[0.95rem] leading-6 text-gray-700 sm:text-[1rem] ${robotoMono.className}`}
           >
-            Ink Founders is an independent self-publishing platform dedicated to
-            empowering authors with a full suite of digital services. From idea
-            to publication, we support you at every stage of your
-            self-publishing journey. Let&apos;s bring your book to life. Reach
-            out to us today.
+            Ink Founders is a self-publishing company USA authors trust for a complete suite of digital publishing services. From your first idea to your finished, published book, we support you at every stage of your self-publishing journey. Let's bring your story to life; reach out to us today.
           </p>
 
           <div className="flex w-full flex-row justify-center gap-2 sm:gap-3">
@@ -349,9 +345,9 @@ const HomeHero = () => {
             <div className="relative w-full max-w-xl">
               <h1 className="mb-5 text-center text-[clamp(1.5rem,5vw,3rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-black sm:mb-6 md:text-left">
                 <span className="inline-flex justify-center whitespace-nowrap">
-                  <span>Bring Your Story To&nbsp;</span>
+                  <span>Bring Your Story to the &nbsp;</span>
                   <span className="relative inline-block pr-4 sm:pr-8 md:pr-10">
-                    Life{" "}
+                    World{" "}
                     <span className="pointer-events-none absolute right-0 -top-4 h-10 w-10 sm:right-0 sm:-top-6 sm:h-16 sm:w-16 md:-right-2 md:-top-10 md:h-24 md:w-24">
                       <Image
                         src="/Home/make your Life Easy.png"
@@ -367,7 +363,7 @@ const HomeHero = () => {
                 <span className="mx-auto block max-w-[12ch] pr-0 sm:max-w-[15ch] sm:pr-10 md:mx-0 md:max-w-none md:pr-0">
                   <span className="inline-flex flex-wrap justify-center md:justify-start">
                     <span className="whitespace-nowrap">With Ink Founders</span>{" "}
-                    <span className="whitespace-nowrap">Publishing</span>
+                    {/* <span className="whitespace-nowrap">Publishing</span> */}
                   </span>
                 </span>
               </h1>
@@ -375,11 +371,7 @@ const HomeHero = () => {
               <p
                 className={`mb-8 max-w-[62ch] text-center text-[clamp(0.92rem,3.2vw,0.95rem)] leading-tight text-gray-700 md:text-left lg:text-left ${robotoMono.className}`}
               >
-                Ink Founders is an independent self-publishing platform
-                dedicated to empowering authors with a full suite of digital
-                services. From idea to publication, we support you at every
-                stage of your self-publishing journey. Let&apos;s bring your
-                book to life. Reach out to us today.
+                Ink Founders is a self-publishing company USA authors trust for a complete suite of digital publishing services. From your first idea to your finished, published book, we support you at every stage of your self-publishing journey. Let's bring your story to life; reach out to us today.
               </p>
 
               <div className="flex w-full flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
