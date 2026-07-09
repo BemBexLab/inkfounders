@@ -2,7 +2,7 @@
 
 import { robotoMono } from "@/app/fonts";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IoMdCall } from "react-icons/io";
 import { nl2br } from "@/utils/textUtils";
 
@@ -28,31 +28,108 @@ interface NarrationOptionsProps {
   data?: NarrationData;
 }
 
-const NarrationOptions = ({ data }: NarrationOptionsProps) => {
-  const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({});
+interface ScrollMetrics {
+  thumbHeight: number;
+  thumbOffset: number;
+  showThumb: boolean;
+}
 
+interface ScrollableDescriptionProps {
+  children: React.ReactNode;
+  maxHeight: number;
+  className: string;
+}
+
+const ScrollableDescription = ({
+  children,
+  maxHeight,
+  className,
+}: ScrollableDescriptionProps) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [metrics, setMetrics] = useState<ScrollMetrics>({
+    thumbHeight: 0,
+    thumbOffset: 0,
+    showThumb: false,
+  });
+
+  useEffect(() => {
+    const updateMetrics = () => {
+      const element = scrollRef.current;
+
+      if (!element) {
+        return;
+      }
+
+      const { clientHeight, scrollHeight, scrollTop } = element;
+      const hasOverflow = scrollHeight > clientHeight + 1;
+
+      if (!hasOverflow) {
+        setMetrics({
+          thumbHeight: 0,
+          thumbOffset: 0,
+          showThumb: false,
+        });
+        return;
+      }
+
+      const nextThumbHeight = Math.max(
+        (clientHeight / scrollHeight) * clientHeight,
+        26
+      );
+      const maxThumbOffset = clientHeight - nextThumbHeight;
+      const scrollProgress = scrollTop / (scrollHeight - clientHeight);
+
+      setMetrics({
+        thumbHeight: nextThumbHeight,
+        thumbOffset: maxThumbOffset * scrollProgress,
+        showThumb: true,
+      });
+    };
+
+    updateMetrics();
+
+    const element = scrollRef.current;
+    if (!element) {
+      return;
+    }
+
+    element.addEventListener("scroll", updateMetrics);
+    window.addEventListener("resize", updateMetrics);
+
+    return () => {
+      element.removeEventListener("scroll", updateMetrics);
+      window.removeEventListener("resize", updateMetrics);
+    };
+  }, [children, maxHeight]);
+
+  return (
+    <div className="relative flex-1 overflow-hidden" style={{ maxHeight }}>
+      <div
+        ref={scrollRef}
+        className={`h-full overflow-y-auto pr-6 ${className}`}
+        style={{ maxHeight, marginRight: -18, paddingRight: 24, scrollbarWidth: "none" }}
+      >
+        {children}
+      </div>
+
+      {metrics.showThumb && (
+        <div className="pointer-events-none absolute bottom-0 right-1 top-0 w-[4px] rounded-full bg-black/5">
+          <span
+            className="absolute left-0 w-full rounded-full bg-[#DADD39] shadow-[0_0_0_1px_rgba(218,221,57,0.12)] transition-transform duration-150"
+            style={{
+              height: metrics.thumbHeight,
+              transform: `translateY(${metrics.thumbOffset}px)`,
+            }}
+          />
+        </div>
+      )}
+    </div>
+  );
+};
+
+const NarrationOptions = ({ data }: NarrationOptionsProps) => {
   const renderRichText = (value: string | React.ReactNode) =>
     typeof value === "string" ? nl2br(value) : value;
-
-  const getWordCount = (value: string | React.ReactNode) =>
-    typeof value === "string" ? value.trim().split(/\s+/).length : 0;
-
-  const getDisplayText = (
-    value: string | React.ReactNode,
-    isExpanded: boolean
-  ) => {
-    if (typeof value !== "string") {
-      return value;
-    }
-
-    const words = value.trim().split(/\s+/);
-
-    if (isExpanded || words.length <= 17) {
-      return value;
-    }
-
-    return `${words.slice(0, 17).join(" ")}...`;
-  };
 
   const narrationData: NarrationData = data || {
     header: "Flexible Audiobook Narration Options",
@@ -92,56 +169,58 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
   return (
     <section>
       {/* DESKTOP VERSION */}
-      <div className="hidden bg-[#f5f5f5] px-5 pb-14 pt-8 lg:block">
-        <div className="max-w-7xl mx-auto text-center">
+      <div className="hidden bg-[#f5f5f5] px-5 pb-16 pt-10 lg:block">
+        <div className="mx-auto max-w-7xl text-center">
           {/* Header */}
-          <h1 className="text-[32px] font-semibold text-[#333333] mb-3">
+          <h1 className="mb-4 text-[32px] font-semibold leading-tight text-[#333333] xl:text-[38px]">
             {narrationData.header}
           </h1>
-          <p className={`${robotoMono.className} text-[14px] text-[#666666] mb-6`}>
+          <p
+            className={`${robotoMono.className} mx-auto mb-10 max-w-5xl text-[14px] leading-7 text-[#666666]`}
+          >
             {narrationData.intro}
           </p>
 
-          {/* Options Grid - Original 3 Column Layout with Images on Top */}
-          <div className="flex justify-center gap-20 mb-10">
-            {narrationData.options.map((opt, idx) => (
+          <div className="mb-12 grid grid-cols-3 gap-7 xl:gap-8">
+            {narrationData.options.map((opt) => (
               <div
                 key={opt.id ?? opt.title}
-                className="flex flex-col items-center max-w-[280px]"
+                className="flex h-full flex-col rounded-[24px] border border-black/8 bg-white px-8 py-9 text-center shadow-[0_14px_32px_rgba(0,0,0,0.05)] transition-transform duration-300 hover:-translate-y-1"
               >
-                <div className="w-13 h-13 flex justify-center mb-5">
-                  <img src={opt.imgSrc} alt={opt.title} />
+                <div className="mb-6 flex justify-center">
+                  <div className="flex h-[76px] w-[76px] items-center justify-center rounded-full bg-[#DADD39]/10 ring-1 ring-[#DADD39]/30">
+                    <img
+                      src={opt.imgSrc}
+                      alt={opt.title}
+                      className="max-h-[42px] w-auto object-contain"
+                    />
+                  </div>
                 </div>
-                <h2 className="text-[18px] font-semibold text-[#444444] mb-3">
+                <h2 className="mb-2 text-[18px] font-semibold leading-snug text-[#444444]">
                   {opt.title}
                 </h2>
-                <p className={`${robotoMono.className} text-[14px] text-[#444444] leading-relaxed`}>
-                  {renderRichText(
-                    getDisplayText(opt.description, expandedItems[opt.title] ?? false)
-                  )}
-                </p>
-                {typeof opt.description === "string" && getWordCount(opt.description) > 17 && (
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setExpandedItems((prev) => ({
-                        ...prev,
-                        [opt.title]: !prev[opt.title],
-                      }))
-                    }
-                    className="mt-3 text-sm font-semibold text-black underline underline-offset-4"
+                <ScrollableDescription
+                  maxHeight={150}
+                  className="text-left"
+                >
+                  <p
+                    className={`${robotoMono.className} text-center text-[14px] leading-7 text-[#444444]`}
                   >
-                    {expandedItems[opt.title] ? "Read less" : "Read more"}
-                  </button>
-                )}
+                    {renderRichText(opt.description)}
+                  </p>
+                </ScrollableDescription>
               </div>
             ))}
           </div>
 
           {/* Quote */}
-          <p className={`${robotoMono.className} text-[14px] text-[#444444] mb-7 whitespace-pre-line`}>
-            {renderRichText(narrationData.quote)}
-          </p>
+          <div className="mx-auto mb-8 max-w-5xl rounded-[24px] border border-black/6 bg-white/70 px-8 py-6 shadow-[0_10px_24px_rgba(0,0,0,0.04)]">
+            <p
+              className={`${robotoMono.className} whitespace-pre-line text-[14px] leading-7 text-[#444444]`}
+            >
+              {renderRichText(narrationData.quote)}
+            </p>
+          </div>
 
           {/* CTA Button */}
           <Link href={narrationData.button.link}>
@@ -172,55 +251,47 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
           <h1 className="mb-3 px-2 text-2xl font-semibold leading-tight text-[#333333] sm:text-3xl">
             {narrationData.header}
           </h1>
-          <p className={`${robotoMono.className} px-2 text-sm text-[#666666] sm:text-base`}>
+          <p
+            className={`${robotoMono.className} px-2 text-sm leading-7 text-[#666666] sm:text-base`}
+          >
             {narrationData.intro}
           </p>
         </div>
 
-        <div className="mx-auto mb-10 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="mx-auto mb-10 grid max-w-5xl grid-cols-1 gap-6 sm:grid-cols-2">
           {narrationData.options.map((opt, idx) => (
             <div
               key={opt.id ?? opt.title}
-              className={`mx-auto flex h-full w-full max-w-md flex-col items-center rounded-lg bg-white p-6 text-center shadow-sm ${
+              className={`mx-auto flex h-full w-full max-w-md flex-col rounded-[22px] border border-black/8 bg-white px-6 py-7 text-center shadow-[0_14px_32px_rgba(0,0,0,0.05)] ${
                 idx === narrationData.options.length - 1
                   ? "sm:col-span-2 sm:max-w-md"
                   : ""
               }`}
             >
-              <h2 className="mb-5 text-lg font-semibold text-[#444444] sm:text-xl">
+              <div className="mb-5 flex justify-center">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#DADD39]/10 ring-1 ring-[#DADD39]/30">
+                  <img
+                    src={opt.imgSrc}
+                    alt={opt.title}
+                    className="max-h-11 w-auto object-contain"
+                  />
+                </div>
+              </div>
+              <h2 className="mb-2 text-lg font-semibold leading-snug text-[#444444] sm:text-xl">
                 {opt.title}
               </h2>
 
-              <div className="mb-5 flex h-20 w-20 items-center justify-center">
-                <img
-                  src={opt.imgSrc}
-                  alt={opt.title}
-                  className="h-full w-full object-contain"
-                />
-              </div>
-
-              <div>
-                <p className={`${robotoMono.className} text-sm text-[#444444] sm:text-base`}>
-                  {renderRichText(
-                    getDisplayText(opt.description, expandedItems[opt.title] ?? false)
-                  )}
-                </p>
-                {typeof opt.description === "string" && getWordCount(opt.description) > 17 && (
-                  <div className="mt-3 text-center">
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setExpandedItems((prev) => ({
-                          ...prev,
-                          [opt.title]: !prev[opt.title],
-                        }))
-                      }
-                      className="text-sm font-semibold text-black underline underline-offset-4"
-                    >
-                      {expandedItems[opt.title] ? "Read less" : "Read more"}
-                    </button>
-                  </div>
-                )}
+              <div className="flex flex-1 flex-col">
+                <ScrollableDescription
+                  maxHeight={168}
+                  className="text-left"
+                >
+                  <p
+                    className={`${robotoMono.className} text-sm leading-7 text-[#444444] sm:text-base`}
+                  >
+                    {renderRichText(opt.description)}
+                  </p>
+                </ScrollableDescription>
               </div>
             </div>
           ))}
@@ -228,9 +299,13 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
 
         {/* Quote */}
         <div className="mx-auto max-w-3xl px-2 text-center">
-          <p className={`${robotoMono.className} whitespace-pre-line text-sm italic text-[#444444] sm:text-base`}>
-            {renderRichText(narrationData.quote)}
-          </p>
+          <div className="rounded-[22px] border border-black/6 bg-white/80 px-5 py-5 shadow-[0_10px_24px_rgba(0,0,0,0.04)]">
+            <p
+              className={`${robotoMono.className} whitespace-pre-line text-sm italic leading-7 text-[#444444] sm:text-base`}
+            >
+              {renderRichText(narrationData.quote)}
+            </p>
+          </div>
         </div>
 
         {/* CTA Button */}
