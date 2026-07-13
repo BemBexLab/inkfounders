@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import SiteChrome from "@/components/SiteChrome";
-import DynamicPageTitle from "@/components/DynamicPageTitle";
 import { workSans } from "./fonts";
 import { GLOBAL_SCHEMA, SITE_URL } from "@/lib/seo";
 
@@ -90,8 +89,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             alt=""
           />
         </noscript>
-
-        <DynamicPageTitle />
         <SiteChrome>{children}</SiteChrome>
       </body>
     </html>

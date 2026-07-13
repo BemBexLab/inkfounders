@@ -6,7 +6,7 @@ import PartnersSection from "../../Home/OurPartner";
 import NarrationOptions from '../components/NarrationOptions';
 import ImageDesc from '../components/ImageDesc';
 import Testimonials from '../../Home/Testimonials';
-import GetInTouch from '../../Home/GetInTouch';
+import GetInTouch from '../components/GetInTouch';
 import { audiobookData } from '../data';
 import { createCanonicalMetadata } from "@/lib/seo";
 
@@ -20,8 +20,28 @@ export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug } = await Promise.resolve(params);
+  const audiobook = audiobookData.find((item) => item.slug === slug);
 
-  return createCanonicalMetadata(`/audiobook-services/${slug}`);
+  if (!audiobook) {
+    return {};
+  }
+
+  return {
+    title: audiobook.metaTitle,
+    description: audiobook.metaDesc,
+    ...createCanonicalMetadata(`/audiobook-services/${slug}`),
+    openGraph: {
+      title: audiobook.metaTitle,
+      description: audiobook.metaDesc,
+      url: `/audiobook-services/${slug}`,
+      type: "website",
+    },
+    twitter: {
+      title: audiobook.metaTitle,
+      description: audiobook.metaDesc,
+      card: "summary_large_image",
+    },
+  };
 }
 
 const page = async ({ params }: PageProps) => {
@@ -39,8 +59,7 @@ const page = async ({ params }: PageProps) => {
       <NarrationOptions data={audiobook.narration[0]} />
       <ImageDesc data={audiobook.imageDesc} />
       <Testimonials />
-      {/* <GetInTouch data={audiobook.contactData} /> This one was from ../components/ */} 
-      <GetInTouch />
+      <GetInTouch data={audiobook.contactData} />
     </section>
   )
 }
