@@ -7,6 +7,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import CustomScrollbar from "@/components/CustomScrollbar";
 
 const Blog2 = () => {
   const router = useRouter();
@@ -169,7 +170,12 @@ const Blog2 = () => {
                 </p>
 
                 {/* Cost Breakdown Table */}
-                <div className="overflow-x-auto mb-10">
+                <CustomScrollbar
+                  orientation="horizontal"
+                  className="mb-10"
+                  trackClassName="bg-black/5"
+                  thumbClassName="bg-[#D4D939]"
+                >
                   <table className="w-full text-left border-collapse">
                     <thead>
                       <tr className="bg-gray-100">
@@ -202,7 +208,7 @@ const Blog2 = () => {
                       </tr>
                     </tbody>
                   </table>
-                </div>
+                </CustomScrollbar>
                 <p className="text-center text-gray-500 italic mb-12">
                   Now let's break each one down clearly.
                 </p>
@@ -497,7 +503,12 @@ const Blog2 = () => {
                     </span>
                     Average Editing Cost by Book Type
                   </h3>
-                  <div className="overflow-x-auto mb-6">
+                  <CustomScrollbar
+                    orientation="horizontal"
+                    className="mb-6"
+                    trackClassName="bg-black/5"
+                    thumbClassName="bg-[#D4D939]"
+                  >
                     <table className="w-full text-left border-collapse">
                       <thead>
                         <tr className="bg-gray-100">
@@ -528,7 +539,7 @@ const Blog2 = () => {
                         </tr>
                       </tbody>
                     </table>
-                  </div>
+                  </CustomScrollbar>
                 </div>
 
                 {/* Section 7: Can You Edit Your Book Yourself? */}

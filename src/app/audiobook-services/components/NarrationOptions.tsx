@@ -1,8 +1,9 @@
 'use client';
 
 import { robotoMono } from "@/app/fonts";
+import CustomScrollbar from "@/components/CustomScrollbar";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { IoMdCall } from "react-icons/io";
 import { nl2br } from "@/utils/textUtils";
 
@@ -27,105 +28,6 @@ interface NarrationData {
 interface NarrationOptionsProps {
   data?: NarrationData;
 }
-
-interface ScrollMetrics {
-  thumbHeight: number;
-  thumbOffset: number;
-  showThumb: boolean;
-}
-
-interface ScrollableDescriptionProps {
-  children: React.ReactNode;
-  maxHeight: number;
-  className: string;
-}
-
-const ScrollableDescription = ({
-  children,
-  maxHeight,
-  className,
-}: ScrollableDescriptionProps) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [metrics, setMetrics] = useState<ScrollMetrics>({
-    thumbHeight: 0,
-    thumbOffset: 0,
-    showThumb: false,
-  });
-
-  useEffect(() => {
-    const updateMetrics = () => {
-      const element = scrollRef.current;
-
-      if (!element) {
-        return;
-      }
-
-      const { clientHeight, scrollHeight, scrollTop } = element;
-      const hasOverflow = scrollHeight > clientHeight + 1;
-
-      if (!hasOverflow) {
-        setMetrics({
-          thumbHeight: 0,
-          thumbOffset: 0,
-          showThumb: false,
-        });
-        return;
-      }
-
-      const nextThumbHeight = Math.max(
-        (clientHeight / scrollHeight) * clientHeight,
-        26
-      );
-      const maxThumbOffset = clientHeight - nextThumbHeight;
-      const scrollProgress = scrollTop / (scrollHeight - clientHeight);
-
-      setMetrics({
-        thumbHeight: nextThumbHeight,
-        thumbOffset: maxThumbOffset * scrollProgress,
-        showThumb: true,
-      });
-    };
-
-    updateMetrics();
-
-    const element = scrollRef.current;
-    if (!element) {
-      return;
-    }
-
-    element.addEventListener("scroll", updateMetrics);
-    window.addEventListener("resize", updateMetrics);
-
-    return () => {
-      element.removeEventListener("scroll", updateMetrics);
-      window.removeEventListener("resize", updateMetrics);
-    };
-  }, [children, maxHeight]);
-
-  return (
-    <div className="relative flex-1 overflow-hidden" style={{ maxHeight }}>
-      <div
-        ref={scrollRef}
-        className={`h-full overflow-y-auto pr-6 ${className}`}
-        style={{ maxHeight, marginRight: -18, paddingRight: 24, scrollbarWidth: "none" }}
-      >
-        {children}
-      </div>
-
-      {metrics.showThumb && (
-        <div className="pointer-events-none absolute bottom-0 right-1 top-0 w-[4px] rounded-full bg-black/5">
-          <span
-            className="absolute left-0 w-full rounded-full bg-[#DADD39] shadow-[0_0_0_1px_rgba(218,221,57,0.12)] transition-transform duration-150"
-            style={{
-              height: metrics.thumbHeight,
-              transform: `translateY(${metrics.thumbOffset}px)`,
-            }}
-          />
-        </div>
-      )}
-    </div>
-  );
-};
 
 const NarrationOptions = ({ data }: NarrationOptionsProps) => {
   const renderRichText = (value: string | React.ReactNode) =>
@@ -199,16 +101,18 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
                 <h2 className="mb-2 text-[18px] font-semibold leading-snug text-[#444444]">
                   {opt.title}
                 </h2>
-                <ScrollableDescription
-                  maxHeight={150}
-                  className="text-left"
+                <CustomScrollbar
+                  className="max-h-[150px]"
+                  trackClassName="bg-black/5"
+                  thumbClassName="bg-[#DADD39]"
+                  style={{ marginRight: 0, paddingRight: "0.75rem" }}
                 >
                   <p
                     className={`${robotoMono.className} text-center text-[14px] leading-7 text-[#444444]`}
                   >
                     {renderRichText(opt.description)}
                   </p>
-                </ScrollableDescription>
+                </CustomScrollbar>
               </div>
             ))}
           </div>
@@ -282,16 +186,18 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
               </h2>
 
               <div className="flex flex-1 flex-col">
-                <ScrollableDescription
-                  maxHeight={168}
-                  className="text-left"
+                <CustomScrollbar
+                  className="max-h-[168px]"
+                  trackClassName="bg-black/5"
+                  thumbClassName="bg-[#DADD39]"
+                  style={{ marginRight: 0, paddingRight: "0.75rem" }}
                 >
                   <p
                     className={`${robotoMono.className} text-sm leading-7 text-[#444444] sm:text-base`}
                   >
                     {renderRichText(opt.description)}
                   </p>
-                </ScrollableDescription>
+                </CustomScrollbar>
               </div>
             </div>
           ))}

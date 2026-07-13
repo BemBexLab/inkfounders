@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
 import AOSProvider from "@/components/AOSProvider";
+import CustomScrollbar from "@/components/CustomScrollbar";
 import { robotoMono } from '../fonts'
 
 const whatMakeItems = [
@@ -83,35 +84,6 @@ const WhatMake = () => {
 
   return (
     <AOSProvider>
-      <style jsx global>{`
-        .what-make-scroll {
-          scrollbar-width: thin;
-          scrollbar-color: #dedfa3 transparent;
-          scrollbar-gutter: stable;
-        }
-
-        .what-make-scroll::-webkit-scrollbar {
-          width: 3px;
-        }
-
-        .what-make-scroll::-webkit-scrollbar-track {
-          background: transparent;
-        }
-
-        .what-make-scroll::-webkit-scrollbar-thumb {
-          background: #c7c934;
-          border-radius: 999px;
-        }
-
-        .what-make-carousel {
-          scrollbar-width: none;
-          -webkit-overflow-scrolling: touch;
-        }
-
-        .what-make-carousel::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
       <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 pt-4 sm:px-6 md:px-8 lg:px-0 lg:pt-2">
         <div className="flex w-full max-w-[1300px] flex-col items-center">
           {/* Headings */}
@@ -122,14 +94,17 @@ const WhatMake = () => {
             <span className="text-[#DADD39]">At Ink Founders, Your Goals Are Our Commitment</span>
           </h2>
 
-          <div
+          <CustomScrollbar
             ref={carouselRef}
+            orientation="horizontal"
             data-aos="fade-down-right"
             onPointerDown={pauseCarousel}
             onPointerUp={resumeCarousel}
             onPointerCancel={resumeCarousel}
             onPointerLeave={resumeCarousel}
-            className="what-make-carousel flex w-full max-w-full items-stretch gap-4 overflow-x-auto px-1 pb-4 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0"
+            className="flex w-full max-w-full items-stretch gap-4 px-1 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0"
+            trackClassName="bg-[#ececcf]"
+            thumbClassName="bg-[#c7c934]"
           >
             {carouselItems.map((item, index) => (
               <div
@@ -149,15 +124,19 @@ const WhatMake = () => {
                   {item.title}
                 </h3>
                 <div className="relative w-full max-w-[24rem] lg:h-auto lg:max-h-[125px]">
-                  <div className="what-make-scroll h-auto overflow-visible pr-0 lg:max-h-[125px] lg:overflow-y-auto lg:pr-2">
+                  <CustomScrollbar
+                    className="h-auto overflow-visible lg:max-h-[125px]"
+                    trackClassName="bg-[#ececcf]"
+                    thumbClassName="bg-[#c7c934]"
+                  >
                     <p className={`${robotoMono.className} text-[13px] leading-[1.2] text-gray-700 sm:text-[14px] md:text-[15px] md:leading-[1.2] lg:text-[16px]`}>
                       {item.description}
                     </p>
-                  </div>
+                  </CustomScrollbar>
                 </div>
               </div>
             ))}
-          </div>
+          </CustomScrollbar>
         </div>
       </section>
     </AOSProvider>

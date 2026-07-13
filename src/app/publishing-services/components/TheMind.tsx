@@ -4,21 +4,23 @@ import Image from "next/image";
 export default function TheMind() {
   return (
     <section className="w-full bg-[#F6F5F3] px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:px-6">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-6 lg:flex-row lg:items-start lg:gap-8 xl:gap-10">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-2 lg:grid lg:grid-cols-[minmax(300px,340px)_minmax(0,1fr)] lg:items-stretch lg:gap-5">
         {/* Book Cover */}
-        <div className="order-2 flex w-full flex-shrink-0 justify-center lg:order-none lg:w-auto">
-          <Image
-            src="/Service/Keith Cuvo 1.webp"
-            alt="Book Cover"
-            width={280}
-            height={540}
-            className="h-auto w-[min(64vw,260px)] transform transition-transform duration-300 hover:scale-105 lg:w-[320px] xl:w-[340px] lg:hover:translate-x-2 lg:hover:translate-y-2 lg:hover:rotate-3"
-            priority
-          />
+        <div className="order-2 flex w-full justify-center lg:order-none lg:h-full lg:w-full">
+          <div className="relative aspect-[14/27] w-[min(64vw,260px)] overflow-hidden transition-transform duration-300 hover:scale-105 lg:h-full lg:w-full lg:aspect-auto lg:hover:translate-x-2 lg:hover:translate-y-2 lg:hover:rotate-1">
+            <Image
+              src="/Service/Keith Cuvo 1.webp"
+              alt="Book Cover"
+              fill
+              sizes="(max-width: 1024px) 260px, (max-width: 1280px) 320px, 340px"
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
 
         {/* Content */}
-        <div className="contents lg:block lg:max-w-[760px]">
+        <div className="contents lg:flex lg:h-full lg:flex-col lg:justify-center lg:max-w-[760px]">
           <h2 className="order-1 mb-2 w-full max-w-3xl text-center text-[24px] font-semibold leading-[1.05] text-black md:text-[27px] lg:order-none lg:mb-3 lg:max-w-[720px] lg:text-left xl:max-w-[760px]">
             What Makes Our Book Publishing Services Stand Out?
           </h2>

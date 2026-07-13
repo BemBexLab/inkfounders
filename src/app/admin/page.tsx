@@ -1,4 +1,5 @@
 "use client";
+import CustomScrollbar from "@/components/CustomScrollbar";
 import React, { useEffect, useState } from "react";
 
 type Submission = {
@@ -205,7 +206,12 @@ export default function AdminDashboard() {
       {loading ? (
         <p>Loading submissions...</p>
       ) : (
-        <div className="overflow-x-auto">
+        <CustomScrollbar
+          orientation="horizontal"
+          className="max-w-full"
+          trackClassName="bg-black/5"
+          thumbClassName="bg-[#DADD39]"
+        >
           <table className="min-w-[700px] w-full text-left border border-black text-xs sm:text-sm">
             <thead>
               <tr className="bg-white">
@@ -246,7 +252,7 @@ export default function AdminDashboard() {
               ))}
             </tbody>
           </table>
-        </div>
+        </CustomScrollbar>
       )}
     </div>
   );

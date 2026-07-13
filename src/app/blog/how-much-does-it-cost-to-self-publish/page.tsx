@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import CustomScrollbar from '@/components/CustomScrollbar';
 
 const BlogOne: React.FC = () => {
   const router = useRouter();
@@ -139,7 +140,12 @@ const BlogOne: React.FC = () => {
               <p className="text-2xl font-bold text-[#D4D939] mb-8">$1,500 to $5,000</p>
 
               {/* Cost Breakdown Table */}
-              <div className="overflow-x-auto mb-10">
+              <CustomScrollbar
+                orientation="horizontal"
+                className="mb-10"
+                trackClassName="bg-black/5"
+                thumbClassName="bg-[#D4D939]"
+              >
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="bg-gray-100">
@@ -170,7 +176,7 @@ const BlogOne: React.FC = () => {
                     </tr>
                   </tbody>
                 </table>
-              </div>
+              </CustomScrollbar>
               <p className="text-center text-gray-500 italic mb-12">Now let's explain each part clearly.</p>
 
               {/* Section 1 */}

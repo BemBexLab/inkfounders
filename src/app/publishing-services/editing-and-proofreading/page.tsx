@@ -1,4 +1,5 @@
 import { robotoMono } from "@/app/fonts";
+import CustomScrollbar from "@/components/CustomScrollbar";
 import Link from "next/link";
 import { IoMdCall } from "react-icons/io";
 import Image from "next/image";
@@ -27,7 +28,11 @@ const ServiceCard = ({
 }) => (
   <div className="flex h-full min-h-[300px] flex-col rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
     <h3 className="mb-1 text-base font-semibold text-black">{title}</h3>
-    <div className="mt-3 h-[170px] overflow-y-auto pr-2 [scrollbar-width:thin] [&::-webkit-scrollbar]:w-[3px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-black/20 md:h-[190px]">
+    <CustomScrollbar
+      containerClassName="mt-3"
+      className="h-[170px] md:h-[190px]"
+      style={{ marginRight: 0, paddingRight: "0.75rem" }}
+    >
       {subtitle && <h4 className="mb-2 text-sm font-medium text-gray-800">{subtitle}</h4>}
       {description && (
         <p className={`${robotoMono.className} mt-2 text-[13px] leading-relaxed text-gray-700`}>
@@ -46,7 +51,7 @@ const ServiceCard = ({
           {subDesc}
         </p>
       )}
-    </div>
+    </CustomScrollbar>
   </div>
 );
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { robotoMono } from "@/app/fonts";
+import CustomScrollbar from "@/components/CustomScrollbar";
 import React from "react";
 
 interface Section {
@@ -43,25 +44,36 @@ const ImageDesc = ({ data }: ImageDescProps) => {
                 <h1 className="text-[28px] font-semibold text-[#1a1a1a] mb-3 leading-tight">
                   {sec.title}
                 </h1>
-                <div
-                  className={`${robotoMono.className} max-h-[360px] space-y-3 overflow-y-auto pr-2 text-[15px] text-[#333333] leading-[1.6] [scrollbar-width:thin] [scrollbar-color:rgba(0,0,0,0.28)_transparent] [&::-webkit-scrollbar]:w-[2px] [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-[rgba(0,0,0,0.28)] [&_a]:inline [&_a]:break-words [&_a]:align-baseline [&_a]:whitespace-nowrap`}
+                <CustomScrollbar
+                  className={`max-h-[360px] text-[15px] text-[#333333] leading-[1.6] ${robotoMono.className}`}
+                  style={{ marginRight: 0, paddingRight: "0.875rem" }}
                 >
-                  {Array.isArray(sec.paragraphs) ? (
-                    sec.paragraphs.map((p, i) =>
-                      typeof p === "string" ? (
-                        <p key={i}>{p}</p>
-                      ) : (
-                        <div key={i}>
-                          {p}
-                        </div>
-                      ),
-                    )
-                  ) : (
-                    <div>
-                      {sec.paragraphs}
-                    </div>
-                  )}
-                </div>
+                  <div className="space-y-3">
+                    {Array.isArray(sec.paragraphs) ? (
+                      sec.paragraphs.map((p, i) =>
+                        typeof p === "string" ? (
+                          <p
+                            key={i}
+                            className="[&_a]:inline [&_a]:break-words [&_a]:align-baseline [&_a]:whitespace-nowrap"
+                          >
+                            {p}
+                          </p>
+                        ) : (
+                          <div
+                            key={i}
+                            className="[&_a]:inline [&_a]:break-words [&_a]:align-baseline [&_a]:whitespace-nowrap"
+                          >
+                            {p}
+                          </div>
+                        ),
+                      )
+                    ) : (
+                      <div className="[&_a]:inline [&_a]:break-words [&_a]:align-baseline [&_a]:whitespace-nowrap">
+                        {sec.paragraphs}
+                      </div>
+                    )}
+                  </div>
+                </CustomScrollbar>
               </div>
 
               {/* Image */}

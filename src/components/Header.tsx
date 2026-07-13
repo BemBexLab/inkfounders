@@ -1,5 +1,6 @@
 "use client";
 
+import CustomScrollbar from "@/components/CustomScrollbar";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
@@ -263,7 +264,7 @@ export default function Header() {
       {menuOpen && (
         <div
           id="mobile-menu"
-          className="fixed inset-0 z-[60] flex min-h-screen flex-col items-start gap-3 overflow-y-auto bg-white px-6 py-8 xl:hidden"
+          className="fixed inset-0 z-[60] bg-white px-6 py-8 xl:hidden"
         >
           <button
             className="absolute right-6 top-6 text-3xl text-[#DADD39]"
@@ -273,113 +274,121 @@ export default function Header() {
             <FaTimes />
           </button>
 
-          <ul className="mt-10 flex w-full flex-col gap-2">
-            {navItems.map((item) => {
-              const isActive = isActivePath(pathname, item.href);
-              const hasChildren = Boolean(item.children?.length);
-              const isExpanded = openMobileSection === item.href;
+          <CustomScrollbar
+            className="h-full pr-8"
+            trackClassName="bg-black/5"
+            thumbClassName="bg-[#DADD39]"
+          >
+            <div className="flex min-h-full flex-col items-start gap-3">
+              <ul className="mt-10 flex w-full flex-col gap-2">
+                {navItems.map((item) => {
+                  const isActive = isActivePath(pathname, item.href);
+                  const hasChildren = Boolean(item.children?.length);
+                  const isExpanded = openMobileSection === item.href;
 
-              return (
-                <li key={item.href} className="w-full border-b border-[#ece9df] pb-2">
-                  <div className="flex items-center justify-between gap-3">
-                    {item.desktopOnlyMenu ? (
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setOpenMobileSection((prev) =>
-                            prev === item.href ? null : item.href,
-                          )
-                        }
-                        className={`flex flex-1 items-center gap-4 rounded-md px-1 py-3 text-left text-lg transition ${
-                          isActive ? "font-semibold text-[#DADD39]" : "text-gray-700"
-                        }`}
-                        aria-expanded={isExpanded}
-                      >
-                        <span className={isActive ? "text-[#DADD39]" : "text-gray-400"}>
-                          {item.icon}
-                        </span>
-                        <span className="tracking-wide">{item.label}</span>
-                      </button>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        onClick={() => setMenuOpen(false)}
-                        className={`flex flex-1 items-center gap-4 rounded-md px-1 py-3 text-lg transition ${
-                          isActive ? "font-semibold text-[#DADD39]" : "text-gray-700"
-                        }`}
-                      >
-                        <span className={isActive ? "text-[#DADD39]" : "text-gray-400"}>
-                          {item.icon}
-                        </span>
-                        <span className="tracking-wide">{item.label}</span>
-                      </Link>
-                    )}
+                  return (
+                    <li key={item.href} className="w-full border-b border-[#ece9df] pb-2">
+                      <div className="flex items-center justify-between gap-3">
+                        {item.desktopOnlyMenu ? (
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setOpenMobileSection((prev) =>
+                                prev === item.href ? null : item.href,
+                              )
+                            }
+                            className={`flex flex-1 items-center gap-4 rounded-md px-1 py-3 text-left text-lg transition ${
+                              isActive ? "font-semibold text-[#DADD39]" : "text-gray-700"
+                            }`}
+                            aria-expanded={isExpanded}
+                          >
+                            <span className={isActive ? "text-[#DADD39]" : "text-gray-400"}>
+                              {item.icon}
+                            </span>
+                            <span className="tracking-wide">{item.label}</span>
+                          </button>
+                        ) : (
+                          <Link
+                            href={item.href}
+                            onClick={() => setMenuOpen(false)}
+                            className={`flex flex-1 items-center gap-4 rounded-md px-1 py-3 text-lg transition ${
+                              isActive ? "font-semibold text-[#DADD39]" : "text-gray-700"
+                            }`}
+                          >
+                            <span className={isActive ? "text-[#DADD39]" : "text-gray-400"}>
+                              {item.icon}
+                            </span>
+                            <span className="tracking-wide">{item.label}</span>
+                          </Link>
+                        )}
 
-                    {hasChildren && (
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setOpenMobileSection((prev) =>
-                            prev === item.href ? null : item.href,
-                          )
-                        }
-                        className="rounded-md p-3 text-gray-500"
-                        aria-label={`Toggle ${item.label} submenu`}
-                        aria-expanded={isExpanded}
-                      >
-                        <FaChevronDown
-                          className={`transition-transform duration-200 ${
-                            isExpanded ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-                    )}
+                        {hasChildren && (
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setOpenMobileSection((prev) =>
+                                prev === item.href ? null : item.href,
+                              )
+                            }
+                            className="rounded-md p-3 text-gray-500"
+                            aria-label={`Toggle ${item.label} submenu`}
+                            aria-expanded={isExpanded}
+                          >
+                            <FaChevronDown
+                              className={`transition-transform duration-200 ${
+                                isExpanded ? "rotate-180" : ""
+                              }`}
+                            />
+                          </button>
+                        )}
+                      </div>
+
+                      {hasChildren && isExpanded && (
+                        <div className="ml-11 mt-1 flex flex-col pb-2">
+                          {item.children?.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              onClick={() => setMenuOpen(false)}
+                              className={`rounded-md px-2 py-2 text-sm transition ${
+                                isActivePath(pathname, child.href)
+                                  ? "font-semibold text-[#DADD39]"
+                                  : "text-gray-600"
+                              }`}
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+
+              <a
+                href="tel:+17864961231"
+                className="group flex items-center gap-5 px-2 pt-5"
+              >
+                <div className="flex h-8 w-8 items-center justify-center rounded-full border-primary bg-primary transition group-hover:bg-primary/80 2xl:h-14 2xl:w-14">
+                  <div className="flex items-center justify-center rounded-full bg-[#DADD39] px-3 py-3 text-white">
+                    <IoCall size={30} />
                   </div>
+                </div>
+                <span className="text-base font-semibold text-black group-hover:underline">
+                  +1 (786) 496-1231
+                </span>
+              </a>
 
-                  {hasChildren && isExpanded && (
-                    <div className="ml-11 mt-1 flex flex-col pb-2">
-                      {item.children?.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          onClick={() => setMenuOpen(false)}
-                          className={`rounded-md px-2 py-2 text-sm transition ${
-                            isActivePath(pathname, child.href)
-                              ? "font-semibold text-[#DADD39]"
-                              : "text-gray-600"
-                          }`}
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-
-          <a
-            href="tel:+17864961231"
-            className="group flex items-center gap-5 px-2 pt-5"
-          >
-            <div className="flex h-8 w-8 items-center justify-center rounded-full border-primary bg-primary transition group-hover:bg-primary/80 2xl:h-14 2xl:w-14">
-              <div className="flex items-center justify-center rounded-full bg-[#DADD39] px-3 py-3 text-white">
-                <IoCall size={30} />
-              </div>
+              <Link
+                href="/contactus"
+                onClick={() => setMenuOpen(false)}
+                className="mt-6 block rounded-full border border-[#DADD39] bg-[#DADD39] px-6 py-3 text-center font-semibold text-black transition hover:border-black hover:bg-transparent"
+              >
+                Book a call
+              </Link>
             </div>
-            <span className="text-base font-semibold text-black group-hover:underline">
-              +1 (786) 496-1231
-            </span>
-          </a>
-
-          <Link
-            href="/contactus"
-            onClick={() => setMenuOpen(false)}
-            className="mt-6 block rounded-full border border-[#DADD39] bg-[#DADD39] px-6 py-3 text-center font-semibold text-black transition hover:border-black hover:bg-transparent"
-          >
-            Book a call
-          </Link>
+          </CustomScrollbar>
         </div>
       )}
     </header>

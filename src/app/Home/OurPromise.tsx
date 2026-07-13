@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import AOSProvider from "@/components/AOSProvider";
+import CustomScrollbar from "@/components/CustomScrollbar";
 import { robotoMono } from "../fonts";
 
 const promiseItems = [
@@ -120,16 +121,6 @@ const OurPromise = () => {
 
   return (
     <AOSProvider>
-      <style jsx global>{`
-        .our-promise-slider {
-          scrollbar-width: none;
-          -webkit-overflow-scrolling: touch;
-        }
-
-        .our-promise-slider::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
       <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:px-0">
         <div className="flex w-full max-w-[1300px] flex-col items-center">
           {/* Headings */}
@@ -142,13 +133,16 @@ const OurPromise = () => {
             </span>
           </h2>
 
-          <div
+          <CustomScrollbar
             ref={carouselRef}
+            orientation="horizontal"
             onPointerDown={pauseCarousel}
             onPointerUp={resumeCarousel}
             onPointerCancel={resumeCarousel}
             onPointerLeave={resumeCarousel}
-            className="our-promise-slider flex w-full max-w-full items-stretch gap-4 overflow-x-auto px-1 pb-4 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0"
+            className="flex w-full max-w-full items-stretch gap-4 px-1 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0"
+            trackClassName="bg-[#ececcf]"
+            thumbClassName="bg-[#c7c934]"
           >
             {carouselPromiseItems.map((item, index) => (
               <div
@@ -194,7 +188,7 @@ const OurPromise = () => {
                 )}
               </div>
             ))}
-          </div>
+          </CustomScrollbar>
         </div>
       </section>
     </AOSProvider>

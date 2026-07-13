@@ -1,6 +1,7 @@
 "use client";
 
 import { robotoMono } from "@/app/fonts";
+import CustomScrollbar from "@/components/CustomScrollbar";
 import Link from "next/link";
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
@@ -133,15 +134,15 @@ const PricingPackages = () => {
                   Included:
                 </p>
 
-                <div
-                  className={`mt-5 max-h-[360px] space-y-3 overflow-y-auto pr-2 min-[760px]:mt-4 min-[760px]:max-h-[330px] min-[760px]:space-y-2 min-[900px]:max-h-[350px] min-[900px]:space-y-3 sm:pr-3 ${
-                    item.featured ? "pricing-scroll" : "pricing-scroll-dark"
-                  }`}
+                <CustomScrollbar
+                  className="mt-5 max-h-[360px] min-[760px]:mt-4 min-[760px]:max-h-[330px] min-[900px]:max-h-[350px]"
+                  trackClassName={item.featured ? "bg-[#d3d2c6]" : "bg-[#fbfaeb]"}
+                  thumbClassName={item.featured ? "bg-[#dce829]" : "bg-[#f7f6e9]"}
                 >
                   {item.included.map((feature) => (
                     <div
                       key={feature}
-                      className="flex items-start gap-3 min-[760px]:gap-2 min-[900px]:gap-3"
+                      className="flex items-start gap-3 pb-3 min-[760px]:gap-2 min-[760px]:pb-2 min-[900px]:gap-3 min-[900px]:pb-3"
                     >
                       <FaCheckCircle
                         className={`mt-[3px] h-[14px] w-[14px] shrink-0 min-[760px]:h-[12px] min-[760px]:w-[12px] min-[900px]:h-[14px] min-[900px]:w-[14px] ${
@@ -153,7 +154,7 @@ const PricingPackages = () => {
                       </p>
                     </div>
                   ))}
-                </div>
+                </CustomScrollbar>
               </div>
 
               <div className="mt-10 flex justify-center min-[760px]:mt-8 lg:mt-12">
@@ -177,25 +178,6 @@ const PricingPackages = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        .pricing-scroll::-webkit-scrollbar,
-        .pricing-scroll-dark::-webkit-scrollbar {
-          width: 2px;
-        }
-
-        .pricing-scroll::-webkit-scrollbar-track,
-        .pricing-scroll-dark::-webkit-scrollbar-track {
-          background: transparent;
-        }
-
-        .pricing-scroll::-webkit-scrollbar-thumb {
-          background: #dce829;
-        }
-
-        .pricing-scroll-dark::-webkit-scrollbar-thumb {
-          background: #f7f6e9;
-        }
-      `}</style>
     </section>
   );
 };

@@ -1,6 +1,7 @@
 "use client"
 
 import { robotoMono } from "@/app/fonts";
+import CustomScrollbar from "@/components/CustomScrollbar";
 import { FaCheckCircle } from "react-icons/fa";
 import React, { useEffect, useRef } from "react";
 import Link from "next/link";
@@ -130,16 +131,6 @@ const PricingAndPackage = () => {
 
   return (
    <AOSProvider>
-     <style jsx global>{`
-       .pricing-package-slider {
-         scrollbar-width: none;
-         -webkit-overflow-scrolling: touch;
-       }
-
-       .pricing-package-slider::-webkit-scrollbar {
-         display: none;
-       }
-     `}</style>
 	     <section className="flex w-full items-center justify-center px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:px-0">
 	      <div className="flex w-full max-w-[1300px] flex-col items-center">
         {/* Headings */}
@@ -158,14 +149,17 @@ const PricingAndPackage = () => {
           &apos;Custom Quote&apos; to speak with a publishing expert.&quot;
         </p>
         {/* Pricing Cards */}
-	        <div
+	        <CustomScrollbar
             ref={carouselRef}
+            orientation="horizontal"
             data-aos="fade-down-right"
             onPointerDown={pauseCarousel}
             onPointerUp={resumeCarousel}
             onPointerCancel={resumeCarousel}
             onPointerLeave={resumeCarousel}
-            className="pricing-package-slider flex w-full max-w-full items-stretch gap-4 overflow-x-auto px-1 pb-4 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-8 lg:overflow-visible lg:px-0 lg:pb-0"
+            className="flex w-full max-w-full items-stretch gap-4 px-1 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-8 lg:overflow-visible lg:px-0 lg:pb-0"
+            trackClassName="bg-[#ececcf]"
+            thumbClassName="bg-[#c7c934]"
           >
 	          {carouselPackages.map((pkg, idx) => (
 	            <div
@@ -230,7 +224,7 @@ const PricingAndPackage = () => {
               </Link>
             </div>
           ))}
-        </div>
+        </CustomScrollbar>
       </div>
     </section>
    </AOSProvider>

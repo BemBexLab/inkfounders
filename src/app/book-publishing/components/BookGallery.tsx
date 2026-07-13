@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import AOSProvider from "@/components/AOSProvider";
+import CustomScrollbar from "@/components/CustomScrollbar";
 
 // Add "Fiction" to tags if you want them to show under Fiction filter.
 export const BOOKS = [
@@ -119,28 +120,6 @@ export const BOOKS = [
 
 const FILTERS = ["All", "Fiction", "Non Fiction", "Biography", "Children Book"];
 
-const galleryStyles = `
-  .book-gallery-scroller {
-    scrollbar-width: thin;
-    scrollbar-color: #DADD39 transparent;
-  }
-
-  .book-gallery-scroller::-webkit-scrollbar {
-    height: 8px;
-  }
-
-  .book-gallery-scroller::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .book-gallery-scroller::-webkit-scrollbar-thumb {
-    background: #DADD39;
-    background-clip: content-box;
-    border: 3px solid transparent;
-    border-radius: 999px;
-  }
-`;
-
 const BookGallery = () => {
   const [activeFilter, setActiveFilter] = useState("All");
 
@@ -161,7 +140,6 @@ const BookGallery = () => {
 
   return (
     <AOSProvider>
-      <style>{galleryStyles}</style>
       <section className="flex w-full flex-col items-center px-4 pt-10 sm:px-6 sm:pt-12 lg:px-8">
         {/* Eyebrow Part */}
         <p className="text-lg font-semibold text-[#DADD39] sm:text-xl">Bring Your Book To Life</p>
@@ -189,7 +167,12 @@ const BookGallery = () => {
 
         {/* Horizontal book scroller */}
         <div className="mx-10 w-[calc(100vw-5rem)] overflow-hidden">
-          <div className="book-gallery-scroller flex w-full snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-6 pt-2 sm:gap-7 md:gap-9">
+          <CustomScrollbar
+            orientation="horizontal"
+            className="flex w-full snap-x snap-mandatory gap-5 scroll-smooth pt-2 sm:gap-7 md:gap-9"
+            trackClassName="bg-[#eef1b2]"
+            thumbClassName="bg-[#DADD39]"
+          >
           {filteredBooks.map((book, idx) => (
             <Link
               href={book.link}
@@ -213,7 +196,7 @@ const BookGallery = () => {
               </div>
             </Link>
           ))}
-          </div>
+          </CustomScrollbar>
         </div>
       </section>
     </AOSProvider>

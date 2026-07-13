@@ -2,6 +2,7 @@
 
 import { robotoMono } from "@/app/fonts";
 import AOSProvider from "@/components/AOSProvider";
+import CustomScrollbar from "@/components/CustomScrollbar";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 
@@ -101,52 +102,23 @@ const WhatYouGet = () => {
 
   return (
     <AOSProvider>
-      <style jsx global>{`
-        .what-you-get-slider {
-          scrollbar-width: none;
-          -webkit-overflow-scrolling: touch;
-        }
-
-        .what-you-get-slider::-webkit-scrollbar {
-          display: none;
-        }
-
-        .what-you-get-description-scroll {
-          max-height: 15vh;
-          overflow-y: auto;
-          padding-right: 0.35rem;
-          scrollbar-width: thin;
-          scrollbar-color: rgba(0, 0, 0, 0.45) transparent;
-        }
-
-        .what-you-get-description-scroll::-webkit-scrollbar {
-          width: 2px;
-        }
-
-        .what-you-get-description-scroll::-webkit-scrollbar-track {
-          background: transparent;
-        }
-
-        .what-you-get-description-scroll::-webkit-scrollbar-thumb {
-          background: rgba(0, 0, 0, 0.45);
-          border-radius: 999px;
-        }
-      `}</style>
-
       <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:px-0">
         <div className="flex w-full max-w-[1300px] flex-col items-center">
           <h2 className="mb-8 max-w-4xl text-center text-[24px] font-semibold leading-[1.05] text-black md:text-[30px] lg:mb-8">
             What You Get With Ink Founders
           </h2>
 
-          <div
+          <CustomScrollbar
             ref={carouselRef}
+            orientation="horizontal"
             data-aos="fade-down-right"
             onPointerDown={pauseCarousel}
             onPointerUp={resumeCarousel}
             onPointerCancel={resumeCarousel}
             onPointerLeave={resumeCarousel}
-            className="what-you-get-slider flex w-full max-w-full items-stretch gap-4 overflow-x-auto px-1 pb-4 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-x-4 lg:gap-y-10 lg:overflow-visible lg:px-0 lg:pb-0"
+            className="flex w-full max-w-full items-stretch gap-4 px-1 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-x-4 lg:gap-y-10 lg:overflow-visible lg:px-0 lg:pb-0"
+            trackClassName="bg-[#ececcf]"
+            thumbClassName="bg-[#c7c934]"
           >
             {carouselCards.map((card, index) => (
               <div
@@ -165,14 +137,19 @@ const WhatYouGet = () => {
                 <h3 className="mb-2 text-[17px] font-semibold leading-tight text-black sm:text-[18px] md:text-[19px] lg:text-[20px]">
                   {card.title}
                 </h3>
-                <p
-                  className={`what-you-get-description-scroll ${robotoMono.className} text-[13px] leading-[1.35] text-[#444444] sm:text-[14px] md:text-[15px] lg:leading-loose`}
+                <CustomScrollbar
+                  className="max-h-[15vh]"
+                  style={{ marginRight: 0, paddingRight: "0.75rem" }}
                 >
-                  {card.description}
-                </p>
+                  <p
+                    className={`${robotoMono.className} text-[13px] leading-[1.35] text-[#444444] sm:text-[14px] md:text-[15px] lg:leading-loose`}
+                  >
+                    {card.description}
+                  </p>
+                </CustomScrollbar>
               </div>
             ))}
-          </div>
+          </CustomScrollbar>
         </div>
       </section>
     </AOSProvider>
