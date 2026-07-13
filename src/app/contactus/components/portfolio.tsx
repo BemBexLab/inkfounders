@@ -11,7 +11,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "Hollow Places",
 //     author: "Claire Mahoney",
-//     cover: "/ourbook/book1.png",
+//     cover: "/ourbook/book1.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Fiction"],
@@ -19,7 +19,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "Day and Dream",
 //     author: "Claire Mahoney",
-//     cover: "/ourbook/book2.png",
+//     cover: "/ourbook/book2.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Non Fiction"],
@@ -27,7 +27,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "The Unseen Threads",
 //     author: "Dr. Avi Malik",
-//     cover: "/ourbook/book3.png",
+//     cover: "/ourbook/book3.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Fiction"],
@@ -35,7 +35,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "The Shape of Grief",
 //     author: "Dr. Alice Thorne",
-//     cover: "/ourbook/book4.png",
+//     cover: "/ourbook/book4.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Biography"],
@@ -43,7 +43,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "The Sound of my father breathing",
 //     author: "Claire Mahoney",
-//     cover: "/ourbook/book5.png",
+//     cover: "/ourbook/book5.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Children Book"],
@@ -51,7 +51,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "Let the Earth Hold You",
 //     author: "Claire Mahoney",
-//     cover: "/ourbook/book6.png",
+//     cover: "/ourbook/book6.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Children Book"],
@@ -59,7 +59,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "Wound We Inherit",
 //     author: "Helena Cruz",
-//     cover: "/ourbook/book7.png",
+//     cover: "/ourbook/book7.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Biography"],
@@ -67,7 +67,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "The Slow Becoming",
 //     author: "D. Hassan Tariq",
-//     cover: "/ourbook/book8.png",
+//     cover: "/ourbook/book8.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Non Fiction"],
@@ -75,7 +75,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "The Fire You Carry",
 //     author: "Claire Mahoney",
-//     cover: "/ourbook/book9.png",
+//     cover: "/ourbook/book9.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Non Fiction"],
@@ -83,7 +83,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "The Walk Home",
 //     author: "Claire Mahoney",
-//     cover: "/ourbook/book10.png",
+//     cover: "/ourbook/book10.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Children Book"],
@@ -91,7 +91,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "My Grandmother’s Field",
 //     author: "Dr. Avi Malik",
-//     cover: "/ourbook/book11.png",
+//     cover: "/ourbook/book11.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Children Book"],
@@ -99,7 +99,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "A life without Apologies",
 //     author: "Dr. Alice Thorne",
-//     cover: "/ourbook/book12.png",
+//     cover: "/ourbook/book12.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Non Fiction"],
@@ -107,7 +107,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "When Boys Don’t Cry",
 //     author: "Claire Mahoney",
-//     cover: "/ourbook/book13.png",
+//     cover: "/ourbook/book13.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Children Book"],
@@ -115,7 +115,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "Echoes Of her Hands",
 //     author: "Claire Mahoney",
-//     cover: "/ourbook/book14.png",
+//     cover: "/ourbook/book14.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Biography"],
@@ -123,7 +123,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "Dust in the Spine",
 //     author: "Helena Cruz",
-//     cover: "/ourbook/book15.png",
+//     cover: "/ourbook/book15.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Fiction"],
@@ -131,7 +131,7 @@ import { BOOKS } from "@/app/ourbook/components/BookGallery";
 //   {
 //     title: "Roots In the Dust",
 //     author: "Helena Cruz",
-//     cover: "/ourbook/book16.png",
+//     cover: "/ourbook/book16.webp",
 //     date: "6-July-2023",
 //     genre: "Novel",
 //     tags: ["Fiction"],

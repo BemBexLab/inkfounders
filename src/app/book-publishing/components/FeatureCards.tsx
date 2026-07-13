@@ -7,7 +7,7 @@ export default function FeatureCards() {
       description:
         "The e-books we publish on all the popular e-book readers, mobile phones, tablets, & platforms.",
       bg: "bg-[#DADD39]",
-      icon: "/landing-page/image 53.png",
+      icon: "/landing-page/image 53.webp",
       iconBg: "bg-[#F4F3E1]",
       textColor: "text-black",
       descColor: "text-[#1F1F1F]",
@@ -17,7 +17,7 @@ export default function FeatureCards() {
       description:
         "We ensure the publishing of your work on leading platforms such as Amazon Kindle, CreateSpace, etc.",
       bg: "bg-[#eef1d5]",
-      icon: "/landing-page/image 54.png",
+      icon: "/landing-page/image 54.webp",
       iconBg: "bg-[#DADD39]",
       textColor: "text-black",
       descColor: "text-[#1F1F1F]",
@@ -27,7 +27,7 @@ export default function FeatureCards() {
       description:
         "Our team of expert book publishers is well-aware of the eBook publishing platforms' technicalities.",
       bg: "bg-[#eef1d5]",
-      icon: "/landing-page/image 55.png",
+      icon: "/landing-page/image 55.webp",
       iconBg: "bg-[#DADD39]",
       textColor: "text-black",
       descColor: "text-[#1F1F1F]",
@@ -37,7 +37,7 @@ export default function FeatureCards() {
       description:
         "We help your work get to the market fast. Our experts get eBooks published within 24-48 hours.",
       bg: "bg-[#DADD39]",
-      icon: "/landing-page/image 56.png",
+      icon: "/landing-page/image 56.webp",
       iconBg: "bg-[#F4F3E1]",
       textColor: "text-black",
       descColor: "text-[#3a3a00]",

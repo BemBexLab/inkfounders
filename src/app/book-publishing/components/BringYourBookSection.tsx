@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MdLocalPhone } from "react-icons/md";
 import QuoteTrigger from "./QuoteTrigger";
@@ -5,10 +6,12 @@ import QuoteTrigger from "./QuoteTrigger";
 export default function BringYourBookSection() {
   return (
     <section className="relative flex min-h-[400px] w-full items-center justify-center overflow-hidden">
-      <img
-        src="/landing-page/image.png"
+      <Image
+        src="/landing-page/image.webp"
         alt="Books background"
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        fill
+        sizes="100vw"
+        className="object-cover object-center"
       />
 
       <div className="absolute inset-0 bg-black/92" />

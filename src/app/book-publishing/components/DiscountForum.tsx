@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState } from "react";
 
 interface FormState {
@@ -273,13 +274,20 @@ export default function DiscountForm() {
       <div className="discount-root">
         {/* Eclipse background image — add your src here */}
         <div className="eclipse-bg">
-          <img src="/landing-page/Ellipse 1.png" alt="Eclipse Image" />
+          <Image
+            src="/landing-page/Ellipse 1.webp"
+            alt="Eclipse Image"
+            fill
+            sizes="(max-width: 640px) 90vw, 520px"
+          />
         </div>
 
         <div className="stationery-bg">
-          <img
-            src="/landing-page/natural-material-stationery-assortment 1.png"
+          <Image
+            src="/landing-page/natural-material-stationery-assortment 1.webp"
             alt="Stationary Image"
+            fill
+            sizes="(max-width: 640px) 90vw, 500px"
           />
         </div>
 

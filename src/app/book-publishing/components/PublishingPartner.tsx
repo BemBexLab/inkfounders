@@ -1,5 +1,6 @@
 import React from "react";
 import { robotoMono } from "@/app/fonts";
+import Image from "next/image";
 import Link from "next/link";
 import { MdLocalPhone } from "react-icons/md";
 import QuoteTrigger from "./QuoteTrigger";
@@ -46,12 +47,15 @@ const PublishingPartner = () => {
           </div>
         </div>
 
-        <div className="flex w-full max-w-[760px] items-stretch justify-center lg:max-w-none lg:flex-1">
-          <img
-            src="/landing-page/Rectangle 25.png"
-            className="aspect-[16/11] h-auto w-full rounded-xl object-cover sm:aspect-[16/9] lg:aspect-auto lg:h-full lg:min-h-[560px] lg:rounded-none"
-            alt=""
+        <div className="relative flex w-full max-w-[760px] items-stretch justify-center lg:max-w-none lg:flex-1">
+          <Image
+            src="/landing-page/Rectangle 25.webp"
+            alt="Publishing consultation"
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="rounded-xl object-cover lg:rounded-none"
           />
+          <div className="aspect-[16/11] w-full sm:aspect-[16/9] lg:h-full lg:min-h-[560px]" />
         </div>
       </div>
     </section>

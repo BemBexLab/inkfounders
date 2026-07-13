@@ -27,7 +27,7 @@ const WhatSet = () => {
               className="flex flex-col items-center px-4 text-center"
             >
               <Image
-                src="/whoweare/Mask group (10).png" // update with your actual filename
+                src="/whoweare/Mask group (10).webp" // update with your actual filename
                 alt="Holistic & Transparent Services"
                 width={48}
                 height={48}
@@ -43,7 +43,7 @@ const WhatSet = () => {
               className="flex flex-col items-center px-4 text-center"
             >
               <Image
-                src="/whoweare/Mask group (11).png" // update with your actual filename
+                src="/whoweare/Mask group (11).webp" // update with your actual filename
                 alt="Myriad Of Distribution Channels"
                 width={48}
                 height={48}
@@ -60,7 +60,7 @@ const WhatSet = () => {
               className="flex flex-col items-center px-4 text-center sm:col-span-2 lg:col-span-1"
             >
               <Image
-                src="/whoweare/Mask group (12).png" // update with your actual filename
+                src="/whoweare/Mask group (12).webp" // update with your actual filename
                 alt="Book Marketing & Author Branding"
                 width={48}
                 height={48}

@@ -11,42 +11,42 @@ const Testimonials = () => {
       quote: "Ink Founder didn't just publish my book — they helped me promote it too. Their team gave me great advice on building my marketing from the ground up, including social media...",
       name: "Noel Jensen",
       role: "Great Writer",
-      image: "/Home/Frame 66 (1).png"
+      image: "/Home/Frame 66 (1).webp"
     },
     {
       id: 2,
       quote: "Ink Founder made the whole process easy for me. They not only published my book but also showed me how to market it, build my brand, and reach the right readers for real results",
       name: "Sarita Espiricueta",
       role: "Great Writer",
-      image: "/Home/Frame 66 (2).png"
+      image: "/Home/Frame 66 (2).webp"
     },
     {
       id: 3,
       quote: "Thanks to Ink Founder, my book launch was a smooth experience. They helped me every step of the way—from publishing and promotion to building my author brand and connecting with new fans",
       name: "Michael Gordon",
       role: "Great Writer",
-      image: "/Home/Frame 66.png"
+      image: "/Home/Frame 66.webp"
     },
     {
       id: 4,
       quote: "The publishing process was seamless with Ink Founder. Their team provided excellent guidance throughout, making my author journey truly rewarding and stress-free.",
       name: "Nick john",
       role: "Bestselling Author",
-      image: "/Home/review.png"
+      image: "/Home/review.webp"
     },
     {
       id: 5,
       quote: "Ink Founder guided me through every stage of publishing my book. They made the entire process simple and stress-free—from editing and design to launching, promoting.",
       name: "Edward grey",
       role: "Professional Writer",
-      image: "/Home/review2.png"
+      image: "/Home/review2.webp"
     },
     {
       id: 6,
       quote: "Partnering with Ink Founder turned my draft into a polished, professionally published work. Their care for details and help for authors is truly outstanding.",
       name: "Tom peter",
       role: "Award-winning Author",
-      image: "/Home/review3.png"
+      image: "/Home/review3.webp"
     }
   ];
 

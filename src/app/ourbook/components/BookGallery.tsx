@@ -12,7 +12,7 @@ export const BOOKS = [
  {
     title: "DON'T CUT the GRASS on Sunday",
     author: "K.Stephen Jumper",
-    cover: "/ourbook/New folder/Stephen 2.png",
+    cover: "/ourbook/New folder/Stephen 2.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Non-Fiction"],
@@ -21,7 +21,7 @@ export const BOOKS = [
   {
     title: "The Bee's Colony, The Rise of the New Queen",
     author: "Joel B.Gindo",
-    cover: "/ourbook/New folder/Bee 2.png",
+    cover: "/ourbook/New folder/Bee 2.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Children’s Book"],
@@ -30,7 +30,7 @@ export const BOOKS = [
   {
     title: "Growing together",
     author: "Allison Sullins",
-    cover: "/ourbook/New folder/Allison 4.png",
+    cover: "/ourbook/New folder/Allison 4.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Children’s Book"],
@@ -39,7 +39,7 @@ export const BOOKS = [
   {
     title: "Tales of the Hippie Dippie Gardener",
     author: "Jim Fritz",
-    cover: "/ourbook/New folder/Jim Fritz 2.png",
+    cover: "/ourbook/New folder/Jim Fritz 2.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Fiction"],
@@ -48,7 +48,7 @@ export const BOOKS = [
   {
     title: "God carried me",
     author: "Bertha Stumon",
-    cover: "/ourbook/New folder/Bertha 1.png",
+    cover: "/ourbook/New folder/Bertha 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
@@ -57,7 +57,7 @@ export const BOOKS = [
   {
     title: "THE LABYRINTH",
     author: "Keith Cuvo",
-    cover: "/ourbook/New folder/Keith Cuvo 1.png",
+    cover: "/ourbook/New folder/Keith Cuvo 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Non-Fiction"],
@@ -66,7 +66,7 @@ export const BOOKS = [
   {
     title: "El Color del Renacer",
     author: "Luz Diaz",
-    cover: "/ourbook/New folder/Luis Diaz 1.png",
+    cover: "/ourbook/New folder/Luis Diaz 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
@@ -75,7 +75,7 @@ export const BOOKS = [
   {
     title: "THE TIME CAPSULE MYSTERY",
     author: "Jenny Lynn",
-    cover: "/ourbook/New folder/Jenny Lynn 1.png",
+    cover: "/ourbook/New folder/Jenny Lynn 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Children’s Book"],
@@ -84,7 +84,7 @@ export const BOOKS = [
   {
     title: "LAFLAPS: Living A Fruitful Life After Prison System",
     author: "Gary Alan Early",
-    cover: "/ourbook/New folder/Laflaps 2.png",
+    cover: "/ourbook/New folder/Laflaps 2.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"], 
@@ -93,7 +93,7 @@ export const BOOKS = [
   {
     title: "THROUGH THE EYE OF THE STORM",
     author: "Andre Goldson",
-    cover: "/ourbook/New folder/The Storm 2.png",
+    cover: "/ourbook/New folder/The Storm 2.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
@@ -102,7 +102,7 @@ export const BOOKS = [
   {
     title: "FRESH PATHS UNFOLDING",
     author: "Sara Tessier",
-    cover: "/ourbook/New folder/Sara 3.png",
+    cover: "/ourbook/New folder/Sara 3.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Fiction"],
@@ -111,7 +111,7 @@ export const BOOKS = [
   {
     title: "FORGED IN THE MOUNTAINS",
     author: "Wilma Gibson Smith",
-    cover: "/ourbook/New folder/Wilma 2.png",
+    cover: "/ourbook/New folder/Wilma 2.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
@@ -120,7 +120,7 @@ export const BOOKS = [
   {
     title: "DISCOVERING THE ROOT CAUSE OF CANCER",
     author: "Valerie B. Irons",
-    cover: "/ourbook/New folder/Laflaps 1.png",
+    cover: "/ourbook/New folder/Laflaps 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
@@ -129,7 +129,7 @@ export const BOOKS = [
   {
     title: "DREAMS FROM MY GRANDFATHER",
     author: "A. D. Bradley",
-    cover: "/ourbook/New folder/The Storm 1.png",
+    cover: "/ourbook/New folder/The Storm 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
@@ -138,7 +138,7 @@ export const BOOKS = [
   {
     title: "THE BOOK OF UNFOLDING INTEGRATION",
     author: "Anthony Deans",
-    cover: "/ourbook/New folder/Sara 2.png",
+    cover: "/ourbook/New folder/Sara 2.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Non-Fiction"],
@@ -147,7 +147,7 @@ export const BOOKS = [
   {
     title: "Broken Dreams",
     author: "Bobby Bee",
-    cover: "/ourbook/New folder/Wilma 1.png",
+    cover: "/ourbook/New folder/Wilma 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Fiction"],
@@ -156,7 +156,7 @@ export const BOOKS = [
   {
     title: "THE BOUNCE BACK",
     author: "Craig Powell",
-    cover: "/ourbook/New folder/Craig 1.png",
+    cover: "/ourbook/New folder/Craig 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
@@ -165,7 +165,7 @@ export const BOOKS = [
   {
     title: "IT WAS NEVER YOUR FAULT",
     author: "Jerry L. Morgan",
-    cover: "/ourbook/New folder/Jerry 1.png",
+    cover: "/ourbook/New folder/Jerry 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Non-Fiction"],
@@ -174,7 +174,7 @@ export const BOOKS = [
   {
     title: "The Adventure of Scott And Lenny",
     author: "Leonard Serratore",
-    cover: "/ourbook/New folder/Leonard 1.png",
+    cover: "/ourbook/New folder/Leonard 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Children’s Book"],
@@ -183,7 +183,7 @@ export const BOOKS = [
   {
     title: "PROVERBIAL SPIRITUAL MESSAGES",
     author: "Ray Kaczar",
-    cover: "/ourbook/New folder/Ray 1.png",
+    cover: "/ourbook/New folder/Ray 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
@@ -192,7 +192,7 @@ export const BOOKS = [
   {
     title: "LEADING WITH PURPOSE",
     author: "Dr. Ralph M. Watkins Ph.D.",
-    cover: "/ourbook/New folder/Ralph 1.png",
+    cover: "/ourbook/New folder/Ralph 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Non-Fiction"],
@@ -201,7 +201,7 @@ export const BOOKS = [
   {
     title: "JETHRO & KASHU & FRIENDS PLANT A FOREST",
     author: "Sara Tessier",
-    cover: "/ourbook/New folder/Sara Tessier 1.png",
+    cover: "/ourbook/New folder/Sara Tessier 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Children’s Book"],
@@ -210,7 +210,7 @@ export const BOOKS = [
   {
     title: "Kael and the Whale with the Polka-Dot Tail",
     author: "Scott Frank",
-    cover: "/ourbook/New folder/Kael 1.png",
+    cover: "/ourbook/New folder/Kael 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Children’s Book"],
@@ -219,7 +219,7 @@ export const BOOKS = [
   {
     title: "THE ARCHIVE OF A. D. BRADLEY",
     author: "A. D. BRADLEY",
-    cover: "/ourbook/New folder/AD Bradley 2.png",
+    cover: "/ourbook/New folder/AD Bradley 2.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
@@ -228,7 +228,7 @@ export const BOOKS = [
   {
     title: "Mr. Mogley Muck The House Mouse",
     author: "Janice Balo",
-    cover: "/ourbook/New folder/Mr Mogley 1.png",
+    cover: "/ourbook/New folder/Mr Mogley 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Children’s Book"],
@@ -237,7 +237,7 @@ export const BOOKS = [
   {
     title: "IMPULSE",
     author: "Dr. Sandra Dennis",
-    cover: "/ourbook/New folder/Sandra 3.png",
+    cover: "/ourbook/New folder/Sandra 3.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Children’s Book"],
@@ -246,7 +246,7 @@ export const BOOKS = [
   {
     title: "MY BUG BOOK",
     author: "Wanda Jenkins Smith",
-    cover: "/ourbook/New folder/My Bug Book 1.png",
+    cover: "/ourbook/New folder/My Bug Book 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Children’s Book"],
@@ -255,7 +255,7 @@ export const BOOKS = [
   {
     title: "IF I HAD A COW",
     author: "Wanda Jenkins Smith",
-    cover: "/ourbook/New folder/Had a Cow 2.png",
+    cover: "/ourbook/New folder/Had a Cow 2.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Children’s Book"],
@@ -264,7 +264,7 @@ export const BOOKS = [
   {
     title: "THE MAN OF LIGHT AND THE MAN OF DARK",
     author: "Mike The Voice",
-    cover: "/ourbook/New folder/Mike The Voice 1.png",
+    cover: "/ourbook/New folder/Mike The Voice 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Non-Fiction"],
@@ -273,7 +273,7 @@ export const BOOKS = [
   {
     title: "FAITH OVER FEELINGS",
     author: "Peter E. Martins",
-    cover: "/ourbook/New folder/Peter 1.png",
+    cover: "/ourbook/New folder/Peter 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
@@ -282,7 +282,7 @@ export const BOOKS = [
   {
     title: "STILL I RISE",
     author: "Rachel Anderson",
-    cover: "/ourbook/New folder/Rachael 1.png",
+    cover: "/ourbook/New folder/Rachael 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],

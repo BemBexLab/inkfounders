@@ -7,18 +7,18 @@ import { useEffect, useRef, useState } from "react";
 // Replace each `src` with your actual image path / URL.
 // The `label` is shown as an overlay caption (optional – remove if unwanted).
 const SLIDES = [
-  { id: 1, src: "/ourbook/portfolio-03 1.png", label: "" },
-  { id: 2, src: "/ourbook/portfolio-04 1.png", label: "" },
-  { id: 3, src: "/ourbook/portfolio-05 1.png", label: "" },
-  { id: 4, src: "/ourbook/portfolio-06 1.png", label: "" },
-  { id: 5, src: "/ourbook/portfolio-07 1.png", label: "" },
-  { id: 6, src: "/ourbook/portfolio-08 1.png", label: "" },
-  { id: 7, src: "/ourbook/portfolio-09 1.png", label: "" },
-  { id: 8, src: "/ourbook/portfolio-10 1.png", label: "" },
-  { id: 9, src: "/ourbook/portfolio-11 1.png", label: "" },
-  { id: 10, src: "/ourbook/portfolio-11 2.png", label: "" },
-  { id: 11, src: "/ourbook/portfolio-12 1.png", label: "" },
-  { id: 12, src: "/ourbook/portfolio-12 2.png", label: "" },
+  { id: 1, src: "/ourbook/portfolio-03 1.webp", label: "" },
+  { id: 2, src: "/ourbook/portfolio-04 1.webp", label: "" },
+  { id: 3, src: "/ourbook/portfolio-05 1.webp", label: "" },
+  { id: 4, src: "/ourbook/portfolio-06 1.webp", label: "" },
+  { id: 5, src: "/ourbook/portfolio-07 1.webp", label: "" },
+  { id: 6, src: "/ourbook/portfolio-08 1.webp", label: "" },
+  { id: 7, src: "/ourbook/portfolio-09 1.webp", label: "" },
+  { id: 8, src: "/ourbook/portfolio-10 1.webp", label: "" },
+  { id: 9, src: "/ourbook/portfolio-11 1.webp", label: "" },
+  { id: 10, src: "/ourbook/portfolio-11 2.webp", label: "" },
+  { id: 11, src: "/ourbook/portfolio-12 1.webp", label: "" },
+  { id: 12, src: "/ourbook/portfolio-12 2.webp", label: "" },
 ];
 
 // ── How many px to scroll per animation frame ────────────────────────────────

@@ -136,7 +136,7 @@ export default function EbookWritingPage() {
             <div className="relative order-2 flex w-full items-center justify-center px-0 sm:px-4 md:px-8 lg:order-none lg:ml-5">
               <div className="relative flex aspect-square w-[min(82vw,350px)] items-center justify-center overflow-hidden rounded-lg sm:w-[400px] md:w-[440px] lg:h-[440px] lg:w-[380px] xl:h-[480px] xl:w-[480px] 2xl:h-[520px] 2xl:w-[520px]">
                 <Image
-                  src="/publishingservices/Rectangle 20.png"
+                  src="/publishingservices/Rectangle 20.webp"
                   alt="E-Book Writing Services"
                   width={574}
                   height={736}
@@ -174,7 +174,7 @@ export default function EbookWritingPage() {
             <div className="order-2 flex w-full justify-center lg:order-none lg:w-1/2">
               <div className="relative flex aspect-square w-[min(66vw,240px)] items-center justify-center overflow-hidden rounded-lg sm:w-[260px] md:w-[340px] lg:w-full lg:max-w-md">
                 <Image
-                  src="/publishingservices/Rectangle 24.png"
+                  src="/publishingservices/Rectangle 24.webp"
                   alt="Why Choose Ink Founders"
                   width={574}
                   height={736}

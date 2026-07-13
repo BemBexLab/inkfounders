@@ -11,7 +11,7 @@ export const BOOKS = [
  {
     title: "DON'T CUT the GRASS on Sunday",
     author: "K.Stephen Jumper",
-    cover: "/ourbook/New folder/Stephen 2.png",
+    cover: "/ourbook/New folder/Stephen 2.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Non Fiction"],
@@ -20,7 +20,7 @@ export const BOOKS = [
   {
     title: "The Bee's Colony, The Rise of the New Queen",
     author: "Joel B.Gindo",
-    cover: "/ourbook/New folder/Bee 2.png",
+    cover: "/ourbook/New folder/Bee 2.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Children Book"],
@@ -29,7 +29,7 @@ export const BOOKS = [
   {
     title: "Growing together",
     author: "Allison Sullins",
-    cover: "/ourbook/New folder/Allison 4.png",
+    cover: "/ourbook/New folder/Allison 4.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Children Book"],
@@ -38,7 +38,7 @@ export const BOOKS = [
   {
     title: "Tales of the Hippie Dippie Gardener",
     author: "Jim Fritz",
-    cover: "/ourbook/New folder/Jim Fritz 2.png",
+    cover: "/ourbook/New folder/Jim Fritz 2.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Fiction"],
@@ -47,7 +47,7 @@ export const BOOKS = [
   {
     title: "God carried me",
     author: "Bertha Stumon",
-    cover: "/ourbook/New folder/Bertha 1.png",
+    cover: "/ourbook/New folder/Bertha 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
@@ -56,7 +56,7 @@ export const BOOKS = [
   {
     title: "THE LABYRINTH",
     author: "Keith Cuvo",
-    cover: "/ourbook/New folder/Keith Cuvo 1.png",
+    cover: "/ourbook/New folder/Keith Cuvo 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Non Fiction"],
@@ -65,7 +65,7 @@ export const BOOKS = [
   {
     title: "El Color del Renacer",
     author: "Luz Diaz",
-    cover: "/ourbook/New folder/Luis Diaz 1.png",
+    cover: "/ourbook/New folder/Luis Diaz 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
@@ -74,7 +74,7 @@ export const BOOKS = [
   {
     title: "DREAMS FROM MY GRANDFATHER",
     author: "A. D. Bradley",
-    cover: "/ourbook/New folder/The Storm 1.png",
+    cover: "/ourbook/New folder/The Storm 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
@@ -83,7 +83,7 @@ export const BOOKS = [
   {
     title: "THE BOOK OF UNFOLDING INTEGRATION",
     author: "Anthony Deans",
-    cover: "/ourbook/New folder/Sara 2.png",
+    cover: "/ourbook/New folder/Sara 2.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Non Fiction"],
@@ -92,7 +92,7 @@ export const BOOKS = [
   {
     title: "Broken Dreams",
     author: "Bobby Bee",
-    cover: "/ourbook/New folder/Wilma 1.png",
+    cover: "/ourbook/New folder/Wilma 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Fiction"],
@@ -101,7 +101,7 @@ export const BOOKS = [
   {
     title: "THE MAN OF LIGHT AND THE MAN OF DARK",
     author: "Mike The Voice",
-    cover: "/ourbook/New folder/Mike The Voice 1.png",
+    cover: "/ourbook/New folder/Mike The Voice 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Non Fiction"],
@@ -110,7 +110,7 @@ export const BOOKS = [
   {
     title: "STILL I RISE",
     author: "Rachel Anderson",
-    cover: "/ourbook/New folder/Rachael 1.png",
+    cover: "/ourbook/New folder/Rachael 1.webp",
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],

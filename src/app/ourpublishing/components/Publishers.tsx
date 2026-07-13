@@ -4,13 +4,13 @@ const AUTHORS = [
   {
     id: "wilma-gibson-smith",
     name: "Wilma Gibson Smith",
-    photo: "/ourbook/IMG_2582 Copy 1 1.png",
+    photo: "/ourbook/IMG_2582 Copy 1 1.webp",
     book: "Forged in the Mountains: A Family's Resilience",
   },
   {
     id: "leonard-serratore",
     name: "Leonard Serratore",
-    photo: "/ourbook/Leonard_Serratore_profile. enhance image.png", // blank for placeholder
+    photo: "/ourbook/Leonard_Serratore_profile. enhance image.webp", // blank for placeholder
     book: "The Adventure Of Scott And Lenny: Learn How To Fly",
   },
   {
@@ -39,7 +39,7 @@ const AUTHORS = [
   },
 ];
 
-const placeholder = "/authors/placeholder.png"; // Use a default placeholder image
+const placeholder = "/Header/inkfounder.webp";
 
 const Publishers = () => (
   <section className="my-10 flex w-full flex-col items-center px-4 sm:px-6 lg:my-[50px] lg:px-2">

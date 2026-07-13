@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { robotoMono } from "@/app/fonts";
 import Link from "next/link";
 import { MdLocalPhone } from "react-icons/md";
@@ -7,10 +8,12 @@ export default function CTABanner() {
   return (
     <section className="relative min-h-[320px] w-full overflow-hidden bg-[#1c1c1c]">
       <div className="absolute inset-0 h-full w-full lg:left-0 lg:w-1/2">
-        <img
-          src="/landing-page/Rectangle 17.png"
+        <Image
+          src="/landing-page/Rectangle 17.webp"
           alt="desk with tablet and books"
-          className="h-full w-full object-cover object-center"
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/65 lg:bg-gradient-to-r lg:from-transparent lg:from-50% lg:to-[#1c1c1c]" />
       </div>

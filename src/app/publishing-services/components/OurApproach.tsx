@@ -20,7 +20,7 @@ const OurApproach = () => {
           {/* 1. Holistic & Transparent Services */}
 		          <div data-aos="fade-down-right" className="mx-auto flex w-full max-w-[22rem] min-w-0 flex-col items-center justify-center px-2 text-center sm:px-4">
             <Image
-              src="/Service/Mask group (7).png" // update with your actual filename
+              src="/Service/Mask group (7).webp" // update with your actual filename
               alt="Holistic & Transparent Services"
               width={48}
               height={48}
@@ -34,7 +34,7 @@ const OurApproach = () => {
           {/* 2. Myriad Of Distribution Channels */}
 		          <div data-aos="fade-down-right" className="mx-auto flex w-full max-w-[22rem] min-w-0 flex-col items-center justify-center px-2 text-center sm:px-4">
             <Image
-              src="/Service/Mask group (8).png" // update with your actual filename
+              src="/Service/Mask group (8).webp" // update with your actual filename
               alt="Myriad Of Distribution Channels"
               width={48}
               height={48}
@@ -48,7 +48,7 @@ const OurApproach = () => {
           {/* 3. Book Marketing & Author Branding */}
 		          <div data-aos="fade-down-right" className="mx-auto flex w-full max-w-[22rem] min-w-0 flex-col items-center justify-center px-2 text-center sm:px-4 md:col-span-2 lg:col-span-1">
             <Image
-              src="/Service/Mask group (9).png" // update with your actual filename
+              src="/Service/Mask group (9).webp" // update with your actual filename
               alt="Book Marketing & Author Branding"
               width={48}
               height={48}

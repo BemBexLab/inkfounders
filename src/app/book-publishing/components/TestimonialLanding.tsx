@@ -37,7 +37,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Each member of the team paid close attention to my need for accuracy of editing, flow of the story content, and true to content illustrations...",
     name: "Janet Paskins",
     role: "Great Writer",
-    image: "/testimonials/Frame 66.png",
+    image: "/testimonials/Frame 66.webp",
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const TESTIMONIALS: Testimonial[] = [
       "I recently had the pleasure of working with Franklin Jones from Ink Founders Publishing Services on the publication of my first book, and I cannot recommend...",
     name: "Ralph Watkins",
     role: "Bestselling Author",
-    // image: "/Home/review.png",
+    // image: "/Home/review.webp",
   },
   {
     id: 5,
@@ -53,7 +53,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Hannah Collins was an absolute professional. She was a dream to work with and her team really brought my book to life. This was my first try at getting published...",
     name: "Keith Cuvo",
     role: "Great Writer",
-    image: "/testimonials/Frame 68.png",
+    image: "/testimonials/Frame 68.webp",
   },
   {
     id: 6,
@@ -61,7 +61,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Much to my surprise, Lara found me on a weekend as I was in the midst of considering publishers. She was thoughtful and supportive offered great ideas considerate...",
     name: "Scott JT Frank",
     role: "Professional Writer",
-    image: "/testimonials/Frame 66.png",
+    image: "/testimonials/Frame 66.webp",
   },
   {
     id: 7,
@@ -69,7 +69,7 @@ const TESTIMONIALS: Testimonial[] = [
       "As a new author I am very pleased with the services provided to me by Ink Founder. I was recommended by my god granddaughter Rachel Anderson to do this project...",
     name: "Bertha Stumon",
     role: "Award-winning Author",
-    // image: "/Home/review3.png",
+    // image: "/Home/review3.webp",
   },
   {
     id: 8,
@@ -77,7 +77,7 @@ const TESTIMONIALS: Testimonial[] = [
       "I like how they took my book and made it easier for the audience to understand. Being a first time author Ink Founders publishing company made my experience easier...",
     name: "Rachel Anderson",
     role: "Award-winning Author",
-    // image: "/Home/review3.png",
+    // image: "/Home/review3.webp",
   },
   {
     id: 9,
@@ -85,7 +85,7 @@ const TESTIMONIALS: Testimonial[] = [
       "What a journey this experience has been. Hannah and her team at Ink Founders have worked diligently with this first-time author. I'd been writing stories...",
     name: "Carron H",
     role: "Award-winning Author",
-    image: "/testimonials/Frame 66 (1).png",
+    image: "/testimonials/Frame 66 (1).webp",
   },
 ];
 

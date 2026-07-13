@@ -6,7 +6,7 @@ import AOSProvider from "@/components/AOSProvider";
 const whyChooseItems = [
   {
     id: 'experienced-ghostwriters',
-    image: '/whoweare/Mask group (13).png',
+    image: '/whoweare/Mask group (13).webp',
     alt: 'Experienced Ghostwriters',
     title: 'Experienced Ghostwriters',
     description:
@@ -14,7 +14,7 @@ const whyChooseItems = [
   },
   {
     id: 'privacy',
-    image: '/whoweare/Mask group (14).png',
+    image: '/whoweare/Mask group (14).webp',
     alt: 'Privacy',
     title: 'Privacy',
     description:
@@ -22,7 +22,7 @@ const whyChooseItems = [
   },
   {
     id: 'affordability',
-    image: '/whoweare/Mask group (15).png',
+    image: '/whoweare/Mask group (15).webp',
     alt: 'Affordability',
     title: 'Affordability',
     description:
@@ -30,7 +30,7 @@ const whyChooseItems = [
   },
   {
     id: 'customer-satisfaction',
-    image: '/whoweare/Mask group (16).png',
+    image: '/whoweare/Mask group (16).webp',
     alt: 'Customer Satisfaction',
     title: 'Customer Satisfaction',
     description:
@@ -38,7 +38,7 @@ const whyChooseItems = [
   },
   {
     id: 'dynamic-stories',
-    image: '/whoweare/Mask group (17).png',
+    image: '/whoweare/Mask group (17).webp',
     alt: 'Dynamic Stories',
     title: 'Dynamic Stories',
     description:
@@ -46,7 +46,7 @@ const whyChooseItems = [
   },
   {
     id: 'support-24-7',
-    image: '/whoweare/Mask group (18).png',
+    image: '/whoweare/Mask group (18).webp',
     alt: '24/7 Customer Support',
     title: '24/7 Customer Support',
     description:

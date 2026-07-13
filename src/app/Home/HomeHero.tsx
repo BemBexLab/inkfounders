@@ -37,14 +37,14 @@ const trustBadges: TrustBadge[] = [
     id: "trustpilot-review",
     title: "Trustpilot",
     subtitle: "Review",
-    src: "/Home/trustpilot-logo-1024x443.png.webp",
+    src: "/Home/trustpilot-logo-1024x443.webp",
     link: "https://www.trustpilot.com/review/inkfounders.com",
   },
   {
     id: "top-digital-agency",
     title: "Top Digital",
     subtitle: "Agency",
-    src: "/Home/Mask%20group.png",
+    src: "/Home/Mask group.webp",
     link: "https://www.trustpilot.com/review/inkfounders.com",
   },
 ];
@@ -218,7 +218,7 @@ const HomeHero = () => {
           <div className="relative flex w-full items-center justify-center py-2 sm:py-4">
             <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
               <Image
-                src="/Home/bookslidetest/Ellipse 2.png"
+                src="/Home/bookslidetest/Ellipse 2.webp"
                 alt="Decorative background"
                 width={480}
                 height={480}
@@ -312,13 +312,7 @@ const HomeHero = () => {
                     className="group flex h-[76px] w-[150px] shrink-0 items-center justify-center rounded-md bg-[#F4F3E1] transition duration-300 hover:-translate-y-1 hover:scale-[1.02] sm:h-[90px] sm:w-[180px]"
                     aria-label={`${badge.title} ${badge.subtitle}`}
                   >
-                    {badge.id === "top-digital-agency" ? (
-                      <img
-                        src="/Home/Mask%20group.png"
-                        alt={`${badge.title} ${badge.subtitle}`}
-                        className="block h-auto w-[132px] max-w-none object-contain sm:w-[158px]"
-                      />
-                    ) : typeof badge.src === "string" ? (
+                    {typeof badge.src === "string" ? (
                       <Image
                         src={badge.src}
                         alt={`${badge.title} ${badge.subtitle}`}
@@ -350,7 +344,7 @@ const HomeHero = () => {
                     World{" "}
                     <span className="pointer-events-none absolute right-0 -top-4 h-10 w-10 sm:right-0 sm:-top-6 sm:h-16 sm:w-16 md:-right-2 md:-top-10 md:h-24 md:w-24">
                       <Image
-                        src="/Home/make your Life Easy.png"
+                        src="/Home/make your Life Easy.webp"
                         alt="Circular Make Your Mark"
                         fill
                         sizes="(max-width: 640px) 48px, (max-width: 768px) 64px, 96px"
@@ -454,7 +448,7 @@ const HomeHero = () => {
           <div className="relative flex flex-1 items-center justify-center px-2 sm:px-4 md:px-8 lg:ml-5">
             <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
               <Image
-                src="/Home/bookslidetest/Ellipse 2.png"
+                src="/Home/bookslidetest/Ellipse 2.webp"
                 alt="Decorative background"
                 width={200}
                 height={200}

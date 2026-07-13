@@ -50,7 +50,7 @@ const PublishYourStory = () => {
 
         <div className="relative z-30 flex w-full translate-y-0 justify-center self-end lg:absolute lg:bottom-0 lg:right-[18px] lg:w-auto">
           <Image
-            src="/landing-page/image 52.png"
+            src="/landing-page/image 52.webp"
             width={623}
             height={559}
             className="h-auto w-full max-w-[320px] object-contain sm:max-w-[420px] md:max-w-[500px] lg:w-[520px] lg:max-w-none"

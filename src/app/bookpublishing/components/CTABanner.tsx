@@ -8,7 +8,7 @@ export default function CTABanner() {
     <section className="relative min-h-[320px] w-full overflow-hidden bg-[#1c1c1c]">
       <div className="absolute inset-0 h-full w-full lg:left-0 lg:w-1/2">
         <img
-          src="/landing-page/Rectangle 17.png"
+          src="/landing-page/Rectangle 17.webp"
           alt="desk with tablet and books"
           className="h-full w-full object-cover object-center"
         />

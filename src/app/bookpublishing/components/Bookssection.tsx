@@ -5,12 +5,12 @@ import { motion, useReducedMotion } from "motion/react";
 import type { Variants } from "motion/react";
 
 const books = [
-  { id: 1, alt: "Don't Cut the Grass on Sunday", tilt: "-6deg", zIndex: 1, src: "/landing-page/Frame 449 (1).png" },
-  { id: 2, alt: "The Labyrinth", tilt: "-3deg", zIndex: 2, src: "/landing-page/Frame 450 (1).png" },
-  { id: 3, alt: "God Carried Me", tilt: "-1deg", zIndex: 3, src: "/landing-page/Frame 451 (1).png" },
-  { id: 4, alt: "Faith Over Feelings", tilt: "1deg", zIndex: 3, src: "/landing-page/Frame 452 (1).png" },
-  { id: 5, alt: "Still I Rise", tilt: "3deg", zIndex: 2, src: "/landing-page/Frame 454 (1).png" },
-  { id: 6, alt: "The Bounce Back", tilt: "6deg", zIndex: 1, src: "/landing-page/Frame 454.png" },
+  { id: 1, alt: "Don't Cut the Grass on Sunday", tilt: "-6deg", zIndex: 1, src: "/landing-page/Frame 449 (1).webp" },
+  { id: 2, alt: "The Labyrinth", tilt: "-3deg", zIndex: 2, src: "/landing-page/Frame 450 (1).webp" },
+  { id: 3, alt: "God Carried Me", tilt: "-1deg", zIndex: 3, src: "/landing-page/Frame 451 (1).webp" },
+  { id: 4, alt: "Faith Over Feelings", tilt: "1deg", zIndex: 3, src: "/landing-page/Frame 452 (1).webp" },
+  { id: 5, alt: "Still I Rise", tilt: "3deg", zIndex: 2, src: "/landing-page/Frame 454 (1).webp" },
+  { id: 6, alt: "The Bounce Back", tilt: "6deg", zIndex: 1, src: "/landing-page/Frame 454.webp" },
 ];
 
 const containerVariants: Variants = {

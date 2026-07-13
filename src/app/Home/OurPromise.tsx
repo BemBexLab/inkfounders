@@ -9,7 +9,7 @@ import { robotoMono } from "../fonts";
 const promiseItems = [
   {
     id: "professional-editing-and-proofreading",
-    image: "/Home/Mask group (1).png",
+    image: "/Home/Mask group (1).webp",
     alt: "Professional editing and proofreading",
     title: "Professional editing and proofreading",
     description:
@@ -17,7 +17,7 @@ const promiseItems = [
   },
   {
     id: "cover-design-the-soul-of-your-story",
-    image: "/Home/Mask group (2).png",
+    image: "/Home/Mask group (2).webp",
     alt: "Cover design, the soul of your story",
     title: "Cover design, the soul of your story",
     description:
@@ -25,7 +25,7 @@ const promiseItems = [
   },
   {
     id: "isbn-and-barcodes-your-book-global-identity",
-    image: "/Home/Mask group (3).png",
+    image: "/Home/Mask group (3).webp",
     alt: "ISBN and barcodes: your book's global identity",
     title: "ISBN and barcodes: your book's global identity",
     description:
@@ -33,7 +33,7 @@ const promiseItems = [
   },
   {
     id: "be-an-author-increase-your-reach",
-    image: "/Home/Mask group (4).png",
+    image: "/Home/Mask group (4).webp",
     alt: "Be an author, increase your reach",
     title: "Be an author, increase your reach",
     description:
@@ -41,7 +41,7 @@ const promiseItems = [
   },
   {
     id: "your-ideas-your-control",
-    image: "/Home/Mask group (5).png",
+    image: "/Home/Mask group (5).webp",
     alt: "Your ideas, your control, write it, own it",
     title: "Your ideas, your control, write it, own it",
     description:
@@ -49,7 +49,7 @@ const promiseItems = [
   },
   {
     id: "our-support-forever-for-you",
-    image: "/Home/Mask group (6).png",
+    image: "/Home/Mask group (6).webp",
     alt: "Our support, forever for you",
     title: "Our support, forever for you",
     description:

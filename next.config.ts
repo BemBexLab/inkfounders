@@ -1,12 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-
-// next.config.js
-module.exports = {
+  compress: true,
   env: {
     SMTP_HOST: process.env.SMTP_HOST,
     SMTP_PORT: process.env.SMTP_PORT,
@@ -15,8 +10,11 @@ module.exports = {
     SMTP_PASS: process.env.SMTP_PASS,
     EMAIL_TO: process.env.EMAIL_TO,
   },
+  images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 60 * 60 * 24 * 30,
+  },
 };
-
 
 export default nextConfig;
 

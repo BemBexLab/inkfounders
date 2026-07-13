@@ -10,7 +10,7 @@ export default function AuthorsPublishedSection() {
         </h2>
 
         <Image
-          src="/ourbook/New folder/Peter 1.png"
+          src="/ourbook/New folder/Peter 1.webp"
           alt="Book Cover"
           width={330}
           height={540}
@@ -35,7 +35,7 @@ export default function AuthorsPublishedSection() {
         {/* Book Cover */}
         <div className="flex-shrink-0">
           <Image
-            src="/ourbook/New folder/Peter 1.png"
+            src="/ourbook/New folder/Peter 1.webp"
             alt="Book Cover"
             width={330}
             height={540}

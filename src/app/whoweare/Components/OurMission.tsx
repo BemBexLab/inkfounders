@@ -42,7 +42,7 @@ export default function OurMission() {
         {/* Right: Single Book Covers Image */}
         <div className="mt-4 flex w-full items-start justify-center lg:mt-0">
           <Image
-            src="/whoweare/Group37 1.png" // <-- your single image path
+            src="/whoweare/Group37 1.webp" // <-- your single image path
             alt="Book Covers"
             width={450} // set this to your image’s actual width
             height={450} // set this to your image’s actual height

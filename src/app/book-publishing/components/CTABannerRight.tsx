@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { robotoMono } from "@/app/fonts";
 import Link from "next/link";
 import { MdLocalPhone } from "react-icons/md";
@@ -7,16 +8,18 @@ export default function CTABannerRight() {
   return (
     <section className="relative min-h-[320px] w-full overflow-hidden bg-[#1c1c1c]">
       <div className="absolute inset-0 h-full w-full lg:right-0 lg:left-auto lg:w-1/2">
-        <img
-          src="/landing-page/Rectangle 21.png"
+        <Image
+          src="/landing-page/Rectangle 21.webp"
           alt="Two women collaborating"
-          className="h-full w-full object-cover object-center lg:hidden"
+          fill
+          sizes="100vw"
+          className="object-cover object-center lg:hidden"
         />
         <div
           aria-hidden="true"
           className="hidden h-full w-full bg-fixed lg:block lg:[background-position:right_center] lg:[background-repeat:repeat-y] lg:[background-size:50vw_auto]"
           style={{
-            backgroundImage: "url('/landing-page/Rectangle 21.png')",
+            backgroundImage: "url('/landing-page/Rectangle 21.webp')",
             backgroundRepeat: "repeat-y",
           }}
         />

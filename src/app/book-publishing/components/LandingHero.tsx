@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import DiscountForm  from "./DiscountForum";
 import QuoteTrigger from "./QuoteTrigger";
@@ -103,11 +104,14 @@ export default function HeroSection() {
 
             {/* Trustpilot */}
             <Link href="https://www.trustpilot.com/review/inkfounders.com">
-            <img
-              src="/landing-page/rtaImage 1.png"
-              alt="Trustpilot badge"
-              className="mx-auto h-auto w-[138px] sm:w-[189px] xl:mx-0"
-            /></Link>
+              <Image
+                src="/landing-page/rtaImage 1.webp"
+                alt="Trustpilot badge"
+                width={189}
+                height={56}
+                className="mx-auto h-auto w-[138px] sm:w-[189px] xl:mx-0"
+              />
+            </Link>
           </div>
 
           {/* ── Right: Discount Form ── */}

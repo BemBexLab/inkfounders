@@ -4,22 +4,22 @@ import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 
 const partners = [
-  { src: "/Home/sliding/logo01.png", alt: "Lulu Logo", width: 54, height: 54 },
-  { src: "/Home/sliding/logo02.png", alt: "Macmillan Logo", width: 134, height: 54 },
-  { src: "/Home/sliding/logo03.png", alt: "Penguin Random House Logo", width: 100, height: 54 },
-  { src: "/Home/sliding/logo04.png", alt: "Scribd Logo", width: 100, height: 54 },
-  { src: "/Home/sliding/logo05.png", alt: "Smashwords Logo", width: 150, height: 54 },
-  { src: "/Home/sliding/logo06.png", alt: "New York Times Logo", width: 50, height: 54 },
-  { src: "/Home/sliding/logo07.png", alt: "D2D Logo", width: 54, height: 54 },
-  { src: "/Home/sliding/logo08.png", alt: "AbeBooks Logo", width: 90, height: 64 },
-  { src: "/Home/sliding/logo09.png", alt: "Alibris Logo", width: 190, height: 64 },
-  { src: "/Home/sliding/logo10.png", alt: "A", width: 120, height: 54 },
-  { src: "/Home/sliding/logo11.png", alt: "Al", width: 150, height: 54 },
-  { src: "/Home/sliding/logo12.png", alt: "Alibris ", width: 180, height: 54 },
-  { src: "/Home/sliding/logo13.png", alt: "A", width: 120, height: 54 },
-  { src: "/Home/sliding/logo14.png", alt: "Al", width: 150, height: 54 },
-  { src: "/Home/sliding/logo15.png", alt: "Alibris ", width: 180, height: 54 },
-  { src: "/Home/sliding/logo16.png", alt: "Alibris ", width: 180, height: 54 },
+  { src: "/Home/sliding/logo01.webp", alt: "Lulu Logo", width: 54, height: 54 },
+  { src: "/Home/sliding/logo02.webp", alt: "Macmillan Logo", width: 134, height: 54 },
+  { src: "/Home/sliding/logo03.webp", alt: "Penguin Random House Logo", width: 100, height: 54 },
+  { src: "/Home/sliding/logo04.webp", alt: "Scribd Logo", width: 100, height: 54 },
+  { src: "/Home/sliding/logo05.webp", alt: "Smashwords Logo", width: 150, height: 54 },
+  { src: "/Home/sliding/logo06.webp", alt: "New York Times Logo", width: 50, height: 54 },
+  { src: "/Home/sliding/logo07.webp", alt: "D2D Logo", width: 54, height: 54 },
+  { src: "/Home/sliding/logo08.webp", alt: "AbeBooks Logo", width: 90, height: 64 },
+  { src: "/Home/sliding/logo09.webp", alt: "Alibris Logo", width: 190, height: 64 },
+  { src: "/Home/sliding/logo10.webp", alt: "A", width: 120, height: 54 },
+  { src: "/Home/sliding/logo11.webp", alt: "Al", width: 150, height: 54 },
+  { src: "/Home/sliding/logo12.webp", alt: "Alibris ", width: 180, height: 54 },
+  { src: "/Home/sliding/logo13.webp", alt: "A", width: 120, height: 54 },
+  { src: "/Home/sliding/logo14.webp", alt: "Al", width: 150, height: 54 },
+  { src: "/Home/sliding/logo15.webp", alt: "Alibris ", width: 180, height: 54 },
+  { src: "/Home/sliding/logo16.webp", alt: "Alibris ", width: 180, height: 54 },
 
 ];
 

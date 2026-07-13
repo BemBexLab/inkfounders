@@ -13,7 +13,7 @@ const LandingFooter = () => {
         <div className="grid w-full grid-cols-1 items-stretch lg:min-h-[648px] lg:grid-cols-2">
           <div className="footer-image-frame relative order-2 z-20 min-h-[315px] overflow-visible sm:min-h-[420px] md:min-h-[500px] lg:col-start-1 lg:row-start-1 lg:order-1 lg:min-h-[648px]">
             <Image
-              src="/landing-page/Background.png"
+              src="/landing-page/Background.webp"
               width={1768}
               height={1597}
               alt="Ink Founders publishing team"

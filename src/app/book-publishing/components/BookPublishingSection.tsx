@@ -137,7 +137,7 @@ export default function BookPublishingSection() {
               className="absolute left-[65%] top-[50%] z-10 w-[33%] origin-bottom will-change-transform"
             >
               <motion.img
-                src="/landing-page/FpAHhfZ_TjWNBkXgQgFtnQ 1.png"
+                src="/landing-page/FpAHhfZ_TjWNBkXgQgFtnQ 1.webp"
                 alt="Published book cover"
                 whileHover={reduceMotion ? undefined : liftHover}
                 className="block w-full cursor-pointer rounded-[4px] object-cover will-change-transform"
@@ -148,7 +148,7 @@ export default function BookPublishingSection() {
               className="absolute left-[45%] top-[50%] z-20 w-[36%] origin-bottom will-change-transform"
             >
               <motion.img
-                src="/landing-page/image 21.png"
+                src="/landing-page/image 21.webp"
                 alt="Published book cover"
                 whileHover={reduceMotion ? undefined : liftHover}
                 className="block w-full cursor-pointer rounded-[4px] object-cover will-change-transform"
@@ -159,7 +159,7 @@ export default function BookPublishingSection() {
               className="absolute left-[13%] top-[50%] z-30 w-[44%] origin-bottom will-change-transform"
             >
               <motion.img
-                src="/landing-page/image 20.png"
+                src="/landing-page/image 20.webp"
                 alt="Published book cover"
                 whileHover={reduceMotion ? undefined : liftHover}
                 className="block w-full cursor-pointer rounded-[4px] object-cover will-change-transform"

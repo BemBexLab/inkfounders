@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { ChangeEvent, FormEvent } from "react";
 
@@ -7,9 +8,9 @@ const fieldClass =
   "w-full rounded-[9px] bg-[#dfdecc] px-8 py-4 text-[16px] text-[#3f3f3f] outline-none placeholder:text-[#70777a] focus:ring-2 focus:ring-[#DADD39] sm:py-[18px]";
 
 const popupImages = [
-  "/landing-page/Group 26.png",
-  "/landing-page/Group 26 (1).png",
-  "/landing-page/Stephen 1.png",
+  "/landing-page/Group 26.webp",
+  "/landing-page/Group 26 (1).webp",
+  "/landing-page/Stephen 1.webp",
 ];
 
 type QuoteFormState = {
@@ -162,7 +163,7 @@ export default function QuotePopup() {
     return null;
   }
 
-  const isStephenPopup = activeImage === "/landing-page/Stephen 1.png";
+  const isStephenPopup = activeImage === "/landing-page/Stephen 1.webp";
 
   const formFields = (
     <>
@@ -248,9 +249,11 @@ export default function QuotePopup() {
         }}
       >
         <div className="relative flex w-full max-w-[970px] flex-col items-center justify-center md:min-h-[620px]">
-          <img
+          <Image
             src={activeImage}
             alt="Don't Cut the Grass on Sunday book cover"
+            width={417}
+            height={612}
             className="relative z-20 h-auto w-full max-w-[417px] rounded-[3px] object-contain shadow-[0_18px_45px_rgba(0,0,0,0.45)] md:absolute md:left-0 md:top-0 md:h-[612px] md:w-[417px] md:max-w-none"
           />
 
@@ -297,9 +300,11 @@ export default function QuotePopup() {
         </button>
 
         <div className="flex min-h-[280px] items-center justify-center bg-[#F4F3E1] px-6 py-8 md:min-h-full md:px-10">
-          <img
+          <Image
             src={activeImage}
             alt="Book fair discount"
+            width={390}
+            height={520}
             className="h-auto w-full max-w-[360px] object-contain md:max-w-[390px]"
           />
         </div>

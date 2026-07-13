@@ -21,7 +21,7 @@ export default function Footer() {
             <div className="flex flex-col items-center md:items-center lg:items-start text-center md:text-center lg:text-left mb-8 lg:mb-0">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <Image
-                  src="/Header/inkfounder.png"
+                  src="/Header/inkfounder.webp"
                   alt="Ink Founders Logo"
                   width={180}
                   height={90}
