@@ -51,7 +51,27 @@ const DEFAULT_CMS_ENDPOINT =
 
 function normalizeCmsEndpoint() {
   const cmsEndpoint = process.env.CMS?.trim() || DEFAULT_CMS_ENDPOINT;
-  return cmsEndpoint.endsWith("/") ? cmsEndpoint.slice(0, -1) : cmsEndpoint;
+  const endpoint = cmsEndpoint.endsWith("/")
+    ? cmsEndpoint.slice(0, -1)
+    : cmsEndpoint;
+
+  if (/\/wp-json\/wp\/v2\/posts$/i.test(endpoint)) {
+    return endpoint;
+  }
+
+  if (/\/wp-json\/wp\/v2$/i.test(endpoint)) {
+    return `${endpoint}/posts`;
+  }
+
+  if (/\/wp-json$/i.test(endpoint)) {
+    return `${endpoint}/wp/v2/posts`;
+  }
+
+  if (/\/index\.php$/i.test(endpoint)) {
+    return `${endpoint}/wp-json/wp/v2/posts`;
+  }
+
+  return `${endpoint}/index.php/wp-json/wp/v2/posts`;
 }
 
 function buildEndpoint(params: Record<string, string>) {
@@ -90,30 +110,35 @@ export async function getAllWpPosts(): Promise<WPPost[]> {
   const posts: WPPost[] = [];
   let page = 1;
 
-  while (true) {
-    const endpoint = buildEndpoint({
-      per_page: "100",
-      page: String(page),
-      _embed: "",
-    });
-    const res = await fetch(endpoint, { cache: "no-store" });
+  try {
+    while (true) {
+      const endpoint = buildEndpoint({
+        per_page: "100",
+        page: String(page),
+        _embed: "1",
+      });
+      const res = await fetch(endpoint, { cache: "no-store" });
 
-    if (!res.ok) {
-      break;
+      if (!res.ok) {
+        break;
+      }
+
+      const batch = (await res.json()) as WPPost[];
+      if (!Array.isArray(batch) || batch.length === 0) {
+        break;
+      }
+
+      posts.push(...batch);
+
+      const totalPages = Number(res.headers.get("x-wp-totalpages") || 0);
+      if (page >= totalPages || batch.length < 100) {
+        break;
+      }
+
+      page += 1;
     }
-
-    const batch = (await res.json()) as WPPost[];
-    if (!Array.isArray(batch) || batch.length === 0) {
-      break;
-    }
-
-    posts.push(...batch);
-
-    if (batch.length < 100) {
-      break;
-    }
-
-    page += 1;
+  } catch {
+    return posts;
   }
 
   return posts;
