@@ -10,9 +10,12 @@ import {
 } from "./wpPosts";
 import { createCanonicalMetadata } from "@/lib/seo";
 
+export const dynamic = "force-dynamic";
 export const metadata: Metadata = createCanonicalMetadata("/blog");
 
-function mapWpPostToBlogPost(post: Awaited<ReturnType<typeof getAllWpPosts>>[number]): BlogPost {
+function mapWpPostToBlogPost(
+  post: Awaited<ReturnType<typeof getAllWpPosts>>[number],
+): BlogPost {
   const excerptHtml = post.excerpt?.rendered || post.content?.rendered || "";
   const excerptText = decodeHtmlEntities(getTextFromHtml(excerptHtml));
 
