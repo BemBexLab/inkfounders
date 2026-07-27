@@ -21,7 +21,25 @@ const footerContactItems = [
         />
       </svg>
     ),
-    lines: ["1221 Brickell Ave,", "Miami, FL 33131, United States"],
+    lines: [<><b>USA-Office:</b> 1221 Brickell Ave, Miami, FL 33131, United States</>],
+  },
+  {
+    href: "https://maps.app.goo.gl/mibAgwMcMGF8A8ig7",
+    icon: (
+      <svg
+        width="14"
+        height="18"
+        viewBox="0 0 14 18"
+        fill="none"
+        className="shrink-0"
+      >
+        <path
+          d="M7 0C4.24 0 2 2.24 2 5C2 8.75 7 14 7 14C7 14 12 8.75 12 5C12 2.24 9.76 0 7 0ZM7 6.5C6.17 6.5 5.5 5.83 5.5 5C5.5 4.17 6.17 3.5 7 3.5C7.83 3.5 8.5 4.17 8.5 5C8.5 5.83 7.83 6.5 7 6.5Z"
+          fill="#555"
+        />
+      </svg>
+    ),
+    lines: [<><b>Australia-Office:</b> 16A Fox Cl, Australia, Kariong, NSW, Australia, 2250</>],
   },
   {
     href: "tel:+17864961231",
@@ -39,7 +57,25 @@ const footerContactItems = [
         />
       </svg>
     ),
-    lines: ["+1 (786) 496-1231"],
+    lines: [<><b>USA-Office: </b>+1 (786) 496-1231</>],
+  },
+  {
+    href: "tel:+61261906580",
+    icon: (
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 16 16"
+        fill="none"
+        className="shrink-0"
+      >
+        <path
+          d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"
+          fill="#555"
+        />
+      </svg>
+    ),
+    lines: [<><b>Australian-Office: </b>(02) 6190 6580</>],
   },
   {
     href: "mailto:info@inkfounders.com",
@@ -116,7 +152,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="m-0 flex w-full justify-center overflow-hidden bg-[#f5f5e8] p-0">
       <div className="w-full bg-[#f5f5e8] px-4 pb-0 pt-8 sm:px-6 sm:pt-10 md:px-8 lg:rounded-tr-[48px] lg:px-10 xl:px-16 xl:pt-12">
-        <div className="mx-auto grid w-full max-w-[1320px] gap-8 xl:grid-cols-[minmax(0,1.12fr)_minmax(0,1fr)] xl:items-start xl:gap-14">
+        <div className="mx-auto grid w-full max-w-[1620px] gap-8 xl:grid-cols-[minmax(0,1.12fr)_minmax(0,1fr)] xl:items-start xl:gap-14">
           <div className="min-w-0 text-center xl:text-left">
             <div className="mx-auto mb-4 w-fit max-w-full xl:mx-0">
               <svg
