@@ -24,7 +24,7 @@ const footerContactItems = [
     lines: [<><b>USA-Office:</b> 1221 Brickell Ave,<br /> Miami, FL 33131, United States</>],
   },
   {
-    href: "#",
+    href: "https://maps.app.goo.gl/1daMut5pZ3NQTTNg7",
     icon: (
       <svg
         width="14"
