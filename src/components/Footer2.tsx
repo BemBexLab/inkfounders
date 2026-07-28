@@ -152,7 +152,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="m-0 flex w-full justify-center overflow-hidden bg-[#f5f5e8] p-0">
       <div className="w-full bg-[#f5f5e8] px-4 pb-0 pt-8 sm:px-6 sm:pt-10 md:px-8 lg:rounded-tr-[48px] lg:px-10 xl:px-16 xl:pt-12">
-        <div className="mx-auto grid w-full max-w-[1620px] gap-8 xl:grid-cols-[minmax(0,1.12fr)_minmax(0,1fr)] xl:items-start xl:gap-14">
+        <div className="mx-auto grid w-full max-w-[1620px] gap-8 xl:grid-cols-[minmax(0,1.02fr)_auto] xl:items-start xl:gap-10">
           <div className="min-w-0 text-center xl:text-left">
             <div className="mx-auto mb-4 w-fit max-w-full xl:mx-0">
               <svg
@@ -221,7 +221,7 @@ const Footer: React.FC = () => {
                 />
               </svg>
             </div>
-
+ 
             <p
               className={`${robotoMono.className} mx-auto max-w-[38rem] text-[13px] text-[#444] xl:mx-0 sm:text-[14px]`}
             >
@@ -231,13 +231,13 @@ const Footer: React.FC = () => {
               cover design, author websites, and more. We help bring your story
               to life with creative, professional support every step of the way.
             </p>
-
+ 
             <div className="text-black">
               <div className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 md:flex-nowrap xl:justify-start xl:gap-4">
                 {trustBadges.map((badge) => {
                   const isExternal = badge.link?.startsWith("http");
                   const isTrustpilot = badge.id === "trustpilot-review";
-
+ 
                   return (
                     <a
                       key={badge.id}
@@ -271,7 +271,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid min-w-0 grid-cols-1 gap-7 text-left sm:grid-cols-2 sm:gap-x-10 sm:gap-y-8 lg:grid-cols-3 lg:gap-8 xl:gap-6">
+          <div className="grid min-w-0 grid-cols-1 gap-7 text-left sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-[max-content_max-content_max-content] lg:justify-start lg:gap-x-8 lg:gap-y-8 xl:gap-x-10">
             <div className="min-w-0">
               <h4 className="mb-3 mt-0 font-sans text-[15px] font-bold text-[#8a7a2e] sm:mb-4">
                 Quick Links
