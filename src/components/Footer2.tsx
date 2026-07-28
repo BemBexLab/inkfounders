@@ -21,10 +21,10 @@ const footerContactItems = [
         />
       </svg>
     ),
-    lines: [<><b>USA-Office:</b> 1221 Brickell Ave, Miami, FL 33131, United States</>],
+    lines: [<><b>USA-Office:</b> 1221 Brickell Ave,<br /> Miami, FL 33131, United States</>],
   },
   {
-    href: "https://maps.app.goo.gl/mibAgwMcMGF8A8ig7",
+    href: "#",
     icon: (
       <svg
         width="14"
@@ -39,7 +39,7 @@ const footerContactItems = [
         />
       </svg>
     ),
-    lines: [<><b>Australia-Office:</b> 16A Fox Cl, Australia, Kariong, NSW, Australia, 2250</>],
+    lines: [<><b>Australia-Office:</b> 16A Fox Cl, Australia,<br /> Kariong, NSW, Australia, 2250</>],
   },
   {
     href: "tel:+17864961231",
