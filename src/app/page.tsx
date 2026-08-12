@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
+    <div>
       <HomeHero />
       <PartnerLogos />
       <Publishing />
@@ -37,6 +37,6 @@ export default function Home() {
       <Testimonials />
       <GetInTouch />
       <FAQs />
-    </>
+    </div>
   );
 }

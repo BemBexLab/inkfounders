@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import AOSProvider from "@/components/AOSProvider";
 import CustomScrollbar from "@/components/CustomScrollbar";
 import { robotoMono } from '../fonts'
@@ -33,107 +33,50 @@ const whatMakeItems = [
   },
 ];
 
-const carouselItems = [...whatMakeItems, ...whatMakeItems]
-
 const WhatMake = () => {
-  const carouselRef = useRef<HTMLDivElement>(null)
-  const pauseCarouselRef = useRef(false)
-  const animationFrameRef = useRef<number | null>(null)
-
-  useEffect(() => {
-    const carousel = carouselRef.current
-    if (!carousel) return
-
-    const isResponsiveCarousel = () => window.innerWidth < 1024
-    const prefersReducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches
-
-    if (prefersReducedMotion) return
-
-    const scrollContinuously = () => {
-      if (!isResponsiveCarousel() || pauseCarouselRef.current) return
-
-      const singleSetWidth = carousel.scrollWidth / 2
-      const shouldReset = carousel.scrollLeft >= singleSetWidth
-
-      carousel.scrollLeft = shouldReset ? 0 : carousel.scrollLeft + 1.1
-    }
-
-    const animate = () => {
-      scrollContinuously()
-      animationFrameRef.current = window.requestAnimationFrame(animate)
-    }
-
-    animationFrameRef.current = window.requestAnimationFrame(animate)
-
-    return () => {
-      if (animationFrameRef.current !== null) {
-        window.cancelAnimationFrame(animationFrameRef.current)
-      }
-    }
-  }, [])
-
-  const pauseCarousel = () => {
-    pauseCarouselRef.current = true
-  }
-
-  const resumeCarousel = () => {
-    pauseCarouselRef.current = false
-  }
-
   return (
     <AOSProvider>
-      <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 pt-4 sm:px-6 md:px-8 lg:px-0 lg:pt-2">
-        <div className="flex w-full max-w-[1300px] flex-col items-center">
+      <section className="flex w-full items-center justify-center overflow-hidden bg-[#F6F5F3] px-4 py-8 sm:px-6 sm:py-10 md:px-8 lg:px-10 lg:py-12 xl:px-12">
+        <div className="flex w-full max-w-[1300px] min-w-0 flex-col items-center">
           {/* Headings */}
-          <p className="text-center text-base font-semibold text-black mb-2 sm:text-lg md:text-xl">
+          <p className="mb-2 text-center text-sm font-semibold text-black sm:text-base md:text-lg lg:text-xl">
             Witness our Uniqueness
           </p>
-          <h2 className="mb-6 max-w-[48rem] text-center text-[1.55rem] font-semibold leading-[0.9] sm:text-2xl md:mb-8 md:text-[1.85rem] lg:max-w-none lg:text-[2rem]">
+          <h2 className="mb-7 max-w-[52rem] text-balance text-center text-[clamp(1.65rem,5vw,2.5rem)] font-semibold leading-[1.08] sm:mb-9 lg:mb-12">
             <span className="text-[#DADD39]">At Ink Founders, Your Goals Are Our Commitment</span>
           </h2>
 
           <CustomScrollbar
-            ref={carouselRef}
             orientation="horizontal"
+            role="list"
+            aria-label="What makes Ink Founders unique"
             data-aos="fade-down-right"
-            onPointerDown={pauseCarousel}
-            onPointerUp={resumeCarousel}
-            onPointerCancel={resumeCarousel}
-            onPointerLeave={resumeCarousel}
-            className="flex w-full max-w-full items-stretch gap-4 px-1 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0"
+            containerClassName="w-full min-w-0"
+            className="flex w-full min-w-0 snap-x snap-mandatory scroll-px-1 items-stretch gap-4 overflow-x-auto overscroll-x-contain px-1 pb-4 touch-pan-x sm:gap-5 sm:scroll-px-2 sm:px-2 md:gap-6 lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible lg:px-0 lg:pb-0 xl:gap-10"
             trackClassName="bg-[#ececcf]"
             thumbClassName="bg-[#c7c934]"
           >
-            {carouselItems.map((item, index) => (
-              <div
-                key={`${item.id}-${index}`}
-                className={`flex w-[82vw] max-w-[360px] shrink-0 flex-col items-center px-2 text-center sm:w-[58vw] sm:px-4 md:w-[42vw] lg:w-full lg:max-w-none lg:shrink ${
-                  index >= whatMakeItems.length ? "lg:hidden" : ""
-                }`}
+            {whatMakeItems.map((item) => (
+              <article
+                key={item.id}
+                role="listitem"
+                className="flex w-[88%] max-w-[25rem] shrink-0 snap-start flex-col items-center px-1 text-center sm:w-[70%] sm:px-3 md:w-[46%] lg:w-full lg:max-w-none lg:shrink lg:snap-none lg:px-0"
               >
                 <Image
                   src={item.image}
                   alt={item.alt}
-                  width={48}
-                  height={48}
-                  className="mb-3 h-10 w-10 object-contain sm:h-12 sm:w-12"
+                  width={56}
+                  height={56}
+                  sizes="(max-width: 639px) 40px, (max-width: 1023px) 48px, 56px"
+                  className="mb-3 h-10 w-10 shrink-0 object-contain sm:h-12 sm:w-12 lg:mb-4 lg:h-14 lg:w-14"
                 />
-                <h3 className="mb-3 max-w-[30rem] text-[18px] font-semibold leading-[1] text-black sm:text-[20px] md:text-[22px] lg:text-2xl">
+                <h3 className="mb-3 max-w-[30rem] text-lg font-semibold leading-tight text-black sm:text-xl md:text-[1.35rem] lg:min-h-[3.75rem] lg:text-2xl">
                   {item.title}
                 </h3>
-                <div className="relative w-full max-w-[24rem] lg:h-auto lg:max-h-[125px]">
-                  <CustomScrollbar
-                    className="max-h-[125px]"
-                    style={{ marginRight: 0, paddingRight: "0.75rem" }}
-                  >
-                    <p className={`${robotoMono.className} text-[13px] leading-[1.2] text-gray-700 sm:text-[14px] md:text-[15px] md:leading-[1.2] lg:text-[16px]`}>
-                      {item.description}
-                    </p>
-                  </CustomScrollbar>
-                </div>
-              </div>
+                <p className={`${robotoMono.className} w-full max-w-[25rem] text-[0.78rem] leading-relaxed text-gray-700 sm:text-[0.84rem] md:text-sm lg:text-[0.95rem]`}>
+                  {item.description}
+                </p>
+              </article>
             ))}
           </CustomScrollbar>
         </div>

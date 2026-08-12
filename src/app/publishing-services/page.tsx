@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-hidden">
       <ServiceHero />
       <PartnersSection />
       <RangeOfPublishing />
@@ -97,6 +97,6 @@ export default function Home() {
         }}
       />
       <FAQs />
-    </>
+    </div>
   );
 }

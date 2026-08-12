@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
 import AOSProvider from "@/components/AOSProvider";
 import CustomScrollbar from "@/components/CustomScrollbar";
 import { robotoMono } from "../fonts";
@@ -57,100 +56,37 @@ const promiseItems = [
   },
 ];
 
-const carouselPromiseItems = [...promiseItems, ...promiseItems];
-
 const OurPromise = () => {
-  const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>(
-    {},
-  );
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const pauseCarouselRef = useRef(false);
-  const animationFrameRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    const isResponsiveCarousel = () => window.innerWidth < 1024;
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (prefersReducedMotion) return;
-
-    const scrollContinuously = () => {
-      if (!isResponsiveCarousel() || pauseCarouselRef.current) return;
-
-      const singleSetWidth = carousel.scrollWidth / 2;
-      const shouldReset = carousel.scrollLeft >= singleSetWidth;
-
-      carousel.scrollLeft = shouldReset ? 0 : carousel.scrollLeft + 1.1;
-    };
-
-    const animate = () => {
-      scrollContinuously();
-      animationFrameRef.current = window.requestAnimationFrame(animate);
-    };
-
-    animationFrameRef.current = window.requestAnimationFrame(animate);
-
-    return () => {
-      if (animationFrameRef.current !== null) {
-        window.cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
-  }, []);
-
-  const pauseCarousel = () => {
-    pauseCarouselRef.current = true;
-  };
-
-  const resumeCarousel = () => {
-    pauseCarouselRef.current = false;
-  };
-
-  const getDisplayText = (description: string, isExpanded: boolean) => {
-    const words = description.trim().split(/\s+/);
-
-    if (isExpanded || words.length <= 43) {
-      return description;
-    }
-
-    return `${words.slice(0, 43).join(" ")}...`;
-  };
-
   return (
     <AOSProvider>
-      <section className="flex w-full items-center justify-center bg-[#F6F5F3] px-4 py-8 sm:px-6 md:px-8 md:py-10 lg:px-0">
-        <div className="flex w-full max-w-[1300px] flex-col items-center">
+      <section className="flex w-full items-center justify-center overflow-hidden bg-[#F6F5F3] px-4 py-8 sm:px-6 sm:py-10 md:px-8 lg:px-10 lg:py-12 xl:px-12">
+        <div className="flex w-full max-w-[1300px] min-w-0 flex-col items-center">
           {/* Headings */}
-          <p className="mb-2 text-center text-base font-semibold text-black sm:text-lg md:text-[25px]">
+          <p className="mb-2 text-center text-sm font-semibold text-black sm:text-base md:text-lg lg:text-xl">
             We're committed to you
           </p>
-          <h2 className="mb-6 max-w-4xl text-center text-[23px] font-semibold leading-[1.05] md:text-[32px] lg:mb-5 lg:text-[35px]">
+          <h2 className="mb-8 max-w-4xl text-balance text-center text-[clamp(1.65rem,5vw,2.5rem)] font-semibold leading-[1.08] sm:mb-10 lg:mb-12">
             <span className="text-[#DADD39]">
               How You Turn Your Dreams Into Reality With Ink Founders
             </span>
           </h2>
 
           <CustomScrollbar
-            ref={carouselRef}
             orientation="horizontal"
-            onPointerDown={pauseCarousel}
-            onPointerUp={resumeCarousel}
-            onPointerCancel={resumeCarousel}
-            onPointerLeave={resumeCarousel}
-            className="flex w-full max-w-full items-stretch gap-4 px-1 sm:gap-5 md:px-2 lg:grid lg:grid-cols-3 lg:items-start lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0"
+            role="list"
+            aria-label="Our promises to authors"
+            tabIndex={0}
+            containerClassName="w-full min-w-0"
+            className="flex w-full min-w-0 snap-x snap-mandatory scroll-px-1 items-stretch gap-4 overflow-x-auto overscroll-x-contain px-1 pb-4 touch-pan-x sm:gap-5 sm:scroll-px-2 sm:px-2 md:gap-6 lg:grid lg:grid-cols-3 lg:items-stretch lg:gap-x-8 lg:gap-y-12 lg:overflow-visible lg:px-0 lg:pb-0 xl:gap-x-12"
             trackClassName="bg-[#ececcf]"
             thumbClassName="bg-[#c7c934]"
           >
-            {carouselPromiseItems.map((item, index) => (
-              <div
-                key={`${item.id}-${index}`}
+            {promiseItems.map((item) => (
+              <article
+                key={item.id}
+                role="listitem"
                 data-aos="fade-down-right"
-                className={`flex w-[82vw] max-w-[360px] shrink-0 flex-col items-start px-2 text-left sm:w-[58vw] sm:px-4 md:w-[42vw] lg:w-full lg:max-w-none lg:shrink lg:px-8 ${
-                  index >= promiseItems.length ? "lg:hidden" : ""
-                }`}
+                className="flex w-[88%] max-w-[25rem] shrink-0 snap-start flex-col items-start px-1 text-left sm:w-[70%] sm:px-3 md:w-[46%] lg:w-full lg:max-w-none lg:shrink lg:snap-none lg:px-2 xl:px-4"
               >
                 <Image
                   src={item.image}
@@ -159,34 +95,26 @@ const OurPromise = () => {
                   height={48}
                   loading="lazy"
                   decoding="async"
-                  className="mb-3 h-10 w-10 object-contain sm:h-12 sm:w-12"
+                  sizes="(max-width: 639px) 40px, 48px"
+                  className="mb-3 h-10 w-10 shrink-0 object-contain sm:h-12 sm:w-12 lg:mb-4"
                 />
-                <h3 className="mb-3 text-[17px] font-semibold leading-[1.08] text-black sm:text-[18px] md:text-[19px] lg:text-[20px] lg:leading-[1]">
+                <h3 className="mb-3 text-lg font-semibold leading-tight text-black sm:text-xl lg:min-h-[3.25rem] lg:text-[1.3rem]">
                   {item.title}
                 </h3>
-                <p
-                  className={`text-[13px] leading-[1.32] text-gray-700 sm:text-[14px] md:text-[15px] lg:leading-[1.2] ${robotoMono.className}`}
+                <div
+                  tabIndex={0}
+                  role="region"
+                  aria-label={`${item.title} description`}
+                  className="custom-scrollbar-viewport w-full overflow-y-auto overscroll-y-contain pr-2 outline-none touch-pan-y focus-visible:ring-2 focus-visible:ring-black/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F6F5F3]"
+                  style={{ height: "clamp(8.5rem, 24vh, 12rem)" }}
                 >
-                  {getDisplayText(
-                    item.description,
-                    expandedItems[item.title] ?? false,
-                  )}
-                </p>
-                {item.description.trim().split(/\s+/).length > 43 && (
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setExpandedItems((prev) => ({
-                        ...prev,
-                        [item.title]: !prev[item.title],
-                      }))
-                    }
-                    className="mt-3 text-sm font-semibold text-black underline underline-offset-4"
+                  <p
+                    className={`text-[0.78rem] leading-relaxed text-gray-700 sm:text-[0.84rem] md:text-sm lg:text-[0.95rem] ${robotoMono.className}`}
                   >
-                    {expandedItems[item.title] ? "Read Less" : "Read More"}
-                  </button>
-                )}
-              </div>
+                    {item.description}
+                  </p>
+                </div>
+              </article>
             ))}
           </CustomScrollbar>
         </div>
