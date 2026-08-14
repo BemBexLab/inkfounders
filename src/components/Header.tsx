@@ -27,6 +27,7 @@ type NavItem = {
   href: string;
   icon: ReactNode;
   desktopOnlyMenu?: boolean;
+  nativeNavigation?: boolean;
   children?: NavChild[];
 };
 
@@ -93,6 +94,7 @@ const navItems: NavItem[] = [
     label: "Blog",
     href: "/blog",
     icon: <FaInfoCircle size={20} />,
+    nativeNavigation: true,
   },
   {
     label: "Contact Us",
@@ -266,7 +268,16 @@ export default function Header() {
                 );
               }
 
-              return (
+              return item.nativeNavigation ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className={desktopLinkClass}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  {item.label}
+                </a>
+              ) : (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -395,6 +406,26 @@ export default function Header() {
                             </span>
                             <span>{item.label}</span>
                           </button>
+                        ) : item.nativeNavigation ? (
+                          <a
+                            href={item.href}
+                            onClick={() => setMenuOpen(false)}
+                            aria-current={isActive ? "page" : undefined}
+                            className={`flex min-h-12 flex-1 items-center gap-3 rounded-xl px-3 py-2.5 text-[0.98rem] transition-colors ${
+                              isActive
+                                ? "bg-[#f1f2b4] font-semibold text-black"
+                                : "text-gray-800 hover:bg-white"
+                            }`}
+                          >
+                            <span
+                              className={
+                                isActive ? "text-black" : "text-gray-400"
+                              }
+                            >
+                              {item.icon}
+                            </span>
+                            <span>{item.label}</span>
+                          </a>
                         ) : (
                           <Link
                             href={item.href}
