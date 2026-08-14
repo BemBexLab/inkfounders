@@ -20,7 +20,7 @@ export default function Home() {
     <PartnersSection />
     {/* <GetInTouch data={getInTouchContent} /> */}
     <GetInTouch />
-    <Portfolio />
+    {/* <Portfolio /> */}
     <Map
       googleMapsLink={location?.href}
       locationQuery={location?.label || "1221 Brickell Ave, Miami, FL 33131, United States"}
