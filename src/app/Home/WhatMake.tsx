@@ -52,9 +52,8 @@ const WhatMake = () => {
             aria-label="What makes Ink Founders unique"
             data-aos="fade-down-right"
             containerClassName="w-full min-w-0"
-            className="flex w-full min-w-0 snap-x snap-mandatory scroll-px-1 items-stretch gap-4 overflow-x-auto overscroll-x-contain px-1 pb-4 touch-pan-x sm:gap-5 sm:scroll-px-2 sm:px-2 md:gap-6 lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible lg:px-0 lg:pb-0 xl:gap-10"
-            trackClassName="bg-[#ececcf]"
-            thumbClassName="bg-[#c7c934]"
+            className="flex w-full min-w-0 snap-x snap-mandatory scroll-px-1 items-stretch gap-4 overflow-x-auto px-1 pb-4 sm:gap-5 sm:scroll-px-2 sm:px-2 md:gap-6 lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible lg:px-0 lg:pb-0 xl:gap-10"
+            trackClassName="hidden"
           >
             {whatMakeItems.map((item) => (
               <article

@@ -128,7 +128,7 @@ const CustomScrollbar = forwardRef<HTMLDivElement, CustomScrollbarProps>(
           ref={viewportRef}
           className={cn(
             "custom-scrollbar-viewport",
-            isVertical ? "-mr-5 overflow-y-auto pr-5" : "overflow-x-auto pb-3",
+            isVertical ? "-mr-5 overflow-y-auto pr-5" : "overflow-x-auto",
             className,
           )}
           style={{
@@ -140,7 +140,7 @@ const CustomScrollbar = forwardRef<HTMLDivElement, CustomScrollbarProps>(
           {children}
         </div>
 
-        {metrics.hasOverflow ? (
+        {isVertical && metrics.hasOverflow ? (
           <div
             className={cn(
               "pointer-events-none absolute rounded-full bg-[#f1edd4]",

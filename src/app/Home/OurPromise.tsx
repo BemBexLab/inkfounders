@@ -77,9 +77,8 @@ const OurPromise = () => {
             aria-label="Our promises to authors"
             tabIndex={0}
             containerClassName="w-full min-w-0"
-            className="flex w-full min-w-0 snap-x snap-mandatory scroll-px-1 items-stretch gap-4 overflow-x-auto overscroll-x-contain px-1 pb-4 touch-pan-x sm:gap-5 sm:scroll-px-2 sm:px-2 md:gap-6 lg:grid lg:grid-cols-3 lg:items-stretch lg:gap-x-8 lg:gap-y-12 lg:overflow-visible lg:px-0 lg:pb-0 xl:gap-x-12"
-            trackClassName="bg-[#ececcf]"
-            thumbClassName="bg-[#c7c934]"
+            className="flex w-full min-w-0 snap-x snap-mandatory scroll-px-1 items-stretch gap-4 overflow-x-auto px-1 pb-4 sm:gap-5 sm:scroll-px-2 sm:px-2 md:gap-6 lg:grid lg:grid-cols-3 lg:items-stretch lg:gap-x-8 lg:gap-y-12 lg:overflow-visible lg:px-0 lg:pb-0 xl:gap-x-12"
+            trackClassName="hidden"
           >
             {promiseItems.map((item) => (
               <article
@@ -105,7 +104,7 @@ const OurPromise = () => {
                   tabIndex={0}
                   role="region"
                   aria-label={`${item.title} description`}
-                  className="custom-scrollbar-viewport w-full overflow-y-auto overscroll-y-contain pr-2 outline-none touch-pan-y focus-visible:ring-2 focus-visible:ring-black/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F6F5F3]"
+                  className="custom-scrollbar-viewport w-full overflow-y-auto pr-2 outline-none focus-visible:ring-2 focus-visible:ring-black/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#F6F5F3]"
                   style={{ height: "clamp(8.5rem, 24vh, 12rem)" }}
                 >
                   <p

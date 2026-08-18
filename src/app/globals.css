@@ -26,6 +26,16 @@ body {
   line-height: 1.5;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
+*::-webkit-scrollbar:horizontal {
+  display: none;
+  height: 0;
+}
+
 .custom-scrollbar-viewport {
   -ms-overflow-style: none;
   scrollbar-width: none;

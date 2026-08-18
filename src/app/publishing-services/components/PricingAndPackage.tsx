@@ -105,7 +105,7 @@ const PricingAndPackage = () => {
             tabIndex={0}
             data-aos="fade-down-right"
             containerClassName="w-full min-w-0"
-            className="flex w-full min-w-0 snap-x snap-mandatory scroll-px-1 items-stretch gap-4 overflow-x-auto overscroll-x-contain px-1 pb-5 touch-pan-x sm:gap-5 sm:scroll-px-2 sm:px-2 md:gap-6 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0 xl:gap-8"
+            className="flex w-full min-w-0 snap-x snap-mandatory scroll-px-1 items-stretch gap-4 overflow-x-auto px-1 pb-5 sm:gap-5 sm:scroll-px-2 sm:px-2 md:gap-6 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0 xl:gap-8"
             trackClassName="bg-[#ececcf]"
             thumbClassName="bg-[#c7c934]"
           >
