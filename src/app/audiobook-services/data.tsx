@@ -1,6 +1,7 @@
 import { desc } from "motion/react-client";
 import Link from "next/link";
 import { title } from "process";
+import { Fragment } from "react";
 
 export const audiobookData = [
   {
@@ -62,12 +63,12 @@ export const audiobookData = [
       {
         title: "Audiobook Narration That Goes as Far as Your Story Does",
         paragraphs: [
-          <>
+          <Fragment key="narration-reach-listeners">
             Whether this is your first book or your tenth, we're here to help you reach listeners around the world. At Ink Founders, we run a full audiobook narration and production company built to deliver audiobooks that sound professional, feel authentic, and get finished on schedule.
-          </>,
-          <>
+          </Fragment>,
+          <Fragment key="narration-right-narrator">
             What sets us apart is that we don't just record your audiobook and call it done. We match you with the right narrator, handle every technical detail, and make sure the finished product is something you're genuinely proud to put your name on. From a professional audiobook narrator for fiction to someone experienced in nonfiction narration, we find the right fit for your book, not just the next available voice.
-          </>,
+          </Fragment>,
           "Fair prices. Real timelines. No runaround, which is why we're an affordable audiobook narration service that indie and self-published authors keep coming back to.",
         ],
         imgSrc: "/audiobooks/image2.webp",

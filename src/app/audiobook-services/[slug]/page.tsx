@@ -16,6 +16,12 @@ interface PageProps {
   };
 }
 
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return audiobookData.map(({ slug }) => ({ slug }));
+}
+
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {

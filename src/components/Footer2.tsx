@@ -21,7 +21,7 @@ const footerContactItems = [
         />
       </svg>
     ),
-    lines: [<><b>USA-Office:</b> 1221 Brickell Ave,<br /> Miami, FL 33131, United States</>],
+    lines: [<React.Fragment key="usa-office-address"><b>USA-Office:</b> 1221 Brickell Ave,<br /> Miami, FL 33131, United States</React.Fragment>],
   },
   {
     href: "https://maps.app.goo.gl/1daMut5pZ3NQTTNg7",
@@ -39,7 +39,7 @@ const footerContactItems = [
         />
       </svg>
     ),
-    lines: [<><b>Australia-Office:</b> 16A Fox Cl, Australia,<br /> Kariong, NSW, Australia, 2250</>],
+    lines: [<React.Fragment key="australia-office-address"><b>Australia-Office:</b> 16A Fox Cl, Australia,<br /> Kariong, NSW, Australia, 2250</React.Fragment>],
   },
   {
     href: "tel:+17864961231",
@@ -57,7 +57,7 @@ const footerContactItems = [
         />
       </svg>
     ),
-    lines: [<><b>USA-Office: </b>+1 (786) 496-1231</>],
+    lines: [<React.Fragment key="usa-office-phone"><b>USA-Office: </b>+1 (786) 496-1231</React.Fragment>],
   },
   {
     href: "tel:+61261906580",
@@ -75,7 +75,7 @@ const footerContactItems = [
         />
       </svg>
     ),
-    lines: [<><b>Australian-Office: </b>(02) 6190 6580</>],
+    lines: [<React.Fragment key="australia-office-phone"><b>Australian-Office: </b>(02) 6190 6580</React.Fragment>],
   },
   {
     href: "mailto:info@inkfounders.com",
@@ -320,8 +320,8 @@ const Footer: React.FC = () => {
                       href={href}
                       className="min-w-0 break-words text-left font-sans text-[13px] leading-snug text-[#333] no-underline transition-colors hover:text-[#8a7a2e] sm:text-[14px]"
                     >
-                      {lines.map((line) => (
-                        <span key={`${href}-${line}`} className="block">
+                {lines.map((line, lineIndex) => (
+                        <span key={`${href}-${lineIndex}`} className="block">
                           {line}
                         </span>
                       ))}

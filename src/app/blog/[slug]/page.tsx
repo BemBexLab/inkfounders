@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import {
   decodeHtmlEntities,
   formatDate,
+  getAllWpPosts,
   getFeaturedImageFromPost,
   getPostBySlug,
   getReadingTime,
@@ -12,13 +13,26 @@ import {
 } from "../wpPosts";
 import { createCanonicalMetadata, getCanonicalUrl } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+export const dynamicParams = false;
+
+const staticBlogSlugs = new Set([
+  "how-much-does-it-cost-to-self-publish",
+  "pricing-for-professional-book-editing-services",
+]);
 
 type PageProps = {
   params: Promise<{
     slug: string;
   }>;
 };
+
+export async function generateStaticParams() {
+  const posts = await getAllWpPosts();
+
+  return posts
+    .filter((post) => post.slug && !staticBlogSlugs.has(post.slug))
+    .map((post) => ({ slug: post.slug }));
+}
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
