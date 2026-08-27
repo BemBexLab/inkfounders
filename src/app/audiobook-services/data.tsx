@@ -230,7 +230,7 @@ export const audiobookData = [
           "Not every book needs the same approach. Some authors want to narrate their own work; after all, who knows your story better than you? Others prefer a professional voice actor who can bring characters to life through tone and emotion. And if you're working with a tight budget or timeline, AI narration has come a long way and, for the right project, might be worth considering too.",
         options: [
           {
-            title: "Clear Communication & Transparency:",
+            title: "Clear Communication & Transparency",
             description:
               "A trustworthy audiobook publishing service is upfront about every stage of the process, with clear timelines, transparent pricing, and no hidden costs or surprise fees.",
             imgSrc: "/audiobooks/audio.webp",
