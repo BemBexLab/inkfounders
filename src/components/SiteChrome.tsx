@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer2";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export default function SiteChrome({
   children,
@@ -17,14 +18,16 @@ export default function SiteChrome({
     pathname.startsWith("/book-publishing/");
 
   if (hideChrome) {
-    return <>{children}</>;
+    return <SmoothScroll>{children}</SmoothScroll>;
   }
 
   return (
     <>
       <Header />
-      {children}
-      <Footer />
+      <SmoothScroll withHeader>
+        {children}
+        <Footer />
+      </SmoothScroll>
     </>
   );
 }
