@@ -1,74 +1,98 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
 import ScrollSmoother from "gsap/ScrollSmoother";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import { usePathname } from "next/navigation";
+import { useEffect, useLayoutEffect, useRef, type ReactNode } from "react";
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+type SmoothScrollProps = {
+  children: ReactNode;
+};
 
-export default function SmoothScroll({
-  children,
-  header,
-}: {
-  children: React.ReactNode;
-  header?: React.ReactNode;
-}) {
+export default function SmoothScroll({ children }: SmoothScrollProps) {
   const pathname = usePathname();
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
   const smootherRef = useRef<ScrollSmoother | null>(null);
 
   useLayoutEffect(() => {
-    const wrapper = wrapperRef.current;
-    const content = contentRef.current;
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-    if (!wrapper || !content) return;
+    const content = document.getElementById("smooth-content");
+    const wrapper = document.getElementById("smooth-wrapper");
 
-    const existingSmoother = ScrollSmoother.get();
-    existingSmoother?.kill();
+    if (!content || !wrapper) return;
+
+    // Transform-based smoothing can fight the browser's native touch scrolling,
+    // especially on hybrid tablets and while the mobile browser chrome resizes
+    // the viewport. Keep the native scroll path for phones, tablets, and coarse
+    // pointers, while preserving the smoother on desktop.
+    const responsiveQuery = window.matchMedia(
+      "(max-width: 1279px), (pointer: coarse)",
+    );
+    const getSmoothDuration = () =>
+      responsiveQuery.matches || ScrollTrigger.isTouch > 0 ? 0 : 1;
+    let smoothDuration = getSmoothDuration();
 
     const smoother = ScrollSmoother.create({
       wrapper,
       content,
-      smooth: 1,
+      smooth: smoothDuration,
       effects: true,
-      smoothTouch: 0.1,
+      smoothTouch: false,
+      ignoreMobileResize: true,
     });
 
     smootherRef.current = smoother;
-    const refreshId = window.requestAnimationFrame(() => {
-      smoother.refresh();
-    });
+
+    let refreshFrame = 0;
+    const refresh = () => {
+      if (refreshFrame) return;
+
+      refreshFrame = window.requestAnimationFrame(() => {
+        refreshFrame = 0;
+        ScrollTrigger.refresh();
+      });
+    };
+
+    const updateResponsiveSmoothing = () => {
+      const nextSmoothDuration = getSmoothDuration();
+      if (nextSmoothDuration === smoothDuration) return;
+
+      smoothDuration = nextSmoothDuration;
+      smoother.smooth(smoothDuration);
+      refresh();
+    };
+
+    responsiveQuery.addEventListener("change", updateResponsiveSmoothing);
+
+    const resizeObserver = new ResizeObserver(refresh);
+    resizeObserver.observe(content);
+
+    const frame = window.requestAnimationFrame(refresh);
 
     return () => {
-      window.cancelAnimationFrame(refreshId);
+      window.cancelAnimationFrame(frame);
+      window.cancelAnimationFrame(refreshFrame);
+      responsiveQuery.removeEventListener("change", updateResponsiveSmoothing);
+      resizeObserver.disconnect();
       smoother.kill();
       smootherRef.current = null;
     };
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!smootherRef.current) return;
 
-    const refreshId = window.requestAnimationFrame(() => {
-      smootherRef.current?.refresh();
+    const frame = window.requestAnimationFrame(() => {
+      ScrollTrigger.refresh();
     });
 
-    return () => window.cancelAnimationFrame(refreshId);
+    return () => window.cancelAnimationFrame(frame);
   }, [pathname]);
 
   return (
-    <div ref={wrapperRef} id="smooth-wrapper">
-      {header}
-      <div
-        ref={contentRef}
-        id="smooth-content"
-        className={header ? "smooth-content-with-header" : undefined}
-      >
-        {children}
-      </div>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">{children}</div>
     </div>
   );
 }
