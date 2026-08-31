@@ -8,9 +8,13 @@ import { useEffect, useLayoutEffect, useRef, type ReactNode } from "react";
 
 type SmoothScrollProps = {
   children: ReactNode;
+  withHeader?: boolean;
 };
 
-export default function SmoothScroll({ children }: SmoothScrollProps) {
+export default function SmoothScroll({
+  children,
+  withHeader = false,
+}: SmoothScrollProps) {
   const pathname = usePathname();
   const smootherRef = useRef<ScrollSmoother | null>(null);
 
@@ -92,7 +96,12 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
 
   return (
     <div id="smooth-wrapper">
-      <div id="smooth-content">{children}</div>
+      <div
+        id="smooth-content"
+        className={withHeader ? "smooth-content-with-header" : undefined}
+      >
+        {children}
+      </div>
     </div>
   );
 }
