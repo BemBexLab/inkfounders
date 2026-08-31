@@ -22,10 +22,12 @@ export default function SiteChrome({
   }
 
   return (
-    <SmoothScroll withHeader>
+    <>
       <Header />
-      {children}
-      <Footer />
-    </SmoothScroll>
+      <SmoothScroll withHeader>
+        {children}
+        <Footer />
+      </SmoothScroll>
+    </>
   );
 }
