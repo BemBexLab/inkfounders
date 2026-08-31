@@ -31,23 +31,6 @@ body {
   overflow-x: hidden;
 }
 
-#smooth-wrapper,
-#smooth-content {
-  width: 100%;
-}
-
-.smooth-content-with-header {
-  padding-top: 4.25rem;
-  padding-bottom: 4.25rem;
-}
-
-@media (min-width: 1280px) {
-  .smooth-content-with-header {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-}
-
 *::-webkit-scrollbar:horizontal {
   display: none;
   height: 0;

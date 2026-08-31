@@ -4,7 +4,7 @@ import CustomScrollbar from "@/components/CustomScrollbar";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   FaBars,
   FaBook,
@@ -109,30 +109,9 @@ const isActivePath = (pathname: string, href: string) =>
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showHeader, setShowHeader] = useState(true);
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(
     null,
   );
-  const lastScrollYRef = useRef(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (menuOpen || currentScrollY < 24) {
-        setShowHeader(true);
-      } else if (currentScrollY > lastScrollYRef.current + 4) {
-        setShowHeader(false);
-      } else if (currentScrollY < lastScrollYRef.current - 4) {
-        setShowHeader(true);
-      }
-
-      lastScrollYRef.current = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [menuOpen]);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -178,11 +157,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`sticky left-0 top-0 z-50 w-full border-b border-black/5 bg-[#F4F3E1]/95 px-4 py-3 shadow-[0_6px_24px_rgba(0,0,0,0.04)] backdrop-blur-md transition-all duration-300 sm:px-6 md:px-8 lg:px-10 xl:py-3.5 ${
-          showHeader
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-full opacity-0"
-        }`}
+        className="fixed left-0 top-0 z-50 w-full border-b border-black/5 bg-[#F4F3E1]/95 px-4 py-3 shadow-[0_6px_24px_rgba(0,0,0,0.04)] backdrop-blur-md sm:px-6 md:px-8 lg:px-10 xl:py-3.5"
       >
         <div className="mx-auto flex w-full max-w-[1536px] items-center justify-between gap-4">
           <Link
