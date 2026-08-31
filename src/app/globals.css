@@ -37,11 +37,13 @@ body {
 }
 
 .smooth-content-with-header {
+  padding-top: 4.25rem;
   padding-bottom: 4.25rem;
 }
 
 @media (min-width: 1280px) {
   .smooth-content-with-header {
+    padding-top: 5rem;
     padding-bottom: 5rem;
   }
 }
