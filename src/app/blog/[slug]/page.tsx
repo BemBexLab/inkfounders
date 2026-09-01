@@ -11,7 +11,11 @@ import {
   getReadingTime,
   stripInlineStyles,
 } from "../wpPosts";
-import { createCanonicalMetadata, getCanonicalUrl } from "@/lib/seo";
+import {
+  createCanonicalMetadata,
+  getCanonicalUrl,
+  SOCIAL_IMAGE_URL,
+} from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -76,13 +80,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         post.modified ||
         post.date ||
         undefined,
-      images: featuredImage ? [{ url: featuredImage }] : undefined,
+      images: [
+        {
+          url: SOCIAL_IMAGE_URL,
+          width: 192,
+          height: 87,
+          alt: "Ink Founders logo",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: featuredImage ? [featuredImage] : undefined,
+      images: [SOCIAL_IMAGE_URL],
     },
   };
 }

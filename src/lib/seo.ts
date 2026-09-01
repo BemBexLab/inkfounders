@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { faqItems } from "@/app/Home/faqData";
 
 export const SITE_URL = "https://www.inkfounders.com";
+export const SOCIAL_IMAGE_PATH = "/landing-page/inkfounder logo-19 1.svg";
+export const SOCIAL_IMAGE_URL = new URL(SOCIAL_IMAGE_PATH, SITE_URL).toString();
 export const GLOBAL_SCHEMA = {
   "@context": "https://schema.org",
   "@graph": [
