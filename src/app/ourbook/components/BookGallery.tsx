@@ -124,7 +124,7 @@ export const BOOKS = [
     date: "6-July-2023",
     genre: "Novel",
     tags: ["Biography"],
-    link: "https://a.co/d/02fR7S9m",
+    link: "https://a.co/d/0eB0OwID",
   },
   {
     title: "DREAMS FROM MY GRANDFATHER",
