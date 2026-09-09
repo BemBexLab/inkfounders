@@ -9,6 +9,42 @@ import AOSProvider from "@/components/AOSProvider";
 
 // Add "Fiction" to tags if you want them to show under Fiction filter.
 export const BOOKS = [
+  {
+    title: "THE VSO PLAYBOOK: Volume 1",
+    author: " Pamela K. Robertson",
+    cover: "https://m.media-amazon.com/images/I/51RdielPYYL._SY385_.jpg",
+    date: "6-July-2023",
+    genre: "Novel",
+    tags: ["Non Fiction"],
+    link: "https://a.co/d/020nlti6",
+  },
+  {
+    title: "THE VSO PLAYBOOK: Volume 2",
+    author: " Pamela K. Robertson",
+    cover: "https://m.media-amazon.com/images/I/61LS5RFstNL._SY385_.jpg",
+    date: "6-July-2023",
+    genre: "Novel",
+    tags: ["Non Fiction"],
+    link: "https://a.co/d/05ws6l7C",
+  },
+  {
+    title: "THE VSO PLAYBOOK: Volume 3",
+    author: "Pamela K. Robertson",
+    cover: "https://m.media-amazon.com/images/I/61HXJmvohaL._SY385_.jpg",
+    date: "6-July-2023",
+    genre: "Novel",
+    tags: ["Non Fiction"],
+    link: "https://a.co/d/0jkmTgSl",
+  },
+  {
+    title: "BE POSITIVE!: Choosing Joy, Faith, and Resilience No Matter What Life Sends Your Way",
+    author: "VERONICA NASH “Pooh”",
+    cover: "https://m.media-amazon.com/images/I/51T8JE34b4L._SY522_.jpg",
+    date: "6-July-2023",
+    genre: "Novel",
+    tags: ["Biography / Autobiography"],
+    link: "https://a.co/d/0eMh9NpH",
+  },
  {
     title: "DON'T CUT the GRASS on Sunday",
     author: "K.Stephen Jumper",
@@ -51,7 +87,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Bertha 1.webp",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/084ustJB",
   },
   {
@@ -69,7 +105,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Luis Diaz 1.webp",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/080ryfQM",
   },
   {
@@ -87,7 +123,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Laflaps 2.webp",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"], 
+    tags: ["Biography / Autobiography"], 
     link: "https://a.co/d/0gZbtRPp",
   },
   {
@@ -96,7 +132,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/The Storm 2.webp",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/0ciIvs0L",
   },
   {
@@ -109,21 +145,21 @@ export const BOOKS = [
     link: "https://a.co/d/0h3gl6A6",
   },
   {
-    title: "FORGED IN THE MOUNTAINS",
+    title: "Forged in the Mountains: A Family's Resilience",
     author: "Wilma Gibson Smith",
     cover: "/ourbook/New folder/Wilma 2.webp",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/02fR7S9m",
   },
   {
-    title: "DISCOVERING THE ROOT CAUSE OF CANCER",
+    title: "Discovering the Root Causes of Cancer: A Journey of Self-Discovery",
     author: "Valerie B. Irons",
     cover: "/ourbook/New folder/Laflaps 1.webp",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/0eB0OwID",
   },
   {
@@ -132,7 +168,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/The Storm 1.webp",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/0ie4oXLR",
   },
   {
@@ -159,7 +195,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Craig 1.webp",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/077L9M4Y",
   },
   {
@@ -172,7 +208,7 @@ export const BOOKS = [
     link: "https://a.co/d/00INdTu4",
   },
   {
-    title: "The Adventure of Scott And Lenny",
+    title: "The Adventure Of Scott And Lenny: Learn How To Fly",
     author: "Leonard Serratore",
     cover: "/ourbook/New folder/Leonard 1.webp",
     date: "6-July-2023",
@@ -186,7 +222,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Ray 1.webp",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/0eTrzJDj",
   },
   {
@@ -197,6 +233,15 @@ export const BOOKS = [
     genre: "Novel",
     tags: ["Non Fiction"],
     link: "https://a.co/d/02Ghlu41",
+  },
+  {
+    title: "WHAT THE HELL IS WRONG WITH MY DOG?: YOU ARE WHAT'S WRONG!",
+    author: "ALISA PETERSON-WHITE",
+    cover: "https://m.media-amazon.com/images/I/71bjP13zCkL._SY466_.jpg",
+    date: "6-July-2023",
+    genre: "Novel",
+    tags: ["Non Fiction"],
+    link: "https://a.co/d/0iPTgRoJ",
   },
   {
     title: "JETHRO & KASHU & FRIENDS PLANT A FOREST",
@@ -222,7 +267,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/AD Bradley 2.webp",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/0iMWfNUy",
   },
   {
@@ -276,7 +321,7 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Peter 1.webp",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/0iz5TW4E",
   },
   {
@@ -285,17 +330,8 @@ export const BOOKS = [
     cover: "/ourbook/New folder/Rachael 1.webp",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/09xqIhbN",
-  },
-  {
-    title: "BE POSITIVE!",
-    author: "VERONICA NASH “Pooh”",
-    cover: "https://m.media-amazon.com/images/I/51T8JE34b4L._SY522_.jpg",
-    date: "6-July-2023",
-    genre: "Novel",
-    tags: ["Biography"],
-    link: "https://a.co/d/0eMh9NpH",
   },
   {
     title: "THE BURIED TRUTH",
@@ -303,43 +339,25 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/710RLphkgrL._SY466_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/08rleSkd",
   },
   {
-    title: "THE VSO PLAYBOOK: Volume 1",
-    author: " Pamela K. Robertson",
-    cover: "https://m.media-amazon.com/images/I/51RdielPYYL._SY385_.jpg",
+    title: "BEFORE ONE GOD: The Ancient Gods Behind the Biblical Tradition",
+    author: "ROB CLIFF LOWE",
+    cover: "https://m.media-amazon.com/images/I/61cWQbQ9WQL._SY522_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
-    link: "https://a.co/d/020nlti6",
+    tags: ["Non Fiction"],
+    link: "https://a.co/d/04YBpyNT",
   },
   {
-    title: "THE VSO PLAYBOOK: Volume 2",
-    author: " Pamela K. Robertson",
-    cover: "https://m.media-amazon.com/images/I/61LS5RFstNL._SY385_.jpg",
-    date: "6-July-2023",
-    genre: "Novel",
-    tags: ["Biography"],
-    link: "https://a.co/d/05ws6l7C",
-  },
-  {
-    title: "THE VSO PLAYBOOK: Volume 3",
-    author: "Pamela K. Robertson",
-    cover: "https://m.media-amazon.com/images/I/61HXJmvohaL._SY385_.jpg",
-    date: "6-July-2023",
-    genre: "Novel",
-    tags: ["Biography"],
-    link: "https://a.co/d/0jkmTgSl",
-  },
-  {
-    title: "Returning to the Prayer",
+    title: "Returning to the Prayer of Jabez & God Answered: A Spiritual Journey Through Scripture",
     author: " Benjamin Harrison Bennett Jr",
     cover: "https://m.media-amazon.com/images/I/71vn8t9NJPL._SY466_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Non Fiction"],
     link: "https://a.co/d/0iNubjwn",
   },
   {
@@ -348,16 +366,16 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61XNBRiq1DL._SY466_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Non Fiction"],
     link: "https://a.co/d/0bVw3K7a",
   },
   {
-    title: "The Adventures of Jenny",
+    title: "The Adventures of Jenny: Not What We Expected",
     author: " John H Lake",
     cover: "https://m.media-amazon.com/images/I/71NrTA8TnrL._SY466_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Children Book"],
     link: "https://a.co/d/025Z9puW",
   },
   {
@@ -366,7 +384,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/71scCT35IyL._SY466_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Fiction"],
     link: "https://a.co/d/06XrCqUG",
   },
   {
@@ -375,7 +393,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/71lfsR4AbhL._SY466_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Non Fiction"],
     link: "https://a.co/d/0jdoebVy",
   },
   {
@@ -384,7 +402,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/71KObra5lZL._SY466_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Children Book"],
     link: "https://a.co/d/098t5Wdp",
   },
   {
@@ -393,7 +411,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/71RQJxojWjL._SY466_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Children Book"],
     link: "https://a.co/d/02RD5Tsi",
   },
   {
@@ -402,7 +420,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/71EjxGKCmEL._SY466_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Fiction"],
     link: "https://a.co/d/01Bs2kl9",
   },
   {
@@ -411,7 +429,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61xM8pwkQkL._SY466_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Fiction"],
     link: "https://a.co/d/01SaWxIa",
   },
   {
@@ -420,7 +438,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/717h0aKKWJL._SY466_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/0hEL6zyk",
   },
   {
@@ -429,7 +447,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61ANOQzt8vL._SY522_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Non Fiction"],
     link: "https://a.co/d/0hvI02XW",
   },
   {
@@ -438,7 +456,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/71uF6YRwfhL._SY385_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Non Fiction"],
     link: "https://a.co/d/0iPpg8TL",
   },
   {
@@ -447,7 +465,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/71iHOyp46zL._SY466_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Children Book"],
     link: "https://a.co/d/08g4V2iB",
   },
   {
@@ -456,7 +474,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61PX0O8kpCL._SY466_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Non Fiction"],
     link: "https://a.co/d/0gR8fCxy",
   },
   {
@@ -465,7 +483,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61nGY2mBArL._SY522_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Children Book"],
     link: "https://a.co/d/07RInouK",
   },
   {
@@ -474,7 +492,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61tou7wZZJL._SY522_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Children Book"],
     link: "https://a.co/d/01HxUOni",
   },
   {
@@ -483,7 +501,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61jaDj6bQAL._SY522_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Children Book"],
     link: "https://a.co/d/03HzI9Bp",
   },
   {
@@ -492,7 +510,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/71pNKStRVhL._SY425_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Non Fiction"],
     link: "https://a.co/d/01p7ZBw8",
   },
   {
@@ -501,7 +519,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61IQQ3DHzxL._SY522_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Non Fiction"],
     link: "https://a.co/d/01eDTdbD",
   },
   {
@@ -510,7 +528,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61VoKsdSsnL._SY522_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/0eDuDm9p",
   },
   {
@@ -519,7 +537,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61frnxUrH6L._SY522_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Non Fiction"],
     link: "https://a.co/d/0cSyfyU1",
   },
   {
@@ -528,7 +546,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61bey9pTYEL._SY522_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Non Fiction"],
     link: "https://a.co/d/0eVNdG2M",
   },
   {
@@ -537,7 +555,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/81t9ZodeQ-L._SY385_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Fiction"],
     link: "https://a.co/d/05xtglqn",
   },
   {
@@ -546,7 +564,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61cdChR7i2L._SY522_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Non Fiction"],
     link: "https://a.co/d/00S0v12I",
   },
   {
@@ -555,7 +573,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61cdChR7i2L._SY522_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Non Fiction"],
     link: "https://a.co/d/02b8lhUI",
   },
   {
@@ -564,7 +582,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/810D2faZOoL._SY385_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/0hPrYFXh",
   },
   {
@@ -573,7 +591,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61u5a1G4OrL._SY522_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Fiction"],
     link: "https://a.co/d/02a32XsM",
   },
   {
@@ -582,7 +600,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/51EBMyMqVsL._SY522_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/0427EwRh",
   },
   {
@@ -591,7 +609,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/81FAqqLB3YL._SY466_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/00AOB2Hr",
   },
   {
@@ -600,7 +618,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61Kd4YLH0CL._SY522_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/01vp7Adj",
   },
   {
@@ -609,7 +627,7 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/81GQhuLY7RL._SY466_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Non Fiction"],
     link: "https://a.co/d/0eR3izAk",
   },
   {
@@ -618,12 +636,12 @@ export const BOOKS = [
     cover: "https://m.media-amazon.com/images/I/61ZmECNYshL._SY522_.jpg",
     date: "6-July-2023",
     genre: "Novel",
-    tags: ["Biography"],
+    tags: ["Biography / Autobiography"],
     link: "https://a.co/d/0j3UkTFL",
   },
 ];
 
-const FILTERS = ["All", "Fiction", "Non Fiction", "Biography", "Children Book"];
+const FILTERS = ["All", "Fiction", "Non Fiction", "Biography / Autobiography", "Children Book"];
 const INITIAL_VISIBLE_COUNT = 12;
 const LOAD_MORE_COUNT = 4;
 
