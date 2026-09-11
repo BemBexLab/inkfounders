@@ -17,7 +17,8 @@ import {
   SOCIAL_IMAGE_URL,
 } from "@/lib/seo";
 
-export const dynamicParams = false;
+// Allow posts published after the last build to render on demand.
+export const dynamicParams = true;
 
 const staticBlogSlugs = new Set([
   "how-much-does-it-cost-to-self-publish",

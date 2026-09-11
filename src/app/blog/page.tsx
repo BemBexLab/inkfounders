@@ -12,11 +12,6 @@ import { createCanonicalMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createCanonicalMetadata("/blog");
 
-const staticBlogSlugs = new Set([
-  "how-much-does-it-cost-to-self-publish",
-  "pricing-for-professional-book-editing-services",
-]);
-
 function mapWpPostToBlogPost(
   post: Awaited<ReturnType<typeof getAllWpPosts>>[number],
 ): BlogPost {
@@ -40,7 +35,7 @@ export default async function BlogPage() {
   const wpPosts = await getAllWpPosts();
 
   const mappedWpPosts = wpPosts
-    .filter((post) => Boolean(post.slug) && !staticBlogSlugs.has(post.slug))
+    .filter((post) => Boolean(post.slug))
     .map(mapWpPostToBlogPost);
 
   return <BlogPageClient initialWpPosts={mappedWpPosts} />;

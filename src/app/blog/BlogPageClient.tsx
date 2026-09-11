@@ -67,10 +67,19 @@ export default function BlogPageClient({
   const postsPerPage = 3;
 
   const allPosts = useMemo(
-    () =>
-      [...staticBlogPosts, ...initialWpPosts].sort(
+    () => {
+      const postsBySlug = new Map<string, BlogPost>();
+
+      // Add local posts first so a matching post from WordPress replaces the
+      // fallback and every WordPress post remains visible in the listing.
+      for (const post of [...staticBlogPosts, ...initialWpPosts]) {
+        postsBySlug.set(post.slug.trim().toLowerCase(), post);
+      }
+
+      return [...postsBySlug.values()].sort(
         (a, b) => parsePostDate(b.date) - parsePostDate(a.date),
-      ),
+      );
+    },
     [initialWpPosts],
   );
 

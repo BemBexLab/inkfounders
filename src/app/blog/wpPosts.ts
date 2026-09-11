@@ -48,6 +48,8 @@ export type WPPost = {
 
 const DEFAULT_CMS_ENDPOINT =
   "https://ink2audiobook.com/test/index.php/wp-json/wp/v2/posts";
+const WP_POSTS_PER_PAGE = 100;
+const MAX_WP_POST_PAGES = 1000;
 
 function normalizeCmsEndpoint() {
   const cmsEndpoint = process.env.CMS?.trim() || DEFAULT_CMS_ENDPOINT;
@@ -89,7 +91,7 @@ export const getPostBySlug = cache(async (slug: string): Promise<WPPost | null> 
   });
 
   try {
-    const res = await fetch(endpoint, { cache: "force-cache" });
+    const res = await fetch(endpoint, { cache: "no-store" });
 
     if (!res.ok) {
       return null;
@@ -111,13 +113,14 @@ export async function getAllWpPosts(): Promise<WPPost[]> {
   let page = 1;
 
   try {
-    while (true) {
+    while (page <= MAX_WP_POST_PAGES) {
       const endpoint = buildEndpoint({
-        per_page: "100",
+        per_page: String(WP_POSTS_PER_PAGE),
         page: String(page),
+        status: "publish",
         _embed: "1",
       });
-      const res = await fetch(endpoint, { cache: "force-cache" });
+      const res = await fetch(endpoint, { cache: "no-store" });
 
       if (!res.ok) {
         break;
@@ -131,7 +134,10 @@ export async function getAllWpPosts(): Promise<WPPost[]> {
       posts.push(...batch);
 
       const totalPages = Number(res.headers.get("x-wp-totalpages") || 0);
-      if (page >= totalPages || batch.length < 100) {
+      // Use WordPress' total-page header when available. If a proxy strips
+      // that header, keep requesting pages until WordPress returns an empty
+      // page instead of assuming a short first batch is the last page.
+      if (totalPages > 0 && page >= totalPages) {
         break;
       }
 
