@@ -5,6 +5,11 @@ import SiteChrome from "@/components/SiteChrome";
 import { workSans } from "./fonts";
 import { GLOBAL_SCHEMA, SITE_URL, SOCIAL_IMAGE_URL } from "@/lib/seo";
 
+// All page routes are generated at build time. Interactive forms still call
+// the separate API route handlers from the browser.
+export const dynamic = "force-static";
+export const revalidate = false;
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Ink Founders",

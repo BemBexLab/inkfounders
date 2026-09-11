@@ -10,8 +10,6 @@ import {
   useState,
 } from "react";
 
-type Orientation = "vertical" | "horizontal";
-
 type ScrollMetrics = {
   hasOverflow: boolean;
   thumbSize: number;
@@ -20,7 +18,6 @@ type ScrollMetrics = {
 
 type CustomScrollbarProps = {
   children?: ReactNode;
-  orientation?: Orientation;
   containerClassName?: string;
   trackClassName?: string;
   thumbClassName?: string;
@@ -62,7 +59,6 @@ const CustomScrollbar = forwardRef<HTMLDivElement, CustomScrollbarProps>(
   (
     {
       children,
-      orientation = "vertical",
       className,
       containerClassName,
       trackClassName,
@@ -89,10 +85,9 @@ const CustomScrollbar = forwardRef<HTMLDivElement, CustomScrollbarProps>(
       }
 
       const updateMetrics = () => {
-        const isVertical = orientation === "vertical";
-        const viewportSize = isVertical ? element.clientHeight : element.clientWidth;
-        const scrollSize = isVertical ? element.scrollHeight : element.scrollWidth;
-        const scrollOffset = isVertical ? element.scrollTop : element.scrollLeft;
+        const viewportSize = element.clientHeight;
+        const scrollSize = element.scrollHeight;
+        const scrollOffset = element.scrollTop;
 
         setMetrics(createMetrics(viewportSize, scrollSize, scrollOffset));
       };
@@ -117,20 +112,14 @@ const CustomScrollbar = forwardRef<HTMLDivElement, CustomScrollbarProps>(
         element.removeEventListener("scroll", updateMetrics);
         window.removeEventListener("resize", updateMetrics);
       };
-    }, [children, orientation]);
-
-    const isVertical = orientation === "vertical";
+    }, [children]);
 
     return (
       <div className={cn("relative overflow-hidden", containerClassName)}>
         <div
           {...props}
           ref={viewportRef}
-          className={cn(
-            "custom-scrollbar-viewport",
-            isVertical ? "-mr-5 overflow-y-auto pr-5" : "overflow-x-auto",
-            className,
-          )}
+          className={cn("custom-scrollbar-viewport -mr-5 overflow-y-auto pr-5", className)}
           style={{
             ...style,
             msOverflowStyle: "none",
@@ -140,30 +129,25 @@ const CustomScrollbar = forwardRef<HTMLDivElement, CustomScrollbarProps>(
           {children}
         </div>
 
-        {isVertical && metrics.hasOverflow ? (
+        {metrics.hasOverflow ? (
           <div
             className={cn(
               "pointer-events-none absolute rounded-full bg-[#f1edd4]",
-              isVertical ? "bottom-0 right-0 top-0 w-[6px]" : "bottom-0 left-0 right-0 h-[6px]",
+              "bottom-0 right-0 top-0 w-[6px]",
               trackClassName,
             )}
           >
             <div
               className={cn(
                 "absolute rounded-full bg-[#d6d09b]",
-                isVertical ? "left-0 right-0" : "bottom-0 top-0",
+                "left-0 right-0",
                 thumbClassName,
               )}
               style={
-                isVertical
-                  ? {
-                      height: `${metrics.thumbSize}px`,
-                      transform: `translateY(${metrics.thumbOffset}px)`,
-                    }
-                  : {
-                      width: `${metrics.thumbSize}px`,
-                      transform: `translateX(${metrics.thumbOffset}px)`,
-                    }
+                {
+                  height: `${metrics.thumbSize}px`,
+                  transform: `translateY(${metrics.thumbOffset}px)`,
+                }
               }
             />
           </div>

@@ -503,24 +503,23 @@ const LandingHero2 = () => {
           variants={containerVariants}
         >
           <motion.div
-            className="mx-auto mb-5 inline-flex min-h-[30px] w-fit max-w-full items-center rounded-full border border-[#d9df57] bg-[#fbfbe8] px-3 py-2 text-[9px] font-bold uppercase leading-tight text-[#6B7100] min-[380px]:text-[10px] sm:text-xs lg:mx-0 lg:mb-[25px] lg:h-[30px] lg:py-0 xl:text-sm"
+            className="plus-jakarta mx-auto mb-3 inline-flex h-[30px] w-fit max-w-full items-center rounded-[8px] bg-[#C8D40021] px-5 text-[13px] font-semibold leading-none tracking-normal text-[#282828] lg:mx-0 sm:text-sm"
             variants={riseVariants}
             whileHover={{ y: -2, scale: 1.02 }}
           >
-            <span className="mr-[8px] h-[8px] w-[8px] animate-pulse rounded-full bg-green-600" />
-            Professional Book Publishing Services
+            Publishing Globally is a Legacy
           </motion.div>
 
           <motion.h1
-            className="mx-auto max-w-[655px] text-[clamp(2rem,9vw,3.25rem)] font-black leading-[1.08] tracking-[-0.04em] text-[#151519] md:text-6xl lg:mx-0 lg:text-5xl lg:leading-[1.12] 2xl:text-5xl 2xl:leading-[1.24]"
+            className="mx-auto plus-jakarta max-w-[855px] text-[clamp(2rem,9vw,3.25rem)] leading-[1.08] tracking-[-0.04em] font-medium uppercase text-[#151519] md:text-6xl lg:mx-0 lg:text-5xl lg:leading-[1.12] 2xl:text-5xl 2xl:leading-[1.24]"
             variants={riseVariants}
           >
-            Complete Publishing Services With a Professional Approach and a Reasonable Package
+            We'll Get You Into Every Market
             {/* <span className="text-[#bdd700]">{platformsCount}+ Platforms</span> */}
           </motion.h1>
 
           <motion.p
-            className="mx-auto mt-[15px] max-w-[553px] text-sm leading-[1.55] text-black sm:text-base lg:mx-0 xl:text-lg xl:leading-[1.38]"
+            className="mx-auto mt-[15px] max-w-[855px] text-sm leading-[1.55] text-black sm:text-base lg:mx-0 xl:text-lg xl:leading-[1.38]"
             variants={riseVariants}
           >
             Reach your readers on Amazon KDP, Barnes & Noble, Kobo, IngramSpark, and many more today. Get expert editing and formatting in one reasonable package at Ink Founders.

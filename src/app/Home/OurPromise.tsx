@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import AOSProvider from "@/components/AOSProvider";
-import CustomScrollbar from "@/components/CustomScrollbar";
 import { robotoMono } from "../fonts";
 
 const promiseItems = [
@@ -71,21 +70,18 @@ const OurPromise = () => {
             </span>
           </h2>
 
-          <CustomScrollbar
-            orientation="horizontal"
+          <div
             role="list"
             aria-label="Our promises to authors"
             tabIndex={0}
-            containerClassName="w-full min-w-0"
-            className="flex w-full min-w-0 snap-x snap-mandatory scroll-px-1 items-stretch gap-4 overflow-x-auto px-1 pb-4 sm:gap-5 sm:scroll-px-2 sm:px-2 md:gap-6 lg:grid lg:grid-cols-3 lg:items-stretch lg:gap-x-8 lg:gap-y-12 lg:overflow-visible lg:px-0 lg:pb-0 xl:gap-x-12"
-            trackClassName="hidden"
+            className="grid w-full min-w-0 grid-cols-1 items-stretch gap-6 px-1 sm:grid-cols-2 sm:gap-5 sm:px-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-12 lg:px-0 xl:gap-x-12"
           >
             {promiseItems.map((item) => (
               <article
                 key={item.id}
                 role="listitem"
                 data-aos="fade-down-right"
-                className="flex w-[88%] max-w-[25rem] shrink-0 snap-start flex-col items-start px-1 text-left sm:w-[70%] sm:px-3 md:w-[46%] lg:w-full lg:max-w-none lg:shrink lg:snap-none lg:px-2 xl:px-4"
+                className="flex w-full max-w-[25rem] flex-col items-start justify-self-center px-1 text-left sm:px-3 lg:max-w-none lg:px-2 xl:px-4"
               >
                 <Image
                   src={item.image}
@@ -115,7 +111,7 @@ const OurPromise = () => {
                 </div>
               </article>
             ))}
-          </CustomScrollbar>
+          </div>
         </div>
       </section>
     </AOSProvider>

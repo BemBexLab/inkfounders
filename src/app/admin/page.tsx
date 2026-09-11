@@ -1,5 +1,4 @@
 "use client";
-import CustomScrollbar from "@/components/CustomScrollbar";
 import React, { useEffect, useState } from "react";
 
 type Submission = {
@@ -206,13 +205,8 @@ export default function AdminDashboard() {
       {loading ? (
         <p>Loading submissions...</p>
       ) : (
-        <CustomScrollbar
-          orientation="horizontal"
-          className="max-w-full"
-          trackClassName="bg-black/5"
-          thumbClassName="bg-[#DADD39]"
-        >
-          <table className="min-w-[700px] w-full text-left border border-black text-xs sm:text-sm">
+        <div className="w-full max-w-full overflow-hidden">
+          <table className="w-full table-fixed text-left text-xs sm:text-sm">
             <thead>
               <tr className="bg-white">
                 <th className="p-2 border border-white">
@@ -239,10 +233,10 @@ export default function AdminDashboard() {
                       onChange={() => handleCheckbox(s.id)}
                     />
                   </td>
-                  <td className="p-2 border border-white">{s.firstName} {s.lastName}</td>
-                  <td className="p-2 border border-white">{s.email}</td>
-                  <td className="p-2 border border-white">{s.phone}</td>
-                  <td className="p-2 border border-white">{s.message}</td>
+                  <td className="break-words border border-white p-2">{s.firstName} {s.lastName}</td>
+                  <td className="break-all border border-white p-2">{s.email}</td>
+                  <td className="break-words border border-white p-2">{s.phone}</td>
+                  <td className="break-words border border-white p-2">{s.message}</td>
                   <td className="p-2 border border-white">
                     {s.createdAt
                       ? new Date(s.createdAt).toLocaleString()
@@ -252,7 +246,7 @@ export default function AdminDashboard() {
               ))}
             </tbody>
           </table>
-        </CustomScrollbar>
+        </div>
       )}
     </div>
   );

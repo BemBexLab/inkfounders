@@ -203,7 +203,7 @@ export async function getRenderedWpStyles(
   }
 
   try {
-    const res = await fetch(pageUrl, { cache: "no-store" });
+    const res = await fetch(pageUrl, { cache: "force-cache" });
 
     if (!res.ok) {
       return { stylesheets: [], inlineStyles: [] };

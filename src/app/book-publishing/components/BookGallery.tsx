@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import AOSProvider from "@/components/AOSProvider";
-import CustomScrollbar from "@/components/CustomScrollbar";
 
 // Add "Fiction" to tags if you want them to show under Fiction filter.
 export const BOOKS = [
@@ -165,20 +164,13 @@ const BookGallery = () => {
           ))}
         </div>
 
-        {/* Horizontal book scroller */}
-        <div className="mx-10 w-[calc(100vw-5rem)] overflow-hidden">
-          <CustomScrollbar
-            orientation="horizontal"
-            className="flex w-full snap-x snap-mandatory gap-5 scroll-smooth pt-2 sm:gap-7 md:gap-9"
-            trackClassName="bg-[#eef1b2]"
-            thumbClassName="bg-[#DADD39]"
-          >
+        <div className="grid w-full max-w-[1300px] grid-cols-1 justify-items-center gap-10 pt-2 sm:grid-cols-2 sm:gap-7 md:gap-9 lg:grid-cols-4">
           {filteredBooks.map((book, idx) => (
             <Link
               href={book.link}
               data-aos="fade-up"
               key={`${activeFilter}-${idx}`}
-              className="group flex w-[210px] flex-none snap-center flex-col items-center text-center sm:w-[240px] lg:w-[260px]"
+              className="group flex w-full max-w-[260px] flex-col items-center text-center"
             >
               <div className="relative mb-4 h-[300px] w-[190px] overflow-hidden rounded-[18px] sm:h-[330px] sm:w-[210px] lg:h-[350px] lg:w-[225px]">
                 <Image
@@ -196,7 +188,6 @@ const BookGallery = () => {
               </div>
             </Link>
           ))}
-          </CustomScrollbar>
         </div>
       </section>
     </AOSProvider>

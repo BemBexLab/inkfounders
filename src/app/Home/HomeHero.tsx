@@ -176,7 +176,7 @@ const HomeHero = () => {
   };
 
   return (
-    <section className="relative flex w-full items-center justify-center overflow-hidden rounded-bl-[36px] bg-[#F4F3E1] py-8 sm:rounded-bl-[56px] sm:py-10 lg:rounded-bl-[100px] lg:py-12">
+    <section className="relative flex w-full items-center justify-center overflow-x-hidden rounded-bl-[36px] bg-[#F4F3E1] py-8 sm:rounded-bl-[56px] sm:py-10 lg:rounded-bl-[100px] lg:py-12">
       <style jsx global>{`
         @keyframes slideIn {
           0% {
@@ -335,7 +335,7 @@ const HomeHero = () => {
 
       <div className="relative z-10 mx-auto hidden w-full max-w-[1450px] px-4 sm:px-6 md:px-8 lg:block lg:px-10 xl:px-0">
         <div className="flex flex-col items-center justify-between gap-10 sm:gap-12 lg:flex-row lg:gap-0">
-          <div className="flex flex-1 flex-col items-center justify-center px-0 md:ml-0 md:px-1 lg:items-start xl:ml-20">
+          <div className="flex min-w-0 flex-1 flex-col items-center justify-center px-0 md:ml-0 md:px-1 lg:items-start xl:ml-20">
             <div className="relative w-full max-w-xl">
               <h1 className="mb-5 text-center text-[clamp(1.5rem,5vw,3rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-black sm:mb-6 md:text-left">
                 <span className="inline-flex justify-center whitespace-nowrap">
@@ -445,7 +445,7 @@ const HomeHero = () => {
             </div>
           </div>
 
-          <div className="relative flex flex-1 items-center justify-center px-2 sm:px-4 md:px-8 lg:ml-5">
+          <div className="relative flex min-w-0 flex-1 items-center justify-center px-2 sm:px-4 md:px-8 lg:ml-5">
             <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
               <Image
                 src="/Home/bookslidetest/Ellipse 2.webp"

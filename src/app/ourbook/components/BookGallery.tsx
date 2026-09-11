@@ -687,10 +687,10 @@ const BookGallery = () => {
 
   return (
     <AOSProvider>
-      <section className="flex w-full flex-col items-center bg-[#F6F5F3] px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+      <section className="plus-jakarta flex w-full flex-col items-center bg-[#F6F5F3] px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         {/* Category filters and search */}
         <div className="mb-8 flex w-full max-w-[1280px] items-center justify-between gap-3 sm:mb-10 lg:gap-6">
-          <div className="flex min-w-0 flex-1 flex-nowrap gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="flex min-w-0 flex-1 flex-wrap justify-center gap-2 pb-1">
             {FILTERS.map((filter) => (
               <button
                 key={filter}

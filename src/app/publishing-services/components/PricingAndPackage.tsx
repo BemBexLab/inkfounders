@@ -2,7 +2,6 @@
 
 import { robotoMono } from "@/app/fonts";
 import AOSProvider from "@/components/AOSProvider";
-import CustomScrollbar from "@/components/CustomScrollbar";
 import Link from "next/link";
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -98,22 +97,18 @@ const PricingAndPackage = () => {
             &apos;Custom Quote&apos; to speak with a publishing expert.
           </p>
 
-          <CustomScrollbar
-            orientation="horizontal"
+          <div
             role="list"
             aria-label="Publishing packages"
             tabIndex={0}
             data-aos="fade-down-right"
-            containerClassName="w-full min-w-0"
-            className="flex w-full min-w-0 snap-x snap-mandatory scroll-px-1 items-stretch gap-4 overflow-x-auto px-1 pb-5 sm:gap-5 sm:scroll-px-2 sm:px-2 md:gap-6 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:px-0 lg:pb-0 xl:gap-8"
-            trackClassName="bg-[#ececcf]"
-            thumbClassName="bg-[#c7c934]"
+            className="grid w-full min-w-0 grid-cols-1 items-stretch gap-6 px-1 sm:grid-cols-2 sm:gap-5 sm:px-2 md:gap-6 lg:grid-cols-3 lg:px-0 xl:gap-8"
           >
             {PACKAGES.map((pkg) => (
               <article
                 key={pkg.id}
                 role="listitem"
-                className="flex w-[90%] max-w-[25rem] shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-black/[0.07] bg-white px-5 py-6 shadow-[0_12px_35px_rgba(0,0,0,0.08)] sm:w-[72%] sm:px-6 sm:py-7 md:w-[47%] lg:w-full lg:max-w-none lg:shrink lg:snap-none lg:px-5 xl:px-7 xl:py-8"
+                className="flex w-full max-w-[25rem] flex-col justify-self-center overflow-hidden rounded-2xl border border-black/[0.07] bg-white px-5 py-6 shadow-[0_12px_35px_rgba(0,0,0,0.08)] sm:px-6 sm:py-7 lg:max-w-none lg:px-5 xl:px-7 xl:py-8"
               >
                 <div className="mb-5 border-b border-black/10 pb-5">
                   {/* <p className="mb-2 min-h-8 text-xs font-medium leading-snug text-gray-500 sm:text-sm lg:min-h-10">
@@ -166,7 +161,7 @@ const PricingAndPackage = () => {
                 </Link>
               </article>
             ))}
-          </CustomScrollbar>
+          </div>
         </div>
       </section>
     </AOSProvider>

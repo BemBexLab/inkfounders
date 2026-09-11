@@ -2,7 +2,6 @@
 
 import { robotoMono } from "@/app/fonts";
 import AOSProvider from "@/components/AOSProvider";
-import CustomScrollbar from "@/components/CustomScrollbar";
 import Image from "next/image";
 
 const cards = [
@@ -59,22 +58,18 @@ const WhatYouGet = () => {
             What You Get With Ink Founders
           </h2>
 
-          <CustomScrollbar
-            orientation="horizontal"
+          <div
             role="list"
             aria-label="Publishing options from Ink Founders"
             tabIndex={0}
             data-aos="fade-down-right"
-            containerClassName="w-full min-w-0"
-            className="flex w-full min-w-0 snap-x snap-mandatory scroll-px-1 items-stretch gap-4 overflow-x-auto px-1 pb-5 sm:gap-5 sm:scroll-px-2 sm:px-2 md:gap-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10 lg:overflow-visible lg:px-0 lg:pb-0 xl:gap-x-12 xl:gap-y-12"
-            trackClassName="bg-[#ececcf]"
-            thumbClassName="bg-[#c7c934]"
+            className="grid w-full min-w-0 grid-cols-1 items-stretch gap-6 px-1 sm:grid-cols-2 sm:gap-5 sm:px-2 md:gap-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10 lg:px-0 xl:gap-x-12 xl:gap-y-12"
           >
             {cards.map((card) => (
               <article
                 key={card.title}
                 role="listitem"
-                className="flex w-[90%] max-w-[25rem] shrink-0 snap-start flex-col items-start rounded-2xl border border-black/[0.06] bg-white/70 px-5 py-6 text-left shadow-[0_10px_30px_rgba(0,0,0,0.05)] sm:w-[72%] sm:px-6 md:w-[47%] lg:w-full lg:max-w-none lg:shrink lg:snap-none lg:px-6 lg:py-7 xl:px-8"
+                className="flex w-full max-w-[25rem] flex-col items-start justify-self-center rounded-2xl border border-black/[0.06] bg-white/70 px-5 py-6 text-left shadow-[0_10px_30px_rgba(0,0,0,0.05)] sm:px-6 lg:max-w-none lg:px-6 lg:py-7 xl:px-8"
               >
                 <Image
                   src={card.image}
@@ -103,7 +98,7 @@ const WhatYouGet = () => {
                 </div>
               </article>
             ))}
-          </CustomScrollbar>
+          </div>
         </div>
       </section>
     </AOSProvider>
