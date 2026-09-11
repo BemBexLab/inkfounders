@@ -5,8 +5,8 @@ import SiteChrome from "@/components/SiteChrome";
 import { workSans } from "./fonts";
 import { GLOBAL_SCHEMA, SITE_URL, SOCIAL_IMAGE_URL } from "@/lib/seo";
 
-// All page routes are generated at build time. Interactive forms still call
-// the separate API route handlers from the browser.
+// Keep the project statically rendered by default. The WordPress post detail
+// route opts out of this in src/app/blog/[slug]/page.tsx.
 export const dynamic = "force-static";
 export const revalidate = false;
 

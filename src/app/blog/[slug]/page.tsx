@@ -5,7 +5,6 @@ import { ArrowLeft } from "lucide-react";
 import {
   decodeHtmlEntities,
   formatDate,
-  getAllWpPosts,
   getFeaturedImageFromPost,
   getPostBySlug,
   getReadingTime,
@@ -17,27 +16,14 @@ import {
   SOCIAL_IMAGE_URL,
 } from "@/lib/seo";
 
-// Allow posts published after the last build to render on demand.
-export const dynamicParams = true;
-
-const staticBlogSlugs = new Set([
-  "how-much-does-it-cost-to-self-publish",
-  "pricing-for-professional-book-editing-services",
-]);
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 type PageProps = {
   params: Promise<{
     slug: string;
   }>;
 };
-
-export async function generateStaticParams() {
-  const posts = await getAllWpPosts();
-
-  return posts
-    .filter((post) => post.slug && !staticBlogSlugs.has(post.slug))
-    .map((post) => ({ slug: post.slug }));
-}
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
