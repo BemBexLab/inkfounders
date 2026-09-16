@@ -55,24 +55,7 @@ const progressFieldNames = [
 ];
 const publishedAuthorsTarget = 1000;
 const platformsTarget = 40;
-const animatedBooks = [
-  BOOKS.find((book) => book.title === "Forged in the Mountains: A Family's Resilience"),
-  BOOKS.find((book) => book.title === "God carried me"),
-  BOOKS.find((book) => book.title === "DON'T CUT the GRASS on Sunday"),
-  BOOKS.find(
-    (book) =>
-      book.title ===
-      "El Color del Renacer: Memorias de Fe, Tierra y Renacimiento (Spanish Edition)",
-  ),
-  BOOKS.find((book) => book.title === "THE BOOK OF UNFOLDING INTEGRATION"),
-  BOOKS.find((book) => book.title === "FRESH PATHS UNFOLDING"),
-  BOOKS.find((book) => book.title === "FAITH OVER FEELINGS"),
-  BOOKS.find(
-    (book) =>
-      book.title ===
-      "Discovering the Root Causes of Cancer: A Journey of Self-Discovery",
-  ),
-].filter((book): book is (typeof BOOKS)[number] => Boolean(book));
+const animatedBooks = BOOKS;
 
 const animatedBookRows = Array.from(
   { length: Math.ceil(animatedBooks.length / 2) },
@@ -122,26 +105,35 @@ const formVariants: Variants = {
 function AnimatedBookCovers() {
   return (
     <div
-      className="pointer-events-none absolute inset-0 z-0 hidden overflow-hidden lg:block"
+      className="pointer-events-none absolute inset-0 z-0 hidden min-h-screen overflow-hidden lg:block"
       aria-hidden="true"
     >
-      <div className="absolute -left-[5%] -top-[24%] w-[360px] origin-top-left rotate-[-40deg] opacity-75">
+      <div className="absolute bottom-0 left-[calc(50%+0px)] top-0 w-[760px] origin-top-left rotate-[-10deg]">
         <motion.div
-          animate={{ y: ["-10%", "0%"] }}
-          transition={{ duration: 24, ease: "linear", repeat: Infinity }}
+          className="relative top-6 flex flex-col"
+          animate={{ y: ["0%", "-50%"] }}
+          transition={{
+            duration: 30,
+            ease: "linear",
+            repeat: Infinity,
+            repeatType: "loop",
+          }}
         >
-          {[...animatedBookRows, ...animatedBookRows].map((row, rowIndex) => (
-            <div key={rowIndex} className="grid h-[174px] grid-cols-[100px_100px] gap-x-5">
-              {row.map((book) => (
+          {[0, 1].map((copyIndex) => (
+            <div
+              key={copyIndex}
+              className="grid shrink-0 grid-cols-[185px_185px] grid-rows-[repeat(4,278px)] gap-x-10 gap-y-[56px]"
+            >
+              {animatedBookRows.flat().map((book) => (
                 <div
-                  key={book.title}
-                  className="relative h-[150px] w-[100px] overflow-hidden rounded-[5px] shadow-[0_12px_25px_rgba(0,0,0,0.2)]"
+                  key={`${copyIndex}-${book.title}`}
+                  className="relative h-[278px] w-[185px] overflow-hidden rounded-[6px]"
                 >
                   <Image
                     src={book.cover}
                     alt=""
                     fill
-                    sizes="100px"
+                    sizes="190px"
                     className="object-cover"
                   />
                 </div>
@@ -180,7 +172,7 @@ function Field({
       whileHover={{ y: -2 }}
       transition={{ duration: 0.18 }}
     >
-      <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-[#777777] lg:mb-[10px] lg:text-sm">
+      <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-[#777777] lg:mb-[6px] lg:text-sm">
         {label}
       </span>
       <input
@@ -189,7 +181,7 @@ function Field({
         required={required}
         placeholder={placeholder}
         onChange={(event) => onValueChange(name, event.currentTarget.value)}
-        className="h-12 w-full rounded-[8px] border border-black bg-white px-4 text-sm text-[#222] outline-none transition placeholder:text-[#c9c9c9] focus:border-black [word-spacing:0.3em] focus:bg-white focus:ring-2 focus:ring-black/10 lg:h-[54px] lg:px-[17px] lg:text-[15px]"
+        className="h-12 w-full rounded-[10px] border border-[#8e8e8e] bg-[#fdfdfb] px-4 text-sm text-[#222] outline-none transition placeholder:text-[#b8b8b3] hover:border-[#bfc300] focus:border-[#bfc300] [word-spacing:0.3em] focus:bg-white focus:ring-4 focus:ring-[#d9e35a]/20 lg:h-[48px] lg:px-[12px] lg:text-[13px]"
       />
     </motion.label>
   );
@@ -235,7 +227,7 @@ function SelectField({
         }
       }}
     >
-      <span className="mb-2 block text-xs font-black font-semibold uppercase tracking-[0.16em] text-[#777777] lg:mb-[10px] lg:text-sm">
+      <span className="mb-2 block text-xs font-black font-semibold uppercase tracking-[0.16em] text-[#777777] lg:mb-[6px] lg:text-sm">
         {label}
       </span>
       <input
@@ -249,7 +241,7 @@ function SelectField({
         type="button"
         aria-controls={`${inputId}-menu`}
         aria-expanded={open}
-        className="flex h-12 w-full items-center justify-between rounded-[8px] border border-black bg-white px-4 text-left text-sm text-black outline-none transition duration-200 hover:bg-white focus:border-black focus:bg-white focus:ring-2 focus:ring-black/10 lg:h-[54px] lg:px-[17px] lg:text-[15px]"
+        className="flex h-12 w-full items-center justify-between rounded-[10px] border border-[#8e8e8e] bg-[#fdfdfb] px-4 text-left text-sm text-black outline-none transition duration-200 hover:border-[#bfc300] hover:bg-white focus:border-[#bfc300] focus:bg-white focus:ring-4 focus:ring-[#d9e35a]/20 lg:h-[48px] lg:px-[12px] lg:text-[13px]"
         onClick={() => setOpen((current) => !current)}
         whileHover={{ y: -1 }}
         whileTap={{ scale: 0.99 }}
@@ -266,7 +258,7 @@ function SelectField({
         {open && (
           <motion.div
             id={`${inputId}-menu`}
-            className="absolute left-0 right-0 top-[calc(100%+8px)] z-[999] overflow-hidden rounded-[10px] border border-[#e5e5e5] bg-white shadow-[0_14px_34px_rgba(0,0,0,0.12)]"
+          className="absolute left-0 right-0 top-[calc(100%+8px)] z-[999] overflow-hidden rounded-[12px] border border-[#e5e5e5] bg-white shadow-[0_18px_40px_rgba(0,0,0,0.14)]"
             initial={{ opacity: 0, y: -8, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.98 }}
@@ -389,7 +381,7 @@ function ApplicationForm({
   return (
     <>
       <motion.div
-        className="mt-[22px]"
+          className="mt-[24px]"
         variants={riseVariants}
         role="progressbar"
         aria-label="Application progress"
@@ -401,10 +393,10 @@ function ApplicationForm({
           {[0, 1, 2].map((segment) => (
             <span
               key={segment}
-              className="h-[3px] overflow-hidden bg-[#e5e5e5]"
+                className="h-[4px] overflow-hidden rounded-full bg-[#ecece7]"
             >
               <motion.span
-                className="block h-full origin-left bg-[#d0df00]"
+                className="block h-full origin-left rounded-full bg-[#c8d400]"
                 initial={false}
                 animate={{ scaleX: getSegmentFill(segment) }}
                 transition={{
@@ -418,7 +410,7 @@ function ApplicationForm({
       </motion.div>
 
       <motion.form
-        className="plus-jakarta mt-[24px] grid grid-cols-1 gap-x-[14px] gap-y-[15px] md:grid-cols-2"
+        className="plus-jakarta mt-[22px] grid grid-cols-1 gap-x-[14px] gap-y-[12px] md:grid-cols-2"
         onSubmit={handleSubmit}
         variants={containerVariants}
       >
@@ -478,7 +470,7 @@ function ApplicationForm({
         <motion.button
           type="submit"
           disabled={submitStatus === "submitting"}
-          className="mt-[4px] flex h-12 items-center justify-center gap-2 rounded-[7px] bg-gradient-to-r from-[#C8D400] to-[#F7FF77] text-[11px] font-semibold uppercase tracking-[0.08em] text-black transition disabled:cursor-not-allowed disabled:opacity-70 md:col-span-2 lg:h-[54px] lg:text-[15px] lg:tracking-[0.1em] poppins"
+          className="mt-[3px] flex h-12 items-center justify-center gap-2 rounded-[9px] bg-gradient-to-r from-[#c8d400] to-[#eff66a] text-[11px] font-semibold uppercase tracking-[0.08em] text-black shadow-[0_8px_18px_rgba(190,204,0,0.18)] transition hover:brightness-[0.98] disabled:cursor-not-allowed disabled:opacity-70 md:col-span-2 lg:h-[54px] lg:text-[15px] lg:tracking-[0.1em] poppins"
           variants={riseVariants}
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.98 }}
@@ -577,25 +569,27 @@ const Hero = () => {
 
   return (
     <motion.section
-      className="relative isolate min-h-screen overflow-x-clip bg-white text-[#17171a] lg:bg-white"
+      className="relative isolate min-h-screen overflow-x-clip bg-[#f8f8f6] text-[#17171a]"
       initial={initialState}
       animate="show"
       variants={containerVariants}
     >
       <motion.div
-        className="pointer-events-none absolute right-0 top-0 z-0 hidden h-full w-[50%] rounded-bl-[32px] bg-white lg:block"
+        className="pointer-events-none absolute right-0 top-0 z-0 hidden h-full w-[50%] rounded-bl-[32px] bg-[#f8f8f6] lg:block"
         initial={reduceMotion ? false : { opacity: 0, x: 80 }}
         animate={reduceMotion ? undefined : { opacity: 1, x: 0 }}
         transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
       />
 
+      <AnimatedBookCovers />
+
       <div className="relative z-10 grid min-h-screen w-full grid-cols-1 gap-10 px-4 pb-12 pt-[118px] min-[380px]:px-5 sm:px-8 sm:pt-[145px] lg:grid-cols-2 lg:items-start lg:gap-0 lg:px-0 lg:pb-[62px]">
         <motion.div
-          className="mx-auto mt-10 flex w-full min-w-0 max-w-[660px] flex-col justify-start text-center lg:mx-0 lg:max-w-none lg:pl-8 lg:pr-8 lg:pt-[18px] lg:text-left xl:pl-10 xl:pr-12 2xl:pl-[70px] 2xl:pr-16"
+          className="mx-auto mt-10 flex w-full min-w-0 max-w-[660px] flex-col justify-start text-center lg:mx-0 lg:mt-[23px] lg:max-w-none lg:pl-[75px] lg:pr-0 lg:pt-[18px] lg:text-left xl:pr-0 2xl:pl-[75px] 2xl:pr-16"
           variants={containerVariants}
         >
           <motion.div
-            className="mulish mx-auto mb-3 inline-flex h-[30px] w-fit max-w-full items-center rounded-[8px] bg-[#C8D40021] px-5 text-[18px] font-semibold leading-none tracking-normal text-[#282828] lg:mx-0 py-5"
+            className="mulish mx-auto mb-3 inline-flex h-[42px] w-fit max-w-full items-center rounded-[9px] bg-[#eef1d2] px-7 text-[20px] font-semibold leading-none tracking-normal text-[#282828] lg:mx-0 lg:py-0"
             variants={riseVariants}
             whileHover={{ y: -2, scale: 1.02 }}
           >
@@ -603,34 +597,42 @@ const Hero = () => {
           </motion.div>
 
           <motion.h1
-            className="mx-auto plus-jakarta max-w-[855px] text-[clamp(2rem,9vw,3.25rem)] leading-[1.08] tracking-[-0.04em] font-medium uppercase text-[#151519] md:text-6xl lg:mx-0 lg:text-5xl lg:leading-[1.12] 2xl:text-5xl 2xl:leading-[1.24]"
+            className="mx-auto plus-jakarta max-w-[650px] text-[clamp(2rem,9vw,3.25rem)] leading-[1.08] tracking-[-0.04em] font-medium uppercase text-[#151519] md:text-6xl lg:mx-0 lg:text-5xl lg:leading-[1.12] xl:text-[54px] xl:leading-[1.08] 2xl:text-[54px]"
             variants={riseVariants}
           >
-            We'll Get You Into Every Market
+            WE&apos;LL GET YOU INTO
+            <br className="hidden lg:block" />
+            <span className="relative inline-block">
+              EVERY MARKET
+              <span
+                aria-hidden="true"
+                className="absolute left-0 right-[-10px] top-[58%] h-[3px] -rotate-[3deg] bg-[#c8d400]"
+              />
+            </span>
             {/* <span className="text-[#bdd700]">{platformsCount}+ Platforms</span> */}
           </motion.h1>
 
           <motion.p
-            className="plus-jakarta mx-auto mt-[15px] max-w-[855px] text-sm leading-[1.58] text-black sm:text-base lg:mx-0 xl:text-lg [word-spacing:0.1em]"
+            className="plus-jakarta mx-auto mt-[15px] max-w-[855px] text-sm leading-[1.58] text-black sm:text-base lg:mx-0 lg:leading-[1.9] xl:text-lg [word-spacing:0.1em]"
             variants={riseVariants}
           >
-            “A decade ago, taking a book global meant 6 figures and a 3 year
-            wait. We rebuilt that process from the ground up every market” - INK
-            CEO
+            “A decade ago, taking a book global meant 6 figures and a 3 year wait.
+            <br className="hidden lg:block" /> We rebuilt that process from the
+            ground up every market” - INK CEO
           </motion.p>
 
           <motion.ul
-            className="mx-auto mt-3 max-w-[560px] space-y-[9px] text-left lg:mx-0 lg:max-w-none lg:space-y-[7px]"
+            className="mx-auto mt-6 max-w-[560px] space-y-[16px] text-left lg:mx-0 lg:max-w-none"
             variants={containerVariants}
           >
             {benefits.map((benefit) => (
               <motion.li
                 key={benefit}
-                className="plus-jakarta flex items-start gap-[9px] text-sm font-medium leading-snug text-black sm:text-base xl:text-lg"
+                className="plus-jakarta flex items-start gap-[9px] text-sm font-medium leading-snug text-black sm:text-base xl:text-[17px]"
                 variants={riseVariants}
                 whileHover={{ x: 4 }}
               >
-                <span className="mt-[-1px] flex h-5 w-5 shrink-0 items-center justify-center rounded-[3px] bg-[#cfe000] text-[11px] text-black lg:h-[25px] lg:w-[25px] lg:text-[13px]">
+                <span className="mt-[-1px] flex h-5 w-5 shrink-0 items-center justify-center rounded-[4px] bg-[#cfe000] text-[11px] text-black lg:h-5 lg:w-5 lg:text-[11px]">
                   <GiCheckMark />
                 </span>
                 {benefit}
@@ -639,13 +641,13 @@ const Hero = () => {
           </motion.ul>
 
           <motion.div
-            className="mt-[29px] flex flex-col items-stretch gap-[10px] min-[460px]:flex-row min-[460px]:justify-center lg:justify-start"
+            className="mt-[26px] flex flex-col items-stretch gap-[13px] min-[460px]:flex-row min-[460px]:justify-center lg:justify-start"
             variants={riseVariants}
           >
             <button
               type="button"
               onClick={() => setIsPopupOpen(true)}
-              className="poppins inline-flex h-[45px] min-w-0 items-center justify-center rounded-[6px] bg-gradient-to-r from-[#C8D400] to-[#F7FF77] px-[14px] text-xs font-medium uppercase text-black transition hover:bg-[#c3d300] min-[380px]:text-sm min-[460px]:min-w-[210px] min-[460px]:px-[18px] gap-1"
+              className="poppins inline-flex h-[45px] min-w-0 items-center justify-center rounded-[6px] bg-gradient-to-r from-[#C8D400] to-[#F7FF77] px-[14px] text-xs font-medium uppercase text-black transition hover:bg-[#c3d300] min-[380px]:text-sm min-[460px]:min-w-[210px] min-[460px]:px-[18px] gap-1 lg:h-[53px] lg:min-w-[234px]"
             >
               APPLY NOW - FREE <GoArrowUpRight size={22} />
             </button>
@@ -665,7 +667,7 @@ const Hero = () => {
           /> */}
 
           <motion.div
-            className="mt-[50px] flex flex-col items-center gap-3 min-[460px]:flex-row min-[460px]:justify-center lg:justify-start"
+            className="mt-[34px] flex flex-col items-center gap-3 min-[460px]:flex-row min-[460px]:justify-center lg:justify-start"
             variants={riseVariants}
           >
             {/* <div className="flex -space-x-[5px]">
@@ -687,15 +689,18 @@ const Hero = () => {
               <div className="text-[#777]">Real authors. Real results.</div>
             </div> */}
 
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-6">
+              <div className="flex flex-col items-start">
               <Image
                 src="/Home/trustpilot-logo-1024x443.webp"
                 width={180}
                 height={78}
-                className="h-auto w-[180px] object-contain"
+                className="h-auto w-[145px] object-contain"
                 alt="Trustpilot"
               />
+              </div>
 
+              <div className="flex flex-col items-start">
               <Image
                 src="/landing-page/pngwing.com (3) 1.png"
                 width={154}
@@ -703,24 +708,21 @@ const Hero = () => {
                 className="h-auto w-[154px] object-contain"
                 alt="Reviews.io"
               />
+              </div>
             </div>
           </motion.div>
         </motion.div>
 
         <motion.div
-          className="relative flex w-full min-w-0 items-start justify-center overflow-hidden bg-white lg:self-stretch lg:justify-center lg:px-8 lg:pt-[3px] xl:px-10 2xl:px-[70px]"
+          className="relative flex w-full min-w-0 items-start justify-start bg-transparent lg:self-stretch lg:justify-start lg:px-8 lg:pt-[3px] xl:pl-3 xl:pr-0 2xl:px-[70px]"
           variants={containerVariants}
         >
-          <AnimatedBookCovers />
-
-
-          
           <motion.div
-            className="relative z-10 w-full min-w-0 max-w-[720px] rounded-[18px] border border-[#ececec] border-t-[4px] border-t-[#cddf00] bg-white px-4 pb-6 pt-5 shadow-[0_18px_45px_rgba(0,0,0,0.11)] min-[380px]:px-5 sm:px-6 sm:pb-8 sm:pt-7 lg:max-w-[620px] lg:px-5 lg:pb-7 lg:pt-6 xl:max-w-[720px] xl:px-7 xl:pb-8 xl:pt-7 2xl:max-w-[870px] 2xl:px-[34px] 2xl:pb-[36px] 2xl:pt-[30px]"
+            className="relative z-10 w-full min-w-0 max-w-[720px] rounded-[20px] border border-[#e8e8e3] border-t-[3px] border-t-[#cddf00] bg-white px-4 pb-6 pt-5 shadow-[0_22px_55px_rgba(0,0,0,0.09)] min-[380px]:px-5 sm:px-6 sm:pb-8 sm:pt-7 lg:max-w-[620px] lg:px-5 lg:pb-7 lg:pt-6 xl:max-w-[632px] xl:px-6 xl:pb-8 xl:pt-7 2xl:max-w-[870px] 2xl:px-[34px] 2xl:pb-[36px] 2xl:pt-[30px]"
             variants={formVariants}
           >
             <motion.div
-              className="flex poppins  min-h-[44px] flex-wrap items-center rounded-[7px] border border-[#e8c45a] bg-[#fffdf5] px-3 py-2 text-[11px] font-semibold leading-tight text-[#a57100] sm:px-4 sm:text-sm lg:px-3 xl:flex-nowrap xl:px-[16px] 2xl:h-[44px] 2xl:py-0"
+              className="flex min-h-[39px] flex-wrap items-center rounded-[7px] border border-[#ead28a] bg-[#fffdf5] px-3 py-2 text-[11px] font-semibold leading-tight text-[#8d6800] sm:px-4 sm:text-sm lg:px-3 xl:flex-nowrap xl:px-[16px] xl:py-0 2xl:h-[44px]"
               variants={riseVariants}
             >
               <span className="mr-[10px] text-[18px] text-[#7A5A00]">🔥</span>
@@ -730,9 +732,9 @@ const Hero = () => {
               </span>
             </motion.div>
 
-            <motion.div className="mt-5 lg:mt-[22px]" variants={riseVariants}>
-              <h2 className="plus-jakarta text-3xl font-semibold leading-none tracking-[-0.04em] text-[#151515] sm:text-4xl lg:text-3xl xl:text-4xl">
-                Apply Now
+            <motion.div className="mt-5 lg:mt-[22px] xl:mt-[32px]" variants={riseVariants}>
+              <h2 className="plus-jakarta text-3xl font-semibold leading-none tracking-[-0.04em] text-[#151515] sm:text-4xl lg:text-3xl xl:text-[34px]">
+                APPLY NOW
               </h2>
               <p className="mt-[10px] text-sm text-[#777777] sm:text-base lg:text-sm xl:text-base [word-spacing:-0.2em]">
                 Takes 60 seconds - Free - No obligation
@@ -742,7 +744,7 @@ const Hero = () => {
             <ApplicationForm buttonLabel="Apply Now - It's Free" />
 
             <motion.div
-              className="my-[20px] flex items-center gap-[10px]"
+              className="my-[19px] flex items-center gap-[10px]"
               variants={riseVariants}
             >
               <span className="h-px flex-1 bg-[#787878]" />
@@ -757,7 +759,7 @@ const Hero = () => {
             >
               <Link
                 href="https://wa.me/17864961231"
-                className="flex h-12 items-center justify-center rounded-[6px] border border-[#9ce9bd] px-3 text-sm font-semibold text-[#00a13a] transition hover:bg-[#f4fff8] sm:text-base"
+              className="flex h-12 items-center justify-center rounded-[9px] border border-[#a9e5c3] bg-[#fcfffd] px-3 text-sm font-semibold text-[#00a13a] transition hover:bg-[#f2fff7] sm:text-base"
               >
                 <FaWhatsapp className="mr-[7px] text-xl sm:text-2xl" />
                 Chat on WhatsApp Now
@@ -765,7 +767,7 @@ const Hero = () => {
             </motion.div>
 
             <motion.div
-              className="mt-[14px] flex items-center justify-center text-center text-xs text-black sm:text-sm"
+              className="mt-[21px] flex items-center justify-center text-center text-xs text-black sm:text-sm"
               variants={riseVariants}
             >
               <FaLock className="mr-[5px] text-sm text-[#787878]" />
@@ -777,6 +779,11 @@ const Hero = () => {
 
         </motion.div>
       </div>
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[64px] bg-gradient-to-t from-white via-white/70 to-transparent"
+      />
 
       <AnimatePresence>
         {isPopupOpen && (
@@ -813,7 +820,7 @@ const Hero = () => {
                 &times;
               </button>
 
-              <motion.div
+              {/* <motion.div
                 className="flex min-h-[44px] flex-wrap items-center rounded-[7px] border border-[#e8c45a] bg-[#fffdf5] px-3 py-2 pr-12 text-[11px] font-semibold leading-tight text-[#a57100] sm:px-4 sm:text-sm lg:px-3 xl:flex-nowrap xl:px-[16px] xl:pr-[56px] 2xl:h-[44px] 2xl:py-0"
                 variants={riseVariants}
               >
@@ -822,7 +829,7 @@ const Hero = () => {
                 <span className="ml-[3px] text-[#7A5A00]">
                   free consultation spots left this week
                 </span>
-              </motion.div>
+              </motion.div> */}
 
               <motion.div className="mt-5 lg:mt-[22px]" variants={riseVariants}>
                 <h2

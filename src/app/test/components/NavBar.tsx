@@ -12,7 +12,11 @@ const Navbar = () => {
   };
 
   return (
-    <section className="absolute left-0 top-0 z-30 flex w-full min-h-[76px] items-start bg-transparent px-5 py-5 sm:px-8 lg:h-[120px] lg:px-[70px] lg:py-[9px]">
+    <section className="absolute left-0 top-0 z-30 flex w-full min-h-[76px] items-start bg-transparent px-5 py-5 sm:px-8 lg:h-[120px] lg:px-[75px] lg:py-[9px]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[64px] bg-gradient-to-b from-white via-white/70 to-transparent"
+      />
       {/* <video
         width="3300"
         height="1500"
@@ -26,22 +30,22 @@ const Navbar = () => {
         Your browser does not support the video tag.
       </video> */}
 
-      <div className="flex flex-col">
+      <div className="relative z-10 flex flex-col lg:pt-[20px]">
         <Image
           src="/logovideo/0429 1.gif"
           alt="Ink Founders Logo"
           width="3300"
           height="1500"
-          className="h-auto w-[96px] shrink-0 sm:w-[130px] lg:w-[166px] lg:-ml-4 brightness-110"
+          className="h-auto w-[96px] shrink-0 sm:w-[130px] lg:ml-0 lg:w-[140px] brightness-110"
         />
         <p className="uppercase text-black text-xs font-semibold">your trusted publishing partner</p>
       </div>
 
-      <div className="ml-auto flex min-w-0 items-center gap-2 sm:gap-3 lg:absolute lg:right-[50px] lg:top-[37px] lg:ml-0 lg:translate-y-0">
+      <div className="relative z-10 ml-auto flex min-w-0 items-center gap-2 sm:gap-3 lg:absolute lg:right-[76px] lg:top-[36px] lg:ml-0 lg:gap-8 lg:translate-y-0">
         <Link
           href="tel:+17864961231"
           aria-label="Call Ink Founders"
-          className="bg-gradient-to-r from-[#C8D400] to-[#F7FF77] flex h-10 min-w-10 shrink-0 items-center justify-center rounded-[8px] px-3 text-sm text-[#1f1f1f] transition-all duration-300 hover:border-black sm:gap-2 sm:px-4 lg:h-[42px] lg:min-w-[182px] lg:px-5 lg:text-[14px]"
+          className="bg-gradient-to-r from-[#C8D400] to-[#F7FF77] flex h-10 min-w-10 shrink-0 items-center justify-center rounded-[8px] px-3 text-sm text-[#1f1f1f] transition-all duration-300 hover:border-black sm:gap-2 sm:px-4 lg:h-[53px] lg:min-w-[212px] lg:px-5 lg:text-[14px]"
         >
           <MdLocalPhone className="relative z-10 text-xl lg:text-[18px]" />
           <span className="relative poppins z-10 hidden whitespace-nowrap font-medium tracking-[0.02em] md:inline">
@@ -52,7 +56,7 @@ const Navbar = () => {
         <button
           type="button"
           onClick={handleQuoteClick}
-          className="bg-gradient-to-r from-[#C8D400] to-[#F7FF77] flex h-10 min-w-0 max-w-[150px] items-center justify-center rounded-[8px] px-4 text-[12px] font-medium text-black transition-all duration-300 hover:border-black sm:max-w-none sm:px-5 lg:h-[42px] lg:min-w-[156px] lg:px-6 lg:text-[14px]"
+          className="bg-gradient-to-r from-[#C8D400] to-[#F7FF77] flex h-10 min-w-0 max-w-[150px] items-center justify-center rounded-[8px] px-4 text-[12px] font-medium text-black transition-all duration-300 hover:border-black sm:max-w-none sm:px-5 lg:h-[53px] lg:min-w-[224px] lg:px-6 lg:text-[14px]"
         >
           <span className="flex items-center relative z-10 gap-1 poppins uppercase truncate font-medium tracking-[0.02em]">
             Request a Quote<GoArrowUpRight size={20} />
