@@ -1,6 +1,70 @@
 @import "tailwindcss";
 
 @font-face {
+  font-family: "Mulish";
+  src: url("/fonts/Mulish/Mulish-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 200 1000;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mulish";
+  src: url("/fonts/Mulish/Mulish-Italic-VariableFont_wght.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 200 1000;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Poppins-ExtraBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+.mulish {
+  font-family: "Mulish", sans-serif;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+@font-face {
   font-family: "Plus Jakarta Sans";
   src: url("/fonts/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf")
     format("truetype");

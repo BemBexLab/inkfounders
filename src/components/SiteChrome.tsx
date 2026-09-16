@@ -14,7 +14,9 @@ export default function SiteChrome({
     pathname === "/bookpublishing" ||
     pathname.startsWith("/bookpublishing/") ||
     pathname === "/book-publishing" ||
-    pathname.startsWith("/book-publishing/");
+    pathname.startsWith("/book-publishing/") ||
+    pathname === "/test" ||
+    pathname.startsWith("/test/");
 
   if (hideChrome) {
     return children;
