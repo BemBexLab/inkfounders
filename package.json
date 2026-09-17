@@ -12,6 +12,8 @@
   "dependencies": {
     "@prisma/client": "^6.10.1",
     "aos": "^2.3.4",
+    "country-flag-icons": "^1.6.20",
+    "libphonenumber-js": "^1.13.13",
     "lucide-react": "^0.511.0",
     "motion": "^12.34.0",
     "next": "^16.1.5",
