@@ -1,6 +1,7 @@
 "use client";
 
 import { robotoMono } from "@/app/fonts";
+import { motion, Variants } from "motion/react";
 import Image from "next/image";
 import React from "react";
 import { ImQuotesLeft } from "react-icons/im";
@@ -89,6 +90,16 @@ const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
+const fadeUpVariants: Variants = {
+  hidden: { opacity: 0, y: 28, filter: "blur(10px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.72, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
 const getAvatarLetters = (name: string) =>
   name
     .replace(/[^a-zA-Z]/g, "")
@@ -101,11 +112,18 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="w-full overflow-hidden bg-white py-8">
+    <section className="w-full overflow-hidden bg-white py-20">
       <div className="mx-auto flex w-full flex-col items-center px-4 sm:px-6 lg:px-5">
-        <p className="mb-2 text-base font-semibold text-black sm:text-lg lg:text-xl">Testimonials</p>
-        <h2 className="mb-6 max-w-4xl text-center text-[28px] font-semibold leading-tight text-[#DADD39] sm:text-[34px] lg:mb-4 lg:text-[35px] lg:leading-[0.9]">
-            Read Testimonials From Our Happy Customers
+        <motion.p
+              className="mb-6 font-semibold text-black"
+              variants={fadeUpVariants}
+            >
+              <span className=" rounded-[10px] bg-[#C8D400]/13 px-[26px] py-[7px] text-lg font-bold leading-[22px] text-[#282828]">
+                Testimonials
+              </span>
+            </motion.p>
+        <h2 className="plus-jakarta mb-6 max-w-5xl text-center text-[28px] font-medium leading-tight text-black sm:text-[34px] lg:mb-8 lg:text-5xl lg:leading-[0.9]">
+            Read testimonials from our happy customers
         </h2>
 
         <div className="testimonial-landing-marquee relative w-screen overflow-hidden">
@@ -119,7 +137,7 @@ const Testimonials = () => {
                 {TESTIMONIALS.map((testimonial) => (
                   <article
                     key={`${groupIndex}-${testimonial.id}`}
-                    className="flex min-h-[300px] w-[350px] shrink-0 cursor-pointer flex-col rounded-xl border border-[#ece9df] bg-[#F4F3E1] px-5 pb-5 pt-5 leading-tight shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-shadow duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] focus:outline-none focus:ring-2 focus:ring-[#d9dc2d] focus:ring-offset-2 sm:min-h-[320px] sm:w-[390px] sm:px-6 sm:pb-6 md:min-h-[300px] md:w-[400px] md:px-7 md:pb-7 md:pt-6 lg:min-h-[340px] lg:w-[440px]"
+                    className="flex min-h-[300px] w-[350px] shrink-0 cursor-pointer flex-col rounded-xl border border-[#ece9df] px-5 pb-5 pt-5 leading-tight shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-shadow duration-300 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] focus:outline-none focus:ring-2 focus:ring-[#d9dc2d] focus:ring-offset-2 sm:min-h-[320px] sm:w-[390px] sm:px-6 sm:pb-6 md:min-h-[300px] md:w-[400px] md:px-7 md:pb-7 md:pt-6 lg:min-h-[340px] lg:w-[440px]"
                     onClick={handleTestimonialClick}
                     onKeyDown={(event) => {
                       if (event.key === "Enter" || event.key === " ") {
@@ -131,12 +149,12 @@ const Testimonials = () => {
                     tabIndex={0}
                     aria-label={`Read ${testimonial.name}'s full review on Trustpilot`}
                   >
-                    <div className="mb-5 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#e1df2d] text-[34px] font-semibold leading-none text-[#1f1d1b] sm:mb-6 sm:h-16 sm:w-16 sm:text-[38px]">
+                    <div className="mb-5 flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#C8D400] to-[#F7FF77] text-[34px] font-semibold leading-none text-[#1f1d1b] sm:mb-6 sm:h-16 sm:w-16 sm:text-[38px]">
                       <ImQuotesLeft size={30} />
                     </div>
 
                     <p
-                      className={`${robotoMono.className} mb-6 text-[13px] leading-relaxed text-[#2c2a28] sm:text-[14px] md:text-[15px] lg:mb-7 lg:leading-loose`}
+                      className={`poppins mb-6 text-[13px] leading-relaxed text-[#2c2a28] sm:text-[14px] md:text-[15px] lg:mb-7 lg:leading-loose`}
                     >
                       {testimonial.quote}{" "}
                       <span className="font-semibold underline underline-offset-2">
