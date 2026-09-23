@@ -5,6 +5,13 @@ import SiteChrome from "@/components/SiteChrome";
 import { workSans } from "./fonts";
 import { GLOBAL_SCHEMA, SITE_URL, SOCIAL_IMAGE_URL } from "@/lib/seo";
 
+const tawkPropertyId = process.env.PROPERTY_ID?.trim();
+const tawkWidgetId = process.env.WIDGET_ID?.trim();
+const tawkWidgetUrl =
+  tawkPropertyId && tawkWidgetId
+    ? `https://embed.tawk.to/${tawkPropertyId}/${tawkWidgetId}`
+    : undefined;
+
 // Keep the project statically rendered by default. The WordPress post detail
 // route opts out of this in src/app/blog/[slug]/page.tsx.
 export const dynamic = "force-static";
@@ -120,6 +127,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             alt=""
           />
         </noscript>
+
+        {tawkWidgetUrl && (
+          <Script
+            id="tawk-to"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.Tawk_API = window.Tawk_API || {};
+                window.Tawk_LoadStart = new Date();
+                (function () {
+                  var s1 = document.createElement("script");
+                  var s0 = document.getElementsByTagName("script")[0];
+                  s1.async = true;
+                  s1.src = ${JSON.stringify(tawkWidgetUrl)};
+                  s1.charset = "UTF-8";
+                  s1.setAttribute("crossorigin", "*");
+                  s0.parentNode.insertBefore(s1, s0);
+                })();
+              `,
+            }}
+          />
+        )}
+
         <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
