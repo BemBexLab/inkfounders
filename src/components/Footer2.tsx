@@ -313,8 +313,8 @@ const Footer: React.FC = () => {
                 Contact Us
               </h4>
               <ul className="m-0 max-w-[420px] list-none p-0 text-[14px] lg:max-w-none">
-                {footerContactItems.map(({ icon, lines, href }) => (
-                  <li key={href} className="mb-3 flex items-start gap-[10px]">
+                {footerContactItems.map(({ icon, lines, href }, itemIndex) => (
+                  <li key={`footer-contact-${itemIndex}`} className="mb-3 flex items-start gap-[10px]">
                     <span className="mt-[2px] shrink-0">{icon}</span>
                     <Link
                       href={href}

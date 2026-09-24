@@ -19,6 +19,24 @@ function getRequiredText(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
 }
 
+function isValidEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+function escapeHtml(value: string) {
+  return value.replace(
+    /[&<>'\"]/g,
+    (character) =>
+      ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "'": "&#39;",
+        '"': "&quot;",
+      })[character] ?? character,
+  );
+}
+
 function createTransporter() {
   const host = process.env.SMTP_HOST;
   const port = Number(process.env.SMTP_PORT || 465);
@@ -47,14 +65,22 @@ export async function POST(req: NextRequest) {
   try {
     const body = (await req.json()) as SubmissionPayload;
     const firstName = getRequiredText(body.firstName);
-    const lastName = getRequiredText(body.lastName);
-    const email = getRequiredText(body.email);
-    const phone = getRequiredText(body.phone);
+    const lastName = getRequiredText(body.lastName) || "Not provided";
+    const emailAddress = getRequiredText(body.email);
+    const email = emailAddress || "Not provided";
+    const phone = getRequiredText(body.phone) || "Not provided";
     const message = getRequiredText(body.message);
 
-    if (!firstName || !lastName || !email || !phone || !message) {
+    if (!firstName || (!emailAddress && phone === "Not provided") || !message) {
       return NextResponse.json(
-        { error: "All fields are required." },
+        { error: "Name, message, and either email or phone are required." },
+        { status: 400 },
+      );
+    }
+
+    if (emailAddress && !isValidEmail(emailAddress)) {
+      return NextResponse.json(
+        { error: "Please provide a valid email address." },
         { status: 400 },
       );
     }
@@ -81,39 +107,56 @@ export async function POST(req: NextRequest) {
       console.error("Submit route database error:", databaseError);
     }
 
-    let emailSent = false;
-
     try {
       const transporter = createTransporter();
       const emailTo = process.env.EMAIL_TO || process.env.SMTP_USER;
 
-      if (transporter && emailTo) {
-        await transporter.sendMail({
-          from: `"Website Contact" <${process.env.SMTP_USER}>`,
-          to: emailTo,
-          subject: "New Contact Form Submission",
-          html: `
+      if (!transporter || !emailTo || !process.env.SMTP_USER) {
+        console.error("Submit route: SMTP configuration is incomplete.");
+        return NextResponse.json(
+          { error: "Email service is not configured. Please try again later." },
+          { status: 503 },
+        );
+      }
+
+      await transporter.sendMail({
+        from: `"Website Contact" <${process.env.SMTP_USER}>`,
+        to: emailTo,
+        ...(emailAddress ? { replyTo: emailAddress } : {}),
+        subject: "New Contact Form Submission",
+        text: [
+          "New Message from Ink Founders Contact Form",
+          `Name: ${firstName} ${lastName}`,
+          `Email: ${email}`,
+          `Phone: ${phone}`,
+          "",
+          message,
+          "",
+          `Submission ID: ${submission?.id ?? "Not saved"}`,
+          `Submitted At: ${(submission?.createdAt ?? new Date()).toISOString()}`,
+        ].join("\n"),
+        html: `
             <h2>New Message from Ink Founders Contact Form</h2>
-            <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Phone:</strong> ${phone}</p>
-            <p><strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}</p>
+            <p><strong>Name:</strong> ${escapeHtml(firstName)} ${escapeHtml(lastName)}</p>
+            <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+            <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
+            <p><strong>Message:</strong><br>${escapeHtml(message).replace(/\n/g, "<br>")}</p>
             <hr />
-            <p><strong>Submission ID:</strong> ${submission?.id ?? "Not saved"}</p>
+            <p><strong>Submission ID:</strong> ${escapeHtml(String(submission?.id ?? "Not saved"))}</p>
             <p><strong>Submitted At:</strong> ${(submission?.createdAt ?? new Date()).toISOString()}</p>
           `,
-        });
-        emailSent = true;
-      } else {
-        console.warn("Submit route: SMTP configuration is incomplete, skipping email.");
-      }
+      });
     } catch (emailError) {
       console.error("Submit route email error:", emailError);
+      return NextResponse.json(
+        { error: "Failed to send your message. Please try again." },
+        { status: 502 },
+      );
     }
 
     return NextResponse.json({
       success: true,
-      emailSent,
+      emailSent: true,
       submissionId: submission?.id ?? null,
     });
   } catch (error) {
