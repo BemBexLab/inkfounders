@@ -17,6 +17,8 @@ export default function SiteChrome({
     pathname.startsWith("/book-publishing/") ||
     pathname === "/test" ||
     pathname.startsWith("/test/");
+  const hideFooter =
+    pathname === "/global-premium" || pathname.startsWith("/global-premium/");
 
   if (hideChrome) {
     return children;
@@ -26,7 +28,7 @@ export default function SiteChrome({
     <>
       <Header />
       <div className="pt-[4.25rem] xl:pt-20">{children}</div>
-      <Footer />
+      {!hideFooter && <Footer />}
     </>
   );
 }
