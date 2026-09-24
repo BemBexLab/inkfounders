@@ -291,7 +291,7 @@ export default function GetInTouch({ data }: GetInTouchProps) {
             {content.left.contacts.map((contact) => (
               <div
                 key={`${contact.type}-${contact.label}`}
-                className="flex items-start gap-3 justify-center sm:gap-4 lg:justify-start"
+                className="flex gap-3 justify-center items-center sm:gap-4 lg:justify-start"
               >
                 <div className="flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-[10px] bg-gradient-to-r from-[#C8D400] to-[#F7FF77] sm:h-[46px] sm:w-[46px] sm:rounded-[12px]">
                   {renderContactIcon(contact.type)}

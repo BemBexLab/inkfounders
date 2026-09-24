@@ -306,12 +306,12 @@ function ProposalForm({ onSuccess }: { onSuccess: () => void }) {
         </div>
       </div>
 
-      <label className="mt-4 flex items-start gap-2 text-[11px] leading-5 text-[#70736a] sm:mt-5 sm:text-[12px]">
+      <label className="mt-4 flex items-center gap-2 text-[11px] leading-5 text-[#70736a] sm:mt-5 sm:text-[12px]">
         <input
           type="checkbox"
           name="smsConsent"
           required
-          className="mt-[3px] h-4 w-4 shrink-0 accent-[#c8d900] sm:h-5 sm:w-5"
+          className="h-4 w-4 shrink-0 accent-[#c8d900] sm:h-5 sm:w-5"
         />
         <span>
           I consent to the{" "}
