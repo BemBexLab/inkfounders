@@ -142,7 +142,7 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
                     href="tel:+17864961231"
                     className={`text-[14px] ${robotoMono.className} text-[#333333] hover:underline focus:outline-none`}
                   >
-                    +1(786)524-4161
+                    +1 (786) 496-1231
                   </a>
               </div>
 
@@ -186,9 +186,9 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
                     />
                   </svg>
                 </div>
-                <a href="https://maps.app.goo.gl/mibAgwMcMGF8A8ig7" className={`${robotoMono.className} max-w-[320px] text-left text-[14px] text-[#333333] hover:underline`}>
+                <p className={`${robotoMono.className} max-w-[320px] text-left text-[14px] text-[#333333]`}>
                   1221 Brickell Ave, Miami, FL 33131, United States
-                </a>
+                </p>
               </div>
             </div>
           </div>

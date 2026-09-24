@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const footerContactItems = [
   {
-    href: "https://maps.app.goo.gl/mibAgwMcMGF8A8ig7",
+    href: "",
     icon: (
       <svg
         width="14"
@@ -24,7 +24,7 @@ const footerContactItems = [
     lines: [<React.Fragment key="usa-office-address"><b>USA-Office:</b> 1221 Brickell Ave,<br /> Miami, FL 33131, United States</React.Fragment>],
   },
   {
-    href: "https://maps.app.goo.gl/1daMut5pZ3NQTTNg7",
+    href: "",
     icon: (
       <svg
         width="14"
