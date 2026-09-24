@@ -202,6 +202,10 @@ export default function PublishingSteps() {
               <div className="mt-6 sm:mt-7 lg:mt-[25px]">
                 <Link
                   href={currentStep.button.href}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    window.dispatchEvent(new Event("open-quote-popup"));
+                  }}
                   className="plus-jakarta inline-flex min-h-[44px] min-w-[130px] items-center justify-center rounded-[10px] bg-gradient-to-r from-[#C8D400] to-[#F7FF77] px-5 text-base font-medium text-black transition-transform duration-200 hover:scale-[1.02] sm:min-h-[48px] sm:min-w-[144px] sm:px-6 sm:text-lg"
                 >
                   {currentStep.button.label}

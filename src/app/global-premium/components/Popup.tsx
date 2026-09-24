@@ -2,7 +2,7 @@
 
 import { IoIosArrowDown } from "react-icons/io";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import type { Variants } from "motion/react";
 import * as FlagIcons from "country-flag-icons/react/3x2";
@@ -147,12 +147,13 @@ function ProposalForm({ onSuccess }: { onSuccess: () => void }) {
     event.preventDefault();
     setSubmitStatus("submitting");
     setStatusMessage("");
+    const form = event.currentTarget;
 
     try {
-      await submitApplication(new FormData(event.currentTarget));
+      await submitApplication(new FormData(form));
       setSubmitStatus("success");
       setStatusMessage("Thanks. Your request has been sent.");
-      event.currentTarget.reset();
+      form.reset();
       setSelectedCountry(defaultProposalCountry);
       setIsCountryMenuOpen(false);
       setCountrySearch("");
@@ -347,6 +348,19 @@ function ProposalForm({ onSuccess }: { onSuccess: () => void }) {
 }
 
 export default function Popup({ isOpen, onClose, reduceMotion }: PopupProps) {
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isOpen]);
+
   return (
     <AnimatePresence>
       {isOpen && (
