@@ -27,7 +27,6 @@ export default function RangeOfPublishing() {
         width={440}
         height={740}
 	        className="h-auto w-[min(82vw,340px)] lg:w-[440px]"
-        priority
       />
     </div>
   </div>

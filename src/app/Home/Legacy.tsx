@@ -35,7 +35,6 @@ export default function Lagacy() {
             width={540}
             height={740}
             className="h-auto w-[min(78vw,340px)] transform transition-transform duration-300 hover:scale-105 lg:w-[540px] lg:hover:translate-x-2 lg:hover:translate-y-2 lg:hover:rotate-3"
-            priority
           />
         </div>
       </div>

@@ -26,7 +26,6 @@ export default function Footer() {
                   width={180}
                   height={90}
                   className="mb-4"
-                  priority
                 />
               </div>
               <p

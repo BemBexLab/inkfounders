@@ -14,7 +14,6 @@ export default function TheMind() {
               fill
               sizes="(max-width: 1024px) 260px, (max-width: 1280px) 320px, 340px"
               className="object-contain"
-              priority
             />
           </div>
         </div>

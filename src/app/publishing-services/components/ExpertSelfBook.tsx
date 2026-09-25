@@ -33,7 +33,6 @@ export default function ExportSelfBook() {
         width={440}
         height={440}
 	        className="h-auto w-[min(78vw,340px)] transform transition-transform duration-300 hover:scale-105 lg:w-[min(32vw,340px)] xl:w-[440px] lg:hover:translate-x-2 lg:hover:translate-y-2 lg:hover:rotate-3"
-        priority
       />
     </div>
   </div>

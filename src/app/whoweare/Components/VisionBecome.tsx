@@ -8,12 +8,11 @@ export default function VisionBecome() {
         {/* Book Cover */}
         <div className="flex w-full flex-shrink-0 justify-center lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:w-auto">
           <Image
-            src="/whoweare/Group 33.svg"
+            src="/whoweare/Group 33.webp"
             alt="Book Cover"
             width={540}
             height={540}
             className="h-auto w-full max-w-[360px] transform transition-transform hover:scale-105 hover:translate-x-2 hover:translate-y-2 hover:rotate-3 sm:max-w-[440px] lg:max-w-[540px]"
-            priority
           />
         </div>
 

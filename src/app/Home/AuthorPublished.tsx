@@ -10,12 +10,11 @@ export default function AuthorsPublishedSection() {
         </h2>
 
         <Image
-          src="/Home/Allison 3.svg"
+          src="/Home/Allison 3.webp"
           alt="Book Cover"
           width={330}
           height={540}
           className="mb-7 h-auto w-[min(72vw,300px)] transition-transform duration-300 hover:scale-105"
-          priority
         />
 
         <div
@@ -35,12 +34,11 @@ export default function AuthorsPublishedSection() {
         {/* Book Cover */}
         <div className="flex-shrink-0">
           <Image
-            src="/Home/Allison 3.svg"
+            src="/Home/Allison 3.webp"
             alt="Book Cover"
             width={330}
             height={540}
             className="transition-transform transform hover:scale-105 hover:translate-x-2 hover:translate-y-2 hover:rotate-3"
-            priority
           />
         </div>
         {/* Content */}

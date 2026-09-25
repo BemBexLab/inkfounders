@@ -21,6 +21,19 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async headers() {
+    return [
+      {
+        source: "/:path*\\.(webp|avif|png|jpg|jpeg|gif|svg|ico|woff2)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
+  },
   images: {
     // Serve local assets directly; the deployed image optimizer is returning 402s.
     unoptimized: true,

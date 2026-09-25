@@ -48,7 +48,6 @@ export default function OurMission() {
             height={1680}
             sizes="(min-width: 1024px) 450px, min(100vw, 420px)"
             className="h-auto w-full max-w-[340px] rounded-lg object-contain sm:max-w-[420px] lg:max-w-[450px]"
-            priority
           />
         </div>
       </div>

@@ -94,7 +94,6 @@ export default function PartnersSection() {
           width={logo.width}
           height={logo.height}
           className="h-[36px] md:h-[54px] w-auto object-contain"
-          priority
         />
       </div>
     ))}
