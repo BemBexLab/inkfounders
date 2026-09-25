@@ -190,7 +190,7 @@ export default function InkFoundersComparison() {
                 }}
               >
                 <Image
-                  src="/landing-page/inkfounder logo-19 1.svg"
+                  src="/landing-page/inkfounder logo-19 1.webp"
                   alt="Ink Founders logo"
                   width={192}
                   height={87}

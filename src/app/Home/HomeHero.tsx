@@ -26,17 +26,17 @@ type TrustBadge = {
 };
 
 const bookImages = [
-  "/Home/1 8638289.svg",
-  "/Home/2 9303.svg",
-  "/Home/3 422784.svg",
-  "/Home/4 238103.svg",
-  "/Home/5 1.svg",
-  "/Home/6 1.svg",
-  "/Home/7 151655.svg",
-  "/Home/8 914122.svg",
-  "/Home/9 23800.svg",
-  "/Home/10 439780.svg",
-  "/Home/11 4543.svg"
+  "/Home/1 8638289.webp",
+  "/Home/2 9303.webp",
+  "/Home/3 422784.webp",
+  "/Home/4 238103.webp",
+  "/Home/5 1.webp",
+  "/Home/6 1.webp",
+  "/Home/7 151655.webp",
+  "/Home/8 914122.webp",
+  "/Home/9 23800.webp",
+  "/Home/10 439780.webp",
+  "/Home/11 4543.webp"
 ];
 
 const trustBadges: TrustBadge[] = [

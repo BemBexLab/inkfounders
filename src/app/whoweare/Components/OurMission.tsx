@@ -42,10 +42,11 @@ export default function OurMission() {
         {/* Right: Single Book Covers Image */}
         <div className="mt-4 flex w-full items-start justify-center lg:mt-0">
           <Image
-            src="/whoweare/Group 427320858.svg" // <-- your single image path
+            src="/whoweare/Group 427320859.webp"
             alt="Book Covers"
-            width={450} // set this to your image’s actual width
-            height={450} // set this to your image’s actual height
+            width={1164}
+            height={1680}
+            sizes="(min-width: 1024px) 450px, min(100vw, 420px)"
             className="h-auto w-full max-w-[340px] rounded-lg object-contain sm:max-w-[420px] lg:max-w-[450px]"
             priority
           />

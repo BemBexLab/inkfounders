@@ -209,11 +209,11 @@ const steps: Step[] = [
 ];
 
 const stepIcons = [
-  "/landing-page/image 57.svg",
-  "/landing-page/image 58.svg",
-  "/landing-page/image 59.svg",
-  "/landing-page/image 60.svg",
-  "/landing-page/image 61.svg",
+  "/landing-page/image 57.webp",
+  "/landing-page/image 58.webp",
+  "/landing-page/image 59.webp",
+  "/landing-page/image 60.webp",
+  "/landing-page/image 61.webp",
 ];
 
 const sectionIntro: Variants = {

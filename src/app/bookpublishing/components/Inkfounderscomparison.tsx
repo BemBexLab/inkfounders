@@ -157,7 +157,7 @@ export default function InkFoundersComparison() {
                 transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
               >
                 <Image
-                  src="/landing-page/inkfounder logo-19 1.svg"
+                  src="/landing-page/inkfounder logo-19 1.webp"
                   alt="Ink Founders logo"
                   width={192}
                   height={87}
