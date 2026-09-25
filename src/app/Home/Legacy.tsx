@@ -30,7 +30,7 @@ export default function Lagacy() {
         {/* Book Cover */}
         <div className="order-2 flex w-full flex-shrink-0 justify-center lg:order-none lg:w-auto">
           <Image
-            src="/Home/updatedImages/Leonard - 2 1.webp"
+            src="/Home/Leonard - 2 1.svg"
             alt="Book Cover"
             width={540}
             height={740}

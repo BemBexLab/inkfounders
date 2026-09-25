@@ -22,7 +22,7 @@ export default function RangeOfPublishing() {
     {/* Book Cover */}
 	    <div className="order-2 flex w-full flex-shrink-0 justify-center lg:order-none lg:w-auto">
       <Image
-        src="/Service/image 95.webp"
+        src="/publishingservices/Frame 2147225831 (1).svg"
         alt="Book Cover"
         width={440}
         height={740}

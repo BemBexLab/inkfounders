@@ -26,10 +26,17 @@ type TrustBadge = {
 };
 
 const bookImages = [
-  "/Home/updatedImages/Stephen 1.webp",
-  "/Home/updatedImages/Jim Fritz 1.webp",
-  "/Home/updatedImages/Allison 1.webp",
-  "/Home/updatedImages/Bee 1.webp",
+  "/Home/1 8638289.svg",
+  "/Home/2 9303.svg",
+  "/Home/3 422784.svg",
+  "/Home/4 238103.svg",
+  "/Home/5 1.svg",
+  "/Home/6 1.svg",
+  "/Home/7 151655.svg",
+  "/Home/8 914122.svg",
+  "/Home/9 23800.svg",
+  "/Home/10 439780.svg",
+  "/Home/11 4543.svg"
 ];
 
 const trustBadges: TrustBadge[] = [

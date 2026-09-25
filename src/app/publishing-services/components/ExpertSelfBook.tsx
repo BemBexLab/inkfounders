@@ -28,7 +28,7 @@ export default function ExportSelfBook() {
     {/* Book Cover */}
 	    <div className="order-2 flex w-full justify-center lg:order-none">
       <Image
-        src="/Service/A.D Bradley 2 1.webp"
+        src="/publishingservices/image 100 (1).svg"
         alt="Book Cover"
         width={440}
         height={440}
