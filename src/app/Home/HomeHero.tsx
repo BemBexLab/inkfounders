@@ -26,7 +26,7 @@ type TrustBadge = {
 };
 
 const bookImages = [
-  "/Home/1 8638289.webp",
+  // "/Home/1 8638289.webp",
   "/Home/2 9303.webp",
   "/Home/3 422784.webp",
   "/Home/4 238103.webp",
