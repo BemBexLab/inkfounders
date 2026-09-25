@@ -148,9 +148,16 @@ function ProposalForm({ onSuccess }: { onSuccess: () => void }) {
     setSubmitStatus("submitting");
     setStatusMessage("");
     const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    if (!formData.get("smsConsent")) {
+      setSubmitStatus("error");
+      setStatusMessage("Please consent to the text messages agreement.");
+      return;
+    }
 
     try {
-      await submitApplication(new FormData(form));
+      await submitApplication(formData);
       setSubmitStatus("success");
       setStatusMessage("Thanks. Your request has been sent.");
       form.reset();

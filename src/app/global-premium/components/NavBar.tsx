@@ -45,13 +45,13 @@ const Navbar = () => {
 
       <div className="relative z-10 ml-auto flex shrink-0 items-center gap-2 min-[560px]:gap-3 lg:absolute lg:right-[clamp(24px,5vw,76px)] lg:top-9 lg:ml-0 lg:gap-8 lg:translate-y-0">
         <Link
-          href="tel:+17864961231"
+          href="tel:+14043905698"
           aria-label="Call Ink Founders"
           className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[8px] bg-gradient-to-r from-[#C8D400] to-[#F7FF77] px-0 text-sm text-[#1f1f1f] transition-all duration-300 hover:border-black min-[560px]:w-auto min-[560px]:gap-2 min-[560px]:px-3 lg:h-[53px] lg:min-w-[212px] lg:px-5 lg:text-[14px]"
         >
           <MdLocalPhone className="relative z-10 shrink-0 text-xl lg:text-[18px]" />
           <span className="relative z-10 hidden whitespace-nowrap font-medium tracking-[0.02em] min-[560px]:inline poppins">
-            +1 (786) 496-1231
+            +1 (404) 390-5698
           </span>
         </Link>
 

@@ -59,13 +59,13 @@ export default function CTABanner() {
             </QuoteTrigger>
 
             <Link
-              href="tel:+17864961231"
+              href="tel:+14043905698"
               className="flex h-11 w-full items-center justify-center gap-x-2 rounded-[8px] border border-[#DADD39] bg-gradient-to-r from-[#C8D400] to-[#F7FF77] px-4 text-sm font-medium text-black transition-all duration-300 hover:border-black sm:h-12 sm:w-auto sm:px-5 sm:text-base md:h-[48px] md:px-6 md:text-[15px] lg:h-[45px] lg:min-w-[182px] lg:px-6 lg:text-[15px]"
             >
               <span className="slide-bg"></span>
               <MdLocalPhone className="relative z-10 text-lg sm:text-xl md:text-[22px] lg:text-[19px]" />
               <span className="relative z-10 whitespace-nowrap font-medium tracking-[0.08em] poppins">
-                +1 (786) 496-1231
+                +1 (404) 390-5698
               </span>
             </Link>
           </div>

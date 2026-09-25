@@ -114,8 +114,8 @@ const defaultGetInTouchContent: GetInTouchContent = {
     contacts: [
       {
         type: "phone",
-        label: "+1 (786) 496-1231",
-        href: "tel:+17864961231",
+        label: "+1 (404) 390-5698",
+        href: "tel:+14043905698",
       },
       {
         type: "email",

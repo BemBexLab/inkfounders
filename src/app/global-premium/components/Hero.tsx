@@ -643,12 +643,12 @@ const Hero = () => {
               APPLY NOW - FREE <GoArrowUpRight size={20} />
             </button>
             <Link
-              href="tel:+17864961231"
+              href="tel:+14043905698"
               className="poppins inline-flex h-[53px] w-full min-w-0 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-[6px] border border-[#e5e5e5] bg-white px-4 text-sm font-medium text-[#222] transition hover:border-[#cbd600] min-[480px]:w-auto min-[480px]:min-w-[194px] sm:text-base"
             >
               {/* <FaPhoneAlt className="mr-[10px] text-[14px]" /> */}
               <RiPhoneFill className="shrink-0 text-[18px]" />
-              +1 (786) 496-1231
+              +1 (404) 390-5698
             </Link>
           </motion.div>
 
@@ -752,7 +752,7 @@ const Hero = () => {
               whileTap={{ scale: 0.98 }}
             >
               <Link
-                href="https://wa.me/17864961231"
+                href="https://wa.me/14043905698"
                 className="flex h-12 items-center justify-center rounded-[9px] border border-[#a9e5c3] bg-[#fcfffd] px-3 text-sm font-semibold text-[#00a13a] transition hover:bg-[#f2fff7] sm:text-base"
               >
                 <FaWhatsapp className="mr-[7px] text-xl sm:text-2xl" />
