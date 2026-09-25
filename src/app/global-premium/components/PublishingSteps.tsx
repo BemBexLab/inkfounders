@@ -40,7 +40,7 @@ const publishingData = {
       ],
       button: {
         label: "Get Started",
-        href: "/contactus",
+        href: "/",
       },
       imageSrc: "/landing-page/image 2.png",
       imageAlt: "Upload your manuscript dashboard",
@@ -201,7 +201,8 @@ export default function PublishingSteps() {
               {/* CTA */}
               <div className="mt-6 sm:mt-7 lg:mt-[25px]">
                 <Link
-                  href={currentStep.button.href}
+                  href="#quote-popup"
+                  aria-haspopup="dialog"
                   onClick={(event) => {
                     event.preventDefault();
                     window.dispatchEvent(new Event("open-quote-popup"));

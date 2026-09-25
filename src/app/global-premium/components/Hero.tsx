@@ -635,13 +635,20 @@ const Hero = () => {
             className="mt-6 flex w-full flex-col items-stretch gap-3 min-[480px]:flex-row min-[480px]:items-center min-[480px]:justify-center lg:justify-start"
             variants={riseVariants}
           >
-            <button
-              type="button"
-              onClick={() => setIsPopupOpen(true)}
-              className="poppins inline-flex h-[53px] w-full min-w-0 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-[6px] bg-gradient-to-r from-[#C8D400] to-[#F7FF77] px-4 text-xs font-medium uppercase text-black transition hover:bg-[#c3d300] min-[380px]:text-sm min-[480px]:w-auto min-[480px]:min-w-[234px] min-[480px]:px-[18px]"
+            <Link
+              href="#quote-popup"
+              onClick={(event) => {
+                event.preventDefault();
+                setIsPopupOpen(true);
+              }}
+              className="group poppins inline-flex h-[53px] w-full min-w-0 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-[6px] bg-gradient-to-r from-[#C8D400] to-[#F7FF77] px-4 text-xs font-medium uppercase text-black transition hover:bg-[#c3d300] min-[380px]:text-sm min-[480px]:w-auto min-[480px]:min-w-[234px] min-[480px]:px-[18px]"
             >
-              APPLY NOW - FREE <GoArrowUpRight size={20} />
-            </button>
+              APPLY NOW - FREE
+              <GoArrowUpRight
+                size={20}
+                className="shrink-0 transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1"
+              />
+            </Link>
             <Link
               href="tel:+14043905698"
               className="poppins inline-flex h-[53px] w-full min-w-0 shrink-0 items-center justify-center gap-2 whitespace-nowrap rounded-[6px] border border-[#e5e5e5] bg-white px-4 text-sm font-medium text-[#222] transition hover:border-[#cbd600] min-[480px]:w-auto min-[480px]:min-w-[194px] sm:text-base"

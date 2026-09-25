@@ -1,7 +1,8 @@
+"use client";
+
 import { robotoMono } from "@/app/fonts";
 import Link from "next/link";
 import { MdLocalPhone } from "react-icons/md";
-import QuoteTrigger from "../../book-publishing/components/QuoteTrigger";
 import { PiArrowUpRightBold } from "react-icons/pi";
 
 export default function CTABanner() {
@@ -51,12 +52,20 @@ export default function CTABanner() {
           </p>
 
           <div className="mt-2 flex flex-col items-stretch gap-3 sm:mt-3 sm:flex-row sm:justify-center lg:mt-4 lg:flex-wrap lg:justify-start">
-            <QuoteTrigger className="flex h-11 w-full items-center justify-center rounded-[8px] border border-[#DADD39] bg-gradient-to-r from-[#C8D400] to-[#F7FF77] px-4 text-sm font-medium text-black transition-all duration-300 hover:border-black sm:h-12 sm:w-auto sm:px-5 sm:text-base md:h-[48px] md:px-6 md:text-[15px] lg:h-[45px] lg:min-w-[182px] lg:px-6 lg:text-[15px]">
+            <Link
+              href="#quote-popup"
+              aria-haspopup="dialog"
+              onClick={(event) => {
+                event.preventDefault();
+                window.dispatchEvent(new Event("open-quote-popup"));
+              }}
+              className="flex h-11 w-full items-center justify-center rounded-[8px] border border-[#DADD39] bg-gradient-to-r from-[#C8D400] to-[#F7FF77] px-4 text-sm font-medium text-black transition-all duration-300 hover:border-black sm:h-12 sm:w-auto sm:px-5 sm:text-base md:h-[48px] md:px-6 md:text-[15px] lg:h-[45px] lg:min-w-[182px] lg:px-6 lg:text-[15px]"
+            >
               <span className="slide-bg"></span>
               <span className="relative z-10 flex items-center gap-1 whitespace-nowrap font-medium tracking-[0.08em] poppins">
                 Request a Quote <PiArrowUpRightBold size={19} />
               </span>
-            </QuoteTrigger>
+            </Link>
 
             <Link
               href="tel:+14043905698"

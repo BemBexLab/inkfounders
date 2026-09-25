@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { MdLocalPhone } from "react-icons/md";
-import QuoteTrigger from "../../book-publishing/components/QuoteTrigger";
 import { FaArrowRight } from "react-icons/fa6";
 
 const portfolioSlides = [
@@ -155,12 +154,19 @@ export default function CTABanner2() {
           </p>
 
           <div className="mx-auto mt-1 grid w-full max-w-[520px] grid-cols-[repeat(auto-fit,minmax(min(100%,210px),1fr))] gap-3 lg:mx-0">
-            <QuoteTrigger className="poppins relative flex min-h-12 min-w-0 items-center justify-center rounded-[8px] border border-[#DADD39] bg-gradient-to-r from-[#C8D400] to-[#F7FF77] px-4 py-3 text-sm text-black transition-colors duration-300 hover:border-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d9e500]">
+            <Link
+              href="#quote-popup"
+              onClick={(event) => {
+                event.preventDefault();
+                window.dispatchEvent(new Event("open-quote-popup"));
+              }}
+              className="poppins relative flex min-h-12 min-w-0 items-center justify-center rounded-[8px] border border-[#DADD39] bg-gradient-to-r from-[#C8D400] to-[#F7FF77] px-4 py-3 text-sm text-black transition-colors duration-300 hover:border-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d9e500]"
+            >
               <span className="slide-bg"></span>
               <span className="relative z-10 flex items-center gap-2 whitespace-nowrap font-semibold tracking-[0.02em]">
                 Request a Quote <FaArrowRight className="shrink-0 -rotate-45" size={20} />
               </span>
-            </QuoteTrigger>
+            </Link>
 
             <Link
               href="tel:+14043905698"

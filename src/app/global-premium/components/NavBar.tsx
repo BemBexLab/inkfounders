@@ -55,9 +55,12 @@ const Navbar = () => {
           </span>
         </Link>
 
-        <button
-          type="button"
-          onClick={handleQuoteClick}
+        <Link
+          href="#quote-popup"
+          onClick={(event) => {
+            event.preventDefault();
+            handleQuoteClick();
+          }}
           aria-label="Request a quote"
           className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[8px] bg-gradient-to-r from-[#C8D400] to-[#F7FF77] px-0 text-[12px] font-medium text-black transition-all duration-300 hover:border-black min-[560px]:w-auto min-[560px]:gap-2 min-[560px]:px-3 lg:h-[53px] lg:min-w-[224px] lg:px-6 lg:text-[14px]"
         >
@@ -65,7 +68,7 @@ const Navbar = () => {
             <span className="hidden min-[560px]:inline">Request a Quote</span>
             <GoArrowUpRight className="shrink-0" size={20} />
           </span>
-        </button>
+        </Link>
       </div>
     </section>
   );
