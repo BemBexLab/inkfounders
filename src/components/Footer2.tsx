@@ -69,8 +69,8 @@ const quickLinks = [
   { id: "who-we-are", label: "Who we are", href: "/whoweare" },
   { id: "blog", label: "Blog", href: "/blog" },
   { id: "contact-us", label: "Contact Us", href: "/contactus" },
-  { id: "terms", label: "Terms", href: "/terms" },
-  { id: "privacy", label: "Privacy", href: "/privacy" },
+  { id: "terms", label: "Terms & Conditions", href: "/terms" },
+  { id: "privacy", label: "Privacy Policy", href: "/privacy" },
 ];
 
 const servicesLinks = [
