@@ -81,8 +81,8 @@ const navItems: NavItem[] = [
     ],
   },
   {
-    label: "Our Book",
-    href: "/ourbook",
+    label: "Published Books",
+    href: "/published-books",
     icon: <FaBook size={22} />,
   },
   {

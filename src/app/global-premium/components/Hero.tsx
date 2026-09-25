@@ -10,7 +10,7 @@ import { GiCheckMark } from "react-icons/gi";
 import { GoArrowDown, GoArrowRight, GoArrowUpRight } from "react-icons/go";
 import { IoFlameSharp } from "react-icons/io5";
 import { RiPhoneFill } from "react-icons/ri";
-import { BOOKS } from "@/app/ourbook/components/BookGallery";
+import { BOOKS } from "@/app/published-books/components/BookGallery";
 import Popup, { submitApplication } from "./Popup";
 
 const benefits = [

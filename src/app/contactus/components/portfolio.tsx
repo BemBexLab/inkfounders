@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import AOSProvider from "@/components/AOSProvider";
-import { BOOKS } from "@/app/ourbook/components/BookGallery";
+import { BOOKS } from "@/app/published-books/components/BookGallery";
 
 // Add "Fiction" to tags if you want them to show under Fiction filter.
 // const BOOKS = [

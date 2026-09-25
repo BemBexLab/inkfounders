@@ -64,8 +64,8 @@ const footerContactItems = [
 const quickLinks = [
   { id: "home", label: "Home", href: "/" },
   { id: "publishing-services", label: "Publishing Services", href: "/publishing-services" },
-  { id: "our-books", label: "Our Books", href: "/ourbook" },
-  { id: "our-publishing", label: "Our Publishing", href: "/ourpublishing" },
+  { id: "published-books", label: "Published Books", href: "/published-books" },
+  { id: "publishing-partners", label: "Publishing Partners", href: "/publishing-partners" },
   { id: "who-we-are", label: "Who we are", href: "/whoweare" },
   { id: "blog", label: "Blog", href: "/blog" },
   { id: "contact-us", label: "Contact Us", href: "/contactus" },
