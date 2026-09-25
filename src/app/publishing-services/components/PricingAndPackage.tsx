@@ -26,7 +26,7 @@ const PACKAGES = [
       "Access to Ink Founders author portal",
       "100% copyright ownership",
       "ISBN & barcode generation",
-      "eBook, Paperback & Hardcover formats",
+      "Book, Paperback & Hardcover formats",
     ],
   },
   {
@@ -49,7 +49,7 @@ const PACKAGES = [
       "Access to Ink Founders author portal",
       "100% ownership & full copyright rights",
       "ISBN and barcode generation",
-      "Available in eBook, Paperback & Hardcover formats",
+      "Available in Book, Paperback & Hardcover formats",
     ],
   },
   {

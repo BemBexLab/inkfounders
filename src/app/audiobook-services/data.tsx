@@ -306,7 +306,7 @@ export const audiobookData = [
                 <span className="font-bold">Self-publish without ACX exclusivity:</span> if you'd rather keep the rights to distribute your book across multiple platforms instead of locking into one, we'll walk you through that option.
               </li>
               <li>
-                <span className="font-bold">Amazon audiobook publishing:</span> for authors who want their audiobook listed alongside their existing ebook or paperback
+                <span className="font-bold">Amazon audiobook publishing:</span> for authors who want their audiobook listed alongside their existing book or paperback
               </li>
               <li>
                 <span className="font-bold">Audiobook publishing for first-time authors:</span> plain-language guidance if this is your first time doing any of this

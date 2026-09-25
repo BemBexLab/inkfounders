@@ -43,16 +43,16 @@ const navItems: NavItem[] = [
     icon: <FaCog size={20} />,
     children: [
       {
-        label: "E-Book Writing",
-        href: "/publishing-services/ebook-writing",
+        label: "Book Writing",
+        href: "/publishing-services/book-writing",
       },
       {
-        label: "E-Book Publishing",
-        href: "/publishing-services/ebook-publishing",
+        label: "Book Publishing",
+        href: "/publishing-services/book-publishing",
       },
       {
-        label: "E-Book Cover Design",
-        href: "/publishing-services/ebook-cover-design",
+        label: "Book Cover Design",
+        href: "/publishing-services/book-cover-design",
       },
       {
         label: "Editing & Proofreading",

@@ -23,7 +23,7 @@ export default function CTABanner() {
 
         <div className="flex w-full flex-col gap-5 lg:flex-1 lg:pl-8">
           <p className="text-lg font-medium text-white/80 sm:text-xl [font-family:'DM_Sans',sans-serif]">
-            Want To Have Your Ebook Published?
+            Want To Have Your Book Published?
           </p>
 
           <h2 className="max-w-[790px] text-[32px] font-extrabold leading-[1.08] text-[#DADD39] sm:text-[42px] md:text-[50px] lg:max-w-[920px] lg:text-[59px] [font-family:'DM_Sans',sans-serif]">
@@ -34,7 +34,7 @@ export default function CTABanner() {
             className={`mx-auto max-w-[720px] text-sm leading-[1.8] text-white/75 sm:text-base md:text-lg lg:mx-0 lg:max-w-[760px] lg:leading-[1.9] ${robotoMono.className}`}
           >
             Are you done with your book and looking for ways to have it
-            published? Get in touch with us now to get your eBook published by
+            published? Get in touch with us now to get your book published by
             experts! We help authors gain global exposure for their work.
           </p>
 

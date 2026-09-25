@@ -20,7 +20,7 @@ export default function CTABanner() {
 
         <div className="flex w-full flex-col gap-5 lg:flex-1 lg:pl-8">
           <p className="text-lg font-medium text-white/80 sm:text-xl [font-family:'DM_Sans',sans-serif]">
-           Want your ebook published?
+           Want your book published?
           </p>
 
           <h2 className="max-w-[790px] text-[32px] font-extrabold leading-[1.08] text-[#DADD39] sm:text-[42px] md:text-[50px] lg:max-w-[920px] lg:text-[59px] [font-family:'DM_Sans',sans-serif]">

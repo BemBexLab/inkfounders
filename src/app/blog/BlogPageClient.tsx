@@ -353,7 +353,7 @@ export default function BlogPageClient({
                   "Marketing",
                   "Writing Tips",
                   "Cover Design",
-                  "Ebooks",
+                  "Books",
                   "Audiobooks",
                   "Children's Books",
                   "Ghostwriting",

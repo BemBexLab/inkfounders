@@ -13,7 +13,7 @@ export const GLOBAL_SCHEMA = {
       name: "Ink Founders",
       url: "https://www.inkfounders.com/",
       description:
-        "Ink Founders is a professional publishing company in Miami, Florida, offering book publishing, ghostwriting, editing, proofreading, book formatting, book cover design, ebook publishing, and book marketing services for authors and businesses.",
+        "Ink Founders is a professional publishing company in Miami, Florida, offering book publishing, ghostwriting, editing, proofreading, book formatting, book cover design, book publishing, and book marketing services for authors and businesses.",
       telephone: "+1-470-205-2227",
       priceRange: "$$",
       slogan: "Professional book publishing and author support services.",
@@ -54,7 +54,7 @@ export const GLOBAL_SCHEMA = {
         "Proofreading",
         "Book Formatting",
         "Book Cover Design",
-        "Ebook Publishing",
+        "Book Publishing",
         "Amazon KDP Publishing",
         "Book Marketing",
         "Author Branding",
@@ -111,7 +111,7 @@ export const GLOBAL_SCHEMA = {
             "@id": "https://www.inkfounders.com/#cover-design-service",
             name: "Book Cover Design Services",
             description:
-              "Custom book cover design services for print books, ebooks, and publishing platforms.",
+              "Custom book cover design services for print books, books, and publishing platforms.",
             provider: {
               "@id": "https://www.inkfounders.com/#localbusiness",
             },
@@ -121,10 +121,10 @@ export const GLOBAL_SCHEMA = {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            "@id": "https://www.inkfounders.com/#ebook-publishing-service",
-            name: "Ebook Publishing Services",
+            "@id": "https://www.inkfounders.com/#book-publishing-service",
+            name: "Book Publishing Services",
             description:
-              "Ebook publishing and formatting services for authors who want their books prepared for digital publishing platforms.",
+              "Book publishing and formatting services for authors who want their books prepared for digital publishing platforms.",
             provider: {
               "@id": "https://www.inkfounders.com/#localbusiness",
             },
@@ -151,7 +151,7 @@ export const GLOBAL_SCHEMA = {
       url: "https://www.inkfounders.com/",
       name: "Ink Founders",
       description:
-        "Ink Founders provides professional book publishing, ghostwriting, editing, formatting, cover design, ebook publishing, and book marketing services.",
+        "Ink Founders provides professional book publishing, ghostwriting, editing, formatting, cover design, book publishing, and book marketing services.",
       publisher: {
         "@id": "https://www.inkfounders.com/#localbusiness",
       },
@@ -163,7 +163,7 @@ export const GLOBAL_SCHEMA = {
       url: "https://www.inkfounders.com/",
       name: "Ink Founders | Book Publishing Services in Miami, Florida",
       description:
-        "Ink Founders is a Miami-based publishing company offering book publishing, ghostwriting, editing, formatting, cover design, ebook publishing, and book marketing services.",
+        "Ink Founders is a Miami-based publishing company offering book publishing, ghostwriting, editing, formatting, cover design, book publishing, and book marketing services.",
       isPartOf: {
         "@id": "https://www.inkfounders.com/#website",
       },

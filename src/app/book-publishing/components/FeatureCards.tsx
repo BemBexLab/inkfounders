@@ -5,7 +5,7 @@ export default function FeatureCards() {
     {
       title: "Compatibility",
       description:
-        "The e-books we publish on all the popular e-book readers, mobile phones, tablets, & platforms.",
+        "The books we publish on all the popular book readers, mobile phones, tablets, & platforms.",
       bg: "bg-[#DADD39]",
       icon: "/landing-page/image 53.webp",
       iconBg: "bg-[#F4F3E1]",
@@ -13,7 +13,7 @@ export default function FeatureCards() {
       descColor: "text-[#1F1F1F]",
     },
     {
-      title: "E-Book Publishing Platforms",
+      title: "Book Publishing Platforms",
       description:
         "We ensure the publishing of your work on leading platforms such as Amazon Kindle, CreateSpace, etc.",
       bg: "bg-[#eef1d5]",
@@ -25,7 +25,7 @@ export default function FeatureCards() {
     {
       title: "Expert Book Publishers",
       description:
-        "Our team of expert book publishers is well-aware of the eBook publishing platforms' technicalities.",
+        "Our team of expert book publishers is well-aware of the book publishing platforms' technicalities.",
       bg: "bg-[#eef1d5]",
       icon: "/landing-page/image 55.webp",
       iconBg: "bg-[#DADD39]",
@@ -35,7 +35,7 @@ export default function FeatureCards() {
     {
       title: "Fast Turnaround",
       description:
-        "We help your work get to the market fast. Our experts get eBooks published within 24-48 hours.",
+        "We help your work get to the market fast. Our experts get books published within 24-48 hours.",
       bg: "bg-[#DADD39]",
       icon: "/landing-page/image 56.webp",
       iconBg: "bg-[#F4F3E1]",

@@ -2,6 +2,25 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   compress: true,
+  async redirects() {
+    return [
+      {
+        source: "/publishing-services/ebook-writing",
+        destination: "/publishing-services/book-writing",
+        permanent: true,
+      },
+      {
+        source: "/publishing-services/ebook-publishing",
+        destination: "/publishing-services/book-publishing",
+        permanent: true,
+      },
+      {
+        source: "/publishing-services/ebook-cover-design",
+        destination: "/publishing-services/book-cover-design",
+        permanent: true,
+      },
+    ];
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60 * 60 * 24 * 30,

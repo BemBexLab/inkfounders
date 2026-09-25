@@ -117,7 +117,7 @@ export default function Footer() {
                   Book Publishing
                 </li>
                 <li className="text-black hover:text-gray-900 text-sm">
-                  Ebook Formatting
+                  Book Formatting
                 </li>
                 <li className="text-black hover:text-gray-900 text-sm">
                   Childrens Book

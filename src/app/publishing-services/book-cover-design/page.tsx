@@ -58,7 +58,7 @@ export default function CoverDesignPage() {
     {
       title: "Custom Cover Design",
       description:
-        "Every cover we make is custom book cover design for authors, built around your book, not pulled from a template, reflecting its theme, tone, and the readers you're trying to reach. Unlike AI ebook cover design tools that generate generic, recycled-looking art, our covers are designed by hand by real designers who read your book's premise first.",
+        "Every cover we make is custom book cover design for authors, built around your book, not pulled from a template, reflecting its theme, tone, and the readers you're trying to reach. Unlike AI book cover design tools that generate generic, recycled-looking art, our covers are designed by hand by real designers who read your book's premise first.",
       checklist: [
         "Unique concepts tailored to your story",
         "Genre-appropriate design styles",
@@ -88,7 +88,7 @@ export default function CoverDesignPage() {
       title: "Who This Service Is For",
       description: "",
       checklist: [
-        "New authors launching their first ebook",
+        "New authors launching their first book",
         "Indie authors and self-publishers looking for custom book cover design that doesn't feel generic",
         "Business owners publishing guides or manuals",
         "Authors working on a series or multi-book project",
@@ -105,10 +105,10 @@ export default function CoverDesignPage() {
             <div className="contents lg:flex lg:w-full lg:flex-col lg:items-start lg:justify-center lg:px-1 lg:pl-12 xl:pl-20">
               <div className="contents lg:block lg:w-full lg:max-w-xl">
                 <h1 className="order-1 mb-0 w-full max-w-2xl text-center text-3xl font-semibold leading-tight text-black sm:text-4xl md:text-[48px] lg:mb-6 lg:text-left">
-                  E-Book Cover Design Services
+                  Book Cover Design Services
                 </h1>
                 <p className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}>
-                  At Ink Founders, we know a book cover is the first impression your readers get. Our ebook cover design services create visually striking, genre-appropriate covers that catch readers' attention and help your book perform on Amazon KDP, Apple Books, and other major platforms.
+                  At Ink Founders, we know a book cover is the first impression your readers get. Our book cover design services create visually striking, genre-appropriate covers that catch readers' attention and help your book perform on Amazon KDP, Apple Books, and other major platforms.
                 </p>
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function CoverDesignPage() {
               <div className="relative flex aspect-square w-[min(82vw,350px)] items-center justify-center overflow-hidden rounded-lg sm:w-[400px] md:w-[440px] lg:h-[440px] lg:w-[380px] xl:h-[480px] xl:w-[480px] 2xl:h-[520px] 2xl:w-[520px]">
                 <Image
                   src="/publishingservices/Rectangle 22.webp"
-                  alt="E-Book Cover Design Services"
+                  alt="Book Cover Design Services"
                   width={574}
                   height={736}
                   sizes="(max-width: 640px) 350px, (max-width: 768px) 400px, (max-width: 1024px) 440px, 520px"
@@ -168,9 +168,9 @@ export default function CoverDesignPage() {
               <ul className="order-3 mb-4 w-full max-w-[360px] flex-grow space-y-1.5 sm:max-w-[380px] sm:space-y-2 lg:mb-8 lg:max-w-none lg:space-y-3">
                 {[
                   "Expert graphic designers with real publishing experience, not just design experience",
-                  "Affordable ebook cover design for self-publishers who want quality without an agency price tag",
+                  "Affordable book cover design for self-publishers who want quality without an agency price tag",
                   "Covers built for both digital and print formats",
-                  "Ebook cover design with unlimited revisions, until the cover actually feels right to you",
+                  "Book cover design with unlimited revisions, until the cover actually feels right to you",
                   "Genre-specific book cover design, whether you write fiction, nonfiction, romance, or business books",
                   "Quick turnaround without cutting corners on quality"
                 ].map((item, idx) => (

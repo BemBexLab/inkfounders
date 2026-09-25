@@ -25,7 +25,7 @@ const steps = [
     id: "04",
     title: "We give your story its shape through formatting",
     description:
-      "Now we bring your story to life with professional book formatting services for self-publishing authors, covering both ebook and print-on-demand editions, along with a cover design that captures readers' attention and reflects the spirit of your work.",
+      "Now we bring your story to life with professional book formatting services for self-publishing authors, covering both book and print-on-demand editions, along with a cover design that captures readers' attention and reflects the spirit of your work.",
   },
   {
     id: "05",

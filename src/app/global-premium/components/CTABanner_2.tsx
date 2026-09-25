@@ -21,7 +21,7 @@ export default function CTABanner() {
 
         <div className="flex w-full flex-col gap-4 lg:flex-1 lg:gap-5 lg:pl-8 xl:pl-12">
           <p className="plus-jakarta text-sm font-medium text-white/80 sm:text-base md:text-lg">
-            Want To Have Your Ebook Published?
+            Want To Have Your Book Published?
           </p>
 
           <h2 className="plus-jakarta max-w-[790px] text-2xl font-medium uppercase leading-[1.08] text-white sm:text-3xl md:text-4xl lg:max-w-[920px] lg:text-5xl xl:text-[52px]">
@@ -47,7 +47,7 @@ export default function CTABanner() {
           </h2>
 
           <p className="plus-jakarta mx-auto max-w-[720px] text-sm leading-[1.4] text-white/75 sm:text-base sm:leading-[1.45] md:text-lg md:leading-[1.5] lg:mx-0 lg:max-w-[760px] [word-spacing:3px]">
-            Are you done with your book and looking for ways to have it published? Get in touch with us now to get your eBook published by experts! We help authors gain global exposure for their work.
+            Are you done with your book and looking for ways to have it published? Get in touch with us now to get your book published by experts! We help authors gain global exposure for their work.
           </p>
 
           <div className="mt-2 flex flex-col items-stretch gap-3 sm:mt-3 sm:flex-row sm:justify-center lg:mt-4 lg:flex-wrap lg:justify-start">

@@ -16,7 +16,7 @@ import Popup, { submitApplication } from "./Popup";
 const benefits = [
   "Your book published in 6 languages for global reach.",
   "Worldwide distribution to Amazon & 99 marketplaces",
-  "Print-on-demand, eBook and audiobook",
+  "Print-on-demand, book and audiobook",
   "Marketing Assistance, led by book marketing Professionals",
   "Your book featured on Times Square billboard",
 ];

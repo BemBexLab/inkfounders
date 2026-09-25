@@ -322,7 +322,7 @@ const BlogOne: React.FC = () => {
                   <span className="bg-[#D4D939] text-black w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm">3</span>
                   Formatting Cost (Interior Design)
                 </h3>
-                <p className="mb-4">Formatting prepares your book for ebook and print.</p>
+                <p className="mb-4">Formatting prepares your book for book and print.</p>
                 <p className="mb-4">Tools used by professionals include:</p>
                 <ul className="grid grid-cols-2 gap-2 mb-4 font-medium">
                   <li className="flex items-center"><CheckCircle className="w-4 h-4 mr-2 text-[#D4D939]" /> Adobe InDesign</li>

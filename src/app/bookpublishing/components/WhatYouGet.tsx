@@ -78,7 +78,7 @@ const services = [
         />
       </svg>
     ),
-    description: "Publish your book in both e-book and print format across 40+ global platforms, handling every step of the process alongside you.",
+    description: "Publish your book in both book and print format across 40+ global platforms, handling every step of the process alongside you.",
   },
   {
     title: "Book Cover Design",

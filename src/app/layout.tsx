@@ -65,15 +65,20 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script
-          id="google-tag-manager"
+          id="google-tag-manager-data-layer"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-T78X9KSV');`,
+            __html: `window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  'gtm.start': new Date().getTime(),
+  event: 'gtm.js'
+});`,
           }}
+        />
+        <Script
+          id="google-tag-manager"
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-T78X9KSV"
+          strategy="afterInteractive"
         />
         <Script
           id="global-structured-data"
@@ -98,23 +103,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         {/* Meta Pixel Script */}
         <Script
-          id="facebook-pixel"
+          id="facebook-pixel-init"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)n=f.fbq;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}
-              (window, document,'script',
+              !function(f,b,e,v,n){
+                if(f.fbq)return;
+                n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;
+                n.push=n;
+                n.loaded=!0;
+                n.version='2.0';
+                n.queue=[];
+              }(window, document,'script',
               'https://connect.facebook.net/en_US/fbevents.js');
               fbq('init', '1969070570295864');
               fbq('track', 'PageView');
             `,
           }}
+        />
+        <Script
+          id="facebook-pixel"
+          src="https://connect.facebook.net/en_US/fbevents.js"
+          strategy="afterInteractive"
         />
 
         {/* Meta Pixel Noscript Fallback */}
@@ -130,23 +142,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         {tawkWidgetUrl && (
           <Script
-            id="tawk-to"
+            id="tawk-config"
             strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `
                 window.Tawk_API = window.Tawk_API || {};
                 window.Tawk_LoadStart = new Date();
-                (function () {
-                  var s1 = document.createElement("script");
-                  var s0 = document.getElementsByTagName("script")[0];
-                  s1.async = true;
-                  s1.src = ${JSON.stringify(tawkWidgetUrl)};
-                  s1.charset = "UTF-8";
-                  s1.setAttribute("crossorigin", "*");
-                  s0.parentNode.insertBefore(s1, s0);
-                })();
               `,
             }}
+          />
+        )}
+        {tawkWidgetUrl && (
+          <Script
+            id="tawk-to"
+            src={tawkWidgetUrl}
+            strategy="afterInteractive"
+            crossOrigin="anonymous"
           />
         )}
 

@@ -93,7 +93,7 @@ export default function EditingProofreadingPage() {
       description:
         "Ink Founders works with a wide range of content, including:",
       checklist: [
-        "Fiction & Non-Fiction eBooks",
+        "Fiction & Non-Fiction Books",
         "Business & Self-Help Books",
         "Educational Content",
         "Biographies & Memoirs",

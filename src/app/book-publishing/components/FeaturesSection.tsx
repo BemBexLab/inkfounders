@@ -31,9 +31,9 @@ export default function FeaturesSection() {
             className="mx-auto mb-8 max-w-[720px] text-sm leading-[1.75] text-[#3a3a28] sm:text-base md:text-lg xl:mx-0 xl:mb-10 xl:text-lg xl:leading-[1.9]"
             style={{ fontFamily: "'DM Mono', monospace" }}
           >
-            American Book Experts offers top-notch eBook publishing services to
+            American Book Experts offers top-notch book publishing services to
             transform authors' dreams into a concrete reality. Whether you are a
-            new author or an experienced one, our gamut of e-book publishing
+            new author or an experienced one, our gamut of book publishing
             services will help your book thrive and reach the target readers.
             With the publishing done right, you can land amongst the
             best-sellers.

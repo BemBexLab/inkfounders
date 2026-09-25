@@ -28,10 +28,10 @@ const cards = [
   },
   {
     image: "/Home/Mask group (4).webp",
-    alt: "E-Book Publishing",
-    title: "E-Book Publishing",
+    alt: "Book Publishing",
+    title: "Book Publishing",
     description:
-      "Embrace the digital era and expand your reach with professionally formatted e-books, built for compatibility across devices, so your book is accessible to readers anytime, anywhere.",
+      "Embrace the digital era and expand your reach with professionally formatted books, built for compatibility across devices, so your book is accessible to readers anytime, anywhere.",
   },
   {
     image: "/Home/Mask group (5).webp",

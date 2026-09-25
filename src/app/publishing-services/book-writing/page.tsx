@@ -6,6 +6,7 @@ import Link from "next/link";
 import { IoMdCall } from "react-icons/io";
 import Image from "next/image";
 
+// ✅ EXACT SAME CheckItem as your main service page
 const CheckItem = ({ children }: { children: React.ReactNode }) => (
   <li className="flex items-start gap-2">
     <span className="text-[#DADD39] mt-0.5 text-base">✔</span>
@@ -13,18 +14,19 @@ const CheckItem = ({ children }: { children: React.ReactNode }) => (
   </li>
 );
 
+// ✅ EXACT SAME ServiceCard — used for all service blocks
 const ServiceCard = ({
   title,
   subtitle,
   description,
   checklist,
-  subDesc,
+  subDescription,
 }: {
   title: string;
   subtitle?: string;
   description: string;
   checklist: string[];
-  subDesc?: string;
+  subDescription?: string;
 }) => (
   <div className="flex h-full min-h-[300px] flex-col rounded-xl border border-gray-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
     <h3 className="mb-1 text-base font-semibold text-black">{title}</h3>
@@ -34,86 +36,84 @@ const ServiceCard = ({
       style={{ marginRight: 0, paddingRight: "0.75rem" }}
     >
       {subtitle && <h4 className="mb-2 text-sm font-medium text-gray-800">{subtitle}</h4>}
-      <p className={`${robotoMono.className} mb-4 text-[13px] leading-relaxed text-gray-700`}>
-        {description}
-      </p>
-      <ul className="space-y-1.5">
-        {checklist.map((item, idx) => (
-          <CheckItem key={idx}>{item}</CheckItem>
-        ))}
-      </ul>
-      {subDesc && (
+      {description && (
+        <p className={`${robotoMono.className} mt-2 text-[13px] leading-relaxed text-gray-700`}>
+          {description}
+        </p>
+      )}
+      {checklist.length > 0 && (
+        <ul className="mt-4 space-y-1.5">
+          {checklist.map((item, idx) => (
+            <CheckItem key={idx}>{item}</CheckItem>
+          ))}
+        </ul>
+      )}
+      {subDescription && (
         <p className={`${robotoMono.className} mt-4 text-[13px] leading-relaxed text-gray-700`}>
-          {subDesc}
+          {subDescription}
         </p>
       )}
     </CustomScrollbar>
   </div>
 );
 
-export default function ServiceDetailPage() {
-  const services = [
+export default function BookWritingPage() {
+  const serviceCards = [
     {
-      title: "Writing & Content Development",
-      subtitle: "E-Book Writing & Ghostwriting",
+      title: "Idea Development & Research",
       description:
-        "We write fiction and non-fiction ebooks built around your idea, your niche, and the readers you want to reach. Our ghostwriters keep your voice, style, and message intact, so what lands on the page still sounds like you, not a copy of someone else's book.",
+        " Our team helps refine and sharpen your concept, structure your content, and carry out in-depth research to make sure your book is accurate and relevant to your target audience.",
+      checklist: [],
+    },
+    {
+      title: "Original, High-Quality Writing",
+      description:
+        "Every book is written from scratch, ensuring:",
       checklist: [
-        "Fiction & Non-Fiction",
-        "Business, Self-Help, Educational & Creative Genres",
-        "100% Original, Plagiarism-Free Writing",
+        "100% original content",
+        "No plagiarism",
+        "Clear, engaging, reader-focused writing",
       ],
     },
     {
-      title: "Editing & Manuscript Refinement",
-      subtitle: "Editing & Proofreading",
+      title: "Voice Matching (Ghostwriting)",
       description:
-        "Our editors go through your manuscript for clarity, accuracy, and consistency, tightening up grammar, structure, tone, and flow without flattening your original voice.",
+        "For ghostwriting projects, we carefully adapt to your tone, style, and personality, so the finished book genuinely feels like you wrote it — with a ghostwriting service that offers unlimited revisions until it truly sounds like you.",
+      checklist: [],
+    },
+    {
+      title: "Genres We Cover",
+      description:
+        "As one of the best book ghostwriting services for a range of industries, we write across genres including:",
       checklist: [
-        "Developmental Editing",
-        "Copyediting & Proofreading",
-        "Platform-Ready Manuscripts",
+        "Business & Entrepreneurship",
+        "Self-Help & Personal Development",
+        "Health & Wellness",
+        "Technology & Education",
+        "Fiction & Creative Writing",
+        "Biographies & Memoirs",
+      ],
+      subDescription: "Whether you need a ghostwriter for a self-help book, a professional ghostwriter for a memoir, or someone to hire a ghostwriter for a nonfiction book, our team has the experience to match.",
+    },
+    {
+      title: "Our Writing Process",
+      description: "",
+      checklist: [
+        "Concept discussion & project planning",
+        "Outline creation & approval",
+        "Writing & content development",
+        "Client review & revisions",
+        "Final delivery (ready for editing & publishing)",
       ],
     },
     {
-      title: "Design & Formatting",
-      subtitle: "E-Book Cover Design",
-      description:
-        "We design covers that are genuinely market-ready, built to Amazon KDP and other major platform standards, and tailored to your genre so the cover pulls readers in rather than blending into the background.",
-      checklist: ["Custom Design", "High-Resolution Output", "Amazon KDP-Approved"],
-    },
-    {
-      title: "Design & Formatting",
-      subtitle: "E-Book Formatting & Layout",
-      description:
-        "As an ebook formatting and publishing service, we get your book reading properly across every device and platform- no broken layouts, no formatting surprises after launch. Our ebook publishing service comes with formatting included, so you're not left figuring out EPUB specs on your own.",
-      checklist: ["Kindle (KDP) Formatting", "EPUB & PDF Formatting", "Paperback & Hardcover Layouts"],
-      subDesc: "We also handle the full conversion, from manuscript to ebook format, ready for upload, as part of the package, whether you're publishing on a single platform or want to self-publish your ebook across multiple platforms at once.",
-    },
-    {
-      title: "Marketing & Book Promotion",
-      subtitle: "Book Marketing & Promotion",
-      description:
-        "Our marketing work is built to get your book seen by the right readers and turn that visibility into sales.",
+      title: "Who This Service Is For",
+      description: "",
       checklist: [
-        "Amazon SEO & Keyword Research",
-        "Book Launch Strategy",
-        "A+ Content & Sales Page Optimization",
+        "First-time authors looking for ghostwriting services for first-time authors",
+        "Entrepreneurs & coaches seeking a book writing service for coaches and entrepreneurs",
+        "Business owners in need of a business ghostwriting service to put their expertise into a book",
       ],
-    },
-    {
-      title: "Publishing Support & Ownership",
-      subtitle: "ISBN & Copyright Assistance",
-      description:
-        "We guide you through ISBN registration and copyright, so your book is fully protected and fully yours. Our ebook publishing service with ISBN means you're not left chasing paperwork on your own.",
-      checklist: ["ISBN Guidance", "Copyright Support", "Author Rights Protection"],
-    },
-    {
-      title: "Consultation & Ongoing Support",
-      subtitle: "Publishing Consultation",
-      description:
-        "Not sure where to start? Our team offers one-on-one publishing consultations to help you figure out the right platform strategy and roadmap for your book, whether that's Kindle, Apple Books, or a print-and-ebook combination.",
-      checklist: ["One-on-One Guidance", "Platform Strategy", "Publishing Roadmap"],
     },
   ];
 
@@ -126,18 +126,18 @@ export default function ServiceDetailPage() {
             <div className="contents lg:flex lg:w-full lg:flex-col lg:items-start lg:justify-center lg:px-1 lg:pl-12 xl:pl-20">
               <div className="contents lg:block lg:w-full lg:max-w-xl">
                 <h1 className="order-1 mb-0 w-full max-w-2xl text-center text-3xl font-semibold leading-tight text-black sm:text-4xl md:text-[48px] lg:mb-6 lg:text-left">
-                  Professional eBook Publishing Services by Ink Founders
+                  Book Writing & Ghostwriting Services
                 </h1>
                 <p className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}>
-                  At Ink Founders, we're an ebook publishing service for authors that handles the whole process end to end: writing, editing, design, formatting, and getting your book out into the world. Whether you're a first-time author or already have a few books behind you, our team walks with you through every stage, including how to publish an ebook on Amazon, Kindle, and Apple Books.
+                  At Ink Founders, our book ghostwriting services are built to turn your ideas into a unique, engaging, high-quality book. Whether you have a rough concept or a detailed outline, our experienced writers craft a publish-ready book with clarity, creativity, and precision. If you're ready to hire a ghostwriter for your book, our team can take it from a first conversation to a finished manuscript.
                 </p>
               </div>
             </div>
             <div className="relative order-2 flex w-full items-center justify-center px-0 sm:px-4 md:px-8 lg:order-none lg:ml-5">
               <div className="relative flex aspect-square w-[min(82vw,350px)] items-center justify-center overflow-hidden rounded-lg sm:w-[400px] md:w-[440px] lg:h-[440px] lg:w-[380px] xl:h-[480px] xl:w-[480px] 2xl:h-[520px] 2xl:w-[520px]">
                 <Image
-                  src="/publishingservices/Rectangle 21.webp"
-                  alt="Ink Founders Publishing"
+                  src="/publishingservices/Rectangle 20.webp"
+                  alt="Book Writing Services"
                   width={574}
                   height={736}
                   sizes="(max-width: 640px) 350px, (max-width: 768px) 400px, (max-width: 1024px) 440px, 520px"
@@ -150,26 +150,31 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
-      {/* Services Cards — NOW PERFECTLY ALIGNED */}
+      {/* Service Cards Only — 6 cards */}
       <section className="px-4 md:px-10 2xl:px-20 py-5">
         <div className="max-w-[1450px] mx-auto">
-          {/* No extra padding here — grid sits flush within max-width container */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
+            {serviceCards.map((card, index) => (
+              <ServiceCard
+                key={index}
+                title={card.title}
+                description={card.description}
+                checklist={card.checklist}
+                subDescription={card.subDescription}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Why Choose Us — NOT a card, styled exactly as requested */}
       <section className="px-4 py-7 sm:px-6 sm:py-9 md:px-10 lg:py-12 2xl:px-20">
         <div className="max-w-[1450px] mx-auto">
           <div className="flex flex-col items-center gap-4 lg:flex-row lg:gap-8">
             <div className="order-2 flex w-full justify-center lg:order-none lg:w-1/2">
               <div className="relative flex aspect-square w-[min(66vw,240px)] items-center justify-center overflow-hidden rounded-lg sm:w-[260px] md:w-[340px] lg:w-full lg:max-w-md">
                 <Image
-                  src="/publishingservices/Rectangle 25.webp"
+                  src="/publishingservices/Rectangle 24.webp"
                   alt="Why Choose Ink Founders"
                   width={574}
                   height={736}
@@ -184,11 +189,11 @@ export default function ServiceDetailPage() {
               </h2>
               <ul className="order-3 mb-4 w-full max-w-[360px] flex-grow space-y-1.5 sm:max-w-[320px] sm:space-y-2 lg:mb-8 lg:max-w-none lg:space-y-3">
                 {[
-                  "Premium, end-to-end publishing solutions",
-                  "Experienced publishing professionals",
+                  "Affordable ghostwriting services without cutting corners on quality",
+                  "Experienced, professional ghostwriters",
                   "Transparent process & communication",
                   "Full author ownership and rights",
-                  "Ebook publishing services with global distribution, so your book isn't limited to one market or platform",
+                  "Global publishing expertise, with ghostwriting services available across the USA",
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
                     <span className="text-[#DADD39] mt-0.5 text-lg">✓</span>
@@ -196,7 +201,7 @@ export default function ServiceDetailPage() {
                   </li>
                 ))}
               </ul>
-              <div className="order-4 self-center lg:self-start">
+              <div className="order-4 mt-auto self-center lg:self-start">
                 <Link href="/contactus">
                   <button
                     type="button"
