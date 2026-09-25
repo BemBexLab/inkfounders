@@ -269,7 +269,7 @@ const HomeHero = () => {
           </p>
 
           <div className="flex w-full flex-row justify-center gap-2 sm:gap-3">
-            <a href="tel:+17864961231" className="min-w-0 flex-1 sm:flex-none">
+            <a href="tel:+14702052227" className="min-w-0 flex-1 sm:flex-none">
               <button
                 type="button"
                 className="btn-slide-bg flex h-full w-full items-center justify-center rounded-md border border-transparent bg-[#DADD39] px-2 py-3 text-[12px] font-normal leading-tight text-black shadow transition-all duration-300 hover:border-black min-[390px]:px-3 min-[390px]:text-sm sm:w-auto sm:px-5 sm:text-base"
@@ -369,7 +369,7 @@ const HomeHero = () => {
               </p>
 
               <div className="flex w-full flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
-                <a href="tel:+17864961231">
+                <a href="tel:+14702052227">
                   <button
                     type="button"
                     className="btn-slide-bg flex w-full items-center justify-center rounded-md border border-transparent bg-[#DADD39] px-5 py-3 font-normal text-black shadow transition-all duration-300 hover:border-black sm:w-auto"

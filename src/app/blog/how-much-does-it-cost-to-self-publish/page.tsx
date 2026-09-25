@@ -639,7 +639,7 @@ const BlogOne: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-black">Phone</p>
-                      <a href='tel:+17864961231' className="hover:underline text-sm text-gray-600">+1 (786) 496-1231</a>
+                      <a href='tel:+14702052227' className="hover:underline text-sm text-gray-600">(470) 205-2227</a>
                     </div>
                   </div>
                   <div className="flex items-start">

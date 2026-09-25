@@ -14,7 +14,7 @@ export const GLOBAL_SCHEMA = {
       url: "https://www.inkfounders.com/",
       description:
         "Ink Founders is a professional publishing company in Miami, Florida, offering book publishing, ghostwriting, editing, proofreading, book formatting, book cover design, ebook publishing, and book marketing services for authors and businesses.",
-      telephone: "+1-786-496-1231",
+      telephone: "+1-470-205-2227",
       priceRange: "$$",
       slogan: "Professional book publishing and author support services.",
       address: {

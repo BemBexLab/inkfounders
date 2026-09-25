@@ -42,7 +42,7 @@ const footerContactItems = [
     lines: [<React.Fragment key="australia-office-address"><b>Australia-Office:</b> 16A Fox Cl, Australia,<br /> Kariong, NSW, Australia, 2250</React.Fragment>],
   },
   {
-    href: "tel:+17864961231",
+    href: "tel:+14702052227",
     icon: (
       <svg
         width="16"
@@ -57,7 +57,7 @@ const footerContactItems = [
         />
       </svg>
     ),
-    lines: [<React.Fragment key="usa-office-phone"><b>USA-Office: </b>+1 (786) 496-1231</React.Fragment>],
+    lines: [<React.Fragment key="usa-office-phone"><b>USA-Office: </b>(470) 205-2227</React.Fragment>],
   },
   {
     href: "tel:+61261906580",

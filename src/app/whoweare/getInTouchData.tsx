@@ -12,8 +12,8 @@ export const getInTouchContent: GetInTouchContent = {
     contacts: [
       {
         type: "phone",
-        label: "+1 (786) 496-1231",
-        href: "tel:+17864961231",
+        label: "(470) 205-2227",
+        href: "tel:+14702052227",
       },
       {
         type: "email",

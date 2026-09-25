@@ -21,14 +21,14 @@ const LandingNavBar = () => {
 
       <div className="ml-auto flex min-w-0 items-center gap-2 sm:gap-3 lg:absolute lg:right-10 lg:top-[46px] lg:ml-0 lg:translate-y-0 2xl:right-[38px]">
         <Link
-          href="tel:+17864961231"
+          href="tel:+14702052227"
           aria-label="Call Ink Founders"
           className="btn-slide-bg flex h-10 min-w-10 shrink-0 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-2 text-sm text-black transition-all duration-300 hover:border-black sm:h-11 sm:gap-2 sm:px-3 lg:h-[51px] lg:min-w-[214px] lg:px-6 lg:text-[15px]"
         >
           <span className="slide-bg"></span>
           <MdLocalPhone className="relative z-10 text-xl sm:text-[23px] lg:text-[19px]" />
           <span className="relative z-10 hidden whitespace-nowrap tracking-[0.08em] md:inline">
-            +1 (786) 496-1231
+            (470) 205-2227
           </span>
         </Link>
 

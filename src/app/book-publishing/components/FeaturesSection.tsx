@@ -50,13 +50,13 @@ export default function FeaturesSection() {
             </QuoteTrigger>
 
             <Link
-              href="tel:+17864961231"
+              href="tel:+14702052227"
               className="btn-slide-bg flex h-10 items-center justify-center gap-x-3 rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[45px] lg:min-w-[182px] lg:px-6 lg:text-[15px]"
             >
               <span className="slide-bg"></span>
               <MdLocalPhone className="relative z-10 text-xl sm:text-[23px] lg:text-[19px]" />
               <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
-                +1 (786) 496-1231
+                (470) 205-2227
               </span>
             </Link>
           </div>

@@ -556,7 +556,7 @@ const LandingHero2 = () => {
               APPLY NOW - FREE
             </button>
             <Link
-              href="tel:+17864961231"
+              href="tel:+14702052227"
               className="inline-flex h-[45px] min-w-0 items-center justify-center rounded-[6px] border border-[#e5e5e5] bg-white px-[13px] text-sm font-extrabold text-[#222] transition hover:border-[#cbd600] min-[460px]:min-w-[180px] sm:text-base"
             >
               <FaPhoneAlt className="mr-[10px] text-[14px]" />
@@ -630,7 +630,7 @@ const LandingHero2 = () => {
 
             <motion.div variants={riseVariants} whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
               <Link
-                href="https://wa.me/17864961231"
+              href="https://wa.me/14702052227"
                 className="flex h-12 items-center justify-center rounded-[6px] border border-[#9ce9bd] px-3 text-sm font-semibold text-[#00a13a] transition hover:bg-[#f4fff8] sm:text-base"
               >
                 <FaWhatsapp className="mr-[7px] text-xl sm:text-2xl" />

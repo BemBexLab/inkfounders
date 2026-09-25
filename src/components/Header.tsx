@@ -496,14 +496,14 @@ export default function Header() {
 
             <div className="border-t border-black/10 bg-[#F4F3E1] px-5 py-5 sm:px-6">
               <a
-                href="tel:+17864961231"
+                href="tel:+14702052227"
                 className="group flex items-center gap-3 rounded-xl text-black focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-black"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#DADD39] text-black transition group-hover:scale-105">
                   <IoCall size={20} />
                 </div>
                 <span className="text-sm font-semibold group-hover:underline sm:text-base">
-                  +1 (786) 496-1231
+                  (470) 205-2227
                 </span>
               </a>
 
