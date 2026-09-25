@@ -22,6 +22,8 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
+    // Serve local assets directly; the deployed image optimizer is returning 402s.
+    unoptimized: true,
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60 * 60 * 24 * 30,
     remotePatterns: [

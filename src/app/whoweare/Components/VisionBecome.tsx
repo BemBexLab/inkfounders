@@ -8,7 +8,7 @@ export default function VisionBecome() {
         {/* Book Cover */}
         <div className="flex w-full flex-shrink-0 justify-center lg:col-start-1 lg:row-span-2 lg:row-start-1 lg:w-auto">
           <Image
-            src="/whoweare/Group 33.svg"
+            src="/whoweare/Group 33.webp"
             alt="Book Cover"
             width={540}
             height={540}
