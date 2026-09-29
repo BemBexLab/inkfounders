@@ -78,6 +78,7 @@ const servicesLinks = [
   { id: "book-formatting", label: "Book Formatting", href: "/publishing-services" },
   { id: "childrens-book", label: "Children's Book", href: "/publishing-services" },
   { id: "book-marketing", label: "Book Marketing", href: "/publishing-services" },
+  { id: "comicbook-publishing", label: "Comicbook Publishing", href: "/publishing-services/comicbook-publishing" },
 ];
 
 type TrustBadge = {

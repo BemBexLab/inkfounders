@@ -58,6 +58,10 @@ const navItems: NavItem[] = [
         label: "Editing & Proofreading",
         href: "/publishing-services/editing-and-proofreading",
       },
+      {
+        label: "Comic Book Publishing",
+        href: "/publishing-services/comicbook-publishing",
+      },
     ],
   },
   {
