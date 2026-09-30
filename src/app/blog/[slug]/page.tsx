@@ -1,7 +1,16 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  CalendarDays,
+  Clock3,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
+
 import {
   decodeHtmlEntities,
   formatDate,
@@ -16,8 +25,7 @@ import {
   SOCIAL_IMAGE_URL,
 } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const revalidate = 300;
 
 type PageProps = {
   params: Promise<{
@@ -25,7 +33,9 @@ type PageProps = {
   }>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 
@@ -35,8 +45,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const title =
     decodeHtmlEntities(
-      post.yoast_head_json?.title || post.title?.rendered || "Inkfounders Blog",
+      post.yoast_head_json?.title ||
+        post.title?.rendered ||
+        "Inkfounders Blog",
     ) || "Inkfounders Blog";
+
   const description =
     decodeHtmlEntities(
       post.yoast_head_json?.description ||
@@ -44,7 +57,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         post.content?.rendered ||
         "",
     ) || undefined;
-  const featuredImage = getFeaturedImageFromPost(post);
+
   const canonicalUrl = getCanonicalUrl(`/blog/${slug}`);
 
   return {
@@ -57,8 +70,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         post.yoast_head_json?.og_title || post.title?.rendered || title,
       ),
       description:
-        decodeHtmlEntities(post.yoast_head_json?.og_description || description || "") ||
-        undefined,
+        decodeHtmlEntities(
+          post.yoast_head_json?.og_description || description || "",
+        ) || undefined,
       url: canonicalUrl,
       publishedTime:
         post.yoast_head_json?.article_published_time || post.date || undefined,
@@ -91,39 +105,144 @@ function formatWpContent(html: string) {
     tagName: string,
     classes: string,
   ) =>
-    source.replace(new RegExp(`<${tagName}([^>]*)>`, "gi"), (_, attrs = "") => {
-      if (/class\s*=/i.test(attrs)) {
-        return `<${tagName}${attrs.replace(
-          /class=(["'])(.*?)\1/i,
-          (_match: string, quote: string, existing: string) =>
-            `class=${quote}${existing} ${classes}${quote}`,
-        )}>`;
-      }
+    source.replace(
+      new RegExp(`<${tagName}\\b([^>]*?)(\\/?)>`, "gi"),
+      (match, attrs = "", selfClose = "") => {
+        if (/class\s*=/i.test(attrs)) {
+          return match.replace(
+            /class=(["'])(.*?)\1/i,
+            (_match: string, quote: string, existing: string) =>
+              `class=${quote}${existing} ${classes}${quote}`,
+          );
+        }
 
-      return `<${tagName}${attrs} class="${classes}">`;
-    });
+        const classAttr = ` class="${classes}"`;
+        return selfClose
+          ? `<${tagName}${attrs}${classAttr} />`
+          : `<${tagName}${attrs}${classAttr}>`;
+      },
+    );
 
   let formatted = html;
-  formatted = withClasses(formatted, "h2", "mt-12 mb-6 text-3xl font-bold text-black");
-  formatted = withClasses(formatted, "h3", "mt-10 mb-4 text-2xl font-bold text-black");
-  formatted = withClasses(formatted, "p", "mb-6 text-base leading-relaxed");
+
+  formatted = withClasses(
+    formatted,
+    "h1",
+    "mt-14 mb-6 text-4xl font-bold leading-tight tracking-[-0.03em] text-neutral-950 md:text-5xl",
+  );
+  formatted = withClasses(
+    formatted,
+    "h2",
+    "mt-14 mb-5 text-[30px] font-bold leading-tight tracking-[-0.025em] text-neutral-950 md:text-4xl",
+  );
+  formatted = withClasses(
+    formatted,
+    "h3",
+    "mt-10 mb-4 text-2xl font-bold leading-tight tracking-[-0.02em] text-neutral-950 md:text-[28px]",
+  );
+  formatted = withClasses(
+    formatted,
+    "h4",
+    "mt-8 mb-3 text-xl font-bold leading-snug text-neutral-950",
+  );
+  formatted = withClasses(
+    formatted,
+    "p",
+    "mb-7 text-[17px] leading-8 text-neutral-700 md:text-[18px] md:leading-9",
+  );
+  formatted = withClasses(
+    formatted,
+    "strong",
+    "font-semibold text-neutral-950",
+  );
+
+  // Lists: modern editorial cards for unordered lists and cleaner numbered lists.
+  // WordPress content often ships without explicit list-style classes, so the
+  // unordered list uses a custom accent dot rather than relying on browser bullets.
   formatted = withClasses(
     formatted,
     "ul",
-    "mb-6 list-disc space-y-2 pl-6 text-base text-gray-700",
+    "mb-10 space-y-3 pl-0 text-[17px] leading-7 text-neutral-700 md:text-[18px] md:leading-8 [&>li]:relative [&>li]:list-none [&>li]:rounded-2xl [&>li]:border [&>li]:border-neutral-200/80 [&>li]:bg-white [&>li]:py-4 [&>li]:pl-12 [&>li]:pr-5 [&>li]:shadow-[0_1px_2px_rgba(0,0,0,0.03)] [&>li]:transition-all [&>li]:duration-200 [&>li:hover]:border-neutral-300 [&>li:hover]:shadow-[0_10px_30px_-24px_rgba(0,0,0,0.35)] [&>li]:before:absolute [&>li]:before:left-5 [&>li]:before:top-[1.45rem] [&>li]:before:h-2.5 [&>li]:before:w-2.5 [&>li]:before:rounded-full [&>li]:before:bg-[#D4D939] [&>li]:before:shadow-[0_0_0_5px_rgba(212,217,57,0.18)]",
   );
   formatted = withClasses(
     formatted,
     "ol",
-    "mb-6 list-decimal space-y-2 pl-6 text-base text-gray-700",
+    "mb-10 list-decimal space-y-3 pl-7 text-[17px] leading-7 text-neutral-700 marker:font-bold marker:text-[#9EA51A] md:text-[18px] md:leading-8 [&>li]:pl-2",
   );
   formatted = withClasses(formatted, "li", "leading-relaxed");
+
   formatted = withClasses(
     formatted,
     "a",
-    "font-semibold text-blue-700 underline transition-colors hover:text-blue-900",
+    "font-medium text-neutral-950 underline decoration-[#D4D939] decoration-2 underline-offset-4 transition-colors hover:text-neutral-600",
   );
-  formatted = withClasses(formatted, "strong", "font-bold text-black");
+
+  formatted = withClasses(
+    formatted,
+    "blockquote",
+    "my-10 border-l-[3px] border-[#D4D939] bg-[#F8F8F1] px-6 py-5 text-xl font-medium italic leading-8 text-neutral-800 md:px-8 md:text-2xl md:leading-9",
+  );
+
+  // Tables: flat editorial treatment — no cards, no rounded corners, no
+  // decorative bullets. Strong rules and restrained brand accents keep it clean.
+  formatted = withClasses(
+    formatted,
+    "table",
+    "m-0 w-full min-w-[760px] table-fixed border-collapse text-left",
+  );
+  formatted = withClasses(
+    formatted,
+    "thead",
+    "border-b-2 border-neutral-950 bg-[#F7F7EC]",
+  );
+  formatted = withClasses(
+    formatted,
+    "th",
+    "px-6 py-5 text-[12px] font-bold uppercase leading-5 tracking-[0.12em] text-neutral-950 first:w-[20%] sm:px-7 sm:py-6 sm:text-[13px]",
+  );
+  formatted = withClasses(
+    formatted,
+    "tbody",
+    "bg-white",
+  );
+  formatted = withClasses(
+    formatted,
+    "tr",
+    "border-b border-neutral-200 transition-colors duration-150 last:border-b-0 hover:bg-[#FAFAF2]",
+  );
+  formatted = withClasses(
+    formatted,
+    "td",
+    "px-6 py-6 align-top text-[15px] leading-7 text-neutral-700 first:font-semibold first:text-neutral-950 sm:px-7 sm:py-7 sm:text-[16px] sm:leading-7",
+  );
+
+  // Responsive shell only: deliberately flat, square and shadow-free.
+  // The lime top rule adds brand character without creating a card effect.
+  formatted = formatted.replace(
+    /(<table\b[^>]*>[\s\S]*?<\/table>)/gi,
+    '<div class="my-12 border-y border-neutral-200 bg-white"><div class="h-[3px] w-full bg-[#D4D939]"></div><div class="overflow-x-auto">$1</div></div>',
+  );
+
+  formatted = withClasses(
+    formatted,
+    "img",
+    "my-10 h-auto max-w-full rounded-2xl border border-neutral-200 object-cover shadow-[0_20px_50px_-30px_rgba(0,0,0,0.35)]",
+  );
+  formatted = withClasses(
+    formatted,
+    "hr",
+    "my-12 border-0 border-t border-neutral-200",
+  );
+  formatted = withClasses(
+    formatted,
+    "code",
+    "rounded bg-neutral-100 px-1.5 py-0.5 text-[0.9em] font-medium text-neutral-900",
+  );
+  formatted = withClasses(
+    formatted,
+    "pre",
+    "my-8 overflow-x-auto rounded-2xl bg-neutral-950 p-5 text-sm leading-7 text-neutral-100",
+  );
 
   return formatted;
 }
@@ -136,9 +255,13 @@ export default async function BlogSlugPage({ params }: PageProps) {
     notFound();
   }
 
-  const postTitle = decodeHtmlEntities(post.title?.rendered || "Untitled Post");
+  const postTitle = decodeHtmlEntities(
+    post.title?.rendered || "Untitled Post",
+  );
   const contentHtml = formatWpContent(
-    stripInlineStyles(post.content?.rendered || post.excerpt?.rendered || ""),
+    stripInlineStyles(
+      post.content?.rendered || post.excerpt?.rendered || "",
+    ),
   );
   const featuredImage = getFeaturedImageFromPost(post);
   const readTime =
@@ -148,160 +271,221 @@ export default async function BlogSlugPage({ params }: PageProps) {
   const updatedDate = formatDate(post.modified || post.date);
 
   return (
-    <div className="bg-[#F5F5DC] font-sans text-gray-800">
-      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
-        <Link
-          href="/blog"
-          className="mb-6 inline-flex items-center text-sm text-gray-600 transition-colors hover:text-[#D4D939] sm:mb-8 sm:text-base"
-        >
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to Blog
-        </Link>
-      </div>
+    <div className="min-h-screen bg-[#FCFCF8] text-neutral-900 selection:bg-[#D4D939] selection:text-black">
+      <header className="sticky top-0 z-40 border-b border-black/[0.06] bg-[#FCFCF8]/90 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-[1440px] items-center justify-between px-4 py-3.5 sm:px-6 lg:px-10">
+          <Link
+            href="/blog"
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-neutral-600 transition-colors hover:text-neutral-950"
+          >
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-neutral-200 bg-white transition-transform group-hover:-translate-x-0.5">
+              <ArrowLeft className="h-4 w-4" />
+            </span>
+            Back to Blog
+          </Link>
 
-      <main className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
-          <article className="rounded-2xl border border-gray-100 bg-white p-5 shadow-sm sm:p-6 md:p-8 lg:col-span-8 lg:p-12">
-            <header className="mb-8 border-b border-gray-100 pb-6 sm:mb-10 sm:pb-8">
-              <span className="mb-4 inline-block rounded-full bg-[#D4D939] px-3 py-1 text-sm font-bold text-black">
-                Inkfounders Blog
-              </span>
+          <Link
+            href="/contactus"
+            className="hidden items-center gap-2 rounded-full bg-neutral-950 px-4 py-2 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-neutral-800 sm:inline-flex"
+          >
+            Start a Project
+            <ArrowUpRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </header>
+
+      <main>
+        <section className="border-b border-black/[0.06]">
+          <div className="mx-auto max-w-[1440px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+            <div className="mx-auto max-w-6xl text-center">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-700 shadow-sm sm:text-xs">
+                <span className="h-2 w-2 rounded-full bg-[#D4D939]" />
+                Inkfounders Journal
+              </div>
 
               <h1
-                className="mb-5 text-[28px] font-bold leading-tight text-black sm:text-[34px] md:text-[42px] lg:mb-6 lg:text-5xl"
-                dangerouslySetInnerHTML={{ __html: post.title?.rendered || "" }}
+                className="text-balance text-[38px] font-bold leading-[1.04] tracking-[-0.045em] text-neutral-950 sm:text-5xl md:text-6xl lg:text-[72px]"
+                dangerouslySetInnerHTML={{
+                  __html: post.title?.rendered || "",
+                }}
               />
 
-              {featuredImage ? (
-                <div className="mb-8 sm:mb-10 lg:mb-12">
-                  <div className="relative overflow-hidden rounded-xl border-4 border-[#D4D939] bg-gray-100 shadow-lg">
-                    <div className="relative h-[220px] sm:h-[320px] md:h-[380px] lg:h-96">
-                      <img
-                        src={featuredImage}
-                        alt={postTitle}
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                  </div>
+              <div className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-sm font-medium text-neutral-500 sm:mt-8">
+                <div className="inline-flex items-center gap-2">
+                  <CalendarDays className="h-4 w-4 text-neutral-400" />
+                  <span>{publishedDate}</span>
                 </div>
-              ) : null}
 
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-500">
-                <span>Published: {publishedDate}</span>
-                <span>&bull;</span>
-                <span>Updated: {updatedDate}</span>
-                <span>&bull;</span>
-                <span>{readTime}</span>
+                <span className="hidden h-1 w-1 rounded-full bg-neutral-300 sm:block" />
+
+                <div className="inline-flex items-center gap-2">
+                  <Clock3 className="h-4 w-4 text-neutral-400" />
+                  <span>{readTime}</span>
+                </div>
+
+                {updatedDate !== publishedDate && (
+                  <>
+                    <span className="hidden h-1 w-1 rounded-full bg-neutral-300 sm:block" />
+                    <span>Updated {updatedDate}</span>
+                  </>
+                )}
               </div>
-            </header>
-
-            <div className="prose max-w-none text-gray-700 prose-headings:text-black prose-a:text-blue-700 prose-a:no-underline hover:prose-a:underline prose-strong:text-black prose-img:rounded-xl sm:prose-lg">
-              <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
             </div>
-          </article>
 
-          <aside className="space-y-6 lg:col-span-4 lg:space-y-8">
-            <div className="space-y-6 lg:sticky lg:top-8 lg:space-y-8">
-              <div className="rounded-xl bg-[#D4D939] p-6 text-center shadow-lg sm:p-8">
-                <h3 className="mb-4 text-2xl font-bold text-black">
-                  Ready to Publish?
-                </h3>
-                <p className="mb-6 text-black opacity-90">
-                  Get a custom quote for your book project today.
-                </p>
-                <Link
-                  href="/contactus"
-                  className="block w-full rounded-lg bg-black py-3 font-bold text-white transition-colors hover:bg-gray-800"
-                >
-                  Request a Quote
-                </Link>
-              </div>
-
-              <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6">
-                <h3 className="mb-4 border-b pb-2 text-lg font-bold text-black">
-                  Contact Us
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <div className="mr-3 rounded-full bg-yellow-100 p-2">
-                      <svg
-                        className="h-5 w-5 text-[#D4D939]"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-black">Phone</p>
-                      <a href="tel:+14702052227" className="hover:underline text-sm text-gray-600">(470) 205-2227</a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="mr-3 rounded-full bg-yellow-100 p-2">
-                      <svg
-                        className="h-5 w-5 text-[#D4D939]"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-black">Email</p>
-                      <a href="mailto:info@inkfounders.com" className="hover:underline text-sm text-gray-600">
-                        info@inkfounders.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="mr-3 rounded-full bg-yellow-100 p-2">
-                      <svg
-                        className="h-5 w-5 text-[#D4D939]"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-black">Location</p>
-                      <a href="https://maps.app.goo.gl/mibAgwMcMGF8A8ig7" className="hover:underline text-sm text-gray-600">
-                        1221 Brickell Ave, Miami, FL 33131, United States
-                      </a>
-                    </div>
+            {featuredImage ? (
+              <div className="mx-auto mt-10 max-w-7xl sm:mt-14">
+                <div className="relative overflow-hidden rounded-[24px] border border-black/10 bg-neutral-100 shadow-[0_28px_80px_-45px_rgba(0,0,0,0.5)] sm:rounded-[32px]">
+                  <div className="aspect-[16/9] w-full lg:aspect-[2/1]">
+                    <img
+                      src={featuredImage}
+                      alt={postTitle}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
-            </div>
-          </aside>
-        </div>
+            ) : null}
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-[1440px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+          <div className="grid grid-cols-1 gap-14 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-16 xl:gap-24">
+            <article className="min-w-0">
+              <div className="mx-auto max-w-[820px]">
+                <div className="mb-10 flex items-center gap-4">
+                  <span className="h-px flex-1 bg-neutral-200" />
+                  <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-400">
+                    Article
+                  </span>
+                  <span className="h-px flex-1 bg-neutral-200" />
+                </div>
+
+                <div className="prose max-w-none prose-headings:font-bold prose-headings:text-neutral-950 prose-strong:text-neutral-950">
+                  <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+                </div>
+
+                <div className="mt-14 border-t border-neutral-200 pt-8 sm:mt-16">
+                  <div className="rounded-2xl bg-[#F4F4EA] p-6 sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-8">
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-neutral-500">
+                        Need help with your book?
+                      </p>
+                      <h2 className="mt-2 text-2xl font-bold tracking-[-0.025em] text-neutral-950">
+                        Turn your manuscript into a finished book.
+                      </h2>
+                    </div>
+
+                    <Link
+                      href="/contactus"
+                      className="mt-5 inline-flex shrink-0 items-center gap-2 rounded-full bg-neutral-950 px-5 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-neutral-800 sm:mt-0"
+                    >
+                      Request a Quote
+                      <ArrowUpRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            {/* Keep the sidebar pinned below the navigation as the article scrolls. */}
+            <aside className="self-start lg:sticky lg:top-24 lg:z-30 lg:pr-1">
+              <div className="space-y-5">
+                <div className="overflow-hidden rounded-[24px] bg-neutral-950 p-7 text-white sm:p-8">
+                  <div className="mb-8 flex h-11 w-11 items-center justify-center rounded-full bg-[#D4D939] text-neutral-950">
+                    <ArrowUpRight className="h-5 w-5" />
+                  </div>
+
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/50">
+                    Publishing Support
+                  </p>
+                  <h2 className="mt-3 text-3xl font-bold leading-tight tracking-[-0.035em]">
+                    Ready to publish your story?
+                  </h2>
+                  <p className="mt-4 text-sm leading-6 text-white/65">
+                    Get a custom quote for your book project and work with a team
+                    that can help you move from manuscript to launch.
+                  </p>
+
+                  <Link
+                    href="/contactus"
+                    className="mt-7 inline-flex w-full items-center justify-between rounded-xl bg-[#D4D939] px-5 py-3.5 text-sm font-bold text-neutral-950 transition-all hover:bg-[#E1E650]"
+                  >
+                    Request a Quote
+                    <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                </div>
+
+                <div className="rounded-[24px] border border-neutral-200 bg-white p-6 sm:p-7">
+                  <div className="mb-6">
+                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-neutral-400">
+                      Contact
+                    </p>
+                    <h3 className="mt-2 text-xl font-bold tracking-[-0.02em] text-neutral-950">
+                      Talk to Inkfounders
+                    </h3>
+                  </div>
+
+                  <div className="divide-y divide-neutral-100">
+                    <a
+                      href="tel:+14702052227"
+                      className="group flex items-center gap-4 py-4 first:pt-0"
+                    >
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-neutral-700 transition-colors group-hover:bg-[#D4D939] group-hover:text-neutral-950">
+                        <Phone className="h-4 w-4" />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-xs font-medium text-neutral-400">
+                          Phone
+                        </span>
+                        <span className="mt-0.5 block text-sm font-semibold text-neutral-800">
+                          (470) 205-2227
+                        </span>
+                      </span>
+                    </a>
+
+                    <a
+                      href="mailto:info@inkfounders.com"
+                      className="group flex items-center gap-4 py-4"
+                    >
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-neutral-700 transition-colors group-hover:bg-[#D4D939] group-hover:text-neutral-950">
+                        <Mail className="h-4 w-4" />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-xs font-medium text-neutral-400">
+                          Email
+                        </span>
+                        <span className="mt-0.5 block truncate text-sm font-semibold text-neutral-800">
+                          info@inkfounders.com
+                        </span>
+                      </span>
+                    </a>
+
+                    <a
+                      href=""
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-start gap-4 py-4 last:pb-0"
+                    >
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-neutral-700 transition-colors group-hover:bg-[#D4D939] group-hover:text-neutral-950">
+                        <MapPin className="h-4 w-4" />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-xs font-medium text-neutral-400">
+                          Office
+                        </span>
+                        <span className="mt-0.5 block text-sm font-semibold leading-5 text-neutral-800">
+                          1221 Brickell Ave,
+                          <br />
+                          Miami, FL 33131
+                        </span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
       </main>
     </div>
   );

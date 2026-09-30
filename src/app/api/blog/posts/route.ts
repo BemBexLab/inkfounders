@@ -8,8 +8,7 @@ import {
   getTextFromHtml,
 } from "@/app/blog/wpPosts";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const revalidate = 300;
 
 export async function GET() {
   const posts = await getAllWpPosts();
@@ -34,7 +33,7 @@ export async function GET() {
       }),
     {
       headers: {
-        "Cache-Control": "no-store, max-age=0",
+        "Cache-Control": "public, s-maxage=300, stale-while-revalidate=600",
       },
     },
   );

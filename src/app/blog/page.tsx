@@ -11,6 +11,7 @@ import {
 import { createCanonicalMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createCanonicalMetadata("/blog");
+export const revalidate = 300;
 
 function mapWpPostToBlogPost(
   post: Awaited<ReturnType<typeof getAllWpPosts>>[number],

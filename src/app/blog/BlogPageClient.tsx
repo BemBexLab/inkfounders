@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Calendar, ChevronRight, Clock, Search, Tag } from "lucide-react";
@@ -62,29 +62,9 @@ export default function BlogPageClient({
   initialWpPosts,
 }: BlogPageClientProps) {
   const router = useRouter();
-  const [liveWpPosts, setLiveWpPosts] = useState<BlogPost[] | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
-
-  useEffect(() => {
-    let active = true;
-
-    fetch("/api/blog/posts", { cache: "no-store" })
-      .then((response) => (response.ok ? response.json() : null))
-      .then((posts: BlogPost[] | null) => {
-        if (active && posts) {
-          setLiveWpPosts(posts);
-        }
-      })
-      .catch(() => {
-        // Keep the server-rendered posts visible if the refresh is unavailable.
-      });
-
-    return () => {
-      active = false;
-    };
-  }, []);
 
   const allPosts = useMemo(
     () => {
@@ -94,7 +74,7 @@ export default function BlogPageClient({
       // fallback and every WordPress post remains visible in the listing.
       for (const post of [
         ...staticBlogPosts,
-        ...(liveWpPosts ?? initialWpPosts),
+        ...initialWpPosts,
       ]) {
         postsBySlug.set(post.slug.trim().toLowerCase(), post);
       }
@@ -103,7 +83,7 @@ export default function BlogPageClient({
         (a, b) => parsePostDate(b.date) - parsePostDate(a.date),
       );
     },
-    [initialWpPosts, liveWpPosts],
+    [initialWpPosts],
   );
 
   const categories: Category[] = useMemo(

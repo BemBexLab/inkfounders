@@ -91,7 +91,7 @@ export const getPostBySlug = cache(async (slug: string): Promise<WPPost | null> 
   });
 
   try {
-    const res = await fetch(endpoint, { cache: "no-store" });
+    const res = await fetch(endpoint, { next: { revalidate: 300 } });
 
     if (!res.ok) {
       return null;
@@ -120,7 +120,7 @@ export async function getAllWpPosts(): Promise<WPPost[]> {
         status: "publish",
         _embed: "1",
       });
-      const res = await fetch(endpoint, { cache: "no-store" });
+      const res = await fetch(endpoint, { next: { revalidate: 300 } });
 
       if (!res.ok) {
         break;
