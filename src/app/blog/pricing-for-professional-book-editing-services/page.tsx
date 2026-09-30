@@ -104,7 +104,7 @@ const Blog2 = () => {
                   answer varies based on several factors, including the type of
                   editing, word count, the editor's experience, and the
                   complexity of the project. In this guide, we'll break down the
-                  costs of <b><a href="/publishing-services" className="text-blue-500 hover:text-blue-800 hover:underline">professional book editing services</a></b> in simple terms.
+                  costs of <b><a href="/publishing-services" className="hover:text-blue-500 font-semibold underline">professional book editing services</a></b> in simple terms.
                 </p>
                 <p className="text-base mb-6">
                   We'll cover the price per word for <Link className="hover:text-blue-500 font-semibold underline" href={"/publishing-services/editing-and-proofreading"}>book editing</Link>, the cost of
