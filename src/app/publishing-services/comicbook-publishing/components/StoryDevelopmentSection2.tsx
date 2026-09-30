@@ -28,7 +28,7 @@ const StoryDevelopmentSection: React.FC = () => {
         {/* Left Side - Illustration */}
         <div className="w-full lg:w-1/2 flex justify-center">
           <Image
-            src="https://images.unsplash.com/photo-1513001900722-370f803f498d?auto=format&fit=crop&w=800&q=80"
+            src="/comic-book/Rectangle 14 (5).svg"
             alt="Comic script and story development notes"
             width={600}
             height={750}

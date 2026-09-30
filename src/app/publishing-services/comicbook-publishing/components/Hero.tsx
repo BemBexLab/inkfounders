@@ -3,7 +3,7 @@ import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
 
 const unsplashImages = {
-  artwork: "/publishingservices/comic-workspace.webp",
+  artwork: "/comic-book/Rectangle 15.svg",
 };
 
 /* ---------- Image panel ---------- */

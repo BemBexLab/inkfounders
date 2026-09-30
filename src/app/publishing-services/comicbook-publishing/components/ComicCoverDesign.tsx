@@ -15,12 +15,12 @@ const categories = [
 
 // Reliable Picsum Photos URLs - each seed produces a consistent, unique image
 const categoryImages: Record<string, string> = {
-  Superhero: "https://picsum.photos/seed/superhero-comic/600/800",
-  Fantasy: "https://picsum.photos/seed/fantasy-art/600/800",
-  Horror: "https://picsum.photos/seed/horror-dark/600/800",
-  "Science Fiction": "https://picsum.photos/seed/scifi-space/600/800",
-  "Graphic Novel": "https://picsum.photos/seed/graphic-novel/600/800",
-  "Manga-Style": "https://picsum.photos/seed/manga-anime/600/800",
+  Superhero: "/comic-book/Group 41.svg",
+  Fantasy: "/comic-book/Group 42.svg",
+  Horror: "/comic-book/Group 43.svg",
+  "Science Fiction": "/comic-book/Group 44.svg",
+  "Graphic Novel": "/comic-book/Group 45.svg",
+  "Manga-Style": "/comic-book/Group 41.svg",
 };
 
 const services = [
@@ -70,13 +70,13 @@ export default function ComicCoverDesign() {
       <main className="max-w-6xl mx-auto px-6 pb-16">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 lg:items-stretch">
           {/* Left - Image */}
-          <div className="flex-1 w-full relative min-h-[300px] lg:min-h-0">
+          <div className="relative min-h-0 w-full flex-1 aspect-[672/546] overflow-hidden rounded-lg">
             <Image
               key={activeCategory}
               src={categoryImages[activeCategory]}
               alt={`${activeCategory} Comic Book Cover Design Example`}
               fill
-              className="rounded-lg object-cover transition-opacity duration-300"
+              className="rounded-lg object-contain transition-opacity duration-300"
               priority={activeCategory === "Superhero"}
             />
           </div>

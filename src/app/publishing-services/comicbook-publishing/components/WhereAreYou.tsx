@@ -1,14 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const workspaceImage = "/publishingservices/comic-workspace.webp";
-
 type Stage = {
   title: string;
   description: string;
   helpText: string;
   buttonText: string;
   buttonHref: string;
+  imageSrc: string;
 };
 
 const stages: Stage[] = [
@@ -20,6 +19,7 @@ const stages: Stage[] = [
       "We can help with: Story development, characters, structure, and script development.",
     buttonText: "Develop My Idea",
     buttonHref: "/contactus",
+    imageSrc: "/comic-book/Rectangle 14.svg",
   },
   {
     title: "I Have a Script",
@@ -29,6 +29,7 @@ const stages: Stage[] = [
       "We can help with: Editing, proofreading, dialogue, story consistency, and script refinement.",
     buttonText: "Review My Script",
     buttonHref: "/contactus",
+    imageSrc: "/comic-book/Rectangle 14 (1).svg",
   },
   {
     title: "I Have Artwork",
@@ -38,6 +39,7 @@ const stages: Stage[] = [
       "We can help with: Formatting, lettering, cover design, publishing preparation, and production files.",
     buttonText: "Prepare My Comic",
     buttonHref: "/contactus",
+    imageSrc: "/comic-book/Rectangle 14 (2).svg",
   },
   {
     title: "I Have a Completed Comic",
@@ -47,6 +49,7 @@ const stages: Stage[] = [
       "We can help with: Final review, formatting, cover preparation, publishing, distribution, and promotion.",
     buttonText: "Prepare My Comic",
     buttonHref: "/contactus",
+    imageSrc: "/comic-book/Rectangle 14 (3).svg",
   },
 ];
 
@@ -82,7 +85,7 @@ function StageRow({ stage, index }: { stage: Stage; index: number }) {
       <div className="flex-1">
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#e8e6c9]">
           <Image
-            src={workspaceImage}
+            src={stage.imageSrc}
             alt={stage.title}
             fill
             sizes="(max-width: 1023px) 100vw, 45vw"

@@ -17,7 +17,7 @@ export default function CreativeProjectControl() {
             {/* Removed aspect ratio, added h-full */}
             <div className="h-full overflow-hidden rounded-2xl shadow-sm">
               <img
-                src="https://images.unsplash.com/photo-1526243741027-444d633d7365?auto=format&fit=crop&q=80&w=1200"
+                src="/comic-book/Rectangle 14 (6).svg"
                 alt="Person browsing books in a bookstore"
                 className="w-full h-full object-cover"
               />

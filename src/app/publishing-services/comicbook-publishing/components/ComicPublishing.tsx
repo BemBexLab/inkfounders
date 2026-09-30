@@ -71,7 +71,7 @@ export default function ComicPublishing() {
           {/* Right Image */}
           <div className="overflow-hidden rounded-xl">
             <img
-              src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600&h=400&fit=crop"
+              src="/comic-book/Rectangle 14 (7).svg"
               alt="Woman browsing books in a bookstore"
               className="h-auto w-full object-cover"
             />

@@ -34,7 +34,7 @@ export default function StoryDevelopmentSection() {
           {/* Left Column - Image */}
           <div className="relative w-full h-full min-h-[400px]">
             <Image
-              src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=600&fit=crop"
+              src="/comic-book/Rectangle 14 (4).svg"
               alt="Comic book story development and script writing process"
               fill
               className="object-cover rounded-2xl"

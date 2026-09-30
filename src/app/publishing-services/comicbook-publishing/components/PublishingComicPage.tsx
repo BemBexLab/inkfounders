@@ -20,7 +20,7 @@ const stepsData: Record<string, StepData> = {
       "Start with your concept, characters, story structure, script, artwork plans, target audience, and publishing goals.",
       "A strong foundation makes the later stages of comic production easier to manage.",
     ],
-    imageUrl: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&h=600&fit=crop",
+    imageUrl: "/comic-book/image 28.svg",
   },
   Script: {
     stepNumber: 2,
@@ -29,7 +29,7 @@ const stepsData: Record<string, StepData> = {
       "Develop the story into a comic script with dialogue, captions, scenes, panel descriptions, and page structure.",
       "If you already have a script, professional editing can help improve clarity, consistency, pacing, and readability.",
     ],
-    imageUrl: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=600&fit=crop",
+    imageUrl: "/comic-book/image 28 (1).svg",
   },
   Artwork: {
     stepNumber: 3,
@@ -37,7 +37,7 @@ const stepsData: Record<string, StepData> = {
     description: [
       "Develop the visual elements of the comic, including illustrations, panels, characters, backgrounds, colors, and other artwork.",
     ],
-    imageUrl: "https://images.unsplash.com/photo-1460518451285-97b6aa326961?w=800&h=600&fit=crop",
+    imageUrl: "/comic-book/image 29.svg",
   },
   Editing: {
     stepNumber: 4,
@@ -45,7 +45,7 @@ const stepsData: Record<string, StepData> = {
     description: [
       "Review the written content and make sure the story, dialogue, captions, character names, and visual storytelling work together.",
     ],
-    imageUrl: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=600&fit=crop",
+    imageUrl: "/comic-book/image 30.svg",
   },
   Formatting: {
     stepNumber: 5,
@@ -54,7 +54,7 @@ const stepsData: Record<string, StepData> = {
       "Prepare the interior pages and cover according to the requirements of the selected publishing format.",
       "This can include panel placement, lettering, typography, margins, bleed, page dimensions, and print specifications.",
     ],
-    imageUrl: "https://images.unsplash.com/photo-1586075010923-2dd4570fb13f?w=800&h=600&fit=crop",
+    imageUrl: "/comic-book/image 31.svg",
   },
   Cover: {
     stepNumber: 6,
@@ -62,7 +62,7 @@ const stepsData: Record<string, StepData> = {
     description: [
       "Create the final print-ready and digital files required for your chosen publishing and distribution channels.",
     ],
-    imageUrl: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800&h=600&fit=crop",
+    imageUrl: "/comic-book/image 32.svg",
   },
   Publishing: {
     stepNumber: 7,
@@ -70,7 +70,7 @@ const stepsData: Record<string, StepData> = {
     description: [
       "Once the project is professionally prepared, it can move into the publishing and distribution stage.",
     ],
-    imageUrl: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
+    imageUrl: "/comic-book/image 33.svg",
   },
   Readers: {
     stepNumber: 8,
@@ -78,7 +78,7 @@ const stepsData: Record<string, StepData> = {
     description: [
       "After publication, marketing can help introduce your comic to potential readers and build awareness around your creator brand.",
     ],
-    imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
+    imageUrl: "/comic-book/image 28 (1).svg",
   },
 };
 
