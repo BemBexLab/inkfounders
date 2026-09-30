@@ -1,152 +1,121 @@
-import React from "react";
-import { HiOutlineColorSwatch } from "react-icons/hi";
-import {
-  HiOutlineStar,
-  HiOutlineCheckCircle,
-  HiOutlinePencil,
-  HiOutlineDocumentText,
-  HiOutlineBookOpen,
-  HiOutlineMegaphone,
-} from "react-icons/hi2";
+import { HiOutlineStar, HiOutlineCheckCircle } from "react-icons/hi2";
 
-const WhyChooseInkFounders = () => {
-  const features = [
-    {
-      title: "End to End Publishing Support",
-      description:
-        "Get support across writing, editing, design, formatting, publishing, and promotion.",
-    },
-    {
-      title: "Our Approach",
-      description:
-        "Your story, characters, artwork, and creative direction remain central to the project.",
-    },
-    {
-      title: "Support at Different Stages",
-      description:
-        "Whether you have an idea, script, artwork, or completed comic, we can help identify the next step.",
-    },
-    {
-      title: "Professional Production Support",
-      description:
-        "Prepare your comic with professional editing, design, formatting, and publishing preparation.",
-    },
-    {
-      title: "Clear Communication",
-      description:
-        "Understand what stage your project is in and what needs to happen next.",
-    },
-  ];
+const features = [
+  {
+    title: "End to End Publishing Support",
+    description:
+      "Get support across writing, editing, design, formatting, publishing, and promotion.",
+  },
+  {
+    title: "Our Approach",
+    description:
+      "Your story, characters, artwork, and creative direction remain central to the project.",
+  },
+  {
+    title: "Support at Different Stages",
+    description:
+      "Whether you have an idea, script, artwork, or completed comic, we can help identify the next step.",
+  },
+  {
+    title: "Professional Production Support",
+    description:
+      "Prepare your comic with professional editing, design, formatting, and publishing preparation.",
+  },
+  {
+    title: "Clear Communication",
+    description:
+      "Understand what stage your project is in and what needs to happen next.",
+  },
+];
 
-  const trustIcons = [
-    {
-      label: "Writing",
-      icon: <HiOutlinePencil className="text-3xl" />,
-    },
-    {
-      label: "Editing",
-      icon: <HiOutlineDocumentText className="text-3xl" />,
-    },
-    {
-      label: "Design",
-      icon: <HiOutlineColorSwatch className="text-3xl" />,
-    },
-    {
-      label: "Publishing",
-      icon: <HiOutlineBookOpen className="text-3xl" />,
-    },
-    {
-      label: "Marketing",
-      icon: <HiOutlineMegaphone className="text-3xl" />,
-    },
-  ];
-
+export default function WhyChooseInkFounders() {
   return (
-    <section className="relative overflow-hidden bg-[#f5f3e8] py-20 px-4 sm:px-6 lg:px-8">
-      {/* Organic background shapes with a yellowish touch */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-20 -right-20 w-96 h-96 bg-yellow-100/50 rounded-full opacity-60 blur-3xl" />
-        <div className="absolute -bottom-32 -left-20 w-[500px] h-[500px] bg-[#e3dfce] rounded-full opacity-50 blur-3xl" />
-        <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-[#dcd8c4] rounded-full opacity-40 blur-3xl" />
+    <section className="relative w-full min-w-0 overflow-hidden bg-[#f5f3e8] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:py-24">
+      {/* Decorative background */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-yellow-100/50 opacity-60 blur-3xl sm:-right-20 sm:-top-20 sm:h-72 sm:w-72 lg:h-96 lg:w-96" />
+
+        <div className="absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-[#e3dfce] opacity-50 blur-3xl sm:-left-20 sm:h-96 sm:w-96 lg:-bottom-32 lg:h-[500px] lg:w-[500px]" />
+
+        <div className="absolute right-1/4 top-1/2 h-40 w-40 rounded-full bg-[#dcd8c4] opacity-40 blur-3xl sm:h-56 sm:w-56 lg:h-72 lg:w-72" />
       </div>
 
-      <div className="relative max-w-6xl mx-auto">
+      <div className="relative mx-auto w-full max-w-6xl [overflow-wrap:anywhere]">
         {/* Header */}
-        <div className="mb-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight inline-block">
-            <span className="border-b-8 border-yellow-400 pb-2">
+        <header className="mb-8 sm:mb-10 lg:mb-12">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900">
+            <span className="underline decoration-yellow-400 decoration-[4px] underline-offset-[6px] [text-decoration-skip-ink:none] sm:decoration-[6px] sm:underline-offset-8 lg:decoration-[8px]">
               Why Choose Ink Founders?
             </span>
           </h2>
-          <p className="text-2xl sm:text-3xl font-semibold text-[#2d2d2d] mt-6 mb-8">
+
+          <p className="mb-5 mt-5 text-[clamp(1.25rem,2.5vw,1.875rem)] font-semibold leading-tight text-[#2d2d2d] sm:mb-6 sm:mt-6 lg:mb-8">
             One Team for Your Comic Publishing Journey!
           </p>
 
-          <div className="max-w-3xl space-y-4 text-[#4a4a4a] text-base sm:text-lg leading-relaxed">
+          <div className="max-w-3xl space-y-3 text-sm leading-6 text-[#4a4a4a] sm:space-y-4 sm:text-base sm:leading-7 lg:text-lg lg:leading-8">
             <p>
               Publishing a comic can involve{" "}
-              <span className="text-[#1a1a1a] font-semibold">
+              <span className="font-semibold text-[#1a1a1a]">
                 writers, editors, designers, artists, formatters, publishers,
-                and marketing professionals.
+                and marketing professionals
               </span>
               .
             </p>
+
             <p>
               Working with{" "}
-              {/* Yellow highlighter effect for key text */}
-              <span className="bg-yellow-200/50 px-1.5 rounded text-[#1a1a1a] font-semibold">
+              <span className="rounded bg-yellow-200/50 px-1.5 font-semibold text-[#1a1a1a] [box-decoration-break:clone] [-webkit-box-decoration-break:clone]">
                 one publishing team
               </span>{" "}
               can make it easier to coordinate these different stages.
             </p>
           </div>
-        </div>
+        </header>
 
-        {/* The Challenge - with green accent line */}
-        {/* <div className="mb-16 border-l-4 border-[#a3b87a] pl-6">
-          <h3 className="text-2xl font-bold text-[#1a1a1a] mb-3">
-            The Challenge
-          </h3>
-          <p className="text-[#4a4a4a] text-lg leading-relaxed max-w-3xl">
-            The project required meticulous editing, interior formatting, cover
-            preparation, and generating flawless publishing-ready files across
-            multiple platforms.
-          </p>
-        </div> */}
+        {/* Support cards */}
+        <div>
+          <div className="mb-4 flex items-center gap-2 sm:mb-5 sm:gap-3 lg:mb-6">
+            <HiOutlineStar
+              aria-hidden="true"
+              className="h-6 w-6 shrink-0 text-yellow-500 sm:h-7 sm:w-7 lg:h-8 lg:w-8"
+            />
 
-        {/* Our Support */}
-        <div className="">
-          <div className="flex items-center gap-3 mb-4">
-            {/* Yellow star to match the theme */}
-            <HiOutlineStar className="text-3xl text-yellow-500" />
-            <h3 className="text-2xl font-bold text-[#1a1a1a]">Our Support</h3>
+            <h3 className="text-xl font-bold leading-tight text-[#1a1a1a] sm:text-2xl">
+              Our Support
+            </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {features.map((feature, idx) => (
-              <div
-                key={idx}
-                className="bg-white border border-[#e5e3d6] rounded-xl p-5 hover:border-yellow-400 hover:shadow-md transition-all duration-300 flex items-start gap-4"
+          <div className="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 lg:gap-6">
+            {features.map((feature) => (
+              <article
+                key={feature.title}
+                className="flex min-w-0 items-start gap-3 rounded-xl border border-[#e5e3d6] bg-white p-4 transition duration-300 hover:border-yellow-400 hover:shadow-md motion-reduce:transition-none sm:gap-4 sm:p-5 lg:p-6"
               >
-                {/* Yellow icon background */}
-                <div className="flex-shrink-0 w-10 h-10 bg-yellow-50 border border-yellow-100 rounded-lg flex items-center justify-center">
-                  <HiOutlineCheckCircle className="text-2xl text-yellow-600" />
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-yellow-100 bg-yellow-50 sm:h-10 sm:w-10">
+                  <HiOutlineCheckCircle
+                    aria-hidden="true"
+                    className="h-5 w-5 text-yellow-600 sm:h-6 sm:w-6"
+                  />
                 </div>
-                <div>
-                  <h4 className="text-[#1a1a1a] font-semibold mb-1">
+
+                <div className="min-w-0 flex-1">
+                  <h4 className="mb-1.5 text-base font-semibold leading-snug text-[#1a1a1a] sm:mb-2">
                     {feature.title}
                   </h4>
-                  <p className="text-[#5a5a5a] text-sm leading-relaxed">
+
+                  <p className="text-sm leading-6 text-[#5a5a5a]">
                     {feature.description}
                   </p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default WhyChooseInkFounders;
+}

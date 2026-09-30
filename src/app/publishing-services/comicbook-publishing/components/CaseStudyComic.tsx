@@ -1,5 +1,5 @@
-import { label } from "motion/react-client";
 import Image from "next/image";
+import Link from "next/link";
 import { AiFillProject } from "react-icons/ai";
 import {
   FiFileText,
@@ -11,94 +11,104 @@ import {
   FiStar,
 } from "react-icons/fi";
 
+const supportServices = [
+  { icon: FiFileText, label: "Editing" },
+  { icon: FiCheckCircle, label: "Proofreading" },
+  { icon: FiLayout, label: "Interior Formatting" },
+  { icon: FiPenTool, label: "Cover Design" },
+  { icon: FiUploadCloud, label: "Publishing preparation" },
+  { icon: AiFillProject, label: "The Final Project" },
+];
+
+const galleryImages = [
+  {
+    src: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&q=80&w=1000",
+    alt: "Comic Book Shelf",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?auto=format&fit=crop&q=80&w=1000",
+    alt: "Comic Art Mural",
+  },
+];
+
 export default function CaseStudyComic() {
-  const supportServices = [
-    { icon: FiFileText, label: "Editing" },
-    { icon: FiCheckCircle, label: "Proofreading" },
-    { icon: FiLayout, label: "Interior Formatting" },
-    { icon: FiPenTool, label: "Cover Design" },
-    { icon: FiUploadCloud, label: "Publishing preparation" },
-    { icon: AiFillProject, label: "The Final Project" }
-  ];
-
   return (
-    <section className="relative w-full py-24 px-6 md:px-12 lg:px-20 xl:px-32 bg-[#F5F5E8] text-zinc-900 overflow-hidden">
-      {/* Decorative background arcs - Scaled up for full width */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] max-w-[1400px] h-[600px] bg-[#E8E8C8] rounded-t-full pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#E8E8C8]/50 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative w-full min-w-0 overflow-hidden bg-[#F5F5E8] px-4 py-12 text-zinc-900 sm:px-6 sm:py-16 md:px-8 lg:px-12 lg:py-20 xl:px-20 xl:py-24 2xl:px-32">
+      {/* Decorative background */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 left-1/2 h-[260px] w-[140%] max-w-[1400px] -translate-x-1/2 rounded-t-full bg-[#E8E8C8] sm:h-[400px] sm:w-full lg:h-[600px] lg:w-[80%]"
+      />
 
-      {/* Inner Container - Full width but capped on ultra-wide screens for readability */}
-      <div className="relative w-full max-w-[1600px] mx-auto">
-        
-        {/* Section Header */}
-        <div className="mb-16 max-w-4xl">
-          {/* <div className="flex items-center gap-3 mb-6">
-            <span className="flex h-2.5 w-2.5 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-lime-600"></span>
-            </span>
-            <span className="text-sm font-bold tracking-[0.2em] uppercase text-lime-700">
-              Case Study / Portfolio • High Priority
-            </span>
-          </div> */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-20 top-0 h-64 w-64 rounded-full bg-[#E8E8C8]/50 blur-3xl sm:h-96 sm:w-96 lg:right-0 lg:h-[600px] lg:w-[600px]"
+      />
 
-          <h2 className="text-5xl md:text-6xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-zinc-900">
+      <div className="relative mx-auto w-full max-w-[1600px] [overflow-wrap:anywhere]">
+        {/* Header */}
+        <header className="mb-8 max-w-4xl sm:mb-10 lg:mb-12 xl:mb-16">
+          <h2 className="text-[clamp(2rem,4.5vw,3.75rem)] font-bold leading-[1.15] tracking-tight text-zinc-900">
             From Manuscript to{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10 text-zinc-900">Finished Comic</span>
-              <span className="absolute bottom-3 left-0 w-full h-5 bg-[#D4E157]/60 -z-0" />
+            <span className="bg-[linear-gradient(transparent_60%,rgba(212,225,87,0.6)_60%,rgba(212,225,87,0.6)_90%,transparent_90%)] [box-decoration-break:clone] [-webkit-box-decoration-break:clone]">
+              Finished Comic
             </span>
           </h2>
-        </div>
+        </header>
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-          
-          {/* LEFT COLUMN: Project Details */}
-          <div className="lg:col-span-5 space-y-10">
-            {/* The Project */}
+        {/* Two flexible columns with 5:7 desktop proportions */}
+        <div className="grid grid-cols-1 items-start gap-8 sm:gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] xl:gap-16">
+          {/* Project details */}
+          <div className="w-full min-w-0 space-y-6 sm:space-y-8 xl:space-y-10">
             <div>
-              <p className="text-sm font-semibold text-lime-700 uppercase tracking-widest mb-3">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-lime-700 sm:mb-3 sm:text-sm">
                 Project 01
               </p>
-              <h3 className="text-3xl font-bold text-zinc-900 mb-4">
+
+              <h3 className="mb-3 text-2xl font-bold text-zinc-900 sm:mb-4 sm:text-3xl">
                 The Project
               </h3>
-              <p className="text-zinc-700 leading-relaxed text-xl">
-                A creator had a completed comic story and artwork but needed
-                professional support preparing the project for publication.
+
+              <p className="text-base leading-7 text-zinc-700 sm:text-lg sm:leading-8 xl:text-xl">
+                A creator had a completed comic story and artwork but needed professional support preparing the project for publication.
               </p>
             </div>
 
-            {/* The Challenge */}
-            <div className="pl-6 border-l-4 border-[#D4E157]">
-              <h3 className="text-2xl font-semibold text-zinc-900 mb-3">
+            <div className="border-l-4 border-[#D4E157] pl-4 sm:pl-5 xl:pl-6">
+              <h3 className="mb-3 text-xl font-semibold text-zinc-900 sm:text-2xl">
                 The Challenge
               </h3>
-              <p className="text-zinc-700 leading-relaxed text-lg">
-                The project required meticulous editing, interior formatting,
-                cover preparation, and generating flawless publishing-ready
-                files across multiple platforms.
+
+              <p className="text-sm leading-6 text-zinc-700 sm:text-base sm:leading-7 xl:text-lg">
+                The project required editing, interior formatting, cover preparation, and publishing-ready files.
               </p>
             </div>
 
-            {/* Our Support */}
             <div>
-              <h3 className="text-2xl font-semibold text-zinc-900 mb-6 flex items-center gap-2">
-                <FiStar className="w-6 h-6 text-lime-600" />
+              <h3 className="mb-4 flex items-center gap-2 text-xl font-semibold text-zinc-900 sm:mb-5 sm:text-2xl xl:mb-6">
+                <FiStar
+                  aria-hidden="true"
+                  className="h-5 w-5 shrink-0 text-lime-600 sm:h-6 sm:w-6"
+                />
                 Our Support
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {supportServices.map((service) => (
+
+              {/* Avoid squeezing cards inside a narrow desktop column */}
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-1 xl:grid-cols-2">
+                {supportServices.map(({ icon: Icon, label }) => (
                   <div
-                    key={service.label}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-white border border-zinc-200 hover:border-[#D4E157] hover:shadow-lg transition-all duration-300"
+                    key={label}
+                    className="flex min-w-0 items-center gap-3 rounded-xl border border-zinc-200 bg-white p-3 transition duration-300 hover:border-[#D4E157] hover:shadow-lg motion-reduce:transition-none sm:p-4"
                   >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#D4E157]/30 flex items-center justify-center">
-                      <service.icon className="w-5 h-5 text-lime-800" />
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#D4E157]/30 sm:h-10 sm:w-10">
+                      <Icon
+                        aria-hidden="true"
+                        className="h-5 w-5 text-lime-800"
+                      />
                     </div>
-                    <span className="text-base font-semibold text-zinc-800">
-                      {service.label}
+
+                    <span className="min-w-0 flex-1 text-sm font-semibold leading-snug text-zinc-800 sm:text-base">
+                      {label}
                     </span>
                   </div>
                 ))}
@@ -106,58 +116,57 @@ export default function CaseStudyComic() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: Visual Showcase & CTA */}
-          <div className="lg:col-span-7 space-y-6">
-            
-            {/* Large Hero Image at Top */}
-            <div className="relative group">
-              <div className="absolute -inset-3 bg-[#D4E157]/40 rounded-3xl blur-lg opacity-0 group-hover:opacity-100 transition duration-500" />
-              <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden border-2 border-zinc-900 bg-white shadow-2xl">
+          {/* Images and CTA */}
+          <div className="w-full min-w-0 space-y-4 sm:space-y-6">
+            <div className="group relative">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -inset-2 rounded-3xl bg-[#D4E157]/40 opacity-0 blur-lg transition-opacity duration-500 group-hover:opacity-100 motion-reduce:transition-none sm:-inset-3"
+              />
+
+              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border-2 border-zinc-900 bg-white shadow-lg sm:rounded-2xl sm:shadow-xl lg:shadow-2xl">
                 <Image
                   src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&q=80&w=1600"
                   alt="Comic Book Collection - Project 01"
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 1024px) 100vw, 60vw"
+                  sizes="(min-width: 1856px) 896px, (min-width: 1536px) calc(58.333vw - 186.667px), (min-width: 1280px) calc(58.333vw - 130.667px), (min-width: 1024px) calc(58.333vw - 79.333px), (min-width: 768px) calc(100vw - 64px), (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)"
+                  className="object-cover transition-transform duration-700 motion-safe:group-hover:scale-105 motion-reduce:transition-none"
                   priority
                 />
               </div>
             </div>
 
-            {/* Two Smaller Images Side by Side */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* Image 1 */}
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-zinc-900 bg-white shadow-lg group/img">
-                <Image
-                  src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&q=80&w=1000"
-                  alt="Comic Book Shelf"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover/img:scale-105"
-                  sizes="40vw"
-                />
-              </div>
-
-              {/* Image 2 */}
-              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-zinc-900 bg-white shadow-lg group/img">
-                <Image
-                  src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?auto=format&fit=crop&q=80&w=1000"
-                  alt="Comic Art Mural"
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover/img:scale-105"
-                  sizes="40vw"
-                />
-              </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
+              {galleryImages.map((image) => (
+                <div
+                  key={image.src}
+                  className="group/img relative aspect-[4/3] min-w-0 overflow-hidden rounded-xl border-2 border-zinc-900 bg-white shadow-lg"
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(min-width: 1856px) 436px, (min-width: 1536px) calc(29.167vw - 105.333px), (min-width: 1280px) calc(29.167vw - 77.333px), (min-width: 1024px) calc(29.167vw - 51.667px), (min-width: 768px) calc(50vw - 44px), (min-width: 640px) calc(50vw - 36px), calc(100vw - 32px)"
+                    className="object-cover transition-transform duration-500 motion-safe:group-hover/img:scale-105 motion-reduce:transition-none"
+                  />
+                </div>
+              ))}
             </div>
 
-            {/* Full-Width CTA Button */}
-            <div className="pt-4">
-              <a
+            <div className="pt-2 sm:pt-4">
+              <Link
                 href="/contactus"
-                className="group/btn relative inline-flex w-full items-center justify-center gap-3 rounded-xl bg-[#D4E157] px-8 py-5 text-lg font-bold text-zinc-900 shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] border-2 border-zinc-900"
+                className="group/btn inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl border-2 border-zinc-900 bg-[#D4E157] px-4 py-3 text-center text-sm font-bold leading-6 text-zinc-900 shadow-lg transition duration-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-2 motion-safe:hover:scale-[1.01] motion-safe:active:scale-[0.99] motion-reduce:transition-none sm:gap-3 sm:px-6 sm:py-4 sm:text-base xl:px-8 xl:py-5 xl:text-lg"
               >
-                Start Your Own Comic Project
-                <FiArrowRight className="w-6 h-6 transition-transform duration-300 group-hover/btn:translate-x-1" />
-              </a>
+                <span className="min-w-0">
+                  Start Your Own Comic Project
+                </span>
+
+                <FiArrowRight
+                  aria-hidden="true"
+                  className="h-5 w-5 shrink-0 transition-transform duration-300 motion-safe:group-hover/btn:translate-x-1 motion-reduce:transition-none sm:h-6 sm:w-6"
+                />
+              </Link>
             </div>
           </div>
         </div>

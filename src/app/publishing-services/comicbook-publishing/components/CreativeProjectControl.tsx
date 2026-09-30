@@ -1,69 +1,88 @@
+import Image from "next/image";
+
+const services = [
+  "Publishing preparation",
+  "ISBN and barcode guidance",
+  "Comic book formatting",
+  "Cover design",
+  "Print-on-demand preparation",
+  "Digital publishing preparation",
+  "Distribution preparation",
+  "Marketing support",
+];
+
 export default function CreativeProjectControl() {
   return (
-    <section className="py-16 px-6 md:px-12 lg:px-24 bg-white">
-      <div className="max-w-7xl mx-auto">
-        {/* Styled H2 with Yellow Underline */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight inline-block">
-            <span className="border-b-8 border-yellow-400 pb-2">
+    <section className="w-full min-w-0 bg-white px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:px-12 lg:py-20 xl:px-24 xl:py-24">
+      <div className="mx-auto w-full max-w-7xl [overflow-wrap:anywhere]">
+        {/* Responsive heading with a wrapping underline */}
+        <header className="mb-8 text-center sm:mb-10 lg:mb-14 xl:mb-16">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900">
+            <span className="underline decoration-yellow-400 decoration-[4px] underline-offset-[6px] [text-decoration-skip-ink:none] sm:decoration-[6px] sm:underline-offset-8 lg:decoration-[8px]">
               Self-Publish Your Comic Book
             </span>
           </h2>
-        </div>
-        {/* Changed items-center to items-stretch so both columns match height */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-          {/* Image Column */}
-          <div className="relative h-full">
-            {/* Removed aspect ratio, added h-full */}
-            <div className="h-full overflow-hidden rounded-2xl shadow-sm">
-              <img
-                src="/comic-book/Rectangle 14 (6).svg"
-                alt="Person browsing books in a bookstore"
-                className="w-full h-full object-cover"
-              />
-            </div>
+        </header>
+
+        <div className="grid grid-cols-1 items-stretch gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+          {/* Mobile: proportional image. Desktop: match content height. */}
+          <div className="relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-xl shadow-sm sm:rounded-2xl lg:aspect-auto lg:min-h-[400px]">
+            <Image
+              src="/comic-book/Rectangle 14 (6).svg"
+              alt="Person browsing books in a bookstore"
+              fill
+              sizes="(min-width: 1472px) 608px, (min-width: 1280px) calc(50vw - 128px), (min-width: 1024px) calc(50vw - 72px), (min-width: 768px) calc(100vw - 64px), (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)"
+              className="object-cover"
+            />
           </div>
 
-          {/* Content Column */}
-          <div className="space-y-2 flex flex-col justify-center">
-            <h3 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
+          {/* Content */}
+          <div className="flex w-full min-w-0 flex-col justify-center space-y-4 text-sm leading-6 text-gray-600 sm:space-y-5 sm:text-base sm:leading-7">
+            <h3 className="text-[clamp(1.5rem,3.2vw,3rem)] font-bold leading-tight tracking-tight text-gray-900">
               Keep Control of Your Creative Project
             </h3>
 
-            <div className="space-y-2 text-gray-600 leading-relaxed text-base">
+            <div className="space-y-3 sm:space-y-4">
               <p>
-                Many independent creators choose to self publish because they want greater control over their story, artwork, branding, and publishing decisions.
+                Many independent creators choose to self publish because they want
+                greater control over their story, artwork, branding, and publishing
+                decisions.
               </p>
 
               <p>
-                But self-publishing doesn't mean you have to manage every technical step yourself.
-              </p>
-
-              <p className="font-medium text-gray-800">
-                Ink Founders can provide professional support with:
+                But self-publishing doesn&apos;t mean you have to manage every
+                technical step yourself.
               </p>
             </div>
 
-            <ul className="space-y-2.5 text-gray-600 text-base">
-              {[
-                "Publishing preparation",
-                "ISBN and barcode guidance",
-                "Comic book formatting",
-                "Cover design",
-                "Print-on-demand preparation",
-                "Digital publishing preparation",
-                "Distribution preparation",
-                "Marketing support",
-              ].map((item) => (
-                <li key={item} className="flex items-start">
-                  <span className="mr-3 text-gray-400">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <div>
+              <p className="mb-3 font-medium text-gray-800">
+                Ink Founders can provide professional support with:
+              </p>
 
-            <p className="text-gray-600 leading-relaxed text-base pt-2">
-              You maintain control of your creative project while our team helps with the professional and technical side of preparing it for publication.
+              <ul className="space-y-1.5 sm:space-y-2 lg:space-y-2.5">
+                {services.map((service) => (
+                  <li
+                    key={service}
+                    className="flex items-start gap-2 sm:gap-3"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="shrink-0 text-gray-400"
+                    >
+                      •
+                    </span>
+
+                    <span className="min-w-0 flex-1">{service}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <p>
+              You maintain control of your creative project while our team helps
+              with the professional and technical side of preparing it for
+              publication.
             </p>
           </div>
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 interface StepData {
@@ -10,9 +10,20 @@ interface StepData {
   imageUrl: string;
 }
 
-const tabs = ["Idea", "Script", "Artwork", "Editing", "Formatting", "Cover", "Publishing", "Readers"];
+const tabs = [
+  "Idea",
+  "Script",
+  "Artwork",
+  "Editing",
+  "Formatting",
+  "Cover",
+  "Publishing",
+  "Readers",
+] as const;
 
-const stepsData: Record<string, StepData> = {
+type Tab = (typeof tabs)[number];
+
+const stepsData: Record<Tab, StepData> = {
   Idea: {
     stepNumber: 1,
     title: "Develop Your Story",
@@ -83,32 +94,38 @@ const stepsData: Record<string, StepData> = {
 };
 
 export default function PublishComicPage() {
-  const [activeTab, setActiveTab] = useState("Idea");
+  const [activeTab, setActiveTab] = useState<Tab>("Idea");
   const currentStep = stepsData[activeTab];
 
   return (
-    <div className="min-h-screen bg-[#f0ede3] px-6 py-12 md:px-16 lg:px-24 font-sans">
-      <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
-        <header className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1a1a1a] mb-4 tracking-tight">
+    <div className="min-h-screen w-full min-w-0 bg-[#f0ede3] px-4 py-10 font-sans sm:px-6 sm:py-12 md:px-8 lg:px-14 lg:py-16 xl:py-20">
+      <div className="mx-auto w-full max-w-6xl [overflow-wrap:anywhere]">
+        {/* Header */}
+        <header className="mb-8 text-center sm:mb-10 lg:mb-12">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight text-[#1a1a1a]">
             How to Publish a Comic Book
           </h2>
-          <p className="font-mono text-md md:text-base text-gray-600 max-w-4xl mx-auto leading-relaxed">
+
+          <p className="mx-auto mt-4 max-w-4xl font-mono text-sm leading-relaxed text-gray-600 sm:text-base">
             You're searching for how to publish a comic book, the process can seem complicated at first. Breaking the project into clear stages makes it easier to understand what needs to happen next.
           </p>
         </header>
 
-        {/* Navigation Tabs */}
-        <nav className="flex flex-wrap justify-center gap-3 mb-16">
+        {/* Responsive navigation */}
+        <nav
+          aria-label="Comic publishing stages"
+          className="mb-8 grid grid-cols-2 gap-2 sm:mb-10 sm:grid-cols-4 sm:gap-3 lg:mb-12 xl:mb-16 xl:grid-cols-8"
+        >
           {tabs.map((tab) => (
             <button
               key={tab}
+              type="button"
+              aria-pressed={activeTab === tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-6 py-2.5 rounded-md text-md font-semibold border-2 transition-all duration-200 ${
+              className={`min-h-[44px] min-w-0 rounded-md border-2 px-3 py-2.5 text-center text-sm font-semibold leading-snug transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a1a1a] focus-visible:ring-offset-2 motion-reduce:transition-none sm:px-4 sm:text-base ${
                 activeTab === tab
-                  ? "bg-[#c8d94e] border-[#c8d94e] text-[#1a1a1a]"
-                  : "bg-transparent border-gray-400 text-gray-600 hover:bg-[#e8e5db]"
+                  ? "border-[#c8d94e] bg-[#c8d94e] text-[#1a1a1a]"
+                  : "border-gray-400 bg-transparent text-gray-600 hover:bg-[#e8e5db]"
               }`}
             >
               {tab}
@@ -116,31 +133,33 @@ export default function PublishComicPage() {
           ))}
         </nav>
 
-        {/* Main Content Grid */}
-        {/* Changed items-start to items-center to vertically align the columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Column: Text Content */}
-          <div>
-            <p className="text-xl font-bold tracking-widest text-[#1a1a1a] mb-2 uppercase">
+        {/* One column below lg; two columns on desktop */}
+        <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+          {/* Text */}
+          <div className="w-full min-w-0">
+            <p className="mb-2 text-sm font-bold uppercase tracking-widest text-[#1a1a1a] sm:text-base lg:text-lg">
               Step {currentStep.stepNumber}
             </p>
-            <h3 className="text-3xl md:text-5xl font-semibold text-[#1a1a1a] mb-6 tracking-tight">
+
+            <h3 className="mb-4 text-[clamp(1.5rem,3.5vw,3rem)] font-semibold leading-[1.15] tracking-tight text-[#1a1a1a] sm:mb-5 lg:mb-6">
               {currentStep.title}
             </h3>
-            <div className="font-mono text-md text-gray-600 space-y-4 leading-relaxed">
-              {currentStep.description.map((para, idx) => (
-                <p key={idx}>{para}</p>
+
+            <div className="space-y-3 font-mono text-sm leading-relaxed text-gray-600 sm:space-y-4 sm:text-base">
+              {currentStep.description.map((paragraph, index) => (
+                <p key={`${activeTab}-${index}`}>{paragraph}</p>
               ))}
             </div>
           </div>
 
-          {/* Right Column: Full Image Card */}
-          <div className="w-full">
-            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+          {/* Image */}
+          <div className="w-full min-w-0">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl shadow-lg sm:rounded-2xl">
               <Image
                 src={currentStep.imageUrl}
                 alt={currentStep.title}
                 fill
+                sizes="(min-width: 1280px) 544px, (min-width: 1264px) 552px, (min-width: 1024px) calc(50vw - 80px), (min-width: 768px) calc(100vw - 64px), (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)"
                 className="object-cover"
                 priority={activeTab === "Idea"}
               />

@@ -1,9 +1,4 @@
-import React from "react";
 import { BsSoundwave } from "react-icons/bs";
-
-const soundWaveIcon = (
-  <BsSoundwave size={53} color="#DADD39" />
-);
 
 const cards = [
   {
@@ -42,66 +37,84 @@ const cards = [
 
 export default function ComicPublishing() {
   return (
-    <div className="min-h-screen bg-white px-6 py-12 font-sans">
-      <div className="mx-auto max-w-6xl">
-        {/* Main Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight inline-block">
-            <span className="border-b-8 border-yellow-400 pb-2">
+    <section className="min-h-screen w-full min-w-0 bg-white px-4 py-12 font-sans sm:px-6 sm:py-16 md:px-8 lg:px-12 lg:py-20 xl:px-16 xl:py-24">
+      <div className="mx-auto w-full max-w-6xl [overflow-wrap:anywhere]">
+        {/* Responsive heading with a wrapping underline */}
+        <header className="mb-8 text-center sm:mb-10 lg:mb-14 xl:mb-16">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900">
+            <span className="underline decoration-yellow-400 decoration-[4px] underline-offset-[6px] [text-decoration-skip-ink:none] sm:decoration-[6px] sm:underline-offset-8 lg:decoration-[8px]">
               Independent Comic Book Publishing
             </span>
           </h2>
-        </div>
+        </header>
 
-        {/* Two Column Section */}
-        <div className="mb-12 grid grid-cols-1 items-center gap-10 md:grid-cols-2">
-          {/* Left Text */}
-          <div>
-            <h3 className="mb-4 text-4xl font-semibold leading-tight text-gray-900">
+        {/* Introduction */}
+        <div className="mb-10 grid grid-cols-1 items-center gap-6 sm:mb-12 sm:gap-8 lg:mb-16 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+          <div className="w-full min-w-0">
+            <h3 className="mb-4 text-[clamp(1.5rem,2.8vw,2.25rem)] font-semibold leading-tight text-gray-900 sm:mb-5">
               Professional Support for Creator Owned Projects
             </h3>
-            <p className="mb-4 font-mono text-md leading-relaxed text-gray-600">
-              Independent comic creators often have their own characters, stories, artwork, and publishing goals.
-            </p>
-            <p className="mb-4 font-mono text-md leading-relaxed text-gray-600">
-              Our services are designed to help creators prepare those projects for professional publication while keeping their creative direction at the center of the process.
-            </p>
+
+            <div className="space-y-3 font-mono text-sm leading-6 text-gray-600 sm:space-y-4 sm:text-base sm:leading-7">
+              <p>
+                Independent comic creators often have their own characters,
+                stories, artwork, and publishing goals.
+              </p>
+
+              <p>
+                Our services are designed to help creators prepare those projects
+                for professional publication while keeping their creative
+                direction at the center of the process.
+              </p>
+            </div>
           </div>
 
-          {/* Right Image */}
-          <div className="overflow-hidden rounded-xl">
+          {/* Image keeps its natural proportions */}
+          <div className="w-full min-w-0 overflow-hidden rounded-xl">
             <img
               src="/comic-book/Rectangle 14 (7).svg"
               alt="Woman browsing books in a bookstore"
-              className="h-auto w-full object-cover"
+              loading="lazy"
+              decoding="async"
+              className="block h-auto w-full object-cover"
             />
           </div>
         </div>
 
-        {/* Section Heading */}
-        <h3 className="mb-8 text-center text-2xl font-semibold text-gray-900">
+        <h3 className="mb-5 text-center text-[clamp(1.25rem,2.5vw,1.5rem)] font-semibold leading-tight text-gray-900 sm:mb-6 lg:mb-8">
           We Can Support Projects Such As:
         </h3>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center rounded-lg bg-[#f0f0e0] px-6 py-8 text-center"
+        {/* Responsive cards */}
+        <div className="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
+          {cards.map((card) => (
+            <article
+              key={card.title}
+              className="flex min-w-0 flex-col items-center rounded-lg bg-[#f0f0e0] px-5 py-6 text-center sm:px-6 sm:py-8"
             >
-              <div className="mb-4">{soundWaveIcon}</div>
-              <h4 className="mb-2 text-lg font-semibold leading-tight text-gray-900">
+              <BsSoundwave
+                aria-hidden="true"
+                className="mb-3 h-10 w-10 shrink-0 text-[#DADD39] sm:mb-4 sm:h-[53px] sm:w-[53px]"
+              />
+
+              <h4 className="w-full text-base font-semibold leading-snug text-gray-900 sm:text-lg">
                 {card.title}
               </h4>
-              {/* <p className="font-mono text-md text-gray-600">
+
+              {/*
+              <p className="mt-2 font-mono text-sm leading-6 text-gray-600">
                 {card.description}
-              </p> */}
-            </div>
+              </p>
+              */}
+            </article>
           ))}
         </div>
-        <p className="font-mono text-black italic mt-6">Whether you're publishing your first comic or developing a continuing series, we can help you identify the next steps required for your project.</p>
+
+        <p className="mt-6 font-mono text-sm italic leading-6 text-black sm:mt-8 sm:text-base sm:leading-7">
+          Whether you&apos;re publishing your first comic or developing a continuing
+          series, we can help you identify the next steps required for your project.
+        </p>
       </div>
-    </div>
+    </section>
   );
 }

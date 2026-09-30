@@ -49,26 +49,36 @@ const services = [
 
 export default function AllPublishingServices() {
   return (
-    <section className="relative overflow-hidden bg-[#f6f4ea] px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
-      <div className="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-[#e9e5bf]/60 blur-3xl" />
+    <section className="relative w-full min-w-0 overflow-hidden bg-[#f6f4ea] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:py-24">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-24 bottom-0 h-48 w-48 rounded-full bg-[#e9e5bf]/60 blur-3xl sm:h-64 sm:w-64 lg:-left-32 lg:h-80 lg:w-80"
+      />
 
-      <div className="relative mx-auto max-w-7xl">
-        <div className="mb-10 max-w-7xl sm:mb-12">
-          <p className="mb-4 flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-[#8b922d]">
-            <span className="h-px w-8 bg-[#c8d952]" />
+      <div className="relative mx-auto w-full max-w-7xl [overflow-wrap:anywhere]">
+        {/* Header */}
+        <header className="mb-8 sm:mb-10 lg:mb-12">
+          <p className="mb-3 flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.16em] text-[#8b922d] sm:mb-4 sm:gap-3 sm:text-sm sm:tracking-[0.2em]">
+            <span
+              aria-hidden="true"
+              className="h-px w-6 shrink-0 bg-[#c8d952] sm:w-8"
+            />
             Our services
           </p>
-          <h2 className="text-4xl font-bold leading-tight tracking-tight text-[#1a1a1a] sm:text-5xl">
+
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight text-[#1a1a1a]">
             Everything you need to bring your story to life.
           </h2>
-          <p className="mt-5 max-w-7xl text-base leading-7 text-[#626158] sm:text-lg">
+
+          <p className="mt-4 text-sm leading-6 text-[#626158] sm:mt-5 sm:text-base sm:leading-7 lg:text-lg">
             Explore our publishing services and find the right support for your
             project, from the first draft to a finished book in readers&apos;
             hands.
           </p>
-        </div>
+        </header>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Responsive cards */}
+        <div className="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6">
           {services.map((service) => {
             const Icon = service.icon;
 
@@ -77,25 +87,26 @@ export default function AllPublishingServices() {
                 key={service.href}
                 href={service.href}
                 aria-current={service.current ? "page" : undefined}
-                className={`group flex min-h-[220px] flex-col rounded-2xl border p-6 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8d952] focus-visible:ring-offset-2 sm:p-7 ${
+                className={`group flex h-full min-w-0 flex-col rounded-xl border p-5 transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8d952] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f6f4ea] motion-reduce:transition-none sm:rounded-2xl sm:p-6 xl:p-7 ${
                   service.current
                     ? "border-[#c8d952] bg-[#1d1d1a] text-white shadow-[0_16px_35px_rgba(29,29,26,0.14)]"
-                    : "border-[#e2dfd2] bg-white text-[#1a1a1a] hover:-translate-y-1 hover:border-[#c8d952] hover:shadow-[0_16px_35px_rgba(56,56,41,0.08)]"
+                    : "border-[#e2dfd2] bg-white text-[#1a1a1a] hover:border-[#c8d952] hover:shadow-[0_16px_35px_rgba(56,56,41,0.08)] motion-safe:hover:-translate-y-1"
                 }`}
               >
                 <div
-                  className={`mb-6 flex h-11 w-11 items-center justify-center rounded-xl transition-colors ${
+                  className={`mb-4 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors motion-reduce:transition-none sm:mb-5 sm:h-11 sm:w-11 lg:mb-6 ${
                     service.current
                       ? "bg-[#c8d952] text-[#1a1a1a]"
                       : "bg-[#f0f1d7] text-[#707a1b] group-hover:bg-[#c8d952] group-hover:text-[#1a1a1a]"
                   }`}
                 >
-                  <Icon className="h-5 w-5" aria-hidden="true" />
+                  <Icon aria-hidden="true" className="h-5 w-5" />
                 </div>
 
-                <h3 className="text-xl font-bold leading-tight">
+                <h3 className="text-lg font-bold leading-snug sm:text-xl">
                   {service.title}
                 </h3>
+
                 <p
                   className={`mt-3 text-sm leading-6 ${
                     service.current ? "text-white/70" : "text-[#626158]"
@@ -105,14 +116,15 @@ export default function AllPublishingServices() {
                 </p>
 
                 <span
-                  className={`mt-auto inline-flex items-center gap-2 pt-6 text-sm font-bold ${
+                  className={`mt-auto inline-flex max-w-full items-center gap-2 pt-5 text-sm font-bold leading-6 sm:pt-6 ${
                     service.current ? "text-[#d8e86b]" : "text-[#737c1c]"
                   }`}
                 >
-                  Explore service
+                  <span className="min-w-0">Explore service</span>
+
                   <FaArrowRight
-                    className="transition-transform duration-200 group-hover:translate-x-1"
                     aria-hidden="true"
+                    className="h-4 w-4 shrink-0 transition-transform duration-200 motion-safe:group-hover:translate-x-1 motion-reduce:transition-none"
                   />
                 </span>
               </Link>

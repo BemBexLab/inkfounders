@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   ArrowLeft,
@@ -106,7 +107,7 @@ const Blog2 = () => {
                   costs of <b><a href="/publishing-services" className="text-blue-500 hover:text-blue-800 hover:underline">professional book editing services</a></b> in simple terms.
                 </p>
                 <p className="text-base mb-6">
-                  We'll cover the price per word for book editing, the cost of
+                  We'll cover the price per word for <Link className="hover:text-blue-500 font-semibold underline" href={"/publishing-services/editing-and-proofreading"}>book editing</Link>, the cost of
                   developmental editing, and how much copy editing typically
                   costs.
                 </p>
@@ -137,7 +138,7 @@ const Blog2 = () => {
                 </ul>
                 <p className="text-base mb-4">
                   Even bestselling authors use professional editors. Platforms
-                  like Amazon KDP and IngramSpark have made publishing easier
+                  like <Link className="hover:text-blue-500 font-semibold underline" rel="nofollow" href={"https://kdp.amazon.com/en_US/"}>Amazon KDP</Link> and <Link className="hover:text-blue-500 font-semibold underline" rel="nofollow" href={"https://www.ingramspark.com/"}>IngramSpark</Link> have made publishing easier
                   but quality editing is what makes a book sell.
                 </p>
                 <div className="bg-gray-50 border-l-4 border-[#D4D939] p-6 my-8 rounded-r-lg">
@@ -161,7 +162,7 @@ const Blog2 = () => {
                   How Much Does Editing a Book Cost in 2026?
                 </h2>
                 <p className="text-base mb-4">
-                  Professional book editing costs between $0.01 and $0.08 per
+                  Professional <Link className="hover:text-blue-500 font-semibold underline" href={"/blog/how-much-does-it-cost-to-self-publish"}>book editing costs</Link> between $0.01 and $0.08 per
                   word depending on the editing type.
                 </p>
                 <p className="text-base mb-4">

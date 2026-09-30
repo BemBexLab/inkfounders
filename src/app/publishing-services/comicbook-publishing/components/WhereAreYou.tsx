@@ -57,62 +57,61 @@ function StageRow({ stage, index }: { stage: Stage; index: number }) {
   const isReversed = index % 2 !== 0;
 
   return (
-    <div
-      className={`flex flex-col items-center gap-10 lg:gap-16 ${
-        isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
-      }`}
-    >
-      {/* Text column */}
-      <div className="flex-1">
-        <h3 className="mb-5 text-[clamp(1.5rem,2.5vw,2rem)] font-bold text-[#1a1a1a]">
+    <article className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16">
+      {/* Text comes first on every mobile row */}
+      <div className="w-full min-w-0">
+        <h3 className="text-[clamp(1.5rem,2.5vw,2rem)] font-bold leading-tight text-[#1a1a1a]">
           {stage.title}
         </h3>
-        <p className="mb-4 font-mono text-[14px] leading-[1.7] text-[#444]">
-          {stage.description}
-        </p>
-        <p className="mb-7 font-mono text-[14px] leading-[1.7] text-[#444]">
-          {stage.helpText}
-        </p>
+
+        <div className="mt-3 space-y-3 font-mono text-sm leading-[1.7] text-[#444] sm:mt-4 sm:space-y-4 sm:text-[15px] lg:mt-5">
+          <p>{stage.description}</p>
+          <p>{stage.helpText}</p>
+        </div>
+
         <Link
           href={stage.buttonHref}
-          className="inline-block rounded-md bg-[#DADD39] px-6 py-3 text-[13px] font-semibold text-[#1a1a1a] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+          className="mt-5 inline-flex min-h-[44px] w-full max-w-full items-center justify-center rounded-md bg-[#DADD39] px-5 py-3 text-center text-sm font-semibold leading-6 text-[#1a1a1a] transition duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a1a1a] focus-visible:ring-offset-2 motion-safe:hover:-translate-y-0.5 motion-reduce:transition-none sm:mt-6 sm:w-auto sm:px-6 lg:mt-7"
         >
           {stage.buttonText}
         </Link>
       </div>
 
-      {/* Image column */}
-      <div className="flex-1">
+      {/* Alternate the image position only on desktop */}
+      <div
+        className={`w-full min-w-0 ${isReversed ? "lg:order-first" : ""}`}
+      >
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#e8e6c9]">
           <Image
             src={stage.imageSrc}
             alt={stage.title}
             fill
-            sizes="(max-width: 1023px) 100vw, 45vw"
+            sizes="(min-width: 1392px) 608px, (min-width: 1280px) calc(50vw - 88px), (min-width: 1024px) calc(50vw - 80px), (min-width: 768px) calc(100vw - 64px), (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)"
             className="object-cover"
           />
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
 export default function WhereAreYou() {
   return (
-    <section className="w-full bg-white px-6 py-20 sm:px-10 sm:py-24 lg:px-14 lg:py-28">
-      <div className="mx-auto w-full max-w-[1280px]">
+    <section className="w-full min-w-0 bg-white px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:px-14 lg:py-24 xl:py-28">
+      <div className="mx-auto w-full max-w-[1280px] [overflow-wrap:anywhere]">
         {/* Header */}
-        <div className="mb-16 text-center">
-          <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-tight tracking-tight text-[#1a1a1a]">
+        <header className="mb-10 text-center sm:mb-12 lg:mb-16">
+          <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-[1.2] tracking-tight text-[#1a1a1a]">
             Where Are You With Your Comic?
           </h2>
-          <p className="mx-auto mt-5 max-w-[640px] font-mono text-[13px] leading-[1.7] text-[#555] sm:text-[14px]">
+
+          <p className="mx-auto mt-4 max-w-[640px] font-mono text-[13px] leading-[1.7] text-[#555] sm:mt-5 sm:text-sm">
             You don't have to have everything finished before contacting us.
           </p>
-        </div>
+        </header>
 
         {/* Stages */}
-        <div className="flex flex-col gap-20 lg:gap-28">
+        <div className="flex flex-col gap-12 sm:gap-16 lg:gap-24 xl:gap-28">
           {stages.map((stage, index) => (
             <StageRow key={stage.title} stage={stage} index={index} />
           ))}

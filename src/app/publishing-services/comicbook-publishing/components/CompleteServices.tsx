@@ -1,20 +1,21 @@
-import type { IconType } from "react-icons";
 import { FaBookOpen } from "react-icons/fa";
 import { HiOutlineStar } from "react-icons/hi";
 
-/* ---------- Combined book + star icon ---------- */
-function BookStarIcon({ className }: { className?: string }) {
+/* Combined book + star icon */
+function BookStarIcon({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`relative inline-flex items-center justify-center ${className ?? ""}`}
+      aria-hidden="true"
+      className={`relative inline-flex shrink-0 items-center justify-center ${className}`}
     >
-      <FaBookOpen className="h-7 w-7 text-[#1a1a1a]" />
-      <HiOutlineStar className="absolute -top-1.5 h-3 w-3 text-[#1a1a1a]" />
+      <FaBookOpen className="h-7 w-7 text-[#1a1a1a] sm:h-8 sm:w-8" />
+
+      <HiOutlineStar className="absolute -top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 text-[#1a1a1a] sm:h-3.5 sm:w-3.5" />
     </div>
   );
 }
 
-/* ---------- Card data ---------- */
+/* Card data */
 type Service = {
   title: string;
   description: string;
@@ -78,50 +79,49 @@ const services: Service[] = [
   },
 ];
 
-/* ---------- Single card ---------- */
+/* Single card */
 function ServiceCard({ service }: { service: Service }) {
   return (
-    <div className="flex h-full flex-col rounded-xl bg-white p-7 shadow-[0_1px_3px_rgba(0,0,0,0.04)]">
-      <BookStarIcon className="mb-5" />
-      <h3 className="mb-3 text-[15px] font-bold leading-snug text-[#1a1a1a]">
+    <article className="flex min-w-0 flex-1 flex-col rounded-xl bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.04)] sm:p-6 xl:p-7">
+      <BookStarIcon className="mb-4 self-center sm:mb-5" />
+
+      <h3 className="mb-2 text-[15px] text-center font-bold leading-snug text-[#1a1a1a] sm:mb-3 sm:text-base">
         {service.title}
       </h3>
-      <p className="font-mono text-[12.5px] leading-[1.7] text-[#555]">
+
+      <p className="font-mono text-center text-[13px] leading-[1.7] text-[#555] sm:text-sm">
         {service.description}
       </p>
-    </div>
+    </article>
   );
 }
 
-/* ---------- Section ---------- */
+/* Section */
 export default function CompleteServices() {
   return (
-    <section className="w-full bg-[#F4F3E1] px-6 pb-20 sm:px-10 sm:pb-24 lg:px-14 lg:pb-28">
-      <div className="mx-auto w-full max-w-[1536px]">
-        {/* Header - Full Width */}
-        <div className="mb-14 text-center">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight inline-block">
-              <span className="border-b-8 border-yellow-400 pb-2">
-                Complete Comic Book Publishing Services
-              </span>
-            </h2>
-          </div>
-          <p className="mt-5 w-full font-mono text-[13px] leading-[1.7] text-[#555] sm:text-[14px]">
-            From the first draft to the finished publication, our team can
-            support the creative and technical stages of your comic publishing
-            project.
-          </p>
-        </div>
+    <section className="w-full min-w-0 bg-[#F4F3E1] px-4 pb-12 sm:px-6 sm:pb-16 md:px-8 lg:px-14 lg:pb-24 xl:pb-28">
+      <div className="mx-auto w-full max-w-[1536px] [overflow-wrap:anywhere]">
+        <header className="mb-8 text-center sm:mb-10 lg:mb-14">
+          {/* Fluid heading with an underline that follows wrapped lines */}
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900">
+            <span className="underline decoration-yellow-400 decoration-[4px] underline-offset-[6px] [text-decoration-skip-ink:none] sm:decoration-[6px] sm:underline-offset-8 lg:decoration-[8px]">
+              Complete Comic Book Publishing Services
+            </span>
+          </h2>
 
-        {/* Cards container - Flexbox for true centering of the last row */}
-        <div className="flex flex-wrap justify-center gap-5">
-          {services.map((s) => (
+          <p className="mt-5 w-full font-mono text-[13px] leading-[1.7] text-[#555] sm:mt-6 sm:text-sm">
+            From the first draft to the finished publication, our team can support the creative and technical stages of your comic publishing project.
+          </p>
+        </header>
+
+        {/* Responsive columns with a centered final row */}
+        <div className="flex flex-wrap items-stretch justify-center gap-4 sm:gap-5 lg:gap-6">
+          {services.map((service) => (
             <div
-              key={s.title}
-              className="w-full sm:w-[calc(50%-10px)] lg:w-[calc(25%-15px)]"
+              key={service.title}
+              className="flex w-full min-w-0 sm:w-[calc(50%_-_0.625rem)] lg:w-[calc(33.333333%_-_1rem)] xl:w-[calc(25%_-_1.125rem)]"
             >
-              <ServiceCard service={s} />
+              <ServiceCard service={service} />
             </div>
           ))}
         </div>

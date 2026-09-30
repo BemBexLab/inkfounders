@@ -1,4 +1,3 @@
-// components/ComicMarketing.tsx
 import Image from "next/image";
 import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
@@ -15,43 +14,43 @@ import {
 
 const marketingServices = [
   {
-    icon: <FaPenNib className="w-5 h-5" />,
+    icon: FaPenNib,
     title: "Creator Branding",
     description:
       "Build a recognizable identity that resonates with your audience.",
   },
   {
-    icon: <FaSearch className="w-5 h-5" />,
+    icon: FaSearch,
     title: "Keyword Research",
     description: "Get discovered by the right readers at the right time.",
   },
   {
-    icon: <FaBolt className="w-5 h-5" />,
+    icon: FaBolt,
     title: "Book Page Optimization",
     description: "Turn browsers into buyers with compelling, optimized pages.",
   },
   {
-    icon: <FaBullhorn className="w-5 h-5" />,
+    icon: FaBullhorn,
     title: "Online Promotion",
     description: "Reach new readers across the web with targeted campaigns.",
   },
   {
-    icon: <FaComments className="w-5 h-5" />,
+    icon: FaComments,
     title: "Social Media Content Planning",
     description: "Stay consistent and engaging on every platform.",
   },
   {
-    icon: <FaRocket className="w-5 h-5" />,
+    icon: FaRocket,
     title: "Launch Support",
     description: "Make a splash on day one with a strategic launch plan.",
   },
   {
-    icon: <FaImage className="w-5 h-5" />,
+    icon: FaImage,
     title: "Promotional Materials",
     description: "Eye-catching assets that sell your story before page one.",
   },
   {
-    icon: <FaChartLine className="w-5 h-5" />,
+    icon: FaChartLine,
     title: "Audience-Building Strategies",
     description: "Grow a loyal fanbase that follows you from book to book.",
   },
@@ -59,10 +58,13 @@ const marketingServices = [
 
 export default function ComicMarketing() {
   return (
-    <section className="relative bg-[#f5f1e8] py-20 px-6 md:px-12 lg:px-20 overflow-hidden">
-      {/* Decorative curved shape */}
-      <div className="absolute bottom-0 right-0 w-1/2 h-1/2 opacity-30 pointer-events-none">
-        <svg viewBox="0 0 400 400" className="w-full h-full" fill="none">
+    <section className="relative w-full min-w-0 overflow-hidden bg-[#f5f1e8] px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:px-12 lg:py-20 xl:px-20 xl:py-24">
+      {/* Decorative background */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 right-0 h-64 w-64 opacity-30 sm:h-80 sm:w-80 lg:h-1/2 lg:w-1/2"
+      >
+        <svg viewBox="0 0 400 400" className="h-full w-full" fill="none">
           <path
             d="M400 400 C300 300, 200 350, 100 250 C50 200, 0 150, 0 100 L0 400 L400 400 Z"
             fill="#c8d06a"
@@ -70,90 +72,97 @@ export default function ComicMarketing() {
         </svg>
       </div>
 
-      <div className="relative max-w-7xl mx-auto">
+      <div className="relative mx-auto w-full max-w-7xl [overflow-wrap:anywhere]">
         {/* Header */}
-        <div className="mb-16">
-          {/* Main Title */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 tracking-tight inline-block">
-              <span className="border-b-8 border-yellow-400 pb-2">
-                Comic Book Marketing & Promotion
+        <header className="mb-8 sm:mb-10 lg:mb-12 xl:mb-16">
+          <div className="mb-8 text-center sm:mb-10 lg:mb-12">
+            <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900">
+              <span className="underline decoration-yellow-400 decoration-[4px] underline-offset-[6px] [text-decoration-skip-ink:none] sm:decoration-[6px] sm:underline-offset-8 lg:decoration-[8px]">
+                Comic Book Marketing &amp; Promotion
               </span>
             </h2>
           </div>
-          <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] mb-6">
+
+          <h3 className="mb-3 text-[clamp(1.375rem,2.5vw,1.875rem)] font-bold leading-tight text-[#1a1a2e] sm:mb-4 xl:mb-5">
             Help More Readers Discover Your Comic
           </h3>
-          <div className="space-y-2">
-            <p className="text-lg text-[#3a3a4a] max-w-3xl leading-tight">
+
+          <div className="max-w-3xl space-y-3 text-sm leading-6 text-[#3a3a4a] sm:text-base sm:leading-7 lg:text-lg">
+            <p>
               Publishing your comic is only one part of building an audience.
             </p>
-            <p className="text-lg text-[#3a3a4a] max-w-3xl leading-tight">
-              Once your book is ready, you need a way to introduce it to
-              potential readers and establish your creator or book brand.
+
+            <p>
+              Once your book is ready, you need a way to introduce it to potential
+              readers and establish your creator or book brand.
             </p>
           </div>
-        </div>
+        </header>
 
-        {/* Main content grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-          {/* Image side */}
-          <div className="relative">
-            <div className="bg-white rounded-2xl p-4 shadow-sm border border-[#e8e4d8]">
-              {/* Image only — no overlay */}
-              <div className="overflow-hidden rounded-xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&q=80"
-                  alt="Comic Book Launch Flow: Comic Book to Website to Social Media to Readers"
-                  width={800}
-                  height={500}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-              </div>
+        {/* Main content */}
+        <div className="mb-8 grid grid-cols-1 items-start gap-8 sm:mb-10 sm:gap-10 lg:mb-12 lg:grid-cols-2 lg:gap-8 xl:gap-12 2xl:gap-16">
+          {/* Image */}
+          <div className="w-full min-w-0 rounded-xl border border-[#e8e4d8] bg-white p-3 shadow-sm sm:rounded-2xl sm:p-4">
+            <div className="overflow-hidden rounded-lg sm:rounded-xl">
+              <Image
+                src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&q=80"
+                alt="Comic Book Launch Flow: Comic Book to Website to Social Media to Readers"
+                width={800}
+                height={500}
+                sizes="(min-width: 1536px) 574px, (min-width: 1440px) 582px, (min-width: 1280px) calc(50vw - 138px), (min-width: 1024px) calc(50vw - 98px), (min-width: 768px) calc(100vw - 98px), (min-width: 640px) calc(100vw - 82px), calc(100vw - 58px)"
+                className="block h-auto w-full object-cover"
+                priority
+              />
             </div>
           </div>
 
-          {/* Services grid */}
-          <div>
-            <h3 className="text-2xl font-bold text-[#1a1a2e] mb-2">
+          {/* Services */}
+          <div className="w-full min-w-0">
+            <h3 className="mb-4 text-xl font-bold leading-tight text-[#1a1a2e] sm:mb-5 sm:text-2xl">
               Our marketing support can include:
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {marketingServices.map((service, idx) => (
-                <div
-                  key={idx}
-                  className="group bg-white rounded-xl p-5 shadow-sm border border-[#e8e4d8] hover:border-[#a8b83a] hover:shadow-md transition-all duration-300"
+            <div className="grid grid-cols-1 items-stretch gap-3 sm:grid-cols-2 sm:gap-4">
+              {marketingServices.map((service) => (
+                <article
+                  key={service.title}
+                  className="group min-w-0 rounded-xl border border-[#e8e4d8] bg-white p-3 shadow-sm transition duration-300 hover:border-[#a8b83a] hover:shadow-md motion-reduce:transition-none sm:p-4"
                 >
                   <div className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-10 h-10 bg-[#eef2d8] rounded-lg flex items-center justify-center text-[#6b7a2e] group-hover:bg-[#a8b83a] group-hover:text-white transition-colors duration-300">
-                      {service.icon}
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#eef2d8] text-[#6b7a2e] transition-colors duration-300 group-hover:bg-[#a8b83a] group-hover:text-white motion-reduce:transition-none sm:h-10 sm:w-10">
+                      <service.icon
+                        aria-hidden="true"
+                        className="h-5 w-5"
+                      />
                     </div>
-                    <div>
-                      <h4 className="font-bold text-[#1a1a2e] text-sm md:text-base leading-tight">
+
+                    <div className="min-w-0 flex-1">
+                      <h4 className="text-sm font-bold leading-snug text-[#1a1a2e] sm:text-base lg:text-sm xl:text-base">
                         {service.title}
                       </h4>
-                      {/* <p className="text-xs md:text-sm text-[#6a6a7a] mt-1 leading-snug">
+
+                      {/*
+                      <p className="mt-1 text-sm leading-snug text-[#6a6a7a]">
                         {service.description}
-                      </p> */}
+                      </p>
+                      */}
                     </div>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
         </div>
 
         {/* Info banner */}
-        <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border-l-4 border-[#a8b83a] mb-12">
-          <p className="text-[#1a1a2e] text-lg md:text-xl font-medium text-center md:text-left leading-relaxed">
+        <div className="mb-8 rounded-xl border-l-4 border-[#a8b83a] bg-white p-5 shadow-sm sm:mb-10 sm:rounded-2xl sm:p-6 lg:mb-12 lg:p-8 xl:p-10">
+          <p className="text-center text-base font-medium leading-relaxed text-[#1a1a2e] sm:text-lg md:text-left lg:text-xl">
             The right promotional approach depends on your{" "}
-            <span className="font-bold text-[#1a1a2e]">comic</span>,{" "}
-            <span className="font-bold text-[#1a1a2e]">genre</span>,{" "}
-            <span className="font-bold text-[#1a1a2e]">audience</span>,{" "}
-            <span className="font-bold text-[#1a1a2e]">publishing format</span>,
-            and <span className="font-bold text-[#1a1a2e]">goals</span>.
+            <span className="font-bold">comic</span>,{" "}
+            <span className="font-bold">genre</span>,{" "}
+            <span className="font-bold">audience</span>,{" "}
+            <span className="font-bold">publishing format</span>, and{" "}
+            <span className="font-bold">goals</span>.
           </p>
         </div>
 
@@ -161,10 +170,14 @@ export default function ComicMarketing() {
         <div className="text-center">
           <Link
             href="/plan-launch"
-            className="group inline-flex items-center gap-3 bg-[#a8b83a] hover:bg-[#8fa02e] text-white font-bold text-lg md:text-xl px-10 py-5 rounded-full shadow-sm hover:shadow-md transition-all duration-300"
+            className="group inline-flex min-h-[48px] w-full max-w-full items-center justify-center gap-2 rounded-full bg-[#a8b83a] px-5 py-3 text-center text-sm font-bold leading-6 text-white shadow-sm transition duration-300 hover:bg-[#8fa02e] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6b7a2e] focus-visible:ring-offset-2 motion-reduce:transition-none sm:w-auto sm:gap-3 sm:px-8 sm:py-4 sm:text-base lg:px-10 lg:py-5 lg:text-lg"
           >
-            <span>Plan My Comic Launch</span>
-            <FaArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <span className="min-w-0">Plan My Comic Launch</span>
+
+            <FaArrowRight
+              aria-hidden="true"
+              className="h-4 w-4 shrink-0 transition-transform motion-safe:group-hover:translate-x-1 motion-reduce:transition-none sm:h-5 sm:w-5"
+            />
           </Link>
         </div>
       </div>
