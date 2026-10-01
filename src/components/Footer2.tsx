@@ -320,7 +320,7 @@ const Footer: React.FC = () => {
 
         <div className="mt-8 w-full border-t border-[#d8d8c8] py-4 text-center lg:mt-9">
           <p className="m-0 font-sans text-[12px] text-[#666]">
-            &copy; 2025 Ink Founders All rights reserved.
+            &copy; 2020-2026 Ink Founders All rights reserved.
           </p>
         </div>
       </div>
