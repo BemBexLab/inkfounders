@@ -6,10 +6,21 @@ const AU_TARGET_HOST = "inkfounders.com.au";
 function getCountryCode(request: NextRequest): string | null {
   return (
     request.headers.get("x-vercel-ip-country") ||
-    request.headers.get("x-country-code") ||
     request.headers.get("cf-ipcountry") ||
     null
   );
+}
+
+function isGlobalPremiumPath(pathname: string): boolean {
+  const normalizedPath = pathname.toLowerCase();
+  return (
+    normalizedPath === "/global-premium" ||
+    normalizedPath.startsWith("/global-premium/")
+  );
+}
+
+function isAllowedForGlobalPremium(countryCode: string | null): boolean {
+  return countryCode === "PK" || countryCode === "US";
 }
 
 function getRequestHost(request: NextRequest): string {
@@ -48,6 +59,16 @@ function createAustralianRedirect(request: NextRequest): NextResponse {
 
 export function middleware(request: NextRequest) {
   const countryCode = getCountryCode(request)?.toUpperCase() ?? null;
+
+  if (
+    isGlobalPremiumPath(request.nextUrl.pathname) &&
+    !isAllowedForGlobalPremium(countryCode)
+  ) {
+    return new NextResponse(null, {
+      status: 404,
+      headers: { "Cache-Control": "private, no-store" },
+    });
+  }
 
   if (shouldRedirectToAustralianSite(request, countryCode)) {
     return createAustralianRedirect(request);
