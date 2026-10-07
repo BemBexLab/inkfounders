@@ -78,7 +78,7 @@ window.dataLayer.push({
         />
         <Script
           id="google-tag-manager"
-          src="https://www.googletagmanager.com/gtm.js?id=GTM-T78X9KSV"
+          src="https://www.googletagmanager.com/gtm.js?id=GTM-MWZNX2J8"
           strategy="afterInteractive"
         />
         <Script
@@ -108,7 +108,7 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       >
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-T78X9KSV"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MWZNX2J8"
             height="0"
             width="0"
             style={{ display: "none", visibility: "hidden" }}
