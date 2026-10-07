@@ -427,7 +427,7 @@ export default async function BlogSlugPage({ params }: PageProps) {
 
                   <div className="divide-y divide-neutral-100">
                     <a
-                      href="tel:+14702052227"
+                      href="tel:+17866526864"
                       className="group flex items-center gap-4 py-4 first:pt-0"
                     >
                       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-neutral-700 transition-colors group-hover:bg-[#D4D939] group-hover:text-neutral-950">
@@ -438,7 +438,7 @@ export default async function BlogSlugPage({ params }: PageProps) {
                           Phone
                         </span>
                         <span className="mt-0.5 block text-sm font-semibold text-neutral-800">
-                          (470) 205-2227
+                          (786) 652-6864
                         </span>
                       </span>
                     </a>

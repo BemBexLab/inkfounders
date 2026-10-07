@@ -57,8 +57,8 @@ export default function Home() {
             contacts: [
               {
                 type: "phone",
-                label: "(470) 205-2227",
-                href: "tel:+14702052227",
+                label: "(786) 652-6864",
+                href: "tel:+17866526864",
               },
               {
                 type: "email",

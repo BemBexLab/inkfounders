@@ -139,7 +139,7 @@ const PrivacyPolicy = () => {
           <h1 className="text-[#DADD39] text-3xl mb-4">8.Contact Information</h1>
           <p className="text-black">
             <p>If you have any questions or concerns about these Privacy Policies, please contact us at:</p>
-            <p>Phone:<a href="tel:+14702052227"> (470) 205-2227</a></p>
+            <p>Phone:<a href="tel:+17866526864"> (786) 652-6864</a></p>
             <p>Email:<a href="mailto:info@inkfounders.com"> info@inkfounders.com</a></p>  
             <br />
             <p>We are committed to addressing any issues in a timely manner.</p>

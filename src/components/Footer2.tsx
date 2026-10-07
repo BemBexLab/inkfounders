@@ -24,7 +24,7 @@ const footerContactItems = [
     lines: [<React.Fragment key="usa-office-address">1221 Brickell Ave, Miami, FL 33131, United States</React.Fragment>],
   },
   {
-    href: "tel:+14702052227",
+    href: "tel:+17866526864",
     icon: (
       <svg
         width="16"
@@ -39,7 +39,7 @@ const footerContactItems = [
         />
       </svg>
     ),
-    lines: [<React.Fragment key="usa-office-phone">(470) 205-2227</React.Fragment>],
+    lines: [<React.Fragment key="usa-office-phone">(786) 652-6864</React.Fragment>],
   },
   {
     href: "mailto:info@inkfounders.com",
