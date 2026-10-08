@@ -123,7 +123,7 @@ export async function POST(req: NextRequest) {
         from: `"Website Contact" <${process.env.SMTP_USER}>`,
         to: emailTo,
         ...(emailAddress ? { replyTo: emailAddress } : {}),
-        subject: "New Contact Form Submission",
+        subject: "New Contact Form Submission - InkFounders.com",
         text: [
           "New Message from Ink Founders Contact Form",
           `Name: ${firstName} ${lastName}`,
