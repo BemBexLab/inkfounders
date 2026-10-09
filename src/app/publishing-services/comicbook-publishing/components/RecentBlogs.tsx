@@ -8,6 +8,7 @@ import {
   getFeaturedImageFromPost,
   getTextFromHtml,
 } from "@/app/blog/wpPosts";
+import { robotoMono } from "@/app/fonts";
 
 type BlogCard = {
   title: string;
@@ -21,8 +22,7 @@ type BlogCard = {
 
 const fallbackBlogs: BlogCard[] = [
   {
-    title:
-      "How Much Does It Cost to Self-Publish a Book? Real Costs Explained",
+    title: "How Much Does It Cost to Self-Publish a Book? Real Costs Explained",
     excerpt:
       "Understand the main costs involved in publishing a book and how to plan your budget with confidence.",
     date: "March 1, 2025",
@@ -55,23 +55,17 @@ async function getRecentBlogs(): Promise<BlogCard[]> {
         const excerptHtml =
           post.excerpt?.rendered || post.content?.rendered || "";
 
-        const excerpt = decodeHtmlEntities(
-          getTextFromHtml(excerptHtml),
-        );
+        const excerpt = decodeHtmlEntities(getTextFromHtml(excerptHtml));
 
         return {
-          title: decodeHtmlEntities(
-            post.title?.rendered || "Untitled Post",
-          ),
+          title: decodeHtmlEntities(post.title?.rendered || "Untitled Post"),
           excerpt:
             excerpt ||
             "Practical publishing guidance and ideas for authors and creators.",
           date: formatDate(post.date),
           publishedAt: post.date,
           category: "Publishing Guide",
-          image:
-            getFeaturedImageFromPost(post) ||
-            "/blog/blog_1.webp",
+          image: getFeaturedImageFromPost(post) || "/blog/blog_1.webp",
           href: `/blog/${post.slug}`,
         };
       });
@@ -101,11 +95,11 @@ export default async function RecentBlogs() {
     <section
       className="
         relative overflow-hidden bg-white
-        px-4 py-14
-        sm:px-6 sm:py-16
-        md:py-20
-        lg:px-8 lg:py-24
-        xl:py-28
+        px-4 pb-14
+        sm:px-6 sm:pb-16
+        md:pb-20
+        lg:px-8 lg:pb-24
+        xl:pb-28
       "
     >
       {/* Background decoration */}
@@ -127,51 +121,16 @@ export default async function RecentBlogs() {
         <div
           className="
             mb-8
-            flex flex-col gap-6
+            flex flex-col items-center gap-6 text-center
             sm:mb-10
             md:mb-12
-            md:flex-row
-            md:items-end
-            md:justify-between
           "
         >
-          <div className="min-w-0 max-w-4xl">
-            {/* Eyebrow */}
-            <p
-              className="
-                mb-3
-                flex items-center gap-2
-                text-xs font-bold uppercase
-                tracking-[0.16em]
-                text-[#8b922d]
-                sm:mb-4
-                sm:gap-3
-                sm:text-sm
-                sm:tracking-[0.2em]
-              "
-            >
-              <span
-                className="
-                  h-px w-6 flex-none bg-[#c8d952]
-                  sm:w-8
-                "
-              />
-
-              From the blog
-            </p>
-
+          <div className="min-w-0 w-full max-w-4xl text-center">
             {/* Heading */}
             <h2
               className="
-                max-w-3xl
-                text-[32px] font-bold
-                leading-[1.1]
-                tracking-tight
-                text-[#1a1a1a]
-                min-[375px]:text-4xl
-                sm:text-[42px]
-                md:text-5xl
-                lg:text-[52px]
+                relative mx-auto w-fit max-w-full pb-2 text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900 after:absolute after:bottom-0 after:left-1/2 after:h-[4px] after:w-[80%] after:-translate-x-1/2 after:bg-[#DADD39] after:content-['']
               "
             >
               Insights for your next chapter.
@@ -179,22 +138,20 @@ export default async function RecentBlogs() {
 
             {/* Description */}
             <p
-              className="
-                mt-4 max-w-3xl
+              className={`${robotoMono.className} mx-auto mt-4 max-w-3xl
                 text-sm leading-6
                 text-[#626158]
                 sm:mt-5
                 sm:text-base sm:leading-7
-                lg:text-lg lg:leading-8
-              "
+                lg:text-lg lg:leading-8`}
             >
-              Practical publishing guidance for authors and creators
-              bringing their stories to readers.
+              Practical publishing guidance for authors and creators bringing
+              their stories to readers.
             </p>
           </div>
 
           {/* View all button */}
-          <Link
+          {/* <Link
             href="/blog"
             className="
               group
@@ -203,12 +160,12 @@ export default async function RecentBlogs() {
               items-center justify-center
               gap-2
               rounded-full
-              border border-[#c8d952]
+              border border-[#DADD39]
               px-5 py-3
               text-sm font-bold
               text-[#596019]
               transition-all duration-300
-              hover:bg-[#c8d952]
+              hover:bg-[#DADD39]
               hover:text-[#1a1a1a]
               focus-visible:outline-none
               focus-visible:ring-2
@@ -229,7 +186,7 @@ export default async function RecentBlogs() {
               "
               aria-hidden="true"
             />
-          </Link>
+          </Link> */}
         </div>
 
         {/* Blog Grid */}
@@ -398,16 +355,13 @@ export default async function RecentBlogs() {
                   {/* Title */}
                   <h3
                     className="
-                      text-xl
+                      text-[clamp(1.125rem,2vw,1.5rem)]
                       font-bold
                       leading-[1.25]
                       text-[#1a1a1a]
                       transition-colors
                       duration-200
                       group-hover:text-[#737c1c]
-                      sm:text-[22px]
-                      lg:text-xl
-                      xl:text-2xl
                     "
                   >
                     {blog.title}
@@ -415,15 +369,13 @@ export default async function RecentBlogs() {
 
                   {/* Excerpt */}
                   <p
-                    className="
-                      mt-3
+                    className={`${robotoMono.className} mt-3
                       text-sm
                       leading-6
                       text-[#626158]
                       sm:mt-4
                       sm:text-base
-                      sm:leading-7
-                    "
+                      sm:leading-7`}
                   >
                     {blog.excerpt}
                   </p>
@@ -443,7 +395,6 @@ export default async function RecentBlogs() {
                     "
                   >
                     Read article
-
                     <FaArrowRight
                       className="
                         flex-none

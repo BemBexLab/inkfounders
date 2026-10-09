@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import FAQs from "../Home/FAQs";
+import { faqContent } from "../Home/faqData";
 import GetInTouch from "../Home/GetInTouch";
 import PartnersSection from "../Home/OurPartner";
 import Testimonials from "../Home/Testimonials";
@@ -96,7 +97,7 @@ export default function Home() {
           },
         }}
       />
-      <FAQs />
+      <FAQs {...faqContent} />
     </div>
   );
 }

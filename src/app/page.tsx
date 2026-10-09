@@ -10,6 +10,7 @@ import OurPromise from "./Home/OurPromise";
 import Testimonials from "./Home/Testimonials";
 import GetInTouch from "./Home/GetInTouch";
 import FAQs from "./Home/FAQs";
+import { faqContent } from "./Home/faqData";
 import Lagacy from "./Home/Legacy";
 import OurWork from "./Home/OurWork";
 import { createCanonicalMetadata } from "@/lib/seo";
@@ -36,7 +37,7 @@ export default function Home() {
       <OurPromise />
       <Testimonials />
       <GetInTouch />
-      <FAQs />
+      <FAQs {...faqContent} />
     </div>
   );
 }

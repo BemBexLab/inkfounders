@@ -1,4 +1,6 @@
+import { robotoMono } from "@/app/fonts";
 import Image from "next/image";
+import { FaCircleCheck } from "react-icons/fa6";
 
 const services = [
   "Publishing preparation",
@@ -17,10 +19,8 @@ export default function CreativeProjectControl() {
       <div className="mx-auto w-full max-w-7xl [overflow-wrap:anywhere]">
         {/* Responsive heading with a wrapping underline */}
         <header className="mb-8 text-center sm:mb-10 lg:mb-14 xl:mb-16">
-          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900">
-            <span className="underline decoration-yellow-400 decoration-[4px] underline-offset-[6px] [text-decoration-skip-ink:none] sm:decoration-[6px] sm:underline-offset-8 lg:decoration-[8px]">
+          <h2 className="relative mx-auto w-fit max-w-full pb-2 text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900 after:absolute after:bottom-0 after:left-1/2 after:h-[4px] after:w-[80%] after:-translate-x-1/2 after:bg-[#DADD39] after:content-['']">
               Self-Publish Your Comic Book
-            </span>
           </h2>
         </header>
 
@@ -38,11 +38,11 @@ export default function CreativeProjectControl() {
 
           {/* Content */}
           <div className="flex w-full min-w-0 flex-col justify-center space-y-4 text-sm leading-6 text-gray-600 sm:space-y-5 sm:text-base sm:leading-7">
-            <h3 className="text-[clamp(1.5rem,3.2vw,3rem)] font-bold leading-tight tracking-tight text-gray-900">
+            <h3 className="text-[clamp(1.125rem,2vw,1.5rem)] font-bold leading-tight tracking-tight text-gray-900">
               Keep Control of Your Creative Project
             </h3>
 
-            <div className="space-y-3 sm:space-y-4">
+            <div className={`${robotoMono.className} space-y-3 sm:space-y-4`}>
               <p>
                 Many independent creators choose to self publish because they want
                 greater control over their story, artwork, branding, and publishing
@@ -56,7 +56,7 @@ export default function CreativeProjectControl() {
             </div>
 
             <div>
-              <p className="mb-3 font-medium text-gray-800">
+              <p className={`${robotoMono.className} mb-3 font-medium text-gray-800`}>
                 Ink Founders can provide professional support with:
               </p>
 
@@ -66,20 +66,18 @@ export default function CreativeProjectControl() {
                     key={service}
                     className="flex items-start gap-2 sm:gap-3"
                   >
-                    <span
+                    <FaCircleCheck
                       aria-hidden="true"
-                      className="shrink-0 text-gray-400"
-                    >
-                      •
-                    </span>
+                      className="mt-1 shrink-0 text-[18px] text-[#DADD39]"
+                    />
 
-                    <span className="min-w-0 flex-1">{service}</span>
+                    <span className={`${robotoMono.className} min-w-0 flex-1`}>{service}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <p>
+            <p className={`${robotoMono.className}`}>
               You maintain control of your creative project while our team helps
               with the professional and technical side of preparing it for
               publication.

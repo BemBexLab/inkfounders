@@ -48,7 +48,7 @@ export default function CaseStudyComic() {
       <div className="relative mx-auto w-full max-w-[1600px] [overflow-wrap:anywhere]">
         {/* Header */}
         <header className="mb-8 max-w-4xl sm:mb-10 lg:mb-12 xl:mb-16">
-          <h2 className="text-[clamp(2rem,4.5vw,3.75rem)] font-bold leading-[1.15] tracking-tight text-zinc-900">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight text-zinc-900">
             From Manuscript to{" "}
             <span className="bg-[linear-gradient(transparent_60%,rgba(212,225,87,0.6)_60%,rgba(212,225,87,0.6)_90%,transparent_90%)] [box-decoration-break:clone] [-webkit-box-decoration-break:clone]">
               Finished Comic
@@ -65,7 +65,7 @@ export default function CaseStudyComic() {
                 Project 01
               </p>
 
-              <h3 className="mb-3 text-2xl font-bold text-zinc-900 sm:mb-4 sm:text-3xl">
+              <h3 className="mb-3 text-[clamp(1.125rem,2vw,1.5rem)] font-bold text-zinc-900 sm:mb-4">
                 The Project
               </h3>
 
@@ -74,8 +74,8 @@ export default function CaseStudyComic() {
               </p>
             </div>
 
-            <div className="border-l-4 border-[#D4E157] pl-4 sm:pl-5 xl:pl-6">
-              <h3 className="mb-3 text-xl font-semibold text-zinc-900 sm:text-2xl">
+            <div className="border-l-4 border-[#DADD39] pl-4 sm:pl-5 xl:pl-6">
+              <h3 className="mb-3 text-[clamp(1.125rem,2vw,1.5rem)] font-semibold text-zinc-900">
                 The Challenge
               </h3>
 
@@ -85,10 +85,10 @@ export default function CaseStudyComic() {
             </div>
 
             <div>
-              <h3 className="mb-4 flex items-center gap-2 text-xl font-semibold text-zinc-900 sm:mb-5 sm:text-2xl xl:mb-6">
+              <h3 className="mb-4 flex items-center gap-2 text-[clamp(1.125rem,2vw,1.5rem)] font-semibold text-zinc-900 sm:mb-5 xl:mb-6">
                 <FiStar
                   aria-hidden="true"
-                  className="h-5 w-5 shrink-0 text-lime-600 sm:h-6 sm:w-6"
+                  className="h-5 w-5 shrink-0 text-[#DADD39] sm:h-6 sm:w-6"
                 />
                 Our Support
               </h3>
@@ -103,7 +103,7 @@ export default function CaseStudyComic() {
                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#D4E157]/30 sm:h-10 sm:w-10">
                       <Icon
                         aria-hidden="true"
-                        className="h-5 w-5 text-lime-800"
+                        className="h-5 w-5 text-[#D4E157] sm:h-6 sm:w-6"
                       />
                     </div>
 
@@ -156,7 +156,7 @@ export default function CaseStudyComic() {
             <div className="pt-2 sm:pt-4">
               <Link
                 href="/contactus"
-                className="group/btn inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl border-2 border-zinc-900 bg-[#D4E157] px-4 py-3 text-center text-sm font-bold leading-6 text-zinc-900 shadow-lg transition duration-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-2 motion-safe:hover:scale-[1.01] motion-safe:active:scale-[0.99] motion-reduce:transition-none sm:gap-3 sm:px-6 sm:py-4 sm:text-base xl:px-8 xl:py-5 xl:text-lg"
+                className="group/btn inline-flex min-h-[48px] w-full items-center justify-center gap-2 rounded-xl border-2 border-zinc-900 bg-[#DADD39] px-4 py-3 text-center text-sm font-bold leading-6 text-zinc-900 shadow-lg transition duration-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 focus-visible:ring-offset-2 motion-safe:hover:scale-[1.01] motion-safe:active:scale-[0.99] motion-reduce:transition-none sm:gap-3 sm:px-6 sm:py-4 sm:text-base xl:px-8 xl:py-5 xl:text-lg"
               >
                 <span className="min-w-0">
                   Start Your Own Comic Project

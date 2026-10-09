@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaCircleCheck } from "react-icons/fa6";
+import { robotoMono } from "@/app/fonts";
 
 const categories = [
   "Superhero",
@@ -64,7 +66,7 @@ export default function ComicCoverDesign() {
               onClick={() => setActiveCategory(category)}
               className={`min-h-[44px] min-w-0 cursor-pointer rounded-md border px-3 py-2.5 text-center text-sm font-medium leading-snug transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a1a1a] focus-visible:ring-offset-2 motion-reduce:transition-none sm:px-4 sm:text-base ${
                 activeCategory === category
-                  ? "border-[#c8d952] bg-[#c8d952] text-[#1a1a1a]"
+                  ? "border-[#DADD39] bg-[#DADD39] text-[#1a1a1a]"
                   : "border-[#b0a890] bg-transparent text-[#4a4a4a] hover:border-[#8a8070]"
               }`}
             >
@@ -89,23 +91,23 @@ export default function ComicCoverDesign() {
 
           {/* Text */}
           <div className="w-full min-w-0 space-y-4 text-sm leading-6 text-[#4a4a4a] sm:space-y-5 sm:text-base sm:leading-7">
-            <h3 className="text-[clamp(1.5rem,2.8vw,2.25rem)] font-bold leading-tight text-[#1a1a1a]">
+            <h3 className="text-[clamp(1.125rem,2vw,1.5rem)] font-bold leading-tight text-[#1a1a1a]">
               Create A Cover That Makes Your Story Stand Out
             </h3>
 
-            <p>
+            <p className={` ${robotoMono.className} `}>
               Your cover is often the first part of your comic a potential reader
               sees.
             </p>
 
-            <p>
+            <p className={` ${robotoMono.className} `}>
               A professional cover should communicate the story, genre, characters,
               tone, and visual identity of the book while working correctly with
               the selected publishing format.
             </p>
 
             <div>
-              <p className="mb-3">
+              <p className={`${robotoMono.className} mb-3 font-medium`}>
                 Our cover and book design services can include:
               </p>
 
@@ -115,11 +117,12 @@ export default function ComicCoverDesign() {
                     key={service}
                     className="flex items-start gap-2 sm:gap-3"
                   >
-                    <span aria-hidden="true" className="shrink-0">
-                      •
-                    </span>
+                    <FaCircleCheck
+                      aria-hidden="true"
+                      className="mt-1 shrink-0 text-[18px] text-[#DADD39]"
+                    />
 
-                    <span className="min-w-0 flex-1">{service}</span>
+                    <span className={` ${robotoMono.className} min-w-0 flex-1 `}>{service}</span>
                   </li>
                 ))}
               </ul>

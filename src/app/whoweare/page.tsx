@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import FAQs from "../Home/FAQs";
+import { faqContent } from "../Home/faqData";
 import GetInTouch from "../Home/GetInTouch";
 import PartnersSection from "../Home/OurPartner";
 import { getInTouchContent } from "./getInTouchData";
@@ -30,7 +31,7 @@ export default function Home() {
       <WhyChoosePanda />
       {/* <GetInTouch data={getInTouchContent} /> */}
       <GetInTouch />
-      <FAQs />
+      <FAQs {...faqContent} />
     </>
   );
 }

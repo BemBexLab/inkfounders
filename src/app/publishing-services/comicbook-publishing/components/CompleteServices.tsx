@@ -1,19 +1,5 @@
 import { FaBookOpen } from "react-icons/fa";
-import { HiOutlineStar } from "react-icons/hi";
-
-/* Combined book + star icon */
-function BookStarIcon({ className = "" }: { className?: string }) {
-  return (
-    <div
-      aria-hidden="true"
-      className={`relative inline-flex shrink-0 items-center justify-center ${className}`}
-    >
-      <FaBookOpen className="h-7 w-7 text-[#1a1a1a] sm:h-8 sm:w-8" />
-
-      <HiOutlineStar className="absolute -top-1.5 left-1/2 h-3 w-3 -translate-x-1/2 text-[#1a1a1a] sm:h-3.5 sm:w-3.5" />
-    </div>
-  );
-}
+import { robotoMono } from "@/app/fonts";
 
 /* Card data */
 type Service = {
@@ -83,13 +69,16 @@ const services: Service[] = [
 function ServiceCard({ service }: { service: Service }) {
   return (
     <article className="flex min-w-0 flex-1 flex-col rounded-xl bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.04)] sm:p-6 xl:p-7">
-      <BookStarIcon className="mb-4 self-center sm:mb-5" />
+      <FaBookOpen
+        aria-hidden="true"
+        className="mb-4 h-7 w-7 shrink-0 self-start text-[#1a1a1a] sm:h-8 sm:w-8"
+      />
 
-      <h3 className="mb-2 text-[15px] text-center font-bold leading-snug text-[#1a1a1a] sm:mb-3 sm:text-base">
+      <h3 className="mb-2 text-[clamp(1.125rem,2vw,1.5rem)] text-left font-bold leading-snug text-[#1a1a1a] sm:mb-3">
         {service.title}
       </h3>
 
-      <p className="font-mono text-center text-[13px] leading-[1.7] text-[#555] sm:text-sm">
+      <p className="font-mono text-left text-[13px] leading-[1.7] text-[#555] sm:text-sm">
         {service.description}
       </p>
     </article>
@@ -99,18 +88,20 @@ function ServiceCard({ service }: { service: Service }) {
 /* Section */
 export default function CompleteServices() {
   return (
-    <section className="w-full min-w-0 bg-[#F4F3E1] px-4 pb-12 sm:px-6 sm:pb-16 md:px-8 lg:px-14 lg:pb-24 xl:pb-28">
+    <section className="w-full min-w-0 bg-[#F4F3E1] px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:px-14 lg:py-24 xl:py-28">
       <div className="mx-auto w-full max-w-[1536px] [overflow-wrap:anywhere]">
-        <header className="mb-8 text-center sm:mb-10 lg:mb-14">
+        <header className="mb-8 text-center">
           {/* Fluid heading with an underline that follows wrapped lines */}
           <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900">
-            <span className="underline decoration-yellow-400 decoration-[4px] underline-offset-[6px] [text-decoration-skip-ink:none] sm:decoration-[6px] sm:underline-offset-8 lg:decoration-[8px]">
-              Complete Comic Book Publishing Services
-            </span>
+            Complete Comic Book Publishing Services
+            {/* <span className="underline decoration-[#DADD39] decoration-[4px] underline-offset-[6px] [text-decoration-skip-ink:none] sm:decoration-[6px] sm:underline-offset-8 lg:decoration-[8px]">
+            </span> */}
           </h2>
 
-          <p className="mt-5 w-full font-mono text-[13px] leading-[1.7] text-[#555] sm:mt-6 sm:text-sm">
-            From the first draft to the finished publication, our team can support the creative and technical stages of your comic publishing project.
+          <p className={`${robotoMono.className} mt-5 w-full font-mono text-[13px] leading-[1.7] text-[#555] sm:mt-2 sm:text-sm`}>
+            From the first draft to the finished publication, our team can
+            support the creative and technical stages of your comic publishing
+            project.
           </p>
         </header>
 

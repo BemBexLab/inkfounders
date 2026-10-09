@@ -1,3 +1,4 @@
+import { robotoMono } from "@/app/fonts";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -60,18 +61,18 @@ function StageRow({ stage, index }: { stage: Stage; index: number }) {
     <article className="grid grid-cols-1 items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12 xl:gap-16">
       {/* Text comes first on every mobile row */}
       <div className="w-full min-w-0">
-        <h3 className="text-[clamp(1.5rem,2.5vw,2rem)] font-bold leading-tight text-[#1a1a1a]">
+        <h3 className="text-[clamp(1.125rem,2vw,1.5rem)] font-bold leading-tight text-[#1a1a1a]">
           {stage.title}
         </h3>
 
         <div className="mt-3 space-y-3 font-mono text-sm leading-[1.7] text-[#444] sm:mt-4 sm:space-y-4 sm:text-[15px] lg:mt-5">
-          <p>{stage.description}</p>
-          <p>{stage.helpText}</p>
+          <p className={`${robotoMono.className}`}>{stage.description}</p>
+          <p className={`${robotoMono.className}`}>{stage.helpText}</p>
         </div>
 
         <Link
           href={stage.buttonHref}
-          className="mt-5 inline-flex min-h-[44px] w-full max-w-full items-center justify-center rounded-md bg-[#DADD39] px-5 py-3 text-center text-sm font-semibold leading-6 text-[#1a1a1a] transition duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a1a1a] focus-visible:ring-offset-2 motion-safe:hover:-translate-y-0.5 motion-reduce:transition-none sm:mt-6 sm:w-auto sm:px-6 lg:mt-7"
+          className={` ${robotoMono.className} mt-5 inline-flex min-h-[44px] w-full max-w-full items-center justify-center rounded-md bg-[#DADD39] px-5 py-3 text-center text-sm font-semibold leading-6 text-[#1a1a1a] transition duration-200 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a1a1a] focus-visible:ring-offset-2 motion-safe:hover:-translate-y-0.5 motion-reduce:transition-none sm:mt-6 sm:w-auto sm:px-6 lg:mt-7`}
         >
           {stage.buttonText}
         </Link>
@@ -101,11 +102,11 @@ export default function WhereAreYou() {
       <div className="mx-auto w-full max-w-[1280px] [overflow-wrap:anywhere]">
         {/* Header */}
         <header className="mb-10 text-center sm:mb-12 lg:mb-16">
-          <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-[1.2] tracking-tight text-[#1a1a1a]">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.2] tracking-tight text-[#1a1a1a]">
             Where Are You With Your Comic?
           </h2>
 
-          <p className="mx-auto mt-4 max-w-[640px] font-mono text-[13px] leading-[1.7] text-[#555] sm:mt-5 sm:text-sm">
+          <p className={`${robotoMono.className} mx-auto mt-4 max-w-[640px] text-[14px] leading-[1.7] text-[#555]`}>
             You don't have to have everything finished before contacting us.
           </p>
         </header>

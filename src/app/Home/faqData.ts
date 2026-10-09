@@ -1,6 +1,8 @@
+import { ReactNode } from "react";
+
 export type FAQItem = {
-  question: string;
-  answerParagraphs: string[];
+  question: ReactNode;
+  answerParagraphs: ReactNode[];
 };
 
 export const faqItems: FAQItem[] = [
@@ -85,3 +87,10 @@ export const faqItems: FAQItem[] = [
     ],
   },
 ];
+
+export const faqContent = {
+  eyebrow: "FAQs",
+  heading: "Frequently Asked Questions",
+  description: "Find answers to common questions about our publishing services.",
+  items: faqItems,
+};

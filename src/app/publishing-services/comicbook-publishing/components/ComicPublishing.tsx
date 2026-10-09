@@ -1,3 +1,4 @@
+import { robotoMono } from "@/app/fonts";
 import { BsSoundwave } from "react-icons/bs";
 
 const cards = [
@@ -37,25 +38,23 @@ const cards = [
 
 export default function ComicPublishing() {
   return (
-    <section className="min-h-screen w-full min-w-0 bg-white px-4 py-12 font-sans sm:px-6 sm:py-16 md:px-8 lg:px-12 lg:py-20 xl:px-16 xl:py-24">
+    <section className="min-h-screen w-full min-w-0 bg-white px-4 pb-12 font-sans sm:px-6 sm:pb-16 md:px-8 lg:px-12 lg:pb-20 xl:px-16 xl:pb-24">
       <div className="mx-auto w-full max-w-6xl [overflow-wrap:anywhere]">
         {/* Responsive heading with a wrapping underline */}
         <header className="mb-8 text-center sm:mb-10 lg:mb-14 xl:mb-16">
-          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900">
-            <span className="underline decoration-yellow-400 decoration-[4px] underline-offset-[6px] [text-decoration-skip-ink:none] sm:decoration-[6px] sm:underline-offset-8 lg:decoration-[8px]">
+          <h2 className="relative mx-auto w-fit max-w-full pb-2 text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900 after:absolute after:bottom-0 after:left-1/2 after:h-[4px] after:w-[80%] after:-translate-x-1/2 after:bg-[#DADD39] after:content-['']">
               Independent Comic Book Publishing
-            </span>
           </h2>
         </header>
 
         {/* Introduction */}
         <div className="mb-10 grid grid-cols-1 items-center gap-6 sm:mb-12 sm:gap-8 lg:mb-16 lg:grid-cols-2 lg:gap-12 xl:gap-16">
           <div className="w-full min-w-0">
-            <h3 className="mb-4 text-[clamp(1.5rem,2.8vw,2.25rem)] font-semibold leading-tight text-gray-900 sm:mb-5">
+            <h3 className="mb-4 text-[clamp(1.125rem,2vw,1.5rem)] font-semibold leading-tight text-gray-900 sm:mb-5">
               Professional Support for Creator Owned Projects
             </h3>
 
-            <div className="space-y-3 font-mono text-sm leading-6 text-gray-600 sm:space-y-4 sm:text-base sm:leading-7">
+            <div className={`${robotoMono.className} space-y-3 font-mono text-sm leading-6 text-gray-600 sm:space-y-4 sm:text-base sm:leading-7`}>
               <p>
                 Independent comic creators often have their own characters,
                 stories, artwork, and publishing goals.
@@ -81,7 +80,7 @@ export default function ComicPublishing() {
           </div>
         </div>
 
-        <h3 className="mb-5 text-center text-[clamp(1.25rem,2.5vw,1.5rem)] font-semibold leading-tight text-gray-900 sm:mb-6 lg:mb-8">
+        <h3 className="mb-5 text-center text-[clamp(1.125rem,2vw,1.5rem)] font-semibold leading-tight text-gray-900 sm:mb-6 lg:mb-8">
           We Can Support Projects Such As:
         </h3>
 
@@ -110,9 +109,9 @@ export default function ComicPublishing() {
           ))}
         </div>
 
-        <p className="mt-6 font-mono text-sm italic leading-6 text-black sm:mt-8 sm:text-base sm:leading-7">
-          Whether you&apos;re publishing your first comic or developing a continuing
-          series, we can help you identify the next steps required for your project.
+        <p className={`${robotoMono.className} mt-6 font-mono text-sm leading-6 text-black sm:mt-8 sm:text-base sm:leading-7 text-center`}>
+          <i>Whether you&apos;re publishing your first comic or developing a continuing
+          series, we can help you identify the next steps required for your project.</i>
         </p>
       </div>
     </section>

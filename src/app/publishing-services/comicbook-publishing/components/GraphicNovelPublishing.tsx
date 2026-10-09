@@ -1,3 +1,6 @@
+import { robotoMono } from "@/app/fonts";
+import { FaCircleCheck } from "react-icons/fa6";
+
 const services = [
   "Story development",
   "Manuscript development",
@@ -17,10 +20,8 @@ export default function GraphicNovelPublishing() {
       <div className="mx-auto w-full max-w-7xl [overflow-wrap:anywhere]">
         {/* Responsive heading with a wrapping underline */}
         <header className="mb-8 text-center sm:mb-10 lg:mb-14 xl:mb-16">
-          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900">
-            <span className="underline decoration-yellow-400 decoration-[4px] underline-offset-[6px] [text-decoration-skip-ink:none] sm:decoration-[6px] sm:underline-offset-8 lg:decoration-[8px]">
+          <h2 className="relative mx-auto w-fit max-w-full pb-2 text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900 after:absolute after:bottom-0 after:left-1/2 after:h-[4px] after:w-[80%] after:-translate-x-1/2 after:bg-[#DADD39] after:content-['']">
               Graphic Novel Publishing Services
-            </span>
           </h2>
         </header>
 
@@ -38,23 +39,23 @@ export default function GraphicNovelPublishing() {
 
           {/* Content */}
           <div className="w-full min-w-0 space-y-4 text-sm leading-6 text-gray-700 sm:space-y-5 sm:text-base sm:leading-7">
-            <h3 className="text-[clamp(1.5rem,2.8vw,2.25rem)] font-semibold leading-tight text-gray-900">
+            <h3 className="text-[clamp(1.125rem,2vw,1.5rem)] font-semibold leading-tight text-gray-900">
               Turn Your Long Form Story Into a Finished Graphic Novel
             </h3>
 
-            <p>
+            <p className={`${robotoMono.className}`}>
               Graphic novels combine long-form storytelling, artwork, typography,
               panel layouts, and professional book production.
             </p>
 
-            <p>
+            <p className={`${robotoMono.className}`}>
               That means the publishing process needs careful coordination between
               the manuscript, artwork, page design, cover, and final production
               files.
             </p>
 
             <div>
-              <p className="mb-3">
+              <p className={`${robotoMono.className} mb-3`}>
                 Our graphic novel publishing support can include:
               </p>
 
@@ -64,17 +65,18 @@ export default function GraphicNovelPublishing() {
                     key={service}
                     className="flex items-start gap-2 sm:gap-3"
                   >
-                    <span aria-hidden="true" className="shrink-0">
-                      •
-                    </span>
+                    <FaCircleCheck
+                      aria-hidden="true"
+                      className="mt-1 shrink-0 text-[18px] text-[#DADD39]"
+                    />
 
-                    <span className="min-w-0 flex-1">{service}</span>
+                    <span className={`${robotoMono.className} min-w-0 flex-1`}>{service}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <p>
+            <p className={`${robotoMono.className} min-w-0 flex-1`}>
               From an early manuscript to a finished graphic novel, we can help
               you move through the major stages of the publishing process.
             </p>

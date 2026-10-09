@@ -1,11 +1,18 @@
 'use client';
 
-import React, { useState } from "react";
+import React, { useState, type ReactNode } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { robotoMono } from "../fonts";
-import { faqItems } from "./faqData";
+import type { FAQItem } from "./faqData";
 
-const FAQs: React.FC = () => {
+export type FAQsProps = {
+  eyebrow: string;
+  heading: string;
+  description: ReactNode;
+  items: FAQItem[];
+};
+
+const FAQs: React.FC<FAQsProps> = ({ eyebrow, heading, description, items }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
@@ -13,14 +20,17 @@ const FAQs: React.FC = () => {
       <div className="w-full max-w-[1300px] flex flex-col items-center">
         {/* Headings */}
         <p className="text-center text-lg md:text-xl font-bold text-black mb-2">
-          FAQs
+          {eyebrow}
         </p>
         <h2 className="text-center text-2xl md:text-[2rem] font-bold">
-          <span className="text-[#DADD39]">Frequently Asked Questions</span>
+          <span className="text-[#DADD39]">{heading}</span>
         </h2>
+        <div className="text-lg text-[#626158] text-center max-w-4xl">
+          {description}
+        </div>
         {/* FAQ List */}
         <div className="mt-6 flex w-full flex-col gap-4">
-          {faqItems.map((faq, idx) => (
+          {items.map((faq, idx) => (
             <div
               key={`${faq.question}-${idx}`}
               className="rounded-lg border border-[#ece8d8] bg-[#F6F5F3] px-4 shadow-[0_10px_28px_rgba(65,60,35,0.08)] duration-200 sm:px-6"

@@ -1,6 +1,8 @@
 "use client";
 
+import { robotoMono } from "@/app/fonts";
 import Image from "next/image";
+import { FaCircleCheck } from "react-icons/fa6";
 
 const services = [
   "Comic story development",
@@ -20,10 +22,8 @@ export default function StoryDevelopmentSection() {
       <div className="mx-auto w-full max-w-7xl [overflow-wrap:anywhere]">
         {/* Responsive heading with a wrapping underline */}
         <header className="mb-8 text-center sm:mb-10 lg:mb-14 xl:mb-16">
-          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900">
-            <span className="underline decoration-yellow-400 decoration-[4px] underline-offset-[6px] [text-decoration-skip-ink:none] sm:decoration-[6px] sm:underline-offset-8 lg:decoration-[8px]">
-              Comic Book Writing & Story Development
-            </span>
+          <h2 className="relative mx-auto w-fit max-w-full pb-2 text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900 after:absolute after:bottom-0 after:left-1/2 after:h-[4px] after:w-[80%] after:-translate-x-1/2 after:bg-[#DADD39] after:content-['']">
+            Comic Book Writing & Story Development
           </h2>
         </header>
 
@@ -41,46 +41,49 @@ export default function StoryDevelopmentSection() {
 
           {/* Content */}
           <div className="w-full min-w-0 space-y-5 sm:space-y-6">
-            <h3 className="text-[clamp(1.5rem,2.8vw,2.25rem)] font-bold leading-tight text-gray-900">
+            <h3 className="text-[clamp(1.125rem,2vw,1.5rem)] font-bold leading-tight text-gray-900">
               Build a Strong Story Before Production Begins
             </h3>
 
-            <div className="space-y-3 text-sm leading-6 text-gray-700 sm:space-y-4 sm:text-base sm:leading-7">
+            <div
+              className={` ${robotoMono.className} space-y-3 text-sm leading-6 text-gray-700 sm:text-base sm:leading-7 `}
+            >
               <p>Every comic starts with a story.</p>
 
               <p>
                 Whether you have a detailed concept or only a basic idea,
-                developing the story before production can help create a stronger
-                foundation for the finished book.
+                developing the story before production can help create a
+                stronger foundation for the finished book.
               </p>
 
               <p>
-                Our comic book writing and story development support can include:
+                Our comic book writing and story development support can
+                include:
               </p>
             </div>
 
             {/* Bullets align with the first line when text wraps */}
-            <ul className="space-y-1.5 text-sm leading-6 text-gray-700 sm:space-y-2 sm:text-base sm:leading-7">
+            <ul className="space-y-1.5 text-sm leading-6 text-gray-700 sm:space-y-1 sm:text-base sm:leading-7">
               {services.map((service) => (
-                <li
-                  key={service}
-                  className="flex items-start gap-2.5 sm:gap-3"
-                >
-                  <span
+                <li key={service} className="flex items-start gap-2.5 sm:gap-3">
+                  <FaCircleCheck
                     aria-hidden="true"
-                    className="shrink-0 text-xl leading-6 text-yellow-500 sm:leading-7"
-                  >
-                    •
-                  </span>
+                    className="mt-1 shrink-0 text-[18px] text-[#DADD39]"
+                  />
 
-                  <span className="min-w-0 flex-1">{service}</span>
+                  <span className={` ${robotoMono.className} min-w-0 flex-1 `}>
+                    {service}
+                  </span>
                 </li>
               ))}
             </ul>
 
-            <p className="text-sm leading-6 text-gray-700 sm:text-base sm:leading-7">
-              If you already have a story, we can work with your existing material
-              while maintaining the creative direction and voice of your project.
+            <p
+              className={` ${robotoMono.className} text-sm leading-6 text-gray-700 sm:text-base sm:leading-7 `}
+            >
+              If you already have a story, we can work with your existing
+              material while maintaining the creative direction and voice of
+              your project.
             </p>
           </div>
         </div>

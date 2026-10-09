@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { robotoMono } from "@/app/fonts";
 
 interface StepData {
   stepNumber: number;
@@ -106,7 +107,7 @@ export default function PublishComicPage() {
             How to Publish a Comic Book
           </h2>
 
-          <p className="mx-auto mt-4 max-w-4xl font-mono text-sm leading-relaxed text-gray-600 sm:text-base">
+          <p className={` ${robotoMono.className} mx-auto mt-4 max-w-4xl text-sm text-gray-600 sm:text-sm`}>
             You're searching for how to publish a comic book, the process can seem complicated at first. Breaking the project into clear stages makes it easier to understand what needs to happen next.
           </p>
         </header>
@@ -124,7 +125,7 @@ export default function PublishComicPage() {
               onClick={() => setActiveTab(tab)}
               className={`min-h-[44px] min-w-0 rounded-md border-2 px-3 py-2.5 text-center text-sm font-semibold leading-snug transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a1a1a] focus-visible:ring-offset-2 motion-reduce:transition-none sm:px-4 sm:text-base ${
                 activeTab === tab
-                  ? "border-[#c8d94e] bg-[#c8d94e] text-[#1a1a1a]"
+                  ? "border-[#DADD39] bg-[#DADD39] text-[#1a1a1a]"
                   : "border-gray-400 bg-transparent text-gray-600 hover:bg-[#e8e5db]"
               }`}
             >
@@ -141,11 +142,11 @@ export default function PublishComicPage() {
               Step {currentStep.stepNumber}
             </p>
 
-            <h3 className="mb-4 text-[clamp(1.5rem,3.5vw,3rem)] font-semibold leading-[1.15] tracking-tight text-[#1a1a1a] sm:mb-5 lg:mb-6">
+            <h3 className="mb-4 text-[clamp(1.125rem,2vw,1.5rem)] font-semibold leading-[1.15] tracking-tight text-[#1a1a1a] sm:mb-5 lg:mb-6">
               {currentStep.title}
             </h3>
 
-            <div className="space-y-3 font-mono text-sm leading-relaxed text-gray-600 sm:space-y-4 sm:text-base">
+            <div className={` ${robotoMono.className} space-y-3 font-mono text-sm leading-relaxed text-gray-600 sm:space-y-4 sm:text-base`}>
               {currentStep.description.map((paragraph, index) => (
                 <p key={`${activeTab}-${index}`}>{paragraph}</p>
               ))}
