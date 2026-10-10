@@ -18,7 +18,7 @@ export default function ManuscriptToComicSection() {
 
         {/* Header with underline */}
         <div className="text-center mb-16">
-          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold text-gray-900 tracking-tight inline-block relative">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold text-gray-900 tracking-tight inline-block relative">
             From Manuscript To Finished Comic
             <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-2/3 h-1 bg-[#DADD39] rounded-full"></span>
           </h2>
@@ -84,7 +84,7 @@ export default function ManuscriptToComicSection() {
           <div className="flex-1 w-full">
             <div className="h-80 w-full overflow-hidden rounded-lg shadow-md md:h-full">
               <img
-                src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80"
+                src="/Rectangle 14 (1).svg"
                 alt="Person drawing in a sketchbook"
                 className="h-full w-full object-cover"
               />

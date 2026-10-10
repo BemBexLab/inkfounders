@@ -102,7 +102,7 @@ export default function WhereAreYou() {
       <div className="mx-auto w-full max-w-[1280px] [overflow-wrap:anywhere]">
         {/* Header */}
         <header className="mb-10 text-center sm:mb-12 lg:mb-16">
-          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.2] tracking-tight text-[#1a1a1a]">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.2] tracking-tight text-[#1a1a1a]">
             Where Are You With Your Comic?
           </h2>
 

@@ -51,7 +51,7 @@ export default function VisualCards() {
         />
 
         {/* Fluid heading: 30px to 48px at the default root font size */}
-        <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.1] tracking-[-0.045em] text-[#050505]">
+        <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.1] tracking-[-0.045em] text-[#050505]">
           From Comic Idea to Published Book
         </h2>
 

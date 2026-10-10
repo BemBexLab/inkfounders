@@ -22,7 +22,7 @@ export default function StoryDevelopmentSection() {
       <div className="mx-auto w-full max-w-7xl [overflow-wrap:anywhere]">
         {/* Responsive heading with a wrapping underline */}
         <header className="mb-8 text-center sm:mb-10 lg:mb-14 xl:mb-16">
-          <h2 className="relative mx-auto w-fit max-w-full pb-2 text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900 after:absolute after:bottom-0 after:left-1/2 after:h-[4px] after:w-[80%] after:-translate-x-1/2 after:bg-[#DADD39] after:content-['']">
+          <h2 className="relative mx-auto w-fit max-w-full pb-2 text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.4] tracking-tight text-gray-900 after:absolute after:bottom-0 after:left-1/2 after:h-[4px] after:w-[80%] after:-translate-x-1/2 after:bg-[#DADD39] after:content-['']">
             Comic Book Writing & Story Development
           </h2>
         </header>

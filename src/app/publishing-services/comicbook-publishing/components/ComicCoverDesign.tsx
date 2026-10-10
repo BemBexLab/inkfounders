@@ -48,7 +48,7 @@ export default function ComicCoverDesign() {
       <div className="mx-auto w-full max-w-6xl [overflow-wrap:anywhere]">
         {/* Header */}
         <header className="mb-6 text-center sm:mb-8 lg:mb-10">
-          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight text-[#1a1a1a]">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.15] tracking-tight text-[#1a1a1a]">
             Professional Comic Book Cover Design
           </h2>
         </header>

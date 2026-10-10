@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="[&_p]:text-sm sm:[&_p]:text-base">
+    <div className="[&_p]:text-sm sm:[&_p]:text-base [&_h2]:font-semibold">
       <Hero />
       <ComicServicesSection />
       <CompleteServices />

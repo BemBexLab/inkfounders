@@ -36,7 +36,7 @@ export default function WhyChooseInkFoundersSection() {
           {/* Left Column - Text Content */}
           <div className="flex-1 space-y-6">
             <div>
-              <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold text-gray-900 tracking-tight mb-4">
+              <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold text-gray-900 tracking-tight mb-4">
                 Why Choose Ink Founders?
               </h2>
               <div className="w-2/3 h-1 bg-[#DADD39] rounded-full"></div>
@@ -59,7 +59,7 @@ export default function WhyChooseInkFoundersSection() {
           <div className="flex-1 w-full">
             <div className="rounded-lg overflow-hidden shadow-md">
               <img
-                src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=800&q=80"
+                src="/Rectangle 14 (3).svg"
                 alt="Person holding a comic book"
                 className="w-full h-80 md:h-96 object-cover"
               />

@@ -48,7 +48,7 @@ export default function CaseStudyComic() {
       <div className="relative mx-auto w-full max-w-[1600px] [overflow-wrap:anywhere]">
         {/* Header */}
         <header className="mb-8 max-w-4xl sm:mb-10 lg:mb-12 xl:mb-16">
-          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight text-zinc-900">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.15] tracking-tight text-zinc-900">
             From Manuscript to{" "}
             <span className="bg-[linear-gradient(transparent_60%,rgba(212,225,87,0.6)_60%,rgba(212,225,87,0.6)_90%,transparent_90%)] [box-decoration-break:clone] [-webkit-box-decoration-break:clone]">
               Finished Comic

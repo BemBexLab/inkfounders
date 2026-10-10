@@ -103,7 +103,7 @@ export default function PublishComicPage() {
       <div className="mx-auto w-full max-w-6xl [overflow-wrap:anywhere]">
         {/* Header */}
         <header className="mb-8 text-center sm:mb-10 lg:mb-12">
-          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.15] tracking-tight text-[#1a1a1a]">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.15] tracking-tight text-[#1a1a1a]">
             How to Publish a Comic Book
           </h2>
 

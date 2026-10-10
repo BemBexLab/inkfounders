@@ -92,7 +92,7 @@ export default function CompleteServices() {
       <div className="mx-auto w-full max-w-[1536px] [overflow-wrap:anywhere]">
         <header className="mb-8 text-center">
           {/* Fluid heading with an underline that follows wrapped lines */}
-          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.4] tracking-tight text-gray-900">
             Complete Comic Book Publishing Services
             {/* <span className="underline decoration-[#DADD39] decoration-[4px] underline-offset-[6px] [text-decoration-skip-ink:none] sm:decoration-[6px] sm:underline-offset-8 lg:decoration-[8px]">
             </span> */}

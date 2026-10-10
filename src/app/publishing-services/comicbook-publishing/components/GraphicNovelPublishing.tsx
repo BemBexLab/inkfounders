@@ -20,7 +20,7 @@ export default function GraphicNovelPublishing() {
       <div className="mx-auto w-full max-w-7xl [overflow-wrap:anywhere]">
         {/* Responsive heading with a wrapping underline */}
         <header className="mb-8 text-center sm:mb-10 lg:mb-14 xl:mb-16">
-          <h2 className="relative mx-auto w-fit max-w-full pb-2 text-[clamp(1.75rem,4vw,3rem)] font-bold leading-[1.4] tracking-tight text-gray-900 after:absolute after:bottom-0 after:left-1/2 after:h-[4px] after:w-[80%] after:-translate-x-1/2 after:bg-[#DADD39] after:content-['']">
+          <h2 className="relative mx-auto w-fit max-w-full pb-2 text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.4] tracking-tight text-gray-900 after:absolute after:bottom-0 after:left-1/2 after:h-[4px] after:w-[80%] after:-translate-x-1/2 after:bg-[#DADD39] after:content-['']">
               Graphic Novel Publishing Services
           </h2>
         </header>
@@ -29,7 +29,7 @@ export default function GraphicNovelPublishing() {
           {/* Proportional on mobile; matches content height on desktop */}
           <div className="relative aspect-[4/3] w-full min-w-0 overflow-hidden lg:aspect-auto lg:min-h-[400px]">
             <img
-              src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=1200"
+              src="/Rectangle 14.svg"
               alt="Graphic Novel Publishing Mockup"
               loading="lazy"
               decoding="async"

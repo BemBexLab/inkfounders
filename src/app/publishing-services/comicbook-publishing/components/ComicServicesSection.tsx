@@ -32,7 +32,7 @@ export default function ComicServicesSection() {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-10 w-full mx-auto">
-          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-bold text-gray-900 mb-6 tracking-tight">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold text-gray-900 mb-6 tracking-tight">
             From Comic Idea To Published Book
           </h2>
           <div>
