@@ -105,16 +105,22 @@ export default function CompleteServices() {
           </p>
         </header>
 
-        {/* Responsive columns with a centered final row */}
-        <div className="flex flex-wrap items-stretch justify-center gap-4 sm:gap-5 lg:gap-6">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="flex w-full min-w-0 sm:w-[calc(50%_-_0.625rem)] lg:w-[calc(33.333333%_-_1rem)] xl:w-[calc(25%_-_1.125rem)]"
-            >
-              <ServiceCard service={service} />
-            </div>
-          ))}
+        {/* Horizontal scroll on phones; responsive card grid at sm and above */}
+        <div
+          role="region"
+          aria-label="Complete comic book publishing services"
+          className="-mx-4 snap-x snap-mandatory overflow-x-auto overscroll-x-contain px-4 pb-4 sm:mx-0 sm:overflow-visible sm:px-0 sm:pb-0"
+        >
+          <div className="flex w-max gap-4 sm:w-full sm:flex-wrap sm:items-stretch sm:justify-center sm:gap-5 lg:gap-6">
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="flex w-[82vw] min-w-0 max-w-[320px] shrink-0 snap-start sm:w-[calc(50%_-_0.625rem)] sm:shrink lg:w-[calc(33.333333%_-_1rem)] xl:w-[calc(25%_-_1.125rem)]"
+              >
+                <ServiceCard service={service} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

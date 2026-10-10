@@ -113,26 +113,28 @@ export default function PublishComicPage() {
         </header>
 
         {/* Responsive navigation */}
-        <nav
-          aria-label="Comic publishing stages"
-          className="mb-8 grid grid-cols-2 gap-2 sm:mb-10 sm:grid-cols-4 sm:gap-3 lg:mb-12 xl:mb-16 xl:grid-cols-8"
-        >
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              type="button"
-              aria-pressed={activeTab === tab}
-              onClick={() => setActiveTab(tab)}
-              className={`min-h-[44px] min-w-0 rounded-md border-2 px-3 py-2.5 text-center text-sm font-semibold leading-snug transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a1a1a] focus-visible:ring-offset-2 motion-reduce:transition-none sm:px-4 sm:text-base ${
-                activeTab === tab
-                  ? "border-[#DADD39] bg-[#DADD39] text-[#1a1a1a]"
-                  : "border-gray-400 bg-transparent text-gray-600 hover:bg-[#e8e5db]"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </nav>
+        <div className="-mx-4 mb-8 snap-x snap-mandatory overflow-x-auto overscroll-x-contain px-4 pb-3 sm:mx-0 sm:mb-10 sm:snap-none sm:overflow-visible sm:px-0 sm:pb-0 lg:mb-12 xl:mb-16">
+          <nav
+            aria-label="Comic publishing stages"
+            className="flex w-max gap-2 sm:grid sm:w-full sm:grid-cols-4 sm:gap-3 xl:grid-cols-8"
+          >
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                type="button"
+                aria-pressed={activeTab === tab}
+                onClick={() => setActiveTab(tab)}
+                className={`min-h-[44px] w-28 shrink-0 snap-start rounded-md border-2 px-3 py-2.5 text-center text-sm font-semibold leading-snug transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a1a1a] focus-visible:ring-offset-2 motion-reduce:transition-none sm:w-auto sm:min-w-0 sm:px-4 sm:text-base ${
+                  activeTab === tab
+                    ? "border-[#DADD39] bg-[#DADD39] text-[#1a1a1a]"
+                    : "border-gray-400 bg-transparent text-gray-600 hover:bg-[#e8e5db]"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </nav>
+        </div>
 
         {/* One column below lg; two columns on desktop */}
         <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">

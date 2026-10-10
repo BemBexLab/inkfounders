@@ -189,23 +189,19 @@ export default async function RecentBlogs() {
           </Link> */}
         </div>
 
-        {/* Blog Grid */}
+        {/* Recent blog cards */}
         <div
-          className="
-            grid
-            grid-cols-1
-            gap-5
-            sm:gap-6
-            md:grid-cols-2
-            lg:grid-cols-3
-            xl:gap-7
-          "
+          role="region"
+          aria-label="Recent blog posts"
+          className="-mx-4 snap-x snap-mandatory overflow-x-auto overscroll-x-contain px-4 pb-4 sm:mx-0 sm:snap-none sm:overflow-visible sm:px-0 sm:pb-0"
         >
-          {recentBlogs.map((blog) => (
+          <div className="flex w-max gap-5 sm:grid sm:w-full sm:grid-cols-1 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-7">
+            {recentBlogs.map((blog) => (
             <article
               key={blog.href}
               className="
                 group
+                w-[82vw] max-w-[360px] shrink-0 snap-start
                 min-w-0
                 overflow-hidden
                 rounded-xl
@@ -217,6 +213,7 @@ export default async function RecentBlogs() {
                 hover:border-[#c8d952]
                 hover:shadow-[0_18px_40px_rgba(56,56,41,0.10)]
                 sm:rounded-2xl
+                sm:w-auto sm:max-w-none
               "
             >
               <Link
@@ -408,7 +405,8 @@ export default async function RecentBlogs() {
                 </div>
               </Link>
             </article>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

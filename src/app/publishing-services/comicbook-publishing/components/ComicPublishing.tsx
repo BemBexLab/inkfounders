@@ -85,28 +85,34 @@ export default function ComicPublishing() {
         </h3>
 
         {/* Responsive cards */}
-        <div className="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
-          {cards.map((card) => (
-            <article
-              key={card.title}
-              className="flex min-w-0 flex-col items-center rounded-lg bg-[#f0f0e0] px-5 py-6 text-center sm:px-6 sm:py-8"
-            >
-              <BsSoundwave
-                aria-hidden="true"
-                className="mb-3 h-10 w-10 shrink-0 text-[#DADD39] sm:mb-4 sm:h-[53px] sm:w-[53px]"
-              />
+        <div
+          role="region"
+          aria-label="Comic publishing project types"
+          className="-mx-4 snap-x snap-mandatory overflow-x-auto overscroll-x-contain px-4 pb-4 sm:mx-0 sm:snap-none sm:overflow-visible sm:px-0 sm:pb-0"
+        >
+          <div className="flex w-max gap-4 sm:grid sm:w-full sm:grid-cols-2 sm:items-stretch sm:gap-5 lg:grid-cols-4 lg:gap-6">
+            {cards.map((card) => (
+              <article
+                key={card.title}
+                className="flex w-[82vw] max-w-[320px] shrink-0 snap-start flex-col items-center rounded-lg bg-[#f0f0e0] px-5 py-6 text-center sm:w-auto sm:max-w-none sm:min-w-0 sm:px-6 sm:py-8"
+              >
+                <BsSoundwave
+                  aria-hidden="true"
+                  className="mb-3 h-10 w-10 shrink-0 text-[#DADD39] sm:mb-4 sm:h-[53px] sm:w-[53px]"
+                />
 
-              <h4 className="w-full text-base font-semibold leading-snug text-gray-900 sm:text-lg">
-                {card.title}
-              </h4>
+                <h4 className="w-full text-base font-semibold leading-snug text-gray-900 sm:text-lg">
+                  {card.title}
+                </h4>
 
-              {/*
-              <p className="mt-2 font-mono text-sm leading-6 text-gray-600">
-                {card.description}
-              </p>
-              */}
-            </article>
-          ))}
+                {/*
+                <p className="mt-2 font-mono text-sm leading-6 text-gray-600">
+                  {card.description}
+                </p>
+                */}
+              </article>
+            ))}
+          </div>
         </div>
 
         <p className={`${robotoMono.className} mt-6 font-mono text-sm leading-6 text-black sm:mt-8 sm:text-base sm:leading-7 text-center`}>

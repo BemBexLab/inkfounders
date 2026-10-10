@@ -27,11 +27,11 @@ const supportCards = [
 
 export default function WhyChooseInkFoundersSection() {
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="pb-20 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
 
         {/* Top Section - Two Column Layout */}
-        <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-stretch md:items-center mb-20">
+        <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-stretch md:items-center mb-10">
 
           {/* Left Column - Text Content */}
           <div className="flex-1 space-y-6">
@@ -70,25 +70,31 @@ export default function WhyChooseInkFoundersSection() {
 
         {/* Our Support Section */}
         <div>
-          <h3 className="text-[clamp(1.125rem,2vw,1.5rem)] font-bold text-gray-900 text-center mb-8">
+          <h3 className="text-[clamp(1.125rem,2vw,1.5rem)] font-bold text-gray-900 text-center mb-4">
             Our Support
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {supportCards.map((card, index) => (
-              <div
-                key={index}
-                className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-200"
-              >
-                <GiOpenBook className="text-gray-900 text-3xl mb-4" />
-                <h4 className="text-lg font-bold text-gray-900 mb-3">
-                  {card.title}
-                </h4>
-                <p className={`${robotoMono.className} text-gray-600 text-base leading-relaxed`}>
-                  {card.description}
-                </p>
-              </div>
-            ))}
+          <div
+            role="region"
+            aria-label="Our publishing support"
+            className="-mx-4 snap-x snap-mandatory overflow-x-auto overscroll-x-contain px-4 pb-4 sm:mx-0 sm:snap-none sm:overflow-visible sm:px-0 sm:pb-0"
+          >
+            <div className="flex w-max gap-4 sm:grid sm:w-full sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+              {supportCards.map((card, index) => (
+                <div
+                  key={index}
+                  className="w-[82vw] max-w-[320px] shrink-0 snap-start rounded-lg border border-gray-200 p-6 transition-shadow duration-200 hover:shadow-md sm:w-auto sm:max-w-none sm:min-w-0"
+                >
+                  <GiOpenBook className="mb-4 text-3xl text-gray-900" />
+                  <h4 className="mb-3 text-lg font-bold text-gray-900">
+                    {card.title}
+                  </h4>
+                  <p className={`${robotoMono.className} text-base leading-relaxed text-gray-600`}>
+                    {card.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

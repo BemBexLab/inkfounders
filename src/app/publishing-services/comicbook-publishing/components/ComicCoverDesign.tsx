@@ -54,26 +54,28 @@ export default function ComicCoverDesign() {
         </header>
 
         {/* Responsive category buttons */}
-        <nav
-          aria-label="Comic cover categories"
-          className="mx-auto mb-8 grid w-full max-w-5xl grid-cols-2 gap-2 sm:mb-10 sm:grid-cols-3 sm:gap-3 lg:mb-12 lg:grid-cols-6"
-        >
-          {categories.map((category) => (
-            <button
-              key={category}
-              type="button"
-              aria-pressed={activeCategory === category}
-              onClick={() => setActiveCategory(category)}
-              className={`min-h-[44px] min-w-0 cursor-pointer rounded-md border px-3 py-2.5 text-center text-sm font-medium leading-snug transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a1a1a] focus-visible:ring-offset-2 motion-reduce:transition-none sm:px-4 sm:text-base ${
-                activeCategory === category
-                  ? "border-[#DADD39] bg-[#DADD39] text-[#1a1a1a]"
-                  : "border-[#b0a890] bg-transparent text-[#4a4a4a] hover:border-[#8a8070]"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </nav>
+        <div className="-mx-4 mb-8 snap-x snap-mandatory overflow-x-auto overscroll-x-contain px-4 pb-3 sm:mx-auto sm:mb-10 sm:max-w-5xl sm:snap-none sm:overflow-visible sm:px-0 sm:pb-0 lg:mb-12">
+          <nav
+            aria-label="Comic cover categories"
+            className="flex w-max gap-2 sm:grid sm:w-full sm:grid-cols-3 sm:gap-3 lg:grid-cols-6"
+          >
+            {categories.map((category) => (
+              <button
+                key={category}
+                type="button"
+                aria-pressed={activeCategory === category}
+                onClick={() => setActiveCategory(category)}
+                className={`min-h-[44px] w-36 shrink-0 snap-start cursor-pointer rounded-md border px-3 py-2.5 text-center text-sm font-medium leading-snug transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a1a1a] focus-visible:ring-offset-2 motion-reduce:transition-none sm:w-auto sm:min-w-0 sm:px-4 sm:text-base ${
+                  activeCategory === category
+                    ? "border-[#DADD39] bg-[#DADD39] text-[#1a1a1a]"
+                    : "border-[#b0a890] bg-transparent text-[#4a4a4a] hover:border-[#8a8070]"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </nav>
+        </div>
 
         {/* Main content */}
         <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">

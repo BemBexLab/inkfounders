@@ -54,26 +54,33 @@ export default function ComicServicesSection() {
         </div>
 
         {/* Grid Section */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-0">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className={`
-                flex flex-col items-center text-center px-3 py-6
-                ${index !== services.length - 1 ? "md:border-r border-gray-200" : ""}
-              `}
-            >
-              {/* React Icon */}
-              <BsSoundwave className="text-[#DADD39] text-4xl mb-4" />
+        <div
+          role="region"
+          aria-label="Comic publishing services"
+          className="-mx-4 snap-x snap-mandatory overflow-x-auto overscroll-x-contain px-4 pb-4 md:mx-0 md:overflow-visible md:px-0 md:pb-0"
+        >
+          <div className="flex w-max gap-4 md:grid md:w-full md:grid-cols-4 md:gap-0">
+            {services.map((service, index) => (
+              <div
+                key={service.title}
+                className={`
+                  flex w-[82vw] max-w-[320px] shrink-0 snap-start flex-col items-center px-3 py-6 text-center
+                  md:w-auto md:max-w-none md:shrink
+                  ${index !== services.length - 1 ? "md:border-r border-gray-200" : ""}
+                `}
+              >
+                {/* React Icon */}
+                <BsSoundwave className="mb-4 text-4xl text-[#DADD39]" />
 
-              <h3 className="text-[clamp(1.125rem,2vw,1.5rem)] font-bold text-gray-900 mb-4">
-                {service.title}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
-                {service.description}
-              </p>
-            </div>
-          ))}
+                <h3 className="text-[clamp(1.125rem,2vw,1.5rem)] mb-4 font-bold text-gray-900">
+                  {service.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-500">
+                  {service.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
