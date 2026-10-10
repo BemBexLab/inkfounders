@@ -3,18 +3,8 @@
 import CustomScrollbar from "@/components/CustomScrollbar";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
-import { useEffect, useState } from "react";
-import {
-  FaBars,
-  FaBook,
-  FaChevronDown,
-  FaCog,
-  FaHome,
-  FaInfoCircle,
-  FaTimes,
-  FaUserCircle,
-} from "react-icons/fa";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { FaBars, FaChevronDown, FaTimes } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
 
 type NavChild = {
@@ -25,7 +15,6 @@ type NavChild = {
 type NavItem = {
   label: string;
   href: string;
-  icon: ReactNode;
   desktopOnlyMenu?: boolean;
   nativeNavigation?: boolean;
   children?: NavChild[];
@@ -35,12 +24,10 @@ const navItems: NavItem[] = [
   {
     label: "Home",
     href: "/",
-    icon: <FaHome size={22} />,
   },
   {
     label: "Publishing Services",
     href: "/publishing-services",
-    icon: <FaCog size={20} />,
     children: [
       {
         label: "Book Writing",
@@ -67,7 +54,6 @@ const navItems: NavItem[] = [
   {
     label: "Audiobook Services",
     href: "/audiobook-services",
-    icon: <FaBook size={20} />,
     desktopOnlyMenu: true,
     children: [
       {
@@ -87,23 +73,19 @@ const navItems: NavItem[] = [
   {
     label: "Published Books",
     href: "/published-books",
-    icon: <FaBook size={22} />,
   },
   {
     label: "Who we are",
     href: "/whoweare",
-    icon: <FaInfoCircle size={20} />,
   },
   {
     label: "Blog",
     href: "/blog",
-    icon: <FaInfoCircle size={20} />,
     nativeNavigation: true,
   },
   {
     label: "Contact Us",
     href: "/contactus",
-    icon: <FaUserCircle size={20} />,
   },
 ];
 
@@ -113,14 +95,42 @@ const isActivePath = (pathname: string, href: string) =>
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [menuMounted, setMenuMounted] = useState(false);
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(
     null,
   );
+  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openDrawer = useCallback(() => {
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    setMenuMounted(true);
+    requestAnimationFrame(() => setMenuOpen(true));
+  }, []);
+
+  const closeDrawer = useCallback(() => {
+    setMenuOpen(false);
+    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    closeTimerRef.current = setTimeout(
+      () => setMenuMounted(false),
+      prefersReducedMotion ? 0 : 400,
+    );
+  }, []);
 
   useEffect(() => {
-    setMenuOpen(false);
+    closeDrawer();
     setOpenMobileSection(null);
-  }, [pathname]);
+  }, [pathname, closeDrawer]);
+
+  useEffect(
+    () => () => {
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    },
+    [],
+  );
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -140,11 +150,11 @@ export default function Header() {
     const desktopMediaQuery = window.matchMedia("(min-width: 1280px)");
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setMenuOpen(false);
+      if (event.key === "Escape") closeDrawer();
     };
 
     const handleDesktopChange = (event: MediaQueryListEvent) => {
-      if (event.matches) setMenuOpen(false);
+      if (event.matches) closeDrawer();
     };
 
     document.body.style.overflow = "hidden";
@@ -156,7 +166,7 @@ export default function Header() {
       document.removeEventListener("keydown", handleKeyDown);
       desktopMediaQuery.removeEventListener("change", handleDesktopChange);
     };
-  }, [menuOpen]);
+  }, [menuOpen, closeDrawer]);
 
   return (
     <>
@@ -279,26 +289,41 @@ export default function Header() {
 
           <button
             type="button"
-            onClick={() => setMenuOpen((prev) => !prev)}
-            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-black/10 bg-white/50 text-xl text-black transition hover:border-[#DADD39] hover:bg-[#DADD39] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-black xl:hidden"
+            onClick={menuOpen ? closeDrawer : openDrawer}
+            className="inline-flex h-11 w-11 shrink-0 items-center justify-center text-xl text-black transition-colors hover:text-[#a3a718] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-black xl:hidden"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
           >
-            {menuOpen ? <FaTimes /> : <FaBars />}
+            <span className="relative h-5 w-5" aria-hidden="true">
+              <FaBars
+                className={`absolute inset-0 m-auto transition-[opacity,transform] duration-200 motion-reduce:transition-none ${
+                  menuOpen ? "rotate-90 opacity-0" : "rotate-0 opacity-100"
+                }`}
+              />
+              <FaTimes
+                className={`absolute inset-0 m-auto transition-[opacity,transform] duration-200 motion-reduce:transition-none ${
+                  menuOpen ? "rotate-0 opacity-100" : "-rotate-90 opacity-0"
+                }`}
+              />
+            </span>
           </button>
         </div>
       </header>
 
-      {menuOpen && (
+      {menuMounted && (
         <div
           id="mobile-menu"
+          aria-hidden={!menuOpen}
           className="fixed inset-0 z-[100] flex justify-end xl:hidden"
         >
           <button
             type="button"
-            className="absolute inset-0 bg-black/35 backdrop-blur-[2px]"
-            onClick={() => setMenuOpen(false)}
+            tabIndex={menuOpen ? 0 : -1}
+            className={`absolute inset-0 bg-black/35 backdrop-blur-[2px] transition-opacity duration-[400ms] motion-reduce:transition-none ${
+              menuOpen ? "opacity-100" : "opacity-0"
+            }`}
+            onClick={closeDrawer}
             aria-label="Close navigation menu"
           />
 
@@ -306,14 +331,18 @@ export default function Header() {
             role="dialog"
             aria-modal="true"
             aria-label="Navigation menu"
-            className="relative flex h-dvh w-[min(90vw,26rem)] flex-col bg-[#F8F7F1] shadow-[-20px_0_60px_rgba(0,0,0,0.18)]"
+            inert={!menuOpen}
+            className={`relative z-10 flex h-dvh w-[min(90vw,26rem)] flex-col bg-[#F8F7F1] shadow-[-20px_0_60px_rgba(0,0,0,0.18)] transition-transform duration-[400ms] ease-out motion-reduce:transition-none ${
+              menuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
           >
             <div className="flex items-center justify-between border-b border-black/10 px-5 py-4 sm:px-6">
               <Link
                 href="/"
-                onClick={() => setMenuOpen(false)}
+                onClick={closeDrawer}
                 aria-label="Ink Founders home"
-                className="rounded-md focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-black"
+                tabIndex={menuOpen ? 0 : -1}
+                className="focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-black"
               >
                 <video
                   width="112"
@@ -333,8 +362,9 @@ export default function Header() {
 
               <button
                 type="button"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-black/10 bg-white text-xl text-black transition hover:border-[#DADD39] hover:bg-[#DADD39] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-black"
-                onClick={() => setMenuOpen(false)}
+                className="inline-flex h-11 w-11 items-center justify-center text-xl text-black transition-colors hover:text-[#a3a718] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-black"
+                onClick={closeDrawer}
+                tabIndex={menuOpen ? 0 : -1}
                 aria-label="Close menu"
               >
                 <FaTimes />
@@ -348,8 +378,8 @@ export default function Header() {
               thumbClassName="bg-[#DADD39]"
             >
               <nav aria-label="Mobile navigation">
-                <ul className="flex w-full flex-col gap-1">
-                {navItems.map((item) => {
+                <ul className="flex w-full flex-col">
+                {navItems.map((item, index) => {
                   const isActive = isActivePath(pathname, item.href);
                   const hasChildren = Boolean(item.children?.length);
                   const isExpanded = openMobileSection === item.href;
@@ -357,7 +387,14 @@ export default function Header() {
                   return (
                     <li
                       key={item.href}
-                      className="w-full border-b border-black/[0.07] py-1.5"
+                      className={`w-full border-b border-black/[0.07] py-1.5 transition-[opacity,transform] duration-300 ease-out motion-reduce:transition-none ${
+                        menuOpen
+                          ? "translate-x-0 opacity-100"
+                          : "translate-x-4 opacity-0"
+                      }`}
+                      style={{
+                        transitionDelay: menuOpen ? `${index * 35}ms` : "0ms",
+                      }}
                     >
                       <div className="flex items-center gap-2">
                         {hasChildren ? (
@@ -368,61 +405,43 @@ export default function Header() {
                                 prev === item.href ? null : item.href,
                               )
                             }
-                            className={`flex min-h-12 flex-1 items-center gap-3 rounded-xl px-3 py-2.5 text-left text-[0.98rem] transition-colors ${
+                            className={`flex min-h-12 flex-1 items-center px-0 py-2.5 text-left text-[0.98rem] transition-colors ${
                               isActive
-                                ? "bg-[#f1f2b4] font-semibold text-black"
-                                : "text-gray-800 hover:bg-white"
+                                ? "font-semibold text-black"
+                                : "text-gray-800 hover:text-[#a3a718]"
                             }`}
+                            tabIndex={menuOpen ? 0 : -1}
                             aria-expanded={isExpanded}
                             aria-controls={`mobile-submenu-${item.href.replaceAll("/", "-")}`}
                           >
-                            <span
-                              className={
-                                isActive ? "text-black" : "text-gray-400"
-                              }
-                            >
-                              {item.icon}
-                            </span>
                             <span>{item.label}</span>
                           </button>
                         ) : item.nativeNavigation ? (
                           <a
                             href={item.href}
-                            onClick={() => setMenuOpen(false)}
+                            onClick={closeDrawer}
+                            tabIndex={menuOpen ? 0 : -1}
                             aria-current={isActive ? "page" : undefined}
-                            className={`flex min-h-12 flex-1 items-center gap-3 rounded-xl px-3 py-2.5 text-[0.98rem] transition-colors ${
+                            className={`flex min-h-12 flex-1 items-center px-0 py-2.5 text-[0.98rem] transition-colors ${
                               isActive
-                                ? "bg-[#f1f2b4] font-semibold text-black"
-                                : "text-gray-800 hover:bg-white"
+                                ? "font-semibold text-black"
+                                : "text-gray-800 hover:text-[#a3a718]"
                             }`}
                           >
-                            <span
-                              className={
-                                isActive ? "text-black" : "text-gray-400"
-                              }
-                            >
-                              {item.icon}
-                            </span>
                             <span>{item.label}</span>
                           </a>
                         ) : (
                           <Link
                             href={item.href}
-                            onClick={() => setMenuOpen(false)}
+                            onClick={closeDrawer}
+                            tabIndex={menuOpen ? 0 : -1}
                             aria-current={isActive ? "page" : undefined}
-                            className={`flex min-h-12 flex-1 items-center gap-3 rounded-xl px-3 py-2.5 text-[0.98rem] transition-colors ${
+                            className={`flex min-h-12 flex-1 items-center px-0 py-2.5 text-[0.98rem] transition-colors ${
                               isActive
-                                ? "bg-[#f1f2b4] font-semibold text-black"
-                                : "text-gray-800 hover:bg-white"
+                                ? "font-semibold text-black"
+                                : "text-gray-800 hover:text-[#a3a718]"
                             }`}
                           >
-                            <span
-                              className={
-                                isActive ? "text-black" : "text-gray-400"
-                              }
-                            >
-                              {item.icon}
-                            </span>
                             <span>{item.label}</span>
                           </Link>
                         )}
@@ -435,7 +454,8 @@ export default function Header() {
                                 prev === item.href ? null : item.href,
                               )
                             }
-                            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-gray-500 transition hover:bg-white hover:text-black focus-visible:outline-2 focus-visible:outline-black"
+                            className="inline-flex h-11 w-11 shrink-0 items-center justify-center text-gray-500 transition-colors hover:text-black focus-visible:outline-2 focus-visible:outline-black"
+                            tabIndex={menuOpen ? 0 : -1}
                             aria-label={`Toggle ${item.label} submenu`}
                             aria-expanded={isExpanded}
                             aria-controls={`mobile-submenu-${item.href.replaceAll("/", "-")}`}
@@ -449,46 +469,57 @@ export default function Header() {
                         )}
                       </div>
 
-                      {hasChildren && isExpanded && (
+                      {hasChildren && (
                         <div
                           id={`mobile-submenu-${item.href.replaceAll("/", "-")}`}
-                          className="mb-2 ml-9 mt-1 flex flex-col gap-1 border-l-2 border-[#DADD39] pl-3"
+                          aria-hidden={!isExpanded}
+                          className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out motion-reduce:transition-none ${
+                            isExpanded
+                              ? "grid-rows-[1fr] opacity-100"
+                              : "grid-rows-[0fr] opacity-0"
+                          }`}
                         >
-                          {!item.desktopOnlyMenu && (
-                            <Link
-                              href={item.href}
-                              onClick={() => setMenuOpen(false)}
-                              aria-current={
-                                pathname === item.href ? "page" : undefined
-                              }
-                              className={`rounded-lg px-3 py-2.5 text-sm transition-colors ${
-                                pathname === item.href
-                                  ? "bg-white font-semibold text-black"
-                                  : "text-gray-600 hover:bg-white hover:text-black"
-                              }`}
-                            >
-                              All {item.label}
-                            </Link>
-                          )}
-                          {item.children?.map((child) => (
-                            <Link
-                              key={child.href}
-                              href={child.href}
-                              onClick={() => setMenuOpen(false)}
-                              aria-current={
-                                isActivePath(pathname, child.href)
-                                  ? "page"
-                                  : undefined
-                              }
-                              className={`rounded-lg px-3 py-2.5 text-sm transition-colors ${
-                                isActivePath(pathname, child.href)
-                                  ? "bg-white font-semibold text-black"
-                                  : "text-gray-600 hover:bg-white hover:text-black"
-                              }`}
-                            >
-                              {child.label}
-                            </Link>
-                          ))}
+                          <div className="min-h-0 overflow-hidden">
+                            <div className={`mb-2 ml-3 mt-1 flex flex-col border-l border-[#DADD39] pl-4 transition-transform duration-300 motion-reduce:transition-none ${isExpanded ? "translate-y-0" : "-translate-y-2"}`}>
+                              {!item.desktopOnlyMenu && (
+                                <Link
+                                  href={item.href}
+                                  onClick={closeDrawer}
+                                  tabIndex={menuOpen && isExpanded ? 0 : -1}
+                                  aria-current={
+                                    pathname === item.href ? "page" : undefined
+                                  }
+                                  className={`py-2.5 text-sm transition-colors ${
+                                    pathname === item.href
+                                      ? "font-semibold text-black"
+                                      : "text-gray-600 hover:text-black"
+                                  }`}
+                                >
+                                  All {item.label}
+                                </Link>
+                              )}
+                              {item.children?.map((child) => (
+                                <Link
+                                  key={child.href}
+                                  href={child.href}
+                                  onClick={closeDrawer}
+                                  tabIndex={menuOpen && isExpanded ? 0 : -1}
+                                  aria-current={
+                                    isActivePath(pathname, child.href)
+                                      ? "page"
+                                      : undefined
+                                  }
+                                  className={`py-2.5 text-sm transition-colors ${
+                                    isActivePath(pathname, child.href)
+                                      ? "font-semibold text-black"
+                                      : "text-gray-600 hover:text-black"
+                                  }`}
+                                >
+                                  {child.label}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
                         </div>
                       )}
                     </li>
@@ -498,23 +529,23 @@ export default function Header() {
               </nav>
             </CustomScrollbar>
 
-            <div className="border-t border-black/10 bg-[#F4F3E1] px-5 py-5 sm:px-6">
+            <div className={`border-t border-black/10 px-5 py-5 transition-[opacity,transform] duration-300 ease-out motion-reduce:transition-none sm:px-6 ${menuOpen ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}`}>
               <a
                 href="tel:+17866526864"
-                className="group flex items-center gap-3 rounded-xl text-black focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-black"
+                tabIndex={menuOpen ? 0 : -1}
+                className="group flex items-center gap-3 text-black focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-black"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#DADD39] text-black transition group-hover:scale-105">
-                  <IoCall size={20} />
-                </div>
-                <span className="text-sm font-semibold group-hover:underline sm:text-base">
+                <IoCall size={18} className="text-[#a3a718]" aria-hidden="true" />
+                <span className="text-sm font-semibold transition-colors group-hover:text-[#a3a718] sm:text-base">
                   (786) 652-6864
                 </span>
               </a>
 
               <Link
                 href="/contactus"
-                onClick={() => setMenuOpen(false)}
-                className="mt-4 block rounded-xl border border-[#DADD39] bg-[#DADD39] px-6 py-3 text-center text-sm font-semibold text-black transition hover:border-black hover:bg-transparent focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-black"
+                onClick={closeDrawer}
+                tabIndex={menuOpen ? 0 : -1}
+                className="mt-4 inline-flex border-b border-[#DADD39] py-2 text-sm font-semibold text-black transition-colors hover:text-[#a3a718] focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-black"
               >
                 Request a Quote
               </Link>
