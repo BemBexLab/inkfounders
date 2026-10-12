@@ -79,20 +79,19 @@ function HeroCopy() {
           </button>
         </a>
 
-        <button
-          type="button"
-          onClick={() => setIsConsultationOpen(true)}
-          className="btn-slide-bg flex w-full min-w-0 flex-none items-center justify-center rounded-md border border-black bg-transparent px-2 py-3 text-center text-[12px] font-normal leading-tight text-black shadow transition-all duration-300 hover:border-[#DADD39] min-[390px]:px-3 min-[390px]:text-sm min-[520px]:w-fit sm:px-5 sm:text-base"
-        >
-          <span className="slide-bg rounded-md bg-[#DADD39]"></span>
-          <span className="relative z-10 flex items-center gap-2">
-            <IoMdCall
-              size={18}
-              className="h-4 w-4 md:h-5 md:w-5"
-            />
-            Request a Publishing Quote
-          </span>
-        </button>
+        <Link href={"/contactus"}>
+          <button
+            type="button"
+            onClick={() => setIsConsultationOpen(true)}
+            className="btn-slide-bg flex w-full min-w-0 flex-none items-center justify-center rounded-md border border-black bg-transparent px-2 py-3 text-center text-[12px] font-normal leading-tight text-black shadow transition-all duration-300 hover:border-[#DADD39] min-[390px]:px-3 min-[390px]:text-sm min-[520px]:w-fit sm:px-5 sm:text-base"
+          >
+            <span className="slide-bg rounded-md bg-[#DADD39]"></span>
+            <span className="relative z-10 flex items-center gap-2">
+              <IoMdCall size={18} className="h-4 w-4 md:h-5 md:w-5" />
+              Request a Publishing Quote
+            </span>
+          </button>
+        </Link>
       </div>
     </div>
   );
