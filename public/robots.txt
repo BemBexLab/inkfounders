@@ -15,7 +15,6 @@ Allow: /*.js$*
 Allow: /.jpg$
 Allow: /*.jpeg$*
 Allow: /*.webp$*
-Allow: /.svg$
  
 # AI Crawlers - explicitly allowed
 User-agent: GPTBot

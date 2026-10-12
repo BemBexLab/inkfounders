@@ -1,26 +1,37 @@
 import { robotoMono } from '@/app/fonts';
 import React from 'react';
-import { GiOpenBook } from 'react-icons/gi';
+import {
+  BadgeCheck,
+  Compass,
+  MessageCircleMore,
+  Milestone,
+  Workflow,
+} from 'lucide-react';
 
 const supportCards = [
   {
     title: "End To End Publishing Support",
+    icon: Workflow,
     description: "Get support across writing, editing, design, formatting, publishing, and promotion.",
   },
   {
     title: "Our Approach",
+    icon: Compass,
     description: "Your story, characters, artwork, and creative direction remain central to the project.",
   },
   {
     title: "Support At Different Stages",
+    icon: Milestone,
     description: "Whether you have an idea, script, artwork, or completed comic, we can help identify the next step.",
   },
   {
     title: "Professional Production Support",
+    icon: BadgeCheck,
     description: "Prepare your comic with professional editing, design, formatting, and publishing preparation.",
   },
   {
     title: "Clear Communication",
+    icon: MessageCircleMore,
     description: "Understand what stage your project is in and what needs to happen next.",
   },
 ];
@@ -36,10 +47,9 @@ export default function WhyChooseInkFoundersSection() {
           {/* Left Column - Text Content */}
           <div className="flex-1 space-y-6">
             <div>
-              <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold text-gray-900 tracking-tight mb-4">
+              <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold text-black tracking-tight leading-tight mb-4">
                 Why Choose Ink Founders?
               </h2>
-              <div className="w-2/3 h-1 bg-[#DADD39] rounded-full"></div>
             </div>
 
             <h3 className="text-[clamp(1.125rem,2vw,1.5rem)] font-bold text-gray-900">
@@ -87,7 +97,11 @@ export default function WhyChooseInkFoundersSection() {
                   key={index}
                   className="w-[82vw] max-w-[320px] shrink-0 snap-start rounded-lg border border-gray-200 p-6 transition-shadow duration-200 hover:shadow-md sm:w-auto sm:max-w-none sm:min-w-0"
                 >
-                  <GiOpenBook className="mb-4 text-3xl text-gray-900" />
+                  <card.icon
+                    aria-hidden="true"
+                    className="mb-4 h-8 w-8 text-gray-900"
+                    strokeWidth={1.8}
+                  />
                   <h4 className="mb-3 text-lg font-bold text-gray-900">
                     {card.title}
                   </h4>

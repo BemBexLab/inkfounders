@@ -1,26 +1,30 @@
 import React from "react";
-import { BsSoundwave } from "react-icons/bs";
+import { BookOpenCheck, FileText, Lightbulb, Palette } from "lucide-react";
 import { robotoMono } from "@/app/fonts";
 
 // Data for the four columns
 const services = [
   {
     title: "Have A Comic Idea?",
+    icon: Lightbulb,
     description:
       "We can help develop your concept, characters, story structure, scenes, and dialogue into a workable comic project.",
   },
   {
     title: "Have A Finished Script?",
+    icon: FileText,
     description:
       "We can review, edit, refine, and prepare your script for the next stage of production.",
   },
   {
     title: "Have Finished Artwork?",
+    icon: Palette,
     description:
       "We can help with editing, lettering, page formatting, cover design, and publishing preparation.",
   },
   {
     title: "Have A Completed Comic?",
+    icon: BookOpenCheck,
     description:
       "We can help prepare your finished project for professional publication, distribution, and promotion.",
   },
@@ -69,8 +73,11 @@ export default function ComicServicesSection() {
                   ${index !== services.length - 1 ? "md:border-r border-gray-200" : ""}
                 `}
               >
-                {/* React Icon */}
-                <BsSoundwave className="mb-4 text-4xl text-[#DADD39]" />
+                <service.icon
+                  aria-hidden="true"
+                  className="mb-4 h-9 w-9 text-[#DADD39]"
+                  strokeWidth={1.8}
+                />
 
                 <h3 className="text-[clamp(1.125rem,2vw,1.5rem)] mb-4 font-bold text-gray-900">
                   {service.title}

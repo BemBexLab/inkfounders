@@ -1,37 +1,54 @@
 import { robotoMono } from "@/app/fonts";
-import { BsSoundwave } from "react-icons/bs";
+import {
+  BookImage,
+  BookOpen,
+  BookOpenCheck,
+  FileText,
+  Images,
+  Library,
+  PanelsTopLeft,
+  UserRoundPen,
+} from "lucide-react";
 
 const cards = [
   {
     title: "Independent Comic Books",
+    icon: BookOpen,
     description: "Lorem Ipsum is simply dummy text of the printing.",
   },
   {
     title: "Creator-Owned Comics",
+    icon: UserRoundPen,
     description: "Lorem Ipsum is simply dummy text of the printing.",
   },
   {
     title: "Comic Book Series",
+    icon: Library,
     description: "Lorem Ipsum is simply dummy text of the printing.",
   },
   {
     title: "Graphic Novels",
+    icon: BookImage,
     description: "Lorem Ipsum is simply dummy text of the printing.",
   },
   {
     title: "Illustrated Stories",
+    icon: Images,
     description: "Lorem Ipsum is simply dummy text of the printing.",
   },
   {
     title: "Manga-Style Projects",
+    icon: PanelsTopLeft,
     description: "Lorem Ipsum is simply dummy text of the printing.",
   },
   {
     title: "Short Comic Books",
+    icon: FileText,
     description: "Lorem Ipsum is simply dummy text of the printing.",
   },
   {
     title: "Long-Form Graphic Novels",
+    icon: BookOpenCheck,
     description: "Lorem Ipsum is simply dummy text of the printing.",
   },
 ];
@@ -41,8 +58,8 @@ export default function ComicPublishing() {
     <section className="min-h-screen w-full min-w-0 bg-white px-4 pb-12 font-sans sm:px-6 sm:pb-16 md:px-8 lg:px-12 lg:pb-20 xl:px-16 xl:pb-24">
       <div className="mx-auto w-full max-w-6xl [overflow-wrap:anywhere]">
         {/* Responsive heading with a wrapping underline */}
-        <header className="mb-8 text-center sm:mb-10 lg:mb-14 xl:mb-16">
-          <h2 className="relative mx-auto w-fit max-w-full pb-2 text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.4] tracking-tight text-gray-900 after:absolute after:bottom-0 after:left-1/2 after:h-[4px] after:w-[80%] after:-translate-x-1/2 after:bg-[#DADD39] after:content-['']">
+        <header className="mb-8 text-center">
+          <h2 className="relative mx-auto w-fit max-w-full text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.4] tracking-tight text-black">
               Independent Comic Book Publishing
           </h2>
         </header>
@@ -96,9 +113,10 @@ export default function ComicPublishing() {
                 key={card.title}
                 className="flex w-[82vw] max-w-[320px] shrink-0 snap-start flex-col items-center rounded-lg bg-[#f0f0e0] px-5 py-6 text-center sm:w-auto sm:max-w-none sm:min-w-0 sm:px-6 sm:py-8"
               >
-                <BsSoundwave
+                <card.icon
                   aria-hidden="true"
                   className="mb-3 h-10 w-10 shrink-0 text-[#DADD39] sm:mb-4 sm:h-[53px] sm:w-[53px]"
+                  strokeWidth={1.8}
                 />
 
                 <h4 className="w-full text-base font-semibold leading-snug text-gray-900 sm:text-lg">

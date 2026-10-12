@@ -23,7 +23,7 @@ const categoryImages: Record<Category, string> = {
   Horror: "/comic-book/Group 43.webp",
   "Science Fiction": "/comic-book/Group 44.webp",
   "Graphic Novel": "/comic-book/Group 45.webp",
-  "Manga-Style": "/comic-book/Group 41.webp",
+  "Manga-Style": "/Group 46.webp",
 };
 
 const services = [

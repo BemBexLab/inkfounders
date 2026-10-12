@@ -1,65 +1,90 @@
-import { FaBookOpen } from "react-icons/fa";
+import {
+  Barcode,
+  BookOpen,
+  BookOpenCheck,
+  CheckCheck,
+  FileText,
+  Image,
+  LayoutTemplate,
+  Megaphone,
+  Palette,
+  Printer,
+  Share2,
+  type LucideIcon,
+} from "lucide-react";
 import { robotoMono } from "@/app/fonts";
 
 /* Card data */
 type Service = {
   title: string;
   description: string;
+  icon: LucideIcon;
 };
 
 const services: Service[] = [
   {
     title: "Comic Book Story Development",
+    icon: BookOpen,
     description:
       "Develop your concept into a structured story with characters, scenes, dialogue, pacing, and a clear narrative direction.",
   },
   {
     title: "Comic Script Writing",
+    icon: FileText,
     description:
       "Turn your story idea into a comic script with page structure, scenes, dialogue, captions, and panel descriptions.",
   },
   {
     title: "Editing & Proofreading",
+    icon: CheckCheck,
     description:
       "Review grammar, spelling, dialogue, consistency, story flow, character names, and other written elements before publication.",
   },
   {
     title: "Comic Book Formatting",
+    icon: LayoutTemplate,
     description:
       "Prepare interior pages, panel layouts, typography, dialogue placement, margins, bleed, and other production requirements.",
   },
   {
     title: "Comic Book Cover Design",
+    icon: Image,
     description:
       "Create a professional cover that communicates your comic's story, genre, characters, and visual identity.",
   },
   {
     title: "Artwork & Illustration Support",
+    icon: Palette,
     description:
       "Support the artwork and production process so your illustrations are properly prepared for the final publication.",
   },
   {
     title: "ISBN & Barcode Assistance",
+    icon: Barcode,
     description:
       "Provide guidance related to ISBN and barcode requirements as part of the publishing preparation process.",
   },
   {
     title: "Print & Digital Publishing",
+    icon: BookOpenCheck,
     description:
       "Prepare your comic for appropriate print and digital publishing formats.",
   },
   {
     title: "Print-On-Demand Setup",
+    icon: Printer,
     description:
       "Help prepare your comic files and publish information for print on demand production.",
   },
   {
     title: "Distribution Preparation",
+    icon: Share2,
     description:
       "Organize the files and publishing information required for your selected distribution channels.",
   },
   {
     title: "Comic Book Marketing",
+    icon: Megaphone,
     description:
       "Support your launch with promotional planning, creator branding, sales page optimization, keyword research, and other marketing activities.",
   },
@@ -67,11 +92,14 @@ const services: Service[] = [
 
 /* Single card */
 function ServiceCard({ service }: { service: Service }) {
+  const Icon = service.icon;
+
   return (
     <article className="flex min-w-0 flex-1 flex-col rounded-xl bg-white p-5 shadow-[0_1px_3px_rgba(0,0,0,0.04)] sm:p-6 xl:p-7">
-      <FaBookOpen
+      <Icon
         aria-hidden="true"
         className="mb-4 h-7 w-7 shrink-0 self-start text-[#1a1a1a] sm:h-8 sm:w-8"
+        strokeWidth={1.8}
       />
 
       <h3 className="mb-2 text-[clamp(1.125rem,2vw,1.5rem)] text-left font-bold leading-snug text-[#1a1a1a] sm:mb-3">

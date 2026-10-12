@@ -1,35 +1,46 @@
 import { robotoMono } from "@/app/fonts";
 import Link from "next/link";
 import React from "react";
-import { GiOpenBook } from "react-icons/gi";
+import {
+  BookImage,
+  BookOpenCheck,
+  ClipboardCheck,
+  Image,
+  PenLine,
+} from "lucide-react";
 
 const services = [
   {
     title: "Book Writing & Ghostwriting",
+    icon: PenLine,
     description:
       "Turn your ideas, expertise, or outline into a polished, publish-ready manuscript.",
     link: "/publishing-services/book-writing",
   },
   {
     title: "Book Publishing",
+    icon: BookOpenCheck,
     description:
       "Get professional support with formatting, distribution, ISBN guidance, and publishing preparation.",
     link: "/publishing-services/book-publishing",
   },
   {
     title: "Book Cover Design",
+    icon: Image,
     description:
       "Create a memorable, genre-appropriate cover that helps your book stand out.",
     link: "/publishing-services/book-cover-design",
   },
   {
     title: "Editing & Proofreading",
+    icon: ClipboardCheck,
     description:
       "Improve your manuscript's structure, clarity, consistency, grammar, and final polish.",
     link: "/publishing-services/editing-and-proofreading",
   },
   {
     title: "Comic Book Publishing",
+    icon: BookImage,
     description:
       "Bring your comic book or graphic novel from idea to professionally prepared publication.",
     link: "/publishing-services/comicbook-publishing",
@@ -41,8 +52,8 @@ export default function ServicesSection() {
     <section className="pb-20 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="relative mx-auto w-fit max-w-full pb-2 text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.4] tracking-tight text-gray-900 after:absolute after:bottom-0 after:left-1/2 after:h-[4px] after:w-[80%] after:-translate-x-1/2 after:bg-[#DADD39] after:content-['']">
+        <div className="text-center mb-8">
+          <h2 className="relative mx-auto w-fit max-w-full text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.4] tracking-tight text-black">
             Everything You Need To Bring Your Story To Life.
           </h2>
           {/* <div className="w-2/3 h-1 bg-[#d1d646] mx-auto mt-4 rounded-full"></div> */}
@@ -68,7 +79,11 @@ export default function ServicesSection() {
                   key={service.title}
                   className="w-[82vw] max-w-[320px] shrink-0 snap-start rounded-lg border border-gray-200 p-8 transition-shadow duration-200 hover:shadow-md"
                 >
-                  <GiOpenBook className="mb-4 text-4xl text-gray-900" />
+                  <service.icon
+                    aria-hidden="true"
+                    className="mb-4 h-9 w-9 text-gray-900"
+                    strokeWidth={1.8}
+                  />
                   <h3 className="mb-3 text-[clamp(1.125rem,2vw,1.5rem)] font-bold text-gray-900">
                     {service.title}
                   </h3>
@@ -102,7 +117,11 @@ export default function ServicesSection() {
                     key={index}
                     className="w-[82vw] max-w-[320px] shrink-0 snap-start rounded-lg border border-gray-200 p-8 transition-shadow duration-200 hover:shadow-md md:w-auto md:max-w-none md:shrink"
                   >
-                    <GiOpenBook className="mb-4 text-4xl text-gray-900" />
+                    <service.icon
+                      aria-hidden="true"
+                      className="mb-4 h-9 w-9 text-gray-900"
+                      strokeWidth={1.8}
+                    />
                     <h3 className="mb-3 text-[clamp(1.125rem,2vw,1.5rem)] font-bold text-gray-900">
                       {service.title}
                     </h3>
@@ -134,7 +153,11 @@ export default function ServicesSection() {
                     key={index + 3}
                     className="w-[82vw] max-w-[320px] shrink-0 snap-start rounded-lg border border-gray-200 p-8 transition-shadow duration-200 hover:shadow-md md:w-auto md:max-w-none md:shrink"
                   >
-                    <GiOpenBook className="mb-4 text-4xl text-gray-900" />
+                    <service.icon
+                      aria-hidden="true"
+                      className="mb-4 h-9 w-9 text-gray-900"
+                      strokeWidth={1.8}
+                    />
                     <h3 className="mb-3 text-[clamp(1.125rem,2vw,1.5rem)] font-bold text-gray-900">
                       {service.title}
                     </h3>

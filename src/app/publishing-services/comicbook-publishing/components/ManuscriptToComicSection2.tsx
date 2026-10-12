@@ -18,10 +18,9 @@ export default function ManuscriptToComicSection2() {
     <section className="pb-20 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header with underline */}
-        <div className="text-center mb-16">
-          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold text-gray-900 tracking-tight inline-block relative">
+        <div className="text-center mb-8">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold text-black tracking-tight inline-block relative">
             Comic Book Marketing & Promotion
-            <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-2/3 h-1 bg-[#DADD39] rounded-full"></span>
           </h2>
         </div>
 

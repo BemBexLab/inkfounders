@@ -19,8 +19,8 @@ const StoryDevelopmentSection: FC = () => {
     <section className="w-full min-w-0 bg-white px-4 pb-12 sm:px-6 sm:pb-16 md:px-8 lg:px-12 lg:pb-20 xl:px-20 xl:pb-24">
       <div className="mx-auto w-full max-w-7xl [overflow-wrap:anywhere]">
         {/* Responsive heading and underline */}
-        <header className="mb-8 text-center sm:mb-10 lg:mb-14 xl:mb-16">
-          <h2 className="relative mx-auto w-fit max-w-full pb-2 text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.4] tracking-tight text-gray-900 after:absolute after:bottom-0 after:left-1/2 after:h-[4px] after:w-[80%] after:-translate-x-1/2 after:bg-[#DADD39] after:content-['']">
+        <header className="mb-8 text-center">
+          <h2 className="relative mx-auto w-fit max-w-full text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.4] tracking-tight text-black">
             Comic Book Editing &amp; Proofreading
           </h2>
         </header>

@@ -122,15 +122,13 @@ export default async function RecentBlogs() {
           className="
             mb-8
             flex flex-col items-center gap-6 text-center
-            sm:mb-10
-            md:mb-12
           "
         >
           <div className="min-w-0 w-full max-w-4xl text-center">
             {/* Heading */}
             <h2
               className="
-                relative mx-auto w-fit max-w-full pb-2 text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.4] tracking-tight text-gray-900 after:absolute after:bottom-0 after:left-1/2 after:h-[4px] after:w-[80%] after:-translate-x-1/2 after:bg-[#DADD39] after:content-['']
+                relative mx-auto w-fit max-w-full text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.4] tracking-tight text-black
               "
             >
               Insights for your next chapter.

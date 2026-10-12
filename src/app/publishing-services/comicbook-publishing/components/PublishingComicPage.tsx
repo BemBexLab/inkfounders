@@ -41,7 +41,7 @@ const stepsData: Record<Tab, StepData> = {
       "Develop the story into a comic script with dialogue, captions, scenes, panel descriptions, and page structure.",
       "If you already have a script, professional editing can help improve clarity, consistency, pacing, and readability.",
     ],
-    imageUrl: "/comic-book/image 28 (1).webp",
+    imageUrl: "/image 41.webp",
   },
   Artwork: {
     stepNumber: 3,
@@ -49,7 +49,7 @@ const stepsData: Record<Tab, StepData> = {
     description: [
       "Develop the visual elements of the comic, including illustrations, panels, characters, backgrounds, colors, and other artwork.",
     ],
-    imageUrl: "/comic-book/image 29.webp",
+    imageUrl: "/image 42.webp",
   },
   Editing: {
     stepNumber: 4,
@@ -57,7 +57,7 @@ const stepsData: Record<Tab, StepData> = {
     description: [
       "Review the written content and make sure the story, dialogue, captions, character names, and visual storytelling work together.",
     ],
-    imageUrl: "/comic-book/image 30.webp",
+    imageUrl: "/image 43.webp",
   },
   Formatting: {
     stepNumber: 5,
@@ -66,7 +66,7 @@ const stepsData: Record<Tab, StepData> = {
       "Prepare the interior pages and cover according to the requirements of the selected publishing format.",
       "This can include panel placement, lettering, typography, margins, bleed, page dimensions, and print specifications.",
     ],
-    imageUrl: "/comic-book/image 31.webp",
+    imageUrl: "/image 44.webp",
   },
   Cover: {
     stepNumber: 6,
@@ -74,7 +74,7 @@ const stepsData: Record<Tab, StepData> = {
     description: [
       "Create the final print-ready and digital files required for your chosen publishing and distribution channels.",
     ],
-    imageUrl: "/comic-book/image 32.webp",
+    imageUrl: "/image 46.webp",
   },
   Publishing: {
     stepNumber: 7,
@@ -82,7 +82,7 @@ const stepsData: Record<Tab, StepData> = {
     description: [
       "Once the project is professionally prepared, it can move into the publishing and distribution stage.",
     ],
-    imageUrl: "/comic-book/image 33.webp",
+    imageUrl: "/image 45.webp",
   },
   Readers: {
     stepNumber: 8,
@@ -90,7 +90,7 @@ const stepsData: Record<Tab, StepData> = {
     description: [
       "After publication, marketing can help introduce your comic to potential readers and build awareness around your creator brand.",
     ],
-    imageUrl: "/comic-book/image 28 (1).webp",
+    imageUrl: "/image 47.webp",
   },
 };
 
@@ -103,7 +103,7 @@ export default function PublishComicPage() {
       <div className="mx-auto w-full max-w-6xl [overflow-wrap:anywhere]">
         {/* Header */}
         <header className="mb-8 text-center sm:mb-10 lg:mb-12">
-          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.15] tracking-tight text-[#1a1a1a]">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold leading-[1.15] tracking-tight text-black">
             How to Publish a Comic Book
           </h2>
 
