@@ -20,7 +20,7 @@ const stages: Stage[] = [
       "We can help with: Story development, characters, structure, and script development.",
     buttonText: "Develop My Idea",
     buttonHref: "/contactus",
-    imageSrc: "/comic-book/Rectangle 14.webp",
+    imageSrc: "/optimized/comic-book/Rectangle 14.webp",
   },
   {
     title: "I Have a Script",
@@ -50,7 +50,7 @@ const stages: Stage[] = [
       "We can help with: Final review, formatting, cover preparation, publishing, distribution, and promotion.",
     buttonText: "Prepare My Comic",
     buttonHref: "/contactus",
-    imageSrc: "/comic-book/Rectangle 14 (3).webp",
+    imageSrc: "/optimized/comic-book/Rectangle 14 (3).webp",
   },
 ];
 

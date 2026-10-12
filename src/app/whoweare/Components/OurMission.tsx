@@ -42,7 +42,7 @@ export default function OurMission() {
         {/* Right: Single Book Covers Image */}
         <div className="mt-4 flex w-full items-start justify-center lg:mt-0">
           <Image
-            src="/whoweare/Group 427320859.webp"
+            src="/optimized/whoweare/Group 427320859.webp"
             alt="Book Covers"
             width={1164}
             height={1680}

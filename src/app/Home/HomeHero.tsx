@@ -27,16 +27,16 @@ type TrustBadge = {
 
 const bookImages = [
   // "/Home/1 8638289.webp",
-  "/Home/2 9303.webp",
-  "/Home/3 422784.webp",
-  "/Home/4 238103.webp",
-  "/Home/5 1.webp",
-  "/Home/6 1.webp",
-  "/Home/7 151655.webp",
-  "/Home/8 914122.webp",
-  "/Home/9 23800.webp",
-  "/Home/10 439780.webp",
-  "/Home/11 4543.webp"
+  "/optimized/Home/2 9303.webp",
+  "/optimized/Home/3 422784.webp",
+  "/optimized/Home/4 238103.webp",
+  "/optimized/Home/5 1.webp",
+  "/optimized/Home/6 1.webp",
+  "/optimized/Home/7 151655.webp",
+  "/optimized/Home/8 914122.webp",
+  "/optimized/Home/9 23800.webp",
+  "/optimized/Home/10 439780.webp",
+  "/optimized/Home/11 4543.webp"
 ];
 
 const trustBadges: TrustBadge[] = [

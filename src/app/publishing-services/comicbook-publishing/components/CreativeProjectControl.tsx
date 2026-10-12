@@ -28,7 +28,7 @@ export default function CreativeProjectControl() {
           {/* Mobile: proportional image. Desktop: match content height. */}
           <div className="relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-xl shadow-sm sm:rounded-2xl lg:aspect-auto lg:min-h-[400px]">
             <Image
-              src="/comic-book/Rectangle 14 (6).webp"
+              src="/optimized/comic-book/Rectangle 14 (6).webp"
               alt="Person browsing books in a bookstore"
               fill
               sizes="(min-width: 1472px) 608px, (min-width: 1280px) calc(50vw - 128px), (min-width: 1024px) calc(50vw - 72px), (min-width: 768px) calc(100vw - 64px), (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)"

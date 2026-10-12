@@ -36,12 +36,12 @@ export default function ComicServicesSection() {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-10 w-full mx-auto">
-          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold text-gray-900 mb-6 tracking-tight">
+          <h2 className="text-[clamp(1.75rem,4vw,3rem)] font-semibold text-black mb-6 tracking-tight">
             From Comic Idea To Published Book
           </h2>
           <div>
             <p
-              className={`${robotoMono.className} mx-auto text-gray-600 mb-4 leading-relaxed max-w-5xl text-center text-sm`}
+              className={`${robotoMono.className} mx-auto text-gray-600 mb-4 leading-relaxed max-w-6xl text-center text-sm`}
             >
               A comic book involves much more than writing a story and creating
               artwork. The finished publication needs strong storytelling,
@@ -63,12 +63,12 @@ export default function ComicServicesSection() {
           aria-label="Comic publishing services"
           className="-mx-4 snap-x snap-mandatory overflow-x-auto overscroll-x-contain px-4 pb-4 md:mx-0 md:overflow-visible md:px-0 md:pb-0"
         >
-          <div className="flex w-max gap-4 md:grid md:w-full md:grid-cols-4 md:gap-0">
+          <div className="flex w-max gap-3 md:grid md:w-full md:grid-cols-4">
             {services.map((service, index) => (
               <div
                 key={service.title}
                 className={`
-                  flex w-[82vw] max-w-[320px] shrink-0 snap-start flex-col items-center px-3 py-6 text-center
+                  flex w-[82vw] max-w-[420px] shrink-0 snap-start flex-col items-center px-3 py-6 text-center
                   md:w-auto md:max-w-none md:shrink
                   ${index !== services.length - 1 ? "md:border-r border-gray-200" : ""}
                 `}
