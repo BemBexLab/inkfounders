@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { createCanonicalMetadata } from "@/lib/seo";
+import { createPageMetadata } from "@/lib/seo";
 import CaseStudyComic from "./components/CaseStudyComic";
 import ComicCoverDesign from "./components/ComicCoverDesign";
 import ComicPublishing from "./components/ComicPublishing";
@@ -20,12 +20,11 @@ import ManuscriptToComicSection2 from "./components/ManuscriptToComicSection2";
 import WhyChooseInkFoundersSection from "./components/WhyChooseInkFoundersSection";
 import ServicesSection from "./components/ServicesSection";
 
-export const metadata: Metadata = {
-  ...createCanonicalMetadata("/publishing-services/comicbook-publishing"),
-  title: "Comic Book Publishing Services | Ink Founders",
-  description:
-    "Bring your comic book or graphic novel to life with Ink Founders' professional publishing services, including story development, editing, design, formatting, publishing, and marketing.",
-};
+export const metadata: Metadata = createPageMetadata(
+  "/publishing-services/comicbook-publishing",
+  "Comic Book Publishing Services | Ink Founders",
+  "Bring your comic book or graphic novel to life with Ink Founders' professional publishing services, including story development, editing, design, formatting, publishing, and marketing.",
+);
 
 export default function Page() {
   return (

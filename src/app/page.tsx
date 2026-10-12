@@ -13,14 +13,13 @@ import FAQs from "./Home/FAQs";
 import { faqContent } from "./Home/faqData";
 import Lagacy from "./Home/Legacy";
 import OurWork from "./Home/OurWork";
-import { createCanonicalMetadata } from "@/lib/seo";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  ...createCanonicalMetadata("/"),
-  title: "Self-Publishing Company USA: Book Publishing Services for Authors",
-  description:
-    "Ink Founders is a self-publishing company USA authors trust for full-service book publishing, editing, design, and marketing. Book Free Consultation",
-};
+export const metadata: Metadata = createPageMetadata(
+  "/",
+  "Self-Publishing Company USA: Book Publishing Services for Authors",
+  "Ink Founders is a self-publishing company USA authors trust for full-service book publishing, editing, design, and marketing. Book Free Consultation",
+);
 
 export default function Home() {
   return (

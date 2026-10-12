@@ -4,10 +4,14 @@ import PartnersSection from "../Home/OurPartner";
 import ContactUsHero from "./components/ContactUsHero";
 import Portfolio from "./components/portfolio";
 import { getInTouchContent } from "./getInTouchData";
-import { createCanonicalMetadata } from "@/lib/seo";
+import { createPageMetadata } from "@/lib/seo";
 import Map from "@/components/Map";
 
-export const metadata: Metadata = createCanonicalMetadata("/contactus");
+export const metadata: Metadata = createPageMetadata(
+  "/contactus",
+  "Contact Ink Founders | Book Publishing Support",
+  "Contact Ink Founders to discuss book publishing, editing, ghostwriting, cover design, and marketing services for your project.",
+);
 
 export default function Home() {
   const location = (getInTouchContent.left.contacts ?? []).find(

@@ -15,8 +15,6 @@ type NavChild = {
 type NavItem = {
   label: string;
   href: string;
-  desktopOnlyMenu?: boolean;
-  nativeNavigation?: boolean;
   children?: NavChild[];
 };
 
@@ -54,7 +52,6 @@ const navItems: NavItem[] = [
   {
     label: "Audiobook Services",
     href: "/audiobook-services",
-    desktopOnlyMenu: true,
     children: [
       {
         label: "Audiobook Narration",
@@ -81,7 +78,6 @@ const navItems: NavItem[] = [
   {
     label: "Blog",
     href: "/blog",
-    nativeNavigation: true,
   },
   {
     label: "Contact Us",
@@ -96,6 +92,9 @@ export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuMounted, setMenuMounted] = useState(false);
+  const [openDesktopSection, setOpenDesktopSection] = useState<string | null>(
+    null,
+  );
   const [openMobileSection, setOpenMobileSection] = useState<string | null>(
     null,
   );
@@ -122,6 +121,7 @@ export default function Header() {
 
   useEffect(() => {
     closeDrawer();
+    setOpenDesktopSection(null);
     setOpenMobileSection(null);
   }, [pathname, closeDrawer]);
 
@@ -211,27 +211,37 @@ export default function Header() {
               if (item.children?.length) {
                 return (
                   <div key={item.href} className="group relative">
-                    {item.desktopOnlyMenu ? (
-                      <button
-                        type="button"
-                        className={desktopLinkClass}
-                        aria-haspopup="true"
-                      >
-                        <span>{item.label}</span>
-                        <FaChevronDown className="h-2.5 w-2.5 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
-                      </button>
-                    ) : (
+                    <div className="flex items-center gap-1">
                       <Link
                         href={item.href}
                         className={desktopLinkClass}
                         aria-current={isActive ? "page" : undefined}
                       >
-                        <span>{item.label}</span>
-                        <FaChevronDown className="h-2.5 w-2.5 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
+                        {item.label}
                       </Link>
-                    )}
+                      <button
+                        type="button"
+                        className={`${desktopLinkClass} px-1`}
+                        aria-label={`Toggle ${item.label} submenu`}
+                        aria-haspopup="true"
+                        aria-expanded={openDesktopSection === item.href}
+                        onClick={() =>
+                          setOpenDesktopSection((current) =>
+                            current === item.href ? null : item.href,
+                          )
+                        }
+                      >
+                        <FaChevronDown className="h-2.5 w-2.5 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180" />
+                      </button>
+                    </div>
 
-                    <div className="invisible absolute left-0 top-full w-64 translate-y-1 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                    <div
+                      className={`absolute left-0 top-full w-64 pt-3 transition-all duration-200 ${
+                        openDesktopSection === item.href
+                          ? "visible translate-y-0 opacity-100"
+                          : "invisible translate-y-1 opacity-0 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100"
+                      }`}
+                    >
                       <div className="overflow-hidden rounded-2xl border border-black/5 bg-white p-2 shadow-[0_18px_50px_rgba(0,0,0,0.14)]">
                         {item.children.map((child) => (
                           <Link
@@ -257,16 +267,7 @@ export default function Header() {
                 );
               }
 
-              return item.nativeNavigation ? (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className={desktopLinkClass}
-                  aria-current={isActive ? "page" : undefined}
-                >
-                  {item.label}
-                </a>
-              ) : (
+              return (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -416,20 +417,6 @@ export default function Header() {
                           >
                             <span>{item.label}</span>
                           </button>
-                        ) : item.nativeNavigation ? (
-                          <a
-                            href={item.href}
-                            onClick={closeDrawer}
-                            tabIndex={menuOpen ? 0 : -1}
-                            aria-current={isActive ? "page" : undefined}
-                            className={`flex min-h-12 flex-1 items-center px-0 py-2.5 text-[0.98rem] transition-colors ${
-                              isActive
-                                ? "font-semibold text-black"
-                                : "text-gray-800 hover:text-[#a3a718]"
-                            }`}
-                          >
-                            <span>{item.label}</span>
-                          </a>
                         ) : (
                           <Link
                             href={item.href}
@@ -481,23 +468,21 @@ export default function Header() {
                         >
                           <div className="min-h-0 overflow-hidden">
                             <div className={`mb-2 ml-3 mt-1 flex flex-col border-l border-[#DADD39] pl-4 transition-transform duration-300 motion-reduce:transition-none ${isExpanded ? "translate-y-0" : "-translate-y-2"}`}>
-                              {!item.desktopOnlyMenu && (
-                                <Link
-                                  href={item.href}
-                                  onClick={closeDrawer}
-                                  tabIndex={menuOpen && isExpanded ? 0 : -1}
-                                  aria-current={
-                                    pathname === item.href ? "page" : undefined
-                                  }
-                                  className={`py-2.5 text-sm transition-colors ${
-                                    pathname === item.href
-                                      ? "font-semibold text-black"
-                                      : "text-gray-600 hover:text-black"
-                                  }`}
-                                >
-                                  All {item.label}
-                                </Link>
-                              )}
+                              <Link
+                                href={item.href}
+                                onClick={closeDrawer}
+                                tabIndex={menuOpen && isExpanded ? 0 : -1}
+                                aria-current={
+                                  pathname === item.href ? "page" : undefined
+                                }
+                                className={`py-2.5 text-sm transition-colors ${
+                                  pathname === item.href
+                                    ? "font-semibold text-black"
+                                    : "text-gray-600 hover:text-black"
+                                }`}
+                              >
+                                All {item.label}
+                              </Link>
                               {item.children?.map((child) => (
                                 <Link
                                   key={child.href}

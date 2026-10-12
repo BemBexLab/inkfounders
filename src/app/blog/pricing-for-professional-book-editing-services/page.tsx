@@ -44,13 +44,13 @@ const Blog2 = () => {
       <div className="bg-[#F5F5DC] font-sans text-gray-800">
         {/* Breadcrumb / Back Button */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <a
+          <Link
             href="/blog"
             className="inline-flex items-center text-gray-600 hover:text-[#D4D939] transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Blog
-          </a>
+          </Link>
         </div>
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -70,6 +70,8 @@ const Blog2 = () => {
                       <img
                         src={editingImages[editingSliderIndex]}
                         alt={`Professional book editing ${editingSliderIndex + 1}`}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -104,7 +106,7 @@ const Blog2 = () => {
                   answer varies based on several factors, including the type of
                   editing, word count, the editor's experience, and the
                   complexity of the project. In this guide, we'll break down the
-                  costs of <b><a href="/publishing-services" className="hover:text-blue-500 font-semibold underline">professional book editing services</a></b> in simple terms.
+                  costs of <b><Link href="/publishing-services" className="hover:text-blue-500 font-semibold underline">professional book editing services</Link></b> in simple terms.
                 </p>
                 <p className="text-base mb-6">
                   We'll cover the price per word for <Link className="hover:text-blue-500 font-semibold underline" href={"/publishing-services/editing-and-proofreading"}>book editing</Link>, the cost of

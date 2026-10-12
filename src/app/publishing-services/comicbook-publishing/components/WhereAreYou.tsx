@@ -20,7 +20,7 @@ const stages: Stage[] = [
       "We can help with: Story development, characters, structure, and script development.",
     buttonText: "Develop My Idea",
     buttonHref: "/contactus",
-    imageSrc: "/comic-book/Rectangle 14.svg",
+    imageSrc: "/comic-book/Rectangle 14.webp",
   },
   {
     title: "I Have a Script",
@@ -30,7 +30,7 @@ const stages: Stage[] = [
       "We can help with: Editing, proofreading, dialogue, story consistency, and script refinement.",
     buttonText: "Review My Script",
     buttonHref: "/contactus",
-    imageSrc: "/comic-book/Rectangle 14 (1).svg",
+    imageSrc: "/comic-book/Rectangle 14 (1).webp",
   },
   {
     title: "I Have Artwork",
@@ -40,7 +40,7 @@ const stages: Stage[] = [
       "We can help with: Formatting, lettering, cover design, publishing preparation, and production files.",
     buttonText: "Prepare My Comic",
     buttonHref: "/contactus",
-    imageSrc: "/comic-book/Rectangle 14 (2).svg",
+    imageSrc: "/comic-book/Rectangle 14 (2).webp",
   },
   {
     title: "I Have a Completed Comic",
@@ -50,7 +50,7 @@ const stages: Stage[] = [
       "We can help with: Final review, formatting, cover preparation, publishing, distribution, and promotion.",
     buttonText: "Prepare My Comic",
     buttonHref: "/contactus",
-    imageSrc: "/comic-book/Rectangle 14 (3).svg",
+    imageSrc: "/comic-book/Rectangle 14 (3).webp",
   },
 ];
 

@@ -29,7 +29,7 @@ export default function GraphicNovelPublishing() {
           {/* Proportional on mobile; matches content height on desktop */}
           <div className="relative aspect-[4/3] w-full min-w-0 overflow-hidden lg:aspect-auto lg:min-h-[400px]">
             <img
-              src="/Rectangle 14.svg"
+              src="/Rectangle 14.webp"
               alt="Graphic Novel Publishing Mockup"
               loading="lazy"
               decoding="async"

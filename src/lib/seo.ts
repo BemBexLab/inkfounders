@@ -225,3 +225,37 @@ export function createCanonicalMetadata(path: string): Metadata {
     },
   };
 }
+
+export function createPageMetadata(
+  path: string,
+  title: string,
+  description: string,
+): Metadata {
+  const canonicalUrl = getCanonicalUrl(path);
+
+  return {
+    title,
+    description,
+    ...createCanonicalMetadata(path),
+    openGraph: {
+      type: "website",
+      url: canonicalUrl,
+      title,
+      description,
+      images: [
+        {
+          url: SOCIAL_IMAGE_URL,
+          width: 192,
+          height: 87,
+          alt: "Ink Founders logo",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [SOCIAL_IMAGE_URL],
+    },
+  };
+}

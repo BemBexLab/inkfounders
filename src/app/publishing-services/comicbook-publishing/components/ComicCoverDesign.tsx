@@ -18,12 +18,12 @@ const categories = [
 type Category = (typeof categories)[number];
 
 const categoryImages: Record<Category, string> = {
-  Superhero: "/comic-book/Group 41.svg",
-  Fantasy: "/comic-book/Group 42.svg",
-  Horror: "/comic-book/Group 43.svg",
-  "Science Fiction": "/comic-book/Group 44.svg",
-  "Graphic Novel": "/comic-book/Group 45.svg",
-  "Manga-Style": "/comic-book/Group 41.svg",
+  Superhero: "/comic-book/Group 41.webp",
+  Fantasy: "/comic-book/Group 42.webp",
+  Horror: "/comic-book/Group 43.webp",
+  "Science Fiction": "/comic-book/Group 44.webp",
+  "Graphic Novel": "/comic-book/Group 45.webp",
+  "Manga-Style": "/comic-book/Group 41.webp",
 };
 
 const services = [

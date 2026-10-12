@@ -13,15 +13,13 @@ import ServiceHero from "./components/ServiceHero";
 import TheMind from "./components/TheMind";
 import TrueStory from "./components/TrueStory";
 import WhatYouGet from "./components/WhatYouGet";
-import { createCanonicalMetadata } from "@/lib/seo";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  ...createCanonicalMetadata("/publishing-services"),
-  title:
-    "Book Publishing Packages for Authors: Professional Book Publishing Services",
-  description:
-    "Ink Founders offers professional book publishing services and self-publishing packages with an ISBN included, editing, design, global distribution, and marketing.",
-};
+export const metadata: Metadata = createPageMetadata(
+  "/publishing-services",
+  "Book Publishing Packages for Authors | Ink Founders",
+  "Ink Founders offers professional book publishing services and self-publishing packages with an ISBN included, editing, design, global distribution, and marketing.",
+);
 
 export default function Home() {
   return (

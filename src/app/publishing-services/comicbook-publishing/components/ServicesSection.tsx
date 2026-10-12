@@ -1,4 +1,5 @@
 import { robotoMono } from "@/app/fonts";
+import Link from "next/link";
 import React from "react";
 import { GiOpenBook } from "react-icons/gi";
 
@@ -31,7 +32,7 @@ const services = [
     title: "Comic Book Publishing",
     description:
       "Bring your comic book or graphic novel from idea to professionally prepared publication.",
-    link: "#",
+    link: "/publishing-services/comicbook-publishing",
   },
 ];
 
@@ -76,12 +77,12 @@ export default function ServicesSection() {
                   >
                     {service.description}
                   </p>
-                  <a
+                  <Link
                     href={service.link}
                     className={`${robotoMono.className} text-sm font-medium text-[#d1d646] hover:underline`}
                   >
                     Explore service
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -110,12 +111,12 @@ export default function ServicesSection() {
                     >
                       {service.description}
                     </p>
-                    <a
+                    <Link
                       href={service.link}
                       className={`${robotoMono.className} text-sm font-medium text-[#d1d646] hover:underline`}
                     >
                       Explore service
-                    </a>
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -142,12 +143,12 @@ export default function ServicesSection() {
                     >
                       {service.description}
                     </p>
-                    <a
+                    <Link
                       href={service.link}
                       className="text-sm font-medium text-[#d1d646] hover:underline"
                     >
                       Explore service
-                    </a>
+                    </Link>
                   </div>
                 ))}
               </div>

@@ -32,7 +32,7 @@ const stepsData: Record<Tab, StepData> = {
       "Start with your concept, characters, story structure, script, artwork plans, target audience, and publishing goals.",
       "A strong foundation makes the later stages of comic production easier to manage.",
     ],
-    imageUrl: "/comic-book/image 28.svg",
+    imageUrl: "/comic-book/image 28.webp",
   },
   Script: {
     stepNumber: 2,
@@ -41,7 +41,7 @@ const stepsData: Record<Tab, StepData> = {
       "Develop the story into a comic script with dialogue, captions, scenes, panel descriptions, and page structure.",
       "If you already have a script, professional editing can help improve clarity, consistency, pacing, and readability.",
     ],
-    imageUrl: "/comic-book/image 28 (1).svg",
+    imageUrl: "/comic-book/image 28 (1).webp",
   },
   Artwork: {
     stepNumber: 3,
@@ -49,7 +49,7 @@ const stepsData: Record<Tab, StepData> = {
     description: [
       "Develop the visual elements of the comic, including illustrations, panels, characters, backgrounds, colors, and other artwork.",
     ],
-    imageUrl: "/comic-book/image 29.svg",
+    imageUrl: "/comic-book/image 29.webp",
   },
   Editing: {
     stepNumber: 4,
@@ -57,7 +57,7 @@ const stepsData: Record<Tab, StepData> = {
     description: [
       "Review the written content and make sure the story, dialogue, captions, character names, and visual storytelling work together.",
     ],
-    imageUrl: "/comic-book/image 30.svg",
+    imageUrl: "/comic-book/image 30.webp",
   },
   Formatting: {
     stepNumber: 5,
@@ -66,7 +66,7 @@ const stepsData: Record<Tab, StepData> = {
       "Prepare the interior pages and cover according to the requirements of the selected publishing format.",
       "This can include panel placement, lettering, typography, margins, bleed, page dimensions, and print specifications.",
     ],
-    imageUrl: "/comic-book/image 31.svg",
+    imageUrl: "/comic-book/image 31.webp",
   },
   Cover: {
     stepNumber: 6,
@@ -74,7 +74,7 @@ const stepsData: Record<Tab, StepData> = {
     description: [
       "Create the final print-ready and digital files required for your chosen publishing and distribution channels.",
     ],
-    imageUrl: "/comic-book/image 32.svg",
+    imageUrl: "/comic-book/image 32.webp",
   },
   Publishing: {
     stepNumber: 7,
@@ -82,7 +82,7 @@ const stepsData: Record<Tab, StepData> = {
     description: [
       "Once the project is professionally prepared, it can move into the publishing and distribution stage.",
     ],
-    imageUrl: "/comic-book/image 33.svg",
+    imageUrl: "/comic-book/image 33.webp",
   },
   Readers: {
     stepNumber: 8,
@@ -90,7 +90,7 @@ const stepsData: Record<Tab, StepData> = {
     description: [
       "After publication, marketing can help introduce your comic to potential readers and build awareness around your creator brand.",
     ],
-    imageUrl: "/comic-book/image 28 (1).svg",
+    imageUrl: "/comic-book/image 28 (1).webp",
   },
 };
 

@@ -10,14 +10,13 @@ import VisionBecome from "./Components/VisionBecome";
 import WhatSet from "./Components/Whatset";
 import WhoWeHero from "./Components/whowearehero";
 import WhyChoosePanda from "./Components/WhyChoosePanda";
-import { createCanonicalMetadata } from "@/lib/seo";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  ...createCanonicalMetadata("/whoweare"),
-  title: "Self-Publishing Company USA: Book Publishing Services for Authors",
-  description:
-    "Ink Founders is a self-publishing company USA authors trust for editing, ghostwriting, cover design, and marketing.",
-};
+export const metadata: Metadata = createPageMetadata(
+  "/whoweare",
+  "About Ink Founders | Publishing Support for Authors",
+  "Meet Ink Founders, a publishing partner helping authors with editing, ghostwriting, cover design, book production, and marketing.",
+);
 
 export default function Home() {
   return (

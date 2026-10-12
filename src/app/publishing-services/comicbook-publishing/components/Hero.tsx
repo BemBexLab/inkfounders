@@ -9,7 +9,7 @@ import { MdOutlineRequestQuote } from "react-icons/md";
 import { IoMdCall } from "react-icons/io";
 
 const unsplashImages = {
-  artwork: "/Rectangle 15.svg",
+  artwork: "/Rectangle 15.webp",
 };
 
 /* ---------- Image panel ---------- */

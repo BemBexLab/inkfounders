@@ -31,7 +31,7 @@ export default function StoryDevelopmentSection() {
           {/* Proportional on mobile; stretches to content height on desktop */}
           <div className="relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-xl sm:rounded-2xl lg:aspect-auto lg:min-h-[400px]">
             <Image
-              src="/comic-book/Rectangle 14 (4).svg"
+              src="/comic-book/Rectangle 14 (4).webp"
               alt="Comic book story development and script writing process"
               fill
               sizes="(min-width: 1472px) 608px, (min-width: 1280px) calc(50vw - 128px), (min-width: 1024px) calc(50vw - 72px), (min-width: 768px) calc(100vw - 64px), (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)"

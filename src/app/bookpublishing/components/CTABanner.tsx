@@ -10,6 +10,8 @@ export default function CTABanner() {
         <img
           src="/landing-page/Rectangle 17.webp"
           alt="desk with tablet and books"
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/65 lg:bg-gradient-to-r lg:from-transparent lg:from-50% lg:to-[#1c1c1c]" />

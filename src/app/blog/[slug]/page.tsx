@@ -461,7 +461,7 @@ export default async function BlogSlugPage({ params }: PageProps) {
                     </a>
 
                     <a
-                      href=""
+                      href="https://maps.app.goo.gl/mibAgwMcMGF8A8ig7"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group flex items-start gap-4 py-4 last:pb-0"

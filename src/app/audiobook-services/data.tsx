@@ -333,9 +333,9 @@ export const audiobookData = [
           different platforms, cover art, metadata, distribution to Audible,
           Apple Books, and everywhere else listeners go. It's a lot. <br />
           That's why we built{" "}
-          <a className="text-blue-800 hover:underline" href="/">
+          <Link className="text-blue-800 hover:underline" href="/">
             Ink Founders
-          </a>{" "}
+          </Link>{" "}
           to take that weight off your shoulders. You decide how you want your
           book to sound, and we make it happen. Then we get it out into the
           world so people can actually find it and listen to it. If you have

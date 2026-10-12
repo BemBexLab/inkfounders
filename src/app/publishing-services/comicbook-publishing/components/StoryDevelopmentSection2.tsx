@@ -29,7 +29,7 @@ const StoryDevelopmentSection: FC = () => {
           {/* Illustration */}
           <div className="relative order-1 aspect-[4/3] w-full min-w-0 overflow-hidden rounded-xl sm:rounded-2xl lg:order-2 lg:aspect-auto lg:min-h-[400px]">
             <Image
-              src="/comic-book/Rectangle 14 (5).svg"
+              src="/comic-book/Rectangle 14 (5).webp"
               alt="Comic script and story development notes"
               fill
               sizes="(min-width: 1440px) 608px, (min-width: 1280px) calc(50vw - 112px), (min-width: 1024px) calc(50vw - 72px), (min-width: 768px) calc(100vw - 64px), (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)"

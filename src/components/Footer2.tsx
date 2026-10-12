@@ -6,7 +6,6 @@ import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const footerContactItems = [
   {
-    href: "",
     icon: (
       <svg
         width="14"
@@ -202,34 +201,44 @@ const Footer: React.FC = () => {
                 {trustBadges.map((badge) => {
                   const isExternal = badge.link?.startsWith("http");
                   const isTrustpilot = badge.id === "trustpilot-review";
+                  const badgeContent =
+                    typeof badge.src === "string" ? (
+                      <Image
+                        src={badge.src}
+                        alt={`${badge.title} ${badge.subtitle}`}
+                        width={150}
+                        height={64}
+                        className={`h-auto object-contain object-center transition duration-300 group-hover:brightness-105 sm:mt-5 ${
+                          isTrustpilot
+                            ? "w-[clamp(112px,38vw,185px)] max-h-[56px] lg:w-[205px] lg:max-h-[70px]"
+                            : "w-[clamp(68px,24vw,118px)] max-h-[40px] lg:w-[135px] lg:max-h-[54px]"
+                        }`}
+                      />
+                    ) : (
+                      <div className="flex h-[64px] w-full items-center justify-center rounded-lg border border-[#d8d4be] bg-[#f1eedf] px-3 py-2 text-[24px] text-[#1f1f1f] shadow-[0_8px_18px_rgba(77,70,40,0.05)] transition duration-300 group-hover:border-[#c9c29f] group-hover:shadow-[0_12px_24px_rgba(77,70,40,0.08)] sm:h-[82px] sm:w-fit sm:text-[28px] lg:h-[94px] lg:px-4 lg:py-3 lg:text-[32px]">
+                        {badge.src}
+                      </div>
+                    );
  
-                  return (
+                  return badge.link ? (
                     <a
                       key={badge.id}
-                      href={badge.link || "#"}
+                      href={badge.link}
                       target={isExternal ? "_blank" : undefined}
                       rel={isExternal ? "noreferrer" : undefined}
                       className="group flex h-[54px] shrink-0 items-center justify-center rounded-lg px-0 transition duration-300 hover:-translate-y-1 hover:scale-[1.02] sm:h-[72px] lg:h-[84px]"
                       aria-label={`${badge.title} ${badge.subtitle}`}
                     >
-                      {typeof badge.src === "string" ? (
-                        <Image
-                          src={badge.src}
-                          alt={`${badge.title} ${badge.subtitle}`}
-                          width={150}
-                          height={64}
-                          className={`h-auto object-contain object-center transition duration-300 group-hover:brightness-105 sm:mt-5 ${
-                            isTrustpilot
-                              ? "w-[clamp(112px,38vw,185px)] max-h-[56px] lg:w-[205px] lg:max-h-[70px]"
-                              : "w-[clamp(68px,24vw,118px)] max-h-[40px] lg:w-[135px] lg:max-h-[54px]"
-                          }`}
-                        />
-                      ) : (
-                        <div className="flex h-[64px] w-full items-center justify-center rounded-lg border border-[#d8d4be] bg-[#f1eedf] px-3 py-2 text-[24px] text-[#1f1f1f] shadow-[0_8px_18px_rgba(77,70,40,0.05)] transition duration-300 group-hover:border-[#c9c29f] group-hover:shadow-[0_12px_24px_rgba(77,70,40,0.08)] sm:h-[82px] sm:w-fit sm:text-[28px] lg:h-[94px] lg:px-4 lg:py-3 lg:text-[32px]">
-                          {badge.src}
-                        </div>
-                      )}
+                      {badgeContent}
                     </a>
+                  ) : (
+                    <div
+                      key={badge.id}
+                      className="group flex h-[54px] shrink-0 items-center justify-center rounded-lg px-0 sm:h-[72px] lg:h-[84px]"
+                      aria-label={`${badge.title} ${badge.subtitle}`}
+                    >
+                      {badgeContent}
+                    </div>
                   );
                 })}
               </div>
@@ -281,16 +290,26 @@ const Footer: React.FC = () => {
                 {footerContactItems.map(({ icon, lines, href }, itemIndex) => (
                   <li key={`footer-contact-${itemIndex}`} className="mb-3 flex items-start gap-[10px]">
                     <span className="mt-[2px] shrink-0">{icon}</span>
-                    <Link
-                      href={href}
-                      className="min-w-0 break-words text-left font-sans text-[13px] leading-snug text-[#333] no-underline transition-colors hover:text-[#8a7a2e] sm:text-[14px]"
-                    >
-                {lines.map((line, lineIndex) => (
-                        <span key={`${href}-${lineIndex}`} className="block">
-                          {line}
-                        </span>
-                      ))}
-                    </Link>
+                    {href ? (
+                      <Link
+                        href={href}
+                        className="min-w-0 break-words text-left font-sans text-[13px] leading-snug text-[#333] no-underline transition-colors hover:text-[#8a7a2e] sm:text-[14px]"
+                      >
+                        {lines.map((line, lineIndex) => (
+                          <span key={`${href}-${lineIndex}`} className="block">
+                            {line}
+                          </span>
+                        ))}
+                      </Link>
+                    ) : (
+                      <address className="min-w-0 break-words text-left font-sans text-[13px] not-italic leading-snug text-[#333] sm:text-[14px]">
+                        {lines.map((line, lineIndex) => (
+                          <span key={`footer-address-${lineIndex}`} className="block">
+                            {line}
+                          </span>
+                        ))}
+                      </address>
+                    )}
                   </li>
                 ))}
               </ul>

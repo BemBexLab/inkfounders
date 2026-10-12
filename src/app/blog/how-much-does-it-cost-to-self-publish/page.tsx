@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Link from "next/link";
 import { ArrowLeft, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
@@ -38,10 +39,10 @@ const BlogOne: React.FC = () => {
       
       {/* Breadcrumb / Back Button */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <a href="/blog" className="inline-flex items-center text-gray-600 hover:text-[#D4D939] transition-colors mb-8">
+        <Link href="/blog" className="inline-flex items-center text-gray-600 hover:text-[#D4D939] transition-colors mb-8">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Blog
-        </a>
+        </Link>
       </div>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
@@ -64,6 +65,8 @@ const BlogOne: React.FC = () => {
                     <img 
                       src={editingImages[editingSliderIndex]} 
                       alt={`Professional book editing ${editingSliderIndex + 1}`} 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -129,7 +132,7 @@ const BlogOne: React.FC = () => {
               </ul>
 
               <p className="mb-8">
-                In this complete guide, you will learn the real numbers. You will also understand how <strong><a className='text-blue-800 hover:underline' href="/">Ink Founders</a></strong> provides complete publishing services under one system.
+                In this complete guide, you will learn the real numbers. You will also understand how <strong><Link className='text-blue-800 hover:underline' href="/">Ink Founders</Link></strong> provides complete publishing services under one system.
                 <br /><br />
                 Let's break everything step by step.
               </p>
@@ -221,6 +224,8 @@ const BlogOne: React.FC = () => {
                     <img 
                       src={editingImages[editingSliderIndex]} 
                       alt={`Professional book editing ${editingSliderIndex + 1}`} 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </div> */}
@@ -279,6 +284,8 @@ const BlogOne: React.FC = () => {
                     <img 
                       src={coverDesignImages[coverSliderIndex]} 
                       alt={`Professional book cover design ${coverSliderIndex + 1}`} 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </div> */}
@@ -377,6 +384,8 @@ const BlogOne: React.FC = () => {
                     <img 
                       src={printingImages[printingSliderIndex]} 
                       alt={`Book printing and production ${printingSliderIndex + 1}`} 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </div> */}
@@ -472,6 +481,8 @@ const BlogOne: React.FC = () => {
                     <img 
                       src={childrensBookImages[childrensSliderIndex]} 
                       alt={`Children's book illustration ${childrensSliderIndex + 1}`} 
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </div> */}

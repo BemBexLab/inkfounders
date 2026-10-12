@@ -8,9 +8,13 @@ import {
   getReadingTime,
   getTextFromHtml,
 } from "./wpPosts";
-import { createCanonicalMetadata } from "@/lib/seo";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = createCanonicalMetadata("/blog");
+export const metadata: Metadata = createPageMetadata(
+  "/blog",
+  "Publishing Blog | Book Publishing Advice for Authors | Ink Founders",
+  "Read practical guides on self-publishing costs, book editing, publishing, cover design, and marketing for authors.",
+);
 export const revalidate = 300;
 
 function mapWpPostToBlogPost(

@@ -55,21 +55,21 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/service">
+                  <Link href="/publishing-services">
                     <span className="text-black hover:text-[#DADD39] text-sm">
                       Services
                     </span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/ourbook">
+                  <Link href="/published-books">
                     <span className="text-black hover:text-[#DADD39] text-sm">
                       Our Books
                     </span>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/ourpublishing">
+                  <Link href="/publishing-partners">
                     <span className="text-black hover:text-[#DADD39] text-sm">
                       Our Publishing
                     </span>

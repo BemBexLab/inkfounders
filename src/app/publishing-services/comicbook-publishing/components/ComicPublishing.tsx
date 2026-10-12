@@ -71,7 +71,7 @@ export default function ComicPublishing() {
           {/* Image keeps its natural proportions */}
           <div className="w-full min-w-0 overflow-hidden rounded-xl">
             <img
-              src="/comic-book/Rectangle 14 (7).svg"
+              src="/comic-book/Rectangle 14 (7).webp"
               alt="Woman browsing books in a bookstore"
               loading="lazy"
               decoding="async"

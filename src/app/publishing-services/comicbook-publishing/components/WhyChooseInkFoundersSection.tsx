@@ -59,8 +59,10 @@ export default function WhyChooseInkFoundersSection() {
           <div className="flex-1 w-full">
             <div className="rounded-lg overflow-hidden shadow-md">
               <img
-                src="/Rectangle 14 (3).svg"
+                src="/Rectangle 14 (3).webp"
                 alt="Person holding a comic book"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-80 md:h-96 object-cover"
               />
             </div>

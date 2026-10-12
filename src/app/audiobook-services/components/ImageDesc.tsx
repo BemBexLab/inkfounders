@@ -78,7 +78,7 @@ const ImageDesc = ({ data }: ImageDescProps) => {
 
               {/* Image */}
               <div className="w-[570px] shrink-0">
-                  <img src={sec.imgSrc} alt="" className="w-[570px] h-auto" />
+                  <img src={sec.imgSrc} alt="" loading="lazy" decoding="async" className="w-[570px] h-auto" />
               </div>
             </div>
           ))}
@@ -98,6 +98,8 @@ const ImageDesc = ({ data }: ImageDescProps) => {
                 <img
                   src={sec.imgSrc}
                   alt=""
+                  loading="lazy"
+                  decoding="async"
                   className="h-auto w-full object-contain"
                 />
               </div>

@@ -94,6 +94,8 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
                     <img
                       src={opt.imgSrc}
                       alt={opt.title}
+                      loading="lazy"
+                      decoding="async"
                       className="max-h-[42px] w-auto object-contain"
                     />
                   </div>
@@ -177,6 +179,8 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
                   <img
                     src={opt.imgSrc}
                     alt={opt.title}
+                    loading="lazy"
+                    decoding="async"
                     className="max-h-11 w-auto object-contain"
                   />
                 </div>

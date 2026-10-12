@@ -84,8 +84,10 @@ export default function ManuscriptToComicSection() {
           <div className="flex-1 w-full">
             <div className="h-80 w-full overflow-hidden rounded-lg shadow-md md:h-full">
               <img
-                src="/Rectangle 14 (1).svg"
+                src="/Rectangle 14 (1).webp"
                 alt="Person drawing in a sketchbook"
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover"
               />
             </div>

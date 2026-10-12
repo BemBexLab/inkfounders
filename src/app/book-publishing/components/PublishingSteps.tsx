@@ -385,6 +385,8 @@ const PublishingSteps = () => {
                   src={stepIcons[index]}
                   alt=""
                   aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
                   className="block h-9 w-9 object-contain"
                 />
               </span>
@@ -483,6 +485,8 @@ const PublishingSteps = () => {
                       src={stepIcons[index]}
                       alt=""
                       aria-hidden="true"
+                      loading="lazy"
+                      decoding="async"
                       className="block h-10 w-10 object-contain"
                     />
                   </span>
