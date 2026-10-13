@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useRef, useState } from "react";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import { FaCircleCheck } from "react-icons/fa6";
 import { robotoMono } from "@/app/fonts";
@@ -26,6 +26,9 @@ const categoryImages: Record<Category, string> = {
   "Manga-Style": "/optimized/Group 46.webp",
 };
 
+const categoryImageSizes =
+  "(min-width: 1280px) 544px, (min-width: 1248px) 552px, (min-width: 1024px) calc(50vw - 72px), (min-width: 720px) 672px, (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)";
+
 const services = [
   "Custom comic book cover design",
   "Graphic novel cover design",
@@ -42,9 +45,35 @@ const services = [
 
 export default function ComicCoverDesign() {
   const [activeCategory, setActiveCategory] = useState<Category>("Superhero");
+  const preloadedCategories = useRef(new Set<Category>());
+
+  function preloadCategoryImage(category: Category) {
+    if (
+      category === activeCategory ||
+      preloadedCategories.current.has(category)
+    ) {
+      return;
+    }
+
+    const imageProps = getImageProps({
+      src: categoryImages[category],
+      alt: "",
+      fill: true,
+      sizes: categoryImageSizes,
+    }).props;
+    const image = new window.Image();
+
+    preloadedCategories.current.add(category);
+    image.decoding = "async";
+    image.fetchPriority = "low";
+    image.onerror = () => preloadedCategories.current.delete(category);
+    image.srcset = imageProps.srcSet ?? "";
+    image.sizes = imageProps.sizes ?? "";
+    image.src = imageProps.src;
+  }
 
   return (
-    <section className="min-h-screen w-full min-w-0 bg-[#f5f2e8] px-4 py-12 font-sans sm:px-6 sm:py-16 md:px-8 lg:px-12 lg:py-20 xl:px-16 xl:py-24">
+    <section className="w-full min-w-0 bg-[#f5f2e8] px-4 py-12 font-sans sm:px-6 sm:py-16 md:px-8 lg:px-12 lg:py-20 xl:px-16 xl:py-24">
       <div className="mx-auto w-full max-w-6xl [overflow-wrap:anywhere]">
         {/* Header */}
         <header className="mb-6 text-center sm:mb-8 lg:mb-10">
@@ -65,6 +94,8 @@ export default function ComicCoverDesign() {
                 type="button"
                 aria-pressed={activeCategory === category}
                 onClick={() => setActiveCategory(category)}
+                onPointerEnter={() => preloadCategoryImage(category)}
+                onFocus={() => preloadCategoryImage(category)}
                 className={`min-h-[44px] w-36 shrink-0 snap-start cursor-pointer rounded-md border px-3 py-2.5 text-center text-sm font-medium leading-snug transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a1a1a] focus-visible:ring-offset-2 motion-reduce:transition-none sm:w-auto sm:min-w-0 sm:px-4 sm:text-base ${
                   activeCategory === category
                     ? "border-[#DADD39] bg-[#DADD39] text-[#1a1a1a]"
@@ -85,7 +116,7 @@ export default function ComicCoverDesign() {
               src={categoryImages[activeCategory]}
               alt={`${activeCategory} Comic Book Cover Design Example`}
               fill
-              sizes="(min-width: 1280px) 544px, (min-width: 1248px) 552px, (min-width: 1024px) calc(50vw - 72px), (min-width: 720px) 672px, (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)"
+              sizes={categoryImageSizes}
               className="object-contain"
               priority={activeCategory === "Superhero"}
             />

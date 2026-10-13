@@ -55,7 +55,7 @@ const cards = [
 
 export default function ComicPublishing() {
   return (
-    <section className="min-h-screen w-full min-w-0 bg-white px-4 pb-12 font-sans sm:px-6 sm:pb-16 md:px-8 lg:px-12 lg:pb-20 xl:px-16 xl:pb-24">
+    <section className="w-full min-w-0 bg-white px-4 pb-12 font-sans sm:px-6 sm:pb-16 md:px-8 lg:px-12 lg:pb-20 xl:px-16 xl:pb-24">
       <div className="mx-auto w-full max-w-6xl [overflow-wrap:anywhere]">
         {/* Responsive heading with a wrapping underline */}
         <header className="mb-8 text-center">

@@ -99,7 +99,7 @@ export default function PublishComicPage() {
   const currentStep = stepsData[activeTab];
 
   return (
-    <div className="min-h-screen w-full min-w-0 bg-[#f0ede3] px-4 py-10 font-sans sm:px-6 sm:py-12 md:px-8 lg:px-14 lg:py-16 xl:py-20">
+    <div className="w-full min-w-0 bg-[#f0ede3] px-4 py-10 font-sans sm:px-6 sm:py-12 md:px-8 lg:px-14 lg:py-16 xl:py-20">
       <div className="mx-auto w-full max-w-6xl [overflow-wrap:anywhere]">
         {/* Header */}
         <header className="mb-8 text-center sm:mb-10 lg:mb-12">
