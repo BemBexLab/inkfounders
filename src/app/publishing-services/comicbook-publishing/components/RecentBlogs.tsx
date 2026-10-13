@@ -136,7 +136,7 @@ export default async function RecentBlogs() {
 
             {/* Description */}
             <p
-              className={`${robotoMono.className} mx-auto mt-4 max-w-3xl
+              className={`${robotoMono.className} mx-auto mt-4 max-w-7xl
                 text-sm leading-6
                 text-[#626158]
                 sm:mt-5
