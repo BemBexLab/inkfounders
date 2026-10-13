@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { robotoMono } from "@/app/fonts";
 
@@ -32,7 +32,7 @@ const stepsData: Record<Tab, StepData> = {
       "Start with your concept, characters, story structure, script, artwork plans, target audience, and publishing goals.",
       "A strong foundation makes the later stages of comic production easier to manage.",
     ],
-    imageUrl: "/comic-book/image 28.webp",
+    imageUrl: "/optimized/comic-publishing-stages/stage-1.webp",
   },
   Script: {
     stepNumber: 2,
@@ -41,7 +41,7 @@ const stepsData: Record<Tab, StepData> = {
       "Develop the story into a comic script with dialogue, captions, scenes, panel descriptions, and page structure.",
       "If you already have a script, professional editing can help improve clarity, consistency, pacing, and readability.",
     ],
-    imageUrl: "/image 41.webp",
+    imageUrl: "/optimized/comic-publishing-stages/stage-2.webp",
   },
   Artwork: {
     stepNumber: 3,
@@ -49,7 +49,7 @@ const stepsData: Record<Tab, StepData> = {
     description: [
       "Develop the visual elements of the comic, including illustrations, panels, characters, backgrounds, colors, and other artwork.",
     ],
-    imageUrl: "/image 42.webp",
+    imageUrl: "/optimized/comic-publishing-stages/stage-3.webp",
   },
   Editing: {
     stepNumber: 4,
@@ -57,7 +57,7 @@ const stepsData: Record<Tab, StepData> = {
     description: [
       "Review the written content and make sure the story, dialogue, captions, character names, and visual storytelling work together.",
     ],
-    imageUrl: "/image 43.webp",
+    imageUrl: "/optimized/comic-publishing-stages/stage-4.webp",
   },
   Formatting: {
     stepNumber: 5,
@@ -66,7 +66,7 @@ const stepsData: Record<Tab, StepData> = {
       "Prepare the interior pages and cover according to the requirements of the selected publishing format.",
       "This can include panel placement, lettering, typography, margins, bleed, page dimensions, and print specifications.",
     ],
-    imageUrl: "/image 44.webp",
+    imageUrl: "/optimized/comic-publishing-stages/stage-5.webp",
   },
   Cover: {
     stepNumber: 6,
@@ -74,7 +74,7 @@ const stepsData: Record<Tab, StepData> = {
     description: [
       "Create the final print-ready and digital files required for your chosen publishing and distribution channels.",
     ],
-    imageUrl: "/image 46.webp",
+    imageUrl: "/optimized/comic-publishing-stages/stage-6.webp",
   },
   Publishing: {
     stepNumber: 7,
@@ -82,7 +82,7 @@ const stepsData: Record<Tab, StepData> = {
     description: [
       "Once the project is professionally prepared, it can move into the publishing and distribution stage.",
     ],
-    imageUrl: "/image 45.webp",
+    imageUrl: "/optimized/comic-publishing-stages/stage-7.webp",
   },
   Readers: {
     stepNumber: 8,
@@ -90,13 +90,23 @@ const stepsData: Record<Tab, StepData> = {
     description: [
       "After publication, marketing can help introduce your comic to potential readers and build awareness around your creator brand.",
     ],
-    imageUrl: "/image 47.webp",
+    imageUrl: "/optimized/comic-publishing-stages/stage-8.webp",
   },
 };
 
 export default function PublishComicPage() {
   const [activeTab, setActiveTab] = useState<Tab>("Idea");
+  const preloadedImages = useRef(new Map<Tab, HTMLImageElement>());
   const currentStep = stepsData[activeTab];
+
+  function preloadTabImage(tab: Tab) {
+    if (preloadedImages.current.has(tab)) return;
+
+    const image = new window.Image();
+    image.decoding = "async";
+    image.src = stepsData[tab].imageUrl;
+    preloadedImages.current.set(tab, image);
+  }
 
   return (
     <div className="w-full min-w-0 bg-[#f0ede3] px-4 py-10 font-sans sm:px-6 sm:py-12 md:px-8 lg:px-14 lg:py-16 xl:py-20">
@@ -123,6 +133,8 @@ export default function PublishComicPage() {
                 key={tab}
                 type="button"
                 aria-pressed={activeTab === tab}
+                onPointerEnter={() => preloadTabImage(tab)}
+                onFocus={() => preloadTabImage(tab)}
                 onClick={() => setActiveTab(tab)}
                 className={`min-h-[44px] w-28 shrink-0 snap-start rounded-md border-2 px-3 py-2.5 text-center text-sm font-semibold leading-snug transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a1a1a] focus-visible:ring-offset-2 motion-reduce:transition-none sm:w-auto sm:min-w-0 sm:px-4 sm:text-base ${
                   activeTab === tab
@@ -165,6 +177,7 @@ export default function PublishComicPage() {
                 sizes="(min-width: 1280px) 544px, (min-width: 1264px) 552px, (min-width: 1024px) calc(50vw - 80px), (min-width: 768px) calc(100vw - 64px), (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)"
                 className="object-cover"
                 priority={activeTab === "Idea"}
+                unoptimized
               />
             </div>
           </div>
