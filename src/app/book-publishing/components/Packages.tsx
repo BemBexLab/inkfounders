@@ -82,12 +82,12 @@ const PricingPackages = () => {
             Pricing & Packages
           </p>
 
-          <h2 className="my-2 text-[28px] font-bold leading-tight tracking-wide text-[#151515] sm:text-[34px] lg:text-[40px]">
+          <h2 className="my-2 text-[28px] font-bold leading-tight tracking-[0.0125em] text-[#151515] sm:text-[34px] lg:text-[40px]">
             Flexible Plans Tailored To Your Needs
           </h2>
 
           <p
-            className={`mx-auto max-w-[880px] text-sm leading-[1.8] tracking-[0.08em] text-[#151515] sm:text-[15px] md:text-base lg:text-[17px] lg:leading-[2] lg:tracking-[0.15em] ${robotoMono.className}`}
+            className={`mx-auto max-w-[880px] text-sm leading-[1.8] tracking-[0.04em] text-[#151515] sm:text-[15px] md:text-base lg:text-[17px] lg:leading-[2] lg:tracking-[0.075em] ${robotoMono.className}`}
           >
             “Pricing may vary depending on the genre, page and word count, and
             your specific needs for publishing, marketing, or ghostwriting. For
@@ -167,7 +167,7 @@ const PricingPackages = () => {
                     }`}
                   >
                     <span className="slide-bg"></span>
-                    <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
+                    <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.04em]">
                       Custom Quote
                     </span>
                   </button>

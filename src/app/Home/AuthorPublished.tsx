@@ -30,19 +30,19 @@ export default function AuthorsPublishedSection() {
         </div>
       </div>
 
-      <div className="mx-auto hidden max-w-7xl items-center justify-center gap-10 px-6 lg:flex">
+      <div className="mx-auto hidden max-w-7xl items-stretch justify-center gap-10 px-6 lg:flex">
         {/* Book Cover */}
-        <div className="flex-shrink-0">
+        <div className="relative w-[330px] flex-shrink-0">
           <Image
             src="/optimized/Home/Allison 3.webp"
             alt="Book Cover"
-            width={330}
-            height={540}
-            className="transition-transform transform hover:scale-105 hover:translate-x-2 hover:translate-y-2 hover:rotate-3"
+            fill
+            sizes="330px"
+            className="object-contain transition-transform hover:scale-105 hover:translate-x-2 hover:translate-y-2 hover:rotate-3"
           />
         </div>
         {/* Content */}
-        <div className="max-w-2xl">
+        <div className="max-w-4xl">
           <h2 className="text-2xl md:text-[27px] leading-[0.9] font-semibold text-black mb-4">
             Your Story, Your Dream, Our Commitment
           </h2>

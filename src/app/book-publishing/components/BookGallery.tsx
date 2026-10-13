@@ -181,7 +181,7 @@ const BookGallery = () => {
                   className="object-cover shadow-md transition duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 flex items-end justify-center rounded-[18px] bg-white/10 px-5 pb-6 opacity-0 backdrop-blur-md transition duration-300 group-hover:opacity-100">
-                  <span className="rounded-full border border-white/50 bg-white/20 px-5 py-2 text-sm font-semibold tracking-[0.18em] text-white shadow-[0_8px_30px_rgba(0,0,0,0.18)]">
+                  <span className="rounded-full border border-white/50 bg-white/20 px-5 py-2 text-sm font-semibold tracking-[0.09em] text-white shadow-[0_8px_30px_rgba(0,0,0,0.18)]">
                     VIEW BOOK
                   </span>
                 </div>

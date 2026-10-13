@@ -30,7 +30,7 @@ export default function ManuscriptToComicSection() {
           <div className="flex-1 space-y-4">
 
             {/* Project Label */}
-            <p className="text-[#DADD39] text-md font-medium tracking-wider uppercase">
+            <p className="text-[#DADD39] text-md font-medium tracking-[0.025em] uppercase">
               Project 01
             </p>
 

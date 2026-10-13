@@ -123,7 +123,7 @@ export default function CTABanner2() {
             We don’t talk, We drive results.
           </p>
 
-          <h2 className="plus-jakarta max-w-full text-[clamp(1.625rem,3.2vw,2.8rem)] font-medium uppercase leading-[1.15] tracking-normal text-white">
+          <h2 className="plus-jakarta max-w-full text-[clamp(1.625rem,3.2vw,2.8rem)] font-medium uppercase leading-[1.15] tracking-[-0.005em] text-white">
             <span className="block">Secrets of Publishing</span>
             <span className="relative inline-block max-w-full">
               Success in 2026
@@ -165,7 +165,7 @@ export default function CTABanner2() {
               className="poppins relative flex min-h-12 min-w-0 items-center justify-center rounded-[8px] border border-[#DADD39] bg-gradient-to-r from-[#C8D400] to-[#F7FF77] px-4 py-3 text-sm text-black transition-colors duration-300 hover:border-black focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d9e500]"
             >
               <span className="slide-bg"></span>
-              <span className="relative z-10 flex items-center gap-2 whitespace-nowrap font-semibold tracking-[0.02em]">
+              <span className="relative z-10 flex items-center gap-2 whitespace-nowrap font-semibold tracking-[0.01em]">
                 Request a Quote <FaArrowRight className="shrink-0 -rotate-45" size={20} />
               </span>
             </Link>
@@ -176,7 +176,7 @@ export default function CTABanner2() {
             >
               <span className="slide-bg"></span>
               <MdLocalPhone className="relative z-10 shrink-0 text-xl" />
-              <span className="relative z-10 whitespace-nowrap font-semibold tracking-[0.02em]">
+              <span className="relative z-10 whitespace-nowrap font-semibold tracking-[0.01em]">
                 +1 (404) 390-5698
               </span>
             </Link>

@@ -59,7 +59,7 @@ const OurPromise = () => {
   return (
     <AOSProvider>
       <section className="flex w-full items-center justify-center overflow-hidden bg-[#F6F5F3] px-4 py-8 sm:px-6 sm:py-10 md:px-8 lg:px-10 lg:py-12 xl:px-12">
-        <div className="flex w-full max-w-[1300px] min-w-0 flex-col items-center">
+        <div className="flex w-full max-w-7xl min-w-0 flex-col items-center">
           {/* Headings */}
           <p className="mb-2 text-center text-sm font-semibold text-black sm:text-base md:text-lg lg:text-xl">
             We're committed to you
@@ -74,14 +74,14 @@ const OurPromise = () => {
             role="list"
             aria-label="Our promises to authors"
             tabIndex={0}
-            className="grid w-full min-w-0 grid-cols-1 items-stretch gap-6 px-1 sm:grid-cols-2 sm:gap-5 sm:px-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-12 lg:px-0 xl:gap-x-12"
+            className="mx-auto grid w-full max-w-6xl min-w-0 grid-cols-1 items-stretch justify-center gap-6 px-1 sm:grid-cols-2 sm:gap-5 sm:px-2 lg:grid-cols-3 lg:gap-x-4 lg:gap-y-12 lg:px-0"
           >
             {promiseItems.map((item) => (
               <article
                 key={item.id}
                 role="listitem"
                 data-aos="fade-down-right"
-                className="flex w-full max-w-[25rem] flex-col items-start justify-self-center px-1 text-left sm:px-3 lg:max-w-none lg:px-2 xl:px-4"
+                className="flex w-full max-w-4xl flex-col items-start justify-self-center px-1 text-left sm:px-3 lg:px-2 xl:px-4"
               >
                 <Image
                   src={item.image}

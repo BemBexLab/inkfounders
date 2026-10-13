@@ -106,7 +106,7 @@ export default function BookPublishingSection() {
               className="btn-slide-bg flex h-11 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-5 text-sm font-medium text-black transition-all duration-300 hover:border-black sm:h-12 sm:px-6 sm:text-[15px] lg:h-[44px] lg:min-w-[156px] lg:px-6 lg:text-[13px] xl:h-[48px] xl:min-w-[176px] xl:text-sm"
             >
               <span className="slide-bg"></span>
-              <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
+              <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.04em]">
                 Request a Quote
               </span>
             </QuoteTrigger>
@@ -117,7 +117,7 @@ export default function BookPublishingSection() {
             >
               <span className="slide-bg"></span>
               <MdLocalPhone className="relative z-10 text-xl sm:text-[23px] lg:text-[18px] xl:text-xl" />
-              <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
+              <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.04em]">
                 (786) 652-6864
               </span>
             </Link>

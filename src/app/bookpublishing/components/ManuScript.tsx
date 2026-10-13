@@ -66,7 +66,7 @@ const ManuScript = () => {
         variants={containerVariants}
       >
         <motion.p
-          className="mb-3 text-center font-semibold tracking-[0.18em] text-black"
+          className="mb-3 text-center font-semibold tracking-[0.09em] text-black"
           variants={fadeUpVariants}
         >
           SIMPLE PROCESS

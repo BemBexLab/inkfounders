@@ -169,7 +169,7 @@ export default function QuotePopup() {
     <>
       <p
         id="quote-popup-title"
-        className="mb-7 pr-8 text-center font-mono text-[18px] leading-[1.45] tracking-[0.05em] text-[#9a9a9a]"
+        className="mb-7 pr-8 text-center font-mono text-[18px] leading-[1.45] tracking-[0.025em] text-[#9a9a9a]"
       >
         Fill out this brief form to get your
         <br />

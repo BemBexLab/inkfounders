@@ -74,11 +74,11 @@ const NarrationOptions = ({ data }: NarrationOptionsProps) => {
       <div className="hidden bg-[#f5f5f5] px-5 pb-16 pt-10 lg:block">
         <div className="mx-auto max-w-7xl text-center">
           {/* Header */}
-          <h1 className="mb-4 text-[32px] font-semibold leading-tight text-[#333333] xl:text-[38px]">
+          <h2 className="mb-4 text-[32px] font-semibold leading-tight text-[#333333] xl:text-[38px]">
             {narrationData.header}
-          </h1>
+          </h2>
           <p
-            className={`${robotoMono.className} mx-auto mb-10 max-w-5xl text-[14px] leading-7 text-[#666666]`}
+            className={`${robotoMono.className} mx-auto mb-10 max-w-7xl text-[14px] leading-7 text-[#666666]`}
           >
             {narrationData.intro}
           </p>

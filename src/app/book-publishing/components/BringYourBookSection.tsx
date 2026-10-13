@@ -21,7 +21,7 @@ export default function BringYourBookSection() {
           Bring Your Book Idea To Life
         </h2>
 
-        <p className="w-full max-w-[920px] text-sm leading-[1.8] tracking-[0.05em] text-white/80 sm:text-base md:text-lg lg:leading-[1.9] lg:tracking-[0.07em] [font-family:'DM_Mono',monospace]">
+        <p className="w-full max-w-[920px] text-sm leading-[1.8] tracking-[0.025em] text-white/80 sm:text-base md:text-lg lg:leading-[1.9] lg:tracking-[0.035em] [font-family:'DM_Mono',monospace]">
           Every great book starts with an idea - let us help you turn yours into
           a polished, published work. Our book publishing services guide you
           through every step, from manuscript editing and professional
@@ -33,7 +33,7 @@ export default function BringYourBookSection() {
             className="btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[45px] lg:min-w-[182px] lg:px-6 lg:text-[15px]"
           >
             <span className="slide-bg"></span>
-            <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
+            <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.04em]">
               Request a Quote
             </span>
           </QuoteTrigger>
@@ -44,7 +44,7 @@ export default function BringYourBookSection() {
           >
             <span className="slide-bg"></span>
             <MdLocalPhone className="relative z-10 text-xl sm:text-[23px] lg:text-[19px]" />
-            <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
+            <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.04em]">
               (786) 652-6864
             </span>
           </Link>

@@ -22,12 +22,12 @@ const LandingFooter = () => {
           </div>
 
           <div className="relative order-1 z-30 px-5 pb-10 pt-14 text-center sm:px-8 sm:pb-12 sm:pt-16 md:pb-14 md:pt-20 lg:col-start-2 lg:row-start-1 lg:order-2 lg:flex lg:min-h-[648px] lg:flex-col lg:items-start lg:justify-start lg:px-0 lg:pb-0 lg:pl-[10px] lg:pr-[28px] lg:pt-[133px] lg:text-left xl:pr-[36px]">
-            <h2 className="mx-auto max-w-[660px] text-[32px] font-semibold leading-[1.28] tracking-[0.02em] text-[#191919] sm:text-[42px] md:text-[50px] lg:mx-0 lg:max-w-[775px] lg:text-[31px] lg:leading-[1.25] xl:text-[46px]">
+            <h2 className="mx-auto max-w-[660px] text-[32px] font-semibold leading-[1.28] tracking-[0.01em] text-[#191919] sm:text-[42px] md:text-[50px] lg:mx-0 lg:max-w-[775px] lg:text-[31px] lg:leading-[1.25] xl:text-[46px]">
               Partner With Us Now For 100% Guaranteed Book Publishing!
             </h2>
 
             <p
-              className={`mx-auto mt-[18px] max-w-[620px] text-[15px] leading-[1.85] tracking-[0.08em] text-[#191919] sm:text-[17px] md:max-w-[720px] md:text-[18px] lg:mx-0 lg:mt-[15px] lg:max-w-[750px] lg:text-[20px] lg:leading-[1.8] ${robotoMono.className}`}
+              className={`mx-auto mt-[18px] max-w-[620px] text-[15px] leading-[1.85] tracking-[0.04em] text-[#191919] sm:text-[17px] md:max-w-[720px] md:text-[18px] lg:mx-0 lg:mt-[15px] lg:max-w-[750px] lg:text-[20px] lg:leading-[1.8] ${robotoMono.className}`}
             >
               Lorem ipsum dolor sit amet consectetur. Vel lectus quis at urna
               ornare diam. Volutpat id at sit mi. Sapien proin turpis nunc
@@ -39,7 +39,7 @@ const LandingFooter = () => {
                 className="btn-slide-bg flex h-[48px] min-w-[190px] items-center justify-center rounded-[8px] border border-black bg-black px-5 text-[15px] font-medium text-white transition-all duration-300 hover:border-black hover:text-black sm:h-[52px] sm:min-w-[202px] sm:text-base lg:h-13 lg:text-md"
               >
                 <span className="slide-bg" />
-                <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
+                <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.04em]">
                   Request a Quote
                 </span>
               </QuoteTrigger>
@@ -50,7 +50,7 @@ const LandingFooter = () => {
 
       <div className="bg-[#202020] px-5 py-[22px] text-[#f0efdf] sm:px-8 md:py-[18px]">
         <div className="mx-auto flex max-w-[1124px] flex-col items-center gap-5 text-center md:grid md:grid-cols-3 md:text-left">
-          <p className={`text-sm tracking-[0.04em] sm:text-base md:text-sm ${robotoMono.className}`}>
+          <p className={`text-sm tracking-[0.02em] sm:text-base md:text-sm ${robotoMono.className}`}>
             @2026 Copyrights - Ink Founders
           </p>
 
@@ -72,7 +72,7 @@ const LandingFooter = () => {
           </div>
 
           <div
-            className={`flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm tracking-[0.04em] sm:text-base md:justify-end md:text-sm ${robotoMono.className}`}
+            className={`flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm tracking-[0.02em] sm:text-base md:justify-end md:text-sm ${robotoMono.className}`}
           >
             <Link href="/terms" className="transition hover:text-[#DADD39]">
               Terms & Conditions

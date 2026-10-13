@@ -164,7 +164,7 @@ const styles = `
     font-weight: 600;
     color: #4a4a30;
     display: block;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
     font-size: 12.5px;
     font-family: 'DM Mono', monospace;
@@ -368,7 +368,7 @@ export default function DiscountForm() {
             className="btn-slide-bg btn-submit flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[45px] lg:min-w-[182px] lg:px-6 lg:text-[15px]"
           >
             <span className="slide-bg"></span>
-            <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
+            <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.04em]">
               {loading ? "Sending..." : "Let’s Get Started"}
             </span>
           </button>

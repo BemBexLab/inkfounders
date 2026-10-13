@@ -198,7 +198,7 @@ function formatWpContent(html: string) {
   formatted = withClasses(
     formatted,
     "th",
-    "px-6 py-5 text-[12px] font-bold uppercase leading-5 tracking-[0.12em] text-neutral-950 first:w-[20%] sm:px-7 sm:py-6 sm:text-[13px]",
+    "px-6 py-5 text-[12px] font-bold uppercase leading-5 tracking-[0.06em] text-neutral-950 first:w-[20%] sm:px-7 sm:py-6 sm:text-[13px]",
   );
   formatted = withClasses(
     formatted,
@@ -298,7 +298,7 @@ export default async function BlogSlugPage({ params }: PageProps) {
         <section className="border-b border-black/[0.06]">
           <div className="mx-auto max-w-[1440px] px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
             <div className="mx-auto max-w-6xl text-center">
-              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-700 shadow-sm sm:text-xs">
+              <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.09em] text-neutral-700 shadow-sm sm:text-xs">
                 <span className="h-2 w-2 rounded-full bg-[#D4D939]" />
                 Inkfounders Journal
               </div>
@@ -354,7 +354,7 @@ export default async function BlogSlugPage({ params }: PageProps) {
               <div className="mx-auto max-w-[820px]">
                 <div className="mb-10 flex items-center gap-4">
                   <span className="h-px flex-1 bg-neutral-200" />
-                  <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-400">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.1em] text-neutral-400">
                     Article
                   </span>
                   <span className="h-px flex-1 bg-neutral-200" />
@@ -367,7 +367,7 @@ export default async function BlogSlugPage({ params }: PageProps) {
                 <div className="mt-14 border-t border-neutral-200 pt-8 sm:mt-16">
                   <div className="rounded-2xl bg-[#F4F4EA] p-6 sm:flex sm:items-center sm:justify-between sm:gap-8 sm:p-8">
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-[0.18em] text-neutral-500">
+                      <p className="text-xs font-bold uppercase tracking-[0.09em] text-neutral-500">
                         Need help with your book?
                       </p>
                       <h2 className="mt-2 text-2xl font-bold tracking-[-0.025em] text-neutral-950">
@@ -395,7 +395,7 @@ export default async function BlogSlugPage({ params }: PageProps) {
                     <ArrowUpRight className="h-5 w-5" />
                   </div>
 
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/50">
+                  <p className="text-xs font-bold uppercase tracking-[0.09em] text-white/50">
                     Publishing Support
                   </p>
                   <h2 className="mt-3 text-3xl font-bold leading-tight tracking-[-0.035em]">
@@ -417,7 +417,7 @@ export default async function BlogSlugPage({ params }: PageProps) {
 
                 <div className="rounded-[24px] border border-neutral-200 bg-white p-6 sm:p-7">
                   <div className="mb-6">
-                    <p className="text-xs font-bold uppercase tracking-[0.18em] text-neutral-400">
+                    <p className="text-xs font-bold uppercase tracking-[0.09em] text-neutral-400">
                       Contact
                     </p>
                     <h3 className="mt-2 text-xl font-bold tracking-[-0.02em] text-neutral-950">

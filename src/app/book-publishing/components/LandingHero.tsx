@@ -86,7 +86,7 @@ export default function HeroSection() {
                 className="btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm xl:h-[45px] xl:min-w-[182px] xl:px-6 xl:text-[15px]"
               >
                 <span className="slide-bg"></span>
-                <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
+                <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.04em]">
                   Request a Quote
                 </span>
               </QuoteTrigger>
@@ -96,7 +96,7 @@ export default function HeroSection() {
                 className="btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm xl:h-[45px] xl:min-w-[182px] xl:px-6 xl:text-[15px]"
               >
                 <span className="slide-bg"></span>
-                <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
+                <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.04em]">
                   Get Free Consultation
                 </span>
               </Link>

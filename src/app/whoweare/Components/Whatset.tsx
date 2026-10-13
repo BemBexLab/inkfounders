@@ -11,7 +11,7 @@ const WhatSet = () => {
           <h2 className="mb-3 text-center text-2xl font-semibold md:text-[2rem]">
             <span className="text-black">What Sets Us Apart</span>
           </h2>
-          <div className="mx-auto mb-10 max-w-6xl">
+          <div className="mx-auto mb-10 max-w-7xl">
             <p
               className={`text-center text-[13px] text-[#444444] sm:text-[14px] md:text-[15px] ${robotoMono.className}`}
             >

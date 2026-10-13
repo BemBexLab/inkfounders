@@ -61,7 +61,7 @@ export default function CaseStudyComic() {
           {/* Project details */}
           <div className="w-full min-w-0 space-y-6 sm:space-y-8 xl:space-y-10">
             <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-lime-700 sm:mb-3 sm:text-sm">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.05em] text-lime-700 sm:mb-3 sm:text-sm">
                 Project 01
               </p>
 

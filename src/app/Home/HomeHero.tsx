@@ -441,7 +441,7 @@ const HomeHero = () => {
                   <span className="text-[16px] font-semibold text-[#1f1f1f] sm:text-[18px]">
                     Rated 9 out of 10
                   </span>
-                  <span className="whitespace-nowrap text-[18px] tracking-[0.2em] text-[#DADD39] sm:text-[20px]">
+                  <span className="whitespace-nowrap text-[18px] tracking-[0.1em] text-[#DADD39] sm:text-[20px]">
                     ★★★★★
                   </span>
                   <span className="text-[15px] text-[#3d3a2c] sm:text-[17px]">
@@ -521,7 +521,7 @@ const HomeHero = () => {
         >
           <div className="mb-6 flex items-start justify-between gap-4">
             <div>
-              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.22em] text-[#8a7a2e]">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.11em] text-[#8a7a2e]">
                 Free Consultation
               </p>
               <h2 className="text-2xl font-semibold text-black sm:text-3xl">

@@ -11,13 +11,13 @@ const WhoWeHero = () => {
     <div className="flex flex-col items-center justify-center w-full">
       {/* Text Content */}
       <div className="flex w-full flex-col items-center justify-center px-0 lg:px-[60px]">
-        <h1 className="mb-3 max-w-4xl text-center text-[27px] font-semibold leading-tight text-black sm:text-[32px] md:text-[35px] xl:text-[48px]">
+        <h1 className="mb-3 max-w-7xl text-center text-[27px] font-semibold leading-tight text-black sm:text-[32px] md:text-[35px] xl:text-[48px]">
           <span>
             Begin Your Literary Journey With Ink Founders
           </span>
           
         </h1>
-        <p className={`mx-auto max-w-5xl text-center text-[12px] text-gray-700 sm:text-[13px] md:text-[15px] ${robotoMono.className}`}>
+        <p className={`mx-auto max-w-7xl text-center text-[12px] text-gray-700 sm:text-[13px] md:text-[15px] ${robotoMono.className}`}>
          Dreaming of a bestseller but not quite happy with your manuscript yet? At Ink Founders, we specialize in turning potential into something polished and publication-ready. Our team is here to refine your work and get it in front of readers.
         </p>
       </div>

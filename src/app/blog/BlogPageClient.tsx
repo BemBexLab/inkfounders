@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Calendar, ChevronRight, Clock, Search, Tag } from "lucide-react";
@@ -64,6 +64,12 @@ export default function BlogPageClient({
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterSubmitting, setNewsletterSubmitting] = useState(false);
+  const [newsletterMessage, setNewsletterMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
   const postsPerPage = 3;
 
   const allPosts = useMemo(
@@ -132,6 +138,41 @@ export default function BlogPageClient({
   function handleSearchChange(value: string) {
     setSearchTerm(value);
     setCurrentPage(1);
+  }
+
+  async function handleNewsletterSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setNewsletterSubmitting(true);
+    setNewsletterMessage(null);
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: newsletterEmail }),
+      });
+      const result = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(result.error || "Unable to subscribe right now.");
+      }
+
+      setNewsletterEmail("");
+      setNewsletterMessage({
+        type: "success",
+        text: "Thanks for subscribing to our newsletter.",
+      });
+    } catch (error) {
+      setNewsletterMessage({
+        type: "error",
+        text:
+          error instanceof Error
+            ? error.message
+            : "Unable to subscribe right now. Please try again.",
+      });
+    } finally {
+      setNewsletterSubmitting(false);
+    }
   }
 
   return (
@@ -280,14 +321,39 @@ export default function BlogPageClient({
                 Get the latest publishing tips and industry insights delivered to
                 your inbox.
               </p>
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="mb-3 w-full rounded-lg border-2 border-transparent bg-white px-4 py-3 text-black placeholder-gray-500 focus:border-black focus:outline-none"
-              />
-              <button className="w-full rounded-lg bg-black py-3 font-semibold text-white transition-colors hover:bg-gray-800">
-                Subscribe Now
-              </button>
+              <form onSubmit={handleNewsletterSubmit}>
+                <input
+                  type="email"
+                  name="email"
+                  autoComplete="email"
+                  required
+                  maxLength={254}
+                  value={newsletterEmail}
+                  onChange={(event) => setNewsletterEmail(event.target.value)}
+                  placeholder="Your email address"
+                  aria-label="Your email address"
+                  className="mb-3 w-full rounded-lg border-2 border-transparent bg-white px-4 py-3 text-black placeholder-gray-500 focus:border-black focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  disabled={newsletterSubmitting}
+                  className="w-full rounded-lg bg-black py-3 font-semibold text-white transition-colors hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                  {newsletterSubmitting ? "Subscribing..." : "Subscribe Now"}
+                </button>
+              </form>
+              {newsletterMessage && (
+                <p
+                  role={newsletterMessage.type === "error" ? "alert" : "status"}
+                  className={`mt-3 text-sm ${
+                    newsletterMessage.type === "error"
+                      ? "text-red-900"
+                      : "text-black"
+                  }`}
+                >
+                  {newsletterMessage.text}
+                </p>
+              )}
             </div>
 
             <div className="rounded-xl border border-gray-200 bg-white p-6">

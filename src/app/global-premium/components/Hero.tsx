@@ -168,7 +168,7 @@ function Field({
       whileHover={{ y: -2 }}
       transition={{ duration: 0.18 }}
     >
-      <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-[#777777] lg:mb-[6px] lg:text-sm">
+      <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.08em] text-[#777777] lg:mb-[6px] lg:text-sm">
         {label}
       </span>
       <input
@@ -223,7 +223,7 @@ function SelectField({
         }
       }}
     >
-      <span className="mb-2 block text-xs font-black font-semibold uppercase tracking-[0.16em] text-[#777777] lg:mb-[6px] lg:text-sm">
+      <span className="mb-2 block text-xs font-black font-semibold uppercase tracking-[0.08em] text-[#777777] lg:mb-[6px] lg:text-sm">
         {label}
       </span>
       <input
@@ -434,7 +434,7 @@ function ApplicationForm({
         <motion.button
           type="submit"
           disabled={submitStatus === "submitting"}
-          className="mt-[3px] flex h-12 items-center justify-center gap-2 rounded-[9px] bg-gradient-to-r from-[#c8d400] to-[#eff66a] text-[11px] font-semibold uppercase tracking-[0.08em] text-black shadow-[0_8px_18px_rgba(190,204,0,0.18)] transition hover:brightness-[0.98] disabled:cursor-not-allowed disabled:opacity-70 md:col-span-2 lg:h-[54px] lg:text-[15px] lg:tracking-[0.1em] poppins"
+          className="mt-[3px] flex h-12 items-center justify-center gap-2 rounded-[9px] bg-gradient-to-r from-[#c8d400] to-[#eff66a] text-[11px] font-semibold uppercase tracking-[0.04em] text-black shadow-[0_8px_18px_rgba(190,204,0,0.18)] transition hover:brightness-[0.98] disabled:cursor-not-allowed disabled:opacity-70 md:col-span-2 lg:h-[54px] lg:text-[15px] lg:tracking-[0.05em] poppins"
           variants={riseVariants}
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.98 }}
@@ -568,7 +568,7 @@ const Hero = () => {
           variants={containerVariants}
         >
           <motion.div
-            className="mulish mx-auto mb-3 inline-flex min-h-[42px] max-w-[317px] items-center justify-center rounded-[9px] bg-[#eef1d2] px-3 py-2 text-lg font-semibold leading-tight tracking-normal text-[#282828] sm:px-5 lg:mx-0 lg:px-7 lg:py-0"
+            className="mulish mx-auto mb-3 inline-flex min-h-[42px] max-w-[317px] items-center justify-center rounded-[9px] bg-[#eef1d2] px-3 py-2 text-lg font-semibold leading-tight tracking-[-0.005em] text-[#282828] sm:px-5 lg:mx-0 lg:px-7 lg:py-0"
             variants={riseVariants}
             whileHover={{ y: -2, scale: 1.02 }}
           >

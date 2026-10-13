@@ -23,12 +23,12 @@ const LandingFooter = () => {
 
           <div className="relative order-1 z-30 px-5 pb-10 pt-14 text-center sm:px-8 sm:pb-12 sm:pt-16 md:pb-14 md:pt-20 lg:col-start-2 lg:row-start-1 lg:order-2 lg:flex lg:min-h-[648px] lg:flex-col lg:items-start lg:justify-start lg:px-0 lg:pb-0 lg:pl-[10px] lg:pr-[28px] lg:pt-[133px] lg:text-left xl:pr-[36px]">
             {/* <p
-              className={`mx-auto mt-[18px] max-w-[620px] text-[15px] leading-[1.85] tracking-[0.08em] text-[#191919] sm:text-[17px] md:max-w-[720px] font-semibold md:text-[18px] lg:mx-0 lg:mt-[15px] lg:max-w-[750px] lg:text-[20px] lg:leading-[1.8] ${robotoMono.className}`}
+              className={`mx-auto mt-[18px] max-w-[620px] text-[15px] leading-[1.85] tracking-[0.04em] text-[#191919] sm:text-[17px] md:max-w-[720px] font-semibold md:text-[18px] lg:mx-0 lg:mt-[15px] lg:max-w-[750px] lg:text-[20px] lg:leading-[1.8] ${robotoMono.className}`}
             >
               Any Query?
             </p> */}
 
-            <h2 className="mx-auto max-w-[660px] mt-1 text-[32px] font-medium leading-[1.18] tracking-[0.02em] uppercase text-[#191919] sm:text-[42px] md:text-[50px] lg:mx-0 lg:max-w-[775px] lg:text-[31px] xl:text-[46px] plus-jakarta">
+            <h2 className="mx-auto max-w-[660px] mt-1 text-[32px] font-medium leading-[1.18] tracking-[0.01em] uppercase text-[#191919] sm:text-[42px] md:text-[50px] lg:mx-0 lg:max-w-[775px] lg:text-[31px] xl:text-[46px] plus-jakarta">
               Take the First Real Step Toward Seeing Your Book Published and In Readers’ Hands
             </h2>
 
@@ -43,7 +43,7 @@ const LandingFooter = () => {
                 className="btn-slide-bg bg-gradient-to-r from-[#1F1F1F] to-[#333333] flex h-[48px] min-w-[190px] items-center justify-center rounded-[8px] border border-black bg-black px-5 text-[15px] font-medium text-white transition-all duration-300 hover:border-black hover:text-black sm:h-[52px] sm:min-w-[202px] sm:text-base lg:h-13 lg:text-md"
               >
                 <span className="slide-bg" />
-                <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
+                <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.04em]">
                   Request a Quote
                 </span>
               </QuoteTrigger>

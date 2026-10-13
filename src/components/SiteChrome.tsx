@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer2";
+import { robotoMono } from "@/app/fonts";
 
 export default function SiteChrome({
   children,
@@ -25,10 +26,10 @@ export default function SiteChrome({
   }
 
   return (
-    <>
+    <div className={`site-copy-scope ${robotoMono.variable}`}>
       <Header />
-      <div className="pt-[4.25rem] xl:pt-20">{children}</div>
+      <div className="site-content-copy pt-[4.25rem] xl:pt-20">{children}</div>
       <Footer />
-    </>
+    </div>
   );
 }

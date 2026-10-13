@@ -330,14 +330,14 @@ const PublishingSteps = () => {
         </motion.p>
 
         <motion.h2
-          className="my-3 text-[34px] font-extrabold leading-none tracking-[0.02em] text-[#dbe527] sm:text-[42px] lg:text-5xl lg:tracking-[0.04em]"
+          className="my-3 text-[34px] font-extrabold leading-none tracking-[0.01em] text-[#dbe527] sm:text-[42px] lg:text-5xl lg:tracking-[0.02em]"
           variants={introItem}
         >
           5 Steps Away From Getting Published
         </motion.h2>
 
         <motion.div
-          className={`mx-auto max-w-[900px] text-sm font-medium leading-[1.6] tracking-[0.03em] text-black sm:text-base lg:text-lg lg:leading-[1.2] lg:tracking-[0.035em] ${robotoMono.className}`}
+          className={`mx-auto max-w-[900px] text-sm font-medium leading-[1.6] tracking-[0.015em] text-black sm:text-base lg:text-lg lg:leading-[1.2] lg:tracking-[0.0175em] ${robotoMono.className}`}
           variants={introItem}
         >
           Our Experts Provide Writers With A Hassle-Free Solution By Employing
@@ -410,7 +410,7 @@ const PublishingSteps = () => {
             <h3 className="mt-3 text-xl font-semibold leading-tight text-black">
               {step.title}
             </h3>
-            <div className="mt-3 text-sm font-normal leading-[1.65] tracking-[0.03em] text-black">
+            <div className="mt-3 text-sm font-normal leading-[1.65] tracking-[0.015em] text-black">
               {step.text}
             </div>
           </motion.div>
@@ -513,7 +513,7 @@ const PublishingSteps = () => {
                   {step.title}
                 </h3>
 
-                <div className="mt-[13px] max-w-[370px] font-mono text-sm font-normal leading-[1.45] tracking-[0.06em] text-black">
+                <div className="mt-[13px] max-w-[370px] font-mono text-sm font-normal leading-[1.45] tracking-[0.03em] text-black">
                   {step.text}
                 </div>
               </motion.div>

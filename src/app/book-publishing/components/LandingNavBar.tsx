@@ -27,7 +27,7 @@ const LandingNavBar = () => {
         >
           <span className="slide-bg"></span>
           <MdLocalPhone className="relative z-10 text-xl sm:text-[23px] lg:text-[19px]" />
-          <span className="relative z-10 hidden whitespace-nowrap tracking-[0.08em] md:inline">
+          <span className="relative z-10 hidden whitespace-nowrap tracking-[0.04em] md:inline">
             (786) 652-6864
           </span>
         </Link>
@@ -36,7 +36,7 @@ const LandingNavBar = () => {
           className="btn-slide-bg flex h-10 min-w-0 max-w-[86px] items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:max-w-none sm:px-4 sm:text-sm lg:h-[51px] lg:min-w-[182px] lg:px-6 lg:text-[15px]"
         >
           <span className="slide-bg"></span>
-          <span className="relative z-10 truncate font-normal tracking-[0.04em] sm:tracking-[0.08em]">
+          <span className="relative z-10 truncate font-normal tracking-[0.02em] sm:tracking-[0.04em]">
             Request a Quote
           </span>
         </QuoteTrigger>

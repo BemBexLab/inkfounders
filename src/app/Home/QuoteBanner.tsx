@@ -9,12 +9,11 @@ export default function QuoteBanner() {
         <p className="mb-2 text-center text-md font-semibold leading-snug text-[#DADD39] sm:text-[17px] md:text-xl">
           Let Your Words Inspire the World
         </p>
-        <h2 className="mb-3 max-w-[22rem] text-center text-[21px] font-semibold leading-[1] text-[#222] sm:max-w-[34rem] sm:text-[24px] md:max-w-[44rem] md:text-[28px] lg:mb-3 lg:max-w-none lg:text-[30px] lg:leading-[1]">
-          Let Ink Founders take the hassle out of publishing
-          <br className="hidden lg:block" /> by simplifying the process for you.
+        <h2 className="mb-3 max-w-7xl text-center text-[21px] font-semibold leading-[1] text-[#222] sm:text-[24px] md:text-[28px] lg:mb-3 lg:text-[30px] lg:leading-[1]">
+          Let Ink Founders take the hassle out of publishing by simplifying the process for you.
         </h2>
         <p
-          className={`mx-auto mb-5 max-w-[28rem] text-center text-[12px] leading-[1.35] text-gray-700 sm:text-[13px] md:max-w-[42rem] md:text-[15px] lg:mb-4 ${robotoMono.className}`}
+          className={`mx-auto mb-5 max-w-7xl text-center text-[12px] leading-[1.35] text-gray-700 sm:text-[13px] md:text-[15px] lg:mb-4 ${robotoMono.className}`}
         >
           Let Ink Founders take the hassle out of publishing by simplifying the process for you. Partner with us, focus on your story, and let our team handle the rest.
         </p>

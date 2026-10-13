@@ -182,7 +182,7 @@ function ProposalForm({ onSuccess }: { onSuccess: () => void }) {
     <form onSubmit={handleSubmit} className="mx-auto w-full max-w-[400px]">
       <div className="space-y-3 sm:space-y-4 lg:space-y-3">
         <label className="block">
-          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-[0.14em] text-[#66685e] sm:mb-2">
+          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-[0.07em] text-[#66685e] sm:mb-2">
             Full name <span className="text-[#d95270]">*</span>
           </span>
           <input
@@ -195,7 +195,7 @@ function ProposalForm({ onSuccess }: { onSuccess: () => void }) {
         </label>
 
         <label className="block">
-          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-[0.14em] text-[#66685e] sm:mb-2">
+          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-[0.07em] text-[#66685e] sm:mb-2">
             Email address <span className="text-[#d95270]">*</span>
           </span>
           <input
@@ -208,7 +208,7 @@ function ProposalForm({ onSuccess }: { onSuccess: () => void }) {
         </label>
 
         <div className="block">
-          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-[0.14em] text-[#66685e] sm:mb-2">
+          <span className="mb-1.5 block text-[11px] font-bold uppercase tracking-[0.07em] text-[#66685e] sm:mb-2">
             Phone number
           </span>
           <div className="flex h-12 w-full items-center rounded-[10px] border border-[#e6e7df] bg-white shadow-[0_5px_16px_rgba(27,31,5,0.04)] transition focus-within:border-[#c8d400] focus-within:ring-4 focus-within:ring-[#d9e35a]/20 sm:h-[52px]">
@@ -335,7 +335,7 @@ function ProposalForm({ onSuccess }: { onSuccess: () => void }) {
       <button
         type="submit"
         disabled={submitStatus === "submitting"}
-        className="poppins mt-4 flex h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-gradient-to-r from-[#c8d400] to-[#eff66a] text-[13px] font-semibold uppercase tracking-[0.08em] text-black shadow-[0_10px_22px_rgba(190,204,0,0.22)] transition hover:-translate-y-0.5 hover:brightness-[0.98] disabled:cursor-wait disabled:opacity-70 sm:mt-5 sm:h-[54px] sm:text-[14px]"
+        className="poppins mt-4 flex h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-gradient-to-r from-[#c8d400] to-[#eff66a] text-[13px] font-semibold uppercase tracking-[0.04em] text-black shadow-[0_10px_22px_rgba(190,204,0,0.22)] transition hover:-translate-y-0.5 hover:brightness-[0.98] disabled:cursor-wait disabled:opacity-70 sm:mt-5 sm:h-[54px] sm:text-[14px]"
       >
         {submitStatus === "submitting" ? "Sending..." : "Get a Unique Offer"}
         <GoArrowUpRight className="h-4 w-4 sm:h-5 sm:w-5" />

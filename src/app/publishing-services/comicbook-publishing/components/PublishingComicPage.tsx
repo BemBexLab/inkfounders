@@ -140,7 +140,7 @@ export default function PublishComicPage() {
         <div className="grid grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16">
           {/* Text */}
           <div className="w-full min-w-0">
-            <p className="mb-2 text-sm font-bold uppercase tracking-widest text-[#1a1a1a] sm:text-base lg:text-lg">
+            <p className="mb-2 text-sm font-bold uppercase tracking-[0.05em] text-[#1a1a1a] sm:text-base lg:text-lg">
               Step {currentStep.stepNumber}
             </p>
 

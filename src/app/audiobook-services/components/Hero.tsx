@@ -42,7 +42,7 @@ const Hero = ({ data }: HeroProps) => {
               {heroData.title}
             </h1>
             <p
-              className={`${robotoMono.className} text-gray-700 text-[13px] mb-8 sm:text-sm md:text-[15px] sm:mb-8 leading-relaxed sm:leading-loose text-center max-w-4xl px-2`}
+              className={`${robotoMono.className} text-gray-700 text-[13px] mb-8 sm:text-sm md:text-[15px] sm:mb-8 leading-relaxed sm:leading-loose text-center max-w-7xl px-2`}
             >
               {heroData.description}
             </p>

@@ -108,7 +108,7 @@ export default function InkFoundersComparison() {
         <div className="w-full">
           <motion.div className="text-center" variants={containerVariants}>
             <motion.p
-              className="mb-2 text-xs font-semibold uppercase tracking-[0.25em] text-black sm:text-sm md:text-md"
+              className="mb-2 text-xs font-semibold uppercase tracking-[0.125em] text-black sm:text-sm md:text-md"
               variants={fadeUpVariants}
             >
               Why Ink Founder
@@ -224,7 +224,7 @@ export default function InkFoundersComparison() {
                   <span
                     style={{
                       fontSize: "clamp(0.4rem, 1.1vw, 0.88rem)",
-                      letterSpacing: "0.12em",
+                      letterSpacing: "0.06em",
                       fontWeight: 700,
                       color: "#000000",
                       textTransform: "uppercase",
@@ -241,7 +241,7 @@ export default function InkFoundersComparison() {
                   <span
                     style={{
                       fontSize: "clamp(0.4rem, 1.1vw, 0.88rem)",
-                      letterSpacing: "0.12em",
+                      letterSpacing: "0.06em",
                       fontWeight: 700,
                       color: "#000000",
                       textTransform: "uppercase",

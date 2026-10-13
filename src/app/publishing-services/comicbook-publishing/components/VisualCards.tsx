@@ -80,7 +80,7 @@ export default function VisualCards() {
                   />
                 </div>
 
-                <span className="shrink-0 text-[11px] font-semibold tracking-wider text-[#999]">
+                <span className="shrink-0 text-[11px] font-semibold tracking-[0.025em] text-[#999]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
               </div>

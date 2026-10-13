@@ -113,7 +113,7 @@ function Field({
       whileHover={{ y: -2 }}
       transition={{ duration: 0.18 }}
     >
-      <span className="mb-2 block text-xs font-black font-semibold uppercase tracking-[0.16em] text-black lg:mb-[10px] lg:text-sm">
+      <span className="mb-2 block text-xs font-black font-semibold uppercase tracking-[0.08em] text-black lg:mb-[10px] lg:text-sm">
         {label}
       </span>
       <input
@@ -168,7 +168,7 @@ function SelectField({
         }
       }}
     >
-      <span className="mb-2 block text-xs font-black font-semibold uppercase tracking-[0.16em] text-black lg:mb-[10px] lg:text-sm">
+      <span className="mb-2 block text-xs font-black font-semibold uppercase tracking-[0.08em] text-black lg:mb-[10px] lg:text-sm">
         {label}
       </span>
       <input
@@ -391,7 +391,7 @@ function ApplicationForm({
         <motion.button
           type="submit"
           disabled={submitStatus === "submitting"}
-          className="mt-[4px] flex h-12 items-center justify-center gap-2 rounded-[7px] bg-[#d0df00] text-[11px] font-bold uppercase tracking-[0.08em] text-black transition hover:bg-[#c3d300] disabled:cursor-not-allowed disabled:opacity-70 md:col-span-2 lg:h-[54px] lg:text-[13px] lg:tracking-[0.12em]"
+          className="mt-[4px] flex h-12 items-center justify-center gap-2 rounded-[7px] bg-[#d0df00] text-[11px] font-bold uppercase tracking-[0.04em] text-black transition hover:bg-[#c3d300] disabled:cursor-not-allowed disabled:opacity-70 md:col-span-2 lg:h-[54px] lg:text-[13px] lg:tracking-[0.06em]"
           variants={riseVariants}
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.98 }}
@@ -503,7 +503,7 @@ const LandingHero2 = () => {
           variants={containerVariants}
         >
           <motion.div
-            className="plus-jakarta mx-auto mb-3 inline-flex h-[30px] w-fit max-w-full items-center rounded-[8px] bg-[#C8D40021] px-5 text-[13px] font-semibold leading-none tracking-normal text-[#282828] lg:mx-0 sm:text-sm"
+            className="plus-jakarta mx-auto mb-3 inline-flex h-[30px] w-fit max-w-full items-center rounded-[8px] bg-[#C8D40021] px-5 text-[13px] font-semibold leading-none tracking-[-0.005em] text-[#282828] lg:mx-0 sm:text-sm"
             variants={riseVariants}
             whileHover={{ y: -2, scale: 1.02 }}
           >

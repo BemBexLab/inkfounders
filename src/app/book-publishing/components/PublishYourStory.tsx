@@ -12,12 +12,12 @@ const PublishYourStory = () => {
     >
       <div className="relative mx-auto flex w-full max-w-[1032px] flex-col items-center gap-8 lg:min-h-[418px] lg:flex-row lg:items-start lg:gap-10">
         <div className="relative z-20 flex w-full max-w-[620px] flex-col justify-center text-center lg:max-w-[545px] lg:pt-[73px] lg:text-left">
-          <h2 className="mx-auto max-w-[570px] text-[32px] font-extrabold leading-[1.12] tracking-normal sm:text-[40px] md:text-[46px] lg:mx-0 lg:text-[40px] lg:leading-[1.18]">
+          <h2 className="mx-auto max-w-[570px] text-[32px] font-extrabold leading-[1.12] tracking-[-0.005em] sm:text-[40px] md:text-[46px] lg:mx-0 lg:text-[40px] lg:leading-[1.18]">
             Publish Your Story With Confidence
           </h2>
 
           <p
-            className={`mx-auto mt-4 max-w-[520px] text-sm leading-[1.7] tracking-[0.05em] sm:text-base md:text-lg lg:mx-0 lg:mt-[18px] lg:max-w-[545px] lg:text-[14px] lg:leading-[1.95] lg:tracking-[0.07em] ${robotoMono.className}`}
+            className={`mx-auto mt-4 max-w-[520px] text-sm leading-[1.7] tracking-[0.025em] sm:text-base md:text-lg lg:mx-0 lg:mt-[18px] lg:max-w-[545px] lg:text-[14px] lg:leading-[1.95] lg:tracking-[0.035em] ${robotoMono.className}`}
           >
             Your story deserves to be heard-let us help you share it with the
             world. Our book publishing services provide everything you need to
@@ -30,7 +30,7 @@ const PublishYourStory = () => {
               className="btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-black bg-black px-3 text-xs font-medium text-white transition-all duration-300 hover:border-black hover:text-black sm:h-11 sm:px-4 sm:text-sm lg:h-[42px] lg:min-w-[151px] lg:px-5 lg:text-[14px]"
             >
               <span className="slide-bg"></span>
-              <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
+              <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.04em]">
                 Request a Quote
               </span>
             </QuoteTrigger>
@@ -41,7 +41,7 @@ const PublishYourStory = () => {
             >
               <span className="slide-bg"></span>
               <MdLocalPhone className="relative z-10 text-xl sm:text-[23px] lg:text-[19px]" />
-              <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
+              <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.04em]">
                 (786) 652-6864
               </span>
             </Link>

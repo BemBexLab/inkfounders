@@ -212,13 +212,17 @@ export default function Header() {
                 return (
                   <div key={item.href} className="group relative">
                     <div className="flex items-center gap-1">
-                      <Link
-                        href={item.href}
-                        className={desktopLinkClass}
-                        aria-current={isActive ? "page" : undefined}
-                      >
-                        {item.label}
-                      </Link>
+                      {item.href === "/audiobook-services" ? (
+                        <span className={desktopLinkClass}>{item.label}</span>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          className={desktopLinkClass}
+                          aria-current={isActive ? "page" : undefined}
+                        >
+                          {item.label}
+                        </Link>
+                      )}
                       <button
                         type="button"
                         className={`${desktopLinkClass} px-1`}
@@ -399,24 +403,36 @@ export default function Header() {
                     >
                       <div className="flex items-center gap-2">
                         {hasChildren ? (
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setOpenMobileSection((prev) =>
-                                prev === item.href ? null : item.href,
-                              )
-                            }
-                            className={`flex min-h-12 flex-1 items-center px-0 py-2.5 text-left text-[0.98rem] transition-colors ${
-                              isActive
-                                ? "font-semibold text-black"
-                                : "text-gray-800 hover:text-[#a3a718]"
-                            }`}
-                            tabIndex={menuOpen ? 0 : -1}
-                            aria-expanded={isExpanded}
-                            aria-controls={`mobile-submenu-${item.href.replaceAll("/", "-")}`}
-                          >
-                            <span>{item.label}</span>
-                          </button>
+                          item.href === "/audiobook-services" ? (
+                            <span
+                              className={`flex min-h-12 flex-1 items-center px-0 py-2.5 text-left text-[0.98rem] ${
+                                isActive
+                                  ? "font-semibold text-black"
+                                  : "text-gray-800"
+                              }`}
+                            >
+                              {item.label}
+                            </span>
+                          ) : (
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setOpenMobileSection((prev) =>
+                                  prev === item.href ? null : item.href,
+                                )
+                              }
+                              className={`flex min-h-12 flex-1 items-center px-0 py-2.5 text-left text-[0.98rem] transition-colors ${
+                                isActive
+                                  ? "font-semibold text-black"
+                                  : "text-gray-800 hover:text-[#a3a718]"
+                              }`}
+                              tabIndex={menuOpen ? 0 : -1}
+                              aria-expanded={isExpanded}
+                              aria-controls={`mobile-submenu-${item.href.replaceAll("/", "-")}`}
+                            >
+                              <span>{item.label}</span>
+                            </button>
+                          )
                         ) : (
                           <Link
                             href={item.href}

@@ -44,7 +44,7 @@ export default function CTABannerRight() {
               className="btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[45px] lg:min-w-[182px] lg:px-6 lg:text-[15px]"
             >
               <span className="slide-bg"></span>
-              <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
+              <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.04em]">
                 Request a Quote
               </span>
             </QuoteTrigger>
@@ -55,7 +55,7 @@ export default function CTABannerRight() {
             >
               <span className="slide-bg"></span>
               <MdLocalPhone className="relative z-10 text-xl sm:text-[23px] lg:text-[19px]" />
-              <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.08em]">
+              <span className="relative z-10 whitespace-nowrap font-normal tracking-[0.04em]">
                 (786) 652-6864
               </span>
             </Link>

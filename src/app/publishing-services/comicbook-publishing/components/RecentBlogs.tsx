@@ -298,7 +298,7 @@ export default async function RecentBlogs() {
                       font-bold
                       uppercase
                       leading-4
-                      tracking-wide
+                      tracking-[0.0125em]
                       text-[#1a1a1a]
                       sm:bottom-4
                       sm:left-4

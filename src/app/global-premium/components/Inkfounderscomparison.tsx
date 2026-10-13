@@ -271,7 +271,7 @@ export default function InkFoundersComparison() {
                   <span
                     style={{
                       fontSize: "clamp(0.4rem, 1.1vw, 0.88rem)",
-                      letterSpacing: "0.12em",
+                      letterSpacing: "0.06em",
                       fontWeight: 700,
                       color: "#000000",
                       textTransform: "uppercase",
@@ -288,7 +288,7 @@ export default function InkFoundersComparison() {
                   <span
                     style={{
                       fontSize: "clamp(0.4rem, 1.1vw, 0.88rem)",
-                      letterSpacing: "0.12em",
+                      letterSpacing: "0.06em",
                       fontWeight: 700,
                       color: "#000000",
                       textTransform: "uppercase",

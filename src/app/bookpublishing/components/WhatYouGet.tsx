@@ -272,7 +272,7 @@ const WhatYouGet = () => {
       variants={sectionVariants}
     >
       <motion.p
-        className="mb-3 text-center font-semibold tracking-[0.18em] text-black"
+        className="mb-3 text-center font-semibold tracking-[0.09em] text-black"
         variants={fadeUpVariants}
       >
         WHAT YOU GET
@@ -319,7 +319,7 @@ const WhatYouGet = () => {
             />
 
             <motion.div
-              className="mb-2 text-xs font-bold tracking-[0.3em] text-[#5d5d5d]"
+              className="mb-2 text-xs font-bold tracking-[0.15em] text-[#5d5d5d]"
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.8 }}
@@ -375,7 +375,7 @@ const WhatYouGet = () => {
             className="btn-slide-bg flex h-10 items-center justify-center rounded-[8px] border border-[#DADD39] bg-[#DADD39] px-3 text-xs font-medium text-black transition-all duration-300 hover:border-black sm:h-11 sm:px-4 sm:text-sm lg:h-[50px] lg:min-w-[200px] lg:px-6 lg:text-[15px]"
           >
             <span className="slide-bg"></span>
-            <span className="relative z-10 whitespace-nowrap font-medium tracking-[0.08em]">
+            <span className="relative z-10 whitespace-nowrap font-medium tracking-[0.04em]">
               Request a Quote
             </span>
           </button>
@@ -388,7 +388,7 @@ const WhatYouGet = () => {
           >
             <span className="slide-bg"></span>
             <MdLocalPhone className="relative z-10 text-xl sm:text-[23px] lg:text-[19px]" />
-            <span className="relative z-10 whitespace-nowrap font-medium tracking-[0.08em]">
+            <span className="relative z-10 whitespace-nowrap font-medium tracking-[0.04em]">
               (786) 652-6864
             </span>
           </Link>
