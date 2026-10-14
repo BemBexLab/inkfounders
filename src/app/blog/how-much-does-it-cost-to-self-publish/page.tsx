@@ -668,7 +668,7 @@ const BlogOne: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-sm font-bold text-black">Location</p>
-                      <a href='https://maps.app.goo.gl/mibAgwMcMGF8A8ig7' className="hover:underline text-sm text-gray-600">1221 Brickell Ave, Miami, FL 33131, United States</a>
+                      <a href='https://www.google.com/maps/search/?api=1&query=5055%20BAYWOOD%20LN%20WOODSTOCK%20GA%2030188' className="hover:underline text-sm text-gray-600">5055 BAYWOOD LN WOODSTOCK GA 30188</a>
                     </div>
                   </div>
                 </div>

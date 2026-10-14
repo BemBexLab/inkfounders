@@ -474,9 +474,9 @@ export default async function BlogSlugPage({ params }: PageProps) {
                           Office
                         </span>
                         <span className="mt-0.5 block text-sm font-semibold leading-5 text-neutral-800">
-                          1221 Brickell Ave,
+                          5055 BAYWOOD LN
                           <br />
-                          Miami, FL 33131
+                          WOODSTOCK GA 30188
                         </span>
                       </span>
                     </a>

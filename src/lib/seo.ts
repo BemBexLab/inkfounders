@@ -19,10 +19,10 @@ export const GLOBAL_SCHEMA = {
       slogan: "Professional book publishing and author support services.",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "1221 Brickell Ave",
-        addressLocality: "Miami",
-        addressRegion: "FL",
-        postalCode: "33131",
+        streetAddress: "5055 BAYWOOD LN",
+        addressLocality: "WOODSTOCK",
+        addressRegion: "GA",
+        postalCode: "30188",
         addressCountry: "US",
       },
       areaServed: [
@@ -40,7 +40,7 @@ export const GLOBAL_SCHEMA = {
         },
       ],
       hasMap:
-        "https://www.google.com/maps/search/?api=1&query=1221%20Brickell%20Ave%2C%20Miami%2C%20FL%2033131%2C%20United%20States",
+        "https://www.google.com/maps/search/?api=1&query=5055%20BAYWOOD%20LN%20WOODSTOCK%20GA%2030188",
       sameAs: [
         "https://www.facebook.com/InkFounders",
         "https://www.pinterest.com/inkFounders/",
