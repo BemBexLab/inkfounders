@@ -14,6 +14,7 @@ import { faqContent } from "./Home/faqData";
 import Lagacy from "./Home/Legacy";
 import OurWork from "./Home/OurWork";
 import { createPageMetadata } from "@/lib/seo";
+import VideoTestimonials from "@/components/VideoTestimonials";
 
 export const metadata: Metadata = createPageMetadata(
   "/",
@@ -35,6 +36,7 @@ export default function Home() {
       <OurWork />
       <OurPromise />
       <Testimonials />
+      <VideoTestimonials />
       <GetInTouch />
       <FAQs {...faqContent} />
     </div>
