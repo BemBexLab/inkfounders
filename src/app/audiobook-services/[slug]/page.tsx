@@ -73,7 +73,7 @@ const page = async ({ params }: PageProps) => {
       <PartnersSection />
       <NarrationOptions data={audiobook.narration[0]} />
       <ImageDesc data={audiobook.imageDesc} />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <GetInTouch data={audiobook.contactData} />
     </section>
   )

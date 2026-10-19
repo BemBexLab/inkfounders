@@ -10,10 +10,11 @@ export default function AuthorsPublishedSection() {
         </h2>
 
         <Image
-          src="/optimized/Home/Allison 3.webp"
+          src="/optimized/Home/responsive/Allison-3.webp"
           alt="Book Cover"
           width={330}
           height={540}
+          sizes="(max-width: 1023px) 72vw, 330px"
           className="mb-7 h-auto w-[min(72vw,300px)] transition-transform duration-300 hover:scale-105"
         />
 
@@ -34,7 +35,7 @@ export default function AuthorsPublishedSection() {
         {/* Book Cover */}
         <div className="relative w-[330px] flex-shrink-0">
           <Image
-            src="/optimized/Home/Allison 3.webp"
+            src="/optimized/Home/responsive/Allison-3.webp"
             alt="Book Cover"
             fill
             sizes="330px"

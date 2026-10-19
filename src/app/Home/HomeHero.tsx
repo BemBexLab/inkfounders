@@ -27,9 +27,9 @@ type TrustBadge = {
 
 const bookImages = [
   // "/Home/1 8638289.webp",
-  "/optimized/Home/2 9303.webp",
-  "/optimized/Home/3 422784.webp",
-  "/optimized/Home/4 238103.webp",
+  "/optimized/Home/responsive/2-9303.webp",
+  "/optimized/Home/responsive/3-422784.webp",
+  "/optimized/Home/responsive/4-238103.webp",
   "/optimized/Home/5 1.webp",
   "/optimized/Home/6 1.webp",
   "/optimized/Home/7 151655.webp",
@@ -44,7 +44,7 @@ const trustBadges: TrustBadge[] = [
     id: "trustpilot-review",
     title: "Trustpilot",
     subtitle: "Review",
-    src: "/Home/trustpilot-logo-1024x443.webp",
+    src: "/optimized/Home/responsive/trustpilot-logo.webp",
     link: "https://www.trustpilot.com/review/inkfounders.com",
   },
   {
@@ -229,6 +229,7 @@ const HomeHero = () => {
                 alt="Decorative background"
                 width={480}
                 height={480}
+                sizes="(max-width: 639px) 78vw, 430px"
                 className="h-[min(78vw,430px)] w-[min(78vw,430px)] object-contain"
                 priority={false}
                 draggable={false}
@@ -241,6 +242,7 @@ const HomeHero = () => {
                   src={bookImages[current]}
                   alt="Book Cover"
                   fill
+                  sizes="(max-width: 639px) 76vw, 570px"
                   className={`object-contain ${isTransitioning ? "slide-out" : ""} z-10`}
                   priority
                   style={{
@@ -257,6 +259,7 @@ const HomeHero = () => {
                     src={bookImages[(current + 1) % bookImages.length]}
                     alt="Book Cover"
                     fill
+                    sizes="(max-width: 639px) 76vw, 570px"
                     className="slide-in z-20 object-contain"
                     style={{
                       objectFit: "contain",
@@ -457,10 +460,11 @@ const HomeHero = () => {
               <Image
                 src="/Home/bookslidetest/Ellipse 2.webp"
                 alt="Decorative background"
-                width={200}
-                height={200}
+                width={600}
+                height={600}
+                sizes="(max-width: 1023px) 480px, 600px"
                 className="h-[280px] w-[280px] object-contain xs:h-[320px] xs:w-[320px] sm:h-[420px] sm:w-[420px] md:h-[480px] md:w-[480px] lg:h-[450px] lg:w-[450px] xl:h-[550px] xl:w-[550px] 2xl:h-[600px] 2xl:w-[600px]"
-                priority={false}
+                priority
                 draggable={false}
               />
             </div>
@@ -472,6 +476,7 @@ const HomeHero = () => {
                     src={bookImages[current]}
                     alt="Book Cover"
                     fill
+                    sizes="(max-width: 1279px) 500px, 570px"
                     className={`object-contain ${isTransitioning ? "slide-out" : ""} z-10`}
                     priority
                     style={{
@@ -488,6 +493,7 @@ const HomeHero = () => {
                       src={bookImages[(current + 1) % bookImages.length]}
                       alt="Book Cover"
                       fill
+                      sizes="(max-width: 1279px) 500px, 570px"
                       className="slide-in z-20 object-contain"
                       style={{
                         objectFit: "contain",
