@@ -6,7 +6,6 @@ export default function VideoTestimonials() {
   const [activeIndex, setActiveIndex] = useState(1);
   const [isMuted, setIsMuted] = useState(true);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const testimonials = [
       { id: 0, src: "/Inkfounder videos034.webm" },
@@ -28,17 +27,12 @@ export default function VideoTestimonials() {
         video.currentTime = 0;
       }
     });
-    cardRefs.current[activeIndex]?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center",
-    });
   }, [activeIndex]);
 
   return (
     <section className="bg-[#f5f5f5] flex flex-col items-center justify-center py-16 px-4">
       {/* Header */}
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3 text-center">
+      <h2 className="text-4xl md:text-5xl font-semibold text-black mb-3 text-center">
         Spotlighted Testimonials
       </h2>
       <p className="text-gray-500 text-sm font-mono mb-14 text-center">
@@ -52,9 +46,6 @@ export default function VideoTestimonials() {
           return (
             <div
               key={testimonial.id}
-              ref={(card) => {
-                cardRefs.current[index] = card;
-              }}
               onClick={() => setActiveIndex(index)}
               className={`relative rounded-lg overflow-hidden cursor-pointer transition-all duration-500 ease-in-out ${
                 isActive
