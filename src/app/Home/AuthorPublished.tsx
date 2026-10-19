@@ -12,8 +12,8 @@ export default function AuthorsPublishedSection() {
         <Image
           src="/optimized/Home/responsive/Allison-3.webp"
           alt="Book Cover"
-          width={330}
-          height={540}
+          width={305}
+          height={403}
           sizes="(max-width: 1023px) 72vw, 330px"
           className="mb-7 h-auto w-[min(72vw,300px)] transition-transform duration-300 hover:scale-105"
         />

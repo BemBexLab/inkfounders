@@ -30,13 +30,13 @@ const bookImages = [
   "/optimized/Home/responsive/2-9303.webp",
   "/optimized/Home/responsive/3-422784.webp",
   "/optimized/Home/responsive/4-238103.webp",
-  "/optimized/Home/5 1.webp",
-  "/optimized/Home/6 1.webp",
-  "/optimized/Home/7 151655.webp",
-  "/optimized/Home/8 914122.webp",
-  "/optimized/Home/9 23800.webp",
-  "/optimized/Home/10 439780.webp",
-  "/optimized/Home/11 4543.webp"
+  "/optimized/Home/responsive/5-1.webp",
+  "/optimized/Home/responsive/6-1.webp",
+  "/optimized/Home/responsive/7-151655.webp",
+  "/optimized/Home/responsive/8-914122.webp",
+  "/optimized/Home/responsive/9-23800.webp",
+  "/optimized/Home/responsive/10-439780.webp",
+  "/optimized/Home/responsive/11-4543.webp",
 ];
 
 const trustBadges: TrustBadge[] = [
@@ -225,7 +225,7 @@ const HomeHero = () => {
           <div className="relative flex w-full items-center justify-center py-2 sm:py-4">
             <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
               <Image
-                src="/Home/bookslidetest/Ellipse 2.webp"
+                src="/optimized/Home/responsive/ellipse-2.webp"
                 alt="Decorative background"
                 width={480}
                 height={480}
@@ -326,7 +326,7 @@ const HomeHero = () => {
                       <Image
                         src={badge.src}
                         alt={`${badge.title} ${badge.subtitle}`}
-                        width={150}
+                        width={148}
                         height={64}
                         className="h-[54px] w-[132px] object-contain object-center transition duration-300 group-hover:brightness-105 sm:h-[66px] sm:w-[158px]"
                       />
@@ -426,7 +426,7 @@ const HomeHero = () => {
                           <Image
                             src={badge.src}
                             alt={`${badge.title} ${badge.subtitle}`}
-                            width={150}
+                            width={148}
                             height={64}
                             className="h-auto max-h-[52px] w-auto max-w-[120px] object-contain object-center transition duration-300 group-hover:brightness-105 sm:max-h-[64px] sm:max-w-[150px]"
                           />
@@ -458,13 +458,15 @@ const HomeHero = () => {
           <div className="relative flex min-w-0 flex-1 items-center justify-center px-2 sm:px-4 md:px-8 lg:ml-5">
             <div className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center">
               <Image
-                src="/Home/bookslidetest/Ellipse 2.webp"
+                src="/optimized/Home/responsive/ellipse-2.webp"
                 alt="Decorative background"
-                width={600}
-                height={600}
-                sizes="(max-width: 1023px) 480px, 600px"
+                width={550}
+                height={550}
+                sizes="(max-width: 1023px) 480px, 550px"
                 className="h-[280px] w-[280px] object-contain xs:h-[320px] xs:w-[320px] sm:h-[420px] sm:w-[420px] md:h-[480px] md:w-[480px] lg:h-[450px] lg:w-[450px] xl:h-[550px] xl:w-[550px] 2xl:h-[600px] 2xl:w-[600px]"
                 priority
+                loading="eager"
+                fetchPriority="high"
                 draggable={false}
               />
             </div>
