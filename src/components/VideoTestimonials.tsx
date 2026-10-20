@@ -6,8 +6,6 @@ export default function VideoTestimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMuted, setIsMuted] = useState(true);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const carouselRef = useRef<HTMLDivElement | null>(null);
 
   const testimonials = [
     { id: 0, src: "/INK Client Review Video Edit11.webm" },
@@ -39,17 +37,6 @@ export default function VideoTestimonials() {
     });
   }, [activeIndex]);
 
-  useEffect(() => {
-    const activeCard = cardRefs.current[1];
-    if (!carouselRef.current || !activeCard) return;
-
-    activeCard.scrollIntoView({
-      block: "nearest",
-      inline: "center",
-      behavior: "smooth",
-    });
-  }, [activeIndex]);
-
   return (
     <section className="flex flex-col items-center justify-center overflow-hidden bg-[#f5f5f5] px-4 py-16">
       {/* Header */}
@@ -62,7 +49,6 @@ export default function VideoTestimonials() {
 
       {/* Video Cards */}
       <div
-        ref={carouselRef}
         className="[--active-width:320px] md:[--active-width:480px] flex w-full max-w-7xl snap-x snap-mandatory items-center gap-4 overflow-x-auto scroll-smooth px-0 md:gap-6"
         style={{
           paddingInline: "max(0px, calc((100% - var(--active-width)) / 2))",
@@ -74,9 +60,6 @@ export default function VideoTestimonials() {
           return (
             <div
               key={testimonial.id}
-              ref={(card) => {
-                cardRefs.current[slot] = card;
-              }}
               onClick={() => setActiveIndex(testimonial.testimonialIndex)}
               className={`relative h-[380px] w-[320px] shrink-0 snap-center cursor-pointer overflow-hidden rounded-lg transition-all duration-500 ease-in-out md:h-[460px] md:w-[480px] ${
                 isActive
