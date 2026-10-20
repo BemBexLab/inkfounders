@@ -16,11 +16,18 @@ export default function VideoTestimonials() {
     { id: 3, src: "/Inkfounder videos03.webm" },
   ];
 
+  // Keep the active testimonial in the middle, with its neighbors wrapping around.
+  const visibleTestimonials = [-1, 0, 1].map((offset) => {
+    const index =
+      (activeIndex + offset + testimonials.length) % testimonials.length;
+    return { ...testimonials[index], testimonialIndex: index };
+  });
+
   useEffect(() => {
     videoRefs.current.forEach((video, index) => {
       if (!video) return;
 
-      if (index === activeIndex) {
+      if (index === 1) {
         video.currentTime = 0;
         void video.play().catch(() => {
           // Browsers may block autoplay; the muted video can still be started manually.
@@ -34,7 +41,7 @@ export default function VideoTestimonials() {
 
   useEffect(() => {
     const carousel = carouselRef.current;
-    const activeCard = cardRefs.current[activeIndex];
+    const activeCard = cardRefs.current[1];
     if (!carousel || !activeCard) return;
 
     const cardLeft =
@@ -66,15 +73,15 @@ export default function VideoTestimonials() {
           scrollbarWidth: "none",
         }}
       >
-        {testimonials.map((testimonial, index) => {
-          const isActive = index === activeIndex;
+        {visibleTestimonials.map((testimonial, slot) => {
+          const isActive = slot === 1;
           return (
             <div
               key={testimonial.id}
               ref={(card) => {
-                cardRefs.current[index] = card;
+                cardRefs.current[slot] = card;
               }}
-              onClick={() => setActiveIndex(index)}
+              onClick={() => setActiveIndex(testimonial.testimonialIndex)}
               className={`relative h-[380px] w-[320px] shrink-0 snap-center cursor-pointer overflow-hidden rounded-lg transition-all duration-500 ease-in-out md:h-[460px] md:w-[480px] ${
                 isActive
                   ? "z-10 scale-100"
@@ -84,7 +91,7 @@ export default function VideoTestimonials() {
               {/* Video Element */}
               <video
                 ref={(video) => {
-                  videoRefs.current[index] = video;
+                  videoRefs.current[slot] = video;
                 }}
                 src={testimonial.src}
                 className="w-full h-full object-cover"
