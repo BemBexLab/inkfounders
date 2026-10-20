@@ -10,10 +10,10 @@ export default function VideoTestimonials() {
   const carouselRef = useRef<HTMLDivElement | null>(null);
 
   const testimonials = [
-    { id: 0, src: "/Inkfounder videos034.webm" },
-    { id: 1, src: "/INK Client Review Video Edit11.webm" },
-    { id: 2, src: "/Inkfounder videos031.webm" },
-    { id: 3, src: "/Inkfounder videos03.webm" },
+    { id: 0, src: "/INK Client Review Video Edit11.webm" },
+    { id: 1, src: "/Inkfounder videos031.webm" },
+    { id: 2, src: "/Inkfounder videos03.webm" },
+    { id: 3, src: "/Inkfounder videos034.webm" },
   ];
 
   // Keep the active testimonial in the middle, with its neighbors wrapping around.
