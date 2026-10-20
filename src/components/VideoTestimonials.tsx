@@ -40,16 +40,12 @@ export default function VideoTestimonials() {
   }, [activeIndex]);
 
   useEffect(() => {
-    const carousel = carouselRef.current;
     const activeCard = cardRefs.current[1];
-    if (!carousel || !activeCard) return;
+    if (!carouselRef.current || !activeCard) return;
 
-    const cardLeft =
-      activeCard.getBoundingClientRect().left -
-      carousel.getBoundingClientRect().left +
-      carousel.scrollLeft;
-    carousel.scrollTo({
-      left: cardLeft - (carousel.clientWidth - activeCard.clientWidth) / 2,
+    activeCard.scrollIntoView({
+      block: "nearest",
+      inline: "center",
       behavior: "smooth",
     });
   }, [activeIndex]);

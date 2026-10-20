@@ -137,12 +137,6 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             `,
           }}
         />
-        <Script
-          id="facebook-pixel"
-          src="https://connect.facebook.net/en_US/fbevents.js"
-          strategy="afterInteractive"
-        />
-
         {/* Meta Pixel Noscript Fallback */}
         <noscript>
           <img
