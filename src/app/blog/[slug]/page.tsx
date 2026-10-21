@@ -460,12 +460,7 @@ export default async function BlogSlugPage({ params }: PageProps) {
                       </span>
                     </a>
 
-                    <a
-                      href="https://maps.app.goo.gl/mibAgwMcMGF8A8ig7"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-start gap-4 py-4 last:pb-0"
-                    >
+                    <div className="flex items-start gap-4 py-4 last:pb-0">
                       <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-neutral-700 transition-colors group-hover:bg-[#D4D939] group-hover:text-neutral-950">
                         <MapPin className="h-4 w-4" />
                       </span>
@@ -474,12 +469,11 @@ export default async function BlogSlugPage({ params }: PageProps) {
                           Office
                         </span>
                         <span className="mt-0.5 block text-sm font-semibold leading-5 text-neutral-800">
-                          5055 BAYWOOD LN
+                          1221 Brickell Ave, Miami, FL 33131, United States
                           <br />
-                          WOODSTOCK GA 30188
                         </span>
                       </span>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>

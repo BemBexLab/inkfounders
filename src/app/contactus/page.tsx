@@ -27,7 +27,7 @@ export default function Home() {
     {/* <Portfolio /> */}
     <Map
       googleMapsLink={location?.href}
-      locationQuery={location?.label || "5055 BAYWOOD LN WOODSTOCK GA 30188"}
+      locationQuery={location?.label || "1221 Brickell Ave, Miami, FL 33131, United States"}
     />
     </>
   );

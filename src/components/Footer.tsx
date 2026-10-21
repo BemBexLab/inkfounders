@@ -136,7 +136,7 @@ export default function Footer() {
                 <li className="flex items-center justify-center md:justify-center lg:justify-start gap-3">
                   <FaLocationDot className="w-5 h-5 text-black" />
                   <span className="text-sm text-black">
-                    5055 BAYWOOD LN WOODSTOCK GA 30188
+                    1221 Brickell Ave, Miami, FL 33131, United States
                   </span>
                 </li>
                 <li className="flex items-center justify-center md:justify-center lg:justify-start gap-3">

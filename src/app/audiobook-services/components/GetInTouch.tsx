@@ -191,7 +191,7 @@ const GetInTouch = ({ data }: GetInTouchProps) => {
               <span
                 className={`${robotoMono.className} min-w-0 break-words font-mono text-[13px] font-medium leading-tight text-[#333333] sm:text-[14px] md:text-base`}
               >
-                5055 BAYWOOD LN WOODSTOCK GA 30188
+                1221 Brickell Ave, Miami, FL 33131, United States
               </span>
             </div>
           </div>

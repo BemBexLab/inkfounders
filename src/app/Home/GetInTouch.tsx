@@ -78,8 +78,7 @@ const defaultGetInTouchContent: GetInTouchContent = {
       },
       {
         type: "location",
-        label: "5055 BAYWOOD LN WOODSTOCK GA 30188",
-        href: ""
+        label: "1221 Brickell Ave, Miami, FL 33131, United States",
       },
     ],
   },

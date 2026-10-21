@@ -20,7 +20,7 @@ const footerContactItems = [
         />
       </svg>
     ),
-    lines: [<React.Fragment key="usa-office-address">5055 BAYWOOD LN WOODSTOCK GA 30188</React.Fragment>],
+    lines: [<React.Fragment key="usa-office-address">1221 Brickell Ave, Miami, FL 33131, United States</React.Fragment>],
   },
   {
     href: "tel:+17866526864",
