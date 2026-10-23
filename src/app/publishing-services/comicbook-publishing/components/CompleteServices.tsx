@@ -13,11 +13,13 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { robotoMono } from "@/app/fonts";
+import { ReactNode } from "react";
+import Link from "next/link";
 
 /* Card data */
 type Service = {
   title: string;
-  description: string;
+  description: string | ReactNode;
   icon: LucideIcon;
 };
 
@@ -38,19 +40,19 @@ const services: Service[] = [
     title: "Editing & Proofreading",
     icon: CheckCheck,
     description:
-      "Review grammar, spelling, dialogue, consistency, story flow, character names, and other written elements before publication.",
+      <>Review grammar, <b>spelling, dialogue, consistency, story flow, character names</b>, and other written elements before publication.</>,
   },
   {
     title: "Comic Book Formatting",
     icon: LayoutTemplate,
     description:
-      "Prepare interior pages, panel layouts, typography, dialogue placement, margins, bleed, and other production requirements.",
+      <>Prepare interior pages, <b>panel layouts, typography, dialogue placement, margins, bleed</b>, and other production requirements.</>,
   },
   {
     title: "Comic Book Cover Design",
     icon: Image,
     description:
-      "Create a professional cover that communicates your comic's story, genre, characters, and visual identity.",
+      <>Create a <b>professional cover</b> that communicates your <b>comic's story</b>, genre, characters, and visual identity.</>,
   },
   {
     title: "Artwork & Illustration Support",
@@ -62,19 +64,19 @@ const services: Service[] = [
     title: "ISBN & Barcode Assistance",
     icon: Barcode,
     description:
-      "Provide guidance related to ISBN and barcode requirements as part of the publishing preparation process.",
+      <>Provide guidance related to <Link className="text-blue-500 hover:underline" href={"https://en.wikipedia.org/wiki/ISBN"}>ISBN</Link> and barcode requirements as part of the publishing preparation process.</>,
   },
   {
     title: "Print & Digital Publishing",
     icon: BookOpenCheck,
     description:
-      "Prepare your comic for appropriate print and digital publishing formats.",
+      <>Prepare your <b>comic for appropriate print</b> and <b>digital publishing</b> formats.</>,
   },
   {
     title: "Print-On-Demand Setup",
     icon: Printer,
     description:
-      "Help prepare your comic files and publish information for print on demand production.",
+      <>Help prepare your <b>comic files and publish</b> information for <b>print on demand production</b>.</>,
   },
   {
     title: "Distribution Preparation",
@@ -86,7 +88,7 @@ const services: Service[] = [
     title: "Comic Book Marketing",
     icon: Megaphone,
     description:
-      "Support your launch with promotional planning, creator branding, sales page optimization, keyword research, and other marketing activities.",
+      <>Support your launch with <b>promotional planning, creator branding, sales page optimization, keyword research</b>, and other marketing activities.</>,
   },
 ];
 
@@ -128,7 +130,7 @@ export default function CompleteServices() {
 
           <p className={`${robotoMono.className} mt-5 w-full font-mono text-[13px] leading-[1.7] text-[#555] sm:mt-2 sm:text-sm`}>
             From the first draft to the finished publication, our team can
-            support the creative and technical stages of your comic publishing
+            support the creative and technical stages of your <b>comic publishing</b>
             project.
           </p>
         </header>

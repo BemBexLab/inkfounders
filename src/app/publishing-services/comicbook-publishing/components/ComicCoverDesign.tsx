@@ -30,7 +30,7 @@ const categoryImageSizes =
   "(min-width: 1280px) 544px, (min-width: 1248px) 552px, (min-width: 1024px) calc(50vw - 72px), (min-width: 720px) 672px, (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)";
 
 const services = [
-  "Custom comic book cover design",
+  <b>Custom comic book cover design</b>,
   "Graphic novel cover design",
   "Character-focused covers",
   "Series branding",
@@ -129,7 +129,7 @@ export default function ComicCoverDesign() {
             </h3>
 
             <p className={` ${robotoMono.className} `}>
-              Your cover is often the first part of your comic a potential reader
+              Your cover is often the first part of your <b>comic</b> a potential reader
               sees.
             </p>
 
@@ -145,9 +145,9 @@ export default function ComicCoverDesign() {
               </p>
 
               <ul className="space-y-1.5 sm:space-y-2">
-                {services.map((service) => (
+                {services.map((service, index) => (
                   <li
-                    key={service}
+                    key={index}
                     className="flex items-start gap-2 sm:gap-3"
                   >
                     <FaCircleCheck

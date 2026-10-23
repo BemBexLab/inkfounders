@@ -5,7 +5,7 @@ import { FaCircleCheck } from "react-icons/fa6";
 const services = [
   "Publishing preparation",
   "ISBN and barcode guidance",
-  "Comic book formatting",
+  <b>Comic book formatting</b>,
   "Cover design",
   "Print-on-demand preparation",
   "Digital publishing preparation",
@@ -44,7 +44,7 @@ export default function CreativeProjectControl() {
 
             <div className={`${robotoMono.className} space-y-3 sm:space-y-4`}>
               <p>
-                Many independent creators choose to self publish because they want
+                Many independent creators choose to <b>self publish</b> because they want
                 greater control over their story, artwork, branding, and publishing
                 decisions.
               </p>
@@ -61,9 +61,9 @@ export default function CreativeProjectControl() {
               </p>
 
               <ul className="space-y-1.5 sm:space-y-2 lg:space-y-2.5">
-                {services.map((service) => (
+                {services.map((service, index) => (
                   <li
-                    key={service}
+                    key={index}
                     className="flex items-start gap-2 sm:gap-3"
                   >
                     <FaCircleCheck

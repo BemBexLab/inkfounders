@@ -5,8 +5,8 @@ import Image from "next/image";
 import { FaCircleCheck } from "react-icons/fa6";
 
 const services = [
-  "Comic story development",
-  "Comic script writing",
+  <b>Comic story development</b>,
+  <b>Comic script writing</b>,
   "Character development",
   "Dialogue development",
   "Story structure",
@@ -57,15 +57,15 @@ export default function StoryDevelopmentSection() {
               </p>
 
               <p>
-                Our comic book writing and story development support can
+                Our <b>comic book writing</b> and <b>story development</b> support can
                 include:
               </p>
             </div>
 
             {/* Bullets align with the first line when text wraps */}
             <ul className="space-y-1.5 text-sm leading-6 text-gray-700 sm:space-y-1 sm:text-base sm:leading-7">
-              {services.map((service) => (
-                <li key={service} className="flex items-start gap-2.5 sm:gap-3">
+              {services.map((service, index) => (
+                <li key={index} className="flex items-start gap-2.5 sm:gap-3">
                   <FaCircleCheck
                     aria-hidden="true"
                     className="mt-1 shrink-0 text-[18px] text-[#DADD39]"

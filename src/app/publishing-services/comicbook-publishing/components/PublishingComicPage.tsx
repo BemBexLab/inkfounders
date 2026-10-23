@@ -118,7 +118,7 @@ export default function PublishComicPage() {
           </h2>
 
           <p className={` ${robotoMono.className} mx-auto mt-4 max-w-4xl text-sm text-gray-600 sm:text-sm`}>
-            You're searching for how to publish a comic book, the process can seem complicated at first. Breaking the project into clear stages makes it easier to understand what needs to happen next.
+            You're searching for <b>how to publish a comic book</b>, the process can seem complicated at first. Breaking the project into clear stages makes it easier to understand what needs to happen next.
           </p>
         </header>
 

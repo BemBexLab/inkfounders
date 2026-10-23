@@ -73,12 +73,12 @@ export default function ComicPublishing() {
 
             <div className={`${robotoMono.className} space-y-3 font-mono text-sm leading-6 text-gray-600 sm:space-y-4 sm:text-base sm:leading-7`}>
               <p>
-                Independent comic creators often have their own characters,
+                Independent <b>comic creators</b> often have their own characters,
                 stories, artwork, and publishing goals.
               </p>
 
               <p>
-                Our services are designed to help creators prepare those projects
+                <b>Our services</b> are designed to help creators prepare those projects
                 for professional publication while keeping their creative
                 direction at the center of the process.
               </p>

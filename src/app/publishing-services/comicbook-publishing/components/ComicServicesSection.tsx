@@ -8,7 +8,7 @@ const services = [
     title: "Have A Comic Idea?",
     icon: Lightbulb,
     description:
-      "We can help develop your concept, characters, story structure, scenes, and dialogue into a workable comic project.",
+      <>We can help develop your concept, <b>characters, story structure, scenes</b>, and <b>dialogue</b> into a workable <b>comic project</b>.</>,
   },
   {
     title: "Have A Finished Script?",
@@ -20,13 +20,13 @@ const services = [
     title: "Have Finished Artwork?",
     icon: Palette,
     description:
-      "We can help with editing, lettering, page formatting, cover design, and publishing preparation.",
+      <>We can help with <b>editing, lettering, page formatting</b>, cover design, and publishing preparation.</>,
   },
   {
     title: "Have A Completed Comic?",
     icon: BookOpenCheck,
     description:
-      "We can help prepare your finished project for professional publication, distribution, and promotion.",
+      <>We can help prepare your finished project for <b>professional publication</b>, distribution, and promotion.</>,
   },
 ];
 
@@ -43,10 +43,10 @@ export default function ComicServicesSection() {
             <p
               className={`${robotoMono.className} mx-auto text-gray-600 mb-4 leading-relaxed max-w-6xl text-center text-sm`}
             >
-              A comic book involves much more than writing a story and creating
-              artwork. The finished publication needs strong storytelling,
-              careful editing, professional page design, properly prepared
-              files, and a publishing plan.
+              A <b>comic book</b> involves much more than writing a story and creating
+              artwork. The finished publication needs strong <b>storytelling</b>,
+              careful editing, <b>professional page design</b>, properly prepared
+              files, and a <b>publishing plan</b>.
             </p>
             <p
               className={`${robotoMono.className} text-gray-600 text-center text-sm`}

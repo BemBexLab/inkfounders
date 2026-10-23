@@ -1,11 +1,12 @@
 import { robotoMono } from "@/app/fonts";
 import Image from "next/image";
 import Link from "next/link";
+import { ReactNode } from "react";
 
 type Stage = {
   title: string;
-  description: string;
-  helpText: string;
+  description: string | ReactNode;
+  helpText: string | ReactNode;
   buttonText: string;
   buttonHref: string;
   imageSrc: string;
@@ -17,7 +18,7 @@ const stages: Stage[] = [
     description:
       "You have a concept, characters, or a story idea but aren't sure how to turn it into a comic.",
     helpText:
-      "We can help with: Story development, characters, structure, and script development.",
+      <>We can help with: <b>Story development, characters, structure</b>, and script development.</>,
     buttonText: "Develop My Idea",
     buttonHref: "/contactus",
     imageSrc: "/optimized/comic-book/Rectangle 14.webp",
@@ -25,9 +26,9 @@ const stages: Stage[] = [
   {
     title: "I Have a Script",
     description:
-      "Your story is written, but it needs professional editing or preparation for production.",
+      <>Your story is written, but it needs <b>professional editing</b> or preparation for production.</>,
     helpText:
-      "We can help with: Editing, proofreading, dialogue, story consistency, and script refinement.",
+      <>We can help with: <b>Editing, proofreading, dialogue</b>, story consistency, and script refinement.</>,
     buttonText: "Review My Script",
     buttonHref: "/contactus",
     imageSrc: "/comic-book/Rectangle 14 (1).webp",

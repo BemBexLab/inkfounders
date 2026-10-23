@@ -45,12 +45,12 @@ const StoryDevelopmentSection: FC = () => {
             </h3>
 
             <p className={`${robotoMono.className} italic text-gray-500`}>
-              Before your comic is published, the written content should be
+              Before your <b>comic</b> is published, the written content should be
               reviewed carefully.
             </p>
 
             <p className={`${robotoMono.className} text-gray-500`}>
-              Comic book editing requires more than checking spelling and
+              <b>Comic book editing</b> requires more than checking spelling and
               grammar. Dialogue, captions, character names, story consistency,
               pacing, and the relationship between text and artwork all need to
               work together.

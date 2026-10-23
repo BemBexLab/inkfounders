@@ -52,16 +52,15 @@ function HeroCopy() {
         className={`${robotoMono.className} mt-2 w-full break-words text-left text-[13px] leading-[1.7] text-[#444] sm:text-[14px]`}
       >
         Where could it go? If you have a simple idea, a finished script,
-        original artwork, or a complete graphic novel, Ink Founders can help
+        original artwork, or a complete graphic novel, <Link className="text-blue-500 hover:underline" href={"/"}>Ink Founders</Link> can help
         turn your work into a polished book ready to publish.
       </p>
       <p
         className={`${robotoMono.className} mt-2 w-full break-words text-left text-[13px] leading-[1.7] text-[#444] sm:text-[14px]`}
       >
-        Our comic book publishing services cover the important stages of the
-        publishing process, including story development, script writing,
-        editing, proofreading, cover design, interior formatting, publishing
-        preparation, print and digital publishing, and marketing support.
+        Our <b>comic book publishing services</b> cover the important stages of the
+        <b>publishing process</b>, including <b>story development, script writing,
+        editing, proofreading</b>, <Link className="text-blue-500 hover:underline" href={"/publishing-services/book-cover-design"}>cover design</Link>, <b>interior formatting, publishing preparation</b>, print and <Link className="text-blue-500 hover:underline" href={"/"}>digital publishing</Link>, and marketing support.
       </p>
 
       {/* CTA buttons */}
