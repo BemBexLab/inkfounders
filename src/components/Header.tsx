@@ -47,6 +47,10 @@ const navItems: NavItem[] = [
         label: "Comic Book Publishing",
         href: "/publishing-services/comicbook-publishing",
       },
+      {
+        label: "Coloring Book Printing Services",
+        href: "/publishing-services/coloring-book-printing-services",
+      },
     ],
   },
   {

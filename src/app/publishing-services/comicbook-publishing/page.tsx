@@ -28,7 +28,7 @@ export const metadata: Metadata = createPageMetadata(
 
 export default function Page() {
   return (
-    <div className="[&_p]:text-sm sm:[&_p]:text-base [&_h2]:font-semibold">
+    <div className="bg-white [&_p]:text-sm sm:[&_p]:text-base [&_h2]:font-semibold">
       <Hero />
       <ComicServicesSection />
       <CompleteServices />
