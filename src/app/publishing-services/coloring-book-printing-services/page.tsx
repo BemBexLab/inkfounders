@@ -14,7 +14,7 @@ import { createPageMetadata } from '@/lib/seo'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = createPageMetadata(
-  "/publishing-services/comicbook-publishing",
+  "/publishing-services/coloring-book-printing-services",
   "Coloring Book Printing Services | Ink Founders",
   "Ink Founders offers professional coloring book printing services with custom designs and quality printing. Email: info@inkfounders.com | Ph: (786) 652-6864",
 );
