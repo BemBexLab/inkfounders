@@ -99,7 +99,7 @@ export default function ColoringBookPrintingInfo() {
             </ul>
             <p className="mb-4 text-sm leading-relaxed text-gray-700">
               To compare <b>coloring book printing companies</b>, request a quote based
-              on the same specifications. Check whether the <b>price</b> includes
+              on the same specifications. Check whether the <b>price</b> includes {" "} 
               <b>artwork preparation, proofing, printing, binding, packaging</b>, and
               delivery.
             </p>
