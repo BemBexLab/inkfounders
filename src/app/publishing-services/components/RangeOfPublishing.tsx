@@ -1,5 +1,33 @@
 import { robotoMono } from "@/app/fonts";
 import Image from "next/image";
+import Link from "next/link";
+
+const services = [
+  {
+    title: "Book Writing",
+    href: "/publishing-services/book-writing",
+  },
+  {
+    title: "Book Publishing",
+    href: "/publishing-services/book-publishing",
+  },
+  {
+    title: "Book Cover Design",
+    href: "/publishing-services/book-cover-design",
+  },
+  {
+    title: "Editing & Proofreading",
+    href: "/publishing-services/editing-and-proofreading",
+  },
+  {
+    title: "Comic Book Publishing",
+    href: "/publishing-services/comicbook-publishing",
+  },
+  {
+    title: "Coloring Book Printing Services",
+    href: "/publishing-services/coloring-book-printing-services",
+  },
+];
 
 export default function RangeOfPublishing() {
   return (
@@ -17,6 +45,23 @@ export default function RangeOfPublishing() {
             <p>
               At Ink Founders, we offer professional book publishing services covering editing, design, and marketing support to get your book ready for publication. At every step, we prioritize preserving your unique voice and creative vision.
             </p>
+          </div>
+          <div className="mx-auto mt-6 grid max-w-xl grid-cols-1 gap-3 text-left sm:grid-cols-2 lg:mx-0">
+            {services.map((service) => (
+              <Link
+                key={service.href}
+                href={service.href}
+                className={`group flex min-h-[88px] items-center justify-between border border-black/[0.08] border-l-2 border-l-[#c8d400] bg-white/60 px-4 py-4 text-[13px] leading-[1.35] text-[#424b60] transition-all duration-300 hover:-translate-y-1 hover:border-[#c8d400] hover:bg-white hover:shadow-[0_10px_24px_rgba(23,23,23,0.08)] sm:px-5 sm:text-[14px] ${robotoMono.className}`}
+              >
+                <span>{service.title}</span>
+                <span
+                  aria-hidden="true"
+                  className="ml-3 shrink-0 text-lg text-[#c8d400] transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  →
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
 
