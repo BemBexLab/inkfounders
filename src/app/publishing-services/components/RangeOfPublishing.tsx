@@ -1,31 +1,45 @@
 import { robotoMono } from "@/app/fonts";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  FaBook,
+  FaBookOpen,
+  FaBookOpenReader,
+  FaPaintbrush,
+  FaPalette,
+  FaPenNib,
+} from "react-icons/fa6";
 
 const services = [
   {
     title: "Book Writing",
     href: "/publishing-services/book-writing",
+    Icon: FaPenNib,
   },
   {
     title: "Book Publishing",
     href: "/publishing-services/book-publishing",
+    Icon: FaBookOpen,
   },
   {
     title: "Book Cover Design",
     href: "/publishing-services/book-cover-design",
+    Icon: FaPalette,
   },
   {
     title: "Editing & Proofreading",
     href: "/publishing-services/editing-and-proofreading",
+    Icon: FaBookOpenReader,
   },
   {
     title: "Comic Book Publishing",
     href: "/publishing-services/comicbook-publishing",
+    Icon: FaBook,
   },
   {
     title: "Coloring Book Printing Services",
     href: "/publishing-services/coloring-book-printing-services",
+    Icon: FaPaintbrush,
   },
 ];
 
@@ -46,17 +60,28 @@ export default function RangeOfPublishing() {
               At Ink Founders, we offer professional book publishing services covering editing, design, and marketing support to get your book ready for publication. At every step, we prioritize preserving your unique voice and creative vision.
             </p>
           </div>
-          <div className="mx-auto mt-6 grid max-w-xl grid-cols-1 gap-3 text-left sm:grid-cols-2 lg:mx-0">
+          <div className="mx-auto mt-7 grid max-w-xl grid-cols-1 gap-4 text-left sm:grid-cols-2 lg:mx-0">
             {services.map((service) => (
               <Link
                 key={service.href}
                 href={service.href}
-                className={`group flex min-h-[88px] items-center justify-between border border-black/[0.08] border-l-2 border-l-[#c8d400] bg-white/60 px-4 py-4 text-[13px] leading-[1.35] text-[#424b60] transition-all duration-300 hover:-translate-y-1 hover:border-[#c8d400] hover:bg-white hover:shadow-[0_10px_24px_rgba(23,23,23,0.08)] sm:px-5 sm:text-[14px] ${robotoMono.className}`}
+                className="group relative flex min-h-[124px] items-center justify-between overflow-hidden rounded-2xl border border-black/[0.07] border-l-[3px] border-l-[#c8d400] bg-white px-4 py-5 text-[#424b60] shadow-[0_5px_18px_rgba(23,23,23,0.035)] transition-all duration-300 hover:-translate-y-1 hover:border-[#c8d400] hover:shadow-[0_14px_30px_rgba(23,23,23,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8d400] focus-visible:ring-offset-2 sm:px-5"
               >
-                <span>{service.title}</span>
+                <span className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#f4f3e1] transition-transform duration-500 group-hover:scale-150" />
+                <span className="relative z-10 flex items-center gap-3.5">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#c8d400]/30 bg-[#f4f3e1] text-[#9ca600] transition-colors duration-300 group-hover:bg-[#c8d400] group-hover:text-[#171717]">
+                    <service.Icon
+                      aria-hidden="true"
+                      className="h-5 w-5 transition-transform duration-300"
+                    />
+                  </span>
+                  <span className="max-w-[150px] text-[13px] font-medium leading-[1.35] tracking-[-0.01em] text-[#30394d] sm:text-[14px]">
+                    {service.title}
+                  </span>
+                </span>
                 <span
                   aria-hidden="true"
-                  className="ml-3 shrink-0 text-lg text-[#c8d400] transition-transform duration-300 group-hover:translate-x-1"
+                  className="relative z-10 ml-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-black/[0.08] text-base text-[#9ca600] transition-all duration-300 group-hover:translate-x-1 group-hover:border-[#c8d400] group-hover:bg-[#c8d400] group-hover:text-[#171717]"
                 >
                   →
                 </span>
