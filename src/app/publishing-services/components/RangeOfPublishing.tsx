@@ -41,13 +41,18 @@ const services = [
     href: "/publishing-services/coloring-book-printing-services",
     Icon: FaPaintbrush,
   },
+  {
+    title: "Print on Demand Children's Books",
+    href: "/publishing-services/coloring-book-printing-services",
+    Icon: FaBookOpen,
+  },
 ];
 
 export default function RangeOfPublishing() {
   return (
-    <section className="w-full border-y border-black/[0.06] bg-[#F6F5F3] px-4 py-14 sm:px-6 sm:py-10 md:px-8 lg:px-6">
+    <section className="relative isolate w-full overflow-hidden border-y border-black/[0.06] bg-[#F6F5F3] px-4 py-14 sm:px-6 sm:py-10 md:px-8 lg:px-6">
+      <div className="pointer-events-none absolute -right-24 top-16 -z-10 h-72 w-72 rounded-full bg-[#DADD39]/10 blur-3xl" />
       <div className="mx-auto grid min-h-[500px] w-full max-w-7xl items-center gap-12 lg:min-h-[600px] lg:grid-cols-[minmax(0,1fr)_minmax(380px,460px)] lg:gap-16 xl:gap-24">
-        {/* Content */}
         <div className="max-w-3xl text-center lg:pl-8 lg:text-left xl:pl-12">
           <div className="mx-auto mb-7 h-px w-14 bg-[#c8d400] lg:mx-0" />
           <h2 className="max-w-[1620px] text-[clamp(1.8rem,3.2vw,3rem)] font-medium leading-[1.02] tracking-[-0.045em] text-[#171717]">
@@ -65,7 +70,7 @@ export default function RangeOfPublishing() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="group relative flex min-h-[124px] items-center justify-between overflow-hidden rounded-2xl border border-black/[0.07] border-l-[3px] border-l-[#c8d400] bg-white px-4 py-5 text-[#424b60] shadow-[0_5px_18px_rgba(23,23,23,0.035)] transition-all duration-300 hover:-translate-y-1 hover:border-[#c8d400] hover:shadow-[0_14px_30px_rgba(23,23,23,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8d400] focus-visible:ring-offset-2 sm:px-5"
+                className="group relative flex min-h-[124px] items-center justify-between overflow-hidden rounded-2xl border border-black/[0.07] border-l-[3px] border-l-[#c8d400] bg-white px-4 py-5 text-[#424b60] shadow-[0_5px_18px_rgba(23,23,23,0.035)] transition-all duration-300 hover:-translate-y-1 hover:border-[#c8d400] hover:shadow-[0_14px_30px_rgba(23,23,23,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8d400] focus-visible:ring-offset-2 sm:last:col-span-2 sm:px-5"
               >
                 <span className="absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[#f4f3e1] transition-transform duration-500 group-hover:scale-150" />
                 <span className="relative z-10 flex items-center gap-3.5">
@@ -75,7 +80,7 @@ export default function RangeOfPublishing() {
                       className="h-5 w-5 transition-transform duration-300"
                     />
                   </span>
-                  <span className="max-w-[150px] text-[13px] font-medium leading-[1.35] tracking-[-0.01em] text-[#30394d] sm:text-[14px]">
+                  <span className="max-w-[210px] text-[13px] font-medium leading-[1.35] tracking-[-0.01em] text-[#30394d] sm:text-[14px]">
                     {service.title}
                   </span>
                 </span>
@@ -90,15 +95,15 @@ export default function RangeOfPublishing() {
           </div>
         </div>
 
-        {/* Book Cover */}
-        <div className="flex items-center justify-center lg:justify-end lg:pr-4">
+        <div className="relative flex items-center justify-center lg:justify-end lg:pr-4">
+          <div className="pointer-events-none absolute h-[min(68vw,330px)] w-[min(68vw,330px)] rounded-full bg-[#DADD39]/15 blur-3xl" />
           <Image
             src="/Service/image 99.webp"
             alt="The Buried Truth book cover"
             width={330}
             height={469}
             sizes="(max-width: 639px) 68vw, (max-width: 1023px) 330px, 330px"
-            className="h-auto w-[min(68vw,330px)] drop-shadow-[0_24px_20px_rgba(0,0,0,0.16)] transition-transform duration-500 hover:-translate-y-2"
+            className="relative h-auto w-[min(68vw,330px)] drop-shadow-[0_24px_20px_rgba(0,0,0,0.16)] transition-transform duration-500 hover:-translate-y-2"
           />
         </div>
       </div>
