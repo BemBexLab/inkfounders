@@ -5,6 +5,7 @@ import CustomScrollbar from "@/components/CustomScrollbar";
 import Link from "next/link";
 import { IoMdCall } from "react-icons/io";
 import Image from "next/image";
+import ServiceHeroActions from "../components/ServiceHeroActions";
 
 const CheckItem = ({ children }: { children: React.ReactNode }) => (
   <li className="flex items-start gap-2">
@@ -131,6 +132,7 @@ export default function ServiceDetailPage() {
                 <p className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}>
                   At Ink Founders, we're a book publishing service for authors that handles the whole process end to end: writing, editing, design, formatting, and getting your book out into the world. Whether you're a first-time author or already have a few books behind you, our team walks with you through every stage, including how to publish a book on Amazon, Kindle, and Apple Books.
                 </p>
+                <ServiceHeroActions align="left" />
               </div>
             </div>
             <div className="relative order-2 flex w-full items-center justify-center px-0 sm:px-4 md:px-8 lg:order-none lg:ml-5">

@@ -3,6 +3,7 @@ import CustomScrollbar from "@/components/CustomScrollbar";
 import Link from "next/link";
 import { IoMdCall } from "react-icons/io";
 import Image from "next/image";
+import ServiceHeroActions from "../components/ServiceHeroActions";
 
 // ✅ EXACT SAME CheckItem as your main service page
 const CheckItem = ({ children }: { children: React.ReactNode }) => (
@@ -138,6 +139,7 @@ export default function EditingProofreadingPage() {
                 <p className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}>
                   At Ink Founders, our book editing and proofreading services are built to get your manuscript polished, error-free, and genuinely ready for publishing. We refine your writing without rewriting you, so your book meets international publishing standards while still sounding like the person who wrote it.
                 </p>
+                <ServiceHeroActions align="left" />
               </div>
             </div>
             <div className="relative order-2 flex w-full items-center justify-center px-0 sm:px-4 md:px-8 lg:order-none lg:ml-5">

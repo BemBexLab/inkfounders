@@ -1,4 +1,4 @@
-import React from "react";
+import ServiceHeroActions from "@/app/publishing-services/components/ServiceHeroActions";
 
 
 const OurBookHero = () => {
@@ -15,6 +15,7 @@ const OurBookHero = () => {
             Bring Your Book to Life
           </span>
         </h1>
+        <ServiceHeroActions />
       </div>
     </div>
   </div>

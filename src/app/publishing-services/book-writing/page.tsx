@@ -5,6 +5,7 @@ import CustomScrollbar from "@/components/CustomScrollbar";
 import Link from "next/link";
 import { IoMdCall } from "react-icons/io";
 import Image from "next/image";
+import ServiceHeroActions from "../components/ServiceHeroActions";
 
 // ✅ EXACT SAME CheckItem as your main service page
 const CheckItem = ({ children }: { children: React.ReactNode }) => (
@@ -131,6 +132,7 @@ export default function BookWritingPage() {
                 <p className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}>
                   At Ink Founders, our book ghostwriting services are built to turn your ideas into a unique, engaging, high-quality book. Whether you have a rough concept or a detailed outline, our experienced writers craft a publish-ready book with clarity, creativity, and precision. If you're ready to hire a ghostwriter for your book, our team can take it from a first conversation to a finished manuscript.
                 </p>
+                <ServiceHeroActions align="left" />
               </div>
             </div>
             <div className="relative order-2 flex w-full items-center justify-center px-0 sm:px-4 md:px-8 lg:order-none lg:ml-5">

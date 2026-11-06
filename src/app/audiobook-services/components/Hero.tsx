@@ -1,7 +1,6 @@
 import React from "react";
 import { robotoMono } from "@/app/fonts";
-import { IoMdCall } from "react-icons/io";
-import Link from "next/link";
+import ServiceHeroActions from "@/app/publishing-services/components/ServiceHeroActions";
 
 interface HeroData {
   title: React.ReactNode;
@@ -46,27 +45,7 @@ const Hero = ({ data }: HeroProps) => {
             >
               {heroData.description}
             </p>
-            <Link href={heroData.buttonLink}>
-              <button
-                type="button"
-                className="
-                  btn-slide-bg
-                  flex items-center gap-2 
-                  border-[1px] border-[#DADD39] bg-[#DADD39] text-black font-normal 
-                  px-5 py-2.5 text-sm rounded-md shadow 
-                  transition-all duration-300
-                  sm:px-6 sm:py-3 md:text-base hover:border-black
-                "
-              >
-                {/* Sliding background */}
-                <span className="slide-bg"></span>
-                {/* Icon and text above the effect */}
-                <span className="relative z-10 flex items-center gap-2">
-                  <IoMdCall size={18} className="sm:w-5 sm:h-5" />
-                  {heroData.buttonText}
-                </span>
-              </button>
-            </Link>
+            <ServiceHeroActions />
           </div>
         </div>
       </div>
