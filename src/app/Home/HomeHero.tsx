@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { robotoMono } from "@/app/fonts";
 import { IoMdCall } from "react-icons/io";
 import { MdOutlineRequestQuote } from "react-icons/md";
@@ -275,7 +276,16 @@ const HomeHero = () => {
           <p
             className={`max-w-[64ch] text-left text-[0.95rem] leading-6 text-gray-700 sm:text-[1rem] ${robotoMono.className}`}
           >
-            Ink Founders is a self-publishing company USA authors trust for a complete suite of digital publishing services. From your first idea to your finished, published book, we support you at every stage of your self-publishing journey. Let's bring your story to life; reach out to us today.
+            Ink Founders is a self-publishing company trusted by authors across
+            the USA. We offer a range of publishing services, including{" "}
+            <Link
+              className="text-blue-500 hover:underline"
+              href="https://www.inkfounders.com/blog/print-on-demand-childrens-books"
+            >
+              print on-demand children's books
+            </Link>
+            . From your first idea to your finished book, we help you at every
+            step. Let's bring your story to life. Contact us today!
           </p>
 
           <div className="flex w-full flex-row justify-center gap-2 sm:gap-3">
@@ -375,7 +385,17 @@ const HomeHero = () => {
               <p
                 className={`mb-8 max-w-[62ch] text-center text-[clamp(0.92rem,3.2vw,0.95rem)] leading-tight text-gray-700 md:text-left lg:text-left ${robotoMono.className}`}
               >
-                Ink Founders is a self-publishing company USA authors trust for a complete suite of digital publishing services. From your first idea to your finished, published book, we support you at every stage of your self-publishing journey. Let's bring your story to life; reach out to us today.
+                Ink Founders is a self-publishing company trusted by authors
+                across the USA. We offer a range of publishing services,
+                including{" "}
+                <Link
+                  className="text-blue-500 hover:underline"
+                  href="https://www.inkfounders.com/blog/print-on-demand-childrens-books"
+                >
+                  print on-demand children's books
+                </Link>
+                . From your first idea to your finished book, we help you at
+                every step. Let's bring your story to life. Contact us today!
               </p>
 
               <div className="flex w-full flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
