@@ -280,7 +280,7 @@ const HomeHero = () => {
             the USA. We offer a range of publishing services, including{" "}
             <Link
               className="text-blue-500 hover:underline"
-              href="https://www.inkfounders.com/blog/print-on-demand-childrens-books"
+              href="/blog/print-on-demand-childrens-books"
             >
               print on-demand children's books
             </Link>
@@ -390,7 +390,7 @@ const HomeHero = () => {
                 including{" "}
                 <Link
                   className="text-blue-500 hover:underline"
-                  href="https://www.inkfounders.com/blog/print-on-demand-childrens-books"
+                  href="/blog/print-on-demand-childrens-books"
                 >
                   print on-demand children's books
                 </Link>
