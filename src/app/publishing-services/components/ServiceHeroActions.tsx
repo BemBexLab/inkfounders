@@ -24,7 +24,9 @@ export default function ServiceHeroActions({
   align = "center",
 }: ServiceHeroActionsProps) {
   const wrapperClass =
-    align === "left" ? "mt-7 w-full lg:max-w-xl" : "mt-7 w-full max-w-5xl";
+    align === "left"
+      ? "order-4 mt-7 w-full lg:max-w-xl"
+      : "order-4 mt-7 w-full max-w-5xl";
   const buttonGroupClass =
     align === "left"
       ? "flex w-full flex-col gap-3 min-[420px]:flex-row min-[420px]:items-center lg:justify-start"
