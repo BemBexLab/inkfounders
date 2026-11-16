@@ -1,5 +1,5 @@
 import { robotoMono } from "@/app/fonts";
-import React from "react";
+import ServiceHeroActions from "@/app/publishing-services/components/ServiceHeroActions";
 
 
 const WhoWeHero = () => {
@@ -20,6 +20,7 @@ const WhoWeHero = () => {
         <p className={`mx-auto max-w-7xl text-center text-[12px] text-gray-700 sm:text-[13px] md:text-[15px] ${robotoMono.className}`}>
          Dreaming of a bestseller but not quite happy with your manuscript yet? At Ink Founders, we specialize in turning potential into something polished and publication-ready. Our team is here to refine your work and get it in front of readers.
         </p>
+        <ServiceHeroActions />
       </div>
     </div>
   </div>

@@ -12,13 +12,13 @@ export default function WhichPaperIsBest() {
               Which Paper Is Best For Coloring Books?
             </h2>
             <p className="mb-4 text-sm leading-relaxed text-gray-700">
-              <b>Paper selection</b> is important because different <b>coloring materials</b>
+              <b>Paper selection</b> is important because different <b>coloring materials</b> {" "} 
               behave differently on paper.
             </p>
             <p className="mb-4 text-sm leading-relaxed text-gray-700">
               White, uncoated paper is commonly used for coloring pages because
               it provides a suitable surface for <b>colored pencils</b> and <b>crayons</b>. If
-              readers will use markers, ask your printer about heavier paper and
+              readers will use markers, ask your printer about heavier paper and {" "} 
               <b>single sided printing</b> to help reduce show through or bleed through.
             </p>
             <p className="text-sm leading-relaxed text-gray-700">

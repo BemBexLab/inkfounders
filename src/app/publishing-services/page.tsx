@@ -17,7 +17,7 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata(
   "/publishing-services",
-  "Book Publishing Packages for Authors | Ink Founders",
+  "Professional Book Publishing Services | Ink Founders",
   "Ink Founders offers professional book publishing services and self-publishing packages with an ISBN included, editing, design, global distribution, and marketing.",
 );
 

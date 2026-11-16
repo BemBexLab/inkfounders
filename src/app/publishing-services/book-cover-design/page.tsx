@@ -5,6 +5,7 @@ import CustomScrollbar from "@/components/CustomScrollbar";
 import Link from "next/link";
 import { IoMdCall } from "react-icons/io";
 import Image from "next/image";
+import ServiceHeroActions from "../components/ServiceHeroActions";
 
 // ✅ EXACT SAME CheckItem as your main service page
 const CheckItem = ({ children }: { children: React.ReactNode }) => (
@@ -110,6 +111,7 @@ export default function CoverDesignPage() {
                 <p className={`${robotoMono.className} order-3 w-full max-w-2xl text-center text-[13px] leading-relaxed text-gray-700 sm:text-[14px] md:text-[15px] lg:max-w-none lg:text-left lg:leading-loose`}>
                   At Ink Founders, we know a book cover is the first impression your readers get. Our book cover design services create visually striking, genre-appropriate covers that catch readers' attention and help your book perform on Amazon KDP, Apple Books, and other major platforms.
                 </p>
+                <ServiceHeroActions align="left" />
               </div>
             </div>
             <div className="relative order-2 flex w-full items-center justify-center px-0 sm:px-4 md:px-8 lg:order-none lg:ml-5">

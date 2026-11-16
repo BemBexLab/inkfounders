@@ -46,8 +46,7 @@ export default function ColoringBookPrintingOptions() {
         {/* Subtitle */}
         <p className="mx-auto mb-12 max-w-full text-center text-sm leading-relaxed text-gray-600">
           Before <b>printing a coloring book</b>, decide how it will be used. The paper,
-          binding, size, and <b>printing method</b> can affect the reading experience and
-          <b>production cost</b>.
+          binding, size, and {" "} <b>printing method</b> can affect the reading experience and {" "} <b>production cost</b>.
         </p>
 
         {/* Table */}
